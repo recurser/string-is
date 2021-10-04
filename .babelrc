@@ -11,9 +11,9 @@
         "@layouts": "./src/layouts",
         "@pages": "./src/pages",
         "@root": "./src",
-        "@services": "./src/services",
-        "@styles": "./src/styles"
+        "@services": "./src/services"
       }
-    }]
+    }],
+    ["styled-components", { "ssr": true, "displayName": true }]
   ]
 }
