@@ -6,7 +6,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Dev Toolbar</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link href="/favicon.ico" rel="icon" />
       </Head>
 
       <p>Paste here</p>
@@ -15,4 +15,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home // eslint-disable-line import/no-default-export

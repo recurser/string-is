@@ -1,6 +1,13 @@
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { ApplicationLayout } from '@layouts/ApplicationLayout'
+
+function DevToolbar({ Component, pageProps }: AppProps) {
+  return (
+    <ApplicationLayout>
+      <Component {...pageProps} />
+    </ApplicationLayout>
+  )
 }
-export default MyApp
+
+export default DevToolbar // eslint-disable-line import/no-default-export
