@@ -1,11 +1,13 @@
+import { Pane, Paragraph } from 'evergreen-ui'
+
 export const ApplicationLayout = ({ children }) => {
   return (
-    <>
-      <header>Header</header>
+    <Pane>
+      <Paragraph>Header</Paragraph>
 
-      <section>{children}</section>
+      <Pane>{children}</Pane>
 
-      <footer>Footer</footer>
-    </>
+      <Paragraph>Footer</Paragraph>
+    </Pane>
   )
 }

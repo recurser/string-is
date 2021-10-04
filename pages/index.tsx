@@ -1,3 +1,4 @@
+import { Paragraph, Textarea } from 'evergreen-ui'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styledComponents from 'styled-components'
@@ -14,8 +15,8 @@ const Home: NextPage = () => {
         <link href="/favicon.ico" rel="icon" />
       </Head>
 
-      <p>Paste here</p>
-      <textarea />
+      <Paragraph>Paste here</Paragraph>
+      <Textarea />
     </StyledTest>
   )
 }
