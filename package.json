@@ -15,6 +15,8 @@
   },
   "devDependencies": {
     "@types/react": "17.0.26",
+    "babel-plugin-import": "^1.13.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "typescript": "4.4.3"
