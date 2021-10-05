@@ -9,7 +9,6 @@
     "eslint": "eslint --ext=js,ts,tsx",
     "format": "yarn eslint src pages --fix && yarn prettier",
     "lint": "next lint",
-    "postinstall": "husky install",
     "prettier": "prettier --config .prettierrc.js --write 'pages/**/*.tsx' 'src/**/*.ts' 'src/**/*.tsx' '*.js'",
     "start": "NODE_ENV=production next start"
   },
