@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 
-import { ApplicationLayout } from '@layouts/ApplicationLayout'
+import { ApplicationLayout } from '@components/layouts/ApplicationLayout'
 
 function DevToolbar({ Component, pageProps }: AppProps) {
   return (

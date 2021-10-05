@@ -24,9 +24,6 @@
       "@images/*": [
         "src/images/*"
       ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
       "@pages/*": [
         "src/pages/*"
       ],
