@@ -1,6 +1,8 @@
-import { Pane, Paragraph, Textarea } from 'evergreen-ui'
+import { Pane } from 'evergreen-ui'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
+import { Convert } from '@pages/Convert'
 
 const Home: NextPage = () => {
   return (
@@ -9,8 +11,7 @@ const Home: NextPage = () => {
         <title>Dev Toolbar</title>
       </Head>
 
-      <Paragraph>Paste here</Paragraph>
-      <Textarea />
+      <Convert />
     </Pane>
   )
 }

@@ -8,7 +8,7 @@
       "alias": {
         "@components": "./src/components",
         "@images": "./src/images",
-        "@pages": "./src/pages",
+        "@pages": "./src/components/pages",
         "@root": "./src",
         "@services": "./src/services"
       }

@@ -25,7 +25,7 @@
         "src/images/*"
       ],
       "@pages/*": [
-        "src/pages/*"
+        "src/components/pages/*"
       ],
       "@root/*": [
         "src/*"
