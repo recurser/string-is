@@ -1,43 +1,25 @@
 import { Image, majorScale, Pane, Tab, Tablist } from 'evergreen-ui'
 
 import Logo from '@images/logo.svg'
-import { useBreakpoints } from '@services/Responsive'
 
 export const ApplicationLayout = ({ children }) => {
-  const breakpoints = useBreakpoints()
-
-  const gap = `${majorScale(2)}px ${majorScale(4)}px`
-  const padTop = majorScale(3)
-  const rows = `${majorScale(4)}px 1fr`
-  let columns
-  const areas =
-    "'left-pane menu-pane right-pane' 'left-pane content-pane right-pane'"
-
-  if (breakpoints.isBigscreen) {
-    columns = 'auto 1000px auto'
-  } else if (breakpoints.isDesktop) {
-    columns = '1fr 4fr 1fr'
-  } else {
-    columns = '0fr 1fr 0fr'
-  }
-
   return (
     <>
       <Pane
-        display="grid"
-        gridGap={gap}
-        gridTemplateAreas={areas}
-        gridTemplateColumns={columns}
-        gridTemplateRows={rows}
+        display="flex"
+        flexDirection="column"
         justifyContent="center"
-        paddingTop={padTop}
+        marginLeft="auto"
+        marginRight="auto"
+        maxWidth={900}
+        paddingTop={majorScale(3)}
       >
         <Pane
           alignItems="center"
           display="flex"
           flexDirection="row"
-          gridArea="menu-pane"
           justifyContent="space-between"
+          marginBottom={majorScale(3)}
         >
           <Image
             alt="Dev Toolbar Logo"
@@ -60,7 +42,7 @@ export const ApplicationLayout = ({ children }) => {
           </Pane>
         </Pane>
 
-        <Pane gridArea="content-pane">{children}</Pane>
+        <Pane>{children}</Pane>
       </Pane>
     </>
   )
