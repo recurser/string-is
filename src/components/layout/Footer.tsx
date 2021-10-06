@@ -17,15 +17,15 @@ export const Footer = (): React.ReactElement => {
       marginTop={majorScale(3)}
       opacity={0.6}
     >
-      <Link color="neutral" href={ROUTE_SECURITY}>
+      <Link color="neutral" href={ROUTE_SECURITY} size={300}>
         {t('security')}
       </Link>
       &middot;
-      <Link color="neutral" href={ROUTE_PRIVACY}>
+      <Link color="neutral" href={ROUTE_PRIVACY} size={300}>
         {t('privacy')}
       </Link>
       &middot;
-      <Link color="neutral" href={ROUTE_TERMS}>
+      <Link color="neutral" href={ROUTE_TERMS} size={300}>
         {t('terms')}
       </Link>
     </Pane>
