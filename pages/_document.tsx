@@ -48,6 +48,7 @@ class TeamServerDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="utf-8" />
           <link
             href="/favicons/apple-touch-icon.png"
             rel="apple-touch-icon"
