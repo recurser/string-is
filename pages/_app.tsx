@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 
-import { Application as Layout } from '@components/layout/Application'
+import { Application as Layout } from '@components/layout'
 
 function StringToolbox({ Component, pageProps }: AppProps) {
   return (
