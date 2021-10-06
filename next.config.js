@@ -83,14 +83,10 @@ const headers = async () => {
   ]
 }
 
-const cfg = nextTranslate({
+module.exports = nextTranslate({
+  headers,
   reactStrictMode: true,
   webpack: (config, { isServer, webpack }) => {
     return config
   },
 })
-
-module.exports = {
-  ...cfg,
-  headers,
-}
