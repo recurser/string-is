@@ -1,5 +1,4 @@
 import { Image, majorScale, minorScale, Pane, Tab, Tablist } from 'evergreen-ui'
-import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
 
 import { Link } from '@components/navigation'
@@ -7,7 +6,6 @@ import Logo from '@images/logo.svg'
 import { ROUTE_ABOUT, ROUTE_CONVERT } from '@services/Routes'
 
 export const Header = (): React.ReactElement => {
-  const { t } = useTranslation('layout-header')
   const { pathname } = useRouter()
 
   return (
@@ -29,13 +27,13 @@ export const Header = (): React.ReactElement => {
       <Pane>
         <Tablist display="flex" gap={minorScale(1)}>
           <Link href={ROUTE_ABOUT}>
-            <Tab isSelected={pathname === ROUTE_ABOUT}>{t('menuAbout')}</Tab>
+            <Tab isSelected={pathname === ROUTE_ABOUT}>{'menuAbout'}</Tab>
           </Link>
           <Link
             href="https://github.com/stringtoolbox/stringtoolbox"
             target="_blank"
           >
-            <Tab isSelected={false}>{t('menuGithub')}</Tab>
+            <Tab isSelected={false}>{'menuGithub'}</Tab>
           </Link>
         </Tablist>
       </Pane>

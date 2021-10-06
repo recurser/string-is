@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const nextTranslate = require('next-translate')
-
 const dev = process.env.NODE_ENV !== 'production'
 
 const headers = async () => {
@@ -79,11 +77,11 @@ const headers = async () => {
   ]
 }
 
-module.exports = nextTranslate({
+module.exports = {
   headers,
   reactStrictMode: true,
   trailingSlash: true, // CSP headers aren't returned on the root page if this is false.
   webpack: (config, { isServer, webpack }) => {
     return config
   },
-})
+}
