@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 
 import { Application as Layout } from '@components/layout/Application'
 
-function DevToolbar({ Component, pageProps }: AppProps) {
+function StringToolbox({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Component {...pageProps} />
@@ -10,4 +10,4 @@ function DevToolbar({ Component, pageProps }: AppProps) {
   )
 }
 
-export default DevToolbar // eslint-disable-line import/no-default-export
+export default StringToolbox // eslint-disable-line import/no-default-export
