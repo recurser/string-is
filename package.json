@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "all": "yarn eslint pages src --fix && yarn prettier && yarn build",
+    "all": "yarn eslint pages src --fix && yarn prettier && yarn jest && yarn build",
     "build": "next build",
     "dev": "next dev",
     "eslint": "eslint --ext=js,ts,tsx",

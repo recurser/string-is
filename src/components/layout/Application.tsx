@@ -1,4 +1,5 @@
 import { majorScale, Pane } from 'evergreen-ui'
+import { PropsWithChildren, ReactElement } from 'react'
 
 import { Footer } from '@components/layout/Footer'
 import { Header } from '@components/layout/Header'
@@ -6,7 +7,7 @@ import { InputContext } from '@contexts/InputContext'
 
 export const Application = ({
   children,
-}: React.PropsWithChildren<Record<string, unknown>>): React.ReactElement => (
+}: PropsWithChildren<Record<string, unknown>>): ReactElement => (
   <InputContext>
     <Pane
       display="flex"

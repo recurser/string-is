@@ -5,11 +5,12 @@ import {
   majorScale,
   Pane,
 } from 'evergreen-ui'
+import { ReactElement } from 'react'
 
 import { useBreakpoints } from '@services/Responsive'
 
 interface Props extends CardProps {
-  children: React.ReactElement | React.ReactElement[]
+  children: ReactElement | ReactElement[]
   title?: string
 }
 
@@ -19,7 +20,7 @@ export const Card = ({
   title,
   padding,
   ...props
-}: Props): React.ReactElement => {
+}: Props): ReactElement => {
   const { isMobile } = useBreakpoints()
   const responsiveElevation = isMobile ? undefined : elevation
   const responsivePadding =

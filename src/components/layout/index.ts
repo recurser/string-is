@@ -1,4 +1,5 @@
 import dynamic, { DynamicOptions } from 'next/dynamic'
+import { PropsWithChildren } from 'react'
 
 export * from '@components/layout/Card'
 export * from '@components/layout/Footer'
@@ -14,7 +15,7 @@ export * from '@components/layout/Header'
 export const Application = dynamic(
   (() =>
     import('./Application').then((mod) => mod.Application)) as DynamicOptions<
-    React.PropsWithChildren<Record<string, unknown>>
+    PropsWithChildren<Record<string, unknown>>
   >,
   { ssr: false },
 )

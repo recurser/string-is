@@ -6,6 +6,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
+import { ReactElement } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 import { GlobalStyle } from '@components/utility/GlobalStyle'
@@ -44,7 +45,7 @@ class TeamServerDocument extends Document {
     }
   }
 
-  render(): React.ReactElement {
+  render(): ReactElement {
     return (
       <Html>
         <Head>

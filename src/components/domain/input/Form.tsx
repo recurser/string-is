@@ -1,5 +1,6 @@
 import { Paragraph, Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
+import { ChangeEvent } from 'react'
 
 import { useInputContext } from '@contexts/InputContext'
 
@@ -8,7 +9,8 @@ export const Form = () => {
 
   const { input, setInput } = useInputContext()
 
-  const onChange = (event) => setInput(event.target.value)
+  const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
+    setInput(event.target.value)
 
   return (
     <>

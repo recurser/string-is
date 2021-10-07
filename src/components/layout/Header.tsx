@@ -1,12 +1,13 @@
 import { Image, majorScale, minorScale, Pane, Tab, Tablist } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { useRouter } from 'next/router'
+import { ReactElement } from 'react'
 
 import { Link } from '@components/navigation'
 import Logo from '@images/logo.svg'
 import { ROUTE_ABOUT, ROUTE_CONVERT } from '@services/Routes'
 
-export const Header = (): React.ReactElement => {
+export const Header = (): ReactElement => {
   const { t } = useTranslation('layout-header')
   const { pathname } = useRouter()
 

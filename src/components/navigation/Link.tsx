@@ -1,5 +1,6 @@
 import { Link as Anchor, LinkProps } from 'evergreen-ui'
 import BaseLink from 'next/link'
+import { PropsWithChildren, ReactElement } from 'react'
 
 interface Props extends LinkProps {
   href: string // This is optional in LinkProps, but we want to enforce it.
@@ -12,7 +13,7 @@ export const Link = ({
   lineHeight,
   target,
   ...props
-}: React.PropsWithChildren<Props>): React.ReactElement => (
+}: PropsWithChildren<Props>): ReactElement => (
   <BaseLink href={href} {...props}>
     <Anchor
       color={color}
