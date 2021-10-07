@@ -21,6 +21,9 @@
       "@components/*": [
         "src/components/*"
       ],
+      "@contexts/*": [
+        "src/contexts/*"
+      ],
       "@images/*": [
         "src/images/*"
       ],

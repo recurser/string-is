@@ -4,9 +4,12 @@ import Head from 'next/head'
 
 import { Form } from '@components/domain/input'
 import { Card } from '@components/layout/Card'
+import { useInputContext } from '@contexts/InputContext'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
+
+  const { input } = useInputContext()
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
@@ -22,7 +25,7 @@ export const Convert = () => {
 
           <Pane flex={1} flexDirection="column">
             <Paragraph>{t('output_label')}</Paragraph>
-            <Textarea />
+            <Textarea readOnly={true} value={input} />
           </Pane>
         </Pane>
       </Card>

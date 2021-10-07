@@ -18,6 +18,7 @@ module.exports = {
 
     /* Aliases */
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
+    '^@/contexts/(.*)$': '<rootDir>/src/contexts/$1',
     '^@/images/(.*)$': '<rootDir>/src/images/$1',
     '^@/pages/(.*)$': '<rootDir>/src/components/pages/$1',
     '^@/root/(.*)$': '<rootDir>/src/$1',
