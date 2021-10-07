@@ -2,7 +2,12 @@ import { majorScale, Pane } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Link } from '@components/navigation'
-import { ROUTE_PRIVACY, ROUTE_SECURITY, ROUTE_TERMS } from '@services/Routes'
+import {
+  ROUTE_CONTACT,
+  ROUTE_PRIVACY,
+  ROUTE_SECURITY,
+  ROUTE_TERMS,
+} from '@services/Routes'
 
 export const Footer = (): React.ReactElement => {
   const { t } = useTranslation('layout-footer')
@@ -27,6 +32,10 @@ export const Footer = (): React.ReactElement => {
       &middot;
       <Link color="neutral" href={ROUTE_TERMS} size={300}>
         {t('terms')}
+      </Link>
+      &middot;
+      <Link color="neutral" href={ROUTE_CONTACT} size={300}>
+        {t('contact')}
       </Link>
     </Pane>
   )

@@ -1,4 +1,5 @@
 export const ROUTE_ABOUT = '/about'
+export const ROUTE_CONTACT = '/contact'
 export const ROUTE_CONVERT = '/'
 export const ROUTE_PRIVACY = '/privacy'
 export const ROUTE_SECURITY = '/security'

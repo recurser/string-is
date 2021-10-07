@@ -6,6 +6,7 @@ module.exports = {
   pages: {
     '/': [...common, 'pages-convert'],
     '/about': [...common, 'pages-about'],
+    '/contact': [...common, 'pages-contact'],
     '/privacy': [...common, 'pages-privacy'],
     '/security': [...common, 'pages-security'],
     '/terms': [...common, 'pages-terms'],
