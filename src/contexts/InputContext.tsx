@@ -13,14 +13,14 @@ interface InputProps {
 
 const Context = createContext<InputProps>({
   input: '',
-  setLabels: (_: string) => undefined,
+  setInput: (_: string) => undefined,
 })
 
 export const useInputContext = (): InputProps => useContext(Context)
 
 export const InputContext = ({
   children,
-}: PropsWithChildren<Record<string, never>>): ReactElement => {
+}: PropsWithChildren<Record<string, unknown>>): ReactElement => {
   const [input, setInput] = useState<string>('')
 
   const value = { input, setInput }
