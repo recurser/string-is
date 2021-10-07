@@ -13,7 +13,7 @@
     "start": "NODE_ENV=production next start"
   },
   "dependencies": {
-    "evergreen-ui": "^6.5.0",
+    "evergreen-ui": "^6.5.1",
     "next": "11.1.2",
     "next-translate": "^1.1.0",
     "react": "17.0.2",
