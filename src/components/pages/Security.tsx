@@ -13,7 +13,7 @@ export const Security = () => {
         <title>{t('page_title')}</title>
       </Head>
 
-      <Card>
+      <Card title={t('page_heading')}>
         <Paragraph>{t('todo')}</Paragraph>
       </Card>
     </Pane>
