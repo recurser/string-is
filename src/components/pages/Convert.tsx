@@ -25,7 +25,7 @@ export const Convert = () => {
 
           <Pane flex={1} flexDirection="column">
             <Paragraph>{t('output_label')}</Paragraph>
-            <Textarea readOnly={true} value={input} />
+            <Textarea readOnly={true} value={btoa(input)} />
           </Pane>
         </Pane>
       </Card>
