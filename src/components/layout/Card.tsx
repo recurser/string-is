@@ -52,7 +52,9 @@ export const Card = ({
           )}
           {title && (
             <Pane justifyContent="center">
-              <Heading size={400}>{title}</Heading>
+              <Heading role="heading" size={400}>
+                {title}
+              </Heading>
             </Pane>
           )}
           {actionComponents.length > 0 && (

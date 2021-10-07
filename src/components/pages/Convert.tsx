@@ -13,13 +13,18 @@ export const Convert = () => {
         <title>{t('page_title')}</title>
       </Head>
 
-      <Card>
-        <Paragraph>{t('input_label')}</Paragraph>
-        <Textarea />
-      </Card>
-      <Card>
-        <Paragraph>{t('output_label')}</Paragraph>
-        <Textarea />
+      <Card title={t('page_heading')}>
+        <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
+          <Pane flex={1} flexDirection="column">
+            <Paragraph>{t('input_label')}</Paragraph>
+            <Textarea />
+          </Pane>
+
+          <Pane flex={1} flexDirection="column">
+            <Paragraph>{t('output_label')}</Paragraph>
+            <Textarea />
+          </Pane>
+        </Pane>
       </Card>
     </Pane>
   )

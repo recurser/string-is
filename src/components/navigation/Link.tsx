@@ -14,7 +14,13 @@ export const Link = ({
   ...props
 }: React.PropsWithChildren<Props>): React.ReactElement => (
   <BaseLink href={href} {...props}>
-    <Anchor color={color} href={href} lineHeight={lineHeight} target={target}>
+    <Anchor
+      color={color}
+      href={href}
+      lineHeight={lineHeight}
+      role="link"
+      target={target}
+    >
       {children}
     </Anchor>
   </BaseLink>
