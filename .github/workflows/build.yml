@@ -1,0 +1,13 @@
+name: build
+
+on: [pull_request]
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - name: Install packages
+        run: "npm install"
+      - name: Build the application
+        run: "yarn build"
