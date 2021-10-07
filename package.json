@@ -22,7 +22,7 @@
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
-    "@types/node": "^16.10.2",
+    "@types/node": "^16.10.3",
     "@types/react": "17.0.27",
     "@types/styled-components": "^5.1.14",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
