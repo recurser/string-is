@@ -1,8 +1,9 @@
-import { majorScale, Pane, Paragraph, Textarea } from 'evergreen-ui'
+import { majorScale, Pane } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
 
 import { Form } from '@components/domain/input'
+import { Plain } from '@components/domain/output'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
 
@@ -24,8 +25,7 @@ export const Convert = () => {
           </Pane>
 
           <Pane flex={1} flexDirection="column">
-            <Paragraph>{t('output_label')}</Paragraph>
-            <Textarea readOnly={true} value={btoa(input)} />
+            <Plain input={input} operation={btoa} />
           </Pane>
         </Pane>
       </Card>
