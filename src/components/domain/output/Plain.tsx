@@ -13,12 +13,8 @@ export const Plain = ({ input, operation }: Props) => {
   const [encoded, setEncoded] = useState(input)
 
   const doDebounce = useMemo(
-    () =>
-      debounce((data: string) => {
-        console.log('updating search')
-        setEncoded(operation(data))
-      }, 300),
-    [],
+    () => debounce((data: string) => setEncoded(operation(data)), 300),
+    [operation],
   )
 
   useEffect(() => doDebounce(input), [input, doDebounce])
