@@ -18,6 +18,9 @@
     "strictNullChecks": true,
     "target": "es5",
     "paths": {
+      "@converters/*": [
+        "src/converters/*"
+      ],
       "@components/*": [
         "src/components/*"
       ],

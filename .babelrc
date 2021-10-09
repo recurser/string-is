@@ -6,6 +6,7 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": {
+        "@converters": "./src/converters",
         "@components": "./src/components",
         "@contexts": "./src/contexts",
         "@images": "./src/images",
