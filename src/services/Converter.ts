@@ -1,21 +1,21 @@
 import Promise from 'bluebird'
 import { maxBy } from 'lodash'
 
-import * as Base64Encode from '@converters/Base64Encode'
-import { Converter, converters } from '@converters/index'
+import { Input, inputs } from '@lib/inputs'
+import * as Base64EncodedInput from '@lib/inputs/Base64EncodedInput'
 
 interface Candidate {
   confidence: number
-  converter: Converter
+  input: Input
 }
 
-export const selectConverter = async (input: string): Promise<Converter> => {
+export const selectInput = async (inputString: string): Promise<Input> => {
   const candidates = await Promise.all(
-    converters.map((conv): Promise<Candidate> => {
+    inputs.map((input): Promise<Candidate> => {
       return new Promise((resolve, _reject) => {
         return resolve({
-          confidence: conv.confidence(input),
-          converter: conv,
+          confidence: input.confidence(inputString),
+          input,
         })
       })
     }),
@@ -26,7 +26,7 @@ export const selectConverter = async (input: string): Promise<Converter> => {
     (candidate: Candidate) => candidate.confidence,
   ) as Candidate
 
-  return winner.converter
+  return winner.input
 }
 
-export const DefaultConverter = Base64Encode as Converter
+export const DefaultInput = Base64EncodedInput as Input

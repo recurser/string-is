@@ -18,9 +18,6 @@
     "strictNullChecks": true,
     "target": "es5",
     "paths": {
-      "@converters/*": [
-        "src/converters/*"
-      ],
       "@components/*": [
         "src/components/*"
       ],
@@ -29,6 +26,9 @@
       ],
       "@images/*": [
         "src/images/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
       ],
       "@pages/*": [
         "src/components/pages/*"

@@ -17,10 +17,10 @@ module.exports = {
     '^.+\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
 
     /* Aliases */
-    '^@/converters/(.*)$': '<rootDir>/src/converters/$1',
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/contexts/(.*)$': '<rootDir>/src/contexts/$1',
     '^@/images/(.*)$': '<rootDir>/src/images/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
     '^@/pages/(.*)$': '<rootDir>/src/components/pages/$1',
     '^@/root/(.*)$': '<rootDir>/src/$1',
     '^@/services/(.*)$': '<rootDir>/src/services/$1',

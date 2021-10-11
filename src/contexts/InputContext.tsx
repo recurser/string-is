@@ -7,13 +7,13 @@ import {
 } from 'react'
 
 interface InputProps {
-  input: string
-  setInput: (input: string) => void
+  inputString: string
+  setInputString: (inputString: string) => void
 }
 
 const Context = createContext<InputProps>({
-  input: '',
-  setInput: (_: string) => undefined,
+  inputString: '',
+  setInputString: (_: string) => undefined,
 })
 
 export const useInputContext = (): InputProps => useContext(Context)
@@ -21,8 +21,8 @@ export const useInputContext = (): InputProps => useContext(Context)
 export const InputContext = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {
-  const [input, setInput] = useState<string>('')
+  const [inputString, setInputString] = useState<string>('')
 
-  const value = { input, setInput }
+  const value = { inputString, setInputString }
   return <Context.Provider value={value}>{children}</Context.Provider>
 }

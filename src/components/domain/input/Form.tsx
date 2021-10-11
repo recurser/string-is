@@ -7,15 +7,15 @@ import { useInputContext } from '@contexts/InputContext'
 export const Form = () => {
   const { t } = useTranslation('domain-input-form')
 
-  const { input, setInput } = useInputContext()
+  const { inputString, setInputString } = useInputContext()
 
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInput(event.target.value)
+    setInputString(event.target.value)
 
   return (
     <>
       <Paragraph>{t('label')}</Paragraph>
-      <Textarea onChange={onChange} value={input} />
+      <Textarea onChange={onChange} value={inputString} />
     </>
   )
 }

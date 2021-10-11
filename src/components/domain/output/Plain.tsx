@@ -3,21 +3,25 @@ import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { useMemo, useEffect, useState } from 'react'
 
+import { Output } from '@lib/outputs'
+import { useInputContext } from '@contexts/InputContext'
+
 interface Props {
-  input: string
-  operation: (input: string) => string
+  output: Output
 }
-export const Plain = ({ input, operation }: Props) => {
+export const Plain = ({ output }: Props) => {
   const { t } = useTranslation('domain-output-plain')
 
-  const [encoded, setEncoded] = useState(input)
+  const { inputString } = useInputContext()
+
+  const [encoded, setEncoded] = useState(inputString)
 
   const doDebounce = useMemo(
-    () => debounce((data: string) => setEncoded(operation(data)), 300),
-    [operation],
+    () => debounce((data: string) => setEncoded(output.operation(data)), 300),
+    [output],
   )
 
-  useEffect(() => doDebounce(input), [input, doDebounce])
+  useEffect(() => doDebounce(inputString), [inputString, doDebounce])
 
   return (
     <>

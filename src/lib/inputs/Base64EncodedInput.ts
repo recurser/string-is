@@ -1,6 +1,4 @@
-import { decode } from 'js-base64'
-
-export const id = 'base64decode'
+import { Base64DecodedOutput, Output } from '@lib/outputs'
 
 // See https://stackoverflow.com/a/8571649
 export const confidence = (input: string) => {
@@ -11,7 +9,7 @@ export const confidence = (input: string) => {
   }
 
   // Character code 65533 is the 'invalid sequence' character.
-  const charcodes = operation(input)
+  const charcodes = Base64DecodedOutput.operation(input)
     .split('')
     .map((char) => char.charCodeAt(0))
   if (charcodes.includes(65533)) {
@@ -21,6 +19,4 @@ export const confidence = (input: string) => {
   return 100
 }
 
-export const operation = (input: string) => {
-  return decode(input)
-}
+export const outputs = [Base64DecodedOutput] as Output[]

@@ -7,21 +7,21 @@ import { Form } from '@components/domain/input'
 import { Plain } from '@components/domain/output'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
-import { DefaultConverter, selectConverter } from '@services/Converter'
+import { DefaultInput, selectInput } from '@services/Converter'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
-  const [converter, setConverter] = useState(DefaultConverter)
+  const [input, setInput] = useState(DefaultInput)
 
-  const { input } = useInputContext()
+  const { inputString } = useInputContext()
 
   useEffect(() => {
     const select = async () => {
-      const conv = await selectConverter(input)
-      setConverter(conv)
+      const selected = await selectInput(inputString)
+      setInput(selected)
     }
     select()
-  }, [input])
+  }, [inputString])
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
@@ -36,7 +36,7 @@ export const Convert = () => {
           </Pane>
 
           <Pane flex={1} flexDirection="column">
-            <Plain input={input} operation={converter.operation} />
+            <Plain output={input.outputs[0]} />
           </Pane>
         </Pane>
       </Card>
