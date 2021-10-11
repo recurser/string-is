@@ -1,21 +1,31 @@
 import { Paragraph, Textarea } from 'evergreen-ui'
+import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useEffect, useMemo, useState } from 'react'
 
 import { useInputContext } from '@contexts/InputContext'
 
 export const Form = () => {
   const { t } = useTranslation('domain-input-form')
 
-  const { inputString, setInputString } = useInputContext()
+  const { setInputString } = useInputContext()
+
+  const [input, setInput] = useState('')
+
+  const doDebounce = useMemo(
+    () => debounce((data: string) => setInputString(data), 300),
+    [setInputString],
+  )
+
+  useEffect(() => doDebounce(input), [input, doDebounce])
 
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
-    setInputString(event.target.value)
+    setInput(event.target.value)
 
   return (
     <>
       <Paragraph>{t('label')}</Paragraph>
-      <Textarea onChange={onChange} value={inputString} />
+      <Textarea onChange={onChange} value={input} />
     </>
   )
 }
