@@ -4,12 +4,7 @@ module.exports = {
   defaultLocale: 'en',
   locales: ['en'],
   pages: {
-    '/': [
-      ...common,
-      'domain-input-form',
-      'domain-output-plain',
-      'pages-convert',
-    ],
+    '/': [...common, 'domain-convert-form', 'pages-convert'],
     '/about': [...common, 'pages-about'],
     '/contact': [...common, 'pages-contact'],
     '/privacy': [...common, 'pages-privacy'],

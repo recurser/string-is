@@ -6,7 +6,7 @@ import { ChangeEvent, useEffect, useMemo, useState } from 'react'
 import { useInputContext } from '@contexts/InputContext'
 
 export const Form = () => {
-  const { t } = useTranslation('domain-input-form')
+  const { t } = useTranslation('domain-convert-form')
 
   const { setInputString } = useInputContext()
 

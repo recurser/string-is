@@ -1,11 +1,9 @@
-import { majorScale, Pane, Text } from 'evergreen-ui'
-import { uniqBy } from 'lodash'
+import { majorScale, Pane } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { Form } from '@components/domain/input'
-import { Plain } from '@components/domain/output'
+import { Form, OutputSelector, Result } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
 import { DefaultInput, selectInputs } from '@services/Converter'
@@ -14,13 +12,9 @@ export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const [inputs, setInputs] = useState([DefaultInput])
 
-  console.log(
-    'inputs',
-    inputs.map((input) => input.id),
-  )
-
   const { inputString } = useInputContext()
 
+  // Todo: use useMemo() here?
   useEffect(() => {
     const select = async () => {
       const selected = await selectInputs(inputString)
@@ -28,12 +22,6 @@ export const Convert = () => {
     }
     select()
   }, [inputString])
-
-  // We want a unique list of outputs supported by our list of inputs.
-  const outputs = useMemo(
-    () => uniqBy(inputs.map((input) => input.outputs).flat(), 'id'),
-    [inputs],
-  )
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
@@ -43,20 +31,16 @@ export const Convert = () => {
 
       <Card title={t('page_heading')}>
         <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
-          <Pane flex={1} flexDirection="column">
+          <Pane flex={2} flexDirection="column">
             <Form />
           </Pane>
 
-          <ul>
-            {outputs.map((output, index) => (
-              <li key={`output-${index}`}>
-                <Text>{output.id}</Text>
-              </li>
-            ))}
-          </ul>
-
           <Pane flex={1} flexDirection="column">
-            <Plain output={inputs[0].outputs[0]} />
+            <OutputSelector inputs={inputs} />
+          </Pane>
+
+          <Pane flex={2} flexDirection="column">
+            <Result output={inputs[0].outputs[0]} />
           </Pane>
         </Pane>
       </Card>
