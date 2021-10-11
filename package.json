@@ -16,6 +16,7 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "evergreen-ui": "^6.5.1",
+    "hjson": "^3.2.2",
     "js-base64": "^3.7.2",
     "lodash": "^4.17.21",
     "next": "11.1.2",
@@ -29,6 +30,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@types/bluebird": "^3.5.36",
+    "@types/hjson": "^2.4.3",
     "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.3",
     "@types/react": "17.0.27",

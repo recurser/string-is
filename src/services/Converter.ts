@@ -1,6 +1,7 @@
 import Promise from 'bluebird'
 import { maxBy } from 'lodash'
 
+import * as Base64Encode from '@converters/Base64Encode'
 import { Converter, converters } from '@converters/index'
 
 interface Candidate {
@@ -28,4 +29,4 @@ export const selectConverter = async (input: string): Promise<Converter> => {
   return winner.converter
 }
 
-export const DefaultConverter = converters[1]
+export const DefaultConverter = Base64Encode as Converter
