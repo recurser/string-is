@@ -14,13 +14,17 @@ export const Convert = () => {
 
   const { inputString } = useInputContext()
 
-  // Todo: use useMemo() here?
   useEffect(() => {
-    const select = async () => {
+    // See https://stackoverflow.com/a/66071205
+    let active = true
+    select()
+    return () => { active = false }
+
+    async function select() {
+      if (!active) { return }
       const selected = await selectInputs(inputString)
       setInputs(selected)
     }
-    select()
   }, [inputString])
 
   return (
