@@ -1,6 +1,6 @@
 import { parse } from 'hjson'
 
-import { JsonOutput, Output } from '@lib/outputs'
+import { Base64EncodedOutput, JsonOutput, Output } from '@lib/outputs'
 
 export const confidence = (input: string) => {
   if (input == '') {
@@ -19,4 +19,4 @@ export const confidence = (input: string) => {
   return type === '[object Object]' || type === '[object Array]' ? 100 : 0
 }
 
-export const outputs = [JsonOutput] as Output[]
+export const outputs = [JsonOutput, Base64EncodedOutput] as Output[]

@@ -1,4 +1,4 @@
-import { majorScale, Pane } from 'evergreen-ui'
+import { majorScale, Pane, Text } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
@@ -34,6 +34,14 @@ export const Convert = () => {
           <Pane flex={1} flexDirection="column">
             <Form />
           </Pane>
+
+          <ul>
+            {input.outputs.map((output, index) => (
+              <li key={`output-${index}`}>
+                <Text>{output.id}</Text>
+              </li>
+            ))}
+          </ul>
 
           <Pane flex={1} flexDirection="column">
             <Plain output={input.outputs[0]} />
