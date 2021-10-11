@@ -5,6 +5,7 @@ import { Output } from '@lib/outputs'
 
 export interface Input {
   confidence: (input: string) => number
+  id: string
   outputs: Output[]
 }
 

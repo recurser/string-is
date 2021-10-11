@@ -1,7 +1,15 @@
+import { isEmpty } from 'lodash'
+
 import { Base64DecodedOutput, Output } from '@lib/outputs'
+
+export const id = 'base64encoded'
 
 // See https://stackoverflow.com/a/8571649
 export const confidence = (input: string) => {
+  if (isEmpty(input)) {
+    return 0
+  }
+
   if (
     !/^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/.test(input)
   ) {

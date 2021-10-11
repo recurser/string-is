@@ -1,5 +1,5 @@
 import Promise from 'bluebird'
-import { maxBy } from 'lodash'
+import { sortBy } from 'lodash'
 
 import { Input, inputs } from '@lib/inputs'
 import * as Base64EncodedInput from '@lib/inputs/Base64EncodedInput'
@@ -9,7 +9,7 @@ interface Candidate {
   input: Input
 }
 
-export const selectInput = async (inputString: string): Promise<Input> => {
+export const selectInputs = async (inputString: string): Promise<Input[]> => {
   const candidates = await Promise.all(
     inputs.map((input): Promise<Candidate> => {
       return new Promise((resolve, _reject) => {
@@ -21,12 +21,9 @@ export const selectInput = async (inputString: string): Promise<Input> => {
     }),
   )
 
-  const winner = maxBy(
-    candidates,
-    (candidate: Candidate) => candidate.confidence,
-  ) as Candidate
-
-  return winner.input
+  return sortBy(candidates, (candidate: Candidate) => -candidate.confidence)
+    .filter((candidate: Candidate) => candidate.confidence > 0)
+    .map((candidate: Candidate) => candidate.input)
 }
 
 export const DefaultInput = Base64EncodedInput as Input

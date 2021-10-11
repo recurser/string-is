@@ -1,5 +1,7 @@
 import { Base64EncodedOutput, Output } from '@lib/outputs'
 
+export const id = 'plain'
+
 export const confidence = (_input: string) => {
   return 1
 }

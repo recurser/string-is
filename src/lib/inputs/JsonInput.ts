@@ -1,9 +1,12 @@
 import { parse } from 'hjson'
+import { isEmpty } from 'lodash'
 
 import { Base64EncodedOutput, JsonOutput, Output } from '@lib/outputs'
 
+export const id = 'json'
+
 export const confidence = (input: string) => {
-  if (input == '') {
+  if (isEmpty(input)) {
     return 0
   }
 
