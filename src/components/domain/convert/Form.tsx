@@ -1,8 +1,9 @@
-import { Pane, Paragraph, Textarea } from 'evergreen-ui'
+import { Textarea } from 'evergreen-ui'
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, useEffect, useMemo, createRef, useState } from 'react'
 
+import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
 
 export const Form = () => {
@@ -28,8 +29,7 @@ export const Form = () => {
     setInput(event.target.value)
 
   return (
-    <Pane>
-      <Paragraph role="label">{t('label')}</Paragraph>
+    <LayoutColumn label={t('label')}>
       <Textarea
         autoFocus={
           true
@@ -39,6 +39,6 @@ export const Form = () => {
         ref={inputRef}
         value={input}
       />
-    </Pane>
+    </LayoutColumn>
   )
 }

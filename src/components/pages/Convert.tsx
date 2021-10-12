@@ -39,15 +39,15 @@ export const Convert = () => {
 
       <Card>
         <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
-          <Pane flex={2} flexDirection="column">
+          <Pane display="flex" flex={2} flexDirection="column">
             <Form />
           </Pane>
 
-          <Pane flex={1} flexDirection="column">
+          <Pane display="flex" flex={1} flexDirection="column">
             <OutputSelector inputs={inputs} />
           </Pane>
 
-          <Pane flex={2} flexDirection="column">
+          <Pane display="flex" flex={2} flexDirection="column">
             <Result output={inputs[0].outputs[0]} />
           </Pane>
         </Pane>

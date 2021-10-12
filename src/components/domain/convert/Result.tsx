@@ -1,5 +1,6 @@
-import { Paragraph, Textarea } from 'evergreen-ui'
+import { Textarea } from 'evergreen-ui'
 
+import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
 import { Output } from '@lib/outputs'
 
@@ -10,9 +11,8 @@ export const Result = ({ output }: Props) => {
   const { inputString } = useInputContext()
 
   return (
-    <>
-      <Paragraph>{output.id}</Paragraph>
+    <LayoutColumn label={output.id}>
       <Textarea readOnly={true} value={output.operation(inputString)} />
-    </>
+    </LayoutColumn>
   )
 }

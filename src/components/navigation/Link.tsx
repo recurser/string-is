@@ -11,6 +11,7 @@ export const Link = ({
   color,
   href,
   lineHeight,
+  size,
   target,
   ...props
 }: PropsWithChildren<Props>): ReactElement => (
@@ -20,6 +21,7 @@ export const Link = ({
       href={href}
       lineHeight={lineHeight}
       role="link"
+      size={size}
       target={target}
     >
       {children}
