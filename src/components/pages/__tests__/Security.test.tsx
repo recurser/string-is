@@ -5,7 +5,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { Security } from '../Security'
+import { Security } from '@pages/Security'
 
 describe('Security', () => {
   it('renders a heading', () => {

@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 
 import { Application as Layout } from '@components/layout'
 
-function StringToolbox({ Component, pageProps }: AppProps) {
+function StringIs({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <Component {...pageProps} />
@@ -10,4 +10,4 @@ function StringToolbox({ Component, pageProps }: AppProps) {
   )
 }
 
-export default StringToolbox // eslint-disable-line import/no-default-export
+export default StringIs // eslint-disable-line import/no-default-export

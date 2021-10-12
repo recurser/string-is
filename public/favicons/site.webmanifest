@@ -1,6 +1,6 @@
 {
-    "name": "String Toolbox",
-    "short_name": "String Toolbox",
+    "name": "string-is",
+    "short_name": "string-is",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

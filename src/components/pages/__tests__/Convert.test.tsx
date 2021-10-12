@@ -4,15 +4,18 @@
 
 import { render, screen } from '@testing-library/react'
 import React from 'react'
+import { act } from 'react-dom/test-utils'
 
-import { Convert } from '../Convert'
+import { Convert } from '@pages/Convert'
 
 describe('Convert', () => {
-  it('renders a heading', () => {
-    render(<Convert />)
+  it('renders a heading', async () => {
+    await act(async () => {
+      render(<Convert />)
+    })
 
-    const heading = screen.getByRole('heading', {
-      name: /pages-convert:page_heading/i,
+    const heading = screen.getByRole('label', {
+      name: /domain-convert-form:label/i,
     })
 
     expect(heading).toBeInTheDocument()

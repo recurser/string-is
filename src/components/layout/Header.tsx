@@ -21,7 +21,7 @@ export const Header = (): ReactElement => {
     >
       <Link href={ROUTE_CONVERT} lineHeight={0}>
         <Image
-          alt="String Toolbox Logo"
+          alt="string-is logo"
           height={majorScale(5)}
           src={`${Logo.src}`}
           width={majorScale(5)}
@@ -32,10 +32,7 @@ export const Header = (): ReactElement => {
           <Link href={ROUTE_ABOUT}>
             <Tab isSelected={pathname === ROUTE_ABOUT}>{t('menuAbout')}</Tab>
           </Link>
-          <Link
-            href="https://github.com/stringtoolbox/stringtoolbox"
-            target="_blank"
-          >
+          <Link href="https://github.com/string-is/string-is" target="_blank">
             <Tab isSelected={false}>{t('menuGithub')}</Tab>
           </Link>
         </Tablist>

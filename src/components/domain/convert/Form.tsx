@@ -24,7 +24,7 @@ export const Form = () => {
 
   return (
     <>
-      <Paragraph>{t('label')}</Paragraph>
+      <Paragraph role="label">{t('label')}</Paragraph>
       <Textarea onChange={onChange} value={input} />
     </>
   )

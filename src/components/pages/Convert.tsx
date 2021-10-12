@@ -18,10 +18,14 @@ export const Convert = () => {
     // See https://stackoverflow.com/a/66071205
     let active = true
     select()
-    return () => { active = false }
+    return () => {
+      active = false
+    }
 
     async function select() {
-      if (!active) { return }
+      if (!active) {
+        return
+      }
       const selected = await selectInputs(inputString)
       setInputs(selected)
     }
@@ -33,7 +37,7 @@ export const Convert = () => {
         <title>{t('page_title')}</title>
       </Head>
 
-      <Card title={t('page_heading')}>
+      <Card>
         <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
           <Pane flex={2} flexDirection="column">
             <Form />

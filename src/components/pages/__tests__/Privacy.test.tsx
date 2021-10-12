@@ -5,7 +5,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { Privacy } from '../Privacy'
+import { Privacy } from '@pages/Privacy'
 
 describe('Privacy', () => {
   it('renders a heading', () => {
