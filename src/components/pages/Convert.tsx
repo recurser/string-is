@@ -6,11 +6,14 @@ import { useEffect, useState } from 'react'
 import { Form, OutputSelector, Result } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
+import { Input } from '@lib/inputs'
+import { Output } from '@lib/outputs'
 import { DefaultInput, selectInputs } from '@services/Converter'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
-  const [inputs, setInputs] = useState([DefaultInput])
+  const [inputs, setInputs] = useState<Input[]>([DefaultInput])
+  const [output, setOutput] = useState<Output>()
 
   const { inputString } = useInputContext()
 
@@ -44,11 +47,11 @@ export const Convert = () => {
           </Pane>
 
           <Pane display="flex" flex={1} flexDirection="column">
-            <OutputSelector inputs={inputs} />
+            <OutputSelector inputs={inputs} setOutput={setOutput} />
           </Pane>
 
           <Pane display="flex" flex={2} flexDirection="column">
-            <Result output={inputs[0].outputs[0]} />
+            <Result output={output} />
           </Pane>
         </Pane>
       </Card>

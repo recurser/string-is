@@ -8,6 +8,7 @@ module.exports = {
       ...common,
       'domain-convert-form',
       'domain-convert-outputSelector',
+      'domain-convert-result',
       'pages-convert',
     ],
     '/about': [...common, 'pages-about'],
