@@ -6,7 +6,6 @@ import { Base64EncodedOutput, JsonOutput, Output } from '@lib/outputs'
 export const id = 'jsonObject'
 
 export const confidence = (input: string) => {
-  console.log(/^\s*{\s*}\s*$/.test(input))
   if (isEmpty(input)) {
     return 0
   } else if (/^\s*{\s*}\s*$/.test(input)) {
