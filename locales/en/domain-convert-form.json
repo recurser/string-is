@@ -1,3 +1,4 @@
 {
-  "label": "Paste here"
+  "label": "Paste or type text here to convert it 👇",
+  "placeholder": "Eg. JSON, YAML, Base64, JWT, HTML…"
 }
