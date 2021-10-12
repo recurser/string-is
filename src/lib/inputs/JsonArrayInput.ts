@@ -3,10 +3,13 @@ import { isEmpty } from 'lodash'
 
 import { Base64EncodedOutput, JsonOutput, Output } from '@lib/outputs'
 
-export const id = 'json'
+export const id = 'jsonArray'
 
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
+    return 0
+  } else if (/^\s*\[\s*\]\s*$/.test(input)) {
+    // There's not much value in beautifying an empty object.
     return 0
   }
 
@@ -19,7 +22,7 @@ export const confidence = (input: string) => {
   }
 
   const type = Object.prototype.toString.call(obj)
-  return type === '[object Object]' || type === '[object Array]' ? 100 : 0
+  return type === '[object Array]' ? 100 : 0
 }
 
 export const outputs = [JsonOutput, Base64EncodedOutput] as Output[]
