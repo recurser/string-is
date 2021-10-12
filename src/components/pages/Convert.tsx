@@ -3,7 +3,11 @@ import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
-import { Form, OutputSelector, Result } from '@components/domain/convert'
+import {
+  InputForm,
+  OutputForm,
+  OutputSelector,
+} from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
 import { Input } from '@lib/inputs'
@@ -43,7 +47,7 @@ export const Convert = () => {
       <Card>
         <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
           <Pane display="flex" flex={2} flexDirection="column">
-            <Form />
+            <InputForm />
           </Pane>
 
           <Pane display="flex" flex={1} flexDirection="column">
@@ -51,7 +55,7 @@ export const Convert = () => {
           </Pane>
 
           <Pane display="flex" flex={2} flexDirection="column">
-            <Result output={output} />
+            <OutputForm output={output} />
           </Pane>
         </Pane>
       </Card>

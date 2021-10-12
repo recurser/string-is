@@ -6,7 +6,7 @@ import { ChangeEvent, useEffect, useMemo, createRef, useState } from 'react'
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
 
-export const Form = () => {
+export const InputForm = () => {
   const { t } = useTranslation('domain-convert-form')
   const { setInputString } = useInputContext()
   const [input, setInput] = useState('')

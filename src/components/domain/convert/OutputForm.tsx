@@ -9,7 +9,7 @@ import { Output } from '@lib/outputs'
 interface Props {
   output?: Output
 }
-export const Result = ({ output }: Props) => {
+export const OutputForm = ({ output }: Props) => {
   const { t } = useTranslation('domain-convert-result')
   const { inputString } = useInputContext()
 
