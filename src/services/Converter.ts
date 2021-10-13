@@ -1,5 +1,5 @@
 import Promise from 'bluebird'
-import { sortBy } from 'lodash'
+import { isEmpty, sortBy } from 'lodash'
 
 import { Input, inputs } from '@lib/inputs'
 import * as Base64EncodedInput from '@lib/inputs/Base64EncodedInput'
@@ -10,6 +10,10 @@ interface Candidate {
 }
 
 export const selectInputs = async (inputString: string): Promise<Input[]> => {
+  if (isEmpty(inputString)) {
+    return []
+  }
+
   const candidates = await Promise.all(
     inputs.map((input): Promise<Candidate> => {
       return new Promise((resolve, _reject) => {

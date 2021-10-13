@@ -30,6 +30,7 @@ export const Convert = () => {
       active = false
     }
 
+    // Select relevant inputs when the input string changes.
     async function select() {
       if (!active) {
         return
