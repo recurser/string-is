@@ -1,4 +1,4 @@
-import { Button, SelectMenu } from 'evergreen-ui'
+import { Button, ChevronRightIcon, SelectMenu } from 'evergreen-ui'
 import { uniqBy } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { useEffect, useMemo, useState } from 'react'
@@ -32,7 +32,11 @@ export const OutputSelector = ({
   useEffect(() => {
     if (pasted) {
       setPasted(false)
-      setSelected(undefined)
+      if (outputs.length === 1) {
+        setSelected(outputs[0].id)
+      } else {
+        setSelected(undefined)
+      }
     }
   }, [pasted, setPasted])
 
@@ -53,7 +57,9 @@ export const OutputSelector = ({
         }))}
         selected={selected}
       >
-        <Button>{selected || t('placeholder')}</Button>
+        <Button iconAfter={ChevronRightIcon}>
+          {selected || t('placeholder')}
+        </Button>
       </SelectMenu>
     </LayoutColumn>
   )
