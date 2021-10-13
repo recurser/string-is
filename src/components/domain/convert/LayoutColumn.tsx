@@ -14,6 +14,7 @@ export const LayoutColumn = ({ children, label }: PropsWithChildren<Props>) => (
       flexDirection="column"
       height="100%"
       justifyContent="center"
+      minHeight="20vh"
     >
       {children}
     </Pane>

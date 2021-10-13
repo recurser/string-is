@@ -49,6 +49,7 @@ export const InputForm = ({ setPasted }: Props) => {
         autoFocus={
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
+        height="100%"
         onChange={onChange}
         onPaste={onPaste}
         placeholder={t('placeholder')}
