@@ -30,15 +30,15 @@ export const OutputSelector = ({
   )
 
   useEffect(() => {
-    if (pasted) {
+    if (outputs.length === 0) {
+      setSelected(undefined)
+    } else if (outputs.length === 1) {
+      setSelected(outputs[0].id)
+    } else if (pasted) {
       setPasted(false)
-      if (outputs.length === 1) {
-        setSelected(outputs[0].id)
-      } else {
-        setSelected(undefined)
-      }
+      setSelected(undefined)
     }
-  }, [pasted, setPasted])
+  }, [outputs, pasted, setPasted])
 
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
@@ -57,7 +57,7 @@ export const OutputSelector = ({
         }))}
         selected={selected}
       >
-        <Button iconAfter={ChevronRightIcon}>
+        <Button disabled={outputs.length === 0} iconAfter={ChevronRightIcon}>
           {selected || t('placeholder')}
         </Button>
       </SelectMenu>
