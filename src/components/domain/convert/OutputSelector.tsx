@@ -57,7 +57,10 @@ export const OutputSelector = ({
         }))}
         selected={selected}
       >
-        <Button disabled={outputs.length === 0} iconAfter={ChevronRightIcon}>
+        <Button
+          disabled={outputs.length === 0}
+          iconAfter={selected ? ChevronRightIcon : undefined}
+        >
           {selected || t('placeholder')}
         </Button>
       </SelectMenu>
