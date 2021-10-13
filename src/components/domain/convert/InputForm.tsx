@@ -1,12 +1,23 @@
 import { Textarea } from 'evergreen-ui'
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, useEffect, useMemo, createRef, useState } from 'react'
+import {
+  ChangeEvent,
+  ClipboardEvent,
+  useEffect,
+  useMemo,
+  createRef,
+  useState,
+} from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
 
-export const InputForm = () => {
+interface Props {
+  setPasted: (pasted: boolean) => void
+}
+
+export const InputForm = ({ setPasted }: Props) => {
   const { t } = useTranslation('domain-convert-form')
   const { setInputString } = useInputContext()
   const [input, setInput] = useState('')
@@ -28,6 +39,9 @@ export const InputForm = () => {
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setInput(event.target.value)
 
+  const onPaste = (_event: ClipboardEvent<HTMLTextAreaElement>) =>
+    setPasted(true)
+
   return (
     <LayoutColumn label={t('label')}>
       <Textarea
@@ -35,6 +49,7 @@ export const InputForm = () => {
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
         onChange={onChange}
+        onPaste={onPaste}
         placeholder={t('placeholder')}
         ref={inputRef}
         value={input}
