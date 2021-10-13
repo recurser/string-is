@@ -1,7 +1,7 @@
-import { Combobox } from 'evergreen-ui'
+import { Button, SelectMenu } from 'evergreen-ui'
 import { uniqBy } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { Input } from '@lib/inputs'
@@ -10,7 +10,7 @@ import { Output } from '@lib/outputs'
 interface Props {
   inputs: Input[]
   pasted: boolean
-  setOutput: (output: Output) => void
+  setOutput: (output: Output | undefined) => void
   setPasted: (pasted: boolean) => void
 }
 
@@ -22,27 +22,39 @@ export const OutputSelector = ({
 }: Props) => {
   const { t } = useTranslation('domain-convert-outputSelector')
 
-  useEffect(() => {
-    if (pasted) {
-      console.log('pasted!')
-      setPasted(false)
-    }
-  }, [pasted, setPasted])
+  const [selected, setSelected] = useState<string | undefined>()
 
   const outputs = useMemo(
     () => uniqBy(inputs.map((input) => input.outputs).flat(), 'id'),
     [inputs],
   )
 
+  useEffect(() => {
+    if (pasted) {
+      setPasted(false)
+      setSelected(undefined)
+    }
+  }, [pasted, setPasted])
+
+  useEffect(() => {
+    const out = outputs.find((output) => output.id === selected)
+    setOutput(out)
+  }, [outputs, setOutput, selected])
+
   return (
     <LayoutColumn>
-      <Combobox
-        itemToString={(item) => (item ? item.id : '')}
-        items={outputs}
-        onChange={(selected) => setOutput(selected)}
-        openOnFocus={true}
-        placeholder={t('placeholder')}
-      />
+      <SelectMenu
+        closeOnSelect={true}
+        hasTitle={false}
+        onSelect={(item) => setSelected(item.value as string)}
+        options={outputs.map((output) => ({
+          label: output.id,
+          value: output.id,
+        }))}
+        selected={selected}
+      >
+        <Button>{selected || t('placeholder')}</Button>
+      </SelectMenu>
     </LayoutColumn>
   )
 }

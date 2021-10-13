@@ -17,7 +17,7 @@ import { DefaultInput, selectInputs } from '@services/Converter'
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const [inputs, setInputs] = useState<Input[]>([DefaultInput])
-  const [output, setOutput] = useState<Output>()
+  const [output, setOutput] = useState<Output | undefined>()
   const [pasted, setPasted] = useState<boolean>(false)
 
   const { inputString } = useInputContext()
