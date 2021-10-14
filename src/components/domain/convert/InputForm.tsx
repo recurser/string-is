@@ -1,25 +1,36 @@
 import { Textarea } from 'evergreen-ui'
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, useEffect, useMemo, createRef, useState } from 'react'
+import {
+  ChangeEvent,
+  ClipboardEvent,
+  useEffect,
+  useMemo,
+  useCallback,
+  useState,
+} from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
 
-export const InputForm = () => {
+interface Props {
+  setPasted: (pasted: boolean) => void
+}
+
+// Timeout before deciding that the user has stopped typing.
+const DebounceTimeout = 300
+
+export const InputForm = ({ setPasted }: Props) => {
   const { t } = useTranslation('domain-convert-form')
   const { setInputString } = useInputContext()
   const [input, setInput] = useState('')
-  const inputRef = createRef<HTMLTextAreaElement>()
 
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus()
-    }
-  }, [inputRef])
+  // Focus on the textarea on first load.
+  // See https://stackoverflow.com/a/67906087
+  const inputRef = useCallback((input) => input?.focus(), [])
 
   const doDebounce = useMemo(
-    () => debounce((data: string) => setInputString(data), 300),
+    () => debounce((data: string) => setInputString(data), DebounceTimeout),
     [setInputString],
   )
 
@@ -28,13 +39,19 @@ export const InputForm = () => {
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setInput(event.target.value)
 
+  const onPaste = (_event: ClipboardEvent<HTMLTextAreaElement>) => {
+    setTimeout(() => setPasted(true), DebounceTimeout)
+  }
+
   return (
     <LayoutColumn label={t('label')}>
       <Textarea
         autoFocus={
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
+        height="100%"
         onChange={onChange}
+        onPaste={onPaste}
         placeholder={t('placeholder')}
         ref={inputRef}
         value={input}

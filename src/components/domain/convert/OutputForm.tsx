@@ -23,7 +23,12 @@ export const OutputForm = ({ output }: Props) => {
 
   return (
     <LayoutColumn label={output ? `3. ${output?.id} 👇` : t('default_label')}>
-      <Textarea disabled={!output} readOnly={true} value={value} />
+      <Textarea
+        disabled={!output}
+        height="100%"
+        readOnly={true}
+        value={value}
+      />
     </LayoutColumn>
   )
 }
