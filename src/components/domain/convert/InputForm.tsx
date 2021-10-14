@@ -4,6 +4,7 @@ import useTranslation from 'next-translate/useTranslation'
 import {
   ChangeEvent,
   ClipboardEvent,
+  KeyboardEvent,
   useEffect,
   useMemo,
   useCallback,
@@ -39,6 +40,16 @@ export const InputForm = ({ setPasted }: Props) => {
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setInput(event.target.value)
 
+  // This is a hack to trigger the menu when the OutputSelector
+  // button is focused on. We know from the tabIndex that that
+  // button will be next when tab is pressed. Using the onFocus()
+  // event on the button instead opens up a *huge* can of worms.
+  const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Tab') {
+      setTimeout(() => setPasted(true), DebounceTimeout)
+    }
+  }
+
   const onPaste = (_event: ClipboardEvent<HTMLTextAreaElement>) => {
     setTimeout(() => setPasted(true), DebounceTimeout)
   }
@@ -51,9 +62,11 @@ export const InputForm = ({ setPasted }: Props) => {
         } /* This doesn't seem to do anything, but might help in some browsers? */
         height="100%"
         onChange={onChange}
+        onKeyDown={onKeyDown}
         onPaste={onPaste}
         placeholder={t('placeholder')}
         ref={inputRef}
+        tabIndex={1}
         value={input}
       />
     </LayoutColumn>

@@ -27,6 +27,7 @@ export const OutputForm = ({ output }: Props) => {
         disabled={!output}
         height="100%"
         readOnly={true}
+        tabIndex={3}
         value={value}
       />
     </LayoutColumn>
