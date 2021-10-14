@@ -18,7 +18,7 @@ export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const [inputs, setInputs] = useState<Input[]>([DefaultInput])
   const [output, setOutput] = useState<Output | undefined>()
-  const [pasted, setPasted] = useState<boolean>(false)
+  const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
 
   const { inputString } = useInputContext()
 
@@ -49,15 +49,15 @@ export const Convert = () => {
       <Card>
         <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
           <Pane display="flex" flex={2} flexDirection="column">
-            <InputForm setPasted={setPasted} />
+            <InputForm setTriggerMenu={setTriggerMenu} />
           </Pane>
 
           <Pane display="flex" flex={1} flexDirection="column">
             <OutputSelector
               inputs={inputs}
-              pasted={pasted}
               setOutput={setOutput}
-              setPasted={setPasted}
+              setTriggerMenu={setTriggerMenu}
+              triggerMenu={triggerMenu}
             />
           </Pane>
 

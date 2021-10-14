@@ -1,7 +1,7 @@
 import { Button, ChevronRightIcon, Pane, SelectMenu } from 'evergreen-ui'
 import { uniqBy } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { createRef, useCallback, useEffect, useMemo, useState } from 'react'
+import { createRef, useEffect, useMemo, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { Input } from '@lib/inputs'
@@ -9,16 +9,16 @@ import { Output } from '@lib/outputs'
 
 interface Props {
   inputs: Input[]
-  pasted: boolean
+  triggerMenu: boolean
   setOutput: (output: Output | undefined) => void
-  setPasted: (pasted: boolean) => void
+  setTriggerMenu: (triggerMenu: boolean) => void
 }
 
 export const OutputSelector = ({
   inputs,
-  pasted,
+  triggerMenu,
   setOutput,
-  setPasted,
+  setTriggerMenu,
 }: Props) => {
   const { t } = useTranslation('domain-convert-outputSelector')
 
@@ -31,20 +31,19 @@ export const OutputSelector = ({
     [inputs],
   )
 
-  const openMenu = useCallback(() => buttonRef.current?.click(), [buttonRef])
-
   useEffect(() => {
     if (outputs.length === 0) {
       setSelected(undefined)
     } else if (outputs.length === 1) {
       setSelected(outputs[0].id)
-    } else if (pasted) {
-      setPasted(false)
+    } else if (triggerMenu) {
+      setTriggerMenu(false)
       setSelected(undefined)
-      // Trigger opening of the output list after paste.
-      openMenu()
+      // Trigger opening of the output list after paste, if
+      // we have more than one element to choose from.
+      buttonRef.current?.click()
     }
-  }, [openMenu, outputs, pasted, setPasted])
+  }, [buttonRef, outputs, triggerMenu, setTriggerMenu])
 
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
@@ -68,8 +67,8 @@ export const OutputSelector = ({
             disabled={outputs.length === 0}
             flex={1}
             iconAfter={selected ? ChevronRightIcon : undefined}
-            onFocus={openMenu}
             ref={buttonRef}
+            tabIndex={2}
           >
             {selected || t('placeholder')}
           </Button>
