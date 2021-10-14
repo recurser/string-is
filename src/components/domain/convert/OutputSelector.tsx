@@ -1,7 +1,7 @@
-import { Button, ChevronRightIcon, SelectMenu } from 'evergreen-ui'
+import { Button, ChevronRightIcon, Pane, SelectMenu } from 'evergreen-ui'
 import { uniqBy } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { useEffect, useMemo, useState } from 'react'
+import { createRef, useCallback, useEffect, useMemo, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { Input } from '@lib/inputs'
@@ -24,10 +24,14 @@ export const OutputSelector = ({
 
   const [selected, setSelected] = useState<string | undefined>()
 
+  const buttonRef = createRef<HTMLButtonElement>()
+
   const outputs = useMemo(
     () => uniqBy(inputs.map((input) => input.outputs).flat(), 'id'),
     [inputs],
   )
+
+  const openMenu = useCallback(() => buttonRef.current?.click(), [buttonRef])
 
   useEffect(() => {
     if (outputs.length === 0) {
@@ -37,8 +41,10 @@ export const OutputSelector = ({
     } else if (pasted) {
       setPasted(false)
       setSelected(undefined)
+      // Trigger opening of the output list after paste.
+      openMenu()
     }
-  }, [outputs, pasted, setPasted])
+  }, [openMenu, outputs, pasted, setPasted])
 
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
@@ -57,12 +63,17 @@ export const OutputSelector = ({
         }))}
         selected={selected}
       >
-        <Button
-          disabled={outputs.length === 0}
-          iconAfter={selected ? ChevronRightIcon : undefined}
-        >
-          {selected || t('placeholder')}
-        </Button>
+        <Pane display="flex">
+          <Button
+            disabled={outputs.length === 0}
+            flex={1}
+            iconAfter={selected ? ChevronRightIcon : undefined}
+            onFocus={openMenu}
+            ref={buttonRef}
+          >
+            {selected || t('placeholder')}
+          </Button>
+        </Pane>
       </SelectMenu>
     </LayoutColumn>
   )
