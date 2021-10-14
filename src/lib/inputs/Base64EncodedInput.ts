@@ -2,7 +2,7 @@ import { isEmpty } from 'lodash'
 
 import { Base64DecodedOutput, Output } from '@lib/outputs'
 
-export const id = 'base64encoded'
+export const id = 'base64Encoded'
 
 // See https://stackoverflow.com/a/8571649
 export const confidence = (input: string) => {
