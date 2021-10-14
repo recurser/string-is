@@ -22,7 +22,7 @@ interface Props {
 const DebounceTimeout = 300
 
 export const InputForm = ({ setTriggerMenu }: Props) => {
-  const { t } = useTranslation('domain-convert-form')
+  const { t } = useTranslation('domain-convert-inputForm')
   const { setInputString } = useInputContext()
   const [input, setInput] = useState('')
 

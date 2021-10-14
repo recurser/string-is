@@ -10,6 +10,7 @@ import { Output } from '@lib/outputs'
 interface Props {
   inputs: Input[]
   triggerMenu: boolean
+  setFocusOutput: (focusOutput: boolean) => void
   setOutput: (output: Output | undefined) => void
   setTriggerMenu: (triggerMenu: boolean) => void
 }
@@ -17,6 +18,7 @@ interface Props {
 export const OutputSelector = ({
   inputs,
   triggerMenu,
+  setFocusOutput,
   setOutput,
   setTriggerMenu,
 }: Props) => {
@@ -34,16 +36,18 @@ export const OutputSelector = ({
   useEffect(() => {
     if (outputs.length === 0) {
       setSelected(undefined)
-    } else if (outputs.length === 1) {
+    } else if (!triggerMenu && outputs.length === 1) {
       setSelected(outputs[0].id)
     } else if (triggerMenu) {
       setTriggerMenu(false)
-      setSelected(undefined)
-      // Trigger opening of the output list after paste, if
+      if (!selected) {
+        setSelected(outputs[0].id)
+      }
+      // Trigger opening of the output list after paste or tab, if
       // we have more than one element to choose from.
       buttonRef.current?.click()
     }
-  }, [buttonRef, outputs, triggerMenu, setTriggerMenu])
+  }, [buttonRef, outputs, selected, triggerMenu, setTriggerMenu])
 
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
@@ -55,6 +59,7 @@ export const OutputSelector = ({
       <SelectMenu
         closeOnSelect={true}
         hasTitle={false}
+        onCloseComplete={() => setFocusOutput(true)}
         onSelect={(item) => setSelected(item.value as string)}
         options={outputs.map((output) => ({
           label: output.id,

@@ -19,6 +19,7 @@ export const Convert = () => {
   const [inputs, setInputs] = useState<Input[]>([DefaultInput])
   const [output, setOutput] = useState<Output | undefined>()
   const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
+  const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
   const { inputString } = useInputContext()
 
@@ -55,6 +56,7 @@ export const Convert = () => {
           <Pane display="flex" flex={1} flexDirection="column">
             <OutputSelector
               inputs={inputs}
+              setFocusOutput={setFocusOutput}
               setOutput={setOutput}
               setTriggerMenu={setTriggerMenu}
               triggerMenu={triggerMenu}
@@ -62,7 +64,11 @@ export const Convert = () => {
           </Pane>
 
           <Pane display="flex" flex={2} flexDirection="column">
-            <OutputForm output={output} />
+            <OutputForm
+              focusOutput={focusOutput}
+              output={output}
+              setFocusOutput={setFocusOutput}
+            />
           </Pane>
         </Pane>
       </Card>

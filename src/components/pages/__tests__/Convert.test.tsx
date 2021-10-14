@@ -15,7 +15,7 @@ describe('Convert', () => {
     })
 
     const heading = screen.getByRole('label', {
-      name: /domain-convert-form:label/i,
+      name: /domain-convert-InputForm:label/i,
     })
 
     expect(heading).toBeInTheDocument()
