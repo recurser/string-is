@@ -15,13 +15,13 @@ import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
 
 interface Props {
-  setPasted: (pasted: boolean) => void
+  setTriggerMenu: (triggerMenu: boolean) => void
 }
 
 // Timeout before deciding that the user has stopped typing.
 const DebounceTimeout = 300
 
-export const InputForm = ({ setPasted }: Props) => {
+export const InputForm = ({ setTriggerMenu }: Props) => {
   const { t } = useTranslation('domain-convert-form')
   const { setInputString } = useInputContext()
   const [input, setInput] = useState('')
@@ -46,12 +46,12 @@ export const InputForm = ({ setPasted }: Props) => {
   // event on the button instead opens up a *huge* can of worms.
   const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Tab') {
-      setTimeout(() => setPasted(true), DebounceTimeout)
+      setTimeout(() => setTriggerMenu(true), DebounceTimeout)
     }
   }
 
   const onPaste = (_event: ClipboardEvent<HTMLTextAreaElement>) => {
-    setTimeout(() => setPasted(true), DebounceTimeout)
+    setTimeout(() => setTriggerMenu(true), DebounceTimeout)
   }
 
   return (

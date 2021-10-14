@@ -9,16 +9,16 @@ import { Output } from '@lib/outputs'
 
 interface Props {
   inputs: Input[]
-  pasted: boolean
+  triggerMenu: boolean
   setOutput: (output: Output | undefined) => void
-  setPasted: (pasted: boolean) => void
+  setTriggerMenu: (triggerMenu: boolean) => void
 }
 
 export const OutputSelector = ({
   inputs,
-  pasted,
+  triggerMenu,
   setOutput,
-  setPasted,
+  setTriggerMenu,
 }: Props) => {
   const { t } = useTranslation('domain-convert-outputSelector')
 
@@ -36,14 +36,14 @@ export const OutputSelector = ({
       setSelected(undefined)
     } else if (outputs.length === 1) {
       setSelected(outputs[0].id)
-    } else if (pasted) {
-      setPasted(false)
+    } else if (triggerMenu) {
+      setTriggerMenu(false)
       setSelected(undefined)
       // Trigger opening of the output list after paste, if
       // we have more than one element to choose from.
       buttonRef.current?.click()
     }
-  }, [buttonRef, outputs, pasted, setPasted])
+  }, [buttonRef, outputs, triggerMenu, setTriggerMenu])
 
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
