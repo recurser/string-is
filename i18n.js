@@ -6,9 +6,9 @@ module.exports = {
   pages: {
     '/': [
       ...common,
-      'domain-convert-form',
+      'domain-convert-inputForm',
+      'domain-convert-outputForm',
       'domain-convert-outputSelector',
-      'domain-convert-result',
       'pages-convert',
     ],
     '/about': [...common, 'pages-about'],

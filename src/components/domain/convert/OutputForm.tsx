@@ -10,8 +10,9 @@ interface Props {
   output?: Output
 }
 export const OutputForm = ({ output }: Props) => {
-  const { t } = useTranslation('domain-convert-result')
+  const { t } = useTranslation('domain-convert-outputForm')
   const { inputString } = useInputContext()
+  const disabled = !output
 
   const value = useMemo(() => {
     if (!output) {
@@ -22,9 +23,12 @@ export const OutputForm = ({ output }: Props) => {
   }, [inputString, output])
 
   return (
-    <LayoutColumn label={output ? `3. ${output?.id} 👇` : t('default_label')}>
+    <LayoutColumn
+      disabled={disabled}
+      label={output ? `3. ${output?.id} 👇` : t('default_label')}
+    >
       <Textarea
-        disabled={!output}
+        disabled={disabled}
         height="100%"
         readOnly={true}
         tabIndex={3}
