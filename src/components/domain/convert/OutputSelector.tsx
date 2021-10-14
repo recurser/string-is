@@ -10,6 +10,7 @@ import { Output } from '@lib/outputs'
 interface Props {
   inputs: Input[]
   triggerMenu: boolean
+  setFocusOutput: (focusOutput: boolean) => void
   setOutput: (output: Output | undefined) => void
   setTriggerMenu: (triggerMenu: boolean) => void
 }
@@ -17,6 +18,7 @@ interface Props {
 export const OutputSelector = ({
   inputs,
   triggerMenu,
+  setFocusOutput,
   setOutput,
   setTriggerMenu,
 }: Props) => {
@@ -57,6 +59,7 @@ export const OutputSelector = ({
       <SelectMenu
         closeOnSelect={true}
         hasTitle={false}
+        onCloseComplete={() => setFocusOutput(true)}
         onSelect={(item) => setSelected(item.value as string)}
         options={outputs.map((output) => ({
           label: output.id,
