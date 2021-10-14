@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Base64EncodedOutput, Output } from '@lib/outputs'
+import { Base64EncodedOutput, Output, UrlEncodedOutput } from '@lib/outputs'
 
 export const id = 'plain'
 
@@ -12,4 +12,4 @@ export const confidence = (input: string) => {
   return 1
 }
 
-export const outputs = [Base64EncodedOutput] as Output[]
+export const outputs = [Base64EncodedOutput, UrlEncodedOutput] as Output[]

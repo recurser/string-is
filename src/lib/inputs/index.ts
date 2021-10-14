@@ -2,6 +2,7 @@ import * as Base64EncodedInput from '@lib/inputs/Base64EncodedInput'
 import * as JsonArrayInput from '@lib/inputs/JsonArrayInput'
 import * as JsonObjectInput from '@lib/inputs/JsonObjectInput'
 import * as PlainInput from '@lib/inputs/PlainInput'
+import * as UrlEncodedInput from '@lib/inputs/UrlEncodedInput'
 import { Output } from '@lib/outputs'
 
 export interface Input {
@@ -15,4 +16,5 @@ export const inputs: Input[] = [
   JsonArrayInput,
   JsonObjectInput,
   PlainInput,
+  UrlEncodedInput,
 ]
