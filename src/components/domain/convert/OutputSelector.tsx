@@ -34,16 +34,18 @@ export const OutputSelector = ({
   useEffect(() => {
     if (outputs.length === 0) {
       setSelected(undefined)
-    } else if (outputs.length === 1) {
+    } else if (!triggerMenu && outputs.length === 1) {
       setSelected(outputs[0].id)
     } else if (triggerMenu) {
       setTriggerMenu(false)
-      setSelected(undefined)
-      // Trigger opening of the output list after paste, if
+      if (!selected) {
+        setSelected(outputs[0].id)
+      }
+      // Trigger opening of the output list after paste or tab, if
       // we have more than one element to choose from.
       buttonRef.current?.click()
     }
-  }, [buttonRef, outputs, triggerMenu, setTriggerMenu])
+  }, [buttonRef, outputs, selected, triggerMenu, setTriggerMenu])
 
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
