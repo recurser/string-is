@@ -5,6 +5,7 @@ export * as UrlDecodeOutput from '@lib/outputs/UrlDecodeOutput'
 export * as UrlEncodeOutput from '@lib/outputs/UrlEncodeOutput'
 
 export interface Output {
-  operation: (input: string) => string
   id: string
+  operation: (input: string) => string
+  overrides: string[]
 }

@@ -33,8 +33,15 @@ export const selectOutputs = async (inputString: string): Promise<Output[]> => {
 
   // 1. Remove duplicates.
   // 2. Remove any with zero confidence.
+  // 3. Remove any that conflict with higher confidence options.
+  let overrides: string[] = []
   const outputs = uniqBy(sorted, (candidate) => candidate.output.id)
     .filter((candidate) => candidate.confidence > 0)
+    .filter((candidate) => {
+      const overriden = overrides.includes(candidate.output.id)
+      overrides = overrides.concat(candidate.output.overrides || [])
+      return !overriden
+    })
     .map((candidate: Candidate) => candidate.output)
 
   return outputs

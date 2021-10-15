@@ -5,3 +5,5 @@ export const id = 'base64Decode'
 export const operation = (input: string) => {
   return decode(input)
 }
+
+export const overrides = ['base64Encode']
