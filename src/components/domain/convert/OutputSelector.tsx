@@ -1,14 +1,12 @@
 import { Button, ChevronRightIcon, Pane, SelectMenu } from 'evergreen-ui'
-import { uniqBy } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { createRef, useEffect, useMemo, useState } from 'react'
+import { createRef, useEffect, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
-import { Input } from '@lib/inputs'
 import { Output } from '@lib/outputs'
 
 interface Props {
-  inputs: Input[]
+  outputs: Output[]
   triggerMenu: boolean
   setFocusOutput: (focusOutput: boolean) => void
   setOutput: (output: Output | undefined) => void
@@ -16,7 +14,7 @@ interface Props {
 }
 
 export const OutputSelector = ({
-  inputs,
+  outputs,
   triggerMenu,
   setFocusOutput,
   setOutput,
@@ -29,13 +27,6 @@ export const OutputSelector = ({
   // A bit of a hack due to limitations with <SelectMenu />, but we use this
   // to be able to trigger a click and open the menu programatically.
   const buttonRef = createRef<HTMLButtonElement>()
-
-  // We may have duplicate outputs, if more than one input format
-  // supports the same output. This makes a unique list.
-  const outputs = useMemo(
-    () => uniqBy(inputs.map((input) => input.outputs).flat(), 'id'),
-    [inputs],
-  )
 
   useEffect(() => {
     if (outputs.length === 0) {
