@@ -18,6 +18,7 @@
     "evergreen-ui": "^6.5.1",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.2",
+    "js-beautify": "^1.14.0",
     "lodash": "^4.17.21",
     "next": "11.1.2",
     "next-translate": "^1.1.0",
