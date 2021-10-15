@@ -1,4 +1,4 @@
-export const id = 'urlEncoded'
+export const id = 'urlEncode'
 
 /**
  * @see https://kimizuka.hatenablog.com/entry/2015/07/19/000000

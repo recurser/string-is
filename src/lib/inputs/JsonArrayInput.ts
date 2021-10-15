@@ -2,10 +2,10 @@ import { parse } from 'hjson'
 import { isEmpty } from 'lodash'
 
 import {
-  Base64EncodedOutput,
+  Base64EncodeOutput,
   JsonOutput,
   Output,
-  UrlEncodedOutput,
+  UrlEncodeOutput,
 } from '@lib/outputs'
 
 export const id = 'jsonArray'
@@ -32,6 +32,6 @@ export const confidence = (input: string) => {
 
 export const outputs = [
   JsonOutput,
-  Base64EncodedOutput,
-  UrlEncodedOutput,
+  Base64EncodeOutput,
+  UrlEncodeOutput,
 ] as Output[]
