@@ -36,7 +36,11 @@ export const OutputForm = ({ focusOutput, output, setFocusOutput }: Props) => {
   return (
     <LayoutColumn
       disabled={disabled}
-      label={output ? `3. ${output?.id} 👇` : t('default_label')}
+      label={
+        output
+          ? `3. ${t(`lib-outputs-results:${output.id}`)} 👇`
+          : t('default_label')
+      }
     >
       <Textarea
         disabled={disabled}

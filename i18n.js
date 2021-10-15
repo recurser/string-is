@@ -9,6 +9,8 @@ module.exports = {
       'domain-convert-inputForm',
       'domain-convert-outputForm',
       'domain-convert-outputSelector',
+      'lib-outputs-commands',
+      'lib-outputs-results',
       'pages-convert',
     ],
     '/about': [...common, 'pages-about'],
