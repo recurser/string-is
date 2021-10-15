@@ -26,8 +26,12 @@ export const OutputSelector = ({
 
   const [selected, setSelected] = useState<string | undefined>()
 
+  // A bit of a hack due to limitations with <SelectMenu />, but we use this
+  // to be able to trigger a click and open the menu programatically.
   const buttonRef = createRef<HTMLButtonElement>()
 
+  // We may have duplicate outputs, if more than one input format
+  // supports the same output. This makes a unique list.
   const outputs = useMemo(
     () => uniqBy(inputs.map((input) => input.outputs).flat(), 'id'),
     [inputs],
@@ -35,10 +39,19 @@ export const OutputSelector = ({
 
   useEffect(() => {
     if (outputs.length === 0) {
+      // If there are no outputs to choose from, clear the menu.
       setSelected(undefined)
+    } else if (
+      selected &&
+      !outputs.map((output) => output.id).includes(selected)
+    ) {
+      // If we have previously selected an option that is no longer available, select the first available.
+      setSelected(outputs[0].id)
     } else if (!triggerMenu && outputs.length === 1) {
+      // If there's only one option to choose from, select it.
       setSelected(outputs[0].id)
     } else if (triggerMenu) {
+      // If we've been asked to open the menu, select the first option if nothing has been selected.
       setTriggerMenu(false)
       if (!selected) {
         setSelected(outputs[0].id)
@@ -47,8 +60,11 @@ export const OutputSelector = ({
       // we have more than one element to choose from.
       buttonRef.current?.click()
     }
-  }, [buttonRef, outputs, selected, triggerMenu, setTriggerMenu])
+  }, [buttonRef, outputs, selected, setSelected, triggerMenu, setTriggerMenu])
 
+  // Set the output based on the selected value. Ideally we could use the
+  // output directly in <SelectMenu />, but unfortunately it only supports
+  // string and number values.
   useEffect(() => {
     const out = outputs.find((output) => output.id === selected)
     setOutput(out)
