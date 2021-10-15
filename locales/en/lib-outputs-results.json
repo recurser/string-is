@@ -1,0 +1,8 @@
+{
+  "base64Decode": "Base64 decoded",
+  "base64Encode": "Base64 encoded",
+  "html": "Formatted HTML",
+  "json": "Formatted JSON",
+  "urlDecode": "URL decoded",
+  "urlEncode": "URL encoded"
+}

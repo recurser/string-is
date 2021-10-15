@@ -69,7 +69,7 @@ export const OutputSelector = ({
         onCloseComplete={() => setFocusOutput(true)}
         onSelect={(item) => setSelected(item.value as string)}
         options={outputs.map((output) => ({
-          label: output.id,
+          label: t(`lib-outputs-commands:${output.id}`),
           value: output.id,
         }))}
         selected={selected}
@@ -82,7 +82,9 @@ export const OutputSelector = ({
             ref={buttonRef}
             tabIndex={2}
           >
-            {selected || t('placeholder')}
+            {selected
+              ? t(`lib-outputs-commands:${selected}`)
+              : t('placeholder')}
           </Button>
         </Pane>
       </SelectMenu>
