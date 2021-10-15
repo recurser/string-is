@@ -10,3 +10,5 @@ export const operation = (input: string) => {
     .replace(/[!'()]/g, escape)
     .replace(/\*/g, '%2A')
 }
+
+export const overrides = ['urlDecode']

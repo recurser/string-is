@@ -10,13 +10,12 @@ import {
 } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
-import { Input } from '@lib/inputs'
 import { Output } from '@lib/outputs'
-import { DefaultInput, selectInputs } from '@services/Converter'
+import { selectOutputs } from '@services/Converter'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
-  const [inputs, setInputs] = useState<Input[]>([DefaultInput])
+  const [outputs, setOutputs] = useState<Output[]>([])
   const [output, setOutput] = useState<Output | undefined>()
   const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
@@ -31,13 +30,12 @@ export const Convert = () => {
       active = false
     }
 
-    // Select relevant inputs when the input string changes.
+    // Select relevant outputs when the input string changes.
     async function select() {
       if (!active) {
         return
       }
-      const selected = await selectInputs(inputString)
-      setInputs(selected)
+      setOutputs(await selectOutputs(inputString))
     }
   }, [inputString])
 
@@ -55,7 +53,7 @@ export const Convert = () => {
 
           <Pane display="flex" flex={1} flexDirection="column">
             <OutputSelector
-              inputs={inputs}
+              outputs={outputs}
               setFocusOutput={setFocusOutput}
               setOutput={setOutput}
               setTriggerMenu={setTriggerMenu}
