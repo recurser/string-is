@@ -1,8 +1,8 @@
-import { Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useMemo } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { CodeTextarea } from '@components/forms'
 import { useInputContext } from '@contexts/InputContext'
 import { Output } from '@lib/outputs'
 
@@ -42,7 +42,7 @@ export const OutputForm = ({ focusOutput, output, setFocusOutput }: Props) => {
           : t('default_label')
       }
     >
-      <Textarea
+      <CodeTextarea
         disabled={disabled}
         height="100%"
         readOnly={true}

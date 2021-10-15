@@ -1,4 +1,3 @@
-import { Textarea } from 'evergreen-ui'
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import {
@@ -12,6 +11,7 @@ import {
 } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { CodeTextarea } from '@components/forms'
 import { useInputContext } from '@contexts/InputContext'
 
 interface Props {
@@ -56,7 +56,7 @@ export const InputForm = ({ setTriggerMenu }: Props) => {
 
   return (
     <LayoutColumn label={t('label')}>
-      <Textarea
+      <CodeTextarea
         autoFocus={
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
