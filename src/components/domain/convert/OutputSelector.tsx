@@ -36,8 +36,8 @@ export const OutputSelector = ({
       selected &&
       !outputs.map((output) => output.id).includes(selected)
     ) {
-      // If we have previously selected an option that is no longer available, select the first available.
-      setSelected(outputs[0].id)
+      // If we have previously selected an option that is no longer available, clear the menu.
+      setSelected(undefined)
     } else if (!triggerMenu && outputs.length === 1) {
       // If there's only one option to choose from, select it.
       setSelected(outputs[0].id)
