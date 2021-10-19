@@ -32,6 +32,7 @@
     "@testing-library/react": "^12.1.2",
     "@types/bluebird": "^3.5.36",
     "@types/hjson": "^2.4.3",
+    "@types/js-beautify": "^1.13.3",
     "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.3",
     "@types/react": "17.0.27",

@@ -60,6 +60,7 @@ export const InputForm = ({ setTriggerMenu }: Props) => {
         autoFocus={
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
+        flex={1}
         height="100%"
         onChange={onChange}
         onKeyDown={onKeyDown}

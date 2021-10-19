@@ -12,9 +12,11 @@ import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
 import { Output } from '@lib/outputs'
 import { selectOutputs } from '@services/Converter'
+import { useBreakpoints } from '@services/Responsive'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
+  const { isMobile } = useBreakpoints()
   const [outputs, setOutputs] = useState<Output[]>([])
   const [output, setOutput] = useState<Output | undefined>()
   const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
@@ -46,7 +48,11 @@ export const Convert = () => {
       </Head>
 
       <Card>
-        <Pane display="flex" flexDirection="row" gap={majorScale(3)}>
+        <Pane
+          display="flex"
+          flexDirection={isMobile ? 'column' : 'row'}
+          gap={majorScale(3)}
+        >
           <Pane display="flex" flex={2} flexDirection="column">
             <InputForm setTriggerMenu={setTriggerMenu} />
           </Pane>

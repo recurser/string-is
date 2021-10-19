@@ -44,6 +44,7 @@ export const OutputForm = ({ focusOutput, output, setFocusOutput }: Props) => {
     >
       <CodeTextarea
         disabled={disabled}
+        flex={1}
         height="100%"
         readOnly={true}
         ref={textareaRef}

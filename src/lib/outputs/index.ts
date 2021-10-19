@@ -6,6 +6,7 @@ export * as UrlDecodeOutput from '@lib/outputs/UrlDecodeOutput'
 export * as UrlEncodeOutput from '@lib/outputs/UrlEncodeOutput'
 
 export interface Output {
+  eligible?: (input: string) => boolean
   id: string
   operation: (input: string) => string
   overrides: string[]
