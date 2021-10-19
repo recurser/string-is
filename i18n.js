@@ -13,6 +13,7 @@ module.exports = {
       'lib-outputs-results',
       'pages-convert',
     ],
+    '/404': [...common, 'pages-errors-notFound'],
     '/about': [...common, 'pages-about'],
     '/contact': [...common, 'pages-contact'],
     '/privacy': [...common, 'pages-privacy'],
