@@ -43,6 +43,9 @@ export const selectOutputs = async (inputString: string): Promise<Output[]> => {
       return !overriden
     })
     .map((candidate: Candidate) => candidate.output)
+    // Outputs can implement an optional eligible() function to decide if
+    // a particular string is a bad fit.
+    .filter((output) => !output.eligible || output.eligible(inputString))
 
   return outputs
 }
