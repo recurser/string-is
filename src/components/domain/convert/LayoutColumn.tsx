@@ -1,6 +1,7 @@
 import { majorScale, Pane, Paragraph } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
 
+import { useBreakpoints } from '@services/Responsive'
 import { theme } from '@services/Theme'
 
 interface Props {
@@ -12,6 +13,7 @@ export const LayoutColumn = ({
   disabled,
   label,
 }: PropsWithChildren<Props>) => {
+  const { isMobile } = useBreakpoints()
   const labelColor = disabled ? theme.colors.gray500 : undefined
   const style = disabled ? { filter: 'grayscale(100%)' } : undefined
 
@@ -27,14 +29,14 @@ export const LayoutColumn = ({
           {label}
         </Paragraph>
       )}
-      {!label && <Paragraph>&nbsp;</Paragraph>}
+      {!label && !isMobile && <Paragraph>&nbsp;</Paragraph>}
       <Pane
         display="flex"
         flex={1}
         flexDirection="column"
         height="100%"
         justifyContent="center"
-        minHeight="20vh"
+        minHeight={isMobile ? undefined : '20vh'}
       >
         {children}
       </Pane>
