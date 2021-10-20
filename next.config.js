@@ -84,6 +84,9 @@ const headers = async () => {
 }
 
 module.exports = nextTranslate({
+  env: {
+    CONTACT_EMAIL: 'hello@daveperrett.com',
+  },
   headers,
   reactStrictMode: true,
   webpack: (config, { isServer, webpack }) => {

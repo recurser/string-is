@@ -1,0 +1,12 @@
+{
+  "another_site_heading": "Did you follow a link from another site?",
+  "another_site_paragraph": "Links from other sites can sometimes be outdated or misspelled. Let me know where you came from and I can try to contact the other site in order to fix the problem.",
+  "contact_support": "Please <link>email me</link> if you need further assistance.",
+  "home_button": "Return Home",
+  "our_site_heading": "Did you follow a link from within this site?",
+  "our_site_paragraph": "If you reached this page from another part of the site, please let me know so I can correct the mistake.",
+  "page_heading": "Sorry, that page isn’t here",
+  "page_title": "404 Page Not Found | string.is",
+  "typo_heading": "Did you type the URL?",
+  "typo_paragraph": "You may have typed the address incorrectly. Check to make sure you’ve got the exact right spelling, capitalization, etc."
+}
