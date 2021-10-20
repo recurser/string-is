@@ -15,7 +15,6 @@ module.exports = {
     ],
     '/404': [...common, 'pages-errors-notFound'],
     '/about': [...common, 'pages-about'],
-    '/contact': [...common, 'pages-contact'],
     '/privacy': [...common, 'pages-privacy'],
     '/security': [...common, 'pages-security'],
     '/terms': [...common, 'pages-terms'],
