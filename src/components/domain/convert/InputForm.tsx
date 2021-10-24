@@ -1,5 +1,6 @@
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
+import { useRouter } from 'next/router'
 import {
   ChangeEvent,
   ClipboardEvent,
@@ -25,6 +26,15 @@ export const InputForm = ({ setTriggerMenu }: Props) => {
   const { t } = useTranslation('domain-convert-inputForm')
   const { setInputString } = useInputContext()
   const [input, setInput] = useState('')
+
+  // If a string was provided via the URL, initialize with it.
+  const router = useRouter()
+  const { input: urlInput } = router?.query || {}
+  useEffect(() => {
+    if (urlInput) {
+      setInput(urlInput as string)
+    }
+  }, [urlInput])
 
   // Focus on the textarea on first load.
   // See https://stackoverflow.com/a/67906087
