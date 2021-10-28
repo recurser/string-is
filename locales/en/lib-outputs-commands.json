@@ -3,6 +3,7 @@
   "base64Encode": "Base64 encode",
   "html": "HTML format",
   "json": "JSON format",
+  "jsonToYaml": "JSON to YAML",
   "urlDecode": "URL decode",
   "urlEncode": "URL encode",
   "yaml": "YAML format",

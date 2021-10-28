@@ -1,7 +1,7 @@
 import { parse } from 'hjson'
 import { isEmpty } from 'lodash'
 
-import { JsonOutput, Output } from '@lib/outputs'
+import { JsonOutput, JsonToYamlOutput, Output } from '@lib/outputs'
 
 export const id = 'jsonArray'
 
@@ -25,4 +25,4 @@ export const confidence = (input: string) => {
   return type === '[object Array]' ? 100 : 0
 }
 
-export const outputs = [JsonOutput] as Output[]
+export const outputs = [JsonOutput, JsonToYamlOutput] as Output[]
