@@ -1,12 +1,9 @@
 import { parse } from 'hjson'
 import { Parser } from 'json2csv'
+import { keyBy } from 'lodash'
 
 export const id = 'jsonToCsv'
 
-/**
- * Note that this does NOT work for JSON arrays, since json2csv
- * expects column names (ie key → value objects).
- */
 export const operation = (input: string): string => {
   let obj
 
@@ -14,6 +11,15 @@ export const operation = (input: string): string => {
     obj = parse(input)
   } catch (err) {
     return ''
+  }
+
+  // json2csv doesn't work for arrays - it expects column names (ie key → value objects).
+  if (Array.isArray(obj)) {
+    let index = 0
+    obj = keyBy(obj, () => {
+      index++
+      return `field ${index}`
+    })
   }
 
   const parser = new Parser()
