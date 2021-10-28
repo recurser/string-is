@@ -57,7 +57,12 @@ export const Convert = () => {
             <InputForm setTriggerMenu={setTriggerMenu} />
           </Pane>
 
-          <Pane display="flex" flex={1} flexDirection="column">
+          <Pane
+            display="flex"
+            flex={1}
+            flexDirection="column"
+            maxWidth={majorScale(20)}
+          >
             <OutputSelector
               outputs={outputs}
               setFocusOutput={setFocusOutput}
