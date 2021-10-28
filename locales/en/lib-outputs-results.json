@@ -3,6 +3,10 @@
   "base64Encode": "Base64 encoded",
   "html": "Formatted HTML",
   "json": "Formatted JSON",
+  "jsonToCsv": "CSV",
+  "jsonToYaml": "Formatted YAML",
   "urlDecode": "URL decoded",
-  "urlEncode": "URL encoded"
+  "urlEncode": "URL encoded",
+  "yaml": "Formatted YAML",
+  "yamlToJson": "Formatted JSON"
 }

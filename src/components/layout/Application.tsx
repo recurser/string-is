@@ -15,7 +15,7 @@ export const Application = ({
       justifyContent="center"
       marginLeft="auto"
       marginRight="auto"
-      maxWidth={900}
+      maxWidth={1600}
       paddingTop={majorScale(3)}
     >
       <Header />

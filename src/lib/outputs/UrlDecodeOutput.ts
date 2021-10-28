@@ -1,6 +1,6 @@
 export const id = 'urlDecode'
 
-export const operation = (input: string) => {
+export const operation = (input: string): string => {
   return decodeURIComponent(input)
 }
 

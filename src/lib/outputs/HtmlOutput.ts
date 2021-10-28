@@ -9,6 +9,6 @@ const defaults = {
   space_in_empty_paren: true,
 }
 
-export const operation = (input: string) => {
+export const operation = (input: string): string => {
   return html(input, defaults)
 }

@@ -24,7 +24,7 @@ const DebounceTimeout = 300
 
 export const InputForm = ({ setTriggerMenu }: Props) => {
   const { t } = useTranslation('domain-convert-inputForm')
-  const { setInputString } = useInputContext()
+  const { inputString, setInputString } = useInputContext()
   const [input, setInput] = useState('')
 
   // If a string was provided via the URL, initialize with it.
@@ -65,7 +65,7 @@ export const InputForm = ({ setTriggerMenu }: Props) => {
   }
 
   return (
-    <LayoutColumn label={t('label')}>
+    <LayoutColumn inputString={inputString} label={t('label')}>
       <CodeTextarea
         autoFocus={
           true

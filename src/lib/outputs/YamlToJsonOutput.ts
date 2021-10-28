@@ -1,12 +1,12 @@
-import { parse } from 'hjson'
+import { load } from 'js-yaml'
 
-export const id = 'json'
+export const id = 'yamlToJson'
 
 export const operation = (input: string): string => {
   let obj
 
   try {
-    obj = parse(input)
+    obj = load(input)
   } catch (err) {
     return ''
   }
