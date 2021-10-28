@@ -3,7 +3,7 @@ import { dump } from 'js-yaml'
 
 export const id = 'jsonToYaml'
 
-export const operation = (input: string) => {
+export const operation = (input: string): string => {
   let obj
 
   try {

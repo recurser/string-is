@@ -2,7 +2,7 @@ import { load } from 'js-yaml'
 
 export const id = 'yamlToJson'
 
-export const operation = (input: string) => {
+export const operation = (input: string): string => {
   let obj
 
   try {

@@ -2,7 +2,7 @@ import { parse } from 'hjson'
 
 export const id = 'json'
 
-export const operation = (input: string) => {
+export const operation = (input: string): string => {
   let obj
 
   try {
