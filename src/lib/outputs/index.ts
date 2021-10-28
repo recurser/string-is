@@ -5,6 +5,7 @@ export * as JsonOutput from '@lib/outputs/JsonOutput'
 export * as UrlDecodeOutput from '@lib/outputs/UrlDecodeOutput'
 export * as UrlEncodeOutput from '@lib/outputs/UrlEncodeOutput'
 export * as YamlOutput from '@lib/outputs/YamlOutput'
+export * as YamlToJsonOutput from '@lib/outputs/YamlToJsonOutput'
 
 export interface Output {
   eligible?: (input: string) => boolean

@@ -5,5 +5,6 @@
   "json": "JSON format",
   "urlDecode": "URL decode",
   "urlEncode": "URL encode",
-  "yaml": "YAML format"
+  "yaml": "YAML format",
+  "yamlToJson": "YAML to JSON"
 }

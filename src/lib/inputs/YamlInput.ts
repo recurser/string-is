@@ -1,7 +1,7 @@
 import { load } from 'js-yaml'
 import { isEmpty } from 'lodash'
 
-import { Output, YamlOutput } from '@lib/outputs'
+import { Output, YamlOutput, YamlToJsonOutput } from '@lib/outputs'
 
 export const id = 'yaml'
 
@@ -22,4 +22,4 @@ export const confidence = (input: string) => {
   return 100
 }
 
-export const outputs = [YamlOutput] as Output[]
+export const outputs = [YamlOutput, YamlToJsonOutput] as Output[]
