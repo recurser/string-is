@@ -21,7 +21,9 @@ export const LayoutColumn = ({
   const { isMobile } = useBreakpoints()
   const labelColor = disabled ? theme.colors.gray500 : undefined
   const style = disabled ? { filter: 'grayscale(100%)' } : undefined
-  const height = inputString ? inputString.split('\n').length * TextAreaLineHeight : undefined
+  const height = inputString
+    ? inputString.split('\n').length * TextAreaLineHeight
+    : undefined
 
   return (
     <Pane display="flex" flex={1} flexDirection="column">

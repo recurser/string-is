@@ -4,5 +4,6 @@
   "html": "HTML format",
   "json": "JSON format",
   "urlDecode": "URL decode",
-  "urlEncode": "URL encode"
+  "urlEncode": "URL encode",
+  "yaml": "YAML format"
 }

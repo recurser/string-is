@@ -6,6 +6,7 @@ import { Output } from '@lib/outputs'
 
 interface Candidate {
   confidence: number
+  id: string
   output: Output
 }
 
@@ -21,7 +22,11 @@ export const selectOutputs = async (inputString: string): Promise<Output[]> => {
         return new Promise((resolve, _reject) => {
           const confidence = input.confidence(inputString)
           return resolve(
-            input.outputs.map((output) => ({ confidence, output })),
+            input.outputs.map((output) => ({
+              confidence,
+              id: input.id,
+              output,
+            })),
           )
         })
       }),
