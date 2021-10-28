@@ -1,3 +1,4 @@
+import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useMemo } from 'react'
 
@@ -18,7 +19,7 @@ export const OutputForm = ({ focusOutput, output, setFocusOutput }: Props) => {
   const disabled = !output
 
   const value = useMemo(() => {
-    if (!output) {
+    if (!output || isEmpty(output)) {
       return ''
     }
 
