@@ -1,5 +1,6 @@
 export * as Base64DecodeOutput from '@lib/outputs/Base64DecodeOutput'
 export * as Base64EncodeOutput from '@lib/outputs/Base64EncodeOutput'
+export * as CsvToYamlOutput from '@lib/outputs/CsvToYamlOutput'
 export * as HtmlOutput from '@lib/outputs/HtmlOutput'
 export * as JsonOutput from '@lib/outputs/JsonOutput'
 export * as JsonToCsvOutput from '@lib/outputs/JsonToCsvOutput'

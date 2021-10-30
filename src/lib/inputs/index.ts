@@ -1,4 +1,5 @@
 import * as Base64EncodedInput from '@lib/inputs/Base64EncodedInput'
+import * as CsvInput from '@lib/inputs/CsvInput'
 import * as HtmlInput from '@lib/inputs/HtmlInput'
 import * as JsonArrayInput from '@lib/inputs/JsonArrayInput'
 import * as JsonObjectInput from '@lib/inputs/JsonObjectInput'
@@ -15,6 +16,7 @@ export interface Input {
 
 export const inputs: Input[] = [
   Base64EncodedInput,
+  CsvInput,
   HtmlInput,
   JsonArrayInput,
   JsonObjectInput,
