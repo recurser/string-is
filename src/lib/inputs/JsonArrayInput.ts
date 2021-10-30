@@ -2,11 +2,11 @@ import { parse } from 'hjson'
 import { isEmpty } from 'lodash'
 
 import {
-  JsonOutput,
-  JsonToCsvOutput,
-  JsonToYamlOutput,
-  Output,
-} from '@lib/outputs'
+  JsonConverter,
+  JsonToCsvConverter,
+  JsonToYamlConverter,
+  Converter,
+} from '@lib/converters'
 
 export const id = 'jsonArray'
 
@@ -30,8 +30,8 @@ export const confidence = (input: string) => {
   return type === '[object Array]' ? 100 : 0
 }
 
-export const outputs = [
-  JsonOutput,
-  JsonToCsvOutput,
-  JsonToYamlOutput,
-] as Output[]
+export const converters = [
+  JsonConverter,
+  JsonToCsvConverter,
+  JsonToYamlConverter,
+] as Converter[]

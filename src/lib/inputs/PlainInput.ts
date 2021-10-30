@@ -1,6 +1,10 @@
 import { isEmpty } from 'lodash'
 
-import { Base64EncodeOutput, Output, UrlEncodeOutput } from '@lib/outputs'
+import {
+  Base64EncodeConverter,
+  Converter,
+  UrlEncodeConverter,
+} from '@lib/converters'
 
 export const id = 'plain'
 
@@ -12,4 +16,7 @@ export const confidence = (input: string) => {
   return 1
 }
 
-export const outputs = [Base64EncodeOutput, UrlEncodeOutput] as Output[]
+export const converters = [
+  Base64EncodeConverter,
+  UrlEncodeConverter,
+] as Converter[]

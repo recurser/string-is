@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash'
 import { parse } from 'papaparse'
 
-import { CsvToYamlOutput, Output } from '@lib/outputs'
+import { CsvToYamlConverter, Converter } from '@lib/converters'
 
 export const id = 'csv'
 
@@ -21,4 +21,4 @@ export const confidence = (input: string) => {
   return 100
 }
 
-export const outputs = [CsvToYamlOutput] as Output[]
+export const converters = [CsvToYamlConverter] as Converter[]

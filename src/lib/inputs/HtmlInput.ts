@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { HtmlOutput, Output } from '@lib/outputs'
+import { HtmlConverter, Converter } from '@lib/converters'
 
 export const id = 'html'
 
@@ -156,4 +156,4 @@ export const confidence = (input: string) => {
   return 0
 }
 
-export const outputs = [HtmlOutput] as Output[]
+export const converters = [HtmlConverter] as Converter[]

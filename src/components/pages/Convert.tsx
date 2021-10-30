@@ -6,19 +6,19 @@ import { useEffect, useState } from 'react'
 import {
   InputForm,
   OutputForm,
-  OutputSelector,
+  ConverterSelector,
 } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
-import { Output } from '@lib/outputs'
-import { selectOutputs } from '@services/Converter'
+import { Converter } from '@lib/converters'
+import { selectConverters } from '@services/Converter'
 import { useBreakpoints } from '@services/Responsive'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const { isMobile } = useBreakpoints()
-  const [outputs, setOutputs] = useState<Output[]>([])
-  const [output, setOutput] = useState<Output | undefined>()
+  const [converters, setConverters] = useState<Converter[]>([])
+  const [converter, setConverter] = useState<Converter | undefined>()
   const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
@@ -32,12 +32,12 @@ export const Convert = () => {
       active = false
     }
 
-    // Select relevant outputs when the input string changes.
+    // Select relevant converters when the input string changes.
     async function select() {
       if (!active) {
         return
       }
-      setOutputs(await selectOutputs(inputString))
+      setConverters(await selectConverters(inputString))
     }
   }, [inputString])
 
@@ -63,10 +63,10 @@ export const Convert = () => {
             flexDirection="column"
             maxWidth={majorScale(20)}
           >
-            <OutputSelector
-              outputs={outputs}
+            <ConverterSelector
+              converters={converters}
+              setConverter={setConverter}
               setFocusOutput={setFocusOutput}
-              setOutput={setOutput}
               setTriggerMenu={setTriggerMenu}
               triggerMenu={triggerMenu}
             />
@@ -74,8 +74,8 @@ export const Convert = () => {
 
           <Pane display="flex" flex={2} flexDirection="column">
             <OutputForm
+              converter={converter}
               focusOutput={focusOutput}
-              output={output}
               setFocusOutput={setFocusOutput}
             />
           </Pane>

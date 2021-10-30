@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Base64DecodeOutput, Output } from '@lib/outputs'
+import { Base64DecodeConverter, Converter } from '@lib/converters'
 
 export const id = 'base64Encoded'
 
@@ -18,7 +18,7 @@ export const confidence = (input: string) => {
 
   // If the output is the same as the input, there is no
   //  reason to decode it, even if it is encoded.
-  const output = Base64DecodeOutput.operation(input)
+  const output = Base64DecodeConverter.operation(input)
   if (output === input) {
     return 0
   }
@@ -32,4 +32,4 @@ export const confidence = (input: string) => {
   return 100
 }
 
-export const outputs = [Base64DecodeOutput] as Output[]
+export const converters = [Base64DecodeConverter] as Converter[]

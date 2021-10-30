@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { UrlDecodeOutput, Output } from '@lib/outputs'
+import { UrlDecodeConverter, Converter } from '@lib/converters'
 
 export const id = 'urlEncoded'
 
@@ -11,7 +11,7 @@ export const confidence = (input: string) => {
 
   let decoded
   try {
-    decoded = UrlDecodeOutput.operation(input)
+    decoded = UrlDecodeConverter.operation(input)
   } catch {
     return 0
   }
@@ -24,4 +24,4 @@ export const confidence = (input: string) => {
   return 0
 }
 
-export const outputs = [UrlDecodeOutput] as Output[]
+export const converters = [UrlDecodeConverter] as Converter[]
