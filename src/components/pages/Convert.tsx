@@ -1,7 +1,8 @@
 import { majorScale, Pane } from 'evergreen-ui'
+import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import {
   InputForm,
@@ -41,6 +42,8 @@ export const Convert = () => {
     }
   }, [inputString])
 
+  const disabled = useMemo(() => isEmpty(inputString), [inputString])
+
   return (
     <Pane display="flex" gap={majorScale(2)}>
       <Head>
@@ -65,6 +68,7 @@ export const Convert = () => {
           >
             <ConverterSelector
               converters={converters}
+              disabled={disabled}
               setConverter={setConverter}
               setFocusOutput={setFocusOutput}
               setTriggerMenu={setTriggerMenu}
@@ -75,6 +79,7 @@ export const Convert = () => {
           <Pane display="flex" flex={2} flexDirection="column">
             <OutputForm
               converter={converter}
+              disabled={disabled}
               focusOutput={focusOutput}
               setFocusOutput={setFocusOutput}
             />

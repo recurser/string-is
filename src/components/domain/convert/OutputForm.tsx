@@ -8,19 +8,20 @@ import { useInputContext } from '@contexts/InputContext'
 import { Converter } from '@lib/converters'
 
 interface Props {
-  focusOutput: boolean
   converter?: Converter
+  disabled?: boolean
+  focusOutput: boolean
   setFocusOutput: (focusOutput: boolean) => void
 }
 export const OutputForm = ({
-  focusOutput,
   converter,
+  disabled,
+  focusOutput,
   setFocusOutput,
 }: Props) => {
-  const { t } = useTranslation('domain-convert-converterForm')
+  const { t } = useTranslation('domain-convert-outputForm')
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
-  const disabled = !converter
 
   const value = useMemo(() => {
     if (!converter || isEmpty(converter)) {

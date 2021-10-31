@@ -7,6 +7,7 @@ import { Converter } from '@lib/converters'
 
 interface Props {
   converters: Converter[]
+  disabled?: boolean
   triggerMenu: boolean
   setFocusOutput: (focusOutput: boolean) => void
   setConverter: (converter: Converter | undefined) => void
@@ -15,6 +16,7 @@ interface Props {
 
 export const ConverterSelector = ({
   converters,
+  disabled,
   triggerMenu,
   setFocusOutput,
   setConverter,
@@ -29,8 +31,7 @@ export const ConverterSelector = ({
   const buttonRef = createRef<HTMLButtonElement>()
 
   useEffect(() => {
-    if (converters.length === 0) {
-      // If there are no converters to choose from, clear the menu.
+    if (disabled) {
       setSelected(undefined)
     } else if (
       selected &&
@@ -54,6 +55,7 @@ export const ConverterSelector = ({
   }, [
     buttonRef,
     converters,
+    disabled,
     selected,
     setSelected,
     triggerMenu,
@@ -83,7 +85,7 @@ export const ConverterSelector = ({
       >
         <Pane display="flex">
           <Button
-            disabled={converters.length === 0}
+            disabled={disabled}
             flex={1}
             iconAfter={selected ? ChevronRightIcon : undefined}
             ref={buttonRef}
