@@ -1,6 +1,10 @@
 import { isEmpty } from 'lodash'
 
-import { CsvToYamlConverter, Converter } from '@lib/converters'
+import {
+  CsvToJsonConverter,
+  CsvToYamlConverter,
+  Converter,
+} from '@lib/converters'
 import { input } from '@lib/inputs/CsvInput'
 import { input as JsonInput } from '@lib/inputs/JsonInput'
 
@@ -28,4 +32,7 @@ export const confidence = (data: string) => {
   return 100
 }
 
-export const converters = [CsvToYamlConverter] as Converter[]
+export const converters = [
+  CsvToJsonConverter,
+  CsvToYamlConverter,
+] as Converter[]

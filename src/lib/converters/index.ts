@@ -1,6 +1,7 @@
 export * as Base64DecodeConverter from '@lib/converters/Base64DecodeConverter'
 export * as Base64EncodeConverter from '@lib/converters/Base64EncodeConverter'
 export * as CsvToYamlConverter from '@lib/converters/CsvToYamlConverter'
+export * as CsvToJsonConverter from '@lib/converters/CsvToJsonConverter'
 export * as HtmlConverter from '@lib/converters/HtmlConverter'
 export * as JsonConverter from '@lib/converters/JsonConverter'
 export * as JsonToCsvConverter from '@lib/converters/JsonToCsvConverter'
