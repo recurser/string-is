@@ -1,4 +1,3 @@
-import { parse } from 'hjson'
 import { isEmpty } from 'lodash'
 
 import {
@@ -7,6 +6,7 @@ import {
   JsonToYamlConverter,
   Converter,
 } from '@lib/converters'
+import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'jsonObject'
 
@@ -18,11 +18,8 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  let obj
-
-  try {
-    obj = parse(input)
-  } catch (err) {
+  const obj = jsonInput(input)
+  if (!obj) {
     return 0
   }
 

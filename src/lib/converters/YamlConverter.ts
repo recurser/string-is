@@ -1,17 +1,14 @@
-import { load } from 'js-yaml'
-
-import { output, YamlInput } from '@lib/outputs/YamlOutput'
+import { input } from '@lib/inputs/YamlInput'
+import { output } from '@lib/outputs/YamlOutput'
+import { Obj } from '@lib/types'
 
 export const id = 'yaml'
 
-export const operation = (input: string): string => {
-  let obj
-
-  try {
-    obj = load(input)
-  } catch (err) {
+export const operation = (data: string): string => {
+  const obj = input(data)
+  if (!obj) {
     return ''
   }
 
-  return output(obj as YamlInput)
+  return output(obj as Obj)
 }

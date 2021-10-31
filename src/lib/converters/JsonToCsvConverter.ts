@@ -1,16 +1,13 @@
-import { parse } from 'hjson'
 import { isObject } from 'lodash'
 
+import { input } from '@lib/inputs/JsonInput'
 import { output } from '@lib/outputs/CsvOutput'
 
 export const id = 'jsonToCsv'
 
-export const operation = (input: string): string => {
-  let obj
-
-  try {
-    obj = parse(input)
-  } catch (err) {
+export const operation = (data: string): string => {
+  let obj = input(data)
+  if (!obj) {
     return ''
   }
 

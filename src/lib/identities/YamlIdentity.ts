@@ -1,21 +1,16 @@
-import { load } from 'js-yaml'
-import { isEmpty } from 'lodash'
-
 import { Converter, YamlConverter, YamlToJsonConverter } from '@lib/converters'
+import { input } from '@lib/inputs/YamlInput'
 
 export const id = 'yaml'
 
-export const confidence = (input: string) => {
-  if (isEmpty(input)) {
+export const confidence = (data: string) => {
+  const obj = input(data)
+  if (!obj) {
     return 0
   }
 
-  try {
-    const doc = load(input)
-    if (typeof doc === 'string') {
-      return 0
-    }
-  } catch (_err) {
+  // Sometimes js-yaml just gives up and returns the original string.
+  if (typeof obj === 'string') {
     return 0
   }
 

@@ -1,30 +1,27 @@
-import { parse as jsonParse } from 'hjson'
 import { isEmpty } from 'lodash'
-import { parse as csvParse } from 'papaparse'
 
 import { CsvToYamlConverter, Converter } from '@lib/converters'
+import { input } from '@lib/inputs/CsvInput'
+import { input as JsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'csv'
 
-// Need to use a proper library for this, in case there are commas inside quotes.
-export const confidence = (input: string) => {
-  if (isEmpty(input)) {
+export const confidence = (data: string) => {
+  if (isEmpty(data)) {
     return 0
-  } else if (!input.includes(',')) {
+  } else if (!data.includes(',')) {
     return 0
   }
 
   // Some JSON (such as "{ a: 2, b: 2 }" is also a valid CSV. If
   // a string can be parsed as JSON, it is unlikely to be a CSV.
-  try {
-    jsonParse(input)
+  const json = JsonInput(data)
+  if (json) {
     return 0
-  } catch (err) {
-    // Real CSVs should trigger an error.
   }
 
-  const { errors } = csvParse(input)
-  if (errors.length > 0) {
+  const obj = input(data)
+  if (!obj) {
     return 0
   }
 

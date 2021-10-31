@@ -1,10 +1,10 @@
 import { unparse } from 'papaparse'
 
+import { Obj } from '@lib/types'
+
 export const id = 'csv'
 
-export type CsvInput = Record<string, unknown> | Record<string, unknown>[]
-
-export const output = (input: CsvInput): string => {
+export const output = (input: Obj): string => {
   // papaparse expects an array of objects.
   let array = input
   if (!Array.isArray(array)) {
