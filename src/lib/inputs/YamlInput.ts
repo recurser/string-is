@@ -11,7 +11,7 @@ export const confidence = (input: string) => {
   }
 
   try {
-    const doc = load(input, { onWarning: (w) => console.log(w) })
+    const doc = load(input)
     if (typeof doc === 'string') {
       return 0
     }

@@ -1,5 +1,6 @@
 import { parse } from 'hjson'
-import { dump } from 'js-yaml'
+
+import { output } from '@lib/outputs/YamlOutput'
 
 export const id = 'jsonToYaml'
 
@@ -12,8 +13,7 @@ export const operation = (input: string): string => {
     return ''
   }
 
-  // See https://github.com/nodeca/js-yaml/issues/376
-  return `---\n${dump(obj)}`
+  return output(obj)
 }
 
 // Some strings (eg. '[1, 2, 3]') get returned as valid YAML. If something

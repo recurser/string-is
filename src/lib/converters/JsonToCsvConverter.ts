@@ -1,6 +1,7 @@
 import { parse } from 'hjson'
-import { Parser } from 'json2csv'
-import { keyBy } from 'lodash'
+import { isObject } from 'lodash'
+
+import { output } from '@lib/outputs/CsvOutput'
 
 export const id = 'jsonToCsv'
 
@@ -13,17 +14,18 @@ export const operation = (input: string): string => {
     return ''
   }
 
-  // json2csv doesn't work for arrays - it expects column names (ie key → value objects).
+  // papaparse doesn't work for arrays of primitives - it expects column names (ie key → value objects).
   if (Array.isArray(obj)) {
-    let index = 0
-    obj = keyBy(obj, () => {
-      index++
-      return `field ${index}`
+    obj = obj.map((entry) => {
+      if (isObject(entry)) {
+        return entry
+      }
+
+      return { 'field 1': entry }
     })
   }
 
-  const parser = new Parser()
-  return parser.parse(obj) || ''
+  return output(obj)
 }
 
 // Some strings (eg. '[1, 2, 3]') get returned as valid YAML. If something

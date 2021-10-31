@@ -1,5 +1,7 @@
 import { load } from 'js-yaml'
 
+import { JsonInput, output } from '@lib/outputs/JsonOutput'
+
 export const id = 'yamlToJson'
 
 export const operation = (input: string): string => {
@@ -11,5 +13,5 @@ export const operation = (input: string): string => {
     return ''
   }
 
-  return JSON.stringify(obj, null, 2)
+  return output(obj as JsonInput)
 }

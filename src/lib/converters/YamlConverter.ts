@@ -1,4 +1,6 @@
-import { dump, load } from 'js-yaml'
+import { load } from 'js-yaml'
+
+import { output, YamlInput } from '@lib/outputs/YamlOutput'
 
 export const id = 'yaml'
 
@@ -11,6 +13,5 @@ export const operation = (input: string): string => {
     return ''
   }
 
-  // See https://github.com/nodeca/js-yaml/issues/376
-  return `---\n${dump(obj)}`
+  return output(obj as YamlInput)
 }

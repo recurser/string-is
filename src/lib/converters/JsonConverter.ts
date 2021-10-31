@@ -1,5 +1,7 @@
 import { parse } from 'hjson'
 
+import { output } from '@lib/outputs/JsonOutput'
+
 export const id = 'json'
 
 export const operation = (input: string): string => {
@@ -11,5 +13,5 @@ export const operation = (input: string): string => {
     return ''
   }
 
-  return JSON.stringify(obj, null, 2)
+  return output(obj)
 }
