@@ -1,31 +1,29 @@
 import Promise from 'bluebird'
 import { isEmpty, sortBy, uniqBy } from 'lodash'
 
-import { inputs } from '@lib/inputs'
-import { Output } from '@lib/outputs'
+import { Converter } from '@lib/converters'
+import { identities } from '@lib/identities'
 
 interface Candidate {
   confidence: number
   id: string
-  output: Output
+  converter: Converter
 }
 
-export const selectOutputs = async (inputString: string): Promise<Output[]> => {
-  if (isEmpty(inputString)) {
-    return []
-  }
-
-  // Get a list of all outputs with their confidence.
+export const selectConverters = async (
+  inputString: string,
+): Promise<Converter[]> => {
+  // Get a list of all converters with their confidence.
   const candidates = (
     await Promise.all(
-      inputs.map((input): Promise<Candidate[]> => {
+      identities.map((identity): Promise<Candidate[]> => {
         return new Promise((resolve, _reject) => {
-          const confidence = input.confidence(inputString)
+          const confidence = identity.confidence(inputString)
           return resolve(
-            input.outputs.map((output) => ({
+            identity.converters.map((converter) => ({
               confidence,
-              id: input.id,
-              output,
+              converter,
+              id: identity.id,
             })),
           )
         })
@@ -33,24 +31,27 @@ export const selectOutputs = async (inputString: string): Promise<Output[]> => {
     )
   ).flat()
 
-  // We want the highest confidence outputs first so that we can filter.
+  // We want the highest confidence converters first so that we can filter.
   const sorted = sortBy(candidates, (candidate) => -candidate.confidence)
 
   // 1. Remove duplicates.
   // 2. Remove any with zero confidence.
   // 3. Remove any that conflict with higher confidence options.
   let overrides: string[] = []
-  const outputs = uniqBy(sorted, (candidate) => candidate.output.id)
-    .filter((candidate) => candidate.confidence > 0)
+  const converters = uniqBy(sorted, (candidate) => candidate.converter.id)
+    // Allow all options if we have no input, so the user can see what's available.
+    .filter((candidate) => candidate.confidence > 0 || isEmpty(inputString))
     .filter((candidate) => {
-      const overriden = overrides.includes(candidate.output.id)
-      overrides = overrides.concat(candidate.output.overrides || [])
+      const overriden = overrides.includes(candidate.converter.id)
+      overrides = overrides.concat(candidate.converter.overrides || [])
       return !overriden
     })
-    .map((candidate: Candidate) => candidate.output)
+    .map((candidate: Candidate) => candidate.converter)
     // Outputs can implement an optional eligible() function to decide if
     // a particular string is a bad fit.
-    .filter((output) => !output.eligible || output.eligible(inputString))
+    .filter(
+      (converter) => !converter.eligible || converter.eligible(inputString),
+    )
 
-  return outputs
+  return converters
 }

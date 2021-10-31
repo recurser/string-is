@@ -3,24 +3,26 @@ import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
-import { Output } from '@lib/outputs'
+import { Converter } from '@lib/converters'
 
 interface Props {
-  outputs: Output[]
+  converters: Converter[]
+  disabled?: boolean
   triggerMenu: boolean
   setFocusOutput: (focusOutput: boolean) => void
-  setOutput: (output: Output | undefined) => void
+  setConverter: (converter: Converter | undefined) => void
   setTriggerMenu: (triggerMenu: boolean) => void
 }
 
-export const OutputSelector = ({
-  outputs,
+export const ConverterSelector = ({
+  converters,
+  disabled,
   triggerMenu,
   setFocusOutput,
-  setOutput,
+  setConverter,
   setTriggerMenu,
 }: Props) => {
-  const { t } = useTranslation('domain-convert-outputSelector')
+  const { t } = useTranslation('domain-convert-converterSelector')
 
   const [selected, setSelected] = useState<string | undefined>()
 
@@ -29,37 +31,44 @@ export const OutputSelector = ({
   const buttonRef = createRef<HTMLButtonElement>()
 
   useEffect(() => {
-    if (outputs.length === 0) {
-      // If there are no outputs to choose from, clear the menu.
+    if (disabled) {
       setSelected(undefined)
     } else if (
       selected &&
-      !outputs.map((output) => output.id).includes(selected)
+      !converters.map((converter) => converter.id).includes(selected)
     ) {
       // If we have previously selected an option that is no longer available, clear the menu.
       setSelected(undefined)
-    } else if (!triggerMenu && outputs.length === 1) {
+    } else if (!triggerMenu && converters.length === 1) {
       // If there's only one option to choose from, select it.
-      setSelected(outputs[0].id)
+      setSelected(converters[0].id)
     } else if (triggerMenu) {
       // If we've been asked to open the menu, select the first option if nothing has been selected.
       setTriggerMenu(false)
       if (!selected) {
-        setSelected(outputs[0].id)
+        setSelected(converters[0].id)
       }
-      // Trigger opening of the output list after paste or tab, if
+      // Trigger opening of the converter list after paste or tab, if
       // we have more than one element to choose from.
       buttonRef.current?.click()
     }
-  }, [buttonRef, outputs, selected, setSelected, triggerMenu, setTriggerMenu])
+  }, [
+    buttonRef,
+    converters,
+    disabled,
+    selected,
+    setSelected,
+    triggerMenu,
+    setTriggerMenu,
+  ])
 
-  // Set the output based on the selected value. Ideally we could use the
-  // output directly in <SelectMenu />, but unfortunately it only supports
+  // Set the converter based on the selected value. Ideally we could use the
+  // converter directly in <SelectMenu />, but unfortunately it only supports
   // string and number values.
   useEffect(() => {
-    const out = outputs.find((output) => output.id === selected)
-    setOutput(out)
-  }, [outputs, setOutput, selected])
+    const cnvt = converters.find((converter) => converter.id === selected)
+    setConverter(cnvt)
+  }, [converters, setConverter, selected])
 
   return (
     <LayoutColumn>
@@ -68,22 +77,22 @@ export const OutputSelector = ({
         hasTitle={false}
         onCloseComplete={() => setFocusOutput(true)}
         onSelect={(item) => setSelected(item.value as string)}
-        options={outputs.map((output) => ({
-          label: t(`lib-outputs-commands:${output.id}`),
-          value: output.id,
+        options={converters.map((converter) => ({
+          label: t(`lib-converters-commands:${converter.id}`),
+          value: converter.id,
         }))}
         selected={selected}
       >
         <Pane display="flex">
           <Button
-            disabled={outputs.length === 0}
+            disabled={disabled}
             flex={1}
             iconAfter={selected ? ChevronRightIcon : undefined}
             ref={buttonRef}
             tabIndex={2}
           >
             {selected
-              ? t(`lib-outputs-commands:${selected}`)
+              ? t(`lib-converters-commands:${selected}`)
               : t('placeholder')}
           </Button>
         </Pane>

@@ -1,15 +1,15 @@
-import { load } from 'js-yaml'
+import { parse } from 'hjson'
 import { isEmpty } from 'lodash'
 
 import { Obj } from '@lib/types'
 
-export const input = (input: string): string | Obj | undefined => {
+export const input = (input: string): Obj | undefined => {
   if (isEmpty(input)) {
     return undefined
   }
 
   try {
-    return load(input) as string | Obj
+    return parse(input) as Obj
   } catch (err) {
     return undefined
   }

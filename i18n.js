@@ -2,11 +2,11 @@ const common = ['common', 'layout-footer', 'layout-header']
 
 const convert = [
   ...common,
+  'domain-convert-converterSelector',
   'domain-convert-inputForm',
   'domain-convert-outputForm',
-  'domain-convert-outputSelector',
-  'lib-outputs-commands',
-  'lib-outputs-results',
+  'lib-converters-commands',
+  'lib-converters-results',
   'pages-convert',
 ]
 

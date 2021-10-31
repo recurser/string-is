@@ -1,7 +1,7 @@
 export const id = 'urlEncode'
 
 /**
- * Allows the output to be hidden if it's not a good match
+ * Allows the converter to be hidden if it's not a good match
  * for the input string.
  *
  * In this case, there's no point URL-encoding a string if

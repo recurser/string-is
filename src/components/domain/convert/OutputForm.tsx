@@ -5,28 +5,33 @@ import { createRef, useEffect, useMemo } from 'react'
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { CodeTextarea } from '@components/forms'
 import { useInputContext } from '@contexts/InputContext'
-import { Output } from '@lib/outputs'
+import { Converter } from '@lib/converters'
 
 interface Props {
+  converter?: Converter
+  disabled?: boolean
   focusOutput: boolean
-  output?: Output
   setFocusOutput: (focusOutput: boolean) => void
 }
-export const OutputForm = ({ focusOutput, output, setFocusOutput }: Props) => {
+export const OutputForm = ({
+  converter,
+  disabled,
+  focusOutput,
+  setFocusOutput,
+}: Props) => {
   const { t } = useTranslation('domain-convert-outputForm')
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
-  const disabled = !output
 
   const value = useMemo(() => {
-    if (!output || isEmpty(output)) {
+    if (!converter || isEmpty(converter)) {
       return ''
     }
 
-    return output.operation(inputString)
-  }, [inputString, output])
+    return converter.operation(inputString)
+  }, [inputString, converter])
 
-  // When an output converter has been selected, we focus on the output field.
+  // When a converter has been selected, we focus on the output field.
   useEffect(() => {
     if (focusOutput) {
       textareaRef.current?.focus()
@@ -39,8 +44,8 @@ export const OutputForm = ({ focusOutput, output, setFocusOutput }: Props) => {
       disabled={disabled}
       inputString={inputString}
       label={
-        output
-          ? `3. ${t(`lib-outputs-results:${output.id}`)} 👇`
+        converter
+          ? `3. ${t(`lib-converters-results:${converter.id}`)} 👇`
           : t('default_label')
       }
     >
