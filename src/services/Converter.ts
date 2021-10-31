@@ -2,7 +2,7 @@ import Promise from 'bluebird'
 import { isEmpty, sortBy, uniqBy } from 'lodash'
 
 import { Converter } from '@lib/converters'
-import { inputs } from '@lib/inputs'
+import { identities } from '@lib/identities'
 
 interface Candidate {
   confidence: number
@@ -20,14 +20,14 @@ export const selectConverters = async (
   // Get a list of all converters with their confidence.
   const candidates = (
     await Promise.all(
-      inputs.map((input): Promise<Candidate[]> => {
+      identities.map((identity): Promise<Candidate[]> => {
         return new Promise((resolve, _reject) => {
-          const confidence = input.confidence(inputString)
+          const confidence = identity.confidence(inputString)
           return resolve(
-            input.converters.map((converter) => ({
+            identity.converters.map((converter) => ({
               confidence,
               converter,
-              id: input.id,
+              id: identity.id,
             })),
           )
         })
