@@ -5,7 +5,7 @@
   "csvToYaml": "Formatted YAML",
   "html": "Formatted HTML",
   "json": "Formatted JSON",
-  "jsonToCsv": "CSV",
+  "jsonToCsv": "Formatted CSV",
   "jsonToYaml": "Formatted YAML",
   "urlDecode": "URL decoded",
   "urlEncode": "URL encoded",

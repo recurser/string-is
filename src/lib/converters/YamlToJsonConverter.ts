@@ -8,12 +8,12 @@ export const outputId = 'json'
 
 export const operation = (
   data: string,
-  _options: ConverterOptions = {},
+  options: ConverterOptions = {},
 ): string => {
   const obj = yamlInput(data)
   if (!obj) {
     return ''
   }
 
-  return jsonOutput(obj as Obj)
+  return jsonOutput(obj as Obj, options)
 }

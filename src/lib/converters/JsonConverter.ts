@@ -8,12 +8,12 @@ export const outputId = 'json'
 
 export const operation = (
   data: string,
-  _options: ConverterOptions = {},
+  options: ConverterOptions = {},
 ): string => {
   const obj = jsonInput(data)
   if (!obj) {
     return ''
   }
 
-  return jsonOutput(obj)
+  return jsonOutput(obj, options)
 }

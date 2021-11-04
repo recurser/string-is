@@ -1,4 +1,4 @@
-import { Checkbox, Pane, TextareaProps } from 'evergreen-ui'
+import { Checkbox, majorScale, Pane, TextareaProps } from 'evergreen-ui'
 import {
   ChangeEvent,
   Dispatch,
@@ -34,13 +34,19 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, Props>(
 
     return (
       <>
-        <Pane display="flex" flexDirection="row" gap={10}>
+        <Pane
+          alignItems="end"
+          display="flex"
+          flexDirection="row"
+          gap={majorScale(2)}
+        >
           <Checkbox
             checked={quotes}
             label="Quotes"
             marginTop={0}
             onChange={onChangeQuotes}
           />
+
           <Checkbox
             checked={header}
             label="Header"
