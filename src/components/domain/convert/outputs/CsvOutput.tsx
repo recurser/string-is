@@ -1,4 +1,5 @@
 import { Checkbox, majorScale, Pane, TextareaProps } from 'evergreen-ui'
+import useTranslation from 'next-translate/useTranslation'
 import {
   ChangeEvent,
   Dispatch,
@@ -17,6 +18,7 @@ interface Props extends TextareaProps {
 
 export const CsvOutput = forwardRef<HTMLTextAreaElement, Props>(
   ({ setOptions, ...props }: Props, ref) => {
+    const { t } = useTranslation('domain-convert-outputs-csvOutput')
     const [header, setHeader] = useState(true)
     const [quotes, setQuotes] = useState(true)
 
@@ -42,14 +44,14 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, Props>(
         >
           <Checkbox
             checked={quotes}
-            label="Quotes"
+            label={t('quotesLabel')}
             marginTop={0}
             onChange={onChangeQuotes}
           />
 
           <Checkbox
             checked={header}
-            label="Header"
+            label={t('headerLabel')}
             marginTop={0}
             onChange={onChangeHeader}
           />

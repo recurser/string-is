@@ -1,4 +1,5 @@
 import { Checkbox, majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
+import useTranslation from 'next-translate/useTranslation'
 import {
   ChangeEvent,
   Dispatch,
@@ -17,6 +18,7 @@ interface Props extends TextareaProps {
 
 export const JsonOutput = forwardRef<HTMLTextAreaElement, Props>(
   ({ setOptions, ...props }: Props, ref) => {
+    const { t } = useTranslation('domain-convert-outputs-jsonOutput')
     const [space, setSpace] = useState(2)
     const [sortKeys, setSortKeys] = useState(true)
 
@@ -35,28 +37,29 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, Props>(
     return (
       <>
         <Pane
-          alignItems="end"
+          alignItems="baseline"
           display="flex"
           flexDirection="row"
           gap={majorScale(2)}
+          marginBottom={majorScale(1)}
         >
           <Pane>
             <Select
               alignSelf="start"
-              marginBottom={majorScale(1)}
               onChange={onChangeSpace}
               value={space}
               width={majorScale(12)}
             >
-              <option value={2}>2 spaces</option>
-              <option value={3}>3 spaces</option>
-              <option value={4}>4 spaces</option>
+              <option value={2}>{t('2SpacesOption')}</option>
+              <option value={3}>{t('3SpacesOption')}</option>
+              <option value={4}>{t('4SpacesOption')}</option>
             </Select>
           </Pane>
 
           <Checkbox
             checked={sortKeys}
-            label="Sort keys"
+            label={t('sortKeysLabel')}
+            marginBottom={0}
             marginTop={0}
             onChange={onChangeSortKeys}
           />
