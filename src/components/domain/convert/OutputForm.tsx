@@ -1,9 +1,9 @@
-import { isEmpty } from 'lodash'
+import { isEmpty, startCase } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useMemo } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
-import { CodeTextarea } from '@components/forms'
+import { outputs, OutputName } from '@components/domain/convert/outputs'
 import { useInputContext } from '@contexts/InputContext'
 import { Converter } from '@lib/converters'
 
@@ -39,6 +39,15 @@ export const OutputForm = ({
     }
   }, [focusOutput, setFocusOutput, textareaRef])
 
+  // Use a dynamic output component based on the converter's 'output' string.
+  const OutputElement = useMemo(() => {
+    if (!converter || isEmpty(converter)) {
+      return outputs.PlainOutput
+    }
+
+    return outputs[`${startCase(converter.output)}Output` as OutputName]
+  }, [converter])
+
   return (
     <LayoutColumn
       disabled={disabled}
@@ -49,7 +58,7 @@ export const OutputForm = ({
           : t('default_label')
       }
     >
-      <CodeTextarea
+      <OutputElement
         disabled={disabled}
         flex={1}
         height="100%"

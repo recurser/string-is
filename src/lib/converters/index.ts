@@ -15,5 +15,6 @@ export interface Converter {
   eligible?: (input: string) => boolean
   id: string
   operation: (input: string) => string
+  output: string
   overrides: string[]
 }

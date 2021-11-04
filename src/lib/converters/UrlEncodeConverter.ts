@@ -1,5 +1,7 @@
 export const id = 'urlEncode'
 
+export const output = 'plain'
+
 /**
  * Allows the converter to be hidden if it's not a good match
  * for the input string.
@@ -21,5 +23,3 @@ export const operation = (input: string): string => {
     .replace(/[!'()]/g, escape)
     .replace(/\*/g, '%2A')
 }
-
-export const overrides = ['urlDecode']
