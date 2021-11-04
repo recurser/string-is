@@ -1,25 +1,16 @@
 import { isEmpty } from 'lodash'
 
-import {
-  JsonConverter,
-  JsonToCsvConverter,
-  JsonToYamlConverter,
-  Converter,
-} from '@lib/converters'
+import { JsonConverter, JsonToYamlConverter, Converter } from '@lib/converters'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'jsonArray'
 
 export const confidence = (input: string) => {
-  if (isEmpty(input)) {
-    return 0
-  } else if (/^\s*\[\s*\]\s*$/.test(input)) {
-    // There's not much value in beautifying an empty object.
-    return 0
-  }
-
   const obj = jsonInput(input)
   if (!obj) {
+    return 0
+  } else if (isEmpty(obj)) {
+    // There's not much value in beautifying an empty array.
     return 0
   }
 
@@ -27,8 +18,4 @@ export const confidence = (input: string) => {
   return type === '[object Array]' ? 100 : 0
 }
 
-export const converters = [
-  JsonConverter,
-  JsonToCsvConverter,
-  JsonToYamlConverter,
-] as Converter[]
+export const converters = [JsonConverter, JsonToYamlConverter] as Converter[]
