@@ -1,6 +1,6 @@
 export const id = 'urlEncode'
 
-export const output = 'plain'
+export const outputId = 'plain'
 
 /**
  * Allows the converter to be hidden if it's not a good match

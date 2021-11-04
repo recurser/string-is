@@ -5,7 +5,7 @@ import { output as csvOutput } from '@lib/outputs/CsvOutput'
 
 export const id = 'jsonToCsv'
 
-export const output = 'csv'
+export const outputId = 'csv'
 
 export const operation = (data: string): string => {
   let obj = jsonInput(data)

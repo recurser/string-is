@@ -3,7 +3,7 @@ import { output as yamlOutput } from '@lib/outputs/YamlOutput'
 
 export const id = 'csvToYaml'
 
-export const output = 'yaml'
+export const outputId = 'yaml'
 
 export const operation = (data: string): string => {
   const obj = csvInput(data)

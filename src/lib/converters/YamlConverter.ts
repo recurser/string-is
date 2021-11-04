@@ -4,7 +4,7 @@ import { Obj } from '@lib/types'
 
 export const id = 'yaml'
 
-export const output = 'yaml'
+export const outputId = 'yaml'
 
 export const operation = (data: string): string => {
   const obj = yamlInput(data)

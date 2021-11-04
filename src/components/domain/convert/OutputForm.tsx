@@ -45,7 +45,7 @@ export const OutputForm = ({
       return outputs.PlainOutput
     }
 
-    return outputs[`${startCase(converter.output)}Output` as OutputName]
+    return outputs[`${startCase(converter.outputId)}Output` as OutputName]
   }, [converter])
 
   return (
