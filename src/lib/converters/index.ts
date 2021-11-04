@@ -1,3 +1,5 @@
+import { ConverterOptions } from '@lib/types'
+
 export * as Base64DecodeConverter from '@lib/converters/Base64DecodeConverter'
 export * as Base64EncodeConverter from '@lib/converters/Base64EncodeConverter'
 export * as CsvToYamlConverter from '@lib/converters/CsvToYamlConverter'
@@ -14,7 +16,7 @@ export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
 export interface Converter {
   eligible?: (input: string) => boolean
   id: string
-  operation: (input: string) => string
+  operation: (input: string, options?: ConverterOptions) => string
   outputId: string
   overrides: string[]
 }

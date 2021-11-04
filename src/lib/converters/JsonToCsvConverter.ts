@@ -2,12 +2,16 @@ import { isObject } from 'lodash'
 
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 import { output as csvOutput } from '@lib/outputs/CsvOutput'
+import { ConverterOptions } from '@lib/types'
 
 export const id = 'jsonToCsv'
 
 export const outputId = 'csv'
 
-export const operation = (data: string): string => {
+export const operation = (
+  data: string,
+  options: ConverterOptions = {},
+): string => {
   let obj = jsonInput(data)
   if (!obj) {
     return ''
@@ -24,7 +28,7 @@ export const operation = (data: string): string => {
     })
   }
 
-  return csvOutput(obj)
+  return csvOutput(obj, options)
 }
 
 // Some strings (eg. '[1, 2, 3]') get returned as valid YAML. If something

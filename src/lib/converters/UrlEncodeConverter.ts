@@ -1,3 +1,5 @@
+import { ConverterOptions } from '@lib/types'
+
 export const id = 'urlEncode'
 
 export const outputId = 'plain'
@@ -18,7 +20,10 @@ export const eligible = (input: string): boolean => {
  * @see https://stackoverflow.com/a/62436236
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent#description
  */
-export const operation = (input: string): string => {
+export const operation = (
+  input: string,
+  _options: ConverterOptions = {},
+): string => {
   return encodeURIComponent(input)
     .replace(/[!'()]/g, escape)
     .replace(/\*/g, '%2A')

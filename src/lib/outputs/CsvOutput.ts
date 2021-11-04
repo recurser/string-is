@@ -1,10 +1,10 @@
 import { unparse } from 'papaparse'
 
-import { Obj } from '@lib/types'
+import { ConverterOptions, Obj } from '@lib/types'
 
 export const id = 'csv'
 
-export const output = (input: Obj): string => {
+export const output = (input: Obj, options: ConverterOptions): string => {
   // papaparse expects an array of objects.
   let array = input
   if (!Array.isArray(array)) {
@@ -12,7 +12,7 @@ export const output = (input: Obj): string => {
   }
 
   try {
-    return unparse(array)
+    return unparse(array, options)
   } catch (err) {
     return ''
   }

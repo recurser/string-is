@@ -1,11 +1,12 @@
 import { isEmpty, startCase } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { createRef, useEffect, useMemo } from 'react'
+import { createRef, useEffect, useMemo, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { outputs, OutputName } from '@components/domain/convert/outputs'
 import { useInputContext } from '@contexts/InputContext'
 import { Converter } from '@lib/converters'
+import { ConverterOptions } from '@lib/types'
 
 interface Props {
   converter?: Converter
@@ -22,14 +23,15 @@ export const OutputForm = ({
   const { t } = useTranslation('domain-convert-outputForm')
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
+  const [options, setOptions] = useState<ConverterOptions>({})
 
   const value = useMemo(() => {
     if (!converter || isEmpty(converter)) {
       return ''
     }
 
-    return converter.operation(inputString)
-  }, [inputString, converter])
+    return converter.operation(inputString, options)
+  }, [inputString, converter, options])
 
   // When a converter has been selected, we focus on the output field.
   useEffect(() => {
@@ -64,6 +66,7 @@ export const OutputForm = ({
         height="100%"
         readOnly={true}
         ref={textareaRef}
+        setOptions={setOptions}
         tabIndex={3}
         value={value}
       />
