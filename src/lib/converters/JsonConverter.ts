@@ -1,13 +1,19 @@
-import { input } from '@lib/inputs/JsonInput'
-import { output } from '@lib/outputs/JsonOutput'
+import { input as jsonInput } from '@lib/inputs/JsonInput'
+import { output as jsonOutput } from '@lib/outputs/JsonOutput'
+import { ConverterOptions } from '@lib/types'
 
 export const id = 'json'
 
-export const operation = (data: string): string => {
-  const obj = input(data)
+export const outputId = 'json'
+
+export const operation = (
+  data: string,
+  options: ConverterOptions = {},
+): string => {
+  const obj = jsonInput(data)
   if (!obj) {
     return ''
   }
 
-  return output(obj)
+  return jsonOutput(obj, options)
 }

@@ -1,13 +1,19 @@
-import { input } from '@lib/inputs/CsvInput'
-import { output } from '@lib/outputs/JsonOutput'
+import { input as csvInput } from '@lib/inputs/CsvInput'
+import { output as jsonOutput } from '@lib/outputs/JsonOutput'
+import { ConverterOptions } from '@lib/types'
 
 export const id = 'csvToJson'
 
-export const operation = (data: string): string => {
-  const obj = input(data)
+export const outputId = 'json'
+
+export const operation = (
+  data: string,
+  options: ConverterOptions = {},
+): string => {
+  const obj = csvInput(data)
   if (!obj) {
     return ''
   }
 
-  return output(obj)
+  return jsonOutput(obj, options)
 }

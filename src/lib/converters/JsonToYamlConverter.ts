@@ -1,15 +1,21 @@
-import { input } from '@lib/inputs/JsonInput'
-import { output } from '@lib/outputs/YamlOutput'
+import { input as jsonInput } from '@lib/inputs/JsonInput'
+import { output as yamlOutput } from '@lib/outputs/YamlOutput'
+import { ConverterOptions } from '@lib/types'
 
 export const id = 'jsonToYaml'
 
-export const operation = (data: string): string => {
-  const obj = input(data)
+export const outputId = 'yaml'
+
+export const operation = (
+  data: string,
+  _options: ConverterOptions = {},
+): string => {
+  const obj = jsonInput(data)
   if (!obj) {
     return ''
   }
 
-  return output(obj)
+  return yamlOutput(obj)
 }
 
 // Some strings (eg. '[1, 2, 3]') get returned as valid YAML. If something

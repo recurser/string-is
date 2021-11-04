@@ -1,14 +1,19 @@
-import { input } from '@lib/inputs/YamlInput'
-import { output } from '@lib/outputs/JsonOutput'
-import { Obj } from '@lib/types'
+import { input as yamlInput } from '@lib/inputs/YamlInput'
+import { output as jsonOutput } from '@lib/outputs/JsonOutput'
+import { ConverterOptions, Obj } from '@lib/types'
 
 export const id = 'yamlToJson'
 
-export const operation = (data: string): string => {
-  const obj = input(data)
+export const outputId = 'json'
+
+export const operation = (
+  data: string,
+  options: ConverterOptions = {},
+): string => {
+  const obj = yamlInput(data)
   if (!obj) {
     return ''
   }
 
-  return output(obj as Obj)
+  return jsonOutput(obj as Obj, options)
 }

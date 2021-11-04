@@ -5,6 +5,8 @@ const convert = [
   'domain-convert-converterSelector',
   'domain-convert-inputForm',
   'domain-convert-outputForm',
+  'domain-convert-outputs-csvOutput',
+  'domain-convert-outputs-jsonOutput',
   'lib-converters-commands',
   'lib-converters-results',
   'pages-convert',
