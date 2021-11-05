@@ -3,10 +3,13 @@ import { sortByKeys } from '@lib/utilities/String'
 
 export const id = 'json'
 
-export const output = (input: Obj, options: ConverterOptions): string => {
+export const output = (
+  input: Obj,
+  { sortKeys, ...options }: ConverterOptions = {},
+): string => {
   let processed = input
 
-  if (options.sortKeys) {
+  if (sortKeys) {
     processed = sortByKeys(input)
   }
 
