@@ -8,12 +8,12 @@ export const outputId = 'yaml'
 
 export const operation = (
   data: string,
-  _options: ConverterOptions = {},
+  options: ConverterOptions = {},
 ): string => {
   const obj = csvInput(data)
   if (!obj) {
     return ''
   }
 
-  return yamlOutput(obj)
+  return yamlOutput(obj, options)
 }

@@ -7,6 +7,7 @@ const convert = [
   'domain-convert-outputForm',
   'domain-convert-outputs-csvOutput',
   'domain-convert-outputs-jsonOutput',
+  'domain-convert-outputs-yamlOutput',
   'lib-converters-commands',
   'lib-converters-results',
   'pages-convert',
