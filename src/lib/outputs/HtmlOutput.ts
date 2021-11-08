@@ -1,5 +1,7 @@
 import { html } from 'js-beautify'
 
+import { ConverterOptions } from '@lib/types'
+
 export const id = 'html'
 
 const defaults = {
@@ -9,6 +11,10 @@ const defaults = {
   space_in_empty_paren: true,
 }
 
-export const output = (input: string): string => {
-  return html(input, defaults)
+export const output = (
+  input: string,
+  options: ConverterOptions = {},
+): string => {
+  console.log(options)
+  return html(input, { ...defaults, ...options })
 }

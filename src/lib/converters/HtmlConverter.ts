@@ -7,7 +7,7 @@ export const outputId = 'html'
 
 export const operation = (
   input: string,
-  _options: ConverterOptions = {},
+  options: ConverterOptions = {},
 ): string => {
-  return htmlOutput(input)
+  return htmlOutput(input, options)
 }

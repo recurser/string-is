@@ -6,6 +6,7 @@ const convert = [
   'domain-convert-inputForm',
   'domain-convert-outputForm',
   'domain-convert-outputs-csvOutput',
+  'domain-convert-outputs-htmlOutput',
   'domain-convert-outputs-jsonOutput',
   'domain-convert-outputs-yamlOutput',
   'lib-converters-commands',
