@@ -13,5 +13,5 @@ export const output = (
     processed = sortByKeys(input)
   }
 
-  return JSON.stringify(processed, null, (options.space as number) || 2)
+  return JSON.stringify(processed, undefined, (options.space || '  ') as string)
 }
