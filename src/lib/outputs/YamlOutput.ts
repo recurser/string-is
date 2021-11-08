@@ -15,8 +15,6 @@ export const output = (
     processed = sortByKeys(input)
   }
 
-  console.log(options)
-
   // See https://github.com/nodeca/js-yaml/issues/376
   return `---\n${dump(processed, options)}`
 }
