@@ -32,7 +32,7 @@ export const Header = (): ReactElement => {
           <Link href={ROUTE_ABOUT}>
             <Tab isSelected={pathname === ROUTE_ABOUT}>{t('menuAbout')}</Tab>
           </Link>
-          <Link href="https://github.com/string-is/string-is" target="_blank">
+          <Link href="https://github.com/recurser/string-is" target="_blank">
             <Tab isSelected={false}>{t('menuGithub')}</Tab>
           </Link>
         </Tablist>
