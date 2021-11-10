@@ -7,6 +7,7 @@
   "json": "JSON format",
   "jsonToCsv": "JSON to CSV",
   "jsonToYaml": "JSON to YAML",
+  "md5": "MD5 hash",
   "sha": "SHA hash",
   "urlDecode": "URL decode",
   "urlEncode": "URL encode",
