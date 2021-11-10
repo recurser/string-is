@@ -3,6 +3,7 @@ import { isEmpty } from 'lodash'
 import {
   Base64EncodeConverter,
   Converter,
+  ShaConverter,
   UrlEncodeConverter,
 } from '@lib/converters'
 
@@ -18,5 +19,6 @@ export const confidence = (input: string) => {
 
 export const converters = [
   Base64EncodeConverter,
+  ShaConverter,
   UrlEncodeConverter,
 ] as Converter[]

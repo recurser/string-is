@@ -77,7 +77,16 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, Props>(
             onChange={onChangeForceQuotes}
           />
         </Pane>
-        <CodeTextarea {...props} ref={ref} />
+
+        <CodeTextarea
+          {...props}
+          minHeight={
+            `calc(100% - ${majorScale(
+              8,
+            )}px)` /* Allow for the select box height in settings */
+          }
+          ref={ref}
+        />
       </>
     )
   },

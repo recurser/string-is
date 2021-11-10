@@ -56,7 +56,16 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, Props>(
             onChange={onChangeHeader}
           />
         </Pane>
-        <CodeTextarea {...props} ref={ref} />
+
+        <CodeTextarea
+          {...props}
+          minHeight={
+            `calc(100% - ${majorScale(
+              7,
+            )}px)` /* Allow for the checkbox height in settings */
+          }
+          ref={ref}
+        />
       </>
     )
   },

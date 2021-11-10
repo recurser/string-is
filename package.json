@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "bluebird": "^3.7.2",
+    "crypto-js": "^4.1.1",
     "evergreen-ui": "^6.5.1",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.2",
@@ -33,6 +34,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@types/bluebird": "^3.5.36",
+    "@types/crypto-js": "^4.0.2",
     "@types/hjson": "^2.4.3",
     "@types/js-beautify": "^1.13.3",
     "@types/js-yaml": "^4.0.4",

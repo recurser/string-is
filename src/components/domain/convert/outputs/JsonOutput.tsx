@@ -65,7 +65,16 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, Props>(
             onChange={onChangeSortKeys}
           />
         </Pane>
-        <CodeTextarea {...props} ref={ref} />
+
+        <CodeTextarea
+          {...props}
+          minHeight={
+            `calc(100% - ${majorScale(
+              8,
+            )}px)` /* Allow for the select box height in settings */
+          }
+          ref={ref}
+        />
       </>
     )
   },
