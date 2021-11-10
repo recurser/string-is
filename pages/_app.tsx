@@ -1,13 +1,20 @@
+import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import type { ReactElement, ReactNode } from 'react'
 
-import { Application as Layout } from '@components/layout'
+// See https://nextjs.org/docs/basic-features/layouts#with-typescript
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
 
-function StringIs({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  )
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+function StringIs({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(<Component {...pageProps} />)
 }
 
 export default StringIs // eslint-disable-line import/no-default-export
