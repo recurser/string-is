@@ -2,6 +2,7 @@ import { CsvOutput } from '@components/domain/convert/outputs/CsvOutput'
 import { HtmlOutput } from '@components/domain/convert/outputs/HtmlOutput'
 import { JsonOutput } from '@components/domain/convert/outputs/JsonOutput'
 import { PlainOutput } from '@components/domain/convert/outputs/PlainOutput'
+import { ShaOutput } from '@components/domain/convert/outputs/ShaOutput'
 import { YamlOutput } from '@components/domain/convert/outputs/YamlOutput'
 
 export type OutputName =
@@ -16,5 +17,6 @@ export const outputs = {
   HtmlOutput,
   JsonOutput,
   PlainOutput,
+  ShaOutput,
   YamlOutput,
 }

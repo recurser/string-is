@@ -7,6 +7,7 @@
   "json": "Formatted JSON",
   "jsonToCsv": "Formatted CSV",
   "jsonToYaml": "Formatted YAML",
+  "sha": "SHA hash",
   "urlDecode": "URL decoded",
   "urlEncode": "URL encoded",
   "yaml": "Formatted YAML",
