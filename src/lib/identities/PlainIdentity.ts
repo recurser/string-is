@@ -4,6 +4,7 @@ import {
   Base64EncodeConverter,
   Converter,
   Md5Converter,
+  RipemdConverter,
   ShaConverter,
   UrlEncodeConverter,
 } from '@lib/converters'
@@ -21,6 +22,7 @@ export const confidence = (input: string) => {
 export const converters = [
   Base64EncodeConverter,
   Md5Converter,
+  RipemdConverter,
   ShaConverter,
   UrlEncodeConverter,
 ] as Converter[]

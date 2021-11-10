@@ -8,6 +8,7 @@
   "jsonToCsv": "Formatted CSV",
   "jsonToYaml": "Formatted YAML",
   "md5": "MD5 hash",
+  "ripemd": "RIPEMD-160 hash",
   "sha": "SHA hash",
   "urlDecode": "URL decoded",
   "urlEncode": "URL encoded",
