@@ -153,6 +153,19 @@ export const About = () => {
               papaparse
             </Link>
           </ListItem>
+
+          <ListItem>
+            <Trans
+              components={[
+                <Link
+                  href="https://github.com/sindresorhus/is-html/blob/main/index.js"
+                  key="li_acknowledgement_is_html_1"
+                  target="_blank"
+                />,
+              ]}
+              i18nKey="pages-about:li_acknowledgement_is_html"
+            />
+          </ListItem>
         </UnorderedList>
 
         <Heading>Contact</Heading>

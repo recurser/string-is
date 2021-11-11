@@ -1,11 +1,15 @@
 # string-is
 
-[string.is/](https://www.string.is/) is an open-source, privacy-friendly toolkit for developers.
+![eslint](https://github.com/recurser/string-is/actions/workflows/eslint.yml/badge.svg)
+![jest](https://github.com/recurser/string-is/actions/workflows/jest.yml/badge.svg)
+![build](https://github.com/recurser/string-is/actions/workflows/build.yml/badge.svg)
+
+[string.is](https://www.string.is/) is an open-source, privacy-friendly toolkit for developers. You can see it in action [here](https://www.string.is/).
 
 ![Screenshot](src/images/screenshot.png)
 
 
-## Getting Started
+## Running locally
 
 Install dependencies:
 
@@ -19,7 +23,7 @@ Then run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+... and then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 To run all linting checks, type checks, tests, and build for production:
 
@@ -28,7 +32,7 @@ yarn all
 ```
 
 
-## Adding a new converter
+## Adding a new format
 
 1. Decide what formats you are converting *from* and *to*. As an example, let's pretend you are writing a converter *from* plain text *to* reversed-text.
 2. Check that there is an `identity` (under [src/lib/identities](https://github.com/recurser/string-is/tree/develop/src/lib/identities)) for the *from* format. In this case we are converting from plain text, and we already have a [PlainIdentity](https://github.com/recurser/string-is/tree/develop/src/lib/identities/PlainIdentity.ts), so we don't need to add a new identity. An `identity` should export (a) a `confidence` function which, given an input string, returns a number out of 100 describing the confidence that the given input matches the identity, and (b) an array of `converters` that the identity can be used with.
@@ -51,7 +55,7 @@ Check out their [Next.js deployment documentation](https://nextjs.org/docs/deplo
 
 ## Contributing
 
-Once you've made your commits:
+Once you've made your changes:
 
 1. [Fork](http://help.github.com/fork-a-repo/) string-is
 2. Create a topic branch - `git checkout -b feature/add-my-new-converter`
