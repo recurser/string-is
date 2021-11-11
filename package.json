@@ -40,7 +40,7 @@
     "@types/js-yaml": "^4.0.4",
     "@types/json2csv": "^5.0.3",
     "@types/lodash": "^4.14.176",
-    "@types/node": "^16.11.6",
+    "@types/node": "^16.11.7",
     "@types/papaparse": "^5.3.1",
     "@types/react": "17.0.34",
     "@types/styled-components": "^5.1.15",
