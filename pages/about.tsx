@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 
+import { Application } from '@components/layout'
 import { About as SubAbout } from '@pages/About'
 
-const About: NextPage = () => {
+// eslint-disable-next-line import/no-default-export
+export default function About() {
   return <SubAbout />
 }
 
-export default About // eslint-disable-line import/no-default-export
+About.getLayout = (page: ReactElement) => <Application>{page}</Application>

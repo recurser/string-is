@@ -5,9 +5,14 @@ import { Footer } from '@components/layout/Footer'
 import { Header } from '@components/layout/Header'
 import { InputContext } from '@contexts/InputContext'
 
+interface Props {
+  maxWidth: number
+}
+
 export const Application = ({
   children,
-}: PropsWithChildren<Record<string, unknown>>): ReactElement => (
+  maxWidth,
+}: PropsWithChildren<Props>): ReactElement => (
   <InputContext>
     <Pane
       display="flex"
@@ -15,7 +20,7 @@ export const Application = ({
       justifyContent="center"
       marginLeft="auto"
       marginRight="auto"
-      maxWidth={1600}
+      maxWidth={maxWidth}
       paddingTop={majorScale(3)}
     >
       <Header />
@@ -26,3 +31,7 @@ export const Application = ({
     </Pane>
   </InputContext>
 )
+
+Application.defaultProps = {
+  maxWidth: 800,
+}

@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 
+import { Application } from '@components/layout'
 import { Security as SubSecurity } from '@pages/Security'
 
-const Security: NextPage = () => {
+// eslint-disable-next-line import/no-default-export
+export default function Security() {
   return <SubSecurity />
 }
 
-export default Security // eslint-disable-line import/no-default-export
+Security.getLayout = (page: ReactElement) => <Application>{page}</Application>

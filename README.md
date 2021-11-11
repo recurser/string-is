@@ -2,6 +2,8 @@
 
 [string.is/](https://www.string.is/) is an open-source, privacy-friendly toolkit for developers.
 
+![Screenshot](src/images/screenshot.png)
+
 
 ## Getting Started
 
@@ -60,7 +62,7 @@ Once you've made your commits:
 
 ## Author
 
-Dave Perrett :: hello@daveperrett.com :: [@daveperrett](http://twitter.com/daveperrett)
+[@davemetrics](http://twitter.com/davemetrics)
 
 
 ## Licensing

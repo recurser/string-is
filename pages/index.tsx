@@ -1,9 +1,13 @@
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 
+import { Application } from '@components/layout'
 import { Convert } from '@pages/Convert'
 
-const Home: NextPage = () => {
+// eslint-disable-next-line import/no-default-export
+export default function Home() {
   return <Convert />
 }
 
-export default Home // eslint-disable-line import/no-default-export
+Home.getLayout = (page: ReactElement) => (
+  <Application maxWidth={1600}>{page}</Application>
+)

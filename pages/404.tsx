@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 
+import { Application } from '@components/layout'
 import { NotFound as SubNotFound } from '@pages/errors/NotFound'
 
-const NotFound: NextPage = () => {
+// eslint-disable-next-line import/no-default-export
+export default function NotFound() {
   return <SubNotFound />
 }
 
-export default NotFound // eslint-disable-line import/no-default-export
+NotFound.getLayout = (page: ReactElement) => <Application>{page}</Application>
