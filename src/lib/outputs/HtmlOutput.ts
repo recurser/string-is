@@ -15,6 +15,5 @@ export const output = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
-  console.log(options)
   return html(input, { ...defaults, ...options })
 }
