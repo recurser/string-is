@@ -53,6 +53,17 @@ The easiest way to deploy string.is is to use the [Vercel Platform](https://verc
 Check out their [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
+## Analytics
+
+string.is includes support for [Plausible Analytics](https://plausible.io/), a privacy-friendly, cookie-less analytics service. To enable it, set an environment variable specifying the domain:
+
+```
+NEXT_PUBLIC_ANALYTICS_DOMAIN=string.is
+```
+
+Analytics is disabled by default unless `process.env.NODE_ENV === 'production'` and a `NEXT_PUBLIC_ANALYTICS_DOMAIN` domain is set.
+
+
 ## Contributing
 
 Once you've made your changes:
