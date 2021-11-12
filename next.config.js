@@ -14,7 +14,7 @@ const cspHeaders = [
     key: 'Content-Security-Policy',
     value:
       `base-uri 'none'; ` +
-      `connect-src 'self' https://vitals.vercel-insights.com; ` +
+      `connect-src 'self' https://plausible.io/; ` +
       `default-src 'none'; ` +
       `font-src 'self'; ` +
       `form-action 'self'; ` +
@@ -23,7 +23,7 @@ const cspHeaders = [
       `manifest-src 'self'; ` +
       `prefetch-src 'self'; ` +
       `script-src ${scriptSrc}; ` +
-      `script-src-elem ${scriptSrc}; ` +
+      `script-src-elem ${scriptSrc} https://plausible.io/; ` +
       `style-src 'self' 'unsafe-inline';`,
   },
   {
