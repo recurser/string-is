@@ -10,7 +10,6 @@ import { createRef, useEffect, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { Converter } from '@lib/converters'
-import { useAnalytics } from '@services/Analytics'
 
 interface Props {
   converters: Converter[]
@@ -29,7 +28,6 @@ export const ConverterSelector = ({
   setConverter,
   setTriggerMenu,
 }: Props) => {
-  const analytics = useAnalytics()
   const { t } = useTranslation('domain-convert-converterSelector')
 
   const [selected, setSelected] = useState<string | undefined>()
@@ -72,11 +70,6 @@ export const ConverterSelector = ({
 
   const onSelect = ({ value }: SelectMenuItem) => {
     setSelected(value as string)
-    analytics('selectConverter', {
-      props: {
-        converter: value,
-      },
-    })
   }
 
   // Set the converter based on the selected value. Ideally we could use the
