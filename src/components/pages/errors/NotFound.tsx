@@ -2,14 +2,30 @@ import { Pane } from 'evergreen-ui'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
+import { useEffect } from 'react'
 
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 import { Heading, Paragraph } from '@components/typography'
+import { useAnalytics } from '@services/Analytics'
 import { ROUTE_CONVERT } from '@services/Routes'
 
 export const NotFound = () => {
   const { t } = useTranslation('pages-errors-notFound')
+  const analytics = useAnalytics()
+
+  console.log('event! =>')
+  console.log(document.location.pathname)
+
+  useEffect(() => {
+    analytics('404', {
+      props: {
+        path: document.location.pathname,
+      },
+    })
+  }, [analytics])
+
+  console.log('<= event!')
 
   return (
     <Pane display="flex">
