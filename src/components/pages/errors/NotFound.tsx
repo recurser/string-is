@@ -1,10 +1,11 @@
-import { Heading, majorScale, Pane, Paragraph } from 'evergreen-ui'
+import { Pane } from 'evergreen-ui'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
 
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
+import { Heading, Paragraph } from '@components/typography'
 import { ROUTE_CONVERT } from '@services/Routes'
 
 export const NotFound = () => {
@@ -17,20 +18,16 @@ export const NotFound = () => {
       </Head>
 
       <Card title={t('page_heading')}>
-        <Heading size={400}>{t('our_site_heading')}</Heading>
+        <Heading>{t('our_site_heading')}</Heading>
         <Paragraph>{t('our_site_paragraph')}</Paragraph>
 
-        <Heading marginTop={majorScale(2)} size={400}>
-          {t('another_site_heading')}
-        </Heading>
+        <Heading>{t('another_site_heading')}</Heading>
         <Paragraph>{t('another_site_paragraph')}</Paragraph>
 
-        <Heading marginTop={majorScale(2)} size={400}>
-          {t('typo_heading')}
-        </Heading>
+        <Heading>{t('typo_heading')}</Heading>
         <Paragraph>{t('typo_paragraph')}</Paragraph>
 
-        <Paragraph marginTop={majorScale(2)}>
+        <Paragraph>
           <Trans
             components={{
               link: <Link href={`mailto:${process.env.CONTACT_EMAIL}`} />,
@@ -39,7 +36,7 @@ export const NotFound = () => {
           />
         </Paragraph>
 
-        <Paragraph marginTop={majorScale(2)} textAlign="center">
+        <Paragraph textAlign="center">
           <Link href={ROUTE_CONVERT}>{t('home_button')}</Link>
         </Paragraph>
       </Card>

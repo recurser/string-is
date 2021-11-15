@@ -1,5 +1,21 @@
 {
+  "analytics_content": "The site uses <0>Plausible Analytics</0>, a lightweight and open-source website analytics tool. Plausible is hosted in the EU and is fully compliant with GDPR, CCPA and PECR. No personally-identifiable data is collected, and the analytics dashboard is <1>open to the public</1>.",
+  "analytics_heading": "Privacy-friendly analytics",
+  "cookies_content": "The site doesn\u2019t use cookies, doesn\u2019t generate any persistent identifiers, and doesn\u2019t collect or store any personal or identifiable data.",
+  "cookies_heading": "No Cookies",
+  "csp_content": "The site maintains a strict Content Security Policy, which blocks background connections to external services, and protects against cross-site scripting, clickjacking, and other code injection attacks.",
+  "csp_heading": "Strict Content Security Policy",
+  "dependencies_content": "Dependencies are carefully curated and limited to a small group of well-maintained libraries, with regular updates and multiple maintainers. The project also has <0>Github security scans</0> and dependency updates enabled, and pull requests are regularly reviewed.",
+  "dependencies_heading": "Carefully curated dependencies",
+  "gdpr_content": "The site is fully compliant with GDPR, CCPA and PECR. No personally-identifiable data ever leaves your device.",
+  "gdpr_heading": "GDPR compliant",
+  "intro": "string.is has been designed from the ground up to protect your privacy. Some of the measures taken to ensure privacy include:",
+  "local_content": "All conversion operations happen <0>client-side</0> on your browser. At no time is the data you provide sent to any third parties.",
+  "local_heading": "Your data never leaves your browser",
+  "open_source_content": "The source code is publicly available on <0>Github</0>, so that you can verify for yourself how your data is handled.",
+  "open_source_heading": "Open source",
   "page_heading": "Security",
   "page_title": "Security",
-  "todo": "To do"
+  "ssl_content": "Requests and responses are encrypted in transit to protect against MITM attacks. Certificates are provided by <0>Let\u2019s Encrypt</0>, and managed by <1>Vercel</1>.",
+  "ssl_heading": "All requests are served over SSL"
 }
