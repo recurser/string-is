@@ -47,7 +47,7 @@ export const OutputForm = ({
         },
       })
     }
-  }, [focusOutput, setFocusOutput, textareaRef])
+  }, [analytics, focusOutput, setFocusOutput, textareaRef, value])
 
   // Use a dynamic output component based on the converter's 'output' string.
   const OutputElement = useMemo(() => {
