@@ -14,9 +14,6 @@ export const NotFound = () => {
   const { t } = useTranslation('pages-errors-notFound')
   const analytics = useAnalytics()
 
-  console.log('event! =>')
-  console.log(document.location.pathname)
-
   useEffect(() => {
     analytics('404', {
       props: {
@@ -24,8 +21,6 @@ export const NotFound = () => {
       },
     })
   }, [analytics])
-
-  console.log('<= event!')
 
   return (
     <Pane display="flex">
