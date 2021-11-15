@@ -29,6 +29,15 @@ export const Footer = (): ReactElement => {
       <Link color="neutral" href={ROUTE_TERMS} size={300}>
         {t('terms')}
       </Link>
+      &middot;
+      <Link
+        color="neutral"
+        href="https://plausible.io/string.is"
+        size={300}
+        target="_blank"
+      >
+        {t('analytics')}
+      </Link>
     </Pane>
   )
 }
