@@ -1,12 +1,7 @@
-import {
-  Card as BaseCard,
-  CardProps,
-  Heading,
-  majorScale,
-  Pane,
-} from 'evergreen-ui'
+import { Card as BaseCard, CardProps, majorScale, Pane } from 'evergreen-ui'
 import { ReactElement } from 'react'
 
+import { Heading } from '@components/typography'
 import { useBreakpoints } from '@services/Responsive'
 
 interface Props extends CardProps {
@@ -53,7 +48,7 @@ export const Card = ({
           )}
           {title && (
             <Pane justifyContent="center">
-              <Heading role="heading" size={400}>
+              <Heading margin={0} role="heading">
                 {title}
               </Heading>
             </Pane>

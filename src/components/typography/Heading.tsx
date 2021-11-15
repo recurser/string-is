@@ -8,4 +8,5 @@ export const Heading = ({ children, ...props }: HeadingProps): ReactElement => (
 Heading.defaultProps = {
   marginBottom: minorScale(3),
   marginTop: minorScale(3),
+  size: 400,
 }
