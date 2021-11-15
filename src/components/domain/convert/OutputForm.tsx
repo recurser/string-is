@@ -40,12 +40,15 @@ export const OutputForm = ({
     if (focusOutput) {
       textareaRef.current?.focus()
       setFocusOutput(false)
-      // Track which converter has been selected, to find out which are useful.
-      analytics('Select Converter', {
-        props: {
-          converter: value,
-        },
-      })
+
+      if (converter) {
+        // Track which converter has been selected, to find out which are useful.
+        analytics('Convert', {
+          props: {
+            converter: converter.id,
+          },
+        })
+      }
     }
   }, [analytics, focusOutput, setFocusOutput, textareaRef, value])
 
