@@ -82,4 +82,4 @@ Once you've made your changes:
 
 ## Licensing
 
-See [License.txt](https://github.com/recurser/string-is/blob/develop/LICENSE.txt) for details.
+See the [LICENSE](https://github.com/recurser/string-is/blob/develop/LICENSE) for details.
