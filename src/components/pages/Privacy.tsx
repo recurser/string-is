@@ -69,7 +69,7 @@ export const Privacy = () => {
           <Trans
             components={[
               <Link
-                href="https://github.com/recurser/string-is/commits/develop/pages/privacy.tsx"
+                href="https://github.com/recurser/string-is/commits/develop/locales/en/pages-privacy.json"
                 key="para_changes"
                 target="_blank"
               />,
