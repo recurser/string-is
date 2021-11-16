@@ -1,5 +1,17 @@
 {
+  "heading_changes": "Changes and questions",
+  "heading_do": "What we DO do",
+  "heading_dont": "What we DON\u2019T do",
+  "li_do_analytics": "We use <0>Plausible Analytics</0> (a lightweight and open-source website analytics tool) to collect some aggregate anonymous usage data for statistical purposes. This usage data is <1>open to the public</1>, and governed by the Plausible Analytics <2>Data Policy</2>.",
+  "li_do_local_storage": "We use LocalStorage to store your conversion preferences, to save you time on your next visit.",
+  "li_dont_cookies": "We don\u2019t use cookies or other persistent identifiers.",
+  "li_dont_mine": "We don\u2019t mine or harvest data for personal or behavioral trends.",
+  "li_dont_pay": "We don\u2019t request or accept payments.",
+  "li_dont_personal": "We don\u2019t collect personal information.",
+  "li_dont_share": "We don\u2019t share information with advertising companies or social networks.",
   "page_heading": "Privacy Policy",
   "page_title": "Privacy Policy",
-  "todo": "To do"
+  "para_changes": "We may update this policy as needed to comply with relevant regulations and reflect any new practices. The complete change history is <0>available on Github</0>.",
+  "para_file_issue": "Feel free to <0>file an issue on Github</0> if you have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information.",
+  "para_tldr": "TL;DR: we don\u2019t use cookies and we don\u2019t collect any personal data. We don\u2019t provide accounts or accept payments. We are committed to complying with GDPR, CCPA, PECR and other privacy regulations. See the <0>Security page</0> for details of the measures taken to protect both your data and privacy."
 }
