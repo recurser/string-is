@@ -1,4 +1,4 @@
-import { ListItem, Pane } from 'evergreen-ui'
+import { ListItem, Pane, Strong } from 'evergreen-ui'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
@@ -24,7 +24,7 @@ export const About = () => {
       <Card title={t('page_heading')}>
         <Paragraph>
           <Trans
-            components={[<b key="para_intro_1" />]}
+            components={[<Strong key="para_intro_1" />]}
             i18nKey="pages-about:para_intro"
           />
         </Paragraph>
