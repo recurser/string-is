@@ -16,12 +16,12 @@ const cspHeaders = [
       `base-uri 'none'; ` +
       `connect-src 'self' https://plausible.io/; ` +
       `default-src 'none'; ` +
-      `font-src 'self'; ` +
-      `form-action 'self'; ` +
-      `frame-ancestors 'self'; ` +
-      `img-src 'self' data: ; ` +
+      `font-src 'none'; ` +
+      `form-action 'none'; ` +
+      `frame-ancestors 'none'; ` +
+      `img-src 'self'; ` +
       `manifest-src 'self'; ` +
-      `prefetch-src 'self'; ` +
+      `prefetch-src 'none'; ` +
       `script-src ${scriptSrc}; ` +
       `script-src-elem ${scriptSrc} https://plausible.io/; ` +
       `style-src 'self' 'unsafe-inline';`,
