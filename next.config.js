@@ -21,7 +21,7 @@ const cspHeaders = [
       `frame-ancestors 'none'; ` +
       `img-src 'self'; ` +
       `manifest-src 'self'; ` +
-      `prefetch-src 'none'; ` +
+      `prefetch-src 'self'; ` +
       `script-src ${scriptSrc}; ` +
       `script-src-elem ${scriptSrc} https://plausible.io/; ` +
       `style-src 'self' 'unsafe-inline';`,
