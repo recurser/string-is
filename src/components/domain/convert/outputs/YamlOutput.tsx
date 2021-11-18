@@ -1,15 +1,10 @@
 import { Checkbox, majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  ChangeEvent,
-  Dispatch,
-  forwardRef,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import { ChangeEvent, Dispatch, forwardRef, SetStateAction } from 'react'
 
 import { CodeTextarea } from '@components/forms'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { id as outputId } from '@lib/outputs/YamlOutput'
 import { ConverterOptions } from '@lib/types'
 
 interface Props extends TextareaProps {
@@ -17,26 +12,20 @@ interface Props extends TextareaProps {
 }
 
 export const YamlOutput = forwardRef<HTMLTextAreaElement, Props>(
-  ({ setOptions, ...props }: Props, ref) => {
+  (props: Props, ref) => {
     const { t } = useTranslation('domain-convert-outputs-yamlOutput')
-    const [forceQuotes, setForceQuotes] = useState(true)
-    const [indent, setIndent] = useState(2)
-    const [sortKeys, setSortKeys] = useState(true)
-
-    useEffect(() => {
-      setOptions({ forceQuotes, indent, sortKeys })
-    }, [forceQuotes, indent, setOptions, sortKeys])
+    const { options, setOptions } = useConverterOptionsContext(outputId)
 
     const onChangeForceQuotes = (event: ChangeEvent<HTMLInputElement>) => {
-      setForceQuotes(event.target.checked)
+      setOptions({ ...options, forceQuotes: event.target.checked })
     }
 
     const onChangeIndent = (event: ChangeEvent<HTMLSelectElement>) => {
-      setIndent(parseInt(event.target.value, 10))
+      setOptions({ ...options, indent: parseInt(event.target.value, 10) })
     }
 
     const onChangeSortKeys = (event: ChangeEvent<HTMLInputElement>) => {
-      setSortKeys(event.target.checked)
+      setOptions({ ...options, sortKeys: event.target.checked })
     }
 
     return (
@@ -52,7 +41,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, Props>(
             <Select
               alignSelf="start"
               onChange={onChangeIndent}
-              value={indent}
+              value={options.indent as number}
               width={majorScale(12)}
             >
               <option value={2}>{t('2SpacesOption')}</option>
@@ -62,7 +51,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, Props>(
           </Pane>
 
           <Checkbox
-            checked={sortKeys}
+            checked={options.sortKeys as boolean}
             label={t('sortKeysLabel')}
             marginBottom={0}
             marginTop={0}
@@ -70,7 +59,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, Props>(
           />
 
           <Checkbox
-            checked={forceQuotes}
+            checked={options.forceQuotes as boolean}
             label={t('forceQuotesLabel')}
             marginBottom={0}
             marginTop={0}
