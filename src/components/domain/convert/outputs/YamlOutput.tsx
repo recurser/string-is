@@ -1,18 +1,13 @@
 import { Checkbox, majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, Dispatch, forwardRef, SetStateAction } from 'react'
+import { ChangeEvent, forwardRef } from 'react'
 
 import { CodeTextarea } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { id as outputId } from '@lib/outputs/YamlOutput'
-import { ConverterOptions } from '@lib/types'
 
-interface Props extends TextareaProps {
-  setOptions: Dispatch<SetStateAction<ConverterOptions>>
-}
-
-export const YamlOutput = forwardRef<HTMLTextAreaElement, Props>(
-  (props: Props, ref) => {
+export const YamlOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  (props: TextareaProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-yamlOutput')
     const { options, setOptions } = useConverterOptionsContext(outputId)
 

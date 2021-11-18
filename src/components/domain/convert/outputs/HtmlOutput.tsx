@@ -1,24 +1,13 @@
 import { majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  ChangeEvent,
-  Dispatch,
-  forwardRef,
-  SetStateAction,
-  useState,
-} from 'react'
+import { ChangeEvent, forwardRef, useState } from 'react'
 
 import { CodeTextarea } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { id as outputId } from '@lib/outputs/HtmlOutput'
-import { ConverterOptions } from '@lib/types'
 
-interface Props extends TextareaProps {
-  setOptions: Dispatch<SetStateAction<ConverterOptions>>
-}
-
-export const HtmlOutput = forwardRef<HTMLTextAreaElement, Props>(
-  (props: Props, ref) => {
+export const HtmlOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  (props: TextareaProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-htmlOutput')
     const { options, setOptions } = useConverterOptionsContext(outputId)
     const [space, setSpace] = useState(
