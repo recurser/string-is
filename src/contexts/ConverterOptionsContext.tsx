@@ -45,7 +45,7 @@ export const useConverterOptionsContext = (
   }
 
   return {
-    options: options[namespace] as unknown as ConverterOptions,
+    options: (options[namespace] as unknown as ConverterOptions) || {},
     setOptions: wrappedSetOptions,
   }
 }
