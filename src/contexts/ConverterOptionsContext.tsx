@@ -6,30 +6,55 @@ import {
   useState,
 } from 'react'
 
+import * as untypedOutputs from '@lib/outputs'
+import type { Output } from '@lib/outputs'
 import { ConverterOptions } from '@lib/types'
 
+type NamespacedOptions = Record<string, ConverterOptions>
+
 interface ConverterOptionsProps {
-  options: Record<string, ConverterOptions>
-  setOptions: (namespace: string, opts: ConverterOptions) => void
+  options: NamespacedOptions
+  setOptions: (opts: NamespacedOptions) => void
 }
 
+interface NamespacedProps {
+  options: ConverterOptions
+  setOptions: (opts: ConverterOptions) => void
+}
+
+const outputs = untypedOutputs as unknown as Record<string, Output>
+const defaults = Object.fromEntries(
+  Object.keys(outputs).map((key) => {
+    const output = outputs[key]
+    return [output.id, output.defaultOptions || {}]
+  }),
+)
+
 const Context = createContext<ConverterOptionsProps>({
-  options: {},
-  setOptions: (_namespace: string, _opts: ConverterOptions) => undefined,
+  options: defaults,
+  setOptions: (_opts: NamespacedOptions) => undefined,
 })
 
-export const useConverterOptionsContext = (): ConverterOptionsProps =>
-  useContext(Context)
+export const useConverterOptionsContext = (
+  namespace: string,
+): NamespacedProps => {
+  const { options, setOptions } = useContext(Context)
+
+  const wrappedSetOptions = (opts: ConverterOptions) => {
+    setOptions({ ...options, [namespace]: opts })
+  }
+
+  return {
+    options: options[namespace] as unknown as ConverterOptions,
+    setOptions: wrappedSetOptions,
+  }
+}
 
 export const ConverterOptionsContext = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {
-  const [options, setOptions] = useState<Record<string, ConverterOptions>>({})
+  const [options, setOptions] = useState<NamespacedOptions>(defaults)
 
-  const wrapperSetOptions = (namespace: string, opts: ConverterOptions) => {
-    setOptions({ ...options, [namespace]: opts })
-  }
-
-  const value = { options, setOptions: wrapperSetOptions }
+  const value = { options, setOptions }
   return <Context.Provider value={value}>{children}</Context.Provider>
 }

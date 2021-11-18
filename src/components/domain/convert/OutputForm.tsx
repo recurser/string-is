@@ -4,6 +4,7 @@ import { createRef, useEffect, useMemo, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { outputs, OutputName } from '@components/domain/convert/outputs'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { useInputContext } from '@contexts/InputContext'
 import { Converter } from '@lib/converters'
 import { ConverterOptions } from '@lib/types'
@@ -25,7 +26,8 @@ export const OutputForm = ({
   const analytics = useAnalytics()
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
-  const [options, setOptions] = useState<ConverterOptions>({})
+  const [_options, setOptions] = useState<ConverterOptions>({})
+  const { options } = useConverterOptionsContext(converter?.outputId || '')
 
   const value = useMemo(() => {
     if (!converter || isEmpty(converter)) {
