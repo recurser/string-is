@@ -2576,10 +2576,10 @@ events@3.3.0:
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
-evergreen-ui@^6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-6.6.0.tgz#dbc6f67de9dead2967f6d66f788681a97d5358db"
-  integrity sha512-aEKOlHtTXBm7/4Qk5jhZ2fysuBiPTcAVmnsXtY1wiHK6a4fByX3vDsPd/9h8zlMV7oyUS+A6Gawa1iV3kBAhVw==
+evergreen-ui@^6.6.1:
+  version "6.6.1"
+  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-6.6.1.tgz#c14d84ae10a1d89048d1f4a4c7e8643097c6376c"
+  integrity sha512-ADFLuWFQb/bzL954XAcovwd4SR6KIPtubxnanONSePv/InNS18f6g2QVo2IQ7IIWlmtWOnPgu+9kO4a56TWvEA==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@segment/react-tiny-virtual-list" "^2.2.1"
@@ -5525,10 +5525,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@4.4.4:
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
-  integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
+typescript@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
+  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 ua-parser-js@^0.7.18:
   version "0.7.28"

@@ -1,37 +1,26 @@
 import { majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  ChangeEvent,
-  Dispatch,
-  forwardRef,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import { ChangeEvent, forwardRef, useState } from 'react'
 
 import { CodeTextarea } from '@components/forms'
-import { ConverterOptions } from '@lib/types'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { id as outputId } from '@lib/outputs/HtmlOutput'
 
-interface Props extends TextareaProps {
-  setOptions: Dispatch<SetStateAction<ConverterOptions>>
-}
-
-export const HtmlOutput = forwardRef<HTMLTextAreaElement, Props>(
-  ({ setOptions, ...props }: Props, ref) => {
+export const HtmlOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  (props: TextareaProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-htmlOutput')
-    const [space, setSpace] = useState('  ')
-
-    useEffect(() => {
-      const indent_char = space[0]
-      const indent_size = space.split(space[0]).length
-      setOptions({ indent_char, indent_size })
-    }, [setOptions, space])
+    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const [space, setSpace] = useState(
+      (options.indent_char as string).repeat(options.indent_size as number),
+    )
 
     const onChangeSpace = (event: ChangeEvent<HTMLSelectElement>) => {
+      const spc = event.target.value
+      const indent_char = spc[0]
+      const indent_size = spc.split(spc[0]).length
+      setOptions({ ...options, indent_char, indent_size })
       setSpace(event.target.value)
     }
-
-    useEffect
 
     return (
       <>

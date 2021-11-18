@@ -2,6 +2,11 @@ import { unparse } from 'papaparse'
 
 import { ConverterOptions, Obj } from '@lib/types'
 
+export const defaultOptions = {
+  header: true,
+  quotes: true,
+}
+
 export const id = 'csv'
 
 export const output = (input: Obj, options: ConverterOptions): string => {

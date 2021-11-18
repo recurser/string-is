@@ -1,32 +1,18 @@
 import { majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  ChangeEvent,
-  Dispatch,
-  forwardRef,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import { ChangeEvent, forwardRef } from 'react'
 
 import { CodeTextarea } from '@components/forms'
-import { ConverterOptions } from '@lib/types'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { id as outputId } from '@lib/outputs/ShaOutput'
 
-interface Props extends TextareaProps {
-  setOptions: Dispatch<SetStateAction<ConverterOptions>>
-}
-
-export const ShaOutput = forwardRef<HTMLTextAreaElement, Props>(
-  ({ setOptions, ...props }: Props, ref) => {
+export const ShaOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  (props: TextareaProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-shaOutput')
-    const [algorithm, setAlgorithm] = useState('sha256')
-
-    useEffect(() => {
-      setOptions({ algorithm })
-    }, [setOptions, algorithm])
+    const { options, setOptions } = useConverterOptionsContext(outputId)
 
     const onChangeAlgorithm = (event: ChangeEvent<HTMLSelectElement>) => {
-      setAlgorithm(event.target.value as string)
+      setOptions({ ...options, algorithm: event.target.value })
     }
 
     return (
@@ -42,7 +28,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, Props>(
             <Select
               alignSelf="start"
               onChange={onChangeAlgorithm}
-              value={algorithm}
+              value={options.algorithm as string}
               width={majorScale(12)}
             >
               <option value={'sha1'}>{t('sha1Option')}</option>

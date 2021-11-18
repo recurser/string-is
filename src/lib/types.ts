@@ -3,4 +3,7 @@ export type Obj =
   | Record<string, unknown>[]
   | unknown[]
 
-export type ConverterOptions = Record<string, boolean | number | string>
+export type ConverterOptions = Record<
+  string,
+  boolean | number | string | undefined
+>
