@@ -5,11 +5,12 @@ import {
   Dispatch,
   forwardRef,
   SetStateAction,
-  useEffect,
   useState,
 } from 'react'
 
 import { CodeTextarea } from '@components/forms'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { id as outputId } from '@lib/outputs/HtmlOutput'
 import { ConverterOptions } from '@lib/types'
 
 interface Props extends TextareaProps {
@@ -17,21 +18,20 @@ interface Props extends TextareaProps {
 }
 
 export const HtmlOutput = forwardRef<HTMLTextAreaElement, Props>(
-  ({ setOptions, ...props }: Props, ref) => {
+  (props: Props, ref) => {
     const { t } = useTranslation('domain-convert-outputs-htmlOutput')
-    const [space, setSpace] = useState('  ')
-
-    useEffect(() => {
-      const indent_char = space[0]
-      const indent_size = space.split(space[0]).length
-      setOptions({ indent_char, indent_size })
-    }, [setOptions, space])
+    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const [space, setSpace] = useState(
+      (options.indent_char as string).repeat(options.indent_size as number),
+    )
 
     const onChangeSpace = (event: ChangeEvent<HTMLSelectElement>) => {
+      const spc = event.target.value
+      const indent_char = spc[0]
+      const indent_size = spc.split(spc[0]).length
+      setOptions({ ...options, indent_char, indent_size })
       setSpace(event.target.value)
     }
-
-    useEffect
 
     return (
       <>
