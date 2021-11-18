@@ -1,15 +1,10 @@
 import { Checkbox, majorScale, Pane, TextareaProps } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  ChangeEvent,
-  Dispatch,
-  forwardRef,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import { ChangeEvent, Dispatch, forwardRef, SetStateAction } from 'react'
 
 import { CodeTextarea } from '@components/forms'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { id as outputId } from '@lib/outputs/CsvOutput'
 import { ConverterOptions } from '@lib/types'
 
 interface Props extends TextareaProps {
@@ -17,21 +12,16 @@ interface Props extends TextareaProps {
 }
 
 export const CsvOutput = forwardRef<HTMLTextAreaElement, Props>(
-  ({ setOptions, ...props }: Props, ref) => {
+  (props: Props, ref) => {
     const { t } = useTranslation('domain-convert-outputs-csvOutput')
-    const [header, setHeader] = useState(true)
-    const [quotes, setQuotes] = useState(true)
-
-    useEffect(() => {
-      setOptions({ header, quotes })
-    }, [header, quotes, setOptions])
+    const { options, setOptions } = useConverterOptionsContext(outputId)
 
     const onChangeHeader = (event: ChangeEvent<HTMLInputElement>) => {
-      setHeader(event.target.checked)
+      setOptions({ ...options, header: event.target.checked })
     }
 
     const onChangeQuotes = (event: ChangeEvent<HTMLInputElement>) => {
-      setQuotes(event.target.checked)
+      setOptions({ ...options, quotes: event.target.checked })
     }
 
     return (
@@ -43,14 +33,14 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, Props>(
           gap={majorScale(2)}
         >
           <Checkbox
-            checked={quotes}
+            checked={options.quotes as boolean}
             label={t('quotesLabel')}
             marginTop={0}
             onChange={onChangeQuotes}
           />
 
           <Checkbox
-            checked={header}
+            checked={options.header as boolean}
             label={t('headerLabel')}
             marginTop={0}
             onChange={onChangeHeader}
