@@ -2,13 +2,16 @@ import Promise from 'bluebird'
 import { isEmpty, sortBy, uniqBy } from 'lodash'
 
 import { Converter } from '@lib/converters'
-import { identities } from '@lib/identities'
+import { Identity } from '@lib/identities'
+import * as untypedIdentities from '@lib/identities'
 
 interface Candidate {
   confidence: number
   id: string
   converter: Converter
 }
+
+const identities = Object.values(untypedIdentities as unknown as Identity[])
 
 export const selectConverters = async (
   inputString: string,
