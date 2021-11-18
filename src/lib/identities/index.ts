@@ -1,30 +1,18 @@
 import { Converter } from '@lib/converters'
-import * as Base64EncodedIdentity from '@lib/identities/Base64EncodedIdentity'
-import * as CsvIdentity from '@lib/identities/CsvIdentity'
-import * as HtmlIdentity from '@lib/identities/HtmlIdentity'
-import * as JsonArrayIdentity from '@lib/identities/JsonArrayIdentity'
-import * as JsonObjectIdentity from '@lib/identities/JsonObjectIdentity'
-import * as JsonPrimitiveArrayIdentity from '@lib/identities/JsonPrimitiveArrayIdentity'
-import * as JsonPrimitiveObjectIdentity from '@lib/identities/JsonPrimitiveObjectIdentity'
-import * as PlainIdentity from '@lib/identities/PlainIdentity'
-import * as UrlEncodedIdentity from '@lib/identities/UrlEncodedIdentity'
-import * as YamlIdentity from '@lib/identities/YamlIdentity'
+
+export * as Base64EncodedIdentity from '@lib/identities/Base64EncodedIdentity'
+export * as CsvIdentity from '@lib/identities/CsvIdentity'
+export * as HtmlIdentity from '@lib/identities/HtmlIdentity'
+export * as JsonArrayIdentity from '@lib/identities/JsonArrayIdentity'
+export * as JsonObjectIdentity from '@lib/identities/JsonObjectIdentity'
+export * as JsonPrimitiveArrayIdentity from '@lib/identities/JsonPrimitiveArrayIdentity'
+export * as JsonPrimitiveObjectIdentity from '@lib/identities/JsonPrimitiveObjectIdentity'
+export * as PlainIdentity from '@lib/identities/PlainIdentity'
+export * as UrlEncodedIdentity from '@lib/identities/UrlEncodedIdentity'
+export * as YamlIdentity from '@lib/identities/YamlIdentity'
 
 export interface Identity {
   confidence: (input: string) => number
   id: string
   converters: Converter[]
 }
-
-export const identities: Identity[] = [
-  Base64EncodedIdentity,
-  CsvIdentity,
-  HtmlIdentity,
-  JsonArrayIdentity,
-  JsonObjectIdentity,
-  JsonPrimitiveArrayIdentity,
-  JsonPrimitiveObjectIdentity,
-  PlainIdentity,
-  UrlEncodedIdentity,
-  YamlIdentity,
-]
