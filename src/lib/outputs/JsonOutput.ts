@@ -1,6 +1,11 @@
 import { ConverterOptions, Obj } from '@lib/types'
 import { sortByKeys } from '@lib/utilities/String'
 
+export const defaultOptions = {
+  sortKeys: true,
+  space: '  ',
+}
+
 export const id = 'json'
 
 export const output = (
@@ -13,5 +18,9 @@ export const output = (
     processed = sortByKeys(input)
   }
 
-  return JSON.stringify(processed, undefined, (options.space || '  ') as string)
+  return JSON.stringify(
+    processed,
+    undefined,
+    (options.space || defaultOptions.space) as string,
+  )
 }

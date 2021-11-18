@@ -2,6 +2,10 @@ import { SHA1, SHA224, SHA256, SHA384, SHA512 } from 'crypto-js'
 
 import { ConverterOptions } from '@lib/types'
 
+export const defaultOptions = {
+  algorithm: 'sha1',
+}
+
 export const id = 'sha'
 
 export const output = (input: string, options: ConverterOptions): string => {

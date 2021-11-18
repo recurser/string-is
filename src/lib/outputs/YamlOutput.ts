@@ -3,6 +3,12 @@ import { dump } from 'js-yaml'
 import { ConverterOptions, Obj } from '@lib/types'
 import { sortByKeys } from '@lib/utilities/String'
 
+export const defaultOptions = {
+  forceQuotes: true,
+  indent: 2,
+  sortKeys: true,
+}
+
 export const id = 'yaml'
 
 export const output = (
