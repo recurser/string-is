@@ -12,6 +12,8 @@ import { ConverterOptions } from '@lib/types'
 
 type NamespacedOptions = Record<string, ConverterOptions>
 
+const localStorageKey = 'string.is:Preferences'
+
 interface ConverterOptionsProps {
   options: NamespacedOptions
   setOptions: (opts: NamespacedOptions) => void
@@ -22,6 +24,7 @@ interface NamespacedProps {
   setOptions: (opts: ConverterOptions) => void
 }
 
+// Create a map of default option settings for each output.
 const outputs = untypedOutputs as unknown as Record<string, Output>
 const defaults = Object.fromEntries(
   Object.keys(outputs).map((key) => {
@@ -30,8 +33,19 @@ const defaults = Object.fromEntries(
   }),
 )
 
+// Get any preferences stored in LocalStorage.
+let locals
+try {
+  locals = JSON.parse(window.localStorage.getItem(localStorageKey) || '{}')
+} catch (_err) {
+  locals = {}
+}
+
+// Merge the defaults with the locally stored preferences.
+const prefs = { ...defaults, ...locals }
+
 const Context = createContext<ConverterOptionsProps>({
-  options: defaults,
+  options: prefs,
   setOptions: (_opts: NamespacedOptions) => undefined,
 })
 
@@ -41,7 +55,9 @@ export const useConverterOptionsContext = (
   const { options, setOptions } = useContext(Context)
 
   const wrappedSetOptions = (opts: ConverterOptions) => {
-    setOptions({ ...options, [namespace]: opts })
+    const merged = { ...options, [namespace]: opts }
+    setOptions(merged)
+    window.localStorage.setItem(localStorageKey, JSON.stringify(merged))
   }
 
   return {
@@ -53,7 +69,7 @@ export const useConverterOptionsContext = (
 export const ConverterOptionsContext = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {
-  const [options, setOptions] = useState<NamespacedOptions>(defaults)
+  const [options, setOptions] = useState<NamespacedOptions>(prefs)
 
   const value = { options, setOptions }
   return <Context.Provider value={value}>{children}</Context.Provider>
