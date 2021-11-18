@@ -1,6 +1,7 @@
 {
   "base64Decode": "Base64 decoded",
   "base64Encode": "Base64 encoded",
+  "csv": "Formatted CSV",
   "csvToJson": "Formatted JSON",
   "csvToYaml": "Formatted YAML",
   "html": "Formatted HTML",
