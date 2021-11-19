@@ -13,6 +13,7 @@
   "sha": "SHA hash",
   "urlDecode": "URL decode",
   "urlEncode": "URL encode",
+  "xml": "XML format",
   "yaml": "YAML format",
   "yamlToJson": "YAML to JSON"
 }
