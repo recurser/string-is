@@ -16,6 +16,7 @@ export * as UrlDecodeConverter from '@lib/converters/UrlDecodeConverter'
 export * as UrlEncodeConverter from '@lib/converters/UrlEncodeConverter'
 export * as YamlConverter from '@lib/converters/YamlConverter'
 export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
+export * as XmlConverter from '@lib/converters/XmlConverter'
 
 export interface Converter {
   eligible?: (input: string) => boolean

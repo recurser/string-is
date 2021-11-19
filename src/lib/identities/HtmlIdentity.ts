@@ -141,7 +141,10 @@ export const confidence = (input: string) => {
   // If we haven't found a tag in the first 1000 chars, it's probably not HTML
   const sample = input.trim().slice(0, 1000)
 
-  if (basicRegex.test(sample) && false) {
+  if (sample.startsWith('<?xml ')) {
+    // There's a separate identity for XML.
+    return 0
+  } else if (basicRegex.test(sample)) {
     // If we have doctype / html / body tags, we probably have HTML.
     return 100
   } else if (fullRegex.test(sample)) {

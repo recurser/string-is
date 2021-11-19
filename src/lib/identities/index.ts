@@ -9,6 +9,7 @@ export * as JsonPrimitiveArrayIdentity from '@lib/identities/JsonPrimitiveArrayI
 export * as JsonPrimitiveObjectIdentity from '@lib/identities/JsonPrimitiveObjectIdentity'
 export * as PlainIdentity from '@lib/identities/PlainIdentity'
 export * as UrlEncodedIdentity from '@lib/identities/UrlEncodedIdentity'
+export * as XmlIdentity from '@lib/identities/XmlIdentity'
 export * as YamlIdentity from '@lib/identities/YamlIdentity'
 
 export interface Identity {
