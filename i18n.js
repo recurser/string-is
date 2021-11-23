@@ -10,6 +10,7 @@ module.exports = {
       'domain-convert-inputForm',
       'domain-convert-outputForm',
       'domain-convert-outputs-csvOutput',
+      'domain-convert-outputs-datetimeOutput',
       'domain-convert-outputs-htmlOutput',
       'domain-convert-outputs-jsonOutput',
       'domain-convert-outputs-shaOutput',
