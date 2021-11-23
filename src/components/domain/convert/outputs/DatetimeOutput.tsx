@@ -1,5 +1,8 @@
 import {
   Button,
+  HelpIcon,
+  IconButton,
+  Link,
   majorScale,
   Pane,
   SelectMenu,
@@ -32,9 +35,8 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <>
         <Pane
-          alignItems="baseline"
           display="flex"
-          flexDirection="row"
+          flexDirection="column"
           gap={majorScale(2)}
           marginBottom={majorScale(1)}
         >
@@ -49,16 +51,26 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 }))}
                 selected={options.timezone as string}
               >
-                <Button width={majorScale(24)}>{options.timezone}</Button>
+                <Button
+                  flex={1}
+                  width={majorScale(24)}
+                >{options.timezone}</Button>
               </SelectMenu>
             </Label>
 
             <Label label={t('label_format')}>
               <TextInput
+                flex={1}
                 onChange={onChangeFormat}
                 placeholder="YYYY-MM-DD HH:mm:ss"
                 value={options.format as string}
-                width={majorScale(24)}
+              />
+              <IconButton
+                href="https://day.js.org/docs/en/display/format"
+                icon={HelpIcon}
+                is={Link}
+                marginLeft={majorScale(1)}
+                target="_blank"
               />
             </Label>
           </Pane>
