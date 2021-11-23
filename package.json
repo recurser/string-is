@@ -16,6 +16,7 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "crypto-js": "^4.1.1",
+    "dayjs": "^1.10.7",
     "evergreen-ui": "^6.6.1",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.2",

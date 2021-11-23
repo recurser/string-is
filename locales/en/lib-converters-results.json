@@ -11,6 +11,7 @@
   "md5": "MD5 hash",
   "ripemd": "RIPEMD-160 hash",
   "sha": "SHA hash",
+  "timestamp": "Formatted time",
   "urlDecode": "URL decoded",
   "urlEncode": "URL encoded",
   "xml": "Formatted XML",

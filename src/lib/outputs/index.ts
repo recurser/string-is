@@ -1,6 +1,7 @@
 import { ConverterOptions, Obj } from '@lib/types'
 
 export * as CsvOutput from '@lib/outputs/CsvOutput'
+export * as DatetimeOutput from '@lib/outputs/DatetimeOutput'
 export * as HtmlOutput from '@lib/outputs/HtmlOutput'
 export * as JsonOutput from '@lib/outputs/JsonOutput'
 export * as Md5Output from '@lib/outputs/Md5Output'

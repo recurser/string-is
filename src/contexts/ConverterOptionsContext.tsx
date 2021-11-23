@@ -55,7 +55,10 @@ export const useConverterOptionsContext = (
   const { options, setOptions } = useContext(Context)
 
   const wrappedSetOptions = (opts: ConverterOptions) => {
-    const merged = { ...options, [namespace]: opts }
+    const merged = {
+      ...options,
+      [namespace]: { ...options[namespace], ...opts },
+    }
     setOptions(merged)
     window.localStorage.setItem(localStorageKey, JSON.stringify(merged))
   }
