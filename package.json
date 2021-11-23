@@ -33,7 +33,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@types/bluebird": "^3.5.36",
     "@types/crypto-js": "^4.0.2",
