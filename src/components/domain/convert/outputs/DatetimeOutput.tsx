@@ -15,6 +15,11 @@ import { ChangeEvent, forwardRef, useMemo } from 'react'
 
 import { Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import {
+  defaultOptions,
+  relativeOutput,
+  utcOutput,
+} from '@lib/outputs/DatetimeOutput'
 import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 
@@ -28,6 +33,14 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const value = useMemo(() => {
       return converter.operation(input, options)
     }, [input, converter, options])
+
+    const relativeValue = useMemo(() => {
+      return relativeOutput(input, options)
+    }, [input, options, relativeOutput])
+
+    const utcValue = useMemo(() => {
+      return utcOutput(input, options)
+    }, [input, options, utcOutput])
 
     const onSelectTimezone = (selected: SelectMenuItem) => {
       setOptions({ ...options, timezone: selected.value })
@@ -56,7 +69,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                 }))}
                 selected={options.timezone as string}
               >
-                <Button flex={1} width={majorScale(24)}>
+                <Button flex={1} maxWidth={majorScale(32)}>
                   {options.timezone}
                 </Button>
               </SelectMenu>
@@ -65,8 +78,9 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             <Label label={t('label_format')}>
               <TextInput
                 flex={1}
+                maxWidth={majorScale(27)}
                 onChange={onChangeFormat}
-                placeholder="YYYY-MM-DD HH:mm:ss"
+                placeholder={defaultOptions.format}
                 value={options.format as string}
               />
               <IconButton
@@ -86,10 +100,29 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Textarea
             {...props}
             height={majorScale(4)}
+            maxWidth={majorScale(32)}
             minHeight={undefined}
             ref={ref}
             resize="none"
             value={value}
+          />
+        </Label>
+
+        <Label label={t('label_utc_time')}>
+          <TextInput
+            flex={1}
+            maxWidth={majorScale(32)}
+            readOnly={true}
+            value={utcValue}
+          />
+        </Label>
+
+        <Label label={t('label_relative_time')}>
+          <TextInput
+            flex={1}
+            maxWidth={majorScale(32)}
+            readOnly={true}
+            value={relativeValue}
           />
         </Label>
       </>
