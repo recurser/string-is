@@ -1,15 +1,21 @@
-import { Checkbox, majorScale, Pane, TextareaProps } from 'evergreen-ui'
+import { Checkbox, majorScale, Pane } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef } from 'react'
+import { ChangeEvent, forwardRef, useMemo } from 'react'
 
 import { CodeTextarea } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { id as outputId } from '@lib/outputs/CsvOutput'
+import { OutputProps } from '@lib/types'
 
-export const CsvOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (props: TextareaProps, ref) => {
+export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  ({ converter, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-csvOutput')
-    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const { options, setOptions } = useConverterOptionsContext(
+      converter.outputId,
+    )
+
+    const value = useMemo(() => {
+      return converter.operation(input, options)
+    }, [input, converter, options])
 
     const onChangeHeader = (event: ChangeEvent<HTMLInputElement>) => {
       setOptions({ ...options, header: event.target.checked })
@@ -50,6 +56,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
             )}px)` /* Allow for the checkbox height in settings */
           }
           ref={ref}
+          value={value}
         />
       </>
     )

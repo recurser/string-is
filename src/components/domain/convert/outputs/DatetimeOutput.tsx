@@ -1,25 +1,46 @@
 import {
   Button,
+  HelpIcon,
+  IconButton,
+  Link,
   majorScale,
   Pane,
   SelectMenu,
   SelectMenuItem,
   Textarea,
-  TextareaProps,
   TextInput,
 } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef } from 'react'
+import { ChangeEvent, forwardRef, useMemo } from 'react'
 
 import { Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { id as outputId } from '@lib/outputs/DatetimeOutput'
+import {
+  defaultOptions,
+  relativeOutput,
+  utcOutput,
+} from '@lib/outputs/DatetimeOutput'
+import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 
-export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (props: TextareaProps, ref) => {
+export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  ({ converter, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-datetimeOutput')
-    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const { options, setOptions } = useConverterOptionsContext(
+      converter.outputId,
+    )
+
+    const value = useMemo(() => {
+      return converter.operation(input, options)
+    }, [input, converter, options])
+
+    const relativeValue = useMemo(() => {
+      return relativeOutput(input, options)
+    }, [input, options, relativeOutput])
+
+    const utcValue = useMemo(() => {
+      return utcOutput(input, options)
+    }, [input, options, utcOutput])
 
     const onSelectTimezone = (selected: SelectMenuItem) => {
       setOptions({ ...options, timezone: selected.value })
@@ -32,9 +53,8 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <>
         <Pane
-          alignItems="baseline"
           display="flex"
-          flexDirection="row"
+          flexDirection="column"
           gap={majorScale(2)}
           marginBottom={majorScale(1)}
         >
@@ -49,16 +69,26 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 }))}
                 selected={options.timezone as string}
               >
-                <Button width={majorScale(24)}>{options.timezone}</Button>
+                <Button flex={1} maxWidth={majorScale(32)}>
+                  {options.timezone}
+                </Button>
               </SelectMenu>
             </Label>
 
             <Label label={t('label_format')}>
               <TextInput
+                flex={1}
+                maxWidth={majorScale(27)}
                 onChange={onChangeFormat}
-                placeholder="YYYY-MM-DD HH:mm:ss"
+                placeholder={defaultOptions.format}
                 value={options.format as string}
-                width={majorScale(24)}
+              />
+              <IconButton
+                href="https://day.js.org/docs/en/display/format"
+                icon={HelpIcon}
+                is={Link}
+                marginLeft={majorScale(1)}
+                target="_blank"
               />
             </Label>
           </Pane>
@@ -70,9 +100,29 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
           <Textarea
             {...props}
             height={majorScale(4)}
+            maxWidth={majorScale(32)}
             minHeight={undefined}
             ref={ref}
             resize="none"
+            value={value}
+          />
+        </Label>
+
+        <Label label={t('label_utc_time')}>
+          <TextInput
+            flex={1}
+            maxWidth={majorScale(32)}
+            readOnly={true}
+            value={utcValue}
+          />
+        </Label>
+
+        <Label label={t('label_relative_time')}>
+          <TextInput
+            flex={1}
+            maxWidth={majorScale(32)}
+            readOnly={true}
+            value={relativeValue}
           />
         </Label>
       </>
