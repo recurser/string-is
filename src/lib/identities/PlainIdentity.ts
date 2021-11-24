@@ -1,7 +1,6 @@
 import { isEmpty } from 'lodash'
 
 import {
-  Base64EncodeConverter,
   Converter,
   Md5Converter,
   RipemdConverter,
@@ -19,7 +18,6 @@ export const confidence = (input: string) => {
 }
 
 export const converters = [
-  Base64EncodeConverter,
   Md5Converter,
   RipemdConverter,
   ShaConverter,

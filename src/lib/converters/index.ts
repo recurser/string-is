@@ -26,5 +26,4 @@ export interface Converter {
   id: string
   operation: (input: string, options?: ConverterOptions) => string | undefined
   outputId: string
-  overrides?: string[]
 }

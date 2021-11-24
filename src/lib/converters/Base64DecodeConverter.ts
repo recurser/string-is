@@ -12,5 +12,3 @@ export const operation = (
 ): string => {
   return decode(input)
 }
-
-export const overrides = ['base64Encode']
