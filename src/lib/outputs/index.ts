@@ -8,6 +8,7 @@ export * as LowerCaseOutput from '@lib/outputs/LowerCaseOutput'
 export * as Md5Output from '@lib/outputs/Md5Output'
 export * as RipemdOutput from '@lib/outputs/RipemdOutput'
 export * as ShaOutput from '@lib/outputs/ShaOutput'
+export * as UpperCaseOutput from '@lib/outputs/UpperCaseOutput'
 export * as YamlOutput from '@lib/outputs/YamlOutput'
 
 export interface Output {

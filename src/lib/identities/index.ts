@@ -10,6 +10,7 @@ export * as JsonPrimitiveObjectIdentity from '@lib/identities/JsonPrimitiveObjec
 export * as LowerCaseIdentity from '@lib/identities/LowerCaseIdentity'
 export * as PlainIdentity from '@lib/identities/PlainIdentity'
 export * as TimestampIdentity from '@lib/identities/TimestampIdentity'
+export * as UpperCaseIdentity from '@lib/identities/UpperCaseIdentity'
 export * as UrlEncodedIdentity from '@lib/identities/UrlEncodedIdentity'
 export * as XmlIdentity from '@lib/identities/XmlIdentity'
 export * as YamlIdentity from '@lib/identities/YamlIdentity'

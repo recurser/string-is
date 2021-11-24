@@ -13,6 +13,7 @@
   "ripemd": "RIPEMD-160 hash",
   "sha": "SHA hash",
   "timestamp": "Formatted time",
+  "upperCase": "To upper case",
   "urlDecode": "URL decoded",
   "urlEncode": "URL encoded",
   "xml": "Formatted XML",
