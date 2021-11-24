@@ -9,14 +9,14 @@ import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
-import { Converter } from '@lib/converters'
+import { Converter, NullConverter } from '@lib/converters'
 
 interface Props {
   converters: Converter[]
   disabled?: boolean
   triggerMenu: boolean
   setFocusOutput: (focusOutput: boolean) => void
-  setConverter: (converter: Converter | undefined) => void
+  setConverter: (converter: Converter) => void
   setTriggerMenu: (triggerMenu: boolean) => void
 }
 
@@ -77,7 +77,7 @@ export const ConverterSelector = ({
   // string and number values.
   useEffect(() => {
     const cnvt = converters.find((converter) => converter.id === selected)
-    setConverter(cnvt)
+    setConverter(cnvt || NullConverter)
   }, [converters, setConverter, selected])
 
   return (

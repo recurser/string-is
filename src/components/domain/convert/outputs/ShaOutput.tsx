@@ -1,15 +1,21 @@
-import { majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
+import { majorScale, Pane, Select } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef } from 'react'
+import { ChangeEvent, forwardRef, useMemo } from 'react'
 
 import { CodeTextarea } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { id as outputId } from '@lib/outputs/ShaOutput'
+import { OutputProps } from '@lib/types'
 
-export const ShaOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (props: TextareaProps, ref) => {
+export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  ({ converter, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-shaOutput')
-    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const { options, setOptions } = useConverterOptionsContext(
+      converter.outputId,
+    )
+
+    const value = useMemo(() => {
+      return converter.operation(input, options)
+    }, [input, converter, options])
 
     const onChangeAlgorithm = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, algorithm: event.target.value })
@@ -48,6 +54,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
             )}px)` /* Allow for the select box height in settings */
           }
           ref={ref}
+          value={value}
         />
       </>
     )

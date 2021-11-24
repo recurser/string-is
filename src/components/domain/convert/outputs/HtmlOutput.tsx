@@ -1,18 +1,24 @@
-import { majorScale, Pane, Select, TextareaProps } from 'evergreen-ui'
+import { majorScale, Pane, Select } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useState } from 'react'
+import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 
 import { CodeTextarea } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { id as outputId } from '@lib/outputs/HtmlOutput'
+import { OutputProps } from '@lib/types'
 
-export const HtmlOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (props: TextareaProps, ref) => {
+export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  ({ converter, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-htmlOutput')
-    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const { options, setOptions } = useConverterOptionsContext(
+      converter.outputId,
+    )
     const [space, setSpace] = useState(
       (options.indent_char as string).repeat(options.indent_size as number),
     )
+
+    const value = useMemo(() => {
+      return converter.operation(input, options)
+    }, [input, converter, options])
 
     const onChangeSpace = (event: ChangeEvent<HTMLSelectElement>) => {
       const spc = event.target.value
@@ -45,7 +51,7 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
             </Select>
           </Pane>
         </Pane>
-        <CodeTextarea {...props} ref={ref} />
+        <CodeTextarea {...props} ref={ref} value={value} />
       </>
     )
   },

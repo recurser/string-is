@@ -1,16 +1,15 @@
-import { isEmpty, startCase } from 'lodash'
+import { startCase } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useMemo } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { outputs, OutputName } from '@components/domain/convert/outputs'
-import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { useInputContext } from '@contexts/InputContext'
-import { Converter } from '@lib/converters'
+import { Converter, NullConverter } from '@lib/converters'
 import { useAnalytics } from '@services/Analytics'
 
 interface Props {
-  converter?: Converter
+  converter: Converter
   disabled?: boolean
   focusOutput: boolean
   setFocusOutput: (focusOutput: boolean) => void
@@ -25,15 +24,6 @@ export const OutputForm = ({
   const analytics = useAnalytics()
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
-  const { options } = useConverterOptionsContext(converter?.outputId || '')
-
-  const value = useMemo(() => {
-    if (!converter || isEmpty(converter)) {
-      return ''
-    }
-
-    return converter.operation(inputString, options)
-  }, [inputString, converter, options])
 
   // When a converter has been selected, we focus on the output field.
   useEffect(() => {
@@ -54,10 +44,6 @@ export const OutputForm = ({
 
   // Use a dynamic output component based on the converter's 'output' string.
   const OutputElement = useMemo(() => {
-    if (!converter || isEmpty(converter)) {
-      return outputs.PlainOutput
-    }
-
     return outputs[`${startCase(converter.outputId)}Output` as OutputName]
   }, [converter])
 
@@ -66,19 +52,20 @@ export const OutputForm = ({
       disabled={disabled}
       inputString={inputString}
       label={
-        converter
+        converter.id !== NullConverter.id
           ? `3. ${t(`lib-converters-results:${converter.id}`)} 👇`
           : t('default_label')
       }
     >
       <OutputElement
+        converter={converter}
         disabled={disabled}
         flex={1}
         height="100%"
+        input={inputString}
         readOnly={true}
         ref={textareaRef}
         tabIndex={3}
-        value={value}
       />
     </LayoutColumn>
   )

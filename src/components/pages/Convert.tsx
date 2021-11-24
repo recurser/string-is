@@ -11,7 +11,7 @@ import {
 } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useInputContext } from '@contexts/InputContext'
-import { Converter } from '@lib/converters'
+import { Converter, NullConverter } from '@lib/converters'
 import { selectConverters } from '@services/Converter'
 import { useBreakpoints } from '@services/Responsive'
 
@@ -19,7 +19,7 @@ export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const { isMobile } = useBreakpoints()
   const [converters, setConverters] = useState<Converter[]>([])
-  const [converter, setConverter] = useState<Converter | undefined>()
+  const [converter, setConverter] = useState<Converter>(NullConverter)
   const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
@@ -78,8 +78,8 @@ export const Convert = () => {
 
           <Pane display="flex" flex={2} flexDirection="column">
             <OutputForm
-              converter={converter}
-              disabled={disabled}
+              converter={converter || NullConverter}
+              disabled={disabled || converter.id === NullConverter.id}
               focusOutput={focusOutput}
               setFocusOutput={setFocusOutput}
             />

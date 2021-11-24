@@ -8,21 +8,26 @@ import {
   SelectMenu,
   SelectMenuItem,
   Textarea,
-  TextareaProps,
   TextInput,
 } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef } from 'react'
+import { ChangeEvent, forwardRef, useMemo } from 'react'
 
 import { Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { id as outputId } from '@lib/outputs/DatetimeOutput'
+import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 
-export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  (props: TextareaProps, ref) => {
+export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  ({ converter, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-datetimeOutput')
-    const { options, setOptions } = useConverterOptionsContext(outputId)
+    const { options, setOptions } = useConverterOptionsContext(
+      converter.outputId,
+    )
+
+    const value = useMemo(() => {
+      return converter.operation(input, options)
+    }, [input, converter, options])
 
     const onSelectTimezone = (selected: SelectMenuItem) => {
       setOptions({ ...options, timezone: selected.value })
@@ -51,10 +56,9 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
                 }))}
                 selected={options.timezone as string}
               >
-                <Button
-                  flex={1}
-                  width={majorScale(24)}
-                >{options.timezone}</Button>
+                <Button flex={1} width={majorScale(24)}>
+                  {options.timezone}
+                </Button>
               </SelectMenu>
             </Label>
 
@@ -85,6 +89,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, TextareaProps>(
             minHeight={undefined}
             ref={ref}
             resize="none"
+            value={value}
           />
         </Label>
       </>
