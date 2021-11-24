@@ -36,11 +36,11 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     const relativeValue = useMemo(() => {
       return relativeOutput(input, options)
-    }, [input, options, relativeOutput])
+    }, [input, options])
 
     const utcValue = useMemo(() => {
       return utcOutput(input, options)
-    }, [input, options, utcOutput])
+    }, [input, options])
 
     const onSelectTimezone = (selected: SelectMenuItem) => {
       setOptions({ ...options, timezone: selected.value })
