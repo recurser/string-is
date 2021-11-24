@@ -50,11 +50,6 @@ export const selectConverters = async (
       return !overriden
     })
     .map((candidate: Candidate) => candidate.converter)
-    // Outputs can implement an optional eligible() function to decide if
-    // a particular string is a bad fit.
-    .filter(
-      (converter) => !converter.eligible || converter.eligible(inputString),
-    )
 
   return converters
 }

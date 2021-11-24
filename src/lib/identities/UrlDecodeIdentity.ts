@@ -1,8 +1,8 @@
 import { isEmpty } from 'lodash'
 
-import { UrlDecodeConverter, Converter } from '@lib/converters'
+import { Converter, UrlDecodeConverter } from '@lib/converters'
 
-export const id = 'urlEncoded'
+export const id = 'urlDecode'
 
 export const confidence = (input: string) => {
   if (isEmpty(input)) {

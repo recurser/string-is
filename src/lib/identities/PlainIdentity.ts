@@ -6,7 +6,6 @@ import {
   Md5Converter,
   RipemdConverter,
   ShaConverter,
-  UrlEncodeConverter,
 } from '@lib/converters'
 
 export const id = 'plain'
@@ -24,5 +23,4 @@ export const converters = [
   Md5Converter,
   RipemdConverter,
   ShaConverter,
-  UrlEncodeConverter,
 ] as Converter[]

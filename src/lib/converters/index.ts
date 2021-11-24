@@ -23,7 +23,6 @@ export * as YamlConverter from '@lib/converters/YamlConverter'
 export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
 
 export interface Converter {
-  eligible?: (input: string) => boolean
   id: string
   operation: (input: string, options?: ConverterOptions) => string | undefined
   outputId: string
