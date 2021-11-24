@@ -1,5 +1,6 @@
 import { Converter, YamlConverter, YamlToJsonConverter } from '@lib/converters'
 import { input } from '@lib/inputs/YamlInput'
+import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'yaml'
 
@@ -17,6 +18,13 @@ export const confidence = (data: string) => {
 
   // Sometimes js-yaml just gives up and returns the original string.
   if (typeof obj === 'string') {
+    return 0
+  }
+
+  // Some strings (eg. '[1, 2, 3]') get returned as valid YAML. If something
+  // can be parsed as JSON, it is extremely unlikely to also be YAML - the
+  // JSON parsing is more likely to be correct.
+  if (jsonInput(data) !== undefined) {
     return 0
   }
 
