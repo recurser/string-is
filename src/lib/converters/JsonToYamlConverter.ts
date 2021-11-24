@@ -17,8 +17,3 @@ export const operation = (
 
   return yamlOutput(obj, options)
 }
-
-// Some strings (eg. '[1, 2, 3]') get returned as valid YAML. If something
-// can be parsed as JSON, it is extremely unlikely to also be YAML - the
-// JSON parsing is more likely to be correct.
-export const overrides = ['yaml', 'yamlToJson']

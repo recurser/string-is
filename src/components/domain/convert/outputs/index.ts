@@ -1,10 +1,10 @@
-import { CsvOutput } from '@components/domain/convert/outputs/CsvOutput'
-import { DatetimeOutput } from '@components/domain/convert/outputs/DatetimeOutput'
-import { HtmlOutput } from '@components/domain/convert/outputs/HtmlOutput'
-import { JsonOutput } from '@components/domain/convert/outputs/JsonOutput'
-import { PlainOutput } from '@components/domain/convert/outputs/PlainOutput'
-import { ShaOutput } from '@components/domain/convert/outputs/ShaOutput'
-import { YamlOutput } from '@components/domain/convert/outputs/YamlOutput'
+export { CsvOutput } from '@components/domain/convert/outputs/CsvOutput'
+export { DatetimeOutput } from '@components/domain/convert/outputs/DatetimeOutput'
+export { HtmlOutput } from '@components/domain/convert/outputs/HtmlOutput'
+export { JsonOutput } from '@components/domain/convert/outputs/JsonOutput'
+export { PlainOutput } from '@components/domain/convert/outputs/PlainOutput'
+export { ShaOutput } from '@components/domain/convert/outputs/ShaOutput'
+export { YamlOutput } from '@components/domain/convert/outputs/YamlOutput'
 
 export type OutputName =
   | 'CsvOutput'
@@ -12,14 +12,5 @@ export type OutputName =
   | 'HtmlOutput'
   | 'JsonOutput'
   | 'PlainOutput'
+  | 'ShaOutput'
   | 'YamlOutput'
-
-export const outputs = {
-  CsvOutput,
-  DatetimeOutput,
-  HtmlOutput,
-  JsonOutput,
-  PlainOutput,
-  ShaOutput,
-  YamlOutput,
-}
