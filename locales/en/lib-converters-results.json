@@ -8,6 +8,7 @@
   "json": "Formatted JSON",
   "jsonToCsv": "Formatted CSV",
   "jsonToYaml": "Formatted YAML",
+  "lowerCase": "To lower case",
   "md5": "MD5 hash",
   "ripemd": "RIPEMD-160 hash",
   "sha": "SHA hash",
