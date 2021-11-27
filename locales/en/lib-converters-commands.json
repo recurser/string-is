@@ -10,6 +10,7 @@
   "jsonToYaml": "JSON to YAML",
   "lowerCase": "Lower case",
   "md5": "MD5 hash",
+  "numberBase": "Number base",
   "ripemd": "RIPEMD-160 hash",
   "sha": "SHA hash",
   "timestamp": "Timestamp",
