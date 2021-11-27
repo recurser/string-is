@@ -1,4 +1,4 @@
-import { startCase } from 'lodash'
+import { upperFirst } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useMemo } from 'react'
 
@@ -45,7 +45,7 @@ export const OutputForm = ({
 
   // Use a dynamic output component based on the converter's 'output' string.
   const OutputElement = useMemo(() => {
-    return outputs[`${startCase(converter.outputId)}Output` as OutputName]
+    return outputs[`${upperFirst(converter.outputId)}Output` as OutputName]
   }, [converter])
 
   return (
