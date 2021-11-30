@@ -11,6 +11,7 @@ export * as JsonPrimitiveObjectIdentity from '@lib/identities/JsonPrimitiveObjec
 export * as LowerCaseIdentity from '@lib/identities/LowerCaseIdentity'
 export * as NumberIdentity from '@lib/identities/NumberIdentity'
 export * as PlainIdentity from '@lib/identities/PlainIdentity'
+export * as QueryStringIdentity from '@lib/identities/QueryStringIdentity'
 export * as TimestampIdentity from '@lib/identities/TimestampIdentity'
 export * as UpperCaseIdentity from '@lib/identities/UpperCaseIdentity'
 export * as UrlDecodeIdentity from '@lib/identities/UrlDecodeIdentity'
