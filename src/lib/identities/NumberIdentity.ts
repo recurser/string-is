@@ -1,20 +1,14 @@
-import { isEmpty } from 'lodash'
-
 import { Converter, NumberBaseConverter } from '@lib/converters'
-import { validRadices } from '@lib/outputs/NumberBaseOutput'
+import { input as numberInput } from '@lib/inputs/NumberInput'
 
 export const id = 'number'
 
 export const confidence = (input: string) => {
-  if (isEmpty(input)) {
+  if (numberInput(input) === undefined) {
     return 0
   }
 
-  if (validRadices(input).length > 0) {
-    return 100
-  }
-
-  return 0
+  return 100
 }
 
 export const converters = [NumberBaseConverter] as Converter[]

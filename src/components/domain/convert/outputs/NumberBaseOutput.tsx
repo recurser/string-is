@@ -4,6 +4,7 @@ import { ChangeEvent, forwardRef, useMemo } from 'react'
 
 import { Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { input as numberInput } from '@lib/inputs/NumberInput'
 import {
   defaultOptions,
   maxRadix,
@@ -19,13 +20,14 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       converter.outputId,
     )
 
-    const value = useMemo(() => {
-      return converter.operation(input, options)
-    }, [input, converter, options])
+    const parsedInput = useMemo(() => numberInput(input), [input])
 
-    const fromRadices = useMemo(() => {
-      return validRadices(input)
-    }, [input])
+    const value = useMemo(
+      () => converter.operation(parsedInput || '', options),
+      [parsedInput, converter, options],
+    )
+
+    const fromRadices = useMemo(() => validRadices(parsedInput), [parsedInput])
 
     const onChangeFromRadix = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, fromRadix: parseInt(event.target.value, 10) })

@@ -1,3 +1,5 @@
+import { isEmpty } from 'lodash'
+
 import { ConverterOptions } from '@lib/types'
 
 export const defaultOptions = {
@@ -11,8 +13,12 @@ export const id = 'numberBase'
 export const maxRadix = 36
 export const minRadix = 2
 
-export const validRadices = (input: string) => {
-  const radices = []
+export const validRadices = (input: string | undefined): number[] => {
+  const radices: number[] = []
+
+  if (isEmpty(input) || input === undefined) {
+    return radices
+  }
 
   for (let radix = minRadix; radix <= maxRadix; radix++) {
     if (
