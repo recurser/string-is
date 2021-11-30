@@ -1,3 +1,4 @@
+import { input as numberInput } from '@lib/inputs/NumberInput'
 import { output as numberBaseOutput } from '@lib/outputs/NumberBaseOutput'
 import { ConverterOptions } from '@lib/types'
 
@@ -6,8 +7,14 @@ export const id = 'numberBase'
 export const outputId = 'numberBase'
 
 export const operation = (
-  input: string,
+  data: string,
   options: ConverterOptions = {},
 ): string => {
-  return numberBaseOutput(input, options)
+  const numberStr = numberInput(data)
+
+  if (numberStr === undefined) {
+    return ''
+  }
+
+  return numberBaseOutput(numberStr, options)
 }
