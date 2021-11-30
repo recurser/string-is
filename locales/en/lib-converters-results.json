@@ -11,6 +11,8 @@
   "lowerCase": "To lower case",
   "md5": "MD5 hash",
   "numberBase": "Number in base",
+  "queryStringToJson": "Formatted JSON",
+  "queryStringToYaml": "Formatted YAML",
   "ripemd": "RIPEMD-160 hash",
   "sha": "SHA hash",
   "timestamp": "Formatted time",
