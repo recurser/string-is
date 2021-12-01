@@ -45,7 +45,7 @@
     "@types/node": "^16.11.11",
     "@types/papaparse": "^5.3.1",
     "@types/react": "17.0.37",
-    "@types/styled-components": "^5.1.15",
+    "@types/styled-components": "^5.1.16",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "babel-jest": "^27.4.2",
