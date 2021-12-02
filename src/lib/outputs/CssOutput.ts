@@ -1,4 +1,6 @@
 import { css } from 'js-beautify'
+import parserPostcss from 'prettier/parser-postcss'
+import { format } from 'prettier/standalone'
 
 import { ConverterOptions } from '@lib/types'
 
@@ -8,6 +10,16 @@ export const defaultOptions = {
 }
 
 export const id = 'css'
+
+export const error = (input: string) => {
+  try {
+    format(input, { parser: 'css', plugins: [parserPostcss] })
+  } catch (err) {
+    return (err as Error).message
+  }
+
+  return undefined
+}
 
 export const output = (
   input: string,

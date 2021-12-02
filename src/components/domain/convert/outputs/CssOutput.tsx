@@ -2,8 +2,10 @@ import { majorScale, Pane, Select } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 
+import { OutputError } from '@components/domain/convert/OutputError'
 import { CodeTextarea } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+import { error } from '@lib/outputs/CssOutput'
 import { OutputProps } from '@lib/types'
 
 export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
@@ -15,6 +17,8 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const [space, setSpace] = useState(
       (options.indent_char as string).repeat(options.indent_size as number),
     )
+
+    const errorMessage = useMemo(() => error(input), [input])
 
     const value = useMemo(() => {
       return converter.operation(input, options)
@@ -30,6 +34,8 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     return (
       <>
+        <OutputError message={errorMessage} />
+
         <Pane
           alignItems="baseline"
           display="flex"
@@ -51,6 +57,7 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             </Select>
           </Pane>
         </Pane>
+
         <CodeTextarea {...props} ref={ref} value={value} />
       </>
     )

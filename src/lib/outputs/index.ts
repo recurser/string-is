@@ -15,6 +15,7 @@ export * as YamlOutput from '@lib/outputs/YamlOutput'
 
 export interface Output {
   defaultOptions?: ConverterOptions
+  error?: (input: Obj) => string
   id: string
   output: (input: Obj, options: ConverterOptions) => string
 }
