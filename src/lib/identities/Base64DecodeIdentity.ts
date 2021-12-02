@@ -10,12 +10,6 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  if (
-    !/^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$/.test(input)
-  ) {
-    return 0
-  }
-
   // If the output is the same as the input, there is no
   //  reason to decode it, even if it is encoded.
   const output = Base64DecodeConverter.operation(input)

@@ -8,6 +8,7 @@
   "json": "JSON format",
   "jsonToCsv": "JSON to CSV",
   "jsonToYaml": "JSON to YAML",
+  "jwt": "JWT",
   "lowerCase": "Lower case",
   "md5": "MD5 hash",
   "numberBase": "Number base",

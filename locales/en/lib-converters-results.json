@@ -8,6 +8,7 @@
   "json": "Formatted JSON",
   "jsonToCsv": "Formatted CSV",
   "jsonToYaml": "Formatted YAML",
+  "jwt": "Decoded JWT",
   "lowerCase": "To lower case",
   "md5": "MD5 hash",
   "numberBase": "Number in base",

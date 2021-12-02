@@ -4,7 +4,7 @@ import { PropsWithChildren } from 'react'
 import { useBreakpoints } from '@services/Responsive'
 import { theme } from '@services/Theme'
 
-// used to calculate a height for the textare to fill the content.
+// Used to calculate a height for the textarea to fill the content.
 const TextAreaLineHeight = 17
 
 interface Props {
