@@ -13,6 +13,7 @@ module.exports = {
       'domain-convert-outputs-datetimeOutput',
       'domain-convert-outputs-htmlOutput',
       'domain-convert-outputs-jsonOutput',
+      'domain-convert-outputs-jwtOutput',
       'domain-convert-outputs-numberBaseOutput',
       'domain-convert-outputs-shaOutput',
       'domain-convert-outputs-yamlOutput',

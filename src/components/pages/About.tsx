@@ -143,6 +143,15 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link
+              href="https://github.com/auth0/node-jsonwebtoken"
+              target="_blank"
+            >
+              jsonwebtoken
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Link href="https://nextjs.org/" target="_blank">
               next
             </Link>
