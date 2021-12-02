@@ -9,6 +9,7 @@ module.exports = {
       'domain-convert-converterSelector',
       'domain-convert-inputForm',
       'domain-convert-outputForm',
+      'domain-convert-outputs-cssOutput',
       'domain-convert-outputs-csvOutput',
       'domain-convert-outputs-datetimeOutput',
       'domain-convert-outputs-htmlOutput',
