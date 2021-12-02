@@ -23,7 +23,7 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const onChangeSpace = (event: ChangeEvent<HTMLSelectElement>) => {
       const spc = event.target.value
       const indent_char = spc[0]
-      const indent_size = spc.split(spc[0]).length
+      const indent_size = spc.split('').length
       setOptions({ ...options, indent_char, indent_size })
       setSpace(event.target.value)
     }
