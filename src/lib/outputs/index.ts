@@ -1,5 +1,6 @@
 import { ConverterOptions, Obj } from '@lib/types'
 
+export * as CssOutput from '@lib/outputs/CssOutput'
 export * as CsvOutput from '@lib/outputs/CsvOutput'
 export * as DatetimeOutput from '@lib/outputs/DatetimeOutput'
 export * as HtmlOutput from '@lib/outputs/HtmlOutput'

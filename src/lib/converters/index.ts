@@ -2,6 +2,7 @@ import { ConverterOptions } from '@lib/types'
 
 export * as Base64DecodeConverter from '@lib/converters/Base64DecodeConverter'
 export * as Base64EncodeConverter from '@lib/converters/Base64EncodeConverter'
+export * as CssConverter from '@lib/converters/CssConverter'
 export * as CsvConverter from '@lib/converters/CsvConverter'
 export * as CsvToJsonConverter from '@lib/converters/CsvToJsonConverter'
 export * as CsvToYamlConverter from '@lib/converters/CsvToYamlConverter'

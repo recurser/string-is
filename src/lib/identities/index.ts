@@ -2,6 +2,7 @@ import { Converter } from '@lib/converters'
 
 export * as Base64DecodeIdentity from '@lib/identities/Base64DecodeIdentity'
 export * as Base64EncodeIdentity from '@lib/identities/Base64EncodeIdentity'
+export * as CssIdentity from '@lib/identities/CssIdentity'
 export * as CsvIdentity from '@lib/identities/CsvIdentity'
 export * as HtmlIdentity from '@lib/identities/HtmlIdentity'
 export * as JsonArrayIdentity from '@lib/identities/JsonArrayIdentity'
