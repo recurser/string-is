@@ -6,6 +6,7 @@
   "csvToJson": "CSV to JSON",
   "csvToYaml": "CSV to YAML",
   "html": "HTML format",
+  "javascript": "JavaScript format",
   "json": "JSON format",
   "jsonToCsv": "JSON to CSV",
   "jsonToYaml": "JSON to YAML",
