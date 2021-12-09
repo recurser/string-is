@@ -43,7 +43,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/json2csv": "^5.0.3",
     "@types/jsonwebtoken": "^8.5.6",
-    "@types/lodash": "^4.14.177",
+    "@types/lodash": "^4.14.178",
     "@types/node": "^16.11.11",
     "@types/papaparse": "^5.3.1",
     "@types/react": "17.0.37",
