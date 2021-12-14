@@ -3,7 +3,7 @@ import { ConverterOptions } from '@lib/types'
 
 export const id = 'javascript'
 
-export const outputId = 'html'
+export const outputId = 'javascript'
 
 export const operation = (
   input: string,
