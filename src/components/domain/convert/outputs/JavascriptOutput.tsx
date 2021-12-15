@@ -111,6 +111,8 @@ export const JavascriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Label>
         </Pane>
 
+        <hr />
+
         <CodeTextarea {...props} ref={ref} value={value} />
       </>
     )
