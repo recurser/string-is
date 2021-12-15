@@ -1,5 +1,6 @@
-import { parse } from 'acorn'
 import { isEmpty } from 'lodash'
+import parserBabel from 'prettier/parser-babel'
+import { format } from 'prettier/standalone'
 
 import { Converter, JavaScriptConverter } from '@lib/converters'
 
@@ -11,7 +12,7 @@ export const confidence = (input: string) => {
   }
 
   try {
-    parse(input, { ecmaVersion: 'latest' })
+    format(input, { parser: 'babel', plugins: [parserBabel] })
   } catch (err) {
     return 0
   }
