@@ -1,0 +1,10 @@
+{
+  "1TabOption": "1 tab",
+  "2SpacesOption": "2 spaces",
+  "4SpacesOption": "4 spaces",
+  "charactersSuffix": "characters",
+  "indentLabel": "Indentation",
+  "printWidthLabel": "Line length",
+  "semicolonLabel": "Use semicolons",
+  "singleQuoteLabel": "Prefer single quotes"
+}

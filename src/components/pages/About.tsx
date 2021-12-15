@@ -164,6 +164,12 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link href="https://github.com/prettier/prettier" target="_blank">
+              prettier
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Trans
               components={[
                 <Link

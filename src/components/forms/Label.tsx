@@ -2,7 +2,7 @@ import { majorScale, minorScale, Pane, PaneProps, Text } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
 
 interface Props extends PaneProps {
-  label: string
+  label?: string
 }
 
 export const Label = ({
@@ -18,7 +18,7 @@ export const Label = ({
       marginBottom={minorScale(2)}
       {...props}
     >
-      <Text width={majorScale(15)}>{label}</Text>
+      <Text width={majorScale(15)}>{label || ' '}</Text>
 
       {children}
     </Pane>

@@ -3,7 +3,9 @@
 const nextTranslate = require('next-translate')
 
 const dev = process.env.NODE_ENV !== 'production'
-const scriptSrc = dev ? "'self' 'unsafe-inline' 'unsafe-eval'" : "'self' 'unsafe-eval'"
+const scriptSrc = dev
+  ? "'self' 'unsafe-inline' 'unsafe-eval'"
+  : "'self' 'unsafe-eval'"
 const cspHeaders = [
   {
     key: 'Access-Control-Allow-Origin',

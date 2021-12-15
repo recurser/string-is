@@ -10,6 +10,7 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:@next/next/recommended', // Put this last before prettier.
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
