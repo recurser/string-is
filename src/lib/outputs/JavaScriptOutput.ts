@@ -27,16 +27,14 @@ export const output = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
-  if (true) {
-    try {
-      return format(input, {
-        ...defaultOptions,
-        ...options,
-        parser: 'babel',
-        plugins: [parserBabel],
-      })
-    } catch (err) {
-      return input
-    }
+  try {
+    return format(input, {
+      ...defaultOptions,
+      ...options,
+      parser: 'babel',
+      plugins: [parserBabel],
+    })
+  } catch (err) {
+    return input
   }
 }

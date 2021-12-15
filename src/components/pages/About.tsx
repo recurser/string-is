@@ -128,15 +128,6 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
-            <Link
-              href="https://github.com/beautify-web/js-beautify"
-              target="_blank"
-            >
-              js-beautify
-            </Link>
-          </ListItem>
-
-          <ListItem>
             <Link href="https://github.com/nodeca/js-yaml" target="_blank">
               js-yaml
             </Link>
