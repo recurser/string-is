@@ -1,9 +1,9 @@
 import { parse } from 'acorn'
 import { isEmpty } from 'lodash'
 
-import { Converter, JavaSscriptConverter } from '@lib/converters'
+import { Converter, JavaScriptConverter } from '@lib/converters'
 
-export const id = 'javaSscript'
+export const id = 'javaScript'
 
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
@@ -19,4 +19,4 @@ export const confidence = (input: string) => {
   return 100
 }
 
-export const converters = [JavaSscriptConverter] as Converter[]
+export const converters = [JavaScriptConverter] as Converter[]
