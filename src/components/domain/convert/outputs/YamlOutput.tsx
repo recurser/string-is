@@ -46,7 +46,6 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               width={majorScale(12)}
             >
               <option value={2}>{t('2SpacesOption')}</option>
-              <option value={3}>{t('3SpacesOption')}</option>
               <option value={4}>{t('4SpacesOption')}</option>
             </Select>
           </Pane>

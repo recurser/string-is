@@ -42,7 +42,6 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               width={majorScale(12)}
             >
               <option value={'  '}>{t('2SpacesOption')}</option>
-              <option value={'   '}>{t('3SpacesOption')}</option>
               <option value={'    '}>{t('4SpacesOption')}</option>
               <option value={'\t'}>{t('1TabOption')}</option>
             </Select>
