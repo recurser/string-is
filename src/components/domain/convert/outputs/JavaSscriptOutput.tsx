@@ -12,12 +12,12 @@ import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 import { OutputError } from '@components/domain/convert/OutputError'
 import { CodeTextarea, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { error } from '@lib/outputs/JavascriptOutput'
+import { error } from '@lib/outputs/JavaSscriptOutput'
 import { OutputProps } from '@lib/types'
 
-export const JavascriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+export const JavaSscriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   ({ converter, input, ...props }: OutputProps, ref) => {
-    const { t } = useTranslation('domain-convert-outputs-javascriptOutput')
+    const { t } = useTranslation('domain-convert-outputs-javaSscriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )

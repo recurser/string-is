@@ -11,7 +11,7 @@ export const defaultOptions = {
   useTabs: false,
 }
 
-export const id = 'javascript'
+export const id = 'javaSscript'
 
 export const error = (input: string) => {
   try {
