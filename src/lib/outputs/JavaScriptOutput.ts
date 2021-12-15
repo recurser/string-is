@@ -11,7 +11,7 @@ export const defaultOptions = {
   useTabs: false,
 }
 
-export const id = 'javascript'
+export const id = 'javaScript'
 
 export const error = (input: string) => {
   try {
@@ -27,16 +27,14 @@ export const output = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
-  if (true) {
-    try {
-      return format(input, {
-        ...defaultOptions,
-        ...options,
-        parser: 'babel',
-        plugins: [parserBabel],
-      })
-    } catch (err) {
-      return input
-    }
+  try {
+    return format(input, {
+      ...defaultOptions,
+      ...options,
+      parser: 'babel',
+      plugins: [parserBabel],
+    })
+  } catch (err) {
+    return input
   }
 }

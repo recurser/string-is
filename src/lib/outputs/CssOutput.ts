@@ -1,12 +1,12 @@
-import { css } from 'js-beautify'
 import parserPostcss from 'prettier/parser-postcss'
 import { format } from 'prettier/standalone'
 
 import { ConverterOptions } from '@lib/types'
 
 export const defaultOptions = {
-  indent_char: ' ',
-  indent_size: 2,
+  printWidth: 120,
+  tabWidth: 2,
+  useTabs: false,
 }
 
 export const id = 'css'
@@ -25,5 +25,14 @@ export const output = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
-  return css(input, { ...defaultOptions, ...options })
+  try {
+    return format(input, {
+      ...defaultOptions,
+      ...options,
+      parser: 'css',
+      plugins: [parserPostcss],
+    })
+  } catch (err) {
+    return input
+  }
 }

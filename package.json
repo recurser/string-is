@@ -14,14 +14,12 @@
     "start": "NODE_ENV=production next start"
   },
   "dependencies": {
-    "acorn": "^8.6.0",
     "bluebird": "^3.7.2",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.7",
     "evergreen-ui": "^6.6.3",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.2",
-    "js-beautify": "^1.14.0",
     "js-yaml": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
@@ -40,7 +38,6 @@
     "@types/bluebird": "^3.5.36",
     "@types/crypto-js": "^4.0.2",
     "@types/hjson": "^2.4.3",
-    "@types/js-beautify": "^1.13.3",
     "@types/js-yaml": "^4.0.5",
     "@types/json2csv": "^5.0.3",
     "@types/jsonwebtoken": "^8.5.6",

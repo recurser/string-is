@@ -13,7 +13,7 @@ module.exports = {
       'domain-convert-outputs-csvOutput',
       'domain-convert-outputs-datetimeOutput',
       'domain-convert-outputs-htmlOutput',
-      'domain-convert-outputs-javascriptOutput',
+      'domain-convert-outputs-javaScriptOutput',
       'domain-convert-outputs-jsonOutput',
       'domain-convert-outputs-jwtOutput',
       'domain-convert-outputs-numberBaseOutput',
