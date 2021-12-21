@@ -16,7 +16,6 @@ export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const { isMobile } = useBreakpoints()
   const [converter, setConverter] = useState<Converter>(NullConverter)
-  const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
   return (
@@ -32,7 +31,7 @@ export const Convert = () => {
           gap={majorScale(3)}
         >
           <Pane display="flex" flex={2} flexDirection="column">
-            <InputForm setTriggerMenu={setTriggerMenu} />
+            <InputForm />
           </Pane>
 
           <Pane
@@ -44,8 +43,6 @@ export const Convert = () => {
             <ConverterSelector
               setConverter={setConverter}
               setFocusOutput={setFocusOutput}
-              setTriggerMenu={setTriggerMenu}
-              triggerMenu={triggerMenu}
             />
           </Pane>
 
