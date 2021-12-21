@@ -1,4 +1,4 @@
-import { upperFirst } from 'lodash'
+import { isEmpty, upperFirst } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useMemo } from 'react'
 
@@ -11,13 +11,11 @@ import { useAnalytics } from '@services/Analytics'
 
 interface Props {
   converter: Converter
-  disabled?: boolean
   focusOutput: boolean
   setFocusOutput: (focusOutput: boolean) => void
 }
 export const OutputForm = ({
   converter,
-  disabled,
   focusOutput,
   setFocusOutput,
 }: Props) => {
@@ -25,6 +23,7 @@ export const OutputForm = ({
   const analytics = useAnalytics()
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
+  const disabled = useMemo(() => isEmpty(inputString), [inputString])
 
   // When a converter has been selected, we focus on the output field.
   useEffect(() => {

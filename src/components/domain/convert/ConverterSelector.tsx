@@ -9,12 +9,12 @@ import useTranslation from 'next-translate/useTranslation'
 import { createRef, useEffect, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { useInputContext } from '@contexts/InputContext'
 import { Converter, NullConverter } from '@lib/converters'
 import * as converterModule from '@lib/converters'
-import { selectConverter, selectConverters } from '@services/Converter'
+import { selectConverter } from '@services/Converter'
 
 interface Props {
-  inputString: string
   triggerMenu: boolean
   setFocusOutput: (focusOutput: boolean) => void
   setConverter: (converter: Converter) => void
@@ -24,14 +24,13 @@ interface Props {
 const converters = Object.values(converterModule)
 
 export const ConverterSelector = ({
-  inputString,
   triggerMenu,
   setFocusOutput,
   setConverter,
   setTriggerMenu,
 }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
-
+  const { inputString } = useInputContext()
   const [selected, setSelected] = useState<string | undefined>()
 
   // A bit of a hack due to limitations with <SelectMenu />, but we use this
@@ -42,7 +41,9 @@ export const ConverterSelector = ({
     async function fetchData() {
       if (
         selected &&
-        !converters.map((converter) => converter.id as string).includes(selected)
+        !converters
+          .map((converter) => converter.id as string)
+          .includes(selected)
       ) {
         // If we have previously selected an option that is no longer available, clear the menu.
         setSelected(undefined)

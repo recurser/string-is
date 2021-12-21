@@ -1,8 +1,7 @@
 import { majorScale, Pane } from 'evergreen-ui'
-import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import Head from 'next/head'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 
 import {
   InputForm,
@@ -10,7 +9,6 @@ import {
   ConverterSelector,
 } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
-import { useInputContext } from '@contexts/InputContext'
 import { Converter, NullConverter } from '@lib/converters'
 import { useBreakpoints } from '@services/Responsive'
 
@@ -20,10 +18,6 @@ export const Convert = () => {
   const [converter, setConverter] = useState<Converter>(NullConverter)
   const [triggerMenu, setTriggerMenu] = useState<boolean>(false)
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
-
-  const { inputString } = useInputContext()
-
-  const disabled = useMemo(() => isEmpty(inputString), [inputString])
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
@@ -48,7 +42,6 @@ export const Convert = () => {
             maxWidth={majorScale(20)}
           >
             <ConverterSelector
-              inputString={inputString}
               setConverter={setConverter}
               setFocusOutput={setFocusOutput}
               setTriggerMenu={setTriggerMenu}
@@ -59,7 +52,6 @@ export const Convert = () => {
           <Pane display="flex" flex={2} flexDirection="column">
             <OutputForm
               converter={converter || NullConverter}
-              disabled={disabled || converter.id === NullConverter.id}
               focusOutput={focusOutput}
               setFocusOutput={setFocusOutput}
             />
