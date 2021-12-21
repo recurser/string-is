@@ -7,7 +7,7 @@ import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-csvOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -35,6 +35,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <Checkbox
             checked={options.quotes as boolean}
+            disabled={disabled}
             label={t('quotesLabel')}
             marginTop={0}
             onChange={onChangeQuotes}
@@ -42,6 +43,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
           <Checkbox
             checked={options.header as boolean}
+            disabled={disabled}
             label={t('headerLabel')}
             marginTop={0}
             onChange={onChangeHeader}

@@ -14,7 +14,7 @@ import {
 import { OutputProps } from '@lib/types'
 
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-numberBaseOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -50,9 +50,10 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           marginBottom={majorScale(1)}
         >
           <Pane>
-            <Label label={t('label_from_radix')}>
+            <Label disabled={disabled} label={t('label_from_radix')}>
               <Select
                 alignSelf="start"
+                disabled={disabled}
                 onChange={onChangeFromRadix}
                 value={fromRadix}
                 width={majorScale(8)}
@@ -65,9 +66,10 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               </Select>
             </Label>
 
-            <Label label={t('label_to_radix')}>
+            <Label disabled={disabled} label={t('label_to_radix')}>
               <Select
                 alignSelf="start"
+                disabled={disabled}
                 onChange={onChangeToRadix}
                 value={toRadix}
                 width={majorScale(8)}
@@ -86,9 +88,10 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <hr />
 
-        <Label label={t('label_result', { base: toRadix })}>
+        <Label disabled={disabled} label={t('label_result', { base: toRadix })}>
           <Textarea
             {...props}
+            disabled={disabled}
             height={majorScale(4)}
             maxWidth={majorScale(27)}
             minHeight={undefined}

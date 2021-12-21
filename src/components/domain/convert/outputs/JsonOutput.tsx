@@ -7,7 +7,7 @@ import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jsonOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -37,6 +37,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Pane>
             <Select
               alignSelf="start"
+              disabled={disabled}
               onChange={onChangeSpace}
               value={options.space as string}
               width={majorScale(12)}
@@ -49,6 +50,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
           <Checkbox
             checked={options.sortKeys as boolean}
+            disabled={disabled}
             label={t('sortKeysLabel')}
             marginBottom={0}
             marginTop={0}

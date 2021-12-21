@@ -1,4 +1,4 @@
-import { majorScale, Pane, Select, Text, TextInput } from 'evergreen-ui'
+import { majorScale, Pane, Select, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 
@@ -9,7 +9,7 @@ import { error } from '@lib/outputs/CssOutput'
 import { OutputProps } from '@lib/types'
 
 export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -49,9 +49,10 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           gap={majorScale(2)}
           marginBottom={majorScale(1)}
         >
-          <Label label={t('indentLabel')} marginBottom={0}>
+          <Label disabled={disabled} label={t('indentLabel')} marginBottom={0}>
             <Select
               alignSelf="start"
+              disabled={disabled}
               flex="none"
               maxWidth={majorScale(15)}
               onChange={onChangeSpace}
@@ -63,8 +64,14 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             </Select>
           </Label>
 
-          <Label label={t('printWidthLabel')} marginBottom={0}>
+          <Label
+            disabled={disabled}
+            label={t('printWidthLabel')}
+            marginBottom={0}
+            suffix={t('charactersSuffix')}
+          >
             <TextInput
+              disabled={disabled}
               flex={1}
               maxWidth={majorScale(12)}
               min={1}
@@ -72,13 +79,12 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               type="number"
               value={options.printWidth as number}
             />
-            <Text>&nbsp;{t('charactersSuffix')}</Text>
           </Label>
         </Pane>
 
         <hr />
 
-        <CodeTextarea {...props} ref={ref} value={value} />
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={value} />
       </>
     )
   },

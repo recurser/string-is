@@ -24,7 +24,7 @@ import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 
 export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-datetimeOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -59,7 +59,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           marginBottom={majorScale(1)}
         >
           <Pane>
-            <Label label={t('label_timezone')}>
+            <Label disabled={disabled} label={t('label_timezone')}>
               <SelectMenu
                 closeOnSelect={true}
                 onSelect={onSelectTimezone}
@@ -69,14 +69,15 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                 }))}
                 selected={options.timezone as string}
               >
-                <Button flex={1} maxWidth={majorScale(32)}>
+                <Button disabled={disabled} flex={1} maxWidth={majorScale(32)}>
                   {options.timezone}
                 </Button>
               </SelectMenu>
             </Label>
 
-            <Label label={t('label_format')}>
+            <Label disabled={disabled} label={t('label_format')}>
               <TextInput
+                disabled={disabled}
                 flex={1}
                 maxWidth={majorScale(27)}
                 onChange={onChangeFormat}
@@ -84,6 +85,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                 value={options.format as string}
               />
               <IconButton
+                disabled={disabled}
                 href="https://day.js.org/docs/en/display/format"
                 icon={HelpIcon}
                 is={Link}
@@ -96,9 +98,10 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <hr />
 
-        <Label label={t('label_local_time')}>
+        <Label disabled={disabled} label={t('label_local_time')}>
           <Textarea
             {...props}
+            disabled={disabled}
             height={majorScale(4)}
             maxWidth={majorScale(32)}
             minHeight={undefined}
@@ -108,8 +111,9 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <Label label={t('label_utc_time')}>
+        <Label disabled={disabled} label={t('label_utc_time')}>
           <TextInput
+            disabled={disabled}
             flex={1}
             maxWidth={majorScale(32)}
             readOnly={true}
@@ -117,8 +121,9 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <Label label={t('label_relative_time')}>
+        <Label disabled={disabled} label={t('label_relative_time')}>
           <TextInput
+            disabled={disabled}
             flex={1}
             maxWidth={majorScale(32)}
             readOnly={true}

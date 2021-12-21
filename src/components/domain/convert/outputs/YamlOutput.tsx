@@ -7,7 +7,7 @@ import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-yamlOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -41,6 +41,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Pane>
             <Select
               alignSelf="start"
+              disabled={disabled}
               onChange={onChangeIndent}
               value={options.indent as number}
               width={majorScale(12)}
@@ -52,6 +53,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
           <Checkbox
             checked={options.sortKeys as boolean}
+            disabled={disabled}
             label={t('sortKeysLabel')}
             marginBottom={0}
             marginTop={0}
@@ -60,6 +62,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
           <Checkbox
             checked={options.forceQuotes as boolean}
+            disabled={disabled}
             label={t('forceQuotesLabel')}
             marginBottom={0}
             marginTop={0}
@@ -69,6 +72,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <CodeTextarea
           {...props}
+          disabled={disabled}
           minHeight={
             `calc(100% - ${majorScale(
               8,

@@ -1,4 +1,5 @@
 import { majorScale, Pane, Select } from 'evergreen-ui'
+import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
@@ -7,13 +8,17 @@ import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-shaOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
 
     const value = useMemo(() => {
+      if (isEmpty(input)) {
+        return ''
+      }
+
       return converter.operation(input, options)
     }, [input, converter, options])
 
@@ -33,6 +38,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Pane>
             <Select
               alignSelf="start"
+              disabled={disabled}
               onChange={onChangeAlgorithm}
               value={options.algorithm as string}
               width={majorScale(12)}
@@ -48,6 +54,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <CodeTextarea
           {...props}
+          disabled={disabled}
           minHeight={
             `calc(100% - ${majorScale(
               8,

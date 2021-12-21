@@ -1,11 +1,4 @@
-import {
-  Checkbox,
-  majorScale,
-  Pane,
-  Select,
-  Text,
-  TextInput,
-} from 'evergreen-ui'
+import { Checkbox, majorScale, Pane, Select, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 
@@ -16,7 +9,7 @@ import { error } from '@lib/outputs/JavaScriptOutput'
 import { OutputProps } from '@lib/types'
 
 export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -64,9 +57,10 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           gap={majorScale(2)}
           marginBottom={majorScale(1)}
         >
-          <Label label={t('indentLabel')} marginBottom={0}>
+          <Label disabled={disabled} label={t('indentLabel')} marginBottom={0}>
             <Select
               alignSelf="start"
+              disabled={disabled}
               flex="none"
               maxWidth={majorScale(15)}
               onChange={onChangeSpace}
@@ -78,8 +72,14 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             </Select>
           </Label>
 
-          <Label label={t('printWidthLabel')} marginBottom={0}>
+          <Label
+            disabled={disabled}
+            label={t('printWidthLabel')}
+            marginBottom={0}
+            suffix={t('charactersSuffix')}
+          >
             <TextInput
+              disabled={disabled}
               flex={1}
               maxWidth={majorScale(12)}
               min={1}
@@ -87,12 +87,17 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               type="number"
               value={options.printWidth as number}
             />
-            <Text>&nbsp;{t('charactersSuffix')}</Text>
           </Label>
 
-          <Label alignItems="start" flexDirection="row" marginBottom={0}>
+          <Label
+            alignItems="start"
+            disabled={disabled}
+            flexDirection="row"
+            marginBottom={0}
+          >
             <Checkbox
               checked={options.semi as boolean}
+              disabled={disabled}
               label={t('semicolonLabel')}
               marginBottom={0}
               marginTop={0}
@@ -100,9 +105,10 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             />
           </Label>
 
-          <Label alignItems="start" flexDirection="row">
+          <Label alignItems="start" disabled={disabled} flexDirection="row">
             <Checkbox
               checked={options.singleQuote as boolean}
+              disabled={disabled}
               label={t('singleQuoteLabel')}
               marginBottom={0}
               marginTop={0}

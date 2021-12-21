@@ -12,7 +12,7 @@ import { OutputProps } from '@lib/types'
 const TextAreaLineHeight = 20
 
 export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jwtOutput')
     const { options } = useConverterOptionsContext(converter.outputId)
 
@@ -43,10 +43,12 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <Label
             alignItems="start"
+            disabled={disabled}
             flexDirection="column"
             label={t('label_header')}
           >
             <CodeTextarea
+              disabled={disabled}
               minHeight={headerStrHeight}
               readOnly={true}
               value={headerStr}
@@ -55,11 +57,13 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
           <Label
             alignItems="start"
+            disabled={disabled}
             flexDirection="column"
             label={t('label_payload')}
           >
             <CodeTextarea
               {...props}
+              disabled={disabled}
               minHeight={payloadHeight}
               ref={ref}
               value={payload}

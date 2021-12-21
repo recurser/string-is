@@ -14,5 +14,6 @@ export type ConverterOptions = Record<
 
 export interface OutputProps extends TextareaProps {
   converter: Converter
+  disabled?: boolean
   input: string
 }

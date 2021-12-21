@@ -9,7 +9,7 @@ import { error } from '@lib/outputs/HtmlOutput'
 import { OutputProps } from '@lib/types'
 
 export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -49,9 +49,10 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           gap={majorScale(2)}
           marginBottom={majorScale(1)}
         >
-          <Label label={t('indentLabel')} marginBottom={0}>
+          <Label disabled={disabled} label={t('indentLabel')} marginBottom={0}>
             <Select
               alignSelf="start"
+              disabled={disabled}
               flex="none"
               maxWidth={majorScale(15)}
               onChange={onChangeSpace}
@@ -63,8 +64,13 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             </Select>
           </Label>
 
-          <Label label={t('printWidthLabel')} marginBottom={0}>
+          <Label
+            disabled={disabled}
+            label={t('printWidthLabel')}
+            marginBottom={0}
+          >
             <TextInput
+              disabled={disabled}
               flex={1}
               maxWidth={majorScale(12)}
               min={1}
