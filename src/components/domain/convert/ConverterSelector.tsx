@@ -10,19 +10,21 @@ import { createRef, useEffect, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { Converter, NullConverter } from '@lib/converters'
+import * as converterModule from '@lib/converters'
+import { selectConverter, selectConverters } from '@services/Converter'
 
 interface Props {
-  converters: Converter[]
-  disabled?: boolean
+  inputString: string
   triggerMenu: boolean
   setFocusOutput: (focusOutput: boolean) => void
   setConverter: (converter: Converter) => void
   setTriggerMenu: (triggerMenu: boolean) => void
 }
 
+const converters = Object.values(converterModule)
+
 export const ConverterSelector = ({
-  converters,
-  disabled,
+  inputString,
   triggerMenu,
   setFocusOutput,
   setConverter,
@@ -37,31 +39,34 @@ export const ConverterSelector = ({
   const buttonRef = createRef<HTMLButtonElement>()
 
   useEffect(() => {
-    if (disabled) {
-      setSelected(undefined)
-    } else if (
-      selected &&
-      !converters.map((converter) => converter.id).includes(selected)
-    ) {
-      // If we have previously selected an option that is no longer available, clear the menu.
-      setSelected(undefined)
-    } else if (!triggerMenu && converters.length === 1) {
-      // If there's only one option to choose from, select it.
-      setSelected(converters[0].id)
-    } else if (triggerMenu) {
-      // If we've been asked to open the menu, select the first option if nothing has been selected.
-      setTriggerMenu(false)
-      if (!selected) {
+    async function fetchData() {
+      if (
+        selected &&
+        !converters.map((converter) => converter.id as string).includes(selected)
+      ) {
+        // If we have previously selected an option that is no longer available, clear the menu.
+        setSelected(undefined)
+      } else if (!triggerMenu && converters.length === 1) {
+        // If there's only one option to choose from, select it.
         setSelected(converters[0].id)
+      } else if (triggerMenu) {
+        // If we've been asked to open the menu, select the first option if nothing has been selected.
+        setTriggerMenu(false)
+        if (!selected) {
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log(inputString)
+          const winner = await selectConverter(inputString)
+          console.log(winner)
+          if (winner) {
+            setSelected(winner.id)
+          }
+        }
       }
-      // Trigger opening of the converter list after paste or tab, if
-      // we have more than one element to choose from.
-      buttonRef.current?.click()
     }
+    fetchData()
   }, [
     buttonRef,
-    converters,
-    disabled,
+    inputString,
     selected,
     setSelected,
     triggerMenu,
@@ -78,7 +83,7 @@ export const ConverterSelector = ({
   useEffect(() => {
     const cnvt = converters.find((converter) => converter.id === selected)
     setConverter(cnvt || NullConverter)
-  }, [converters, setConverter, selected])
+  }, [setConverter, selected])
 
   return (
     <LayoutColumn>
@@ -95,7 +100,6 @@ export const ConverterSelector = ({
       >
         <Pane display="flex">
           <Button
-            disabled={disabled}
             flex={1}
             iconAfter={selected ? ChevronRightIcon : undefined}
             ref={buttonRef}
