@@ -29,16 +29,16 @@ export const Convert = () => {
           display="flex"
           flexDirection={isMobile ? 'column' : 'row'}
           gap={majorScale(3)}
+          justifyContent="space-between"
         >
-          <Pane display="flex" flex={2} flexDirection="column">
-            <InputForm />
-          </Pane>
+          <InputForm />
 
           <Pane
             display="flex"
-            flex={1}
             flexDirection="column"
+            flexGrow={1}
             maxWidth={majorScale(20)}
+            minWidth={0}
           >
             <ConverterSelector
               setConverter={setConverter}
@@ -46,13 +46,11 @@ export const Convert = () => {
             />
           </Pane>
 
-          <Pane display="flex" flex={2} flexDirection="column">
-            <OutputForm
-              converter={converter || NullConverter}
-              focusOutput={focusOutput}
-              setFocusOutput={setFocusOutput}
-            />
-          </Pane>
+          <OutputForm
+            converter={converter || NullConverter}
+            focusOutput={focusOutput}
+            setFocusOutput={setFocusOutput}
+          />
         </Pane>
       </Card>
     </Pane>

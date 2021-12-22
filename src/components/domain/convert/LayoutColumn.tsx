@@ -26,7 +26,14 @@ export const LayoutColumn = ({
     : undefined
 
   return (
-    <Pane display="flex" flex={1} flexDirection="column">
+    <Pane
+      display="flex"
+      flexBasis={0}
+      flexDirection="column"
+      flexGrow={1}
+      flexShrink={0}
+      minWidth={0}
+    >
       {label && (
         <Paragraph
           color={labelColor}
