@@ -1,6 +1,6 @@
 import { majorScale, Pane, Select, Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo } from 'react'
+import { ChangeEvent, forwardRef, useMemo, useEffect } from 'react'
 
 import { OutputError } from '@components/domain/convert/OutputError'
 import { Label } from '@components/forms'
@@ -35,6 +35,17 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     )
 
     const fromRadices = useMemo(() => validRadices(parsedInput), [parsedInput])
+
+    // If we have an existing fromRadix, but the given input isn't valid in that base,
+    // use the first available radice.
+    useEffect(() => {
+      if (
+        !options.fromRadix ||
+        !fromRadices.includes(options.fromRadix as number)
+      ) {
+        setOptions({ ...options, fromRadix: fromRadices[0] })
+      }
+    }, [fromRadices, options, setOptions])
 
     const disabled = useMemo(
       () => baseDisabled || fromRadices.length === 0,

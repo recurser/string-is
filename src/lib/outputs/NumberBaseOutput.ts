@@ -14,6 +14,10 @@ export const maxRadix = 36
 export const minRadix = 2
 
 export const error = (input: string) => {
+  if (isEmpty(input)) {
+    return undefined
+  }
+
   if (validRadices(input).length === 0) {
     return `'${truncate(input, { length: 20 })}' is not a valid number`
   }
