@@ -1,6 +1,6 @@
 import { isEmpty, upperFirst } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { createRef, useEffect, useMemo } from 'react'
+import { Dispatch, SetStateAction, createRef, useEffect, useMemo } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import * as outputs from '@components/domain/convert/outputs'
@@ -12,7 +12,7 @@ import { useAnalytics } from '@services/Analytics'
 interface Props {
   converter: Converter
   focusOutput: boolean
-  setFocusOutput: (focusOutput: boolean) => void
+  setFocusOutput: Dispatch<SetStateAction<boolean>>
 }
 export const OutputForm = ({
   converter,

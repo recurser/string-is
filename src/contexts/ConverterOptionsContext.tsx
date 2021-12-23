@@ -1,5 +1,6 @@
 import {
   createContext,
+  Dispatch,
   PropsWithChildren,
   ReactElement,
   useContext,
@@ -16,12 +17,12 @@ const localStorageKey = 'string.is:Preferences'
 
 interface ConverterOptionsProps {
   options: NamespacedOptions
-  setOptions: (opts: NamespacedOptions) => void
+  setOptions: Dispatch<NamespacedOptions>
 }
 
 interface NamespacedProps {
   options: ConverterOptions
-  setOptions: (opts: ConverterOptions) => void
+  setOptions: Dispatch<ConverterOptions>
 }
 
 // Create a map of default option settings for each output.
@@ -42,7 +43,7 @@ try {
 }
 
 // Merge the defaults with the locally stored preferences.
-const prefs = { ...defaults, ...locals }
+const prefs = { ...defaults, ...locals } as NamespacedOptions
 
 const Context = createContext<ConverterOptionsProps>({
   options: prefs,

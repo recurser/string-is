@@ -7,7 +7,14 @@ import {
 } from 'evergreen-ui'
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { createRef, useEffect, useMemo, useState } from 'react'
+import {
+  createRef,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useInputContext } from '@contexts/InputContext'
@@ -16,8 +23,8 @@ import * as converterModule from '@lib/converters'
 import { selectConverter } from '@services/Converter'
 
 interface Props {
-  setFocusOutput: (focusOutput: boolean) => void
-  setConverter: (converter: Converter) => void
+  setFocusOutput: Dispatch<SetStateAction<boolean>>
+  setConverter: Dispatch<SetStateAction<Converter>>
 }
 
 const converters = Object.values(converterModule)
@@ -62,7 +69,7 @@ export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
         label: t(`lib-converters-commands:${converter.id}`),
         value: converter.id,
       }))
-  }, [])
+  }, [t])
 
   const onSelect = ({ value }: SelectMenuItem) => {
     setSelected(value as string)
