@@ -1,34 +1,22 @@
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  ChangeEvent,
-  ClipboardEvent,
-  KeyboardEvent,
-  useEffect,
-  useMemo,
-  useCallback,
-  useState,
-} from 'react'
+import { ChangeEvent, useEffect, useMemo, useCallback, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { CodeTextarea } from '@components/forms'
 import { useInputContext } from '@contexts/InputContext'
 
-interface Props {
-  setTriggerMenu: (triggerMenu: boolean) => void
-}
-
 // Timeout before deciding that the user has stopped typing.
-const DebounceTimeout = 300
+const DebounceTimeout = 500
 
-export const InputForm = ({ setTriggerMenu }: Props) => {
+export const InputForm = () => {
   const { t } = useTranslation('domain-convert-inputForm')
   const { inputString, setInputString } = useInputContext()
   const [input, setInput] = useState('')
 
   // Focus on the textarea on first load.
   // See https://stackoverflow.com/a/67906087
-  const inputRef = useCallback((input) => input?.focus(), [])
+  const inputRef = useCallback((el) => el?.focus(), [])
 
   const doDebounce = useMemo(
     () => debounce((data: string) => setInputString(data), DebounceTimeout),
@@ -40,20 +28,6 @@ export const InputForm = ({ setTriggerMenu }: Props) => {
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setInput(event.target.value)
 
-  // This is a hack to trigger the menu when the OutputSelector
-  // button is focused on. We know from the tabIndex that that
-  // button will be next when tab is pressed. Using the onFocus()
-  // event on the button instead opens up a *huge* can of worms.
-  const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === 'Tab') {
-      setTimeout(() => setTriggerMenu(true), DebounceTimeout)
-    }
-  }
-
-  const onPaste = (_event: ClipboardEvent<HTMLTextAreaElement>) => {
-    setTimeout(() => setTriggerMenu(true), DebounceTimeout)
-  }
-
   return (
     <LayoutColumn inputString={inputString} label={t('label')}>
       <CodeTextarea
@@ -63,8 +37,6 @@ export const InputForm = ({ setTriggerMenu }: Props) => {
         flex={1}
         height="100%"
         onChange={onChange}
-        onKeyDown={onKeyDown}
-        onPaste={onPaste}
         placeholder={t('placeholder')}
         ref={inputRef}
         tabIndex={1}

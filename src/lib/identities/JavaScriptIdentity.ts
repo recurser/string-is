@@ -17,7 +17,9 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  return 100
+  // Lots of other types (eg. number base conversion, timestamps) can be parsed as Javascript.
+  // We dial down the confidence here to give the other types priority.
+  return 90
 }
 
 export const converters = [JavaScriptConverter] as Converter[]

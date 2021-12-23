@@ -5,6 +5,6 @@
   "charactersSuffix": "characters",
   "indentLabel": "Indentation",
   "printWidthLabel": "Line length",
-  "semicolonLabel": "Use semicolons",
-  "singleQuoteLabel": "Prefer single quotes"
+  "semicolonLabel": "Semicolons",
+  "singleQuoteLabel": "Single quotes"
 }

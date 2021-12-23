@@ -1,5 +1,6 @@
 import {
   createContext,
+  Dispatch,
   PropsWithChildren,
   ReactElement,
   useContext,
@@ -8,7 +9,7 @@ import {
 
 interface InputProps {
   inputString: string
-  setInputString: (inputString: string) => void
+  setInputString: Dispatch<string>
 }
 
 const Context = createContext<InputProps>({

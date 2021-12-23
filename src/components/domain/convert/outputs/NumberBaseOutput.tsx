@@ -1,8 +1,9 @@
-import { majorScale, Pane, Select, Textarea } from 'evergreen-ui'
+import { majorScale, Select, Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo } from 'react'
+import { ChangeEvent, forwardRef, useMemo, useEffect } from 'react'
 
-import { Label } from '@components/forms'
+import { OutputError } from '@components/domain/convert/OutputError'
+import { Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { input as numberInput } from '@lib/inputs/NumberInput'
 import {
@@ -10,11 +11,15 @@ import {
   maxRadix,
   minRadix,
   validRadices,
+  error,
 } from '@lib/outputs/NumberBaseOutput'
 import { OutputProps } from '@lib/types'
 
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  (
+    { converter, disabled: baseDisabled, input, ...props }: OutputProps,
+    ref,
+  ) => {
     const { t } = useTranslation('domain-convert-outputs-numberBaseOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -22,12 +27,30 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     const parsedInput = useMemo(() => numberInput(input), [input])
 
+    const errorMessage = useMemo(() => error(input), [input])
+
     const value = useMemo(
       () => converter.operation(parsedInput || '', options),
       [parsedInput, converter, options],
     )
 
     const fromRadices = useMemo(() => validRadices(parsedInput), [parsedInput])
+
+    // If we have an existing fromRadix, but the given input isn't valid in that base,
+    // use the first available radice.
+    useEffect(() => {
+      if (
+        !options.fromRadix ||
+        !fromRadices.includes(options.fromRadix as number)
+      ) {
+        setOptions({ ...options, fromRadix: fromRadices[0] })
+      }
+    }, [fromRadices, options, setOptions])
+
+    const disabled = useMemo(
+      () => baseDisabled || fromRadices.length === 0,
+      [baseDisabled, fromRadices],
+    )
 
     const onChangeFromRadix = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, fromRadix: parseInt(event.target.value, 10) })
@@ -41,55 +64,63 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const toRadix = (options.toRadix as number) || defaultOptions.toRadix
 
     return (
-      <>
-        <Pane
-          alignItems="baseline"
-          display="flex"
-          flexDirection="row"
-          gap={majorScale(2)}
-          marginBottom={majorScale(1)}
-        >
-          <Pane>
-            <Label label={t('label_from_radix')}>
-              <Select
-                alignSelf="start"
-                onChange={onChangeFromRadix}
-                value={fromRadix}
-                width={majorScale(8)}
-              >
-                {fromRadices.map((radix, idx) => (
-                  <option key={`fromRadixOption-${idx}`} value={radix}>
-                    {radix}
-                  </option>
-                ))}
-              </Select>
-            </Label>
+      <Form>
+        <OutputError message={errorMessage} />
 
-            <Label label={t('label_to_radix')}>
-              <Select
-                alignSelf="start"
-                onChange={onChangeToRadix}
-                value={toRadix}
-                width={majorScale(8)}
-              >
-                {Array.from(Array(maxRadix - minRadix).keys())
-                  .map((idx) => idx + minRadix)
-                  .map((radix, idx) => (
-                    <option key={`toRadixOption-${idx}`} value={radix}>
-                      {radix}
-                    </option>
-                  ))}
-              </Select>
-            </Label>
-          </Pane>
-        </Pane>
+        <Label
+          disabled={disabled}
+          htmlFor="fromRadixInput"
+          label={t('label_from_radix')}
+        >
+          <Select
+            disabled={disabled}
+            id="fromRadixInput"
+            maxWidth={majorScale(8)}
+            onChange={onChangeFromRadix}
+            value={fromRadix}
+          >
+            {fromRadices.map((radix, idx) => (
+              <option key={`fromRadixOption-${idx}`} value={radix}>
+                {radix}
+              </option>
+            ))}
+          </Select>
+        </Label>
+
+        <Label
+          disabled={disabled}
+          htmlFor="toRadixInput"
+          label={t('label_to_radix')}
+        >
+          <Select
+            disabled={disabled}
+            id="toRadixInput"
+            maxWidth={majorScale(8)}
+            onChange={onChangeToRadix}
+            value={toRadix}
+          >
+            {Array.from(Array(maxRadix - minRadix).keys())
+              .map((idx) => idx + minRadix)
+              .map((radix, idx) => (
+                <option key={`toRadixOption-${idx}`} value={radix}>
+                  {radix}
+                </option>
+              ))}
+          </Select>
+        </Label>
 
         <hr />
 
-        <Label label={t('label_result', { base: toRadix })}>
+        <Label
+          disabled={disabled}
+          htmlFor="resultInput"
+          label={t('label_result', { base: toRadix })}
+        >
           <Textarea
             {...props}
+            disabled={disabled}
             height={majorScale(4)}
+            id="resultInput"
             maxWidth={majorScale(27)}
             minHeight={undefined}
             ref={ref}
@@ -97,7 +128,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             value={value}
           />
         </Label>
-      </>
+      </Form>
     )
   },
 )

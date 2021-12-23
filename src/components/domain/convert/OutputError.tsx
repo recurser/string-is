@@ -10,7 +10,12 @@ export const OutputError = ({ message }: Props) => {
   }
 
   return (
-    <Alert intent="warning" marginBottom={majorScale(1)}>
+    <Alert
+      intent="warning"
+      marginBottom={majorScale(1)}
+      overflowX="scroll"
+      paddingBottom={majorScale(2)}
+    >
       <Code
         appearance="minimal"
         dangerouslySetInnerHTML={{ __html: message.replace('\n', '<br/>') }}

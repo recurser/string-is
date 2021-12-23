@@ -1,13 +1,13 @@
-import { Checkbox, majorScale, Pane, Select } from 'evergreen-ui'
+import { Checkbox, majorScale, Select } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
-import { CodeTextarea } from '@components/forms'
+import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-yamlOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -30,54 +30,52 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     return (
-      <>
-        <Pane
-          alignItems="baseline"
-          display="flex"
-          flexDirection="row"
-          gap={majorScale(2)}
-          marginBottom={majorScale(1)}
+      <Form>
+        <Label
+          disabled={disabled}
+          htmlFor="sortKeysInput"
+          label={t('sortKeysLabel')}
         >
-          <Pane>
-            <Select
-              alignSelf="start"
-              onChange={onChangeIndent}
-              value={options.indent as number}
-              width={majorScale(12)}
-            >
-              <option value={2}>{t('2SpacesOption')}</option>
-              <option value={4}>{t('4SpacesOption')}</option>
-            </Select>
-          </Pane>
-
           <Checkbox
             checked={options.sortKeys as boolean}
-            label={t('sortKeysLabel')}
-            marginBottom={0}
-            marginTop={0}
+            disabled={disabled}
+            id="sortKeysInput"
             onChange={onChangeSortKeys}
           />
+        </Label>
 
+        <Label
+          disabled={disabled}
+          htmlFor="forceQuotesInput"
+          label={t('forceQuotesLabel')}
+        >
           <Checkbox
             checked={options.forceQuotes as boolean}
-            label={t('forceQuotesLabel')}
-            marginBottom={0}
-            marginTop={0}
+            disabled={disabled}
+            id="forceQuotesInput"
             onChange={onChangeForceQuotes}
           />
-        </Pane>
+        </Label>
 
-        <CodeTextarea
-          {...props}
-          minHeight={
-            `calc(100% - ${majorScale(
-              8,
-            )}px)` /* Allow for the select box height in settings */
-          }
-          ref={ref}
-          value={value}
-        />
-      </>
+        <Label
+          disabled={disabled}
+          htmlFor="indentInput"
+          label={t('indentLabel')}
+        >
+          <Select
+            disabled={disabled}
+            id="indentInput"
+            maxWidth={majorScale(15)}
+            onChange={onChangeIndent}
+            value={options.indent as number}
+          >
+            <option value={2}>{t('2SpacesOption')}</option>
+            <option value={4}>{t('4SpacesOption')}</option>
+          </Select>
+        </Label>
+
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={value} />
+      </Form>
     )
   },
 )

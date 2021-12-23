@@ -8,7 +8,9 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  return 100
+  // Some types (eg. timestamps) are also valid numbers.
+  // We dial down the confidence here to give the other types priority.
+  return 95
 }
 
 export const converters = [NumberBaseConverter] as Converter[]

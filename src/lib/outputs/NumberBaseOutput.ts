@@ -1,4 +1,4 @@
-import { isEmpty } from 'lodash'
+import { isEmpty, truncate } from 'lodash'
 
 import { ConverterOptions } from '@lib/types'
 
@@ -12,6 +12,26 @@ export const id = 'numberBase'
 // We support the same radix range as Number.toString()
 export const maxRadix = 36
 export const minRadix = 2
+
+export const error = (input: string) => {
+  if (isEmpty(input)) {
+    return undefined
+  }
+
+  if (validRadices(input).length === 0) {
+    return `'${truncate(input, { length: 20 })}' is not a valid number`
+  }
+
+  return undefined
+}
+
+export const output = (
+  input: string,
+  options: ConverterOptions = {},
+): string => {
+  const { fromRadix, toRadix } = { ...defaultOptions, ...options }
+  return parseInt(input, fromRadix).toString(toRadix).toUpperCase()
+}
 
 export const validRadices = (input: string | undefined): number[] => {
   const radices: number[] = []
@@ -30,12 +50,4 @@ export const validRadices = (input: string | undefined): number[] => {
   }
 
   return radices
-}
-
-export const output = (
-  input: string,
-  options: ConverterOptions = {},
-): string => {
-  const { fromRadix, toRadix } = { ...defaultOptions, ...options }
-  return parseInt(input, fromRadix).toString(toRadix).toUpperCase()
 }

@@ -5,31 +5,33 @@ import {
   SelectMenu,
   SelectMenuItem,
 } from 'evergreen-ui'
+import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { createRef, useEffect, useState } from 'react'
+import {
+  createRef,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { useInputContext } from '@contexts/InputContext'
 import { Converter, NullConverter } from '@lib/converters'
+import * as converterModule from '@lib/converters'
+import { selectConverter } from '@services/Converter'
 
 interface Props {
-  converters: Converter[]
-  disabled?: boolean
-  triggerMenu: boolean
-  setFocusOutput: (focusOutput: boolean) => void
-  setConverter: (converter: Converter) => void
-  setTriggerMenu: (triggerMenu: boolean) => void
+  setFocusOutput: Dispatch<SetStateAction<boolean>>
+  setConverter: Dispatch<SetStateAction<Converter>>
 }
 
-export const ConverterSelector = ({
-  converters,
-  disabled,
-  triggerMenu,
-  setFocusOutput,
-  setConverter,
-  setTriggerMenu,
-}: Props) => {
-  const { t } = useTranslation('domain-convert-converterSelector')
+const converters = Object.values(converterModule)
 
+export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
+  const { t } = useTranslation('domain-convert-converterSelector')
+  const { inputString } = useInputContext()
   const [selected, setSelected] = useState<string | undefined>()
 
   // A bit of a hack due to limitations with <SelectMenu />, but we use this
@@ -37,40 +39,20 @@ export const ConverterSelector = ({
   const buttonRef = createRef<HTMLButtonElement>()
 
   useEffect(() => {
-    if (disabled) {
-      setSelected(undefined)
-    } else if (
-      selected &&
-      !converters.map((converter) => converter.id).includes(selected)
-    ) {
-      // If we have previously selected an option that is no longer available, clear the menu.
-      setSelected(undefined)
-    } else if (!triggerMenu && converters.length === 1) {
-      // If there's only one option to choose from, select it.
-      setSelected(converters[0].id)
-    } else if (triggerMenu) {
-      // If we've been asked to open the menu, select the first option if nothing has been selected.
-      setTriggerMenu(false)
-      if (!selected) {
-        setSelected(converters[0].id)
+    async function fetchData() {
+      if (isEmpty(inputString)) {
+        return
       }
-      // Trigger opening of the converter list after paste or tab, if
-      // we have more than one element to choose from.
-      buttonRef.current?.click()
-    }
-  }, [
-    buttonRef,
-    converters,
-    disabled,
-    selected,
-    setSelected,
-    triggerMenu,
-    setTriggerMenu,
-  ])
 
-  const onSelect = ({ value }: SelectMenuItem) => {
-    setSelected(value as string)
-  }
+      if (!selected) {
+        const winner = await selectConverter(inputString)
+        if (winner) {
+          setSelected(winner.id)
+        }
+      }
+    }
+    fetchData()
+  }, [buttonRef, inputString, selected, setSelected])
 
   // Set the converter based on the selected value. Ideally we could use the
   // converter directly in <SelectMenu />, but unfortunately it only supports
@@ -78,7 +60,20 @@ export const ConverterSelector = ({
   useEffect(() => {
     const cnvt = converters.find((converter) => converter.id === selected)
     setConverter(cnvt || NullConverter)
-  }, [converters, setConverter, selected])
+  }, [setConverter, selected])
+
+  const options = useMemo(() => {
+    return converters
+      .filter((converter) => converter.id != NullConverter.id)
+      .map((converter) => ({
+        label: t(`lib-converters-commands:${converter.id}`),
+        value: converter.id,
+      }))
+  }, [t])
+
+  const onSelect = ({ value }: SelectMenuItem) => {
+    setSelected(value as string)
+  }
 
   return (
     <LayoutColumn>
@@ -87,15 +82,11 @@ export const ConverterSelector = ({
         hasTitle={false}
         onCloseComplete={() => setFocusOutput(true)}
         onSelect={onSelect}
-        options={converters.map((converter) => ({
-          label: t(`lib-converters-commands:${converter.id}`),
-          value: converter.id,
-        }))}
+        options={options}
         selected={selected}
       >
         <Pane display="flex">
           <Button
-            disabled={disabled}
             flex={1}
             iconAfter={selected ? ChevronRightIcon : undefined}
             ref={buttonRef}

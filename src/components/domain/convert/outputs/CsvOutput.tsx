@@ -1,13 +1,13 @@
-import { Checkbox, majorScale, Pane } from 'evergreen-ui'
+import { Checkbox } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
-import { CodeTextarea } from '@components/forms'
+import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-csvOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -26,39 +26,35 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     return (
-      <>
-        <Pane
-          alignItems="end"
-          display="flex"
-          flexDirection="row"
-          gap={majorScale(2)}
+      <Form>
+        <Label
+          disabled={disabled}
+          htmlFor="quotesInput"
+          label={t('quotesLabel')}
         >
           <Checkbox
             checked={options.quotes as boolean}
-            label={t('quotesLabel')}
-            marginTop={0}
+            disabled={disabled}
+            id="quotesInput"
             onChange={onChangeQuotes}
           />
+        </Label>
 
+        <Label
+          disabled={disabled}
+          htmlFor="headerLabelInput"
+          label={t('headerLabel')}
+        >
           <Checkbox
             checked={options.header as boolean}
-            label={t('headerLabel')}
-            marginTop={0}
+            disabled={disabled}
+            id="headerLabelInput"
             onChange={onChangeHeader}
           />
-        </Pane>
+        </Label>
 
-        <CodeTextarea
-          {...props}
-          minHeight={
-            `calc(100% - ${majorScale(
-              7,
-            )}px)` /* Allow for the checkbox height in settings */
-          }
-          ref={ref}
-          value={value}
-        />
-      </>
+        <CodeTextarea {...props} ref={ref} value={value} />
+      </Form>
     )
   },
 )

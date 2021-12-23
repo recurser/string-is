@@ -1,22 +1,15 @@
-import {
-  Checkbox,
-  majorScale,
-  Pane,
-  Select,
-  Text,
-  TextInput,
-} from 'evergreen-ui'
+import { Checkbox, majorScale, Select, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 
 import { OutputError } from '@components/domain/convert/OutputError'
-import { CodeTextarea, Label } from '@components/forms'
+import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { error } from '@lib/outputs/JavaScriptOutput'
 import { OutputProps } from '@lib/types'
 
 export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -55,66 +48,71 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     return (
-      <>
+      <Form>
         <OutputError message={errorMessage} />
 
-        <Pane
-          display="flex"
-          flexDirection="column"
-          gap={majorScale(2)}
-          marginBottom={majorScale(1)}
+        <Label
+          disabled={disabled}
+          htmlFor="indentInput"
+          label={t('indentLabel')}
         >
-          <Label label={t('indentLabel')} marginBottom={0}>
-            <Select
-              alignSelf="start"
-              flex="none"
-              maxWidth={majorScale(15)}
-              onChange={onChangeSpace}
-              value={space}
-            >
-              <option value={'  '}>{t('2SpacesOption')}</option>
-              <option value={'    '}>{t('4SpacesOption')}</option>
-              <option value={'\t'}>{t('1TabOption')}</option>
-            </Select>
-          </Label>
+          <Select
+            disabled={disabled}
+            id="indentInput"
+            maxWidth={majorScale(15)}
+            onChange={onChangeSpace}
+            value={space}
+          >
+            <option value={'  '}>{t('2SpacesOption')}</option>
+            <option value={'    '}>{t('4SpacesOption')}</option>
+            <option value={'\t'}>{t('1TabOption')}</option>
+          </Select>
+        </Label>
 
-          <Label label={t('printWidthLabel')} marginBottom={0}>
-            <TextInput
-              flex={1}
-              maxWidth={majorScale(12)}
-              min={1}
-              onChange={onChangePrintWidth}
-              type="number"
-              value={options.printWidth as number}
-            />
-            <Text>&nbsp;{t('charactersSuffix')}</Text>
-          </Label>
+        <Label
+          disabled={disabled}
+          htmlFor="printWidthInput"
+          label={t('printWidthLabel')}
+          suffix={t('charactersSuffix')}
+        >
+          <TextInput
+            disabled={disabled}
+            id="printWidthInput"
+            maxWidth={majorScale(12)}
+            onChange={onChangePrintWidth}
+            type="number"
+            value={options.printWidth as number}
+          />
+        </Label>
 
-          <Label alignItems="start" flexDirection="row" marginBottom={0}>
-            <Checkbox
-              checked={options.semi as boolean}
-              label={t('semicolonLabel')}
-              marginBottom={0}
-              marginTop={0}
-              onChange={onChangeSemicolon}
-            />
-          </Label>
+        <Label
+          disabled={disabled}
+          htmlFor="semicolonInput"
+          label={t('semicolonLabel')}
+        >
+          <Checkbox
+            checked={options.semi as boolean}
+            disabled={disabled}
+            id="semicolonInput"
+            onChange={onChangeSemicolon}
+          />
+        </Label>
 
-          <Label alignItems="start" flexDirection="row">
-            <Checkbox
-              checked={options.singleQuote as boolean}
-              label={t('singleQuoteLabel')}
-              marginBottom={0}
-              marginTop={0}
-              onChange={onChangeSingleQuote}
-            />
-          </Label>
-        </Pane>
-
-        <hr />
+        <Label
+          disabled={disabled}
+          htmlFor="singleQuoteInput"
+          label={t('singleQuoteLabel')}
+        >
+          <Checkbox
+            checked={options.singleQuote as boolean}
+            disabled={disabled}
+            id="singleQuoteInput"
+            onChange={onChangeSingleQuote}
+          />
+        </Label>
 
         <CodeTextarea {...props} ref={ref} value={value} />
-      </>
+      </Form>
     )
   },
 )

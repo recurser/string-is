@@ -1,15 +1,15 @@
-import { majorScale, Pane, Select, Text, TextInput } from 'evergreen-ui'
+import { majorScale, Select, Text, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 
 import { OutputError } from '@components/domain/convert/OutputError'
-import { CodeTextarea, Label } from '@components/forms'
+import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { error } from '@lib/outputs/HtmlOutput'
 import { OutputProps } from '@lib/types'
 
 export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -40,46 +40,45 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     return (
-      <>
+      <Form>
         <OutputError message={errorMessage} />
 
-        <Pane
-          display="flex"
-          flexDirection="column"
-          gap={majorScale(2)}
-          marginBottom={majorScale(1)}
+        <Label
+          disabled={disabled}
+          htmlFor="indentInput"
+          label={t('indentLabel')}
         >
-          <Label label={t('indentLabel')} marginBottom={0}>
-            <Select
-              alignSelf="start"
-              flex="none"
-              maxWidth={majorScale(15)}
-              onChange={onChangeSpace}
-              value={space}
-            >
-              <option value={'  '}>{t('2SpacesOption')}</option>
-              <option value={'    '}>{t('4SpacesOption')}</option>
-              <option value={'\t'}>{t('1TabOption')}</option>
-            </Select>
-          </Label>
+          <Select
+            disabled={disabled}
+            id="indentInput"
+            maxWidth={majorScale(15)}
+            onChange={onChangeSpace}
+            value={space}
+          >
+            <option value={'  '}>{t('2SpacesOption')}</option>
+            <option value={'    '}>{t('4SpacesOption')}</option>
+            <option value={'\t'}>{t('1TabOption')}</option>
+          </Select>
+        </Label>
 
-          <Label label={t('printWidthLabel')} marginBottom={0}>
-            <TextInput
-              flex={1}
-              maxWidth={majorScale(12)}
-              min={1}
-              onChange={onChangePrintWidth}
-              type="number"
-              value={options.printWidth as number}
-            />
-            <Text>&nbsp;{t('charactersSuffix')}</Text>
-          </Label>
-        </Pane>
-
-        <hr />
+        <Label
+          disabled={disabled}
+          htmlFor="printWidthInput"
+          label={t('printWidthLabel')}
+        >
+          <TextInput
+            disabled={disabled}
+            id="printWidthInput"
+            maxWidth={majorScale(15)}
+            onChange={onChangePrintWidth}
+            type="number"
+            value={options.printWidth as number}
+          />
+          <Text>&nbsp;{t('charactersSuffix')}</Text>
+        </Label>
 
         <CodeTextarea {...props} ref={ref} value={value} />
-      </>
+      </Form>
     )
   },
 )
