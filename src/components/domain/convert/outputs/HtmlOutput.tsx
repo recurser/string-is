@@ -45,7 +45,7 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="indentInput"
+          htmlFor="indentInput"
           label={t('indentLabel')}
         >
           <Select
@@ -63,7 +63,7 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="printWidthInput"
+          htmlFor="printWidthInput"
           label={t('printWidthLabel')}
         >
           <TextInput

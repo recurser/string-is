@@ -33,7 +33,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <Form>
         <Label
           disabled={disabled}
-          inputId="sortKeysInput"
+          htmlFor="sortKeysInput"
           label={t('sortKeysLabel')}
         >
           <Checkbox
@@ -46,7 +46,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="forceQuotesInput"
+          htmlFor="forceQuotesInput"
           label={t('forceQuotesLabel')}
         >
           <Checkbox
@@ -59,7 +59,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="indentInput"
+          htmlFor="indentInput"
           label={t('indentLabel')}
         >
           <Select

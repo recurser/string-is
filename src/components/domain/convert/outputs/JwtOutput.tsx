@@ -40,7 +40,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           alignItems="start"
           disabled={disabled}
           flexDirection="column"
-          inputId="headerInput"
+          htmlFor="headerInput"
           label={t('label_header')}
         >
           <CodeTextarea
@@ -56,7 +56,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           alignItems="start"
           disabled={disabled}
           flexDirection="column"
-          inputId="payloadInput"
+          htmlFor="payloadInput"
           label={t('label_payload')}
         >
           <CodeTextarea

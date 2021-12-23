@@ -6,7 +6,7 @@ import { theme } from '@services/Theme'
 
 interface Props extends PaneProps {
   disabled?: boolean
-  inputId: string
+  htmlFor: string
   label?: string
   suffix?: string
 }
@@ -21,7 +21,7 @@ const Wrapper = styledComponents(Pane)`
 export const Label = ({
   children,
   disabled,
-  inputId,
+  htmlFor,
   label,
   suffix,
   ...props
@@ -37,7 +37,7 @@ export const Label = ({
       {...props}
     >
       <Text color={labelColor} width={majorScale(15)}>
-        <label htmlFor={inputId}>{label || ' '}</label>
+        <label htmlFor={htmlFor}>{label || ' '}</label>
       </Text>
 
       {children}

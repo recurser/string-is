@@ -29,7 +29,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <Form>
         <Label
           disabled={disabled}
-          inputId="indentInput"
+          htmlFor="indentInput"
           label={t('indentLabel')}
         >
           <Select
@@ -47,7 +47,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="sortKeysInput"
+          htmlFor="sortKeysInput"
           label={t('sortKeysLabel')}
         >
           <Checkbox

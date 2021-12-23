@@ -30,7 +30,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <Form>
         <Label
           disabled={disabled}
-          inputId="algorithmInput"
+          htmlFor="algorithmInput"
           label={t('algorithmLabel')}
         >
           <Select

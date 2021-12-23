@@ -29,7 +29,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <Form>
         <Label
           disabled={disabled}
-          inputId="quotesInput"
+          htmlFor="quotesInput"
           label={t('quotesLabel')}
         >
           <Checkbox
@@ -42,7 +42,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="headerLabelInput"
+          htmlFor="headerLabelInput"
           label={t('headerLabel')}
         >
           <Checkbox

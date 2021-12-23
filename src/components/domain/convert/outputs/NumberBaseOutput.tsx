@@ -69,7 +69,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="fromRadixInput"
+          htmlFor="fromRadixInput"
           label={t('label_from_radix')}
         >
           <Select
@@ -89,7 +89,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="toRadixInput"
+          htmlFor="toRadixInput"
           label={t('label_to_radix')}
         >
           <Select
@@ -113,7 +113,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="resultInput"
+          htmlFor="resultInput"
           label={t('label_result', { base: toRadix })}
         >
           <Textarea

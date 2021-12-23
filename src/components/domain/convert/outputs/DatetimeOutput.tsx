@@ -53,7 +53,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <Form>
         <Label
           disabled={disabled}
-          inputId="timezoneInput"
+          htmlFor="timezoneInput"
           label={t('label_timezone')}
         >
           <SelectMenu
@@ -73,7 +73,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="formatInput"
+          htmlFor="formatInput"
           label={t('label_format')}
         >
           <TextInput
@@ -98,7 +98,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="localTimeInput"
+          htmlFor="localTimeInput"
           label={t('label_local_time')}
         >
           <Textarea
@@ -117,7 +117,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="utcTimeInput"
+          htmlFor="utcTimeInput"
           label={t('label_utc_time')}
         >
           <TextInput
@@ -130,7 +130,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          inputId="relativeTimeInput"
+          htmlFor="relativeTimeInput"
           label={t('label_relative_time')}
         >
           <TextInput
