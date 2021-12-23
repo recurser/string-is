@@ -37,6 +37,7 @@ export const LayoutColumn = ({
       {label && (
         <Paragraph
           color={labelColor}
+          fontWeight="bold"
           marginBottom={majorScale(1)}
           role="label"
           style={style}

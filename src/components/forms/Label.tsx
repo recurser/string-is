@@ -1,17 +1,27 @@
 import { majorScale, minorScale, Pane, PaneProps, Text } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
+import styledComponents from 'styled-components'
 
 import { theme } from '@services/Theme'
 
 interface Props extends PaneProps {
   disabled?: boolean
+  inputId: string
   label?: string
   suffix?: string
 }
 
+const Wrapper = styledComponents(Pane)`
+  /* labels in forms are checkbox wrappers. */
+  label {
+    margin: 0;
+  }
+`
+
 export const Label = ({
   children,
   disabled,
+  inputId,
   label,
   suffix,
   ...props
@@ -19,7 +29,7 @@ export const Label = ({
   const labelColor = disabled ? theme.colors.gray500 : undefined
 
   return (
-    <Pane
+    <Wrapper
       alignItems="center"
       display="flex"
       flexDirection="row"
@@ -27,16 +37,12 @@ export const Label = ({
       {...props}
     >
       <Text color={labelColor} width={majorScale(15)}>
-        {label || ' '}
+        <label htmlFor={inputId}>{label || ' '}</label>
       </Text>
 
       {children}
 
       {suffix && <Text color={labelColor}>&nbsp;{suffix}</Text>}
-    </Pane>
+    </Wrapper>
   )
-}
-
-Label.defaultProps = {
-  flexDirection: 'row',
 }

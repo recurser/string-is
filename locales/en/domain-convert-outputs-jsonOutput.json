@@ -2,5 +2,6 @@
   "1TabOption": "1 tab",
   "2SpacesOption": "2 spaces",
   "4SpacesOption": "4 spaces",
+  "indentLabel": "Indentation",
   "sortKeysLabel": "Sort keys"
 }

@@ -1,9 +1,9 @@
-import { majorScale, Pane, Select } from 'evergreen-ui'
+import { majorScale, Select } from 'evergreen-ui'
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
-import { CodeTextarea } from '@components/forms'
+import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
@@ -27,43 +27,29 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     return (
-      <>
-        <Pane
-          alignItems="baseline"
-          display="flex"
-          flexDirection="row"
-          gap={majorScale(2)}
-          marginBottom={majorScale(1)}
-        >
-          <Pane>
-            <Select
-              alignSelf="start"
-              disabled={disabled}
-              onChange={onChangeAlgorithm}
-              value={options.algorithm as string}
-              width={majorScale(12)}
-            >
-              <option value={'sha1'}>{t('sha1Option')}</option>
-              <option value={'sha224'}>{t('sha224Option')}</option>
-              <option value={'sha256'}>{t('sha256Option')}</option>
-              <option value={'sha384'}>{t('sha384Option')}</option>
-              <option value={'sha512'}>{t('sha512Option')}</option>
-            </Select>
-          </Pane>
-        </Pane>
-
-        <CodeTextarea
-          {...props}
+      <Form>
+        <Label
           disabled={disabled}
-          minHeight={
-            `calc(100% - ${majorScale(
-              8,
-            )}px)` /* Allow for the select box height in settings */
-          }
-          ref={ref}
-          value={value}
-        />
-      </>
+          inputId="algorithmInput"
+          label={t('algorithmLabel')}
+        >
+          <Select
+            disabled={disabled}
+            id="algorithmInput"
+            maxWidth={majorScale(12)}
+            onChange={onChangeAlgorithm}
+            value={options.algorithm as string}
+          >
+            <option value={'sha1'}>{t('sha1Option')}</option>
+            <option value={'sha224'}>{t('sha224Option')}</option>
+            <option value={'sha256'}>{t('sha256Option')}</option>
+            <option value={'sha384'}>{t('sha384Option')}</option>
+            <option value={'sha512'}>{t('sha512Option')}</option>
+          </Select>
+        </Label>
+
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={value} />
+      </Form>
     )
   },
 )

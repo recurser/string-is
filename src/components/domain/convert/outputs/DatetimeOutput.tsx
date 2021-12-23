@@ -4,7 +4,6 @@ import {
   IconButton,
   Link,
   majorScale,
-  Pane,
   SelectMenu,
   SelectMenuItem,
   Textarea,
@@ -13,7 +12,7 @@ import {
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
-import { Label } from '@components/forms'
+import { Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import {
   defaultOptions,
@@ -51,86 +50,98 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     return (
-      <>
-        <Pane
-          display="flex"
-          flexDirection="column"
-          gap={majorScale(2)}
-          marginBottom={majorScale(1)}
+      <Form>
+        <Label
+          disabled={disabled}
+          inputId="timezoneInput"
+          label={t('label_timezone')}
         >
-          <Pane>
-            <Label disabled={disabled} label={t('label_timezone')}>
-              <SelectMenu
-                closeOnSelect={true}
-                onSelect={onSelectTimezone}
-                options={timezones.map((timezone) => ({
-                  label: timezone.name,
-                  value: timezone.tzCode,
-                }))}
-                selected={options.timezone as string}
-              >
-                <Button disabled={disabled} flex={1} maxWidth={majorScale(32)}>
-                  {options.timezone}
-                </Button>
-              </SelectMenu>
-            </Label>
+          <SelectMenu
+            closeOnSelect={true}
+            onSelect={onSelectTimezone}
+            options={timezones.map((timezone) => ({
+              label: timezone.name,
+              value: timezone.tzCode,
+            }))}
+            selected={options.timezone as string}
+          >
+            <Button disabled={disabled} maxWidth={majorScale(32)}>
+              {options.timezone}
+            </Button>
+          </SelectMenu>
+        </Label>
 
-            <Label disabled={disabled} label={t('label_format')}>
-              <TextInput
-                disabled={disabled}
-                flex={1}
-                maxWidth={majorScale(27)}
-                onChange={onChangeFormat}
-                placeholder={defaultOptions.format}
-                value={options.format as string}
-              />
-              <IconButton
-                disabled={disabled}
-                href="https://day.js.org/docs/en/display/format"
-                icon={HelpIcon}
-                is={Link}
-                marginLeft={majorScale(1)}
-                target="_blank"
-              />
-            </Label>
-          </Pane>
-        </Pane>
+        <Label
+          disabled={disabled}
+          inputId="formatInput"
+          label={t('label_format')}
+        >
+          <TextInput
+            disabled={disabled}
+            id="formatInput"
+            maxWidth={majorScale(27)}
+            onChange={onChangeFormat}
+            placeholder={defaultOptions.format}
+            value={options.format as string}
+          />
+          <IconButton
+            disabled={disabled}
+            href="https://day.js.org/docs/en/display/format"
+            icon={HelpIcon}
+            is={Link}
+            marginLeft={majorScale(1)}
+            target="_blank"
+          />
+        </Label>
 
         <hr />
 
-        <Label disabled={disabled} label={t('label_local_time')}>
+        <Label
+          disabled={disabled}
+          inputId="localTimeInput"
+          label={t('label_local_time')}
+        >
           <Textarea
             {...props}
             disabled={disabled}
             height={majorScale(4)}
+            id="localTimeInput"
             maxWidth={majorScale(32)}
             minHeight={undefined}
+            readOnly={true}
             ref={ref}
             resize="none"
             value={value}
           />
         </Label>
 
-        <Label disabled={disabled} label={t('label_utc_time')}>
+        <Label
+          disabled={disabled}
+          inputId="utcTimeInput"
+          label={t('label_utc_time')}
+        >
           <TextInput
             disabled={disabled}
-            flex={1}
             maxWidth={majorScale(32)}
             readOnly={true}
             value={utcValue}
           />
         </Label>
 
-        <Label disabled={disabled} label={t('label_relative_time')}>
+        <Label
+          disabled={disabled}
+          inputId="relativeTimeInput"
+          label={t('label_relative_time')}
+        >
           <TextInput
             disabled={disabled}
-            flex={1}
+            id="relativeTimeInput"
             maxWidth={majorScale(32)}
             readOnly={true}
             value={relativeValue}
           />
         </Label>
-      </>
+      </Form>
     )
   },
 )
