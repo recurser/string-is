@@ -78,7 +78,7 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <TextInput
             disabled={disabled}
             id="printWidthInput"
-            maxWidth={majorScale(12)}
+            maxWidth={majorScale(15)}
             onChange={onChangePrintWidth}
             type="number"
             value={options.printWidth as number}
