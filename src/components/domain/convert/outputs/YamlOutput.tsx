@@ -33,6 +33,23 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <Form>
         <Label
           disabled={disabled}
+          htmlFor="indentInput"
+          label={t('indentLabel')}
+        >
+          <Select
+            disabled={disabled}
+            id="indentInput"
+            maxWidth={majorScale(15)}
+            onChange={onChangeIndent}
+            value={options.indent as number}
+          >
+            <option value={2}>{t('2SpacesOption')}</option>
+            <option value={4}>{t('4SpacesOption')}</option>
+          </Select>
+        </Label>
+
+        <Label
+          disabled={disabled}
           htmlFor="sortKeysInput"
           label={t('sortKeysLabel')}
         >
@@ -55,23 +72,6 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             id="forceQuotesInput"
             onChange={onChangeForceQuotes}
           />
-        </Label>
-
-        <Label
-          disabled={disabled}
-          htmlFor="indentInput"
-          label={t('indentLabel')}
-        >
-          <Select
-            disabled={disabled}
-            id="indentInput"
-            maxWidth={majorScale(15)}
-            onChange={onChangeIndent}
-            value={options.indent as number}
-          >
-            <option value={2}>{t('2SpacesOption')}</option>
-            <option value={4}>{t('4SpacesOption')}</option>
-          </Select>
         </Label>
 
         <CodeTextarea {...props} disabled={disabled} ref={ref} value={value} />
