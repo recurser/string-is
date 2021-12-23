@@ -2,6 +2,7 @@ import { majorScale, Pane, Select, Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
+import { OutputError } from '@components/domain/convert/OutputError'
 import { Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { input as numberInput } from '@lib/inputs/NumberInput'
@@ -10,11 +11,15 @@ import {
   maxRadix,
   minRadix,
   validRadices,
+  error,
 } from '@lib/outputs/NumberBaseOutput'
 import { OutputProps } from '@lib/types'
 
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  (
+    { converter, disabled: baseDisabled, input, ...props }: OutputProps,
+    ref,
+  ) => {
     const { t } = useTranslation('domain-convert-outputs-numberBaseOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -22,12 +27,19 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     const parsedInput = useMemo(() => numberInput(input), [input])
 
+    const errorMessage = useMemo(() => error(input), [input])
+
     const value = useMemo(
       () => converter.operation(parsedInput || '', options),
       [parsedInput, converter, options],
     )
 
     const fromRadices = useMemo(() => validRadices(parsedInput), [parsedInput])
+
+    const disabled = useMemo(
+      () => baseDisabled || fromRadices.length === 0,
+      [baseDisabled, fromRadices],
+    )
 
     const onChangeFromRadix = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, fromRadix: parseInt(event.target.value, 10) })
@@ -42,6 +54,8 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     return (
       <>
+        <OutputError message={errorMessage} />
+
         <Pane
           alignItems="baseline"
           display="flex"
