@@ -5,7 +5,6 @@ import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
 import { OutputError } from '@components/domain/convert/OutputError'
 import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { error } from '@lib/outputs/CssOutput'
 import { OutputProps } from '@lib/types'
 
 export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
@@ -14,14 +13,17 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
+    const [errorMessage, setErrorMessage] = useState<string | undefined>()
     const [space, setSpace] = useState(
       (options.useTabs ? '\t' : ' ').repeat(options.tabWidth as number),
     )
 
-    const errorMessage = useMemo(() => error(input), [input])
-
     const value = useMemo(() => {
-      return converter.operation(input, options)
+      try {
+        return converter.operation(input, options)
+      } catch (err) {
+        setErrorMessage((err as Error).message)
+      }
     }, [input, converter, options])
 
     const onChangePrintWidth = (event: ChangeEvent<HTMLInputElement>) => {
