@@ -1,5 +1,8 @@
 {
-  "1TabOption": "1 tab",
-  "2SpacesOption": "2 spaces",
-  "4SpacesOption": "4 spaces"
+  "1_tab_option": "1 tab",
+  "2_spaces_option": "2 spaces",
+  "4_spaces_option": "4 spaces",
+  "characters_suffix": "characters",
+  "indent_label": "Indentation",
+  "print_width_label": "Line length"
 }

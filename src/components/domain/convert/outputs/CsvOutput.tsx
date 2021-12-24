@@ -30,7 +30,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="quotesInput"
-          label={t('quotesLabel')}
+          label={t('quotes_label')}
         >
           <Checkbox
             checked={options.quotes as boolean}
@@ -42,13 +42,13 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          htmlFor="headerLabelInput"
-          label={t('headerLabel')}
+          htmlFor="headerInput"
+          label={t('header_label')}
         >
           <Checkbox
             checked={options.header as boolean}
             disabled={disabled}
-            id="headerLabelInput"
+            id="headerInput"
             onChange={onChangeHeader}
           />
         </Label>

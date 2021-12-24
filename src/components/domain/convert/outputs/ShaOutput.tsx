@@ -31,7 +31,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="algorithmInput"
-          label={t('algorithmLabel')}
+          label={t('algorithm_label')}
         >
           <Select
             disabled={disabled}
@@ -40,11 +40,11 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onChange={onChangeAlgorithm}
             value={options.algorithm as string}
           >
-            <option value={'sha1'}>{t('sha1Option')}</option>
-            <option value={'sha224'}>{t('sha224Option')}</option>
-            <option value={'sha256'}>{t('sha256Option')}</option>
-            <option value={'sha384'}>{t('sha384Option')}</option>
-            <option value={'sha512'}>{t('sha512Option')}</option>
+            <option value={'sha1'}>{t('sha_1_option')}</option>
+            <option value={'sha224'}>{t('sha_224_option')}</option>
+            <option value={'sha256'}>{t('sha_256_option')}</option>
+            <option value={'sha384'}>{t('sha_384_option')}</option>
+            <option value={'sha512'}>{t('sha_512_option')}</option>
           </Select>
         </Label>
 

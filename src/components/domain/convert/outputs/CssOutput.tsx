@@ -10,7 +10,7 @@ import { OutputProps } from '@lib/types'
 
 export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   ({ converter, disabled, input, ...props }: OutputProps, ref) => {
-    const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
+    const { t } = useTranslation('domain-convert-outputs-cssOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
@@ -46,7 +46,7 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="indentInput"
-          label={t('indentLabel')}
+          label={t('indent_label')}
         >
           <Select
             disabled={disabled}
@@ -55,17 +55,17 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onChange={onChangeSpace}
             value={space}
           >
-            <option value={'  '}>{t('2SpacesOption')}</option>
-            <option value={'    '}>{t('4SpacesOption')}</option>
-            <option value={'\t'}>{t('1TabOption')}</option>
+            <option value={'  '}>{t('2_spaces_option')}</option>
+            <option value={'    '}>{t('4_spaces_option')}</option>
+            <option value={'\t'}>{t('1_tab_option')}</option>
           </Select>
         </Label>
 
         <Label
           disabled={disabled}
           htmlFor="printWidthInput"
-          label={t('printWidthLabel')}
-          suffix={t('charactersSuffix')}
+          label={t('print_width_label')}
+          suffix={t('characters_suffix')}
         >
           <TextInput
             disabled={disabled}

@@ -1,5 +1,4 @@
 {
-  "menuAbout": "About",
-  "menuGithub": "Github",
-  "menuHome": "Home"
+  "menu_about": "About",
+  "menu_github": "Github"
 }

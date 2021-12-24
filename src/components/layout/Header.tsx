@@ -30,10 +30,10 @@ export const Header = (): ReactElement => {
       <Pane>
         <Tablist display="flex" gap={minorScale(1)}>
           <Link href={ROUTE_ABOUT}>
-            <Tab isSelected={pathname === ROUTE_ABOUT}>{t('menuAbout')}</Tab>
+            <Tab isSelected={pathname === ROUTE_ABOUT}>{t('menu_about')}</Tab>
           </Link>
           <Link href="https://github.com/recurser/string-is" target="_blank">
-            <Tab isSelected={false}>{t('menuGithub')}</Tab>
+            <Tab isSelected={false}>{t('menu_github')}</Tab>
           </Link>
         </Tablist>
       </Pane>

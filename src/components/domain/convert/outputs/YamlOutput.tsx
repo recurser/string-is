@@ -34,7 +34,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="indentInput"
-          label={t('indentLabel')}
+          label={t('indent_label')}
         >
           <Select
             disabled={disabled}
@@ -43,15 +43,15 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onChange={onChangeIndent}
             value={options.indent as number}
           >
-            <option value={2}>{t('2SpacesOption')}</option>
-            <option value={4}>{t('4SpacesOption')}</option>
+            <option value={2}>{t('2_spaces_option')}</option>
+            <option value={4}>{t('4_spaces_option')}</option>
           </Select>
         </Label>
 
         <Label
           disabled={disabled}
           htmlFor="sortKeysInput"
-          label={t('sortKeysLabel')}
+          label={t('sort_keys_label')}
         >
           <Checkbox
             checked={options.sortKeys as boolean}
@@ -64,7 +64,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="forceQuotesInput"
-          label={t('forceQuotesLabel')}
+          label={t('force_quotes_label')}
         >
           <Checkbox
             checked={options.forceQuotes as boolean}

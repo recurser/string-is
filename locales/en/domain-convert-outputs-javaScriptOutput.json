@@ -1,10 +1,10 @@
 {
-  "1TabOption": "1 tab",
-  "2SpacesOption": "2 spaces",
-  "4SpacesOption": "4 spaces",
-  "charactersSuffix": "characters",
-  "indentLabel": "Indentation",
-  "printWidthLabel": "Line length",
-  "semicolonLabel": "Semicolons",
-  "singleQuoteLabel": "Single quotes"
+  "1_tab_option": "1 tab",
+  "2_spaces_option": "2 spaces",
+  "4_spaces_option": "4 spaces",
+  "characters_suffix": "characters",
+  "indent_label": "Indentation",
+  "print_width_label": "Line length",
+  "semicolon_label": "Semicolons",
+  "single_quote_label": "Single quotes"
 }

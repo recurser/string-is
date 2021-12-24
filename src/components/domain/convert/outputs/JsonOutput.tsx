@@ -30,7 +30,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="indentInput"
-          label={t('indentLabel')}
+          label={t('indent_label')}
         >
           <Select
             disabled={disabled}
@@ -39,16 +39,16 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onChange={onChangeSpace}
             value={options.space as string}
           >
-            <option value={'  '}>{t('2SpacesOption')}</option>
-            <option value={'    '}>{t('4SpacesOption')}</option>
-            <option value={'\t'}>{t('1TabOption')}</option>
+            <option value={'  '}>{t('2_spaces_option')}</option>
+            <option value={'    '}>{t('4_spaces_option')}</option>
+            <option value={'\t'}>{t('1_tab_option')}</option>
           </Select>
         </Label>
 
         <Label
           disabled={disabled}
           htmlFor="sortKeysInput"
-          label={t('sortKeysLabel')}
+          label={t('sort_keys_label')}
         >
           <Checkbox
             checked={options.sortKeys as boolean}
