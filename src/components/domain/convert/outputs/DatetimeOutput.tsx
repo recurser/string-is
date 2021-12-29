@@ -23,15 +23,11 @@ import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 
 export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-datetimeOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
-
-    const value = useMemo(() => {
-      return converter.operation(input, options)
-    }, [input, converter, options])
 
     const relativeValue = useMemo(() => {
       return relativeOutput(input, options)
@@ -111,7 +107,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             readOnly={true}
             ref={ref}
             resize="none"
-            value={value}
+            value={output}
           />
         </Label>
 

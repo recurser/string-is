@@ -1,30 +1,20 @@
 import { majorScale, Select, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
+import { ChangeEvent, forwardRef, useState } from 'react'
 
-import { OutputError } from '@components/domain/convert/OutputError'
 import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-cssOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
-    const [errorMessage, setErrorMessage] = useState<string | undefined>()
     const [space, setSpace] = useState(
       (options.useTabs ? '\t' : ' ').repeat(options.tabWidth as number),
     )
-
-    const value = useMemo(() => {
-      try {
-        return converter.operation(input, options)
-      } catch (err) {
-        setErrorMessage((err as Error).message)
-      }
-    }, [input, converter, options])
 
     const onChangePrintWidth = (event: ChangeEvent<HTMLInputElement>) => {
       const printWidth = parseInt(event.target.value, 10)
@@ -43,8 +33,6 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     return (
       <Form>
-        <OutputError message={errorMessage} />
-
         <Label
           disabled={disabled}
           htmlFor="indentInput"
@@ -79,7 +67,7 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={value} />
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },

@@ -8,15 +8,11 @@ export const input = (input: string): Obj | undefined => {
     return undefined
   }
 
-  try {
-    const result = load(input)
+  const result = load(input)
 
-    if (typeof result === 'string') {
-      return undefined
-    }
-
-    return result as Obj
-  } catch (err) {
+  if (typeof result === 'string') {
     return undefined
   }
+
+  return result as Obj
 }

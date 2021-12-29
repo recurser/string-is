@@ -9,12 +9,7 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  let decoded
-  try {
-    decoded = UrlDecodeConverter.operation(input)
-  } catch {
-    return 0
-  }
+  const decoded = UrlDecodeConverter.operation(input)
 
   // See https://stackoverflow.com/a/2295286
   if (decoded !== input) {

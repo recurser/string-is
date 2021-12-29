@@ -13,28 +13,14 @@ export const defaultOptions = {
 
 export const id = 'javaScript'
 
-export const error = (input: string) => {
-  try {
-    format(input, { parser: 'babel', plugins: [parserBabel] })
-  } catch (err) {
-    return (err as Error).message
-  }
-
-  return undefined
-}
-
 export const output = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
-  try {
-    return format(input, {
-      ...defaultOptions,
-      ...options,
-      parser: 'babel',
-      plugins: [parserBabel],
-    })
-  } catch (err) {
-    return input
-  }
+  return format(input, {
+    ...defaultOptions,
+    ...options,
+    parser: 'babel',
+    plugins: [parserBabel],
+  })
 }

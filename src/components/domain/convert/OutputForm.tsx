@@ -1,10 +1,19 @@
 import { isEmpty, upperFirst } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { Dispatch, SetStateAction, createRef, useEffect, useMemo } from 'react'
+import {
+  Dispatch,
+  SetStateAction,
+  createRef,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { OutputError } from '@components/domain/convert/OutputError'
 import * as outputs from '@components/domain/convert/outputs'
 import type { OutputName } from '@components/domain/convert/outputs'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { useInputContext } from '@contexts/InputContext'
 import { Converter, NullConverter } from '@lib/converters'
 import { useAnalytics } from '@services/Analytics'
@@ -47,6 +56,20 @@ export const OutputForm = ({
     return outputs[`${upperFirst(converter.outputId)}Output` as OutputName]
   }, [converter])
 
+  const [errorMessage, setErrorMessage] = useState<string | undefined>()
+  const { options } = useConverterOptionsContext(converter.outputId)
+  const output = useMemo(() => {
+    try {
+      const result = converter.operation(inputString, options)
+      if (errorMessage !== undefined) {
+        setErrorMessage(undefined)
+      }
+      return result
+    } catch (err) {
+      setErrorMessage((err as Error).message)
+    }
+  }, [converter, errorMessage, inputString, options])
+
   return (
     <LayoutColumn
       disabled={disabled}
@@ -57,12 +80,15 @@ export const OutputForm = ({
           : t('default_label')
       }
     >
+      <OutputError message={errorMessage} />
+
       <OutputElement
         converter={converter}
         disabled={disabled}
         flex={1}
         height="100%"
         input={inputString}
+        output={output || inputString}
         readOnly={true}
         ref={textareaRef}
         tabIndex={3}

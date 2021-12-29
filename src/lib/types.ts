@@ -16,4 +16,5 @@ export interface OutputProps extends TextareaProps {
   converter: Converter
   disabled?: boolean
   input: string
+  output: string
 }

@@ -1,26 +1,17 @@
 import { majorScale, Select } from 'evergreen-ui'
-import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo } from 'react'
+import { ChangeEvent, forwardRef } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-shaOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
-
-    const value = useMemo(() => {
-      if (isEmpty(input)) {
-        return ''
-      }
-
-      return converter.operation(input, options)
-    }, [input, converter, options])
 
     const onChangeAlgorithm = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, algorithm: event.target.value })
@@ -48,7 +39,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Select>
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={value} />
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },

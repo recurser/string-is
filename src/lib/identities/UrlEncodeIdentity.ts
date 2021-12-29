@@ -13,12 +13,7 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  let encoded
-  try {
-    encoded = UrlEncodeConverter.operation(input)
-  } catch {
-    return 0
-  }
+  const encoded = UrlEncodeConverter.operation(input)
 
   if (encoded !== input) {
     return 1
