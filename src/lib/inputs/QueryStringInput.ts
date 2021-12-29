@@ -10,12 +10,7 @@ export const input = (data: string): Obj | undefined => {
     return undefined
   }
 
-  let url
-  try {
-    url = new URL(data)
-  } catch (err) {
-    return undefined
-  }
+  const url = new URL(data)
 
   if (isEmpty(url.search)) {
     return undefined

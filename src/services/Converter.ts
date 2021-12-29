@@ -19,7 +19,12 @@ export const selectConverter = async (
     await Promise.all(
       identities.map((identity): Promise<Candidate[]> => {
         return new Promise((resolve, _reject) => {
-          const confidence = identity.confidence(inputString)
+          let confidence: number
+          try {
+            confidence = identity.confidence(inputString)
+          } catch (err) {
+            confidence = 0
+          }
           return resolve(
             identity.converters.map((converter) => ({
               confidence,

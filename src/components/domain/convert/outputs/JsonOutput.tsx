@@ -1,21 +1,17 @@
 import { Checkbox, majorScale, Select } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo } from 'react'
+import { ChangeEvent, forwardRef } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jsonOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
-
-    const value = useMemo(() => {
-      return converter.operation(input, options)
-    }, [input, converter, options])
 
     const onChangeSpace = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, space: event.target.value })
@@ -58,7 +54,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea {...props} ref={ref} value={value} />
+        <CodeTextarea {...props} ref={ref} value={output} />
       </Form>
     )
   },

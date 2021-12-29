@@ -13,12 +13,7 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  let encoded
-  try {
-    encoded = Base64EncodeConverter.operation(input)
-  } catch {
-    return 0
-  }
+  const encoded = Base64EncodeConverter.operation(input)
 
   if (encoded !== input) {
     return 1

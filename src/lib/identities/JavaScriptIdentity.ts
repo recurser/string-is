@@ -11,11 +11,7 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  try {
-    format(input, { parser: 'babel', plugins: [parserBabel] })
-  } catch (err) {
-    return 0
-  }
+  format(input, { parser: 'babel', plugins: [parserBabel] })
 
   // Lots of other types (eg. number base conversion, timestamps) can be parsed as Javascript.
   // We dial down the confidence here to give the other types priority.

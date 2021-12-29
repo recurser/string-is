@@ -7,16 +7,10 @@ export const input = (input: string): Jwt | undefined => {
     return undefined
   }
 
-  try {
-    const payload = decode(input, { complete: true })
-    if (payload === null || isEmpty(payload)) {
-      return undefined
-    }
-
-    return payload
-  } catch (err) {
+  const payload = decode(input, { complete: true })
+  if (payload === null || isEmpty(payload)) {
     return undefined
   }
 
-  return undefined
+  return payload
 }
