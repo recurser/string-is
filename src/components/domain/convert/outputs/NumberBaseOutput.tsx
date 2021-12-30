@@ -2,22 +2,19 @@ import { majorScale, Select, Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useEffect } from 'react'
 
-import { OutputError } from '@components/domain/convert/OutputError'
 import { Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { input as numberInput } from '@lib/inputs/NumberInput'
 import {
   defaultOptions,
   maxRadix,
   minRadix,
   validRadices,
-  error,
 } from '@lib/outputs/NumberBaseOutput'
 import { OutputProps } from '@lib/types'
 
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   (
-    { converter, disabled: baseDisabled, input, ...props }: OutputProps,
+    { converter, disabled: baseDisabled, input, output, ...props }: OutputProps,
     ref,
   ) => {
     const { t } = useTranslation('domain-convert-outputs-numberBaseOutput')
@@ -25,23 +22,15 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       converter.outputId,
     )
 
-    const parsedInput = useMemo(() => numberInput(input), [input])
-
-    const errorMessage = useMemo(() => error(input), [input])
-
-    const value = useMemo(
-      () => converter.operation(parsedInput || '', options),
-      [parsedInput, converter, options],
-    )
-
-    const fromRadices = useMemo(() => validRadices(parsedInput), [parsedInput])
+    const fromRadices = useMemo(() => validRadices(input), [input])
 
     // If we have an existing fromRadix, but the given input isn't valid in that base,
     // use the first available radice.
     useEffect(() => {
       if (
-        !options.fromRadix ||
-        !fromRadices.includes(options.fromRadix as number)
+        (!options.fromRadix ||
+          !fromRadices.includes(options.fromRadix as number)) &&
+        fromRadices.length > 0
       ) {
         setOptions({ ...options, fromRadix: fromRadices[0] })
       }
@@ -65,8 +54,6 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     return (
       <Form>
-        <OutputError message={errorMessage} />
-
         <Label
           disabled={disabled}
           htmlFor="fromRadixInput"
@@ -125,7 +112,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             minHeight={undefined}
             ref={ref}
             resize="none"
-            value={value}
+            value={output}
           />
         </Label>
       </Form>

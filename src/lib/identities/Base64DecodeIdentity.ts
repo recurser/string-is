@@ -1,3 +1,4 @@
+import { isValid } from 'js-base64'
 import { isEmpty } from 'lodash'
 
 import { Base64DecodeConverter, Converter } from '@lib/converters'
@@ -7,6 +8,10 @@ export const id = 'base64Decode'
 // See https://stackoverflow.com/a/8571649
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
+    return 0
+  }
+
+  if (!isValid(input)) {
     return 0
   }
 

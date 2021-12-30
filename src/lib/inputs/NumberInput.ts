@@ -13,5 +13,5 @@ export const input = (input: string): string | undefined => {
     return converted
   }
 
-  return undefined
+  throw new Error('The input could not be parsed as a number')
 }

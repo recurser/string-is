@@ -1,7 +1,7 @@
 {
-  "2SpacesOption": "2 spaces",
-  "4SpacesOption": "4 spaces",
-  "forceQuotesLabel": "Quotes",
-  "indentLabel": "Indentation",
-  "sortKeysLabel": "Sort keys"
+  "2_spaces_option": "2 spaces",
+  "4_spaces_option": "4 spaces",
+  "force_quotes_label": "Quotes",
+  "indent_label": "Indentation",
+  "sort_keys_label": "Sort keys"
 }

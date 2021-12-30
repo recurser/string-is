@@ -8,9 +8,11 @@ export const input = (input: string): Obj | undefined => {
     return undefined
   }
 
-  try {
-    return parse(input) as Obj
-  } catch (err) {
-    return undefined
+  const result = parse(input) as Obj
+
+  if (typeof result === 'string') {
+    throw new Error('The input could not be parsed as valid JSON')
   }
+
+  return result as Obj
 }

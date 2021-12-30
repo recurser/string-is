@@ -1,21 +1,17 @@
 import { Checkbox, majorScale, Select } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo } from 'react'
+import { ChangeEvent, forwardRef } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
 
 export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jsonOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
-
-    const value = useMemo(() => {
-      return converter.operation(input, options)
-    }, [input, converter, options])
 
     const onChangeSpace = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, space: event.target.value })
@@ -30,7 +26,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="indentInput"
-          label={t('indentLabel')}
+          label={t('indent_label')}
         >
           <Select
             disabled={disabled}
@@ -39,16 +35,16 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onChange={onChangeSpace}
             value={options.space as string}
           >
-            <option value={'  '}>{t('2SpacesOption')}</option>
-            <option value={'    '}>{t('4SpacesOption')}</option>
-            <option value={'\t'}>{t('1TabOption')}</option>
+            <option value={'  '}>{t('2_spaces_option')}</option>
+            <option value={'    '}>{t('4_spaces_option')}</option>
+            <option value={'\t'}>{t('1_tab_option')}</option>
           </Select>
         </Label>
 
         <Label
           disabled={disabled}
           htmlFor="sortKeysInput"
-          label={t('sortKeysLabel')}
+          label={t('sort_keys_label')}
         >
           <Checkbox
             checked={options.sortKeys as boolean}
@@ -58,7 +54,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea {...props} ref={ref} value={value} />
+        <CodeTextarea {...props} ref={ref} value={output} />
       </Form>
     )
   },

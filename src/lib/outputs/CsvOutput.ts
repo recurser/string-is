@@ -16,9 +16,5 @@ export const output = (input: Obj, options: ConverterOptions): string => {
     array = [array]
   }
 
-  try {
-    return unparse(array, options)
-  } catch (err) {
-    return ''
-  }
+  return unparse(array, options)
 }

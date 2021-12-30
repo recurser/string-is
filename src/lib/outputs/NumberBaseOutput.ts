@@ -1,4 +1,4 @@
-import { isEmpty, truncate } from 'lodash'
+import { isEmpty } from 'lodash'
 
 import { ConverterOptions } from '@lib/types'
 
@@ -13,18 +13,6 @@ export const id = 'numberBase'
 export const maxRadix = 36
 export const minRadix = 2
 
-export const error = (input: string) => {
-  if (isEmpty(input)) {
-    return undefined
-  }
-
-  if (validRadices(input).length === 0) {
-    return `'${truncate(input, { length: 20 })}' is not a valid number`
-  }
-
-  return undefined
-}
-
 export const output = (
   input: string,
   options: ConverterOptions = {},
@@ -33,7 +21,9 @@ export const output = (
   return parseInt(input, fromRadix).toString(toRadix).toUpperCase()
 }
 
-export const validRadices = (input: string | undefined): number[] => {
+export const validRadices = (rawInput: string): number[] => {
+  const input = rawInput.trim().replace(',', '')
+
   const radices: number[] = []
 
   if (isEmpty(input) || input === undefined) {

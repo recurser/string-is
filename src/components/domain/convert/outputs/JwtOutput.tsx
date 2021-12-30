@@ -3,8 +3,6 @@ import useTranslation from 'next-translate/useTranslation'
 import { forwardRef, useMemo } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
-import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { input as jwtInput } from '@lib/inputs/JwtInput'
 import { header } from '@lib/outputs/JwtOutput'
 import { OutputProps } from '@lib/types'
 
@@ -12,17 +10,10 @@ import { OutputProps } from '@lib/types'
 const TextAreaLineHeight = 20
 
 export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ disabled, input, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jwtOutput')
-    const { options } = useConverterOptionsContext(converter.outputId)
 
-    const jwt = useMemo(() => jwtInput(input), [input])
-
-    const headerStr = useMemo(() => (jwt ? header(jwt) : ''), [jwt])
-
-    const payload = useMemo(() => {
-      return converter.operation(input, options) || ''
-    }, [input, converter, options])
+    const headerStr = useMemo(() => header(input), [input])
 
     const headerStrHeight = Math.max(
       headerStr.split('\n').length * TextAreaLineHeight,
@@ -30,7 +21,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     )
 
     const payloadHeight = Math.max(
-      payload.split('\n').length * TextAreaLineHeight,
+      output.split('\n').length * TextAreaLineHeight,
       majorScale(20),
     )
 
@@ -65,7 +56,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             id="payloadInput"
             minHeight={payloadHeight}
             ref={ref}
-            value={payload}
+            value={output}
           />
         </Label>
       </Form>

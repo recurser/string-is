@@ -8,6 +8,6 @@ export const outputId = 'plain'
 export const operation = (
   _input: string,
   _options: ConverterOptions = {},
-): undefined => {
-  return undefined
+): string => {
+  return ''
 }

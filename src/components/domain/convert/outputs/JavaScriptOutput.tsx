@@ -1,15 +1,13 @@
 import { Checkbox, majorScale, Select, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
+import { ChangeEvent, forwardRef, useState } from 'react'
 
-import { OutputError } from '@components/domain/convert/OutputError'
 import { CodeTextarea, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { error } from '@lib/outputs/JavaScriptOutput'
 import { OutputProps } from '@lib/types'
 
 export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
-  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-javaScriptOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
@@ -17,12 +15,6 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const [space, setSpace] = useState(
       (options.useTabs ? '\t' : ' ').repeat(options.tabWidth as number),
     )
-
-    const errorMessage = useMemo(() => error(input), [input])
-
-    const value = useMemo(() => {
-      return converter.operation(input, options)
-    }, [input, converter, options])
 
     const onChangePrintWidth = (event: ChangeEvent<HTMLInputElement>) => {
       const printWidth = parseInt(event.target.value, 10)
@@ -49,12 +41,10 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     return (
       <Form>
-        <OutputError message={errorMessage} />
-
         <Label
           disabled={disabled}
           htmlFor="indentInput"
-          label={t('indentLabel')}
+          label={t('indent_label')}
         >
           <Select
             disabled={disabled}
@@ -63,17 +53,17 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onChange={onChangeSpace}
             value={space}
           >
-            <option value={'  '}>{t('2SpacesOption')}</option>
-            <option value={'    '}>{t('4SpacesOption')}</option>
-            <option value={'\t'}>{t('1TabOption')}</option>
+            <option value={'  '}>{t('2_spaces_option')}</option>
+            <option value={'    '}>{t('4_spaces_option')}</option>
+            <option value={'\t'}>{t('1_tab_option')}</option>
           </Select>
         </Label>
 
         <Label
           disabled={disabled}
           htmlFor="printWidthInput"
-          label={t('printWidthLabel')}
-          suffix={t('charactersSuffix')}
+          label={t('print_width_label')}
+          suffix={t('characters_suffix')}
         >
           <TextInput
             disabled={disabled}
@@ -88,7 +78,7 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="semicolonInput"
-          label={t('semicolonLabel')}
+          label={t('semicolon_label')}
         >
           <Checkbox
             checked={options.semi as boolean}
@@ -101,7 +91,7 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <Label
           disabled={disabled}
           htmlFor="singleQuoteInput"
-          label={t('singleQuoteLabel')}
+          label={t('single_quote_label')}
         >
           <Checkbox
             checked={options.singleQuote as boolean}
@@ -111,7 +101,7 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea {...props} ref={ref} value={value} />
+        <CodeTextarea {...props} ref={ref} value={output} />
       </Form>
     )
   },

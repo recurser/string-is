@@ -11,16 +11,6 @@ export const defaultOptions = {
 
 export const id = 'html'
 
-export const error = (input: string) => {
-  try {
-    format(input, { parser: 'html', plugins: [parserHtml] })
-  } catch (err) {
-    return (err as Error).message
-  }
-
-  return undefined
-}
-
 export const output = (
   input: string,
   options: ConverterOptions = {},
