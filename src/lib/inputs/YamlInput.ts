@@ -11,7 +11,7 @@ export const input = (input: string): Obj | undefined => {
   const result = load(input)
 
   if (typeof result === 'string') {
-    return undefined
+    throw new Error('The input could not be parsed as valid YAML')
   }
 
   return result as Obj
