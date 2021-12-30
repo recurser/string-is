@@ -14,7 +14,7 @@ export const input = (data: string): unknown[] | undefined => {
 
   if (errors.length > 0) {
     throw new Error(errors[0].message)
-  } else if (!obj) {
+  } else if (isEmpty(obj)) {
     throw new Error('The input could not be parsed as a valid CSV')
   }
 
