@@ -30,6 +30,6 @@ export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
 
 export interface Converter {
   id: string
-  operation: (input: string, options?: ConverterOptions) => string | undefined
+  operation: (input: string, options?: ConverterOptions) => string
   outputId: string
 }

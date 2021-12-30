@@ -6,9 +6,16 @@ import { ConverterOptions, Obj } from '@lib/types'
 
 export const id = 'jwt'
 
-export const header = (data: string, _options: ConverterOptions = {}): string => {
+export const header = (
+  data: string,
+  _options: ConverterOptions = {},
+): string => {
   try {
     const jwt = jwtInput(data)
+    if (!jwt?.header) {
+      return ''
+    }
+
     return jsonOutput(jwt.header as unknown as Obj)
   } catch (err) {
     return ''

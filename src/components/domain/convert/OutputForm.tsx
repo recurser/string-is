@@ -74,7 +74,10 @@ export const OutputForm = ({
   }, [converter, errorMessage, inputString, options])
 
   // If we don't have any input or output, there is no point enabling the output.
-  const disabled = useMemo(() => (isEmpty(inputString) || isEmpty(output)), [inputString, output])
+  const disabled = useMemo(
+    () => isEmpty(inputString) || isEmpty(output),
+    [inputString, output],
+  )
 
   return (
     <LayoutColumn
