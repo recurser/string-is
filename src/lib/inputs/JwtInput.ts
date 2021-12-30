@@ -9,7 +9,7 @@ export const input = (input: string): Jwt | undefined => {
 
   const payload = decode(input, { complete: true })
   if (payload === null || isEmpty(payload)) {
-    return undefined
+    throw new Error('The input could not be parsed as a valid JWT')
   }
 
   return payload

@@ -32,7 +32,6 @@ export const OutputForm = ({
   const analytics = useAnalytics()
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
-  const disabled = useMemo(() => isEmpty(inputString), [inputString])
 
   // When a converter has been selected, we focus on the output field.
   useEffect(() => {
@@ -66,9 +65,16 @@ export const OutputForm = ({
       }
       return result
     } catch (err) {
-      setErrorMessage((err as Error).message)
+      const msg = (err as Error).message
+      if (errorMessage !== msg) {
+        setErrorMessage(msg)
+      }
+      return ''
     }
   }, [converter, errorMessage, inputString, options])
+
+  // If we don't have any input or output, there is no point enabling the output.
+  const disabled = useMemo(() => (isEmpty(inputString) || isEmpty(output)), [inputString, output])
 
   return (
     <LayoutColumn
@@ -88,7 +94,7 @@ export const OutputForm = ({
         flex={1}
         height="100%"
         input={inputString}
-        output={output || inputString}
+        output={output}
         readOnly={true}
         ref={textareaRef}
         tabIndex={3}

@@ -3,7 +3,6 @@ import useTranslation from 'next-translate/useTranslation'
 import { forwardRef, useMemo } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
-import { input as jwtInput } from '@lib/inputs/JwtInput'
 import { header } from '@lib/outputs/JwtOutput'
 import { OutputProps } from '@lib/types'
 
@@ -14,9 +13,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   ({ disabled, input, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jwtOutput')
 
-    const jwt = useMemo(() => jwtInput(input), [input])
-
-    const headerStr = useMemo(() => (jwt ? header(jwt) : ''), [jwt])
+    const headerStr = useMemo(() => header(input), [input])
 
     const headerStrHeight = Math.max(
       headerStr.split('\n').length * TextAreaLineHeight,
