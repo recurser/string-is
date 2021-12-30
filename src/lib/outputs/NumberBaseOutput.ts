@@ -21,7 +21,9 @@ export const output = (
   return parseInt(input, fromRadix).toString(toRadix).toUpperCase()
 }
 
-export const validRadices = (input: string | undefined): number[] => {
+export const validRadices = (rawInput: string): number[] => {
+  const input = rawInput.trim().replace(',', '')
+
   const radices: number[] = []
 
   if (isEmpty(input) || input === undefined) {
