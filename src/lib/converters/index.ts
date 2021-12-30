@@ -20,6 +20,7 @@ export * as QueryStringToJsonConverter from '@lib/converters/QueryStringToJsonCo
 export * as QueryStringToYamlConverter from '@lib/converters/QueryStringToYamlConverter'
 export * as RipemdConverter from '@lib/converters/RipemdConverter'
 export * as ShaConverter from '@lib/converters/ShaConverter'
+export * as ScssConverter from '@lib/converters/ScssConverter'
 export * as TimestampConverter from '@lib/converters/TimestampConverter'
 export * as UpperCaseConverter from '@lib/converters/UpperCaseConverter'
 export * as UrlDecodeConverter from '@lib/converters/UrlDecodeConverter'

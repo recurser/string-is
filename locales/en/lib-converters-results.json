@@ -17,6 +17,7 @@
   "queryStringToJson": "Formatted JSON",
   "queryStringToYaml": "Formatted YAML",
   "ripemd": "RIPEMD-160 hash",
+  "scss": "Formatted SCSS",
   "sha": "SHA hash",
   "timestamp": "Formatted time",
   "upperCase": "To upper case",
