@@ -1,8 +1,8 @@
 import { isEmpty } from 'lodash'
 
-import { Converter, CssConverter } from '@lib/converters'
+import { Converter, ScssConverter } from '@lib/converters'
 
-export const id = 'css'
+export const id = 'scss'
 
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
@@ -17,14 +17,16 @@ export const confidence = (input: string) => {
     // [^\:]+:         : Anything that's not a ':', followed by a ':'.
     // [^;]+;          : Anything that's not a ';', followed by a ';'.
     // (.|\s)*         : Any number of characters / spaces / line breaks.
+    // [{}](.|\s)*     : An extra bracket nested inside somewhere. <-- THIS IS THE ONLY DIFFERENCE FROM THE CSS REGEX.
     // }               : The closing bracket.
-    !/([\.#]?[^{\s]+)[\s]*{[^\:]+:[^;]+;(.|\s)*}/gm.test(input.trim())
+    !/([\.#]?[^{\s]+)[\s]*{[^\:]+:[^;]+;(.|\s)*[{}](.|\s)*}/gm.test(
+      input.trim(),
+    )
   ) {
     return 0
   }
 
-  // Let the ScssConverter take precedence, if it gets a match.
-  return 90
+  return 100
 }
 
-export const converters = [CssConverter] as Converter[]
+export const converters = [ScssConverter] as Converter[]

@@ -18,7 +18,7 @@ export const output = (
   return format(input, {
     ...defaultOptions,
     ...options,
-    parser: 'css',
+    parser: 'scss',
     plugins: [parserPostcss],
   })
 }
