@@ -4,7 +4,6 @@ import { ChangeEvent, forwardRef, useMemo, useEffect } from 'react'
 
 import { Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { input as numberInput } from '@lib/inputs/NumberInput'
 import {
   defaultOptions,
   maxRadix,
@@ -15,7 +14,7 @@ import { OutputProps } from '@lib/types'
 
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   (
-    { converter, disabled: baseDisabled, input, ...props }: OutputProps,
+    { converter, disabled: baseDisabled, input, output, ...props }: OutputProps,
     ref,
   ) => {
     const { t } = useTranslation('domain-convert-outputs-numberBaseOutput')
@@ -23,21 +22,15 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       converter.outputId,
     )
 
-    const parsedInput = useMemo(() => numberInput(input), [input])
-
-    const output = useMemo(
-      () => converter.operation(parsedInput || '', options),
-      [parsedInput, converter, options],
-    )
-
-    const fromRadices = useMemo(() => validRadices(parsedInput), [parsedInput])
+    const fromRadices = useMemo(() => validRadices(input), [input])
 
     // If we have an existing fromRadix, but the given input isn't valid in that base,
     // use the first available radice.
     useEffect(() => {
       if (
-        !options.fromRadix ||
-        !fromRadices.includes(options.fromRadix as number)
+        (!options.fromRadix ||
+          !fromRadices.includes(options.fromRadix as number)) &&
+        fromRadices.length > 0
       ) {
         setOptions({ ...options, fromRadix: fromRadices[0] })
       }

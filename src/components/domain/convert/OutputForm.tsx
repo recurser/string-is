@@ -65,7 +65,7 @@ export const OutputForm = ({
       }
       return result
     } catch (err) {
-      const msg = (err as Error).message
+      const msg = typeof err === 'string' ? err : (err as Error).message
       if (errorMessage !== msg) {
         setErrorMessage(msg)
       }
