@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { HtmlConverter, Converter } from '@lib/converters'
+import { HtmlFormatter, Converter } from '@lib/converters'
 
 export const id = 'html'
 
@@ -159,4 +159,4 @@ export const confidence = (input: string) => {
   return 0
 }
 
-export const converters = [HtmlConverter] as Converter[]
+export const converters = [HtmlFormatter] as Converter[]

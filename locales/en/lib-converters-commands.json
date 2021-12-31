@@ -11,6 +11,7 @@
   "jsonToCsv": "JSON to CSV",
   "jsonToYaml": "JSON to YAML",
   "jwt": "JWT",
+  "less": "LESS format",
   "lowerCase": "Lower case",
   "md5": "MD5 hash",
   "numberBase": "Number base",

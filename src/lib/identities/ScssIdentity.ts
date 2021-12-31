@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Converter, ScssConverter } from '@lib/converters'
+import { Converter, ScssFormatter } from '@lib/converters'
 
 export const id = 'scss'
 
@@ -26,7 +26,8 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  return 100
+  // Let the LessFormatter take precedence, if it gets a match.
+  return 90
 }
 
-export const converters = [ScssConverter] as Converter[]
+export const converters = [ScssFormatter] as Converter[]

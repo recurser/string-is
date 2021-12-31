@@ -7,3 +7,7 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: 'daily'
+    # Use the Angular commit message format.
+    # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
+    commit-message:
+      prefix: 'build(npm): '

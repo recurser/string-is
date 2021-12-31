@@ -2,7 +2,7 @@ import { isEmpty } from 'lodash'
 import parserBabel from 'prettier/parser-babel'
 import { format } from 'prettier/standalone'
 
-import { Converter, JavaScriptConverter } from '@lib/converters'
+import { Converter, JavaScriptFormatter } from '@lib/converters'
 
 export const id = 'javaScript'
 
@@ -18,4 +18,4 @@ export const confidence = (input: string) => {
   return 90
 }
 
-export const converters = [JavaScriptConverter] as Converter[]
+export const converters = [JavaScriptFormatter] as Converter[]

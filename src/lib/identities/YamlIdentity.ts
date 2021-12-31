@@ -1,4 +1,4 @@
-import { Converter, YamlConverter, YamlToJsonConverter } from '@lib/converters'
+import { Converter, YamlFormatter, YamlToJsonConverter } from '@lib/converters'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 import { input } from '@lib/inputs/YamlInput'
 
@@ -31,4 +31,4 @@ export const confidence = (data: string) => {
   return 100
 }
 
-export const converters = [YamlConverter, YamlToJsonConverter] as Converter[]
+export const converters = [YamlFormatter, YamlToJsonConverter] as Converter[]

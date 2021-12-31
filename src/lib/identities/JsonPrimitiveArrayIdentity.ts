@@ -1,7 +1,7 @@
 import { isEqual, isObject, uniq } from 'lodash'
 
 import {
-  JsonConverter,
+  JsonFormatter,
   JsonToCsvConverter,
   JsonToYamlConverter,
   Converter,
@@ -27,7 +27,7 @@ export const confidence = (input: string) => {
 }
 
 export const converters = [
-  JsonConverter,
+  JsonFormatter,
   JsonToCsvConverter,
   JsonToYamlConverter,
 ] as Converter[]

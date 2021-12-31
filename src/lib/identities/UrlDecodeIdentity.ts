@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Converter, UrlDecodeConverter } from '@lib/converters'
+import { Converter, UrlDecoder } from '@lib/converters'
 
 export const id = 'urlDecode'
 
@@ -9,7 +9,7 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  const decoded = UrlDecodeConverter.operation(input)
+  const decoded = UrlDecoder.operation(input)
 
   // See https://stackoverflow.com/a/2295286
   if (decoded !== input) {
@@ -19,4 +19,4 @@ export const confidence = (input: string) => {
   return 0
 }
 
-export const converters = [UrlDecodeConverter] as Converter[]
+export const converters = [UrlDecoder] as Converter[]
