@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Converter, CssConverter } from '@lib/converters'
+import { Converter, CssFormatter } from '@lib/converters'
 
 export const id = 'css'
 
@@ -23,8 +23,8 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  // Let the ScssConverter take precedence, if it gets a match.
+  // Let the ScssFormatter take precedence, if it gets a match.
   return 90
 }
 
-export const converters = [CssConverter] as Converter[]
+export const converters = [CssFormatter] as Converter[]

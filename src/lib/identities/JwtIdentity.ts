@@ -1,4 +1,4 @@
-import { Converter, JwtConverter } from '@lib/converters'
+import { Converter, JwtDecoder } from '@lib/converters'
 import { input as jwtInput } from '@lib/inputs/JwtInput'
 
 export const id = 'jwt'
@@ -11,4 +11,4 @@ export const confidence = (input: string) => {
   return 100
 }
 
-export const converters = [JwtConverter] as Converter[]
+export const converters = [JwtDecoder] as Converter[]

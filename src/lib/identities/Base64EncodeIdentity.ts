@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Converter, Base64EncodeConverter } from '@lib/converters'
+import { Converter, Base64Encoder } from '@lib/converters'
 import { confidence as base64DecodeConfidence } from '@lib/identities/Base64DecodeIdentity'
 
 export const id = 'base64Encode'
@@ -13,7 +13,7 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  const encoded = Base64EncodeConverter.operation(input)
+  const encoded = Base64Encoder.operation(input)
 
   if (encoded !== input) {
     return 1
@@ -22,4 +22,4 @@ export const confidence = (input: string) => {
   return 0
 }
 
-export const converters = [Base64EncodeConverter] as Converter[]
+export const converters = [Base64Encoder] as Converter[]

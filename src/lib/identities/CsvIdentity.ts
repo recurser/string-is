@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash'
 
 import {
-  CsvConverter,
+  CsvFormatter,
   CsvToJsonConverter,
   CsvToYamlConverter,
   Converter,
@@ -34,7 +34,7 @@ export const confidence = (data: string) => {
 }
 
 export const converters = [
-  CsvConverter,
+  CsvFormatter,
   CsvToJsonConverter,
   CsvToYamlConverter,
 ] as Converter[]

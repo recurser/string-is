@@ -2,9 +2,9 @@ import { isEmpty } from 'lodash'
 
 import {
   Converter,
-  Md5Converter,
-  RipemdConverter,
-  ShaConverter,
+  Md5Encoder,
+  RipemdEncoder,
+  ShaEncoder,
 } from '@lib/converters'
 
 export const id = 'plain'
@@ -17,8 +17,4 @@ export const confidence = (input: string) => {
   return 1
 }
 
-export const converters = [
-  Md5Converter,
-  RipemdConverter,
-  ShaConverter,
-] as Converter[]
+export const converters = [Md5Encoder, RipemdEncoder, ShaEncoder] as Converter[]

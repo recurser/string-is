@@ -1,4 +1,4 @@
-import { Converter, XmlConverter } from '@lib/converters'
+import { Converter, XmlFormatter } from '@lib/converters'
 import { confidence as htmlConfidence } from '@lib/identities/HtmlIdentity'
 
 export const id = 'xml'
@@ -17,4 +17,4 @@ export const confidence = (data: string) => {
   return 100
 }
 
-export const converters = [XmlConverter] as Converter[]
+export const converters = [XmlFormatter] as Converter[]

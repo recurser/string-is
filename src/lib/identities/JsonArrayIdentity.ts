@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { JsonConverter, JsonToYamlConverter, Converter } from '@lib/converters'
+import { JsonFormatter, JsonToYamlConverter, Converter } from '@lib/converters'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'jsonArray'
@@ -24,4 +24,4 @@ export const confidence = (input: string) => {
   return type === '[object Array]' ? 100 : 0
 }
 
-export const converters = [JsonConverter, JsonToYamlConverter] as Converter[]
+export const converters = [JsonFormatter, JsonToYamlConverter] as Converter[]
