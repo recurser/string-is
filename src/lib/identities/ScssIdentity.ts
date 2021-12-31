@@ -26,7 +26,8 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  return 100
+  // Let the LessFormatter take precedence, if it gets a match.
+  return 90
 }
 
 export const converters = [ScssFormatter] as Converter[]
