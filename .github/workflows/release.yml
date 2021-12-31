@@ -1,8 +1,7 @@
 name: Release
 
 on:
-  repository_dispatch:
-    types: [semantic-release]
+  workflow_dispatch:
 
 jobs:
   release:
