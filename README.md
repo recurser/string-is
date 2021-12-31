@@ -17,6 +17,12 @@ Install dependencies:
 yarn install
 ```
 
+Set up git hooks:
+
+```bash
+yarn husky install
+```
+
 Then run the development server:
 
 ```bash
