@@ -1,20 +1,6 @@
-## Write a summary of the change here
+## Replace this with a short summary of the change
 
-More detailed information here
-
-
-## Type of change
-
-Select all that apply:
-
-- [ ] `build`: Changes that affect the build system or external dependencies (example scopes: yarn, npm)
-- [ ] `ci`: Changes to CI configuration files and scripts
-- [ ] `docs`: Documentation only changes
-- [ ] `feat`: A new feature
-- [ ] `fix`: A bug fix
-- [ ] `perf`: A code change that improves performance
-- [ ] `refactor`: A code change that neither fixes a bug nor adds a feature
-- [ ] `test`: Adding missing tests or correcting existing tests
+Replace this with a more detailed explanation of the change
 
 
 ## How to test the PR
@@ -26,5 +12,6 @@ Select all that apply:
 
 ## Checklist
 
-- [ ] All commits are prefixed with a type of change from the list above (see the [Angular commit message conventions](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format)).
 - [ ] New functionality has tests.
+- [ ] README has been updated (if necessary).
+- [ ] New environment variables have been added to `.env.example` (if necessary).
