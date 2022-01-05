@@ -10,6 +10,7 @@
     "format": "yarn eslint src pages --fix && yarn prettier",
     "jest": "./node_modules/.bin/jest",
     "lint": "next lint",
+    "open-pr": "curl -d '{\"ref\":\"develop\",\"inputs\":{\"personal_token\":\"${GITHUB_TOKEN}\",\"title\":\"${0}\"}}' -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json;charset=utf-8' -X POST 'https://api.github.com/repos/recurser/string-is/actions/workflows/create-pull-request.yml/dispatches'",
     "prettier": "prettier --config .prettierrc.js --write 'pages/**/*.tsx' 'src/**/*.ts' 'src/**/*.tsx' '*.js'",
     "release": "curl -v -H 'Accept: application/vnd.github.everest-preview+json' -H \"Authorization: token ${GITHUB_TOKEN}\" https://api.github.com/repos/recurser/string-is/actions/workflows/release.yml/dispatches -d '{ \"ref\": \"main\" }'",
     "start": "NODE_ENV=production next start"
