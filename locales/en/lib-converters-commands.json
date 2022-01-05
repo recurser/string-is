@@ -14,6 +14,7 @@
   "less": "LESS format",
   "lowerCase": "Lower case",
   "markdown": "Markdown format",
+  "markdownToHtml": "Markdown to HTML",
   "md5": "MD5 hash",
   "numberBase": "Number base",
   "queryStringToJson": "Query string to JSON",

@@ -10,7 +10,7 @@
     "format": "yarn eslint src pages --fix && yarn prettier",
     "jest": "./node_modules/.bin/jest",
     "lint": "next lint",
-    "open-pr": "wrap () { curl -d \"{\\\"ref\\\":\\\"develop\\\",\\\"inputs\\\":{\\\"personal_token\\\":\\\"${GITHUB_TOKEN}\\\",\\\"title\\\":\\\"$*\\\"}}\" -H \"Accept: application/vnd.github.v3+json\" -H \"Authorization: token ${GITHUB_TOKEN}\" -H \"Content-Type: application/json;charset=utf-8\" -X POST \"https://api.github.com/repos/recurser/string-is/actions/workflows/create-pull-request.yml/dispatches\"; }; wrap",
+    "open-pr": "wrap () { curl -v -d \"{\\\"ref\\\":\\\"develop\\\",\\\"inputs\\\":{\\\"personal_token\\\":\\\"${GITHUB_TOKEN}\\\",\\\"title\\\":\\\"$*\\\"}}\" -H \"Accept: application/vnd.github.v3+json\" -H \"Authorization: token ${GITHUB_TOKEN}\" -H \"Content-Type: application/json;charset=utf-8\" -X POST \"https://api.github.com/repos/recurser/string-is/actions/workflows/create-pull-request.yml/dispatches\"; }; wrap",
     "prettier": "prettier --config .prettierrc.js --write 'pages/**/*.tsx' 'src/**/*.ts' 'src/**/*.tsx' '*.js'",
     "release": "curl -v -H 'Accept: application/vnd.github.everest-preview+json' -H \"Authorization: token ${GITHUB_TOKEN}\" https://api.github.com/repos/recurser/string-is/actions/workflows/release.yml/dispatches -d '{ \"ref\": \"main\" }'",
     "start": "NODE_ENV=production next start"
@@ -32,6 +32,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-responsive": "^9.0.0-beta.5",
+    "showdown": "^1.9.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -54,6 +55,7 @@
     "@types/node": "^17.0.8",
     "@types/papaparse": "^5.3.1",
     "@types/react": "17.0.38",
+    "@types/showdown": "^1.9.4",
     "@types/styled-components": "^5.1.19",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",

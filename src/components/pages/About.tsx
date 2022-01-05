@@ -161,6 +161,12 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link href="https://github.com/showdownjs/showdown" target="_blank">
+              showdown
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Trans
               components={[
                 <Link
