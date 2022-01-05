@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/recurser/string-is/compare/v1.2.0...v1.3.0) (2022-01-05)
+
+
+### Features
+
+* add a Markdown-to-HTML converter ([90d2956](https://github.com/recurser/string-is/commit/90d29565a9e69ad401e5d2dcdc39db7c6e383e19))
+
 # [1.2.0](https://github.com/recurser/string-is/compare/v1.1.0...v1.2.0) (2022-01-05)
 
 
