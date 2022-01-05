@@ -13,6 +13,7 @@
   "jwt": "Decoded JWT",
   "less": "Formatted LESS",
   "lowerCase": "To lower case",
+  "markdown": "Formatted Markdown",
   "md5": "MD5 hash",
   "numberBase": "Number in base",
   "queryStringToJson": "Formatted JSON",

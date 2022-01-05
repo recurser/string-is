@@ -13,6 +13,7 @@ export * as JsonPrimitiveObjectIdentity from '@lib/identities/JsonPrimitiveObjec
 export * as JwtIdentity from '@lib/identities/JwtIdentity'
 export * as LessIdentity from '@lib/identities/LessIdentity'
 export * as LowerCaseIdentity from '@lib/identities/LowerCaseIdentity'
+export * as MarkdownIdentity from '@lib/identities/MarkdownIdentity'
 export * as NumberIdentity from '@lib/identities/NumberIdentity'
 export * as PlainIdentity from '@lib/identities/PlainIdentity'
 export * as QueryStringIdentity from '@lib/identities/QueryStringIdentity'
