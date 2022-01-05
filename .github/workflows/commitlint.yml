@@ -1,11 +1,9 @@
-name: Release
+name: commitlint
 
-on:
-  workflow_dispatch:
+on: [pull_request]
 
 jobs:
-  release:
-    name: Release
+  commitlint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +17,5 @@ jobs:
           cache:        "yarn"
       - name: Install packages
         run: yarn install
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: yarn semantic-release
+      - name: Lint
+        run: yarn run commitlint --from HEAD~${{ github.event.pull_request.commits }} --to HEAD

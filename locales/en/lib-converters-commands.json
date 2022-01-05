@@ -13,6 +13,7 @@
   "jwt": "JWT",
   "less": "LESS format",
   "lowerCase": "Lower case",
+  "markdown": "Markdown format",
   "md5": "MD5 hash",
   "numberBase": "Number base",
   "queryStringToJson": "Query string to JSON",
