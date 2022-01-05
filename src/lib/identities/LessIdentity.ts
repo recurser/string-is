@@ -1,32 +1,21 @@
 import { isEmpty } from 'lodash'
+import parserPostcss from 'prettier/parser-postcss'
+import { format } from 'prettier/standalone'
 
 import { Converter, LessFormatter } from '@lib/converters'
 
-export const id = 'scss'
+export const id = 'less'
 
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
     return 0
   }
 
-  if (
-    // We must have at least a word with opening and closing brackets, with a semicolon inside.
-    // ([\.#]?[^{\s]+) : Anything that's not a space or a '{'
-    // [\s]*           : Optional spaces before the '{ ... }'
-    // {               : Open the brackets.
-    // [^\:]+:         : Anything that's not a ':', followed by a ':'.
-    // [^;]+;          : Anything that's not a ';', followed by a ';'.
-    // (.|\s)*         : Any number of characters / spaces / line breaks.
-    // (\.\w+\(\))     : A function call like .bordered() <-- THIS IS THE ONLY DIFFERENCE FROM THE CSS REGEX.
-    // }               : The closing bracket.
-    !/([\.#]?[^{\s]+)[\s]*{[^\:]+:[^;]+;(.|\s)*(\.\w+\(\))(.|\s)*}/gm.test(
-      input.trim(),
-    )
-  ) {
-    return 0
-  }
+  // Prettier will throw an exception if this fails.
+  format(input, { parser: 'less', plugins: [parserPostcss] })
 
-  return 100
+  // Let the ScssFormatter take precedence, if it gets a match.
+  return 90
 }
 
 export const converters = [LessFormatter] as Converter[]
