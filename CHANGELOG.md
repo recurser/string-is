@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/recurser/string-is/compare/v1.3.0...v1.4.0) (2022-01-05)
+
+
+### Features
+
+* enable strikethrough for Markdown conversion ([52cbf6d](https://github.com/recurser/string-is/commit/52cbf6dab9839fafc24a393590d4db03870b645f))
+
 # [1.3.0](https://github.com/recurser/string-is/compare/v1.2.0...v1.3.0) (2022-01-05)
 
 
