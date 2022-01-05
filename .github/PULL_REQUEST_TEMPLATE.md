@@ -1,6 +1,4 @@
-## Replace this with a short summary of the change
-
-Replace this with a more detailed explanation of the change
+Replace this with a detailed explanation of the change
 
 
 ## How to test the PR
