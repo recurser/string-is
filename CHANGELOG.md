@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/recurser/string-is/compare/v1.1.0...v1.2.0) (2022-01-05)
+
+
+### Features
+
+* expand the output textarea for long strings ([51589a9](https://github.com/recurser/string-is/commit/51589a9c70118c0a306aabbe959f9a6e7dd804c6))
+
+
+### Performance Improvements
+
+* remove inefficient multi-line CSS regexes that were causing freezes in long strings ([cc246d2](https://github.com/recurser/string-is/commit/cc246d2986a64c30bc2eaf47121165dbfe0d7b5b))
+
 # [1.1.0](https://github.com/recurser/string-is/compare/v1.0.0...v1.1.0) (2022-01-05)
 
 
