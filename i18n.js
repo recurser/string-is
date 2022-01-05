@@ -16,6 +16,7 @@ module.exports = {
       'domain-convert-outputs-javaScriptOutput',
       'domain-convert-outputs-jsonOutput',
       'domain-convert-outputs-jwtOutput',
+      'domain-convert-outputs-markdownOutput',
       'domain-convert-outputs-numberBaseOutput',
       'domain-convert-outputs-shaOutput',
       'domain-convert-outputs-yamlOutput',
