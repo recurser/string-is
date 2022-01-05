@@ -1,4 +1,6 @@
 import { isEmpty } from 'lodash'
+import parserPostcss from 'prettier/parser-postcss'
+import { format } from 'prettier/standalone'
 
 import { Converter, CssFormatter } from '@lib/converters'
 
@@ -9,21 +11,10 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  if (
-    // We must have at least a word with opening and closing brackets, with a semicolon inside.
-    // ([\.#]?[^{\s]+) : Anything that's not a space or a '{'
-    // [\s]*           : Optional spaces before the '{ ... }'
-    // {               : Open the brackets.
-    // [^\:]+:         : Anything that's not a ':', followed by a ':'.
-    // [^;]+;          : Anything that's not a ';', followed by a ';'.
-    // (.|\s)*         : Any number of characters / spaces / line breaks.
-    // }               : The closing bracket.
-    !/([\.#]?[^{\s]+)[\s]*{[^\:]+:[^;]+;(.|\s)*}/gm.test(input.trim())
-  ) {
-    return 0
-  }
+  // Prettier will throw an exception if this fails.
+  format(input, { parser: 'scss', plugins: [parserPostcss] })
 
-  // Let the LessFormatter and ScssFormatter take precedence, if they gets a match.
+  // Let the LessFormatter and ScssFormatter take precedence, if they get a match.
   return 80
 }
 
