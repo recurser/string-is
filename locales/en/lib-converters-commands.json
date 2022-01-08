@@ -19,6 +19,7 @@
   "numberBase": "Number base",
   "queryStringToJson": "Query string to JSON",
   "queryStringToYaml": "Query string to YAML",
+  "regex": "Regular Expression",
   "ripemd": "RIPEMD-160 hash",
   "scss": "SCSS format",
   "sha": "SHA hash",
