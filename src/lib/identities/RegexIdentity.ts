@@ -4,9 +4,10 @@ import { Converter, RegexDebugger } from '@lib/converters'
 
 export const id = 'regex'
 
-// See https://stackoverflow.com/a/17843773
-const regex =
-  /\/((?![*+?])(?:[^\r\n\[/\\]|\\.|\[(?:[^\r\n\]\\]|\\.)*\])+)\/((?:g(?:im?|mi?)?|i(?:gm?|mg?)?|m(?:gi?|ig?)?)?)/
+// Regex-for-matching-a-regex. There is a better one on Stack
+// Overflow (see https://stackoverflow.com/a/17843773), but
+// this is simpler.
+const regex = /^\s*\/.*\/([gmi]+)?\s*$/gm
 
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
