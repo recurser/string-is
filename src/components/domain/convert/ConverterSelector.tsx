@@ -17,25 +17,21 @@ import {
 } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { useConverterContext } from '@contexts/ConverterContext'
 import { useInputContext } from '@contexts/InputContext'
-import { Converter, NullConverter } from '@lib/converters'
+import { NullConverter } from '@lib/converters'
 import * as converterModule from '@lib/converters'
 import { selectConverter } from '@services/Converter'
 
 interface Props {
-  converter: Converter
   setFocusOutput: Dispatch<SetStateAction<boolean>>
-  setConverter: Dispatch<SetStateAction<Converter>>
 }
 
 const converters = Object.values(converterModule)
 
-export const ConverterSelector = ({
-  converter,
-  setFocusOutput,
-  setConverter,
-}: Props) => {
+export const ConverterSelector = ({ setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
+  const { converter, setConverter } = useConverterContext()
   const { inputString } = useInputContext()
   const [selected, setSelected] = useState<string | undefined>()
 
