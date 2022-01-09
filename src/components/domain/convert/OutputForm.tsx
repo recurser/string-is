@@ -17,7 +17,6 @@ import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { useInputContext } from '@contexts/InputContext'
 import { NullConverter } from '@lib/converters'
-import { useAnalytics } from '@services/Analytics'
 
 interface Props {
   focusOutput: boolean
@@ -25,7 +24,6 @@ interface Props {
 }
 export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-outputForm')
-  const analytics = useAnalytics()
   const { converter } = useConverterContext()
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
@@ -35,17 +33,8 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
     if (focusOutput) {
       textareaRef.current?.focus()
       setFocusOutput(false)
-
-      if (converter) {
-        // Track which converter has been selected, to find out which are useful.
-        analytics('Convert', {
-          props: {
-            converter: converter.id,
-          },
-        })
-      }
     }
-  }, [analytics, converter, focusOutput, setFocusOutput, textareaRef])
+  }, [focusOutput, setFocusOutput, textareaRef])
 
   // Use a dynamic output component based on the converter's 'output' string.
   const OutputElement = useMemo(() => {
