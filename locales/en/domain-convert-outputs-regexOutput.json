@@ -1,17 +1,22 @@
 {
   "alert_invalid_input": "The regular expression is invalid",
-  "alert_match_label": {
-    "one": "Match {{number}} has {{count}} matching group 👇",
-    "other": "Match {{number}} has {{count}} matching groups 👇"
+  "alert_multiple_matches": {
+    "0": "Match {{number}} has no captured groups 👇",
+    "one": "Match {{number}} has {{count}} captured group 👇",
+    "other": "Match {{number}} has {{count}} captured groups 👇"
   },
   "alert_no_input": "Enter a test string to debug your regular expression 👆",
   "alert_no_matches": "There are no matches",
-  "alert_num_groups": {
-    "one": "There is {{count}} matching group 👇",
-    "other": "There are {{count}} matching groups 👇"
+  "alert_single_match": {
+    "0": "There is a match, with no captured groups",
+    "one": "There is a match, with {{count}} captured group 👇",
+    "other": "There is a match, with {{count}} captured groups 👇"
   },
   "group_label": "Group {{number}}:",
-  "match_label": "Match {{number}}:",
+  "match_label": {
+    "one": "Match:",
+    "other": "Match {{number}}:"
+  },
   "test_string_header": "Enter a test string:",
   "test_string_placeholder": "Enter a string to test your regular expression against..."
 }
