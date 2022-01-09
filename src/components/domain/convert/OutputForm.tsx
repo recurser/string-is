@@ -13,23 +13,20 @@ import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { OutputError } from '@components/domain/convert/OutputError'
 import * as outputs from '@components/domain/convert/outputs'
 import type { OutputName } from '@components/domain/convert/outputs'
+import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { useInputContext } from '@contexts/InputContext'
-import { Converter, NullConverter } from '@lib/converters'
+import { NullConverter } from '@lib/converters'
 import { useAnalytics } from '@services/Analytics'
 
 interface Props {
-  converter: Converter
   focusOutput: boolean
   setFocusOutput: Dispatch<SetStateAction<boolean>>
 }
-export const OutputForm = ({
-  converter,
-  focusOutput,
-  setFocusOutput,
-}: Props) => {
+export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-outputForm')
   const analytics = useAnalytics()
+  const { converter } = useConverterContext()
   const { inputString } = useInputContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
 
