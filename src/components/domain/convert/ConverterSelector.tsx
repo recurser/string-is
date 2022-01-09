@@ -23,13 +23,18 @@ import * as converterModule from '@lib/converters'
 import { selectConverter } from '@services/Converter'
 
 interface Props {
+  converter: Converter
   setFocusOutput: Dispatch<SetStateAction<boolean>>
   setConverter: Dispatch<SetStateAction<Converter>>
 }
 
 const converters = Object.values(converterModule)
 
-export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
+export const ConverterSelector = ({
+  converter,
+  setFocusOutput,
+  setConverter,
+}: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
   const { inputString } = useInputContext()
   const [selected, setSelected] = useState<string | undefined>()
@@ -58,9 +63,12 @@ export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
   // converter directly in <SelectMenu />, but unfortunately it only supports
   // string and number values.
   useEffect(() => {
-    const cnvt = converters.find((converter) => converter.id === selected)
-    setConverter(cnvt || NullConverter)
-  }, [setConverter, selected])
+    const cnvt =
+      converters.find((candidate) => candidate.id === selected) || NullConverter
+    if (converter.id !== cnvt.id) {
+      setConverter(cnvt || NullConverter)
+    }
+  }, [converter.id, setConverter, selected])
 
   const options = useMemo(() => {
     return converters
