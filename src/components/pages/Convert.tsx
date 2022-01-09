@@ -41,6 +41,7 @@ export const Convert = () => {
             minWidth={0}
           >
             <ConverterSelector
+              converter={converter}
               setConverter={setConverter}
               setFocusOutput={setFocusOutput}
             />
