@@ -18,6 +18,7 @@ module.exports = {
       'domain-convert-outputs-jwtOutput',
       'domain-convert-outputs-markdownOutput',
       'domain-convert-outputs-numberBaseOutput',
+      'domain-convert-outputs-regexOutput',
       'domain-convert-outputs-shaOutput',
       'domain-convert-outputs-yamlOutput',
       'lib-converters-commands',

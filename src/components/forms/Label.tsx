@@ -9,6 +9,7 @@ interface Props extends PaneProps {
   htmlFor: string
   label?: string
   suffix?: string
+  width?: string | number
 }
 
 const Wrapper = styledComponents(Pane)`
@@ -24,6 +25,7 @@ export const Label = ({
   htmlFor,
   label,
   suffix,
+  width,
   ...props
 }: PropsWithChildren<Props>) => {
   const labelColor = disabled ? theme.colors.gray500 : undefined
@@ -36,7 +38,7 @@ export const Label = ({
       marginBottom={minorScale(2)}
       {...props}
     >
-      <Text color={labelColor} width={majorScale(15)}>
+      <Text color={labelColor} width={width || majorScale(15)}>
         <label htmlFor={htmlFor}>{label || ' '}</label>
       </Text>
 
