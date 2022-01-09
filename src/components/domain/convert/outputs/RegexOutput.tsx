@@ -21,10 +21,15 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           input.match(/^\/(.*)\/([igm]+)?$/) || []
         const regex = new RegExp(regexStr.replace(/\n/, ''), modifiers)
         // The matchAll() method throws an error if the 'g' modifier has not been provided.
-        if (modifiers.includes('g')) {
+        if (modifiers?.includes('g')) {
           return [...testString.matchAll(regex)]
         } else {
-          return [testString.match(regex) || []]
+          const result = testString.match(regex)
+          if (result && result.length > 0) {
+            return [result]
+          } else {
+            return []
+          }
         }
       } catch (err) {
         return undefined
@@ -65,7 +70,6 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             {matches.map((match, matchIndex) => {
               const [whole, ...groups] = match
               const matchKey = `regexMatch-${matchIndex}`
-              const isSingleMatch = matches.length === 1
 
               return (
                 <>
@@ -73,20 +77,23 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                     intent="success"
                     marginBottom={majorScale(1)}
                     title={
-                      isSingleMatch
-                        ? t('alert_num_groups', { count: groups.length })
-                        : t('alert_match_label', {
+                      matches.length === 1
+                        ? t('alert_single_match', { count: groups.length })
+                        : t('alert_multiple_matches', {
                             count: groups.length,
                             number: matchIndex + 1,
                           })
                     }
                   />
 
-                  {!isSingleMatch && (
+                  {
                     <Label
                       htmlFor={matchKey}
                       key={matchKey}
-                      label={t('match_label', { number: matchIndex + 1 })}
+                      label={t('match_label', {
+                        count: matches.length,
+                        number: matchIndex + 1,
+                      })}
                     >
                       <TextInput
                         id={matchKey}
@@ -95,7 +102,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                         width="100%"
                       />
                     </Label>
-                  )}
+                  }
 
                   {groups.map((group, groupIndex) => {
                     const groupKey = `regexMatch-${matchIndex}-${groupIndex}`
