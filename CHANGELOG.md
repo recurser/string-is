@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/recurser/string-is/compare/v1.5.0...v1.5.1) (2022-01-09)
+
+
+### Bug Fixes
+
+* fix edge cases in the regular expression debugger ([81fd450](https://github.com/recurser/string-is/commit/81fd4504a10fd733eca4ee3b09ed3e02d12ceaae))
+
 # [1.5.0](https://github.com/recurser/string-is/compare/v1.4.0...v1.5.0) (2022-01-09)
 
 
