@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/recurser/string-is/compare/v1.4.0...v1.5.0) (2022-01-09)
+
+
+### Features
+
+* add a regex debugger ([ef9b07c](https://github.com/recurser/string-is/commit/ef9b07cacf17c4ac88615fa49692a8e18599a52a))
+
+
+### Performance Improvements
+
+* simplify the regex-for-identifying-regexes ([f23584e](https://github.com/recurser/string-is/commit/f23584e3cfcc179fffaccd8b8e27b8420bfa3e38))
+
 # [1.4.0](https://github.com/recurser/string-is/compare/v1.3.0...v1.4.0) (2022-01-05)
 
 
