@@ -49,7 +49,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea {...props} ref={ref} value={output} />
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },
