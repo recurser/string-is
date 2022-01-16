@@ -4,6 +4,16 @@
   ],
   "plugins": [
     "@semantic-release/commit-analyzer",
+    {
+      "preset": "conventionalcommits",
+      "releaseRules": [
+        {
+          "release": "patch",
+          "scope": "deps",
+          "type": "build"
+        }
+      ]
+    },
     "@semantic-release/release-notes-generator",
     "@semantic-release/changelog",
     "@semantic-release/npm",
