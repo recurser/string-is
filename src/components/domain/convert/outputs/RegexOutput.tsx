@@ -1,6 +1,6 @@
 import { Alert, majorScale, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo, useState } from 'react'
+import { ChangeEvent, forwardRef, Fragment, useMemo, useState } from 'react'
 
 import { CodeTextarea, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
@@ -72,7 +72,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               const matchKey = `regexMatch-${matchIndex}`
 
               return (
-                <>
+                <Fragment key={matchKey}>
                   <Alert
                     intent="success"
                     marginBottom={majorScale(1)}
@@ -121,7 +121,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                       </Label>
                     )
                   })}
-                </>
+                </Fragment>
               )
             })}
           </>
