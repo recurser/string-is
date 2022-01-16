@@ -9,13 +9,11 @@ import {
   ConverterSelector,
 } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
-import { Converter, NullConverter } from '@lib/converters'
 import { useBreakpoints } from '@services/Responsive'
 
 export const Convert = () => {
   const { t } = useTranslation('pages-convert')
   const { isMobile } = useBreakpoints()
-  const [converter, setConverter] = useState<Converter>(NullConverter)
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
   return (
@@ -40,14 +38,10 @@ export const Convert = () => {
             maxWidth={majorScale(20)}
             minWidth={0}
           >
-            <ConverterSelector
-              setConverter={setConverter}
-              setFocusOutput={setFocusOutput}
-            />
+            <ConverterSelector setFocusOutput={setFocusOutput} />
           </Pane>
 
           <OutputForm
-            converter={converter || NullConverter}
             focusOutput={focusOutput}
             setFocusOutput={setFocusOutput}
           />

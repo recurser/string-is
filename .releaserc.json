@@ -4,7 +4,37 @@
   ],
   "plugins": [
     "@semantic-release/commit-analyzer",
+    {
+      "preset": "conventionalcommits",
+      "releaseRules": [
+        {
+          "release": "patch",
+          "scope": "deps",
+          "type": "build"
+        }
+      ]
+    },
     "@semantic-release/release-notes-generator",
+    {
+      "preset": "conventionalcommits",
+      "presetConfig": {
+        "types": [
+          {
+            "section": "Features",
+            "type": "feat"
+          },
+          {
+            "section": "Bug Fixes",
+            "type": "fix"
+          },
+          {
+            "hidden": false,
+            "section": "Dependencies and Other Build Updates",
+            "type": "build"
+          }
+        ]
+      }
+    },
     "@semantic-release/changelog",
     "@semantic-release/npm",
     [

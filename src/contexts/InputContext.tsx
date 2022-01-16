@@ -7,17 +7,17 @@ import {
   useState,
 } from 'react'
 
-interface InputProps {
+interface Props {
   inputString: string
   setInputString: Dispatch<string>
 }
 
-const Context = createContext<InputProps>({
+const Context = createContext<Props>({
   inputString: '',
   setInputString: (_: string) => undefined,
 })
 
-export const useInputContext = (): InputProps => useContext(Context)
+export const useInputContext = (): Props => useContext(Context)
 
 export const InputContext = ({
   children,

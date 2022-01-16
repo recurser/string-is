@@ -5,38 +5,31 @@ import {
   SelectMenu,
   SelectMenuItem,
 } from 'evergreen-ui'
-import { isEmpty } from 'lodash'
+import { isEmpty, minBy } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import {
-  createRef,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import {
+  recentConverterIds,
+  useConverterContext,
+} from '@contexts/ConverterContext'
 import { useInputContext } from '@contexts/InputContext'
-import { Converter, NullConverter } from '@lib/converters'
+import { NullConverter } from '@lib/converters'
 import * as converterModule from '@lib/converters'
-import { selectConverter } from '@services/Converter'
+import { converterCandidates } from '@services/Converter'
 
 interface Props {
   setFocusOutput: Dispatch<SetStateAction<boolean>>
-  setConverter: Dispatch<SetStateAction<Converter>>
 }
 
 const converters = Object.values(converterModule)
 
-export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
+export const ConverterSelector = ({ setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
+  const { converter, setConverter } = useConverterContext()
   const { inputString } = useInputContext()
   const [selected, setSelected] = useState<string | undefined>()
-
-  // A bit of a hack due to limitations with <SelectMenu />, but we use this
-  // to be able to trigger a click and open the menu programatically.
-  const buttonRef = createRef<HTMLButtonElement>()
 
   useEffect(() => {
     async function fetchData() {
@@ -45,22 +38,35 @@ export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
       }
 
       if (!selected) {
-        const winner = await selectConverter(inputString)
-        if (winner) {
-          setSelected(winner.id)
+        const candidates = await converterCandidates(inputString)
+
+        if (candidates.length > 0) {
+          const recentIds = recentConverterIds()
+          const recent =
+            // We're looking for the recentIds with the lowest array index (ie the most recent).
+            minBy(
+              candidates,
+              (candidate) =>
+                recentIds.includes(candidate.id) &&
+                recentIds.indexOf(candidate.id),
+            ) || candidates[0]
+          setSelected(recent.id)
         }
       }
     }
     fetchData()
-  }, [buttonRef, inputString, selected, setSelected])
+  }, [inputString, selected, setSelected])
 
   // Set the converter based on the selected value. Ideally we could use the
   // converter directly in <SelectMenu />, but unfortunately it only supports
   // string and number values.
   useEffect(() => {
-    const cnvt = converters.find((converter) => converter.id === selected)
-    setConverter(cnvt || NullConverter)
-  }, [setConverter, selected])
+    const cnvt =
+      converters.find((candidate) => candidate.id === selected) || NullConverter
+    if (converter.id !== cnvt.id) {
+      setConverter(cnvt || NullConverter)
+    }
+  }, [converter.id, setConverter, selected])
 
   const options = useMemo(() => {
     return converters
@@ -89,7 +95,6 @@ export const ConverterSelector = ({ setFocusOutput, setConverter }: Props) => {
           <Button
             flex={1}
             iconAfter={selected ? ChevronRightIcon : undefined}
-            ref={buttonRef}
             tabIndex={2}
           >
             {selected

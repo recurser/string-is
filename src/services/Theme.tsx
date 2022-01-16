@@ -1,16 +1,4 @@
 import { defaultTheme } from 'evergreen-ui'
 
-export interface Theme {
-  colors: { [key: string]: string }
-  fontFamilies: {
-    display: string
-    mono: string
-    ui: string
-  }
-}
-
-// Common settings that aren't part of the theme.
-export const settings = {}
-
-// Expose the theme.
-export const theme = defaultTheme as Theme
+// We may want to over-ride defaults later, so we export the theme from a central place.
+export const theme = defaultTheme
