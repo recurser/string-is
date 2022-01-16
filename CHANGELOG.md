@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/recurser/string-is/compare/v1.5.1...v1.6.0) (2022-01-16)
+
+
+### Features
+
+* select the most recently used converter ([7db47ba](https://github.com/recurser/string-is/commit/7db47baa4e4d0fba8b8abee221c3f97b13c550b6))
+
+
+### Performance Improvements
+
+* don't setConverter() unless it has actually changed ([f661d8d](https://github.com/recurser/string-is/commit/f661d8d7baee522f0d6f7d05c4e7850802d7e292))
+
 ## [1.5.1](https://github.com/recurser/string-is/compare/v1.5.0...v1.5.1) (2022-01-09)
 
 
