@@ -2,7 +2,7 @@ import { Alert, majorScale, TextInput } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, Fragment, useMemo, useState } from 'react'
 
-import { CodeTextarea, Label } from '@components/forms'
+import { CodeTextarea, CopyButton, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 
 export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
@@ -42,6 +42,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <>
         <CodeTextarea
           {...props}
+          copy={false}
           disabled={disabled}
           id="testStringInput"
           isInvalid={!disabled && !hasTestString}
@@ -101,6 +102,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                         value={whole}
                         width="100%"
                       />
+                      <CopyButton marginLeft={majorScale(1)} value={whole} />
                     </Label>
                   }
 
@@ -118,6 +120,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                           value={group}
                           width="100%"
                         />
+                        <CopyButton marginLeft={majorScale(1)} value={group} />
                       </Label>
                     )
                   })}

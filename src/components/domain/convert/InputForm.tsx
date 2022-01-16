@@ -34,6 +34,7 @@ export const InputForm = () => {
         autoFocus={
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
+        copy={false}
         flex={1}
         height="100%"
         onChange={onChange}
