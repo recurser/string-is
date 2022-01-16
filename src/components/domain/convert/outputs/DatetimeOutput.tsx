@@ -8,6 +8,7 @@ import {
   SelectMenuItem,
   Textarea,
   TextInput,
+  Tooltip,
 } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
@@ -80,14 +81,16 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             placeholder={defaultOptions.format}
             value={options.format as string}
           />
-          <IconButton
-            disabled={disabled}
-            href="https://day.js.org/docs/en/display/format"
-            icon={HelpIcon}
-            is={Link}
-            marginLeft={majorScale(1)}
-            target="_blank"
-          />
+          <Tooltip content={t('format_tooltip')}>
+            <IconButton
+              disabled={disabled}
+              href="https://day.js.org/docs/en/display/format"
+              icon={HelpIcon}
+              is={Link}
+              marginLeft={majorScale(1)}
+              target="_blank"
+            />
+          </Tooltip>
         </Label>
 
         <hr />
