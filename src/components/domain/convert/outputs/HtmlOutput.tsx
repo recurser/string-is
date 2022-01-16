@@ -67,7 +67,7 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Text>&nbsp;{t('characters_suffix')}</Text>
         </Label>
 
-        <CodeTextarea {...props} ref={ref} value={output} />
+        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },
