@@ -17,6 +17,10 @@ interface Props {
 
 const localStorageKey = 'string.is:RecentConverters'
 
+// Returns an array of recently-used converter IDs.
+export const recentConverterIds = () =>
+  JSON.parse(window.localStorage.getItem(localStorageKey) || '[]')
+
 const Context = createContext<Props>({
   converter: NullConverter,
   setConverter: (_: Converter) => undefined,
@@ -38,9 +42,7 @@ export const useConverterContext = (): Props => {
       })
 
       // Remember which converters were used most recently, so we can improve auto-selection.
-      let recent = JSON.parse(
-        window.localStorage.getItem(localStorageKey) || '[]',
-      )
+      let recent = recentConverterIds()
       recent = recent.filter((converterId: string) => converterId != cnvt.id)
       recent.unshift(cnvt.id)
       window.localStorage.setItem(localStorageKey, JSON.stringify(recent))
