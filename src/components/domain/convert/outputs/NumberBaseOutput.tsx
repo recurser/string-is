@@ -2,7 +2,7 @@ import { majorScale, Select, Textarea } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo, useEffect } from 'react'
 
-import { Form, Label } from '@components/forms'
+import { CopyButton, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import {
   defaultOptions,
@@ -114,6 +114,9 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             resize="none"
             value={output}
           />
+          {!disabled && (
+            <CopyButton marginLeft={majorScale(1)} value={output} />
+          )}
         </Label>
       </Form>
     )
