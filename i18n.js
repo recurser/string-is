@@ -21,6 +21,7 @@ module.exports = {
       'domain-convert-outputs-regexOutput',
       'domain-convert-outputs-shaOutput',
       'domain-convert-outputs-yamlOutput',
+      'forms-copyButton',
       'lib-converters-commands',
       'lib-converters-results',
       'pages-convert',

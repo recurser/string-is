@@ -8,11 +8,12 @@ import {
   SelectMenuItem,
   Textarea,
   TextInput,
+  Tooltip,
 } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
 
-import { Form, Label } from '@components/forms'
+import { CopyButton, Form, Label } from '@components/forms'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import {
   defaultOptions,
@@ -61,7 +62,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             }))}
             selected={options.timezone as string}
           >
-            <Button disabled={disabled} maxWidth={majorScale(32)}>
+            <Button disabled={disabled} maxWidth={majorScale(25)}>
               {options.timezone}
             </Button>
           </SelectMenu>
@@ -75,19 +76,21 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <TextInput
             disabled={disabled}
             id="formatInput"
-            maxWidth={majorScale(27)}
+            maxWidth={majorScale(25)}
             onChange={onChangeFormat}
             placeholder={defaultOptions.format}
             value={options.format as string}
           />
-          <IconButton
-            disabled={disabled}
-            href="https://day.js.org/docs/en/display/format"
-            icon={HelpIcon}
-            is={Link}
-            marginLeft={majorScale(1)}
-            target="_blank"
-          />
+          <Tooltip content={t('format_tooltip')}>
+            <IconButton
+              disabled={disabled}
+              href="https://day.js.org/docs/en/display/format"
+              icon={HelpIcon}
+              is={Link}
+              marginLeft={majorScale(1)}
+              target="_blank"
+            />
+          </Tooltip>
         </Label>
 
         <hr />
@@ -102,13 +105,20 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             disabled={disabled}
             height={majorScale(4)}
             id="localTimeInput"
-            maxWidth={majorScale(32)}
+            maxWidth={majorScale(25)}
             minHeight={undefined}
             readOnly={true}
             ref={ref}
             resize="none"
             value={output}
           />
+          {!disabled && (
+            <CopyButton
+              disabled={disabled}
+              marginLeft={majorScale(1)}
+              value={output}
+            />
+          )}
         </Label>
 
         <Label
@@ -118,10 +128,17 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <TextInput
             disabled={disabled}
-            maxWidth={majorScale(32)}
+            maxWidth={majorScale(25)}
             readOnly={true}
             value={utcValue}
           />
+          {!disabled && (
+            <CopyButton
+              disabled={disabled}
+              marginLeft={majorScale(1)}
+              value={utcValue}
+            />
+          )}
         </Label>
 
         <Label
@@ -132,10 +149,17 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <TextInput
             disabled={disabled}
             id="relativeTimeInput"
-            maxWidth={majorScale(32)}
+            maxWidth={majorScale(25)}
             readOnly={true}
             value={relativeValue}
           />
+          {!disabled && (
+            <CopyButton
+              disabled={disabled}
+              marginLeft={majorScale(1)}
+              value={relativeValue}
+            />
+          )}
         </Label>
       </Form>
     )
