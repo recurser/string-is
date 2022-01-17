@@ -1,3 +1,19 @@
+# [1.7.0](https://github.com/recurser/string-is/compare/v1.6.0...v1.7.0) (2022-01-17)
+
+
+### Bug Fixes
+
+* add missing IconButton tooltip required for accessibility ([dcad5cd](https://github.com/recurser/string-is/commit/dcad5cd5aed75a535fb4f937a32a876ebefc9f4b))
+* add missing unique key to RegexOutput elements ([9fdd9e2](https://github.com/recurser/string-is/commit/9fdd9e2bd451c261b304b0b51ddeb0db37b146a7))
+* disable TextAreas consistently ([c47748f](https://github.com/recurser/string-is/commit/c47748fae5963fae5a33b4e95e18f9be4715d621))
+* fix unwanted exception when identifying YAML ([183beb5](https://github.com/recurser/string-is/commit/183beb565976a64a34b556d93ef1c79b6490d457))
+* remove blank lines from CSV input ([868a4a7](https://github.com/recurser/string-is/commit/868a4a7e959ab86cf66010d3811bea3be25ee625))
+
+
+### Features
+
+* add a copy button ([f8b1b30](https://github.com/recurser/string-is/commit/f8b1b309bdd778cbec6e45addba72e1b6502462e))
+
 # [1.6.0](https://github.com/recurser/string-is/compare/v1.5.1...v1.6.0) (2022-01-16)
 
 
