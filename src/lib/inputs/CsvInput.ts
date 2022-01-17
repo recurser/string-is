@@ -10,7 +10,10 @@ export const input = (data: string): unknown[] | undefined => {
     return undefined
   }
 
-  const { data: obj, errors } = parse(data, defaults)
+  // Replace blank lines, and any final linebreak, since they break the CSV parser.
+  const noBlanks = data.replace(/^\s*[\r\n]/gm, '').replace(/[\r\n]$/gm, '')
+
+  const { data: obj, errors } = parse(noBlanks, defaults)
 
   if (errors.length > 0) {
     throw new Error(errors[0].message)
