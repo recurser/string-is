@@ -27,7 +27,7 @@ export const Application = ({
             marginLeft="auto"
             marginRight="auto"
             maxWidth={maxWidth}
-            paddingTop={majorScale(3)}
+            paddingTop={majorScale(1)}
           >
             <Header />
 

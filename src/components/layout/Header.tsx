@@ -17,7 +17,7 @@ export const Header = (): ReactElement => {
       display="flex"
       flexDirection="row"
       justifyContent="space-between"
-      marginBottom={majorScale(3)}
+      marginBottom={majorScale(2)}
     >
       <Link href={ROUTE_CONVERT} lineHeight={0}>
         <Image
