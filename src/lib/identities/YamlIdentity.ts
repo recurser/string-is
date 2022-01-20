@@ -28,7 +28,7 @@ export const confidence = (data: string) => {
     if (jsonInput(data) !== undefined) {
       return 0
     }
-  } catch(_err) { }
+  } catch (_err) {}
 
   return 100
 }
