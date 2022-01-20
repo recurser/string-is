@@ -1,4 +1,4 @@
-import type { Jwt } from 'jsonwebtoken'
+import type { Jwt, JwtPayload } from 'jsonwebtoken'
 
 import { input as jwtInput } from '@lib/inputs/JwtInput'
 import { output as jsonOutput } from '@lib/outputs/JsonOutput'
@@ -23,5 +23,5 @@ export const header = (
 }
 
 export const output = (jwt: Jwt, _options: ConverterOptions = {}): string => {
-  return jsonOutput(jwt.payload)
+  return jsonOutput(jwt.payload as JwtPayload)
 }
