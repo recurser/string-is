@@ -1,9 +1,9 @@
 import { isEmpty, upperFirst } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 import {
+  createRef,
   Dispatch,
   SetStateAction,
-  createRef,
   useEffect,
   useMemo,
   useState,
@@ -15,7 +15,6 @@ import * as outputs from '@components/domain/convert/outputs'
 import type { OutputName } from '@components/domain/convert/outputs'
 import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { useInputContext } from '@contexts/InputContext'
 import { NullConverter } from '@lib/converters'
 
 interface Props {
@@ -24,8 +23,8 @@ interface Props {
 }
 export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-outputForm')
-  const { converter } = useConverterContext()
-  const { inputString } = useInputContext()
+  const { converter, inputString, outputString, setOutputString } =
+    useConverterContext()
   const textareaRef = createRef<HTMLTextAreaElement>()
 
   // When a converter has been selected, we focus on the output field.
@@ -58,6 +57,13 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
       return ''
     }
   }, [converter, errorMessage, inputString, options])
+
+  // Other components such as the use-as-input button use this output.
+  useEffect(() => {
+    if (output !== outputString) {
+      setOutputString(output)
+    }
+  }, [output, outputString, setOutputString])
 
   // If we don't have any input or output, there is no point enabling the output.
   const disabled = useMemo(

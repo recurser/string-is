@@ -4,9 +4,11 @@ import Head from 'next/head'
 import { useState } from 'react'
 
 import {
-  InputForm,
-  OutputForm,
   ConverterSelector,
+  InputForm,
+  LayoutColumn,
+  OutputForm,
+  UseAsInputButton,
 } from '@components/domain/convert'
 import { Card } from '@components/layout/Card'
 import { useBreakpoints } from '@services/Responsive'
@@ -38,7 +40,10 @@ export const Convert = () => {
             maxWidth={majorScale(20)}
             minWidth={0}
           >
-            <ConverterSelector setFocusOutput={setFocusOutput} />
+            <LayoutColumn>
+              <ConverterSelector setFocusOutput={setFocusOutput} />
+              <UseAsInputButton />
+            </LayoutColumn>
           </Pane>
 
           <OutputForm
