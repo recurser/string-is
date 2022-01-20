@@ -11,8 +11,16 @@ import { Converter, NullConverter } from '@lib/converters'
 import { useAnalytics } from '@services/Analytics'
 
 interface Props {
+  clearConverter: boolean
   converter: Converter
+  inputString: string
+  outputString: string
+  setClearConverter: Dispatch<boolean>
   setConverter: Dispatch<Converter>
+  setInputString: Dispatch<string>
+  setOutputString: Dispatch<string>
+  setUseOutput: Dispatch<boolean>
+  useOutput: boolean
 }
 
 const localStorageKey = 'string.is:RecentConverters'
@@ -22,12 +30,31 @@ export const recentConverterIds = () =>
   JSON.parse(window.localStorage.getItem(localStorageKey) || '[]')
 
 const Context = createContext<Props>({
+  clearConverter: false,
   converter: NullConverter,
+  inputString: '',
+  outputString: '',
+  setClearConverter: (_: boolean) => undefined,
   setConverter: (_: Converter) => undefined,
+  setInputString: (_: string) => undefined,
+  setOutputString: (_: string) => undefined,
+  setUseOutput: (_: boolean) => undefined,
+  useOutput: false,
 })
 
 export const useConverterContext = (): Props => {
-  const { converter, setConverter } = useContext(Context)
+  const {
+    clearConverter,
+    converter,
+    inputString,
+    outputString,
+    setClearConverter,
+    setConverter,
+    setInputString,
+    setOutputString,
+    setUseOutput,
+    useOutput,
+  } = useContext(Context)
   const analytics = useAnalytics()
 
   const wrappedSetConverter = (cnvt: Converter) => {
@@ -49,14 +76,40 @@ export const useConverterContext = (): Props => {
     }
   }
 
-  return { converter, setConverter: wrappedSetConverter }
+  return {
+    clearConverter,
+    converter,
+    inputString,
+    outputString,
+    setClearConverter,
+    setConverter: wrappedSetConverter,
+    setInputString,
+    setOutputString,
+    setUseOutput,
+    useOutput,
+  }
 }
 
 export const ConverterContext = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {
+  const [clearConverter, setClearConverter] = useState<boolean>(false)
   const [converter, setConverter] = useState<Converter>(NullConverter)
+  const [inputString, setInputString] = useState<string>('')
+  const [outputString, setOutputString] = useState<string>('')
+  const [useOutput, setUseOutput] = useState<boolean>(false)
 
-  const value = { converter, setConverter }
+  const value = {
+    clearConverter,
+    converter,
+    inputString,
+    outputString,
+    setClearConverter,
+    setConverter,
+    setInputString,
+    setOutputString,
+    setUseOutput,
+    useOutput,
+  }
   return <Context.Provider value={value}>{children}</Context.Provider>
 }

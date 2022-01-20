@@ -4,14 +4,21 @@ import { ChangeEvent, useEffect, useMemo, useCallback, useState } from 'react'
 
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { CodeTextarea } from '@components/forms'
-import { useInputContext } from '@contexts/InputContext'
+import { useConverterContext } from '@contexts/ConverterContext'
 
 // Timeout before deciding that the user has stopped typing.
 const DebounceTimeout = 500
 
 export const InputForm = () => {
   const { t } = useTranslation('domain-convert-inputForm')
-  const { inputString, setInputString } = useInputContext()
+  const {
+    inputString,
+    outputString,
+    setClearConverter,
+    setInputString,
+    setUseOutput,
+    useOutput,
+  } = useConverterContext()
   const [input, setInput] = useState('')
 
   // Focus on the textarea on first load.
@@ -24,6 +31,15 @@ export const InputForm = () => {
   )
 
   useEffect(() => doDebounce(input), [input, doDebounce])
+
+  useEffect(() => {
+    if (useOutput) {
+      setUseOutput(false)
+      setInputString(outputString)
+      setInput(outputString)
+      setClearConverter(true)
+    }
+  }, [outputString, setClearConverter, setInputString, setUseOutput, useOutput])
 
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setInput(event.target.value)
