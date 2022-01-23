@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/recurser/string-is/compare/v1.7.0...v1.8.0) (2022-01-23)
+
+
+### Features
+
+* add a use-as-input button ([4178f2d](https://github.com/recurser/string-is/commit/4178f2d1e02c197fdccab136c5118a38b0574cd8))
+
 # [1.7.0](https://github.com/recurser/string-is/compare/v1.6.0...v1.7.0) (2022-01-17)
 
 
