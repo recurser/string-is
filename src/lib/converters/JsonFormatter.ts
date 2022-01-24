@@ -1,6 +1,6 @@
+import { ConverterOptions } from '@lib/types'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 import { output as jsonOutput } from '@lib/outputs/JsonOutput'
-import { ConverterOptions } from '@lib/types'
 
 export const id = 'json'
 

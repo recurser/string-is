@@ -1,5 +1,5 @@
-import parserPostcss from 'prettier/parser-postcss'
 import { format } from 'prettier/standalone'
+import parserPostcss from 'prettier/parser-postcss'
 
 import { ConverterOptions } from '@lib/types'
 

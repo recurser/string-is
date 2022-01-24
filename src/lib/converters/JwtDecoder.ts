@@ -1,6 +1,6 @@
+import { ConverterOptions } from '@lib/types'
 import { input as jwtInput } from '@lib/inputs/JwtInput'
 import { output as jwtOutput } from '@lib/outputs/JwtOutput'
-import { ConverterOptions } from '@lib/types'
 
 export const id = 'jwt'
 

@@ -1,5 +1,5 @@
-import { parse } from 'hjson'
 import { isEmpty } from 'lodash'
+import { parse } from 'hjson'
 
 import { Obj } from '@lib/types'
 

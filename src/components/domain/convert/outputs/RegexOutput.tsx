@@ -1,6 +1,6 @@
-import { Alert, majorScale, TextInput } from 'evergreen-ui'
+import { Alert, TextInput, majorScale } from 'evergreen-ui'
+import { ChangeEvent, Fragment, forwardRef, useMemo, useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, Fragment, useMemo, useState } from 'react'
 
 import { CodeTextarea, CopyButton, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'

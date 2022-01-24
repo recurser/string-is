@@ -1,5 +1,5 @@
-import { isValid } from 'js-base64'
 import { isEmpty } from 'lodash'
+import { isValid } from 'js-base64'
 
 import { Base64Decoder, Converter } from '@lib/converters'
 

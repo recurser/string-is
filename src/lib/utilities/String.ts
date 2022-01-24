@@ -1,4 +1,4 @@
-import { isArray, isObject, fromPairs, map } from 'lodash'
+import { fromPairs, isArray, isObject, map } from 'lodash'
 
 import { Obj } from '@lib/types'
 

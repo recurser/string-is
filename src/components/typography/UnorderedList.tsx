@@ -1,7 +1,7 @@
 import {
-  minorScale,
   UnorderedList as BaseUnorderedList,
   UnorderedListProps,
+  minorScale,
 } from 'evergreen-ui'
 import { ReactElement } from 'react'
 

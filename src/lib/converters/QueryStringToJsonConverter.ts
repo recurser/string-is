@@ -1,6 +1,6 @@
-import { input as queryStringInput } from '@lib/inputs/QueryStringInput'
-import { output as jsonOutput } from '@lib/outputs/JsonOutput'
 import { ConverterOptions, Obj } from '@lib/types'
+import { output as jsonOutput } from '@lib/outputs/JsonOutput'
+import { input as queryStringInput } from '@lib/inputs/QueryStringInput'
 
 export const id = 'queryStringToJson'
 

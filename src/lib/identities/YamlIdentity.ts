@@ -1,6 +1,6 @@
 import { Converter, YamlFormatter, YamlToJsonConverter } from '@lib/converters'
-import { input as jsonInput } from '@lib/inputs/JsonInput'
 import { input } from '@lib/inputs/YamlInput'
+import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'yaml'
 

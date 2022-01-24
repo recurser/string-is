@@ -1,5 +1,5 @@
-import { output as datetimeOutput } from '@lib/outputs/DatetimeOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as datetimeOutput } from '@lib/outputs/DatetimeOutput'
 
 export const id = 'timestamp'
 

@@ -1,5 +1,5 @@
-import { output as javaScriptOutput } from '@lib/outputs/JavaScriptOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as javaScriptOutput } from '@lib/outputs/JavaScriptOutput'
 
 export const id = 'javaScript'
 

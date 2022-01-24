@@ -1,5 +1,5 @@
-import { majorScale, Pane, Textarea, TextareaProps } from 'evergreen-ui'
-import { forwardRef, ReactElement } from 'react'
+import { Pane, Textarea, TextareaProps, majorScale } from 'evergreen-ui'
+import { ReactElement, forwardRef } from 'react'
 import styledComponents from 'styled-components'
 
 import { CopyButton } from '@components/forms/CopyButton'

@@ -1,6 +1,6 @@
+import { format } from 'prettier/standalone'
 import { isEmpty } from 'lodash'
 import parserPostcss from 'prettier/parser-postcss'
-import { format } from 'prettier/standalone'
 
 import { Converter, ScssFormatter } from '@lib/converters'
 

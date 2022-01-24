@@ -1,21 +1,21 @@
-import { isEmpty, upperFirst } from 'lodash'
-import useTranslation from 'next-translate/useTranslation'
 import {
-  createRef,
   Dispatch,
   SetStateAction,
+  createRef,
   useEffect,
   useMemo,
   useState,
 } from 'react'
+import { isEmpty, upperFirst } from 'lodash'
+import useTranslation from 'next-translate/useTranslation'
 
-import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
-import { OutputError } from '@components/domain/convert/OutputError'
 import * as outputs from '@components/domain/convert/outputs'
+import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
+import { NullConverter } from '@lib/converters'
+import { OutputError } from '@components/domain/convert/OutputError'
 import type { OutputName } from '@components/domain/convert/outputs'
 import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { NullConverter } from '@lib/converters'
 
 interface Props {
   focusOutput: boolean

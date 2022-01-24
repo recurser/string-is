@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { HtmlFormatter, Converter } from '@lib/converters'
+import { Converter, HtmlFormatter } from '@lib/converters'
 
 export const id = 'html'
 

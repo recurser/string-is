@@ -1,5 +1,5 @@
-import { extractStyles } from 'evergreen-ui'
 import { createGlobalStyle } from 'styled-components'
+import { extractStyles } from 'evergreen-ui'
 
 import { MOBILE } from '@services/Responsive'
 import { theme } from '@services/Theme'

@@ -1,5 +1,5 @@
-import { output as lessOutput } from '@lib/outputs/LessOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as lessOutput } from '@lib/outputs/LessOutput'
 
 export const id = 'less'
 
