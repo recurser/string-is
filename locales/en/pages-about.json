@@ -3,6 +3,7 @@
   "heading_alternatives": "Alternatives",
   "li_acknowledgement_is_html": "HTML code detection was inspired by <0>is-html</0>.",
   "li_alternative_cyber_chef": "<0>CyberChef</0> by the UK\u2019s <1>GCHQ</1> provides an exhaustive set of conversion and crypto tools, and works both online and offline.",
+  "li_alternative_dev_toys": "<0>DevToys</0> by <1>Etienne Baudoux</1> is an open-source Windows desktop tool which looks very good, although I haven't tried it.",
   "li_alternative_dev_utils": "<0>DevUtils</0> by <1>Tony Dinh</1> is a great open-source MacOS desktop tool.",
   "li_goal_client_side": "It should do all conversions on the client-side.",
   "li_goal_intelligent": "It should try to detect the format of the input, and intelligently choose output options.",
