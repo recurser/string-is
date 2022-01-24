@@ -1,4 +1,4 @@
-import { Card as BaseCard, CardProps, majorScale, Pane } from 'evergreen-ui'
+import { Card as BaseCard, CardProps, Pane, majorScale } from 'evergreen-ui'
 import { ReactElement } from 'react'
 
 import { Heading } from '@components/typography'

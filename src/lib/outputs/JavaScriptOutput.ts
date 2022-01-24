@@ -1,5 +1,5 @@
-import parserBabel from 'prettier/parser-babel'
 import { format } from 'prettier/standalone'
+import parserBabel from 'prettier/parser-babel'
 
 import { ConverterOptions } from '@lib/types'
 

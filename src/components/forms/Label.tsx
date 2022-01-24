@@ -1,4 +1,4 @@
-import { majorScale, minorScale, Pane, PaneProps, Text } from 'evergreen-ui'
+import { Pane, PaneProps, Text, majorScale, minorScale } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
 import styledComponents from 'styled-components'
 

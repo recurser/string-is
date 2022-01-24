@@ -1,5 +1,5 @@
-import { load } from 'js-yaml'
 import { isEmpty } from 'lodash'
+import { load } from 'js-yaml'
 
 import { Obj } from '@lib/types'
 

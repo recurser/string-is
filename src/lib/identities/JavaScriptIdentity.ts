@@ -1,6 +1,6 @@
+import { format } from 'prettier/standalone'
 import { isEmpty } from 'lodash'
 import parserBabel from 'prettier/parser-babel'
-import { format } from 'prettier/standalone'
 
 import { Converter, JavaScriptFormatter } from '@lib/converters'
 

@@ -1,4 +1,4 @@
-import { minorScale, Heading as BaseHeading, HeadingProps } from 'evergreen-ui'
+import { Heading as BaseHeading, HeadingProps, minorScale } from 'evergreen-ui'
 import { ReactElement } from 'react'
 
 export const Heading = ({ children, ...props }: HeadingProps): ReactElement => (

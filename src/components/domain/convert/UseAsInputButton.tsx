@@ -1,7 +1,7 @@
-import { Button, ChevronLeftIcon, majorScale, Pane } from 'evergreen-ui'
+import { Button, ChevronLeftIcon, Pane, majorScale } from 'evergreen-ui'
+import { useEffect, useState } from 'react'
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { useEffect, useState } from 'react'
 
 import { useConverterContext } from '@contexts/ConverterContext'
 

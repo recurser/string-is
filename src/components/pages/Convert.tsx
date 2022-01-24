@@ -1,7 +1,8 @@
-import { majorScale, Pane } from 'evergreen-ui'
-import useTranslation from 'next-translate/useTranslation'
-import Head from 'next/head'
+import { Pane, majorScale } from 'evergreen-ui'
 import { useState } from 'react'
+
+import Head from 'next/head'
+import useTranslation from 'next-translate/useTranslation'
 
 import {
   ConverterSelector,

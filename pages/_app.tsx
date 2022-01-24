@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import type { AppProps } from 'next/app'
 import type { ReactElement, ReactNode } from 'react'
+import type { AppProps } from 'next/app'
+import type { NextPage } from 'next'
 
 // See https://nextjs.org/docs/basic-features/layouts#with-typescript
 type NextPageWithLayout = NextPage & {

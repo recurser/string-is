@@ -1,5 +1,5 @@
-import { output as upperCaseOutput } from '@lib/outputs/UpperCaseOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as upperCaseOutput } from '@lib/outputs/UpperCaseOutput'
 
 export const id = 'upperCase'
 

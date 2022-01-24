@@ -1,15 +1,15 @@
 import {
-  createContext,
   Dispatch,
   PropsWithChildren,
   ReactElement,
+  createContext,
   useContext,
   useState,
 } from 'react'
 
 import * as untypedOutputs from '@lib/outputs'
-import type { Output } from '@lib/outputs'
 import { ConverterOptions } from '@lib/types'
+import type { Output } from '@lib/outputs'
 
 type NamespacedOptions = Record<string, ConverterOptions>
 

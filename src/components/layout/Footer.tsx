@@ -1,9 +1,9 @@
-import { majorScale, Pane } from 'evergreen-ui'
-import useTranslation from 'next-translate/useTranslation'
+import { Pane, majorScale } from 'evergreen-ui'
 import { ReactElement } from 'react'
+import useTranslation from 'next-translate/useTranslation'
 
-import { Link } from '@components/navigation'
 import { ROUTE_PRIVACY, ROUTE_SECURITY, ROUTE_TERMS } from '@services/Routes'
+import { Link } from '@components/navigation'
 
 export const Footer = (): ReactElement => {
   const { t } = useTranslation('layout-footer')

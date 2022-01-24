@@ -1,10 +1,10 @@
 import { isEqual, isObject, uniq } from 'lodash'
 
 import {
+  Converter,
   JsonFormatter,
   JsonToCsvConverter,
   JsonToYamlConverter,
-  Converter,
 } from '@lib/converters'
 import { confidence as arrayConfidence } from '@lib/identities/JsonArrayIdentity'
 import { input as jsonInput } from '@lib/inputs/JsonInput'

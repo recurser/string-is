@@ -1,13 +1,13 @@
 import { isEmpty } from 'lodash'
 
 import {
+  Converter,
   CsvFormatter,
   CsvToJsonConverter,
   CsvToYamlConverter,
-  Converter,
 } from '@lib/converters'
-import { input } from '@lib/inputs/CsvInput'
 import { input as JsonInput } from '@lib/inputs/JsonInput'
+import { input } from '@lib/inputs/CsvInput'
 
 export const id = 'csv'
 

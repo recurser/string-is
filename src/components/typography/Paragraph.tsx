@@ -1,7 +1,7 @@
 import {
-  minorScale,
   Paragraph as BaseParagraph,
   ParagraphProps,
+  minorScale,
 } from 'evergreen-ui'
 import { ReactElement } from 'react'
 

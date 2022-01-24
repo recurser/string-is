@@ -1,5 +1,5 @@
-import parserHtml from 'prettier/parser-html'
 import { format } from 'prettier/standalone'
+import parserHtml from 'prettier/parser-html'
 
 import { ConverterOptions } from '@lib/types'
 

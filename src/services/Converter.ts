@@ -1,9 +1,9 @@
-import Promise from 'bluebird'
 import { maxBy, uniqBy } from 'lodash'
+import Promise from 'bluebird'
 
+import * as untypedIdentities from '@lib/identities'
 import { Converter } from '@lib/converters'
 import { Identity } from '@lib/identities'
-import * as untypedIdentities from '@lib/identities'
 
 interface Candidate {
   confidence: number

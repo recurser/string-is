@@ -1,16 +1,16 @@
 import { ListItem, Pane, Strong } from 'evergreen-ui'
+import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
-import Head from 'next/head'
 
-import { Card } from '@components/layout/Card'
-import { Link } from '@components/navigation'
 import {
   Heading,
   OrderedList,
   Paragraph,
   UnorderedList,
 } from '@components/typography'
+import { Card } from '@components/layout/Card'
+import { Link } from '@components/navigation'
 
 export const About = () => {
   const { t } = useTranslation('pages-about')

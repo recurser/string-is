@@ -1,6 +1,6 @@
-import { isEmpty } from 'lodash'
 import PlausibleProvider, { usePlausible } from 'next-plausible'
 import { PropsWithChildren, ReactElement } from 'react'
+import { isEmpty } from 'lodash'
 
 export const useAnalytics = usePlausible
 

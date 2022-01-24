@@ -1,6 +1,6 @@
+import { ConverterOptions } from '@lib/types'
 import { input as csvInput } from '@lib/inputs/CsvInput'
 import { output as csvOutput } from '@lib/outputs/CsvOutput'
-import { ConverterOptions } from '@lib/types'
 
 export const id = 'csv'
 

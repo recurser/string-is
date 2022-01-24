@@ -1,5 +1,5 @@
-import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
 
 export const id = 'xml'
 

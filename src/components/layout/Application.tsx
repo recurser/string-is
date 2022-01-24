@@ -1,11 +1,11 @@
-import { majorScale, Pane } from 'evergreen-ui'
+import { Pane, majorScale } from 'evergreen-ui'
 import { PropsWithChildren, ReactElement } from 'react'
 
-import { Footer } from '@components/layout/Footer'
-import { Header } from '@components/layout/Header'
+import { AnalyticsProvider } from '@services/Analytics'
 import { ConverterContext } from '@contexts/ConverterContext'
 import { ConverterOptionsContext } from '@contexts/ConverterOptionsContext'
-import { AnalyticsProvider } from '@services/Analytics'
+import { Footer } from '@components/layout/Footer'
+import { Header } from '@components/layout/Header'
 
 interface Props {
   maxWidth: number

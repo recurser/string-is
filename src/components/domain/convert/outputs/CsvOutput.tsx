@@ -1,10 +1,10 @@
+import { ChangeEvent, forwardRef } from 'react'
 import { Checkbox } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
-import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   ({ converter, disabled, output, ...props }: OutputProps, ref) => {

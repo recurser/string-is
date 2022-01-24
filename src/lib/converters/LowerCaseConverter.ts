@@ -1,5 +1,5 @@
-import { output as lowerCaseOutput } from '@lib/outputs/LowerCaseOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as lowerCaseOutput } from '@lib/outputs/LowerCaseOutput'
 
 export const id = 'lowerCase'
 
