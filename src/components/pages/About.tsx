@@ -83,6 +83,24 @@ export const About = () => {
             <Trans
               components={[
                 <Link
+                  href="https://devtoys.app/"
+                  key="li_alternative_dev_toys_1"
+                  target="_blank"
+                />,
+                <Link
+                  href="https://github.com/veler"
+                  key="li_alternative_dev_toys_2"
+                  target="_blank"
+                />,
+              ]}
+              i18nKey="pages-about:li_alternative_dev_toys"
+            />
+          </ListItem>
+
+          <ListItem>
+            <Trans
+              components={[
+                <Link
                   href="https://gchq.github.io/CyberChef/"
                   key="li_alternative_cyber_chef_1"
                   target="_blank"
