@@ -5626,10 +5626,10 @@ next-plausible@^3.1.4:
   resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-3.1.4.tgz#a386ff4e2327995cb4a1307e53e1b4af70817b52"
   integrity sha512-NMLKJ0AKlKuvYU//RytyqSES5NtLRoH/ym3fCC02w2Ed1SrTgNRUrgpxyJrcguY/DYGPncQ3a0/nQ358vUTAwQ==
 
-next-translate@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.2.0.tgz#e178b4c93fce7c8b78b3fa5cbb112f75fa631188"
-  integrity sha512-L15JCfvj6BhQfx7i3nsJReUF7wrHe1RlzK7h25QlBT40prGQLZ5nJ6gx9Vd3Ew0V9QMqaVELUeQQ1u51yyDu0Q==
+next-translate@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.3.2.tgz#53b1cb1c62c35941ec0f4ec220f21a13954ac223"
+  integrity sha512-edj70Y1/s5pNfQEVHOIGsIXbXkaE/evM2aokFriX80p6s/JIau78wfuS0jXIPkNvPiDccX91CmU2tEk0gqu+Fg==
 
 next@12.0.8:
   version "12.0.8"
