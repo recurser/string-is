@@ -35,6 +35,9 @@
       "@lib/*": [
         "src/lib/*"
       ],
+      "@locales/*": [
+        "locales/*"
+      ],
       "@pages/*": [
         "src/components/pages/*"
       ],
