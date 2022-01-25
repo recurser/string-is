@@ -21,6 +21,7 @@ module.exports = {
     '^@/contexts/(.*)$': '<rootDir>/src/contexts/$1',
     '^@/images/(.*)$': '<rootDir>/src/images/$1',
     '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@/locales/(.*)$': '<rootDir>/locales/$1',
     '^@/pages/(.*)$': '<rootDir>/src/components/pages/$1',
     '^@/root/(.*)$': '<rootDir>/src/$1',
     '^@/services/(.*)$': '<rootDir>/src/services/$1',
