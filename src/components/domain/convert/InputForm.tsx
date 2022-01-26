@@ -1,9 +1,9 @@
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
 import { debounce } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, useEffect, useMemo, useCallback, useState } from 'react'
 
-import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { CodeTextarea } from '@components/forms'
+import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useConverterContext } from '@contexts/ConverterContext'
 
 // Timeout before deciding that the user has stopped typing.

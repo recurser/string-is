@@ -1,6 +1,6 @@
-import { input as numberInput } from '@lib/inputs/NumberInput'
-import { output as numberBaseOutput } from '@lib/outputs/NumberBaseOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as numberBaseOutput } from '@lib/outputs/NumberBaseOutput'
+import { input as numberInput } from '@lib/inputs/NumberInput'
 
 export const id = 'numberBase'
 

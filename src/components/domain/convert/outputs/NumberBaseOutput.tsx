@@ -1,9 +1,8 @@
-import { majorScale, Select, Textarea } from 'evergreen-ui'
+import { ChangeEvent, forwardRef, useEffect, useMemo } from 'react'
+import { Select, Textarea, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { ChangeEvent, forwardRef, useMemo, useEffect } from 'react'
 
 import { CopyButton, Form, Label } from '@components/forms'
-import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import {
   defaultOptions,
   maxRadix,
@@ -11,6 +10,7 @@ import {
   validRadices,
 } from '@lib/outputs/NumberBaseOutput'
 import { OutputProps } from '@lib/types'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   (

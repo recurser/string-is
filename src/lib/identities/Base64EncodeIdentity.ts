@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Converter, Base64Encoder } from '@lib/converters'
+import { Base64Encoder, Converter } from '@lib/converters'
 import { confidence as base64DecodeConfidence } from '@lib/identities/Base64DecodeIdentity'
 
 export const id = 'base64Encode'

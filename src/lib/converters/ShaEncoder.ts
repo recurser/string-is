@@ -1,5 +1,5 @@
-import { output as shaOutput } from '@lib/outputs/ShaOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as shaOutput } from '@lib/outputs/ShaOutput'
 
 export const id = 'sha'
 

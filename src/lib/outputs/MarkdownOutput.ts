@@ -1,5 +1,5 @@
-import parserMarkdown from 'prettier/parser-markdown'
 import { format } from 'prettier/standalone'
+import parserMarkdown from 'prettier/parser-markdown'
 
 import { ConverterOptions } from '@lib/types'
 

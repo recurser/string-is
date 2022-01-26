@@ -6,9 +6,9 @@ import {
   Tooltip,
 } from 'evergreen-ui'
 import { isEmpty } from 'lodash'
-import useTranslation from 'next-translate/useTranslation'
-import { useState } from 'react'
 import styledComponents from 'styled-components'
+import { useState } from 'react'
+import useTranslation from 'next-translate/useTranslation'
 
 interface Props extends IconButtonProps {
   value: string

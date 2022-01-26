@@ -1,5 +1,5 @@
-import { output as md5Output } from '@lib/outputs/Md5Output'
 import { ConverterOptions } from '@lib/types'
+import { output as md5Output } from '@lib/outputs/Md5Output'
 
 export const id = 'md5'
 

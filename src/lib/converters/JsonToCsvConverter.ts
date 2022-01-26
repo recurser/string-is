@@ -1,8 +1,8 @@
 import { isObject } from 'lodash'
 
-import { input as jsonInput } from '@lib/inputs/JsonInput'
-import { output as csvOutput } from '@lib/outputs/CsvOutput'
 import { ConverterOptions } from '@lib/types'
+import { output as csvOutput } from '@lib/outputs/CsvOutput'
+import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'jsonToCsv'
 

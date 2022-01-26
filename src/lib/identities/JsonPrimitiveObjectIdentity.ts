@@ -1,13 +1,13 @@
 import { isEqual, isObject, uniq } from 'lodash'
 
 import {
+  Converter,
   JsonFormatter,
   JsonToCsvConverter,
   JsonToYamlConverter,
-  Converter,
 } from '@lib/converters'
-import { confidence as objectConfidence } from '@lib/identities/JsonObjectIdentity'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
+import { confidence as objectConfidence } from '@lib/identities/JsonObjectIdentity'
 
 export const id = 'jsonPrimitiveObject'
 

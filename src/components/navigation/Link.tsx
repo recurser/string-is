@@ -1,6 +1,6 @@
 import { Link as Anchor, LinkProps } from 'evergreen-ui'
-import BaseLink from 'next/link'
 import { PropsWithChildren, ReactElement } from 'react'
+import BaseLink from 'next/link'
 
 interface Props extends LinkProps {
   href: string // This is optional in LinkProps, but we want to enforce it.

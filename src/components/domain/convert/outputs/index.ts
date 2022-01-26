@@ -10,6 +10,7 @@ export { NumberBaseOutput } from '@components/domain/convert/outputs/NumberBaseO
 export { PlainOutput } from '@components/domain/convert/outputs/PlainOutput'
 export { RegexOutput } from '@components/domain/convert/outputs/RegexOutput'
 export { ShaOutput } from '@components/domain/convert/outputs/ShaOutput'
+export { UuidOutput } from '@components/domain/convert/outputs/UuidOutput'
 export { YamlOutput } from '@components/domain/convert/outputs/YamlOutput'
 
 export type OutputName =
@@ -25,4 +26,5 @@ export type OutputName =
   | 'PlainOutput'
   | 'RegexOutput'
   | 'ShaOutput'
+  | 'UuidOutput'
   | 'YamlOutput'

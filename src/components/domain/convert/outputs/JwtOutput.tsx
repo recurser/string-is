@@ -1,10 +1,10 @@
+import { forwardRef, useMemo } from 'react'
 import { majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
-import { forwardRef, useMemo } from 'react'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
-import { header } from '@lib/outputs/JwtOutput'
 import { OutputProps } from '@lib/types'
+import { header } from '@lib/outputs/JwtOutput'
 
 // Used to calculate heights for the textareas to display all of the content.
 const TextAreaLineHeight = 20

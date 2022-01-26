@@ -1,16 +1,16 @@
 import { ListItem, Pane, Strong } from 'evergreen-ui'
+import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
-import Head from 'next/head'
 
-import { Card } from '@components/layout/Card'
-import { Link } from '@components/navigation'
 import {
   Heading,
   OrderedList,
   Paragraph,
   UnorderedList,
 } from '@components/typography'
+import { Card } from '@components/layout/Card'
+import { Link } from '@components/navigation'
 
 export const About = () => {
   const { t } = useTranslation('pages-about')
@@ -76,6 +76,24 @@ export const About = () => {
                 />,
               ]}
               i18nKey="pages-about:li_alternative_dev_utils"
+            />
+          </ListItem>
+
+          <ListItem>
+            <Trans
+              components={[
+                <Link
+                  href="https://devtoys.app/"
+                  key="li_alternative_dev_toys_1"
+                  target="_blank"
+                />,
+                <Link
+                  href="https://github.com/veler"
+                  key="li_alternative_dev_toys_2"
+                  target="_blank"
+                />,
+              ]}
+              i18nKey="pages-about:li_alternative_dev_toys"
             />
           </ListItem>
 

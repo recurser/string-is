@@ -1,14 +1,15 @@
 import { Pane } from 'evergreen-ui'
-import Trans from 'next-translate/Trans'
-import useTranslation from 'next-translate/useTranslation'
-import Head from 'next/head'
 import { useEffect } from 'react'
 
+import Head from 'next/head'
+import Trans from 'next-translate/Trans'
+import useTranslation from 'next-translate/useTranslation'
+
+import { Heading, Paragraph } from '@components/typography'
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
-import { Heading, Paragraph } from '@components/typography'
-import { useAnalytics } from '@services/Analytics'
 import { ROUTE_CONVERT } from '@services/Routes'
+import { useAnalytics } from '@services/Analytics'
 
 export const NotFound = () => {
   const { t } = useTranslation('pages-errors-notFound')

@@ -1,0 +1,9 @@
+{
+  "label_namespace": "Namespace",
+  "namespace_tooltip": "Generate a new namespace",
+  "v1_option": "v1",
+  "v3_option": "v3",
+  "v4_option": "v4",
+  "v5_option": "v5",
+  "version_label": "Version"
+}

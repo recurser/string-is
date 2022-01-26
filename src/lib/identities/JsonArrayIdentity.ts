@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { JsonFormatter, JsonToYamlConverter, Converter } from '@lib/converters'
+import { Converter, JsonFormatter, JsonToYamlConverter } from '@lib/converters'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 
 export const id = 'jsonArray'

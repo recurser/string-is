@@ -1,8 +1,8 @@
-import { majorScale, Pane, Paragraph } from 'evergreen-ui'
+import { Pane, Paragraph, majorScale } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
 
-import { useBreakpoints } from '@services/Responsive'
 import { theme } from '@services/Theme'
+import { useBreakpoints } from '@services/Responsive'
 
 // Used to calculate a height for the textarea to fill the content.
 const TextAreaLineHeight = 17

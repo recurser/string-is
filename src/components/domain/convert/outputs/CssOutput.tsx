@@ -1,10 +1,10 @@
-import { majorScale, Select, TextInput } from 'evergreen-ui'
-import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useState } from 'react'
+import { Select, TextInput, majorScale } from 'evergreen-ui'
+import useTranslation from 'next-translate/useTranslation'
 
 import { CodeTextarea, Form, Label } from '@components/forms'
-import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { OutputProps } from '@lib/types'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   ({ converter, disabled, output, ...props }: OutputProps, ref) => {

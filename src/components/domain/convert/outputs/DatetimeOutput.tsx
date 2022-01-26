@@ -3,18 +3,17 @@ import {
   HelpIcon,
   IconButton,
   Link,
-  majorScale,
   SelectMenu,
   SelectMenuItem,
-  Textarea,
   TextInput,
+  Textarea,
   Tooltip,
+  majorScale,
 } from 'evergreen-ui'
-import useTranslation from 'next-translate/useTranslation'
 import { ChangeEvent, forwardRef, useMemo } from 'react'
+import useTranslation from 'next-translate/useTranslation'
 
 import { CopyButton, Form, Label } from '@components/forms'
-import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import {
   defaultOptions,
   relativeOutput,
@@ -22,6 +21,7 @@ import {
 } from '@lib/outputs/DatetimeOutput'
 import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
   ({ converter, disabled, input, output, ...props }: OutputProps, ref) => {

@@ -1,11 +1,11 @@
 import { ListItem, Pane } from 'evergreen-ui'
+import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
-import Head from 'next/head'
 
+import { Heading, Paragraph, UnorderedList } from '@components/typography'
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
-import { Heading, Paragraph, UnorderedList } from '@components/typography'
 import { ROUTE_SECURITY } from '@services/Routes'
 
 export const Privacy = () => {

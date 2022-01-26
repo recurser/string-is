@@ -1,11 +1,12 @@
 import { Pane } from 'evergreen-ui'
+
+import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
-import Head from 'next/head'
 
+import { Heading, Paragraph } from '@components/typography'
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
-import { Heading, Paragraph } from '@components/typography'
 
 export const Security = () => {
   const { t } = useTranslation('pages-security')

@@ -35,17 +35,6 @@ module.exports = {
     'import/namespace': ['error', { allowComputed: true }],
     'import/no-default-export': 'error',
     'import/no-unresolved': ['error', { amd: true, commonjs: true }],
-    'import/order': [
-      'error',
-      {
-        alphabetize: { caseInsensitive: true, order: 'asc' },
-        groups: [
-          ['external', 'builtin'],
-          ['internal', 'index', 'sibling', 'parent'],
-        ],
-        'newlines-between': 'always',
-      },
-    ],
     'no-unused-vars': [
       'error',
       { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
@@ -56,6 +45,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     semi: ['error', 'never'],
     'sort-keys': 'error',
+    'sort-imports': ['error', { allowSeparatedGroups: true }],
     // Disable unwanted rules.
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
