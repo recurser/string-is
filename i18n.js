@@ -20,6 +20,7 @@ module.exports = {
       'domain-convert-outputs-numberBaseOutput',
       'domain-convert-outputs-regexOutput',
       'domain-convert-outputs-shaOutput',
+      'domain-convert-outputs-uuidOutput',
       'domain-convert-outputs-yamlOutput',
       'domain-convert-useAsInputButton',
       'forms-copyButton',

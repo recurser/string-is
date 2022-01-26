@@ -23,6 +23,7 @@ export * as TimestampIdentity from '@lib/identities/TimestampIdentity'
 export * as UpperCaseIdentity from '@lib/identities/UpperCaseIdentity'
 export * as UrlDecodeIdentity from '@lib/identities/UrlDecodeIdentity'
 export * as UrlEncodeIdentity from '@lib/identities/UrlEncodeIdentity'
+export * as UuidGeneratorIdentity from '@lib/identities/UuidGeneratorIdentity'
 export * as XmlIdentity from '@lib/identities/XmlIdentity'
 export * as YamlIdentity from '@lib/identities/YamlIdentity'
 
