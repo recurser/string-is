@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/recurser/string-is/compare/v1.8.0...v1.9.0) (2022-01-26)
+
+
+### Features
+
+* add a UUID generator ([c330d62](https://github.com/recurser/string-is/commit/c330d62577059b3d23e17e4c66cba07fb6e76eed))
+
 # [1.8.0](https://github.com/recurser/string-is/compare/v1.7.0...v1.8.0) (2022-01-23)
 
 
