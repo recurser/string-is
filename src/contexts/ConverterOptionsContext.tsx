@@ -3,7 +3,9 @@ import {
   PropsWithChildren,
   ReactElement,
   createContext,
+  useCallback,
   useContext,
+  useEffect,
   useState,
 } from 'react'
 
@@ -55,14 +57,25 @@ export const useConverterOptionsContext = (
 ): NamespacedProps => {
   const { options, setOptions } = useContext(Context)
 
-  const wrappedSetOptions = (opts: ConverterOptions) => {
-    const merged = {
-      ...options,
-      [namespace]: { ...options[namespace], ...opts },
+  // Return a setter that only operates on the given namespace.
+  const wrappedSetOptions = useCallback(
+    (opts: ConverterOptions) => {
+      const merged = {
+        ...options,
+        [namespace]: { ...options[namespace], ...opts },
+      }
+      setOptions(merged)
+      window.localStorage.setItem(localStorageKey, JSON.stringify(merged))
+    },
+    [namespace, options, setOptions],
+  )
+
+  // Initialize the current namespace if it's undefined.
+  useEffect(() => {
+    if (!options[namespace]) {
+      wrappedSetOptions({})
     }
-    setOptions(merged)
-    window.localStorage.setItem(localStorageKey, JSON.stringify(merged))
-  }
+  }, [namespace, options, wrappedSetOptions])
 
   return {
     options: (options[namespace] as unknown as ConverterOptions) || {},

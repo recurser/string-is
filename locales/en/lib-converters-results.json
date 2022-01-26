@@ -27,6 +27,7 @@
   "upperCase": "To upper case",
   "urlDecode": "URL decoded",
   "urlEncode": "URL encoded",
+  "uuid": "Generated UUID",
   "xml": "Formatted XML",
   "yaml": "Formatted YAML",
   "yamlToJson": "Formatted JSON"
