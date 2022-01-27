@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/recurser/string-is/compare/v1.9.0...v1.10.0) (2022-01-27)
+
+
+### Features
+
+* add keywords to trigger the current timestamp as input (now / time / timestamp) ([ce04c73](https://github.com/recurser/string-is/commit/ce04c730498e6157ec9e7c200aa59ccf1a1c6ba9))
+* display timestamps in the DatetimeOutput ([ce990a8](https://github.com/recurser/string-is/commit/ce990a87ddc79db3b15d92569eb13ee6b66c751d))
+
 # [1.9.0](https://github.com/recurser/string-is/compare/v1.8.0...v1.9.0) (2022-01-26)
 
 
