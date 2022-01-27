@@ -11,7 +11,7 @@ import { useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
 interface Props extends IconButtonProps {
-  value: string
+  value: string | number
 }
 
 // Put a slight transparent background for readability when there's text behind the button.
@@ -32,10 +32,11 @@ const copyToClipboard = async (text: string) => {
 export const CopyButton = ({ value, ...props }: Props) => {
   const { t } = useTranslation('forms-copyButton')
   const [copied, setCopied] = useState(false)
+  const strValue = value.toString()
 
   const onClick = async () => {
-    if (!isEmpty(value) && !copied) {
-      await copyToClipboard(`${value}`)
+    if (!isEmpty(strValue) && !copied) {
+      await copyToClipboard(strValue)
       setCopied(true)
       setTimeout(() => setCopied(false), 1000)
     }

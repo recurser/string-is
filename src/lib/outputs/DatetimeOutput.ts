@@ -1,9 +1,11 @@
 import dayjs, { Dayjs, extend } from 'dayjs'
+import { isEmpty } from 'lodash'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 
 import { ConverterOptions } from '@lib/types'
+import { input as timestampInput } from '@lib/inputs/TimestampInput'
 
 extend(relativeTime)
 extend(utc)
@@ -17,8 +19,9 @@ export const defaultOptions = {
 export const id = 'datetime'
 
 const parse = (input: string, timezone: string): Dayjs => {
-  const multiplier = input.length === 10 ? 1000 : 1
-  const datetime = new Date(parseInt(input, 10) * multiplier)
+  const timestamp = timestampInput(input) || ''
+  const multiplier = timestamp.length === 10 ? 1000 : 1
+  const datetime = new Date(parseInt(timestamp, 10) * multiplier)
   if (isNaN(datetime.getTime())) {
     throw new Error('The input is not a valid timestamp')
   }
@@ -27,6 +30,10 @@ const parse = (input: string, timezone: string): Dayjs => {
 }
 
 export const output = (input: string, options: ConverterOptions): string => {
+  if (isEmpty(input)) {
+    return ''
+  }
+
   return parse(input, options.timezone as string).format(
     options.format as string,
   )
@@ -40,6 +47,14 @@ export const relativeOutput = (
     const date = parse(input, options.timezone as string)
 
     return dayjs().to(date)
+  } catch (err) {
+    return ''
+  }
+}
+
+export const timestampOutput = (input: string): string => {
+  try {
+    return parse(input, 'UTC').unix().toString()
   } catch (err) {
     return ''
   }
