@@ -17,6 +17,7 @@ import { CopyButton, Form, Label } from '@components/forms'
 import {
   defaultOptions,
   relativeOutput,
+  timestampOutput,
   utcOutput,
 } from '@lib/outputs/DatetimeOutput'
 import { OutputProps } from '@lib/types'
@@ -33,6 +34,10 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const relativeValue = useMemo(() => {
       return relativeOutput(input, options)
     }, [input, options])
+
+    const timestampValue = useMemo(() => {
+      return timestampOutput(input)
+    }, [input])
 
     const utcValue = useMemo(() => {
       return utcOutput(input, options)
@@ -103,6 +108,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Textarea
             {...props}
             disabled={disabled}
+            flex="none"
             height={majorScale(4)}
             id="localTimeInput"
             maxWidth={majorScale(25)}
@@ -112,13 +118,11 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             resize="none"
             value={output}
           />
-          {!disabled && (
-            <CopyButton
-              disabled={disabled}
-              marginLeft={majorScale(1)}
-              value={output}
-            />
-          )}
+          <CopyButton
+            disabled={disabled}
+            marginLeft={majorScale(1)}
+            value={output}
+          />
         </Label>
 
         <Label
@@ -132,13 +136,11 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             readOnly={true}
             value={utcValue}
           />
-          {!disabled && (
-            <CopyButton
-              disabled={disabled}
-              marginLeft={majorScale(1)}
-              value={utcValue}
-            />
-          )}
+          <CopyButton
+            disabled={disabled}
+            marginLeft={majorScale(1)}
+            value={utcValue}
+          />
         </Label>
 
         <Label
@@ -153,13 +155,30 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             readOnly={true}
             value={relativeValue}
           />
-          {!disabled && (
-            <CopyButton
-              disabled={disabled}
-              marginLeft={majorScale(1)}
-              value={relativeValue}
-            />
-          )}
+          <CopyButton
+            disabled={disabled}
+            marginLeft={majorScale(1)}
+            value={relativeValue}
+          />
+        </Label>
+
+        <Label
+          disabled={disabled}
+          htmlFor="timestampInput"
+          label={t('label_timestamp')}
+        >
+          <TextInput
+            disabled={disabled}
+            id="timestampInput"
+            maxWidth={majorScale(25)}
+            readOnly={true}
+            value={timestampValue}
+          />
+          <CopyButton
+            disabled={disabled}
+            marginLeft={majorScale(1)}
+            value={timestampValue}
+          />
         </Label>
       </Form>
     )
