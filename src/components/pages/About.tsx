@@ -53,6 +53,8 @@ export const About = () => {
             />
           </ListItem>
 
+          <ListItem>{t('li_goal_dependencies')}</ListItem>
+
           <ListItem>{t('li_goal_intelligent')}</ListItem>
         </OrderedList>
 
@@ -122,8 +124,20 @@ export const About = () => {
 
         <UnorderedList>
           <ListItem>
+            <Link href="https://github.com/wanasit/chrono" target="_blank">
+              chrono-node
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Link href="https://github.com/brix/crypto-js" target="_blank">
               crypto-js
+            </Link>
+          </ListItem>
+
+          <ListItem>
+            <Link href="https://github.com/iamkun/dayjs" target="_blank">
+              dayjs
             </Link>
           </ListItem>
 
@@ -161,8 +175,23 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link href="https://github.com/lodash/lodash" target="_blank">
+              lodash
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Link href="https://nextjs.org/" target="_blank">
               next
+            </Link>
+          </ListItem>
+
+          <ListItem>
+            <Link
+              href="https://github.com/vinissimus/next-translate"
+              target="_blank"
+            >
+              next-translate
             </Link>
           </ListItem>
 
