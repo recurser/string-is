@@ -1,4 +1,5 @@
 import { isEmpty } from 'lodash'
+import { parseDate } from 'chrono-node'
 
 // A regex to strip line breaks.
 const regex = /\r?\n|\r/gm
@@ -22,6 +23,11 @@ export const input = (data: string): string | undefined => {
     /^1(\d{9}|\d{12})$/.test(trimmed)
   ) {
     return trimmed
+  } else {
+    const parsed = parseDate(trimmed)
+    if (parsed) {
+      return `${parsed.getTime()}`
+    }
   }
 
   return undefined

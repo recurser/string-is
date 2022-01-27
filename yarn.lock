@@ -2448,6 +2448,13 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz#15bfbe53d2eab4cf70f18a8cd68ebe5b3cb1dece"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
+chrono-node@^2.3.5:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/chrono-node/-/chrono-node-2.3.5.tgz#3f4a5813c9653b321d4d8c56a0b989b9100fb091"
+  integrity sha512-QIWEgXYVn55/Nsgdqbe6inqW+GoK3B6Qtga8AWdpq+nd+mOZVMxa+SGwPq/XjY+nKN+toQGu8KifCPwUkmz2sg==
+  dependencies:
+    dayjs "^1.10.0"
+
 ci-info@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.3.0.tgz#b4ed1fb6818dea4803a55c623041f9165d2066b2"
@@ -2831,7 +2838,7 @@ dateformat@^3.0.0:
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
 
-dayjs@^1.10.7:
+dayjs@^1.10.0, dayjs@^1.10.7:
   version "1.10.7"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
   integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
