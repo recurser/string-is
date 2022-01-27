@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/recurser/string-is/compare/v1.10.0...v1.11.0) (2022-01-27)
+
+
+### Features
+
+* parse natural language dates ([07218c7](https://github.com/recurser/string-is/commit/07218c7cdd5f2aece163ed5a81fba2677e3239bb))
+
 # [1.10.0](https://github.com/recurser/string-is/compare/v1.9.0...v1.10.0) (2022-01-27)
 
 
