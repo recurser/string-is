@@ -1,4 +1,5 @@
 import dayjs, { Dayjs, extend } from 'dayjs'
+import { isEmpty } from 'lodash'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
@@ -29,6 +30,10 @@ const parse = (input: string, timezone: string): Dayjs => {
 }
 
 export const output = (input: string, options: ConverterOptions): string => {
+  if (isEmpty(input)) {
+    return ''
+  }
+
   return parse(input, options.timezone as string).format(
     options.format as string,
   )
@@ -42,6 +47,14 @@ export const relativeOutput = (
     const date = parse(input, options.timezone as string)
 
     return dayjs().to(date)
+  } catch (err) {
+    return ''
+  }
+}
+
+export const timestampOutput = (input: string): string => {
+  try {
+    return parse(input, 'UTC').unix().toString()
   } catch (err) {
     return ''
   }

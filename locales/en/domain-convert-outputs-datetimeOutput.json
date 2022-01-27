@@ -3,6 +3,7 @@
   "label_format": "Format",
   "label_local_time": "Local time",
   "label_relative_time": "Relative time",
+  "label_timestamp": "Unix Timestamp",
   "label_timezone": "Time zone",
   "label_utc_time": "UTC"
 }
