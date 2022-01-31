@@ -35,10 +35,11 @@ export const Convert = () => {
           <InputForm />
 
           <Pane
+            alignItems="center"
             display="flex"
             flexDirection="column"
             flexGrow={1}
-            maxWidth={majorScale(20)}
+            maxWidth={isMobile ? undefined : majorScale(20)}
             minWidth={0}
           >
             <LayoutColumn>
