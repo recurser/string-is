@@ -1,12 +1,15 @@
 import {
   Button,
+  ChevronDownIcon,
   ChevronRightIcon,
   Pane,
   SelectMenu,
   SelectMenuItem,
+  majorScale,
 } from 'evergreen-ui'
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
 import { isEmpty, minBy } from 'lodash'
+import { useBreakpoints } from '@services/Responsive'
 import useTranslation from 'next-translate/useTranslation'
 
 import * as converterModule from '@lib/converters'
@@ -25,6 +28,7 @@ const converters = Object.values(converterModule)
 
 export const ConverterSelector = ({ setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
+  const { isMobile } = useBreakpoints()
   const {
     clearConverter,
     converter,
@@ -93,6 +97,15 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
     setSelected(value as string)
   }
 
+  const icon = useMemo(() => {
+    if (selected && isMobile) {
+      return ChevronDownIcon
+    } else if (selected) {
+      return ChevronRightIcon
+    }
+    return undefined
+  }, [isMobile, selected])
+
   return (
     <SelectMenu
       closeOnSelect={true}
@@ -105,7 +118,8 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
       <Pane display="flex">
         <Button
           flex={1}
-          iconAfter={selected ? ChevronRightIcon : undefined}
+          iconAfter={icon}
+          maxWidth={majorScale(20)}
           tabIndex={2}
         >
           {selected
