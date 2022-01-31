@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/recurser/string-is/compare/v1.11.0...v1.12.0) (2022-01-31)
+
+
+### Features
+
+* make the chevron icons consistent with layout on mobile ([0b336b6](https://github.com/recurser/string-is/commit/0b336b61697b7738c1bba6eb4f9f427f3c4b83b4))
+
 # [1.11.0](https://github.com/recurser/string-is/compare/v1.10.0...v1.11.0) (2022-01-27)
 
 
