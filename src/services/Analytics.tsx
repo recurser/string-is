@@ -1,6 +1,7 @@
-import PlausibleProvider, { usePlausible } from 'next-plausible'
 import { PropsWithChildren, ReactElement } from 'react'
 import { isEmpty } from 'lodash'
+
+import { PlausibleProvider, usePlausible } from '@contexts/PlausibleProvider'
 
 export const useAnalytics = usePlausible
 
@@ -25,6 +26,7 @@ export const AnalyticsProvider = ({
     <PlausibleProvider
       domain={process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN as string}
       enabled={enabled}
+      trackLocalhost={true}
       trackOutboundLinks={true}
     >
       {children}
