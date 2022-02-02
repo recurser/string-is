@@ -4,13 +4,17 @@ import { Obj } from '@lib/types'
 
 export const sortByKeys = (object: Obj): Obj => {
   if (isArray(object)) {
-    return object.map((entry) => {
-      if (isObject(entry)) {
-        return sortByKeys(entry as Obj)
-      }
+    return object
+      .map((entry) => {
+        if (isObject(entry)) {
+          return sortByKeys(entry as Obj)
+        }
 
-      return entry
-    })
+        return entry
+      })
+      .sort((a: unknown, b: unknown) =>
+        JSON.stringify(a).localeCompare(JSON.stringify(b)),
+      )
   }
 
   const sortedKeys = Object.keys(object).sort() as string[]

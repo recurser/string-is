@@ -34,9 +34,8 @@ export const output = (input: string, options: ConverterOptions): string => {
     return ''
   }
 
-  return parse(input, options.timezone as string).format(
-    options.format as string,
-  )
+  const { format, timezone } = { ...defaultOptions, ...options }
+  return parse(input, timezone as string).format(format as string)
 }
 
 export const relativeOutput = (
@@ -44,7 +43,8 @@ export const relativeOutput = (
   options: ConverterOptions,
 ): string => {
   try {
-    const date = parse(input, options.timezone as string)
+    const { timezone } = { ...defaultOptions, ...options }
+    const date = parse(input, timezone as string)
 
     return dayjs().to(date)
   } catch (err) {
@@ -62,7 +62,8 @@ export const timestampOutput = (input: string): string => {
 
 export const utcOutput = (input: string, options: ConverterOptions): string => {
   try {
-    return parse(input, 'UTC').format(options.format as string)
+    const { format } = { ...defaultOptions, ...options }
+    return parse(input, 'UTC').format(format as string)
   } catch (err) {
     return ''
   }
