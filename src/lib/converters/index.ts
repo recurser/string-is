@@ -35,7 +35,20 @@ export * as YamlFormatter from '@lib/converters/YamlFormatter'
 export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
 
 export interface Converter {
+  /**
+   * A string which uniquely identifies this converter.
+   */
   id: string
+
+  /**
+   * An operation on the input string, with the given
+   * options, that returns a converted output.
+   */
   operation: (input: string, options?: ConverterOptions) => string
+
+  /**
+   * A string which uniquely identifies the output component used by
+   * this converter.
+   */
   outputId: string
 }

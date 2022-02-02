@@ -1,8 +1,14 @@
-// Based on the excellent next-plausible by @4lejandrito
-//
-// Extracted to keep 3rd-party dependencies to a minimum, since it's fairly simple.
-//
-// @see https://github.com/4lejandrito/next-plausible/blob/83ca6ae0c13dc2f5e1f438ffbc744993437432bd/index.tsx
+/**
+ * A provider that abstracts away integration with Plausible
+ * Analytics (https://plausible.io/).
+ *
+ * Based on the excellent next-plausible by 4lejandrito
+ *
+ * Extracted from next-plausible to keep 3rd-party dependencies
+ * to a minimum, since it's fairly simple.
+ *
+ * @see https://github.com/4lejandrito/next-plausible/blob/83ca6ae0c13dc2f5e1f438ffbc744993437432bd/index.tsx
+ */
 
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
@@ -24,6 +30,10 @@ const getScriptPath = (...modifiers: (ScriptModifier | null)[]) => {
 
 const plausibleDomain = 'https://plausible.io'
 
+/**
+ * Returns a provider that sets up the Plausible Analytics script
+ * and data attributes.
+ */
 export const PlausibleProvider = (props: {
   children: ReactNode | ReactNode[]
   domain: string
@@ -75,6 +85,10 @@ type EventOptionsTuple<P extends Props> = P extends never
   : [EventOptions<P>]
 type Events = { [K: string]: Props }
 
+/**
+ * Returns a hook that allows us to reference provider context
+ * from within components.
+ */
 export function usePlausible<E extends Events>() {
   return function <N extends keyof E>(
     eventName: N,

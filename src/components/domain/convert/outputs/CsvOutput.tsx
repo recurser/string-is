@@ -6,17 +6,36 @@ import { CodeTextarea, Form, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for formatting CSV output.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-csvOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
 
+    /**
+     * Updates the output options state when the show-header checkbox is changed.
+     *
+     * @param event - the HTML input change event.
+     */
     const onChangeHeader = (event: ChangeEvent<HTMLInputElement>) => {
       setOptions({ ...options, header: event.target.checked })
     }
 
+    /**
+     * Updates the output options state when the use-quotes checkbox is changed.
+     *
+     * @param event - the HTML input change event.
+     */
     const onChangeQuotes = (event: ChangeEvent<HTMLInputElement>) => {
       setOptions({ ...options, quotes: event.target.checked })
     }

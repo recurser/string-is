@@ -5,6 +5,10 @@ import useTranslation from 'next-translate/useTranslation'
 import { Heading, Paragraph, UnorderedList } from '@components/typography'
 import { Card } from '@components/layout/Card'
 
+/**
+ * Renders the 'terms' page, describing the terms of use of
+ * the application.
+ */
 export const Terms = () => {
   const { t } = useTranslation('pages-terms')
 

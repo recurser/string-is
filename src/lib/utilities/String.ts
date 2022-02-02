@@ -2,6 +2,13 @@ import { fromPairs, isArray, isObject, map } from 'lodash'
 
 import { Obj } from '@lib/types'
 
+/**
+ * Sorts the given object by it's keys, recursively.
+ *
+ * @param object - The object whose keys we will sort.
+ *
+ * @returns the object with sorted keys.
+ */
 export const sortByKeys = (object: Obj): Obj => {
   if (isArray(object)) {
     return object

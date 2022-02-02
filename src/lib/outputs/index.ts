@@ -11,7 +11,6 @@ export * as LowerCaseOutput from '@lib/outputs/LowerCaseOutput'
 export * as MarkdownOutput from '@lib/outputs/MarkdownOutput'
 export * as Md5Output from '@lib/outputs/Md5Output'
 export * as NumberBaseOutput from '@lib/outputs/NumberBaseOutput'
-export * as RegexOutput from '@lib/outputs/RegexOutput'
 export * as RipemdOutput from '@lib/outputs/RipemdOutput'
 export * as ShaOutput from '@lib/outputs/ShaOutput'
 export * as UpperCaseOutput from '@lib/outputs/UpperCaseOutput'
@@ -19,8 +18,20 @@ export * as UuidOutput from '@lib/outputs/UuidOutput'
 export * as YamlOutput from '@lib/outputs/YamlOutput'
 
 export interface Output {
+  /**
+   * The default options used to format the input string,
+   * if no user-defined options were provided.
+   */
   defaultOptions?: ConverterOptions
-  error?: (input: Obj) => string
+
+  /**
+   * A string which uniquely identifies the output function.
+   */
   id: string
+
+  /**
+   * Converts the given input object to a string, using the
+   * given converter options.
+   */
   output: (input: Obj, options: ConverterOptions) => string
 }

@@ -10,13 +10,30 @@ import { isEmpty } from 'lodash'
 
 import { ConverterOptions } from '@lib/types'
 
+/**
+ * A string which uniquely identifies this output function.
+ */
 export const id = 'uuid'
 
+/**
+ * The default options used to generate UUIDs,
+ * if no user-defined options were provided.
+ */
 export const defaultOptions = {
   namespace: v4(),
   version: 'v4',
 }
 
+/**
+ * Generates a UUID based on the given input string.
+ *
+ * @param input   - If the input is already a valid UUID, we return
+ *                  it back. This avoids having the output constantly
+ *                  change every time an option are changed.
+ * @param options - Includes the algorithm version used to generate the UUID.
+ *
+ * @returns the generated UUID.
+ */
 export const output = (
   input: string,
   options: ConverterOptions = {},

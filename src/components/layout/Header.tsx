@@ -7,6 +7,9 @@ import { ROUTE_ABOUT, ROUTE_CONVERT } from '@services/Routes'
 import { Link } from '@components/navigation'
 import Logo from '@images/logo.svg'
 
+/**
+ * Renders the standard page header with the logo and main menu.
+ */
 export const Header = (): ReactElement => {
   const { t } = useTranslation('layout-header')
   const { pathname } = useRouter()

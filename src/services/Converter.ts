@@ -6,12 +6,34 @@ import { Converter } from '@lib/converters'
 import { Identity } from '@lib/identities'
 
 interface Candidate {
+  /**
+   * A number betwen 0 and 100 indicating the confidence
+   * that the associated converter can handle the given
+   * input.
+   */
   confidence: number
+
+  /**
+   * The converter whose confidence we are describing.
+   */
   converter: Converter
 }
 
+/**
+ * Collect all of the identity modules exported from lib/identities.
+ */
 const identities = Object.values(untypedIdentities as unknown as Identity[])
 
+/**
+ * Returns a list of converters that are most likely to
+ * handle the given input string, based on the identity
+ * confidence.
+ *
+ * @param inputString - the string which we are want to find
+ *                      a suitable converter for.
+ *
+ * @returns the converter(s) with the highest confidence.
+ */
 export const converterCandidates = async (
   inputString: string,
 ): Promise<Converter[]> => {

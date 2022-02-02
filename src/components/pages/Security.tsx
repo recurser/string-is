@@ -8,6 +8,10 @@ import { Heading, Paragraph } from '@components/typography'
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 
+/**
+ * Renders the 'security' page, which describes some of the measures
+ * taken to ensure the security and privacy of user data.
+ */
 export const Security = () => {
   const { t } = useTranslation('pages-security')
 

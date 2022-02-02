@@ -5,6 +5,15 @@ const defaults = {
   header: true,
 }
 
+/**
+ * Parses the given CSV input string into an object.
+ *
+ * @param data - the CSV string to parse.
+ *
+ * @returns the parsed object.
+ *
+ * @throws an exception if the string cannot be parsed.
+ */
 export const input = (data: string): unknown[] | undefined => {
   if (isEmpty(data)) {
     return undefined

@@ -5,10 +5,23 @@ import { Heading } from '@components/typography'
 import { useBreakpoints } from '@services/Responsive'
 
 interface Props extends CardProps {
+  /**
+   * The child components that will be wrapped inside the card.
+   */
   children: ReactElement | ReactElement[]
+
+  /**
+   * An optional title for the card.
+   */
   title?: string
 }
 
+/**
+ * Wraps the Evergreen UI 'Card' component with standard shadow,
+ * title, padding etc.
+ *
+ * @param props - the component props.
+ */
 export const Card = ({
   children: childOrChildren,
   elevation,

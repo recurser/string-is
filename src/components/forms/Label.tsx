@@ -5,10 +5,31 @@ import styledComponents from 'styled-components'
 import { theme } from '@services/Theme'
 
 interface Props extends PaneProps {
+  /**
+   * True if this label should be displayed as disabled, false or undefined otherwise.
+   */
   disabled?: boolean
+
+  /**
+   * Contains the ID of the input element that this label is related to.
+   */
   htmlFor: string
+
+  /**
+   * An optional label string. If this is not provided we will still output
+   * an empty label for layout purposes.
+   */
   label?: string
+
+  /**
+   * A suffix string to display after any input elements.
+   */
   suffix?: string
+
+  /**
+   * An optional width (in pixels) for the label, if the standard width
+   * is not appropriate.
+   */
   width?: string | number
 }
 
@@ -19,6 +40,12 @@ const Wrapper = styledComponents(Pane)`
   }
 `
 
+/**
+ * Renders a label with standard layout and styling, whichcan have input
+ * elements embedded inside as child components.
+ *
+ * @param props - the component props.
+ */
 export const Label = ({
   children,
   disabled,
