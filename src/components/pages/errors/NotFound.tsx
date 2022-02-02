@@ -11,6 +11,9 @@ import { Link } from '@components/navigation'
 import { ROUTE_CONVERT } from '@services/Routes'
 import { useAnalytics } from '@services/Analytics'
 
+/**
+ * Renders the standard 404 Not Found page.
+ */
 export const NotFound = () => {
   const { t } = useTranslation('pages-errors-notFound')
   const analytics = useAnalytics()

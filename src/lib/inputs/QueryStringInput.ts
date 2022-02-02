@@ -2,6 +2,13 @@ import { isEmpty } from 'lodash'
 
 import { Obj } from '@lib/types'
 
+/**
+ * Parses the given query string into an object.
+ *
+ * @param data - the query string to parse.
+ *
+ * @returns the parsed object.
+ */
 export const input = (data: string): Obj | undefined => {
   if (isEmpty(data)) {
     return undefined

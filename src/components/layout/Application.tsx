@@ -8,9 +8,20 @@ import { Footer } from '@components/layout/Footer'
 import { Header } from '@components/layout/Header'
 
 interface Props {
+  /**
+   * The maximum width of the layout. This allows us to have
+   * pages wider than the default where necessary.
+   */
   maxWidth: number
 }
 
+/**
+ * Renders the standard application layout, used by almost all
+ * pages. This includes various contexts for analytics, conversion
+ * options etc.
+ *
+ * @param props - the component props.
+ */
 export const Application = ({
   children,
   maxWidth,

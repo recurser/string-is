@@ -6,13 +6,27 @@ import { CodeTextarea, Form, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for generating SHA hashes.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   ({ converter, disabled, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-shaOutput')
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
 
+    /**
+     * Updates the output options state when the algorithm dropdown is changed.
+     *
+     * @param event - the HTML select change event.
+     */
     const onChangeAlgorithm = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, algorithm: event.target.value })
     }

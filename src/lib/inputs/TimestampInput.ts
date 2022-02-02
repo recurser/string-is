@@ -1,12 +1,25 @@
 import { isEmpty } from 'lodash'
 import { parseDate } from 'chrono-node'
 
-// A regex to strip line breaks.
+/**
+ * A regex to strip line breaks.
+ */
 const regex = /\r?\n|\r/gm
 
-// Keywords that can trigger timestamp generation.
+/**
+ * Keywords that can trigger timestamp generation.
+ */
 const keywords = ['now', 'time', 'timestamp']
 
+/**
+ * Parses the given timestamp string into an object. The string
+ * may contain a numeric timestamp, a keyword such as 'now', or
+ * a human-readable date string such as 'last Tuesday'.
+ *
+ * @param data - the timestamp string to parse.
+ *
+ * @returns the parsed date object.
+ */
 export const input = (data: string): string | undefined => {
   if (isEmpty(data)) {
     return undefined

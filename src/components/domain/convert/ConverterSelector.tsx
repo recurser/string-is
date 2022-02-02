@@ -21,11 +21,20 @@ import { NullConverter } from '@lib/converters'
 import { converterCandidates } from '@services/Converter'
 
 interface Props {
+  /**
+   * A state-setter that will trigger focus on the output Textarea.
+   */
   setFocusOutput: Dispatch<SetStateAction<boolean>>
 }
 
 const converters = Object.values(converterModule)
 
+/**
+ * Renders a SelectMenu that allows the user to choose which converter
+ * to use.
+ *
+ * @param props - The component props.
+ */
 export const ConverterSelector = ({ setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
   const { isMobile } = useBreakpoints()
@@ -93,10 +102,6 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
     }
   }, [clearConverter, setClearConverter, setSelected])
 
-  const onSelect = ({ value }: SelectMenuItem) => {
-    setSelected(value as string)
-  }
-
   const icon = useMemo(() => {
     if (selected && isMobile) {
       return ChevronDownIcon
@@ -105,6 +110,15 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
     }
     return undefined
   }, [isMobile, selected])
+
+  /**
+   * Updates the state with the selected converter, when the SelectMenu changes.
+   *
+   * @param item - the chosen SelectMenuItem.
+   */
+  const onSelect = ({ value }: SelectMenuItem) => {
+    setSelected(value as string)
+  }
 
   return (
     <SelectMenu

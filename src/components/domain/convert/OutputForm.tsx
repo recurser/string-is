@@ -18,9 +18,25 @@ import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 interface Props {
+  /**
+   * A state property that indicates focus on the output Textarea.
+   */
   focusOutput: boolean
+
+  /**
+   * A state-setter that will trigger focus on the output Textarea.
+   */
   setFocusOutput: Dispatch<SetStateAction<boolean>>
 }
+
+/**
+ * Renders the output textarea and related options for the selected
+ * converter. It performs the conversion operation, displays any errors
+ * that occur, and selects the converter-specific output component to
+ * display, which will render specific options and settings.
+ *
+ * @param props - The component props.
+ */
 export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-outputForm')
   const { converter, inputString, outputString, setOutputString } =

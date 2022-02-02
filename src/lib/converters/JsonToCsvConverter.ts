@@ -4,8 +4,15 @@ import { ConverterOptions } from '@lib/types'
 import { output as csvOutput } from '@lib/outputs/CsvOutput'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 
+/**
+ * A string which uniquely identifies this operation.
+ */
 export const id = 'jsonToCsv'
 
+/**
+ * A string which uniquely identifies the output component used by
+ * this converter.
+ */
 export const outputId = 'csv'
 
 export const operation = (
