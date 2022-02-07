@@ -12,6 +12,14 @@ export const id = 'lowerCase'
  */
 export const outputId = 'plain'
 
+/**
+ * An operation that converts the given input string to lower case.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
   input: string,
   options: ConverterOptions = {},

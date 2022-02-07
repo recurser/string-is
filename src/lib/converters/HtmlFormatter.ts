@@ -12,6 +12,14 @@ export const id = 'html'
  */
 export const outputId = 'html'
 
+/**
+ * An operation that formats the given HTML input string.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
   input: string,
   options: ConverterOptions = {},

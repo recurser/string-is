@@ -13,11 +13,19 @@ export const id = 'yamlToJson'
  */
 export const outputId = 'json'
 
+/**
+ * An operation that formats the given YAML input string as JSON.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   options: ConverterOptions = {},
 ): string => {
-  const obj = yamlInput(data)
+  const obj = yamlInput(input)
   if (!obj) {
     return ''
   }

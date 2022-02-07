@@ -13,11 +13,19 @@ export const id = 'csvToJson'
  */
 export const outputId = 'json'
 
+/**
+ * An operation that formats the given CSV input string as JSON.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   options: ConverterOptions = {},
 ): string => {
-  const obj = csvInput(data)
+  const obj = csvInput(input)
   if (!obj) {
     return ''
   }
