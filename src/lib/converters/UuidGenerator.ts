@@ -12,9 +12,17 @@ export const id = 'uuid'
  */
 export const outputId = 'uuid'
 
+/**
+ * An operation that generates a UUID.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   options: ConverterOptions = {},
 ): string => {
-  return uuidOutput(data, options)
+  return uuidOutput(input, options)
 }

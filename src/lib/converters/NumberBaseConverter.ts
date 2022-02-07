@@ -13,11 +13,19 @@ export const id = 'numberBase'
  */
 export const outputId = 'numberBase'
 
+/**
+ * An operation that converts the given numeric input string to different bases.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   options: ConverterOptions = {},
 ): string => {
-  const numberStr = numberInput(data)
+  const numberStr = numberInput(input)
 
   if (numberStr === undefined) {
     return ''

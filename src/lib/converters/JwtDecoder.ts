@@ -13,11 +13,19 @@ export const id = 'jwt'
  */
 export const outputId = 'jwt'
 
+/**
+ * An operation that decodes the given JWT input string.
+ *
+ * @param input    - the string to convert.
+ * @param _options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   _options: ConverterOptions = {},
 ): string => {
-  const jwt = jwtInput(data)
+  const jwt = jwtInput(input)
   if (!jwt) {
     return ''
   }

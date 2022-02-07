@@ -13,11 +13,19 @@ export const id = 'queryStringToJson'
  */
 export const outputId = 'json'
 
+/**
+ * An operation that converts the given browser query string to JSON.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   options: ConverterOptions = {},
 ): string => {
-  const obj = queryStringInput(data)
+  const obj = queryStringInput(input)
   if (!obj) {
     return ''
   }

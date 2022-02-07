@@ -28,7 +28,19 @@ export * as XmlIdentity from '@lib/identities/XmlIdentity'
 export * as YamlIdentity from '@lib/identities/YamlIdentity'
 
 export interface Identity {
+  /**
+   * A number betwen 0 and 100 indicating the confidence
+   * that the given input string is of a particular format.
+   */
   confidence: (input: string) => number
+
+  /**
+   * A string which uniquely identifies this identity function.
+   */
   id: string
+
+  /**
+   * Returns an array of converters supported by this identity.
+   */
   converters: Converter[]
 }

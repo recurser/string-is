@@ -12,6 +12,14 @@ export const id = 'sha'
  */
 export const outputId = 'sha'
 
+/**
+ * An operation that generates an SHA hash for the given input string.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
   input: string,
   options: ConverterOptions = {},

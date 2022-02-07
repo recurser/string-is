@@ -13,11 +13,19 @@ export const id = 'json'
  */
 export const outputId = 'json'
 
+/**
+ * An operation that formats the given JSON input string.
+ *
+ * @param input   - the string to convert.
+ * @param options - options that control the conversion process.
+ *
+ * @returns the converted string.
+ */
 export const operation = (
-  data: string,
+  input: string,
   options: ConverterOptions = {},
 ): string => {
-  const obj = jsonInput(data)
+  const obj = jsonInput(input)
   if (!obj) {
     return ''
   }
