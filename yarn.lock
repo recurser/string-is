@@ -3412,10 +3412,10 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-evergreen-ui@^6.7.3:
-  version "6.7.3"
-  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-6.7.3.tgz#280c4a7db08dc1a24029bfa09ef4a3e063241dd9"
-  integrity sha512-U923Se+vnnggy7yAw7iodSrxB+ZKS5lQleOCQYcW+8oiD/WFRRgTBoMDxDSoW62mVGEjp24drOGsEAj/bSzBgg==
+evergreen-ui@^6.8.0:
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-6.8.0.tgz#6ae332509570930ffb1b10ac3ac477b259dd27d7"
+  integrity sha512-RKHGiK7f/Slc7/PY5Gh7sWKPIXHf5oY2QLzoDD09mZh0/KyQhU5vH1O923kvhs8BG1hq45alpyeMIwqaGPWBqw==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@segment/react-tiny-virtual-list" "^2.2.1"
