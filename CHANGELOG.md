@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/recurser/string-is/compare/v1.12.0...v1.13.0) (2022-02-08)
+
+
+### Features
+
+* expand the right textarea if it's longer than the left ([14e87d2](https://github.com/recurser/string-is/commit/14e87d2c0ab1721dee21239e798863b5fcb8f0df))
+
 # [1.12.0](https://github.com/recurser/string-is/compare/v1.11.0...v1.12.0) (2022-01-31)
 
 
