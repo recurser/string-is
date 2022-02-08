@@ -45,7 +45,11 @@ export const InputForm = () => {
     setInput(event.target.value)
 
   return (
-    <LayoutColumn inputString={inputString} label={t('label')}>
+    <LayoutColumn
+      inputString={inputString}
+      label={t('label')}
+      outputString={outputString}
+    >
       <CodeTextarea
         autoFocus={
           true

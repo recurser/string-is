@@ -11,19 +11,28 @@ interface Props {
   disabled?: boolean
   inputString?: string
   label?: string
+  outputString?: string
 }
 export const LayoutColumn = ({
   children,
   disabled,
   inputString,
   label,
+  outputString,
 }: PropsWithChildren<Props>) => {
   const { isMobile } = useBreakpoints()
   const labelColor = disabled ? theme.colors.gray500 : undefined
   const style = disabled ? { filter: 'grayscale(100%)' } : undefined
-  const height = inputString
+  const inputHeight = inputString
     ? inputString.split('\n').length * TextAreaLineHeight
     : undefined
+  const outputHeight = outputString
+    ? outputString.split('\n').length * TextAreaLineHeight
+    : undefined
+  const height =
+    inputHeight || outputHeight
+      ? Math.max(inputHeight || 0, outputHeight || 0)
+      : undefined
 
   return (
     <Pane
