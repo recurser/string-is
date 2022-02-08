@@ -15,3 +15,4 @@ updates:
       prefix:             'build'
       prefix-development: 'build'
       include:            'scope'
+    open-pull-requests-limit: 20

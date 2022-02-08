@@ -80,6 +80,7 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
           ? `3. ${t(`lib-converters-results:${converter.id}`)} 👇`
           : t('default_label')
       }
+      outputString={outputString}
     >
       <OutputError message={errorMessage} />
 
