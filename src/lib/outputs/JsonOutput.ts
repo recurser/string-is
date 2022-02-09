@@ -23,19 +23,13 @@ export const id = 'json'
  *
  * @returns the formatted JSON string.
  */
-export const output = (
-  input: Obj,
-  { sortKeys, ...options }: ConverterOptions = {},
-): string => {
+export const output = (input: Obj, options: ConverterOptions = {}): string => {
+  const { sortKeys, space } = { ...defaultOptions, ...options }
   let processed = input
 
   if (sortKeys) {
     processed = sortByKeys(input)
   }
 
-  return JSON.stringify(
-    processed,
-    undefined,
-    (options.space || defaultOptions.space) as string,
-  )
+  return JSON.stringify(processed, undefined, space as string)
 }

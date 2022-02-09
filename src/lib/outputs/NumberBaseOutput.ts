@@ -39,7 +39,12 @@ export const output = (
   options: ConverterOptions = {},
 ): string => {
   const { fromRadix, toRadix } = { ...defaultOptions, ...options }
-  return parseInt(input, fromRadix).toString(toRadix).toUpperCase()
+  const result = parseInt(input, fromRadix).toString(toRadix).toUpperCase()
+  if (isNaN(Number(result))) {
+    return ''
+  }
+
+  return result
 }
 
 /**
