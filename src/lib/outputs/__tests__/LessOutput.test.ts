@@ -1,13 +1,16 @@
-import { output } from '@lib/outputs/CssOutput'
+import { output } from '@lib/outputs/LessOutput'
 
 describe('outputs', () => {
-  describe('CssOutput', () => {
+  describe('LessOutput', () => {
     describe('output', () => {
-      it('formats CSS', () => {
-        const input = `a { border : 1px solid red
+      it('formats LESS', () => {
+        const input = `a { border : 1px solid red; b { font-weight: bold; }
 }`
         const expected = `a {
   border: 1px solid red;
+  b {
+    font-weight: bold;
+  }
 }
 `
         expect(output(input)).toEqual(expected)

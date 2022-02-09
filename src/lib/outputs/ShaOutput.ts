@@ -24,7 +24,7 @@ export const id = 'sha'
  * @returns the generated SHA hash.
  */
 export const output = (input: string, options: ConverterOptions): string => {
-  const { algorithm } = options
+  const { algorithm } = { ...defaultOptions, ...options }
 
   switch (algorithm) {
     case 'sha1':
