@@ -13,7 +13,8 @@
         "@locales": "./locales",
         "@pages": "./src/components/pages",
         "@root": "./src",
-        "@services": "./src/services"
+        "@services": "./src/services",
+        "@test": "./src/test"
       }
     }],
     ["styled-components", { "ssr": true, "displayName": true }]

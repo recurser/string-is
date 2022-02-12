@@ -17,7 +17,7 @@ export const input = (data: string): Jwt | undefined => {
 
   const payload = decode(data, { complete: true })
   if (payload === null || isEmpty(payload)) {
-    throw new Error('The input could not be parsed as a valid JWT')
+    throw new Error('The input could not be parsed as a valid JWT token')
   }
 
   return payload
