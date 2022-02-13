@@ -26,7 +26,7 @@ export const confidence = (input: string) => {
   }
 
   // If the output is the same as the input, there is no
-  //  reason to decode it, even if it is encoded.
+  // reason to decode it, even if it is encoded.
   const output = Base64Decoder.operation(input)
   if (output === input) {
     return 0

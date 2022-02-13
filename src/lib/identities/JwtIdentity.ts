@@ -15,7 +15,11 @@ export const id = 'jwt'
  * @returns a numeric confidence between 0 and 100.
  */
 export const confidence = (input: string) => {
-  if (jwtInput(input) === undefined) {
+  try {
+    if (jwtInput(input) === undefined) {
+      return 0
+    }
+  } catch (_err) {
     return 0
   }
 
