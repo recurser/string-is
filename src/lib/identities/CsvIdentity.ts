@@ -31,10 +31,12 @@ export const confidence = (data: string) => {
 
   // Some JSON (such as "{ a: 2, b: 2 }" is also a valid CSV. If
   // a string can be parsed as JSON, it is unlikely to be a CSV.
-  const json = JsonInput(data)
-  if (json) {
-    return 0
-  }
+  try {
+    const json = JsonInput(data)
+    if (json) {
+      return 0
+    }
+  } catch (_err) {}
 
   const obj = input(data)
   if (!obj) {

@@ -22,8 +22,12 @@ export const confidence = (input: string) => {
     return 0
   }
 
-  // Prettier will throw an exception if this fails.
-  format(input, { parser: 'less', plugins: [parserPostcss] })
+  try {
+    // Prettier will throw an exception if this fails.
+    format(input, { parser: 'less', plugins: [parserPostcss] })
+  } catch (_err) {
+    return 0
+  }
 
   // Let the ScssFormatter take precedence, if it gets a match.
   return 90

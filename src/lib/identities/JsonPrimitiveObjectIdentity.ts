@@ -33,7 +33,10 @@ export const confidence = (input: string) => {
   // We need to figure out if the values are primitives.
   const obj = jsonInput(input)
   const hasPrimitives = uniq(
-    (Object.keys(obj || {}) as Array<unknown>).map((entry) => !isObject(entry)),
+    Object.keys(obj || {}).map((key) => {
+      const testObj = (obj || {}) as Record<string, unknown>
+      return !isObject(testObj[key])
+    }),
   )
 
   return isEqual(hasPrimitives, [true]) ? 100 : 0

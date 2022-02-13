@@ -34,7 +34,7 @@ export const confidence = (input: string) => {
     return 100
   } else if (
     // Strikethrough.
-    /^~~.+~~$/gm.test(input)
+    /~~.+~~/gm.test(input)
   ) {
     return 100
   }
