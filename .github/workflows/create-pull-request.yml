@@ -18,7 +18,11 @@ jobs:
 
       # We 'parameterize' the PR title by converting it to lowercase and replacing spaces with hyphens, and use it as the branch name.
       - name: Generate the branch name
-        run: echo "NEW_BRANCH_NAME=$(echo "${{ github.event.inputs.title }}" | tr -s ' ' | tr ' ' '-' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+        # tr -c 'a-zA-Z0-9' ' '      : Remove non-alphanumeric characters.
+        # awk '{$1=$1};1'            : Convert multiple spaces to a single space, and trim leading and trailing whitespace.
+        # tr ' ' '-'                 : Replace spaces with hyphens.
+        # tr '[:upper:]' '[:lower:]' : Convert to lowercase.
+        run: echo "NEW_BRANCH_NAME=$(echo "${{ github.event.inputs.title }}" | tr -c 'a-zA-Z0-9' ' ' | awk '{$1=$1};1' | tr ' ' '-' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       # We grab the most recent PR from the API, and increment the PR number to get the next one. We'll use this in the .meta file.
       - name: Calculate the next pull request number
