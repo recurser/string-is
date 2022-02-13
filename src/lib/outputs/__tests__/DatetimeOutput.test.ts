@@ -21,6 +21,8 @@ describe('outputs', () => {
           timezone: 'Atlantic/Bermuda',
         }
         const expected = '02/02/2022 09:00:00'
+        // Make sure we're running in UTC, or this test is going to break.
+        expect(new Date().getTimezoneOffset()).toBe(0)
         expect(output(input, options)).toEqual(expected)
       })
     })
@@ -44,7 +46,7 @@ describe('outputs', () => {
     describe('utcOutput', () => {
       it('formats the time string', () => {
         const input = '2022/02/02 PST'
-        const expected = '2022-02-02 03:00'
+        const expected = '2022-02-02 12:00'
         expect(utcOutput(input)).toEqual(expected)
       })
 
