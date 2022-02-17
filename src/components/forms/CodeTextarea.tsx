@@ -30,7 +30,7 @@ export const CodeTextarea = forwardRef<HTMLTextAreaElement, Props>(
   ({ copy, disabled, value, ...props }: Props, ref): ReactElement => {
     return (
       <Pane
-        alignItems="end"
+        alignItems="flex-end"
         display="flex"
         flex={1}
         flexDirection="column"
