@@ -2,11 +2,6 @@ import { isEmpty } from 'lodash'
 import { parseDate } from 'chrono-node'
 
 /**
- * A regex to strip line breaks.
- */
-const regex = /\r?\n|\r/gm
-
-/**
  * Keywords that can trigger timestamp generation.
  */
 const keywords = ['now', 'time', 'timestamp']
@@ -25,7 +20,10 @@ export const input = (data: string): string | undefined => {
     return undefined
   }
 
-  const trimmed = data.replace(regex, ' ').trim().toLocaleLowerCase()
+  // Limit input to the first line, otherwise we tend to pick up random
+  // timestamps from inside JSON etc.
+  const filtered = data.split('\n').filter((line) => !isEmpty(line.trim()))
+  const trimmed = (filtered[0] || '').trim().toLocaleLowerCase()
 
   // Allow the user to trigger this with a keyword, and we'll
   // generate the timestamp for them.
