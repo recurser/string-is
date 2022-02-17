@@ -1,4 +1,8 @@
-// Based on https://github.com/omsrivastava/timezones-list
+/**
+ * A list of available timezones.
+ *
+ * Based on https://github.com/omsrivastava/timezones-list
+ */
 export const timezones = [
   {
     label: 'Pacific/Midway (GMT-11:00)',

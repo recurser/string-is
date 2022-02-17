@@ -9,6 +9,9 @@ import { useConverterContext } from '@contexts/ConverterContext'
 // Timeout before deciding that the user has stopped typing.
 const DebounceTimeout = 500
 
+/**
+ * Renders an input textarea where the user pastes text for conversion.
+ */
 export const InputForm = () => {
   const { t } = useTranslation('domain-convert-inputForm')
   const {
@@ -41,6 +44,11 @@ export const InputForm = () => {
     }
   }, [outputString, setClearConverter, setInputString, setUseOutput, useOutput])
 
+  /**
+   * Updates the state with the user input, when the textarea content is changed.
+   *
+   * @param event - the HTML input change event.
+   */
   const onChange = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setInput(event.target.value)
 
@@ -55,6 +63,7 @@ export const InputForm = () => {
           true
         } /* This doesn't seem to do anything, but might help in some browsers? */
         copy={false}
+        data-testid="user-input"
         flex={1}
         height="100%"
         onChange={onChange}

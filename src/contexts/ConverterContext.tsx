@@ -11,24 +11,70 @@ import { Converter, NullConverter } from '@lib/converters'
 import { useAnalytics } from '@services/Analytics'
 
 interface Props {
+  /**
+   * A state flag that indicates that the currently selected
+   * converter should be unset.
+   */
   clearConverter: boolean
+
+  /**
+   * The currently selected converter.
+   */
   converter: Converter
+
+  /**
+   * The string inputted by the user for conversion.
+   */
   inputString: string
+
+  /**
+   * The output string after conversion.
+   */
   outputString: string
+
+  /**
+   * Sets the state flag to trigger clearing of the currently
+   * selected converter.
+   */
   setClearConverter: Dispatch<boolean>
+
+  /**
+   * Sets the current converter.
+   */
   setConverter: Dispatch<Converter>
+
+  /**
+   * Sets the input string that will be converted.
+   */
   setInputString: Dispatch<string>
+
+  /**
+   * Sets the output string after conversion.
+   */
   setOutputString: Dispatch<string>
+
+  /**
+   * Sets the state flag to shift the converted output string
+   * into the input box.
+   */
   setUseOutput: Dispatch<boolean>
+
+  /**
+   * A state flag that indicates that the converted output string
+   * should be shigted into the input box.
+   */
   useOutput: boolean
 }
 
 const localStorageKey = 'string.is:RecentConverters'
 
-// Returns an array of recently-used converter IDs.
+/**
+ * Returns an array of recently-used converter IDs.
+ */
 export const recentConverterIds = () =>
   JSON.parse(window.localStorage.getItem(localStorageKey) || '[]')
 
+// Create the context object.
 const Context = createContext<Props>({
   clearConverter: false,
   converter: NullConverter,
@@ -42,6 +88,10 @@ const Context = createContext<Props>({
   useOutput: false,
 })
 
+/**
+ * Returns a hook that allows us to reference context variables
+ * from within components.
+ */
 export const useConverterContext = (): Props => {
   const {
     clearConverter,
@@ -90,6 +140,10 @@ export const useConverterContext = (): Props => {
   }
 }
 
+/**
+ * Returns a context containing data about the current conversion input,
+ * output and operations to be performed.
+ */
 export const ConverterContext = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {

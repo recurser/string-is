@@ -8,6 +8,10 @@ import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 import { ROUTE_SECURITY } from '@services/Routes'
 
+/**
+ * Renders the 'privacy policy', which describes what we do and
+ * don't do with user data.
+ */
 export const Privacy = () => {
   const { t } = useTranslation('pages-privacy')
 

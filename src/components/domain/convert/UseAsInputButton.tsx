@@ -12,6 +12,11 @@ import useTranslation from 'next-translate/useTranslation'
 import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'
 
+/**
+ * Renders a button to move the content of the output textarea into
+ * the input textarea. This is convenient for chaining operations,
+ * and feeding the result of one operation into another.
+ */
 export const UseAsInputButton = () => {
   const { t } = useTranslation('domain-convert-useAsInputButton')
   const { isMobile } = useBreakpoints()

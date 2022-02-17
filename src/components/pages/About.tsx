@@ -12,6 +12,10 @@ import {
 import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 
+/**
+ * Renders the 'about' page, which describes the project goals,
+ * acknowledgements, and alternatives.
+ */
 export const About = () => {
   const { t } = useTranslation('pages-about')
 

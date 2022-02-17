@@ -19,7 +19,16 @@ import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 // These UUID versions require a namespace string.
 const NamespacedVersions = ['v3', 'v5']
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for generating UUIDs.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   ({ converter, disabled, input, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-uuidOutput')
     const { inputString, setInputString } = useConverterContext()
@@ -27,6 +36,9 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       converter.outputId,
     )
 
+    /**
+     * Updates the output options state when the rotate-namespace button is clicked.
+     */
     const onRotateNamespace = () => {
       if (inputString !== 'uuid') {
         // Make sure a new UUID will be generated, if an explicit one was input.
@@ -35,6 +47,11 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       setOptions({ ...options, namespace: v4() })
     }
 
+    /**
+     * Updates the output options state when the UUID version dropdown is changed.
+     *
+     * @param event - the HTML select change event.
+     */
     const onChangeVersion = (event: ChangeEvent<HTMLSelectElement>) => {
       if (inputString !== 'uuid') {
         // Make sure a new UUID will be generated, if an explicit one was input.
@@ -107,7 +124,13 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Select>
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
+        <CodeTextarea
+          {...props}
+          data-testid="uuid-output"
+          disabled={disabled}
+          ref={ref}
+          value={output}
+        />
       </Form>
     )
   },

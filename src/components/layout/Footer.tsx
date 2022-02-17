@@ -5,6 +5,10 @@ import useTranslation from 'next-translate/useTranslation'
 import { ROUTE_PRIVACY, ROUTE_SECURITY, ROUTE_TERMS } from '@services/Routes'
 import { Link } from '@components/navigation'
 
+/**
+ * Renders the standard page footer with links to informational
+ * pages (security, terms etc).
+ */
 export const Footer = (): ReactElement => {
   const { t } = useTranslation('layout-footer')
 

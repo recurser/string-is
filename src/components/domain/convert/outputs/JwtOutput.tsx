@@ -9,7 +9,16 @@ import { header } from '@lib/outputs/JwtOutput'
 // Used to calculate heights for the textareas to display all of the content.
 const TextAreaLineHeight = 20
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for formatting JWT output.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   ({ disabled, input, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-jwtOutput')
 
@@ -35,6 +44,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           label={t('label_header')}
         >
           <CodeTextarea
+            data-testid="jwt-header-output"
             disabled={disabled}
             id="headerInput"
             minHeight={headerStrHeight}
@@ -52,6 +62,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <CodeTextarea
             {...props}
+            data-testid="jwt-body-output"
             disabled={disabled}
             id="payloadInput"
             minHeight={payloadHeight}

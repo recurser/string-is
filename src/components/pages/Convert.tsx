@@ -4,6 +4,13 @@ import { useState } from 'react'
 import Head from 'next/head'
 import useTranslation from 'next-translate/useTranslation'
 
+/**
+ * Renders the 'convert' page, which is basically the heart of the
+ * application. It provides an input textarea, a conversion selector,
+ * and an output component which depends on the type of conversion.
+ *
+ * @param props - the component props.
+ */
 import {
   ConverterSelector,
   InputForm,

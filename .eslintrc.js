@@ -21,7 +21,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'import', 'react'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-tsdoc', 'import', 'react'],
   rules: {
     // Customize defaults.
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -58,6 +58,7 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
+    'tsdoc/syntax': 'error',
 
     // Dave: to fix later if necessary.
     '@typescript-eslint/explicit-module-boundary-types': 'off', // Introduced after typescript-eslint upgrade - Todo fix sometime.

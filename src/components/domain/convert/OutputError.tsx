@@ -3,9 +3,18 @@ import { Alert, Code, majorScale } from 'evergreen-ui'
 import { useConverterContext } from '@contexts/ConverterContext'
 
 interface Props {
+  /**
+   * The error message to display.
+   */
   message: string | undefined
 }
 
+/**
+ * Renders a standard error alert box used in output components
+ * when something goes wrong with the conversion process.
+ *
+ * @param props - The component props.
+ */
 export const OutputError = ({ message }: Props) => {
   const { clearConverter, useOutput } = useConverterContext()
 
@@ -25,6 +34,7 @@ export const OutputError = ({ message }: Props) => {
       <Code
         appearance="minimal"
         dangerouslySetInnerHTML={{ __html: message.replace('\n', '<br/>') }}
+        data-testid="output-error"
         size={300}
       />
     </Alert>

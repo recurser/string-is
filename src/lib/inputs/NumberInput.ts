@@ -2,13 +2,19 @@ import { isEmpty } from 'lodash'
 
 import { validRadices } from '@lib/outputs/NumberBaseOutput'
 
-// Removes commas from numbers and returns the resulting string.
-export const input = (input: string): string | undefined => {
-  if (isEmpty(input)) {
+/**
+ * Removes commas from numbers and returns the resulting string.
+ *
+ * @param data - the numeric string to parse.
+ *
+ * @returns the resulting number.
+ */
+export const input = (data: string): string | undefined => {
+  if (isEmpty(data)) {
     return undefined
   }
 
-  const converted = input.trim().replace(',', '')
+  const converted = data.trim().replace(',', '')
   if (validRadices(converted).length > 0) {
     return converted
   }

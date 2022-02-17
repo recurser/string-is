@@ -3,8 +3,19 @@ import { isEmpty } from 'lodash'
 import { Converter, UrlEncoder } from '@lib/converters'
 import { confidence as urlDecodeConfidence } from '@lib/identities/UrlDecodeIdentity'
 
+/**
+ * A string which uniquely identifies this identity function.
+ */
 export const id = 'urlEncode'
 
+/**
+ * Returns a numeric confidence between 0 and 100 indicating how
+ * likely it is that the given string is URL-encodable.
+ *
+ * @param input - the input string whose format we want to determine.
+ *
+ * @returns a numeric confidence between 0 and 100.
+ */
 export const confidence = (input: string) => {
   if (isEmpty(input)) {
     return 0
@@ -22,4 +33,7 @@ export const confidence = (input: string) => {
   return 0
 }
 
+/**
+ * Returns an array of converters supported by this identity.
+ */
 export const converters = [UrlEncoder] as Converter[]

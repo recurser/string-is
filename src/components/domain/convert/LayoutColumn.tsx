@@ -8,11 +8,30 @@ import { useBreakpoints } from '@services/Responsive'
 const TextAreaLineHeight = 17
 
 interface Props {
+  /**
+   * True if the form inputs in this column should be disabled, false or undefined otherwise.
+   */
   disabled?: boolean
+
+  /**
+   * The input string provided by the user, which is used to calculate
+   * an appropriate height for the column dynamically.
+   */
   inputString?: string
+
+  /**
+   * An optional label to display at the top of the column.
+   */
   label?: string
   outputString?: string
 }
+
+/**
+ * Renders a standard flexbox column which can grow and shrink to accomodate
+ * input and output text height.
+ *
+ * @param props - The component props.
+ */
 export const LayoutColumn = ({
   children,
   disabled,

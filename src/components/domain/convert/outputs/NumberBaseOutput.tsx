@@ -12,7 +12,16 @@ import {
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for formatting NumberBase output.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   (
     { converter, disabled: baseDisabled, input, output, ...props }: OutputProps,
     ref,
@@ -41,10 +50,20 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       [baseDisabled, fromRadices],
     )
 
+    /**
+     * Updates the output options state when the from-radix dropdown is changed.
+     *
+     * @param event - the HTML select change event.
+     */
     const onChangeFromRadix = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, fromRadix: parseInt(event.target.value, 10) })
     }
 
+    /**
+     * Updates the output options state when the to-radix dropdown is changed.
+     *
+     * @param event - the HTML select change event.
+     */
     const onChangeToRadix = (event: ChangeEvent<HTMLSelectElement>) => {
       setOptions({ ...options, toRadix: parseInt(event.target.value, 10) })
     }
@@ -105,6 +124,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <Textarea
             {...props}
+            data-testid="number-base-output"
             disabled={disabled}
             height={majorScale(4)}
             id="resultInput"

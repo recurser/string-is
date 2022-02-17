@@ -11,7 +11,16 @@ import { ServerStyleSheet } from 'styled-components'
 
 import { GlobalStyle } from '@components/utility/GlobalStyle'
 
-class TeamServerDocument extends Document {
+/**
+ * This is the standard Next JS global document page, altered
+ * to allow custom styles
+ */
+class StringIsDocument extends Document {
+  /**
+   * Merges the global styles into the page props.
+   *
+   * @param ctx - The Next JS document context.
+   */
   static async getInitialProps(
     ctx: DocumentContext,
   ): Promise<DocumentInitialProps> {
@@ -91,4 +100,4 @@ class TeamServerDocument extends Document {
 }
 
 // tslint:disable export-name
-export default TeamServerDocument // eslint-disable-line import/no-default-export
+export default StringIsDocument // eslint-disable-line import/no-default-export

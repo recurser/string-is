@@ -10,6 +10,12 @@ const enabled =
   process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true' ||
   process.env.NODE_ENV === 'production'
 
+/**
+ * A provider which wraps the PlausibleProvider and sets standard
+ * options and domains.
+ *
+ * @param props - the component props.
+ */
 export const AnalyticsProvider = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {

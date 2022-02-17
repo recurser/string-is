@@ -5,12 +5,26 @@ import useTranslation from 'next-translate/useTranslation'
 import { CodeTextarea, CopyButton, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for formatting Regex output.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   ({ disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-regexOutput')
 
     const [testString, setTestString] = useState('')
 
+    /**
+     * Updates the output options state when the test-string text input is changed.
+     *
+     * @param event - the HTML input change event.
+     */
     const onChangeTestString = (event: ChangeEvent<HTMLTextAreaElement>) => {
       setTestString(event.target.value)
     }
@@ -43,6 +57,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         <CodeTextarea
           {...props}
           copy={false}
+          data-testid="regex-input"
           disabled={disabled}
           id="testStringInput"
           isInvalid={!disabled && !hasTestString}
@@ -59,7 +74,11 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         )}
 
         {!disabled && !matches && (
-          <Alert intent="danger" title={t('alert_invalid_input')} />
+          <Alert
+            data-testid="output-error"
+            intent="danger"
+            title={t('alert_invalid_input')}
+          />
         )}
 
         {hasTestString && matches?.length === 0 && (
@@ -75,6 +94,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               return (
                 <Fragment key={matchKey}>
                   <Alert
+                    data-testid="output-success"
                     intent="success"
                     marginBottom={majorScale(1)}
                     title={
@@ -97,6 +117,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                       })}
                     >
                       <TextInput
+                        data-testid="regex-match-output"
                         id={matchKey}
                         readOnly={true}
                         value={whole}
@@ -115,6 +136,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                         label={t('group_label', { number: groupIndex + 1 })}
                       >
                         <TextInput
+                          data-testid="regex-group-output"
                           id={groupKey}
                           readOnly={true}
                           value={group}

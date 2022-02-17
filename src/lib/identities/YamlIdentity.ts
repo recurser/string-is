@@ -2,8 +2,19 @@ import { Converter, YamlFormatter, YamlToJsonConverter } from '@lib/converters'
 import { input } from '@lib/inputs/YamlInput'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 
+/**
+ * A string which uniquely identifies this identity function.
+ */
 export const id = 'yaml'
 
+/**
+ * Returns a numeric confidence between 0 and 100 indicating how
+ * likely it is that the given string is YAML.
+ *
+ * @param input - the input string whose format we want to determine.
+ *
+ * @returns a numeric confidence between 0 and 100.
+ */
 export const confidence = (data: string) => {
   // We can assume that YAML will have at least 2 lines. Any number
   // is actually valid YAML, so eg. timestamps will trigger it.
@@ -33,4 +44,7 @@ export const confidence = (data: string) => {
   return 100
 }
 
+/**
+ * Returns an array of converters supported by this identity.
+ */
 export const converters = [YamlFormatter, YamlToJsonConverter] as Converter[]

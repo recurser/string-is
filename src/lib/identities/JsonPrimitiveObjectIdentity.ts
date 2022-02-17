@@ -9,8 +9,21 @@ import {
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 import { confidence as objectConfidence } from '@lib/identities/JsonObjectIdentity'
 
+/**
+ * A string which uniquely identifies this identity function.
+ */
 export const id = 'jsonPrimitiveObject'
 
+/**
+ * Returns a numeric confidence between 0 and 100 indicating how
+ * likely it is that the given string is a JSON object containing
+ * only JavaScript primitives (ie. does not contain complex,
+ * deeply-nested objects).
+ *
+ * @param input - the input string whose format we want to determine.
+ *
+ * @returns a numeric confidence between 0 and 100.
+ */
 export const confidence = (input: string) => {
   if (objectConfidence(input) === 0) {
     return 0
@@ -20,12 +33,18 @@ export const confidence = (input: string) => {
   // We need to figure out if the values are primitives.
   const obj = jsonInput(input)
   const hasPrimitives = uniq(
-    (Object.keys(obj || {}) as Array<unknown>).map((entry) => !isObject(entry)),
+    Object.keys(obj || {}).map((key) => {
+      const testObj = (obj || {}) as Record<string, unknown>
+      return !isObject(testObj[key])
+    }),
   )
 
   return isEqual(hasPrimitives, [true]) ? 100 : 0
 }
 
+/**
+ * Returns an array of converters supported by this identity.
+ */
 export const converters = [
   JsonFormatter,
   JsonToCsvConverter,

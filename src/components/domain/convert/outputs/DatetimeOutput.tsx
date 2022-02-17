@@ -24,7 +24,16 @@ import { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
+/**
+ * Forwards the Textarea ref to the output component.
+ */
 export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
+  /**
+   * Provides a UI for formatting DateTime output.
+   *
+   * @param props - The output props.
+   * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
+   */
   ({ converter, disabled, input, output, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-datetimeOutput')
     const { options, setOptions } = useConverterOptionsContext(
@@ -43,10 +52,20 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       return utcOutput(input, options)
     }, [input, options])
 
+    /**
+     * Updates the output options state when the timezone select box is changed.
+     *
+     * @param event - the select menu change event.
+     */
     const onSelectTimezone = (selected: SelectMenuItem) => {
       setOptions({ ...options, timezone: selected.value })
     }
 
+    /**
+     * Updates the output options state when the date-format input is changed.
+     *
+     * @param event - the HTML input change event.
+     */
     const onChangeFormat = (event: ChangeEvent<HTMLInputElement>) => {
       setOptions({ ...options, format: event.target.value })
     }
@@ -107,6 +126,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <Textarea
             {...props}
+            data-testid="datetime-local-output"
             disabled={disabled}
             flex="none"
             height={majorScale(4)}
@@ -131,6 +151,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           label={t('label_utc_time')}
         >
           <TextInput
+            data-testid="datetime-utc-output"
             disabled={disabled}
             maxWidth={majorScale(25)}
             readOnly={true}

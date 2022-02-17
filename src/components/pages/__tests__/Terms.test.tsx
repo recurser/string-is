@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { render, screen } from '@testing-library/react'
 import I18nProvider from 'next-translate/I18nProvider'
 import React from 'react'
