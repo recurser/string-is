@@ -51,7 +51,13 @@ export const MarkdownOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Select>
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
+        <CodeTextarea
+          {...props}
+          data-testid="markdown-output"
+          disabled={disabled}
+          ref={ref}
+          value={output}
+        />
       </Form>
     )
   },

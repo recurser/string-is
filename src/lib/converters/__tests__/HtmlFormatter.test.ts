@@ -1,15 +1,25 @@
-import { operation } from '@lib/converters/HtmlFormatter'
+import { expectError, expectOutput } from './_helpers'
+import { HtmlFormatter } from '@lib/converters'
 
 describe('converters', () => {
   describe('HtmlFormatter', () => {
-    describe('operation', () => {
-      it('formats HTML', () => {
-        const input = `<b >hi there
-</ b>`
-        const expected = `<b>hi there </b>
-`
-        expect(operation(input)).toEqual(expected)
-      })
+    it('formats HTML', async () => {
+      await expectOutput(
+        HtmlFormatter,
+        `<b >hi there
+</ b>`,
+        'html-output',
+        `<b>hi there </b>
+`,
+      )
+    })
+
+    it('reports an error if the input is invalid', async () => {
+      await expectError(
+        HtmlFormatter,
+        '<paragraph',
+        'Unexpected character "EOF" (1:11)> 1 |',
+      )
     })
   })
 })

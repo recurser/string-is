@@ -124,6 +124,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <Textarea
             {...props}
+            data-testid="number-base-output"
             disabled={disabled}
             height={majorScale(4)}
             id="resultInput"

@@ -1,16 +1,26 @@
-import { operation } from '@lib/converters/QueryStringToYamlConverter'
+import { expectError, expectOutput } from './_helpers'
+import { QueryStringToYamlConverter } from '@lib/converters'
 
 describe('converters', () => {
   describe('QueryStringToYamlConverter', () => {
-    describe('operation', () => {
-      it('converts the query string input to YAML', () => {
-        const input = 'https://string.is/?foo=bar&today=2022-02-13'
-        const expected = `---
+    it('converts the query string input to YAML', async () => {
+      await expectOutput(
+        QueryStringToYamlConverter,
+        'https://string.is/?foo=bar&today=2022-02-13',
+        'json-output',
+        `---
 foo: 'bar'
 today: '2022-02-13'
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
+    })
+
+    it('reports an error if the input in invalid', async () => {
+      await expectError(
+        QueryStringToYamlConverter,
+        'invalid!',
+        'Invalid URL: invalid!',
+      )
     })
   })
 })

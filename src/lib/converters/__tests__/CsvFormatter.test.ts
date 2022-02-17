@@ -1,13 +1,24 @@
-import { operation } from '@lib/converters/CsvFormatter'
+import { expectError, expectOutput } from './_helpers'
+import { CsvFormatter } from '@lib/converters'
 
 describe('converters', () => {
   describe('CsvFormatter', () => {
-    describe('operation', () => {
-      it('formats the CSV input', () => {
-        const input = `a,b,c\n1,2,3\n4,5,6`
-        const expected = `a,b,c\r\n1,2,3\r\n4,5,6`
-        expect(operation(input)).toEqual(expected)
-      })
+    it('formats CSV data', async () => {
+      await expectOutput(
+        CsvFormatter,
+        `a,b,c\n1,2,3\n4,5,6`,
+        'csv-output',
+        `"a","b","c"\n"1","2","3"\n"4","5","6"`,
+      )
+    })
+
+    it('reports an error if the input in invalid', async () => {
+      await expectError(
+        CsvFormatter,
+        'a',
+        'Unable to auto-detect delimiting character; defaulted to ',
+        '',
+      )
     })
   })
 })

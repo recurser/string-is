@@ -1,20 +1,22 @@
-import { operation } from '@lib/converters/CsvToYamlConverter'
+import { CsvToYamlConverter } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('CsvToYamlConverter', () => {
-    describe('operation', () => {
-      it('converts the CSV input to YAML', () => {
-        const input = `a,b,c\n1,2,3\n4,5,6`
-        const expected = `---
+    it('converts CSV data to YAML', async () => {
+      await expectOutput(
+        CsvToYamlConverter,
+        `a,b,c\n1,2,3\n4,5,6`,
+        'yaml-output',
+        `---
 - a: '1'
   b: '2'
   c: '3'
 - a: '4'
   b: '5'
   c: '6'
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
     })
   })
 })

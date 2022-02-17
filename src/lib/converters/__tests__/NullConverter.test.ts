@@ -1,12 +1,10 @@
-import { operation } from '@lib/converters/NullConverter'
+import { NullConverter } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('NullConverter', () => {
-    describe('operation', () => {
-      it('always returns an empty string', () => {
-        const input = 'ignore this'
-        expect(operation(input)).toEqual('')
-      })
+    it('always returns an empty string', async () => {
+      await expectOutput(NullConverter, 'ignore this', 'plain-output', '')
     })
   })
 })

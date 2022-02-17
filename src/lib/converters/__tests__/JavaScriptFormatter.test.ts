@@ -1,18 +1,28 @@
-import { operation } from '@lib/converters/JavaScriptFormatter'
+import { expectError, expectOutput } from './_helpers'
+import { JavaScriptFormatter } from '@lib/converters'
 
 describe('converters', () => {
   describe('JavaScriptFormatter', () => {
-    describe('operation', () => {
-      it('formats JavaScript', () => {
-        const input = `const foo =
+    it('formats Javascript', async () => {
+      await expectOutput(
+        JavaScriptFormatter,
+        `const foo =
 'bar'
 const obj = { a: 1,
-b: 2 }`
-        const expected = `const foo = 'bar';
+b: 2 }`,
+        'javascript-output',
+        `const foo = 'bar';
 const obj = { a: 1, b: 2 };
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
+    })
+
+    it('reports an error if the input in invalid', async () => {
+      await expectError(
+        JavaScriptFormatter,
+        'invalid! {',
+        'Unexpected token (1:11)> 1 | invalid! { | ^',
+      )
     })
   })
 })

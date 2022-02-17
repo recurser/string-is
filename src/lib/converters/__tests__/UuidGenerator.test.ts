@@ -1,13 +1,15 @@
+import { screen } from '@testing-library/react'
 import { validate as uuidValidate } from 'uuid'
 
-import { operation } from '@lib/converters/UuidGenerator'
+import { UuidGenerator } from '@lib/converters'
+import { assertOutput } from './_helpers'
 
 describe('converters', () => {
   describe('UuidGenerator', () => {
-    describe('operation', () => {
-      it('generates a UUID', () => {
-        const input = 'ignore this'
-        expect(uuidValidate(operation(input))).toBeTruthy()
+    it('generates a UUID', async () => {
+      await assertOutput(UuidGenerator, 'ignore this', () => {
+        const output = screen.getByTestId('uuid-output')
+        expect(uuidValidate(output.value)).toBeTruthy()
       })
     })
   })

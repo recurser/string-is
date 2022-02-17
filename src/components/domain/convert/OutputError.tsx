@@ -34,6 +34,7 @@ export const OutputError = ({ message }: Props) => {
       <Code
         appearance="minimal"
         dangerouslySetInnerHTML={{ __html: message.replace('\n', '<br/>') }}
+        data-testid="output-error"
         size={300}
       />
     </Alert>

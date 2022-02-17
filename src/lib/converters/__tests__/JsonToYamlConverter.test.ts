@@ -1,10 +1,12 @@
-import { operation } from '@lib/converters/JsonToYamlConverter'
+import { JsonToYamlConverter } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('JsonToYamlConverter', () => {
-    describe('operation', () => {
-      it('converts the JSON input to YAML', () => {
-        const input = `[
+    it('converts JSON data to YAML', async () => {
+      await expectOutput(
+        JsonToYamlConverter,
+        `[
   {
     "a": "1",
     "b": "2",
@@ -15,17 +17,17 @@ describe('converters', () => {
     "b": "5",
     "c": "6"
   }
-]`
-        const expected = `---
+]`,
+        'yaml-output',
+        `---
 - a: '1'
   b: '2'
   c: '3'
 - a: '4'
   b: '5'
   c: '6'
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
     })
   })
 })

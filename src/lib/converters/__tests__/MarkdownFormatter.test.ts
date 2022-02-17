@@ -1,21 +1,23 @@
-import { operation } from '@lib/converters/MarkdownFormatter'
+import { MarkdownFormatter } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('MarkdownFormatter', () => {
-    describe('operation', () => {
-      it('formats the Markdown input', () => {
-        const input = `  ### Heading
+    it('formats Markdown', async () => {
+      await expectOutput(
+        MarkdownFormatter,
+        `  ### Heading
   **bold text**
 *italic text 1*
-  _italic text 2_`
-        const expected = `### Heading
+  _italic text 2_`,
+        'markdown-output',
+        `### Heading
 
 **bold text**
 _italic text 1_
 _italic text 2_
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
     })
   })
 })
