@@ -1,6 +1,6 @@
 {
   "name": "string-is",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "private": true,
   "scripts": {
     "all": "yarn eslint pages src --fix && yarn prettier && yarn jest && yarn build",

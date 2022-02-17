@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/recurser/string-is/compare/v1.13.0...v1.14.0) (2022-02-17)
+
+
+### Features
+
+* make timestamp detection more robust ([1386e86](https://github.com/recurser/string-is/commit/1386e86b82213d883e1ce5a889648f598b639921))
+
 # [1.13.0](https://github.com/recurser/string-is/compare/v1.12.0...v1.13.0) (2022-02-08)
 
 
