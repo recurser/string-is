@@ -53,7 +53,13 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Select>
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
+        <CodeTextarea
+          {...props}
+          data-testid="sha-output"
+          disabled={disabled}
+          ref={ref}
+          value={output}
+        />
       </Form>
     )
   },

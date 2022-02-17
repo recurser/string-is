@@ -124,7 +124,13 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Select>
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
+        <CodeTextarea
+          {...props}
+          data-testid="uuid-output"
+          disabled={disabled}
+          ref={ref}
+          value={output}
+        />
       </Form>
     )
   },

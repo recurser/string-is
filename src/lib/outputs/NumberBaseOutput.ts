@@ -40,7 +40,8 @@ export const output = (
 ): string => {
   const { fromRadix, toRadix } = { ...defaultOptions, ...options }
   const result = parseInt(input, fromRadix).toString(toRadix).toUpperCase()
-  if (isNaN(Number(result))) {
+
+  if (result === 'NAN') {
     return ''
   }
 

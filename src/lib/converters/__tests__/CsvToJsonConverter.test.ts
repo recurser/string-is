@@ -1,11 +1,14 @@
-import { operation } from '@lib/converters/CsvToJsonConverter'
+import { CsvToJsonConverter } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('CsvToJsonConverter', () => {
-    describe('operation', () => {
-      it('converts the CSV input to JSON', () => {
-        const input = `a,b,c\n1,2,3\n4,5,6`
-        const expected = `[
+    it('converts CSV data to JSON', async () => {
+      await expectOutput(
+        CsvToJsonConverter,
+        `a,b,c\n1,2,3\n4,5,6`,
+        'json-output',
+        `[
   {
     "a": "1",
     "b": "2",
@@ -16,9 +19,8 @@ describe('converters', () => {
     "b": "5",
     "c": "6"
   }
-]`
-        expect(operation(input)).toEqual(expected)
-      })
+]`,
+      )
     })
   })
 })

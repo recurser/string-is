@@ -1,20 +1,23 @@
-import { operation } from '@lib/converters/Base64Decoder'
+import { expectError, expectOutput } from './_helpers'
+import { Base64Decoder } from '@lib/converters'
 
 describe('converters', () => {
   describe('Base64Decoder', () => {
-    describe('operation', () => {
-      it('decodes base64-encoded input', () => {
-        const input = 'c29tZSBlbmNvZGVkIGRhdGE='
-        const expected = 'some encoded data'
-        expect(operation(input)).toEqual(expected)
-      })
+    it('decodes base64-encoded input', async () => {
+      await expectOutput(
+        Base64Decoder,
+        'c29tZSBlbmNvZGVkIGRhdGE=',
+        'plain-output',
+        'some encoded data',
+      )
+    })
 
-      it('throws an error if the input in invalid', () => {
-        const input = 'invalid!'
-        expect(() => operation(input)).toThrow(
-          'The input is not a valid Base64 string',
-        )
-      })
+    it('reports an error if the input is invalid', async () => {
+      await expectError(
+        Base64Decoder,
+        'invalid!',
+        'The input is not a valid Base64 string',
+      )
     })
   })
 })

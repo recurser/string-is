@@ -126,6 +126,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <Textarea
             {...props}
+            data-testid="datetime-local-output"
             disabled={disabled}
             flex="none"
             height={majorScale(4)}
@@ -150,6 +151,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           label={t('label_utc_time')}
         >
           <TextInput
+            data-testid="datetime-utc-output"
             disabled={disabled}
             maxWidth={majorScale(25)}
             readOnly={true}

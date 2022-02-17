@@ -1,13 +1,15 @@
-import { operation } from '@lib/converters/UrlEncoder'
+import { UrlEncoder } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('UrlEncoder', () => {
-    describe('operation', () => {
-      it('URL-encodes the input', () => {
-        const input = 'some data to encode'
-        const expected = 'some%20data%20to%20encode'
-        expect(operation(input)).toEqual(expected)
-      })
+    it('url-encodes the input', async () => {
+      await expectOutput(
+        UrlEncoder,
+        'some data to encode',
+        'plain-output',
+        'some%20data%20to%20encode',
+      )
     })
   })
 })

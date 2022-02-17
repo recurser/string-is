@@ -1,20 +1,30 @@
-import { operation } from '@lib/converters/ScssFormatter'
+import { expectError, expectOutput } from './_helpers'
+import { ScssFormatter } from '@lib/converters'
 
 describe('converters', () => {
   describe('ScssFormatter', () => {
-    describe('operation', () => {
-      it('formats the SCSS input', () => {
-        const input = `a { border : 1px solid red; b { font-weight: bold; }
-}`
-        const expected = `a {
+    it('formats SCSS', async () => {
+      await expectOutput(
+        ScssFormatter,
+        `a { border : 1px solid red; b { font-weight: bold; }
+}`,
+        'css-output',
+        `a {
   border: 1px solid red;
   b {
     font-weight: bold;
   }
 }
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
+    })
+
+    it('reports an error if the input in invalid', async () => {
+      await expectError(
+        ScssFormatter,
+        'invalid! {',
+        'CssSyntaxError: Unclosed block (1:1)> 1 | invalid! { | ^',
+      )
     })
   })
 })

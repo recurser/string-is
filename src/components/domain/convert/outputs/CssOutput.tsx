@@ -86,7 +86,13 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea {...props} disabled={disabled} ref={ref} value={output} />
+        <CodeTextarea
+          {...props}
+          data-testid="css-output"
+          disabled={disabled}
+          ref={ref}
+          value={output}
+        />
       </Form>
     )
   },

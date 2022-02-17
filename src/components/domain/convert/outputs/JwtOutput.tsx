@@ -44,6 +44,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           label={t('label_header')}
         >
           <CodeTextarea
+            data-testid="jwt-header-output"
             disabled={disabled}
             id="headerInput"
             minHeight={headerStrHeight}
@@ -61,6 +62,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
         >
           <CodeTextarea
             {...props}
+            data-testid="jwt-body-output"
             disabled={disabled}
             id="payloadInput"
             minHeight={payloadHeight}

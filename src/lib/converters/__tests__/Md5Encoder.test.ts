@@ -1,13 +1,15 @@
-import { operation } from '@lib/converters/Md5Encoder'
+import { Md5Encoder } from '@lib/converters'
+import { expectOutput } from './_helpers'
 
 describe('converters', () => {
   describe('Md5Encoder', () => {
-    describe('operation', () => {
-      it('generates an MD5 hash from the input', () => {
-        const input = 'hash this'
-        const expected = 'e80c715e5d4e885f68d7a3853b5fca73'
-        expect(operation(input)).toEqual(expected)
-      })
+    it('generates an MD5 hash', async () => {
+      await expectOutput(
+        Md5Encoder,
+        'hash this',
+        'plain-output',
+        'e80c715e5d4e885f68d7a3853b5fca73',
+      )
     })
   })
 })

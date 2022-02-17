@@ -1,23 +1,33 @@
-import { operation } from '@lib/converters/YamlFormatter'
+import { expectError, expectOutput } from './_helpers'
+import { YamlFormatter } from '@lib/converters'
 
 describe('converters', () => {
   describe('YamlFormatter', () => {
-    describe('operation', () => {
-      it('formats YAML', () => {
-        const input = `b:  2
+    it('formats YAML', async () => {
+      await expectOutput(
+        YamlFormatter,
+        `b:  2
 a:      1
 c:
   - "d"
-  -    e`
-        const expected = `---
+  -    e`,
+        'yaml-output',
+        `---
 b: 2
 a: 1
 c:
   - 'd'
   - 'e'
-`
-        expect(operation(input)).toEqual(expected)
-      })
+`,
+      )
+    })
+
+    it('reports an error if the input in invalid', async () => {
+      await expectError(
+        YamlFormatter,
+        'invalid!',
+        'The input could not be parsed as valid YAML',
+      )
     })
   })
 })

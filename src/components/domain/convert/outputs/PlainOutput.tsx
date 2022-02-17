@@ -13,9 +13,14 @@ export const PlainOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
    * @param props - The output props.
    * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
    */
-  ({ disabled, output, ...props }: OutputProps, ref) => {
+  ({ output, ...props }: OutputProps, ref) => {
     return (
-      <CodeTextarea disabled={disabled} {...props} ref={ref} value={output} />
+      <CodeTextarea
+        {...props}
+        data-testid="plain-output"
+        ref={ref}
+        value={output}
+      />
     )
   },
 )
