@@ -25,7 +25,7 @@ export const Link = ({
   target,
   ...props
 }: PropsWithChildren<Props>): ReactElement => (
-  <BaseLink href={href} {...props}>
+  <BaseLink href={href} {...props} passHref={true}>
     <Anchor
       color={color}
       href={href}

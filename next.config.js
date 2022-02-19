@@ -11,7 +11,6 @@ const scriptSrc = dev
   ? `'self' 'unsafe-inline' 'unsafe-eval' ${plausible}`
   : `'self' 'unsafe-eval' ${plausible}`
 
-
 const cspHeaders = [
   {
     key: 'Access-Control-Allow-Origin',
