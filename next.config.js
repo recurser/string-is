@@ -3,9 +3,14 @@
 const nextTranslate = require('next-translate')
 
 const dev = process.env.NODE_ENV !== 'production'
+const plausible = 'https://plausible.io'
+const connectSrc = dev
+  ? `'self' ${plausible} ws://localhost:3000`
+  : `'self' ${plausible}`
 const scriptSrc = dev
-  ? "'self' 'unsafe-inline' 'unsafe-eval'"
-  : "'self' 'unsafe-eval'"
+  ? `'self' 'unsafe-inline' 'unsafe-eval' ${plausible}`
+  : `'self' 'unsafe-eval' ${plausible}`
+
 const cspHeaders = [
   {
     key: 'Access-Control-Allow-Origin',
@@ -16,7 +21,7 @@ const cspHeaders = [
     key: 'Content-Security-Policy',
     value:
       `base-uri 'none'; ` +
-      `connect-src 'self' https://plausible.io/; ` +
+      `connect-src ${connectSrc}; ` +
       `default-src 'none'; ` +
       `font-src 'none'; ` +
       `form-action 'none'; ` +
@@ -25,7 +30,7 @@ const cspHeaders = [
       `manifest-src 'self'; ` +
       `prefetch-src 'self'; ` +
       `script-src ${scriptSrc}; ` +
-      `script-src-elem ${scriptSrc} https://plausible.io/; ` +
+      `script-src-elem ${scriptSrc} ${plausible}; ` +
       `style-src 'self' 'unsafe-inline';`,
   },
   {

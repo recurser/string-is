@@ -231,6 +231,24 @@ export const About = () => {
           </ListItem>
         </UnorderedList>
 
+        <Paragraph>
+          <Trans
+            components={[
+              <Link
+                href="https://thenounproject.com/icon/developer-2286230/"
+                key="para_icon_1"
+                target="_blank"
+              />,
+              <Link
+                href="https://thenounproject.com/slaughterslash/"
+                key="para_icon_2"
+                target="_blank"
+              />,
+            ]}
+            i18nKey="pages-about:para_icon"
+          />
+        </Paragraph>
+
         <Heading>Contact</Heading>
         <UnorderedList>
           <ListItem>
