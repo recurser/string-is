@@ -1,3 +1,12 @@
+## [1.14.1](https://github.com/recurser/string-is/compare/v1.14.0...v1.14.1) (2022-02-19)
+
+
+### Bug Fixes
+
+* improve copy button layout on MacOS Safari ([9c7dcfa](https://github.com/recurser/string-is/commit/9c7dcfa83c3cfcd1d166f86818af3b417e8e2842))
+* improve development CSP rules for MacOS Safari ([72dddf7](https://github.com/recurser/string-is/commit/72dddf7f596f89cbd41140673190599661343451))
+* linting issues raised after eslint upgrade ([cd77232](https://github.com/recurser/string-is/commit/cd772328c2398114181efcc48097ae58d610bf96))
+
 # [1.14.0](https://github.com/recurser/string-is/compare/v1.13.0...v1.14.0) (2022-02-17)
 
 
