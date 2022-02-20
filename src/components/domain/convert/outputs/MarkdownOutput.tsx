@@ -55,6 +55,7 @@ export const MarkdownOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="markdown-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

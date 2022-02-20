@@ -134,6 +134,7 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="javascript-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

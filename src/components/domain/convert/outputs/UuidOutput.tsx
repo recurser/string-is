@@ -128,6 +128,7 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="uuid-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

@@ -90,6 +90,7 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
   return (
     <LayoutColumn
       disabled={disabled}
+      htmlFor="converted-output"
       inputString={inputString}
       label={
         converter.id !== NullConverter.id

@@ -54,6 +54,7 @@ export const InputForm = () => {
 
   return (
     <LayoutColumn
+      htmlFor="user-input"
       inputString={inputString}
       label={t('label')}
       outputString={outputString}
@@ -66,6 +67,7 @@ export const InputForm = () => {
         data-testid="user-input"
         flex={1}
         height="100%"
+        id="user-input"
         onChange={onChange}
         placeholder={t('placeholder')}
         ref={inputRef}

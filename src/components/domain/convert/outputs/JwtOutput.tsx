@@ -57,14 +57,14 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           alignItems="start"
           disabled={disabled}
           flexDirection="column"
-          htmlFor="payloadInput"
+          htmlFor="converted-output"
           label={t('label_payload')}
         >
           <CodeTextarea
             {...props}
             data-testid="jwt-body-output"
             disabled={disabled}
-            id="payloadInput"
+            id="converted-output"
             minHeight={payloadHeight}
             ref={ref}
             value={output}

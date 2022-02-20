@@ -18,6 +18,7 @@ export const PlainOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       <CodeTextarea
         {...props}
         data-testid="plain-output"
+        id="converted-output"
         ref={ref}
         value={output}
       />
