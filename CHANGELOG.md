@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/recurser/string-is/compare/v1.14.1...v1.15.0) (2022-02-20)
+
+
+### Features
+
+* make column headings labels that focus on their associated inputs ([062e60d](https://github.com/recurser/string-is/commit/062e60d5d84acc27802d3d66f03d8bd01d64b788))
+
 ## [1.14.1](https://github.com/recurser/string-is/compare/v1.14.0...v1.14.1) (2022-02-19)
 
 
