@@ -57,6 +57,7 @@ export const ShaOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="sha-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

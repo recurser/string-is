@@ -98,6 +98,7 @@ export const YamlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="yaml-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

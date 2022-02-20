@@ -119,7 +119,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          htmlFor="resultInput"
+          htmlFor="converted-output"
           label={t('label_result', { base: toRadix })}
         >
           <Textarea
@@ -127,7 +127,7 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             data-testid="number-base-output"
             disabled={disabled}
             height={majorScale(4)}
-            id="resultInput"
+            id="converted-output"
             maxWidth={majorScale(27)}
             minHeight={undefined}
             ref={ref}

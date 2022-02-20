@@ -77,6 +77,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="json-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

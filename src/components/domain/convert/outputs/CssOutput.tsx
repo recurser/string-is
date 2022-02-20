@@ -90,6 +90,7 @@ export const CssOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="css-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

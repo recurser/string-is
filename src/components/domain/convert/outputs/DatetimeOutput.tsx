@@ -121,7 +121,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          htmlFor="localTimeInput"
+          htmlFor="converted-output"
           label={t('label_local_time')}
         >
           <Textarea
@@ -130,7 +130,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             disabled={disabled}
             flex="none"
             height={majorScale(4)}
-            id="localTimeInput"
+            id="converted-output"
             maxWidth={majorScale(25)}
             minHeight={undefined}
             readOnly={true}

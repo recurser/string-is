@@ -72,6 +72,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           {...props}
           data-testid="csv-output"
           disabled={disabled}
+          id="converted-output"
           ref={ref}
           value={output}
         />

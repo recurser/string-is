@@ -1,4 +1,4 @@
-import { Pane, Paragraph, majorScale } from 'evergreen-ui'
+import { Label, Pane, majorScale } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
 
 import { theme } from '@services/Theme'
@@ -14,6 +14,11 @@ interface Props {
   disabled?: boolean
 
   /**
+   * The ID of an input element that the column label should focus on-click.
+   */
+  htmlFor?: string
+
+  /**
    * The input string provided by the user, which is used to calculate
    * an appropriate height for the column dynamically.
    */
@@ -23,6 +28,10 @@ interface Props {
    * An optional label to display at the top of the column.
    */
   label?: string
+
+  /**
+   * The output string after conversion.
+   */
   outputString?: string
 }
 
@@ -35,6 +44,7 @@ interface Props {
 export const LayoutColumn = ({
   children,
   disabled,
+  htmlFor,
   inputString,
   label,
   outputString,
@@ -63,17 +73,19 @@ export const LayoutColumn = ({
       minWidth={0}
     >
       {label && (
-        <Paragraph
+        <Label
           color={labelColor}
           fontWeight="bold"
+          htmlFor={htmlFor}
+          lineHeight={`${majorScale(3)}px`}
           marginBottom={majorScale(1)}
           role="label"
           style={style}
         >
           {label}
-        </Paragraph>
+        </Label>
       )}
-      {!label && !isMobile && <Paragraph>&nbsp;</Paragraph>}
+      {!label && !isMobile && <Label>&nbsp;</Label>}
       <Pane
         display="flex"
         flex={1}
