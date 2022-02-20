@@ -29,5 +29,14 @@ describe('converters', () => {
         '2020-01-01 12:00',
       )
     })
+
+    it('handles timezones', async () => {
+      await expectOutput(
+        TimestampConverter,
+        'January 1st 2020 3pm JST in PST',
+        'datetime-local-output',
+        '2020-01-01 06:00',
+      )
+    })
   })
 })
