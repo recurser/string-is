@@ -45,8 +45,8 @@ describe('outputs', () => {
 
     describe('utcOutput', () => {
       it('formats the time string', () => {
-        const input = '2022/02/02 PST'
-        const expected = '2022-02-02 12:00'
+        const input = '2022/02/02 00:00 PST'
+        const expected = '2022-02-02 08:00'
         expect(utcOutput(input)).toEqual(expected)
       })
 
