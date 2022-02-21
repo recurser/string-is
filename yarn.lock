@@ -1595,7 +1595,7 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.0.0", "@typescript-eslint/parser@^5.12.0":
+"@typescript-eslint/parser@^5.0.0":
   version "5.12.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.12.0.tgz#0ca669861813df99ce54916f66f524c625ed2434"
   integrity sha512-MfSwg9JMBojMUoGjUmX+D2stoQj1CBYTCP0qnnVtu9A+YQXVKNtLjasYh+jozOcrb/wau8TCfWOkQTiOAruBog==
@@ -1603,6 +1603,16 @@
     "@typescript-eslint/scope-manager" "5.12.0"
     "@typescript-eslint/types" "5.12.0"
     "@typescript-eslint/typescript-estree" "5.12.0"
+    debug "^4.3.2"
+
+"@typescript-eslint/parser@^5.12.1":
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.12.1.tgz#b090289b553b8aa0899740d799d0f96e6f49771b"
+  integrity sha512-6LuVUbe7oSdHxUWoX/m40Ni8gsZMKCi31rlawBHt7VtW15iHzjbpj2WLiToG2758KjtCCiLRKZqfrOdl3cNKuw==
+  dependencies:
+    "@typescript-eslint/scope-manager" "5.12.1"
+    "@typescript-eslint/types" "5.12.1"
+    "@typescript-eslint/typescript-estree" "5.12.1"
     debug "^4.3.2"
 
 "@typescript-eslint/scope-manager@5.12.0":
