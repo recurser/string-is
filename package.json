@@ -61,7 +61,7 @@
     "@types/showdown": "^1.9.4",
     "@types/styled-components": "^5.1.23",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.0",
     "babel-jest": "^27.5.1",
     "babel-plugin-import": "^1.13.3",
