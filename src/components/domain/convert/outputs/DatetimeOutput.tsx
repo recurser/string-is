@@ -10,7 +10,7 @@ import {
   Tooltip,
   majorScale,
 } from 'evergreen-ui'
-import { ChangeEvent, forwardRef, useMemo } from 'react'
+import { ChangeEvent, forwardRef, useEffect, useMemo } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
 import { CopyButton, Form, Label } from '@components/forms'
@@ -39,6 +39,22 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
+
+    // Extract the timezone from the input, if the user has provided
+    // something like '1pm AEST in JST'.
+    useEffect(() => {
+      const tzShortcode = input
+        .trim()
+        .replace(/^.+ in ((?:[A-Z]{2,3}T)|UTC)$/i, '$1')
+      if (tzShortcode && tzShortcode !== input.trim()) {
+        const timezone = timezones.find(
+          (tz) => tz.shortcode?.toLowerCase() === tzShortcode.toLowerCase(),
+        )
+        if (timezone && timezone.code !== options.timezone) {
+          setOptions({ ...options, timezone: timezone.code })
+        }
+      }
+    }, [input, options, setOptions])
 
     const relativeValue = useMemo(() => {
       return relativeOutput(input, options)
@@ -82,7 +98,7 @@ export const DatetimeOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             onSelect={onSelectTimezone}
             options={timezones.map((timezone) => ({
               label: timezone.name,
-              value: timezone.tzCode,
+              value: timezone.code,
             }))}
             selected={options.timezone as string}
           >
