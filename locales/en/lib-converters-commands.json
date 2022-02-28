@@ -9,6 +9,7 @@
   "javaScript": "JavaScript format",
   "json": "JSON format",
   "jsonToCsv": "JSON to CSV",
+  "jsonToJavaScript": "JSON to JavaScript",
   "jsonToYaml": "JSON to YAML",
   "jwt": "JWT",
   "less": "LESS format",
