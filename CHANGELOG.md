@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/recurser/string-is/compare/v1.15.0...v1.16.0) (2022-02-28)
+
+
+### Features
+
+* handle timezones provided during timestamp formatting ([d03d9a1](https://github.com/recurser/string-is/commit/d03d9a10af0f06f5a9deb6e5a0bd440c0766365b))
+
 # [1.15.0](https://github.com/recurser/string-is/compare/v1.14.1...v1.15.0) (2022-02-20)
 
 
