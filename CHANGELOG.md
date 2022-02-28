@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/recurser/string-is/compare/v1.16.0...v1.17.0) (2022-02-28)
+
+
+### Features
+
+* add a JSON-to-JavaScript converter ([fd96b6a](https://github.com/recurser/string-is/commit/fd96b6a4fa12d47f6ba2d76947f2f8b2702f679a))
+
 # [1.16.0](https://github.com/recurser/string-is/compare/v1.15.0...v1.16.0) (2022-02-28)
 
 
