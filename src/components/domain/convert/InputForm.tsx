@@ -65,8 +65,6 @@ export const InputForm = () => {
         } /* This doesn't seem to do anything, but might help in some browsers? */
         copy={false}
         data-testid="user-input"
-        flex={1}
-        height="100%"
         id="user-input"
         onChange={onChange}
         placeholder={t('placeholder')}

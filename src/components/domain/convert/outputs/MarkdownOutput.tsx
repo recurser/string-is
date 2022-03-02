@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef } from 'react'
 import { Select, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { CodeTextarea, Form, Label } from '@components/forms'
+import { Form, Label, MarkdownTextarea } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
@@ -51,11 +51,9 @@ export const MarkdownOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           </Select>
         </Label>
 
-        <CodeTextarea
+        <MarkdownTextarea
           {...props}
-          data-testid="markdown-output"
           disabled={disabled}
-          id="converted-output"
           ref={ref}
           value={output}
         />

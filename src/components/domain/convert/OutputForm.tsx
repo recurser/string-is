@@ -104,8 +104,6 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
       <OutputElement
         converter={converter}
         disabled={disabled}
-        flex={1}
-        height="100%"
         input={inputString}
         output={output}
         readOnly={true}

@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef } from 'react'
 import { Checkbox } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { CodeTextarea, Form, Label } from '@components/forms'
+import { CsvTextarea, Form, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
@@ -68,14 +68,7 @@ export const CsvOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea
-          {...props}
-          data-testid="csv-output"
-          disabled={disabled}
-          id="converted-output"
-          ref={ref}
-          value={output}
-        />
+        <CsvTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },
