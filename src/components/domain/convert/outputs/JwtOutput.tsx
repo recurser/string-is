@@ -2,7 +2,7 @@ import { forwardRef, useMemo } from 'react'
 import { majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { CodeTextarea, Form, Label } from '@components/forms'
+import { Form, JsonTextarea, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { header } from '@lib/outputs/JwtOutput'
 
@@ -43,7 +43,7 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           htmlFor="headerInput"
           label={t('label_header')}
         >
-          <CodeTextarea
+          <JsonTextarea
             data-testid="jwt-header-output"
             disabled={disabled}
             id="headerInput"
@@ -60,11 +60,10 @@ export const JwtOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           htmlFor="converted-output"
           label={t('label_payload')}
         >
-          <CodeTextarea
+          <JsonTextarea
             {...props}
             data-testid="jwt-body-output"
             disabled={disabled}
-            id="converted-output"
             minHeight={payloadHeight}
             ref={ref}
             value={output}

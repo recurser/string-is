@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef, useState } from 'react'
 import { Select, Text, TextInput, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { CodeTextarea, Form, Label } from '@components/forms'
+import { Form, HtmlTextarea, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
@@ -86,14 +86,7 @@ export const HtmlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           <Text>&nbsp;{t('characters_suffix')}</Text>
         </Label>
 
-        <CodeTextarea
-          {...props}
-          data-testid="html-output"
-          disabled={disabled}
-          id="converted-output"
-          ref={ref}
-          value={output}
-        />
+        <HtmlTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },

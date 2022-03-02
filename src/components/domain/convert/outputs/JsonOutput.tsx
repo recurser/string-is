@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef } from 'react'
 import { Checkbox, Select, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { CodeTextarea, Form, Label } from '@components/forms'
+import { Form, JsonTextarea, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
@@ -73,14 +73,7 @@ export const JsonOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea
-          {...props}
-          data-testid="json-output"
-          disabled={disabled}
-          id="converted-output"
-          ref={ref}
-          value={output}
-        />
+        <JsonTextarea {...props} disabled={disabled} ref={ref} value={output} />
       </Form>
     )
   },
