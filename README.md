@@ -9,6 +9,11 @@
 ![Screenshot](src/images/screenshot.png)
 
 
+## Browser Support
+
+string.is has been confirmed to work on Chrome, Safari, Firefox, and Edge. Internet explorer is not supported.
+
+
 ## Running locally
 
 Install dependencies:
