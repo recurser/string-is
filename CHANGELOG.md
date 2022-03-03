@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/recurser/string-is/compare/v1.17.0...v1.18.0) (2022-03-03)
+
+
+### Features
+
+* add syntax highlighting for outputs ([5d1bcd9](https://github.com/recurser/string-is/commit/5d1bcd93cdee98378024838c84beed65c79b01a6))
+
 # [1.17.0](https://github.com/recurser/string-is/compare/v1.16.0...v1.17.0) (2022-02-28)
 
 
