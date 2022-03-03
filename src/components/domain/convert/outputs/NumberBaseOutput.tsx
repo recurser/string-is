@@ -134,9 +134,9 @@ export const NumberBaseOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
             resize="none"
             value={output}
           />
-          {!disabled && (
+          {!disabled ? (
             <CopyButton marginLeft={majorScale(1)} value={output} />
-          )}
+          ) : null}
         </Label>
       </Form>
     )

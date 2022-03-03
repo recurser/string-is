@@ -55,7 +55,7 @@ export const CodeTextarea = forwardRef<HTMLTextAreaElement, CodeTextareaProps>(
         minHeight={minHeight}
         width="100%"
       >
-        {copy && !disabled && (
+        {copy && !disabled ? (
           <CopyButton
             disabled={disabled}
             margin={majorScale(1)}
@@ -63,9 +63,9 @@ export const CodeTextarea = forwardRef<HTMLTextAreaElement, CodeTextareaProps>(
             value={value as string}
             zIndex={3}
           />
-        )}
+        ) : null}
 
-        {!highlight && (
+        {!highlight ? (
           <MonoFontTextarea
             {...props}
             disabled={disabled}
@@ -73,9 +73,9 @@ export const CodeTextarea = forwardRef<HTMLTextAreaElement, CodeTextareaProps>(
             spellCheck={false}
             value={value}
           />
-        )}
+        ) : null}
 
-        {highlight && (
+        {highlight ? (
           <SyntaxHighlitTextarea
             {...props}
             disabled={disabled}
@@ -83,7 +83,7 @@ export const CodeTextarea = forwardRef<HTMLTextAreaElement, CodeTextareaProps>(
             ref={ref}
             value={value}
           />
-        )}
+        ) : null}
       </Pane>
     )
   },

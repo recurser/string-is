@@ -72,7 +72,7 @@ export const LayoutColumn = ({
       flexShrink={0}
       minWidth={0}
     >
-      {label && (
+      {label ? (
         <Label
           color={labelColor}
           fontWeight="bold"
@@ -84,7 +84,7 @@ export const LayoutColumn = ({
         >
           {label}
         </Label>
-      )}
+      ) : null}
       {!label && !isMobile && <Label>&nbsp;</Label>}
       <Pane
         display="flex"

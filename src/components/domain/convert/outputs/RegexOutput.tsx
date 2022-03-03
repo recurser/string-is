@@ -69,23 +69,23 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           value={disabled ? '' : testString}
         />
 
-        {!disabled && !hasTestString && matches && (
+        {!disabled && !hasTestString && matches ? (
           <Alert intent="info" title={t('alert_no_input')} />
-        )}
+        ) : null}
 
-        {!disabled && !matches && (
+        {!disabled && !matches ? (
           <Alert
             data-testid="output-error"
             intent="danger"
             title={t('alert_invalid_input')}
           />
-        )}
+        ) : null}
 
-        {hasTestString && matches?.length === 0 && (
+        {hasTestString && matches?.length === 0 ? (
           <Alert intent="warning" title={t('alert_no_matches')} />
-        )}
+        ) : null}
 
-        {matches && matches.length > 0 && (
+        {matches && matches.length > 0 ? (
           <>
             {matches.map((match, matchIndex) => {
               const [whole, ...groups] = match
@@ -150,7 +150,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               )
             })}
           </>
-        )}
+        ) : null}
       </>
     )
   },
