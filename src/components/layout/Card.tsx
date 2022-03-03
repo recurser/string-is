@@ -49,28 +49,28 @@ export const Card = ({
 
   return (
     <BaseCard {...props} elevation={responsiveElevation} padding={0}>
-      {showHeader && (
+      {showHeader ? (
         <Pane
           borderBottom="default"
           flexDirection="row"
           justifyContent="space-between"
           padding={majorScale(2)}
         >
-          {titleComponents.length > 0 && (
+          {titleComponents.length > 0 ? (
             <Pane justifyContent="center">{titleComponents}</Pane>
-          )}
-          {title && (
+          ) : null}
+          {title ? (
             <Pane justifyContent="center">
               <Heading margin={0} role="heading">
                 {title}
               </Heading>
             </Pane>
-          )}
-          {actionComponents.length > 0 && (
+          ) : null}
+          {actionComponents.length > 0 ? (
             <Pane justifyContent="center">{actionComponents}</Pane>
-          )}
+          ) : null}
         </Pane>
-      )}
+      ) : null}
 
       <Pane padding={responsivePadding}>{childComponents}</Pane>
     </BaseCard>

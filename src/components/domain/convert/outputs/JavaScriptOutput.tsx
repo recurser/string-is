@@ -2,7 +2,7 @@ import { ChangeEvent, forwardRef, useState } from 'react'
 import { Checkbox, Select, TextInput, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { CodeTextarea, Form, Label } from '@components/forms'
+import { Form, JavaScriptTextarea, Label } from '@components/forms'
 import { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
@@ -130,11 +130,9 @@ export const JavaScriptOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         </Label>
 
-        <CodeTextarea
+        <JavaScriptTextarea
           {...props}
-          data-testid="javascript-output"
           disabled={disabled}
-          id="converted-output"
           ref={ref}
           value={output}
         />

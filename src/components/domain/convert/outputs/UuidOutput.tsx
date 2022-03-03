@@ -80,7 +80,7 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     return (
       <Form>
-        {NamespacedVersions.includes(options.version as string) && (
+        {NamespacedVersions.includes(options.version as string) ? (
           <Label
             disabled={disabled}
             htmlFor="namespaceInput"
@@ -103,7 +103,7 @@ export const UuidOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
               />
             </Tooltip>
           </Label>
-        )}
+        ) : null}
 
         <Label
           disabled={disabled}
