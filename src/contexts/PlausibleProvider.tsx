@@ -11,7 +11,7 @@
  */
 
 import React, { ReactNode } from 'react'
-import Head from 'next/head'
+import Script from 'next/script'
 
 const allModifiers = [
   'exclusions',
@@ -42,33 +42,26 @@ export const PlausibleProvider = (props: {
   exclude?: string
   enabled?: boolean
   integrity?: string
-  scriptProps?: React.DetailedHTMLProps<
-    React.ScriptHTMLAttributes<HTMLScriptElement>,
-    HTMLScriptElement
-  >
 }) => {
   const { enabled = process.env.NODE_ENV === 'production' } = props
 
   return (
     <>
-      <Head>
-        {enabled && (
-          <script
-            async={true}
-            crossOrigin={props.integrity ? 'anonymous' : undefined}
-            data-domain={props.domain}
-            data-exclude={props.exclude}
-            defer={true}
-            integrity={props.integrity}
-            src={getScriptPath(
-              props.trackLocalhost ? 'local' : null,
-              props.trackOutboundLinks ? 'outbound-links' : null,
-              props.exclude ? 'exclusions' : null,
-            )}
-            {...props.scriptProps}
-          />
-        )}
-      </Head>
+      {enabled ? (
+        <Script
+          async={true}
+          crossOrigin={props.integrity ? 'anonymous' : undefined}
+          data-domain={props.domain}
+          data-exclude={props.exclude}
+          defer={true}
+          integrity={props.integrity}
+          src={getScriptPath(
+            props.trackLocalhost ? 'local' : null,
+            props.trackOutboundLinks ? 'outbound-links' : null,
+            props.exclude ? 'exclusions' : null,
+          )}
+        />
+      ) : null}
       {props.children}
     </>
   )
