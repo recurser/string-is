@@ -12,7 +12,6 @@ updates:
     # - https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
     # - https://rathbun.dev/posts/semantic-release-dependabot/
     commit-message:
-      prefix:             'build'
-      prefix-development: 'build'
-      include:            'scope'
+      prefix:             'deps'
+      prefix-development: 'devdeps'
     open-pull-requests-limit: 20
