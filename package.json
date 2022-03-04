@@ -21,7 +21,7 @@
     "chrono-node": "^2.3.7",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.8",
-    "evergreen-ui": "^6.8.2",
+    "evergreen-ui": "^6.9.0",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.2",
     "js-yaml": "^4.1.0",
