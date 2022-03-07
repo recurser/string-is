@@ -5,7 +5,7 @@ import { output as csvOutput } from '@lib/outputs/CsvOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'csv'
+export const id = 'csvFormatter'
 
 /**
  * A string which uniquely identifies the output component used by

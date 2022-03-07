@@ -4,7 +4,7 @@ import { output as javaScriptOutput } from '@lib/outputs/JavaScriptOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'javaScript'
+export const id = 'javaScriptFormatter'
 
 /**
  * A string which uniquely identifies the output component used by

@@ -5,7 +5,7 @@ import { input as yamlInput } from '@lib/inputs/YamlInput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'yamlToJson'
+export const id = 'yamlToJsonConverter'
 
 /**
  * A string which uniquely identifies the output component used by

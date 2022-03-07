@@ -11,7 +11,6 @@ import useTranslation from 'next-translate/useTranslation'
 
 import * as outputs from '@components/domain/convert/outputs'
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
-import { NullConverter } from '@lib/converters'
 import { OutputError } from '@components/domain/convert/OutputError'
 import type { OutputName } from '@components/domain/convert/outputs'
 import { useConverterContext } from '@contexts/ConverterContext'
@@ -93,9 +92,9 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
       htmlFor="converted-output"
       inputString={inputString}
       label={
-        converter.id !== NullConverter.id
-          ? `3. ${t(`lib-converters-results:${converter.id}`)} 👇`
-          : t('default_label')
+        converter.isHidden
+          ? t('default_label')
+          : `3. ${t(`lib-converters-results:${converter.id}`)} 👇`
       }
       outputString={outputString}
     >

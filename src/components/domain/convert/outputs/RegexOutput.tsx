@@ -1,5 +1,12 @@
 import { Alert, TextInput, majorScale } from 'evergreen-ui'
-import { ChangeEvent, Fragment, forwardRef, useMemo, useState } from 'react'
+import {
+  ChangeEvent,
+  Fragment,
+  forwardRef,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
 import { CodeTextarea, CopyButton, Label } from '@components/forms'
@@ -19,6 +26,16 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const { t } = useTranslation('domain-convert-outputs-regexOutput')
 
     const [testString, setTestString] = useState('')
+
+    // This is a bit of a hack to provide a test string when 'load an example' is
+    // clicked. This regex should match the one in locales/en/pages-converter.json.
+    useEffect(() => {
+      if (input === '/(quick|early) \\w+/g' && testString === '') {
+        setTestString(
+          'The quick brown fox jumps over the lazy dog\nThe early bird gets the worm',
+        )
+      }
+    }, [input, testString])
 
     /**
      * Updates the output options state when the test-string text input is changed.

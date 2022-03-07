@@ -4,7 +4,7 @@ import { output as lowerCaseOutput } from '@lib/outputs/LowerCaseOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'lowerCase'
+export const id = 'lowerCaseConverter'
 
 /**
  * A string which uniquely identifies the output component used by

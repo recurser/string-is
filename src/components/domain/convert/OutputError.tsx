@@ -16,11 +16,10 @@ interface Props {
  * @param props - The component props.
  */
 export const OutputError = ({ message }: Props) => {
-  const { clearConverter, useOutput } = useConverterContext()
+  const { forceInput } = useConverterContext()
 
-  // Avoid flash-of-error if we're in the process of clearing
-  // the converter or the output.
-  if (!message || clearConverter || useOutput) {
+  // Avoid flash-of-error if we're in the process of forcing the input.
+  if (forceInput || !message) {
     return <></>
   }
 

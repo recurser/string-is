@@ -5,7 +5,7 @@ import { ConverterOptions } from '@lib/types'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'base64Encode'
+export const id = 'base64Encoder'
 
 /**
  * A string which uniquely identifies the output component used by
