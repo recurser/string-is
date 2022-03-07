@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "bluebird": "^3.7.2",
-    "chrono-node": "^2.3.7",
+    "chrono-node": "^2.3.8",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.8",
     "evergreen-ui": "^6.9.0",
