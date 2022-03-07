@@ -4,7 +4,7 @@ import { output as uuidOutput } from '@lib/outputs/UuidOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'uuid'
+export const id = 'uuidGenerator'
 
 /**
  * A string which uniquely identifies the output component used by

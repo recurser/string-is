@@ -6,7 +6,7 @@ import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'markdownToHtml'
+export const id = 'markdownToHtmlConverter'
 
 /**
  * A string which uniquely identifies the output component used by

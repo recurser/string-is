@@ -4,7 +4,7 @@ import { output as cssOutput } from '@lib/outputs/CssOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'scss'
+export const id = 'scssFormatter'
 
 /**
  * A string which uniquely identifies the output component used by

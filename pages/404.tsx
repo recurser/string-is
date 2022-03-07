@@ -14,6 +14,6 @@ export default function NotFound() {
 /**
  * Defines the layout component for this page.
  *
- * @param page - The React page comonent.
+ * @param page - The React page component.
  */
 NotFound.getLayout = (page: ReactElement) => <Application>{page}</Application>

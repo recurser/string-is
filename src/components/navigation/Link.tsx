@@ -25,7 +25,7 @@ export const Link = ({
   target,
   ...props
 }: PropsWithChildren<Props>): ReactElement => (
-  <BaseLink href={href} {...props} passHref={true}>
+  <BaseLink href={href} passHref={true}>
     <Anchor
       color={color}
       href={href}
@@ -33,6 +33,7 @@ export const Link = ({
       role="link"
       size={size}
       target={target}
+      {...props}
     >
       {children}
     </Anchor>

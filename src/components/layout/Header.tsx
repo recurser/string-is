@@ -1,4 +1,12 @@
-import { Image, Pane, Tab, Tablist, majorScale, minorScale } from 'evergreen-ui'
+import {
+  Heading,
+  Image,
+  Pane,
+  Tab,
+  Tablist,
+  majorScale,
+  minorScale,
+} from 'evergreen-ui'
 import { ReactElement } from 'react'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
@@ -7,10 +15,14 @@ import { ROUTE_ABOUT, ROUTE_CONVERT } from '@services/Routes'
 import { Link } from '@components/navigation'
 import Logo from '@images/logo.svg'
 
+interface Props {
+  pageHeading?: string | ReactElement
+}
+
 /**
  * Renders the standard page header with the logo and main menu.
  */
-export const Header = (): ReactElement => {
+export const Header = ({ pageHeading }: Props): ReactElement => {
   const { t } = useTranslation('layout-header')
   const { pathname } = useRouter()
 
@@ -22,14 +34,27 @@ export const Header = (): ReactElement => {
       justifyContent="space-between"
       marginBottom={majorScale(2)}
     >
-      <Link href={ROUTE_CONVERT} lineHeight={0}>
-        <Image
-          alt="string-is logo"
-          height={majorScale(5)}
-          src={`${Logo.src}`}
-          width={majorScale(5)}
-        />
-      </Link>
+      <Pane alignItems="center" display="flex">
+        <Link href={ROUTE_CONVERT} lineHeight={0}>
+          <Image
+            alt="string-is logo"
+            display="inline-flex"
+            height={majorScale(5)}
+            src={`${Logo.src}`}
+            width={majorScale(5)}
+          />
+        </Link>
+        {pageHeading ? (
+          <Heading
+            display="inline-flex"
+            height="100%"
+            is="h1"
+            marginLeft={majorScale(2)}
+          >
+            {pageHeading}
+          </Heading>
+        ) : null}
+      </Pane>
       <Pane>
         <Tablist display="flex" gap={minorScale(1)}>
           <Link href={ROUTE_ABOUT}>

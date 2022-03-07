@@ -3,7 +3,7 @@ import { ConverterOptions } from '@lib/types'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'urlEncode'
+export const id = 'urlEncoder'
 
 /**
  * A string which uniquely identifies the output component used by

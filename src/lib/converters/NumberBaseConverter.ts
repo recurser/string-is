@@ -5,7 +5,7 @@ import { input as numberInput } from '@lib/inputs/NumberInput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'numberBase'
+export const id = 'numberBaseConverter'
 
 /**
  * A string which uniquely identifies the output component used by

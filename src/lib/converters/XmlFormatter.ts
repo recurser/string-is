@@ -4,7 +4,7 @@ import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'xml'
+export const id = 'xmlFormatter'
 
 /**
  * A string which uniquely identifies the output component used by

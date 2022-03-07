@@ -5,7 +5,7 @@ import { input as jsonInput } from '@lib/inputs/JsonInput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'jsonToJavaScript'
+export const id = 'jsonToJavaScriptConverter'
 
 /**
  * A string which uniquely identifies the output component used by

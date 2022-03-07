@@ -3,7 +3,7 @@ import { ConverterOptions } from '@lib/types'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'regex'
+export const id = 'regexDebugger'
 
 /**
  * A string which uniquely identifies the output component used by

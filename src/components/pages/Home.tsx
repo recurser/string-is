@@ -21,8 +21,8 @@ import {
 import { Card } from '@components/layout/Card'
 import { useBreakpoints } from '@services/Responsive'
 
-export const Convert = () => {
-  const { t } = useTranslation('pages-convert')
+export const Home = () => {
+  const { t } = useTranslation('pages-home')
   const { isMobile } = useBreakpoints()
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 

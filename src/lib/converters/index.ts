@@ -42,6 +42,11 @@ export interface Converter {
   id: string
 
   /**
+   * If true, this converter is hidden from display in the UI.
+   */
+  isHidden?: boolean
+
+  /**
    * An operation on the input string, with the given
    * options, that returns a converted output.
    */

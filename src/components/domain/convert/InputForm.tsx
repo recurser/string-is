@@ -15,12 +15,12 @@ const DebounceTimeout = 500
 export const InputForm = () => {
   const { t } = useTranslation('domain-convert-inputForm')
   const {
+    forceInput,
     inputString,
     outputString,
-    setClearConverter,
+    setConverter,
+    setForceInput,
     setInputString,
-    setUseOutput,
-    useOutput,
   } = useConverterContext()
   const [input, setInput] = useState('')
 
@@ -36,13 +36,14 @@ export const InputForm = () => {
   useEffect(() => doDebounce(input), [input, doDebounce])
 
   useEffect(() => {
-    if (useOutput) {
-      setUseOutput(false)
-      setInputString(outputString)
-      setInput(outputString)
-      setClearConverter(true)
+    if (forceInput) {
+      const [newInputString, newConverter] = forceInput
+      setForceInput(undefined)
+      setInputString(newInputString)
+      setInput(newInputString)
+      setConverter(newConverter)
     }
-  }, [outputString, setClearConverter, setInputString, setUseOutput, useOutput])
+  }, [forceInput, setConverter, setForceInput, setInputString])
 
   /**
    * Updates the state with the user input, when the textarea content is changed.

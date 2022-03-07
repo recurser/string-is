@@ -7,7 +7,7 @@ import {
   SelectMenuItem,
   majorScale,
 } from 'evergreen-ui'
-import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useMemo } from 'react'
 import { isEmpty, minBy } from 'lodash'
 import { useBreakpoints } from '@services/Responsive'
 import useTranslation from 'next-translate/useTranslation'
@@ -17,6 +17,7 @@ import {
   recentConverterIds,
   useConverterContext,
 } from '@contexts/ConverterContext'
+import type { Converter } from '@lib/converters'
 import { NullConverter } from '@lib/converters'
 import { converterCandidates } from '@services/Converter'
 
@@ -38,22 +39,15 @@ const converters = Object.values(converterModule)
 export const ConverterSelector = ({ setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
   const { isMobile } = useBreakpoints()
-  const {
-    clearConverter,
-    converter,
-    inputString,
-    setClearConverter,
-    setConverter,
-  } = useConverterContext()
-  const [selected, setSelected] = useState<string | undefined>()
+  const { converter, inputString, setConverter } = useConverterContext()
 
   useEffect(() => {
-    async function fetchData() {
+    async function selectConverter() {
       if (isEmpty(inputString)) {
         return
       }
 
-      if (!selected) {
+      if (converter.isHidden) {
         const candidates = await converterCandidates(inputString)
 
         if (candidates.length > 0) {
@@ -66,50 +60,30 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
                 recentIds.includes(candidate.id) &&
                 recentIds.indexOf(candidate.id),
             ) || candidates[0]
-          setSelected(recent.id)
+          setConverter(recent)
         }
       }
     }
-    fetchData()
-  }, [inputString, selected, setSelected])
-
-  // Set the converter based on the selected value. Ideally we could use the
-  // converter directly in <SelectMenu />, but unfortunately it only supports
-  // string and number values.
-  useEffect(() => {
-    const cnvt =
-      converters.find((candidate) => candidate.id === selected) || NullConverter
-    if (converter.id !== cnvt.id) {
-      setConverter(cnvt || NullConverter)
-    }
-  }, [converter.id, setConverter, selected])
+    selectConverter()
+  }, [converter.isHidden, inputString, setConverter])
 
   const options = useMemo(() => {
     return converters
-      .filter((converter) => converter.id != NullConverter.id)
+      .filter((converter: Converter) => !converter.isHidden)
       .map((converter) => ({
         label: t(`lib-converters-commands:${converter.id}`),
         value: converter.id,
       }))
   }, [t])
 
-  // If 'clearConverter' is true, clear the selected converter and set 'clearConverter'
-  // back to false. This can be triggered by eg. clicking 'Use as input'.
-  useEffect(() => {
-    if (clearConverter) {
-      setClearConverter(false)
-      setSelected(undefined)
-    }
-  }, [clearConverter, setClearConverter, setSelected])
-
   const icon = useMemo(() => {
-    if (selected && isMobile) {
+    if (!converter.isHidden && isMobile) {
       return ChevronDownIcon
-    } else if (selected) {
+    } else if (!converter.isHidden) {
       return ChevronRightIcon
     }
     return undefined
-  }, [isMobile, selected])
+  }, [isMobile, converter])
 
   /**
    * Updates the state with the selected converter, when the SelectMenu changes.
@@ -117,7 +91,9 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
    * @param item - the chosen SelectMenuItem.
    */
   const onSelect = ({ value }: SelectMenuItem) => {
-    setSelected(value as string)
+    const selected =
+      converters.find((candidate) => candidate.id === value) || NullConverter
+    setConverter(selected)
   }
 
   return (
@@ -127,7 +103,7 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
       onCloseComplete={() => setFocusOutput(true)}
       onSelect={onSelect}
       options={options}
-      selected={selected}
+      selected={converter.id}
     >
       <Pane display="flex">
         <Button
@@ -136,9 +112,9 @@ export const ConverterSelector = ({ setFocusOutput }: Props) => {
           maxWidth={majorScale(20)}
           tabIndex={2}
         >
-          {selected
-            ? t(`lib-converters-commands:${selected}`)
-            : t('placeholder')}
+          {converter.isHidden
+            ? t('placeholder')
+            : t(`lib-converters-commands:${converter.id}`)}
         </Button>
       </Pane>
     </SelectMenu>

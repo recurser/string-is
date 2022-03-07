@@ -5,7 +5,7 @@ import { output as jsonOutput } from '@lib/outputs/JsonOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'csvToJson'
+export const id = 'csvToJsonConverter'
 
 /**
  * A string which uniquely identifies the output component used by

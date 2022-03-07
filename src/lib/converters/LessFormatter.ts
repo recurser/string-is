@@ -4,7 +4,7 @@ import { output as lessOutput } from '@lib/outputs/LessOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'less'
+export const id = 'lessFormatter'
 
 /**
  * A string which uniquely identifies the output component used by

@@ -5,7 +5,7 @@ import { output as yamlOutput } from '@lib/outputs/YamlOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'queryStringToYaml'
+export const id = 'queryStringToYamlConverter'
 
 /**
  * A string which uniquely identifies the output component used by
