@@ -35,7 +35,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-responsive": "^9.0.0-beta.6",
-    "showdown": "^2.0.2",
+    "showdown": "^2.0.3",
     "styled-components": "^5.3.3",
     "uuid": "^8.3.2"
   },
