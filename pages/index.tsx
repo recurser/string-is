@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react'
+import Trans from 'next-translate/Trans'
 
 import { Application } from '@components/layout'
 import { Home as SubHome } from '@pages/Home'
@@ -17,5 +18,10 @@ export default function Home() {
  * @param page - The React page comonent.
  */
 Home.getLayout = (page: ReactElement) => (
-  <Application maxWidth={1600}>{page}</Application>
+  <Application
+    maxWidth={1600}
+    pageHeading={<Trans i18nKey={`pages-home:page_heading`} />}
+  >
+    {page}
+  </Application>
 )

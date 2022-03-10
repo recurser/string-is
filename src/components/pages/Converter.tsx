@@ -1,9 +1,11 @@
 import { Link, Pane, Text, majorScale } from 'evergreen-ui'
 import { ReactElement, useEffect } from 'react'
+import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 
 import type { Converter as ConverterType } from '@lib/converters'
 import { Home } from '@pages/Home'
+import { removeTags } from '@lib/utilities/String'
 import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'
 import useTranslation from 'next-translate/useTranslation'
@@ -37,6 +39,21 @@ export const Converter = ({ converter }: Props): ReactElement => {
 
   return (
     <>
+      <Head>
+        <title>
+          {t(`pages-converter:${converter.id}-heading`)}
+          {t('common:page_title_suffix')}
+        </title>
+        <meta
+          content={t(`pages-converter:${converter.id}-heading`)}
+          key="title"
+          property="og:title"
+        />
+        <meta
+          content={removeTags(t(`pages-converter:${converter.id}-intro`))}
+          name="description"
+        />
+      </Head>
       <Pane
         alignSelf="center"
         marginBottom={isMobile ? 0 : majorScale(3)}
@@ -58,7 +75,7 @@ export const Converter = ({ converter }: Props): ReactElement => {
         </Text>
       </Pane>
 
-      <Home />
+      <Home isRootPage={false} />
     </>
   )
 }

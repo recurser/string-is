@@ -4,6 +4,14 @@ import { useState } from 'react'
 import Head from 'next/head'
 import useTranslation from 'next-translate/useTranslation'
 
+interface Props {
+  /**
+   * If true, this component is embedded in the '/' root page. If false.
+   * it is embedded in a landing page for a specific converter.
+   */
+  isRootPage?: boolean
+}
+
 /**
  * Renders the 'convert' page, which is basically the heart of the
  * application. It provides an input textarea, a conversion selector,
@@ -21,16 +29,20 @@ import {
 import { Card } from '@components/layout/Card'
 import { useBreakpoints } from '@services/Responsive'
 
-export const Home = () => {
+export const Home = ({ isRootPage }: Props) => {
   const { t } = useTranslation('pages-home')
   const { isMobile } = useBreakpoints()
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
-      <Head>
-        <title>{t('page_title')}</title>
-      </Head>
+      {isRootPage ? (
+        <Head>
+          <title>{t('page_title')}</title>
+          <meta content={t('page_title')} key="title" property="og:title" />
+          <meta content={t('common:meta_description')} name="description" />
+        </Head>
+      ) : null}
 
       <Card>
         <Pane
@@ -63,4 +75,8 @@ export const Home = () => {
       </Card>
     </Pane>
   )
+}
+
+Home.defaultProps = {
+  isRootPage: true,
 }
