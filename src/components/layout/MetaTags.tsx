@@ -39,7 +39,7 @@ export const MetaTags = ({
       <meta content={title} key="title" property="og:title" />
       <meta content={description} property="og:description" />
       <meta
-        content="https://string.is/twitter-cards/string-is.png"
+        content="https://string.is/images/twitter-card.png"
         property="og:image"
       />
       <meta content="summary_large_image" name="twitter:card" />
@@ -48,7 +48,7 @@ export const MetaTags = ({
       <meta content={title} name="twitter:title" />)
       <meta content={description} name="twitter:description" />
       <meta
-        content="https://string.is/twitter-cards/string-is.png"
+        content="https://string.is/images/twitter-card.png"
         name="twitter:image"
       />
       <link
