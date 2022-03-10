@@ -1,8 +1,7 @@
 import { Pane, majorScale } from 'evergreen-ui'
 import { useState } from 'react'
 
-import Head from 'next/head'
-import useTranslation from 'next-translate/useTranslation'
+import { MetaTags } from '@components/layout'
 
 interface Props {
   /**
@@ -30,19 +29,12 @@ import { Card } from '@components/layout/Card'
 import { useBreakpoints } from '@services/Responsive'
 
 export const Home = ({ isRootPage }: Props) => {
-  const { t } = useTranslation('pages-home')
   const { isMobile } = useBreakpoints()
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
-      {isRootPage ? (
-        <Head>
-          <title>{t('page_title')}</title>
-          <meta content={t('page_title')} key="title" property="og:title" />
-          <meta content={t('common:meta_description')} name="description" />
-        </Head>
-      ) : null}
+      {isRootPage ? <MetaTags /> : null}
 
       <Card>
         <Pane

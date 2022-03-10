@@ -1,10 +1,9 @@
 import { ListItem, Pane } from 'evergreen-ui'
-import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 
+import { Card, MetaTags } from '@components/layout'
 import { Heading, Paragraph, UnorderedList } from '@components/typography'
-import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 import { ROUTE_SECURITY } from '@services/Routes'
 
@@ -17,14 +16,7 @@ export const Privacy = () => {
 
   return (
     <Pane display="flex">
-      <Head>
-        <title>
-          {t('page_title')}
-          {t('common:page_title_suffix')}
-        </title>
-        <meta content={t('page_title')} key="title" property="og:title" />
-        <meta content={t('meta_description')} name="description" />
-      </Head>
+      <MetaTags description={t('meta_description')} title={t('page_title')} />
 
       <Card title={t('page_heading')}>
         <Paragraph>
