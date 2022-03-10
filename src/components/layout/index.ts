@@ -1,6 +1,7 @@
 import dynamic, { DynamicOptions } from 'next/dynamic'
 import { PropsWithChildren } from 'react'
 
+export * from '@components/layout/Application'
 export * from '@components/layout/Card'
 export * from '@components/layout/Footer'
 export * from '@components/layout/Header'
@@ -18,7 +19,7 @@ export * from '@components/layout/MetaTags'
  * Evergreen UI's 'hydrationScript', but couldn't get to the
  * bottom of it.
  */
-export const Application = dynamic(
+export const ApplicationDynamic = dynamic(
   (() =>
     import('./Application').then((mod) => mod.Application)) as DynamicOptions<
     PropsWithChildren<Record<string, unknown>>
