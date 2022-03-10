@@ -42,7 +42,7 @@ export const MetaTags = ({
         content="https://string.is/twitter-cards/string-is.png"
         property="og:image"
       />
-      <meta content="summary" name="twitter:card" />
+      <meta content="summary_large_image" name="twitter:card" />
       <meta content="@davemetrics" name="twitter:creator" />
       <meta content="@string__is" name="twitter:site" />
       <meta content={title} name="twitter:title" />)
