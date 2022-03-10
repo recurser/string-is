@@ -12,7 +12,7 @@
   "li_goal_open_source": "It should be open-source.",
   "li_goal_strict_csp": "It should have a strict <0>Content Security Policy</0>.",
   "page_heading": "About string.is",
-  "page_title": "About",
+  "page_title": "About string.is",
   "para_icon": "The icon is based on <0>developer</0> by <1>Achmad Mulyana</1>.",
   "para_acknowledgements": "string.is wouldn\u2019t exist without the following open-source libraries:",
   "para_built": "string.is was built to meet those goals, and provide a secure, trustworthy string conversion tool.",

@@ -1,9 +1,8 @@
 import { ListItem, Pane, Strong } from 'evergreen-ui'
-import Head from 'next/head'
 import useTranslation from 'next-translate/useTranslation'
 
+import { Card, MetaTags } from '@components/layout'
 import { Heading, Paragraph, UnorderedList } from '@components/typography'
-import { Card } from '@components/layout/Card'
 
 /**
  * Renders the 'terms' page, describing the terms of use of
@@ -14,14 +13,7 @@ export const Terms = () => {
 
   return (
     <Pane display="flex">
-      <Head>
-        <title>
-          {t('page_title')}
-          {t('common:page_title_suffix')}
-        </title>
-        <meta content={t('page_title')} key="title" property="og:title" />
-        <meta content={t('common:meta_description')} name="description" />
-      </Head>
+      <MetaTags description={t('meta_description')} title={t('page_title')} />
 
       <Card title={t('page_heading')}>
         <Heading>Definitions</Heading>
