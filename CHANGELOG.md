@@ -1,3 +1,13 @@
+# [1.19.0](https://github.com/recurser/string-is/compare/v1.18.0...v1.19.0) (2022-03-10)
+
+
+### Features
+
+* add a landing page for each converter ([2c90bd4](https://github.com/recurser/string-is/commit/2c90bd4af1965708f7eb2efebd2dd81980f23b25))
+* add a sitemap ([8ff3928](https://github.com/recurser/string-is/commit/8ff3928103576a466a5e49dabf2b9a66c7f5e6f4))
+* add proper page titles and meta descriptions ([5b504cb](https://github.com/recurser/string-is/commit/5b504cb0bbeba79f9a5291064d9c73d7e69ac588))
+* add Twitter and Open Graph meta tags ([9e301ce](https://github.com/recurser/string-is/commit/9e301ce1ae8e2cd391a2e54454551572aabb5a6c))
+
 # [1.18.0](https://github.com/recurser/string-is/compare/v1.17.0...v1.18.0) (2022-03-03)
 
 
