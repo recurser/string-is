@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
+import { NullConverter } from '@lib/converters'
 import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'
 
@@ -21,7 +22,7 @@ export const UseAsInputButton = () => {
   const { t } = useTranslation('domain-convert-useAsInputButton')
   const { isMobile } = useBreakpoints()
   const [disabled, setDisabled] = useState(true)
-  const { outputString, setUseOutput } = useConverterContext()
+  const { outputString, setForceInput } = useConverterContext()
 
   useEffect(() => {
     const noValue = isEmpty(outputString.trim())
@@ -30,7 +31,7 @@ export const UseAsInputButton = () => {
     }
   }, [disabled, outputString, setDisabled])
 
-  const onClick = () => setUseOutput(true)
+  const onClick = () => setForceInput([outputString, NullConverter])
 
   return (
     <Pane display="flex" flexDirection="row" marginTop={majorScale(1)}>

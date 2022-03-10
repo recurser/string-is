@@ -4,7 +4,7 @@ import { output as markdownOutput } from '@lib/outputs/MarkdownOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'markdown'
+export const id = 'markdownFormatter'
 
 /**
  * A string which uniquely identifies the output component used by

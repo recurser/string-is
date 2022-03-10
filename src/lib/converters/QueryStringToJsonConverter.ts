@@ -5,7 +5,7 @@ import { input as queryStringInput } from '@lib/inputs/QueryStringInput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'queryStringToJson'
+export const id = 'queryStringToJsonConverter'
 
 /**
  * A string which uniquely identifies the output component used by

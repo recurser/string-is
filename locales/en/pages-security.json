@@ -12,10 +12,11 @@
   "intro": "string.is has been designed from the ground up to protect your privacy. Some of the measures taken to ensure privacy include:",
   "local_content": "All conversion operations happen <0>client-side</0> on your browser. At no time is the data you provide sent to any third parties.",
   "local_heading": "Your data never leaves your browser",
+  "meta_description": "string.is has been designed from the ground up to protect your privacy. The source code is publicly available, and your data never leaves your browser.",
   "open_source_content": "The source code is publicly available on <0>Github</0>, so that you can verify for yourself how your data is handled.",
   "open_source_heading": "Open source",
   "page_heading": "Security",
-  "page_title": "Security",
+  "page_title": "Security - string.is",
   "ssl_content": "Requests and responses are encrypted in transit to protect against MITM attacks. Certificates are provided by <0>Let\u2019s Encrypt</0>, and managed by <1>Vercel</1>.",
   "ssl_heading": "All requests are served over SSL"
 }

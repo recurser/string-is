@@ -1,10 +1,11 @@
 import { ConverterOptions } from '@lib/types'
+import { isEmpty } from 'lodash'
 import { output as shaOutput } from '@lib/outputs/ShaOutput'
 
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'sha'
+export const id = 'shaEncoder'
 
 /**
  * A string which uniquely identifies the output component used by
@@ -24,5 +25,9 @@ export const operation = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
+  if (isEmpty(input)) {
+    return ''
+  }
+
   return shaOutput(input, options)
 }

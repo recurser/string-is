@@ -4,7 +4,7 @@ import { output as datetimeOutput } from '@lib/outputs/DatetimeOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'timestamp'
+export const id = 'timestampConverter'
 
 /**
  * A string which uniquely identifies the output component used by

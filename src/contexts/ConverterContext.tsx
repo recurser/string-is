@@ -10,17 +10,21 @@ import {
 import { Converter, NullConverter } from '@lib/converters'
 import { useAnalytics } from '@services/Analytics'
 
-interface Props {
-  /**
-   * A state flag that indicates that the currently selected
-   * converter should be unset.
-   */
-  clearConverter: boolean
+/**
+ * Allows a specific input string and converter to be set.
+ */
+type ForceInput = [string, Converter] | undefined
 
+interface Props {
   /**
    * The currently selected converter.
    */
   converter: Converter
+
+  /**
+   * Allows a specific input string and converter to be set.
+   */
+  forceInput: ForceInput
 
   /**
    * The string inputted by the user for conversion.
@@ -33,15 +37,14 @@ interface Props {
   outputString: string
 
   /**
-   * Sets the state flag to trigger clearing of the currently
-   * selected converter.
-   */
-  setClearConverter: Dispatch<boolean>
-
-  /**
    * Sets the current converter.
    */
   setConverter: Dispatch<Converter>
+
+  /**
+   * Sets the input string and converter that will be forced into use.
+   */
+  setForceInput: Dispatch<ForceInput>
 
   /**
    * Sets the input string that will be converted.
@@ -52,18 +55,6 @@ interface Props {
    * Sets the output string after conversion.
    */
   setOutputString: Dispatch<string>
-
-  /**
-   * Sets the state flag to shift the converted output string
-   * into the input box.
-   */
-  setUseOutput: Dispatch<boolean>
-
-  /**
-   * A state flag that indicates that the converted output string
-   * should be shigted into the input box.
-   */
-  useOutput: boolean
 }
 
 const localStorageKey = 'string.is:RecentConverters'
@@ -76,16 +67,14 @@ export const recentConverterIds = () =>
 
 // Create the context object.
 const Context = createContext<Props>({
-  clearConverter: false,
   converter: NullConverter,
+  forceInput: undefined,
   inputString: '',
   outputString: '',
-  setClearConverter: (_: boolean) => undefined,
   setConverter: (_: Converter) => undefined,
+  setForceInput: (_: ForceInput) => undefined,
   setInputString: (_: string) => undefined,
   setOutputString: (_: string) => undefined,
-  setUseOutput: (_: boolean) => undefined,
-  useOutput: false,
 })
 
 /**
@@ -94,23 +83,21 @@ const Context = createContext<Props>({
  */
 export const useConverterContext = (): Props => {
   const {
-    clearConverter,
     converter,
+    forceInput,
     inputString,
     outputString,
-    setClearConverter,
     setConverter,
+    setForceInput,
     setInputString,
     setOutputString,
-    setUseOutput,
-    useOutput,
   } = useContext(Context)
   const analytics = useAnalytics()
 
   const wrappedSetConverter = (cnvt: Converter) => {
     setConverter(cnvt)
 
-    if (cnvt.id !== NullConverter.id) {
+    if (!cnvt.isHidden) {
       // Track which converter has been selected, to find out which are useful.
       analytics('Convert', {
         props: {
@@ -127,16 +114,14 @@ export const useConverterContext = (): Props => {
   }
 
   return {
-    clearConverter,
     converter,
+    forceInput,
     inputString,
     outputString,
-    setClearConverter,
     setConverter: wrappedSetConverter,
+    setForceInput,
     setInputString,
     setOutputString,
-    setUseOutput,
-    useOutput,
   }
 }
 
@@ -147,23 +132,20 @@ export const useConverterContext = (): Props => {
 export const ConverterContext = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {
-  const [clearConverter, setClearConverter] = useState<boolean>(false)
   const [converter, setConverter] = useState<Converter>(NullConverter)
+  const [forceInput, setForceInput] = useState<ForceInput>()
   const [inputString, setInputString] = useState<string>('')
   const [outputString, setOutputString] = useState<string>('')
-  const [useOutput, setUseOutput] = useState<boolean>(false)
 
   const value = {
-    clearConverter,
     converter,
+    forceInput,
     inputString,
     outputString,
-    setClearConverter,
     setConverter,
+    setForceInput,
     setInputString,
     setOutputString,
-    setUseOutput,
-    useOutput,
   }
   return <Context.Provider value={value}>{children}</Context.Provider>
 }

@@ -7,12 +7,17 @@ import { ConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { Footer } from '@components/layout/Footer'
 import { Header } from '@components/layout/Header'
 
-interface Props {
+export interface ApplicationProps {
   /**
    * The maximum width of the layout. This allows us to have
    * pages wider than the default where necessary.
    */
   maxWidth: number
+
+  /**
+   * Adds an optional heading
+   */
+  pageHeading?: string | ReactElement
 }
 
 /**
@@ -25,7 +30,8 @@ interface Props {
 export const Application = ({
   children,
   maxWidth,
-}: PropsWithChildren<Props>): ReactElement => (
+  pageHeading,
+}: PropsWithChildren<ApplicationProps>): ReactElement => (
   <AnalyticsProvider>
     <ConverterContext>
       <ConverterOptionsContext>
@@ -38,9 +44,11 @@ export const Application = ({
           maxWidth={maxWidth}
           paddingTop={majorScale(1)}
         >
-          <Header />
+          <Header pageHeading={pageHeading} />
 
-          <Pane>{children}</Pane>
+          <Pane display="flex" flexDirection="column">
+            {children}
+          </Pane>
 
           <Footer />
         </Pane>

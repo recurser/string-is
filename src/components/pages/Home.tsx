@@ -1,8 +1,15 @@
 import { Pane, majorScale } from 'evergreen-ui'
 import { useState } from 'react'
 
-import Head from 'next/head'
-import useTranslation from 'next-translate/useTranslation'
+import { MetaTags } from '@components/layout'
+
+interface Props {
+  /**
+   * If true, this component is embedded in the '/' root page. If false.
+   * it is embedded in a landing page for a specific converter.
+   */
+  isRootPage?: boolean
+}
 
 /**
  * Renders the 'convert' page, which is basically the heart of the
@@ -21,16 +28,13 @@ import {
 import { Card } from '@components/layout/Card'
 import { useBreakpoints } from '@services/Responsive'
 
-export const Convert = () => {
-  const { t } = useTranslation('pages-convert')
+export const Home = ({ isRootPage }: Props) => {
   const { isMobile } = useBreakpoints()
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
 
   return (
     <Pane display="flex" gap={majorScale(2)}>
-      <Head>
-        <title>{t('page_title')}</title>
-      </Head>
+      {isRootPage ? <MetaTags /> : null}
 
       <Card>
         <Pane
@@ -63,4 +67,8 @@ export const Convert = () => {
       </Card>
     </Pane>
   )
+}
+
+Home.defaultProps = {
+  isRootPage: true,
 }

@@ -5,7 +5,7 @@ import { output as jwtOutput } from '@lib/outputs/JwtOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'jwt'
+export const id = 'jwtDecoder'
 
 /**
  * A string which uniquely identifies the output component used by

@@ -4,7 +4,7 @@ import { output as upperCaseOutput } from '@lib/outputs/UpperCaseOutput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'upperCase'
+export const id = 'upperCaseConverter'
 
 /**
  * A string which uniquely identifies the output component used by

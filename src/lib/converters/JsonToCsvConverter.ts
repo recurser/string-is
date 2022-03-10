@@ -7,7 +7,7 @@ import { input as jsonInput } from '@lib/inputs/JsonInput'
 /**
  * A string which uniquely identifies this operation.
  */
-export const id = 'jsonToCsv'
+export const id = 'jsonToCsvConverter'
 
 /**
  * A string which uniquely identifies the output component used by

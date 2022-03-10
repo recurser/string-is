@@ -1,11 +1,9 @@
 import { Pane } from 'evergreen-ui'
-
-import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 
+import { Card, MetaTags } from '@components/layout'
 import { Heading, Paragraph } from '@components/typography'
-import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 
 /**
@@ -17,9 +15,7 @@ export const Security = () => {
 
   return (
     <Pane display="flex">
-      <Head>
-        <title>{t('page_title')}</title>
-      </Head>
+      <MetaTags description={t('meta_description')} title={t('page_title')} />
 
       <Card title={t('page_heading')}>
         <Paragraph>{t('intro')}</Paragraph>

@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react'
 export * from '@components/layout/Card'
 export * from '@components/layout/Footer'
 export * from '@components/layout/Header'
+export * from '@components/layout/MetaTags'
 
 /**
  * This is the main Application layout.

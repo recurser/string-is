@@ -1,15 +1,14 @@
 import { ListItem, Pane, Strong } from 'evergreen-ui'
-import Head from 'next/head'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 
+import { Card, MetaTags } from '@components/layout'
 import {
   Heading,
   OrderedList,
   Paragraph,
   UnorderedList,
 } from '@components/typography'
-import { Card } from '@components/layout/Card'
 import { Link } from '@components/navigation'
 
 /**
@@ -21,9 +20,7 @@ export const About = () => {
 
   return (
     <Pane display="flex">
-      <Head>
-        <title>{t('page_title')}</title>
-      </Head>
+      <MetaTags title={t('page_title')} />
 
       <Card title={t('page_heading')}>
         <Paragraph>

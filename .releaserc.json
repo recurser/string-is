@@ -29,8 +29,8 @@
           },
           {
             "hidden": false,
-            "section": "Dependencies and Other Build Updates",
-            "type": "build"
+            "section": "Dependencies",
+            "type": "deps"
           }
         ]
       }
