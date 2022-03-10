@@ -37,3 +37,11 @@ export const sortByKeys = (object: Obj): Obj => {
     }),
   )
 }
+
+/**
+ * Strips tags from a string, returning plain text. Useful for turning
+ * converter page intros into meta descriptions.
+ *
+ * @param str - The string to remove tags from.
+ */
+export const removeTags = (str: string) => str.replace(/(<([^>]+)>)/gi, '')

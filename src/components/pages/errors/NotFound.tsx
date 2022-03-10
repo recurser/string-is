@@ -30,6 +30,8 @@ export const NotFound = () => {
     <Pane display="flex">
       <Head>
         <title>{t('page_title')}</title>
+        <meta content={t('page_title')} key="title" property="og:title" />
+        <meta content={t('common:meta_description')} name="description" />
       </Head>
 
       <Card title={t('page_heading')}>
