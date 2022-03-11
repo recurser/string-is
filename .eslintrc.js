@@ -62,6 +62,8 @@ module.exports = {
 
     // Dave: to fix later if necessary.
     '@typescript-eslint/explicit-module-boundary-types': 'off', // Introduced after typescript-eslint upgrade - Todo fix sometime.
+
+    'react/jsx-filename-extension': 'off',
   },
   settings: {
     'import/parsers': {
