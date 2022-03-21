@@ -4,12 +4,14 @@
   "cssFormatter": "CSS format",
   "csvFormatter": "CSV format",
   "csvToJsonConverter": "CSV to JSON",
+  "csvToXmlConverter": "CSV to XML",
   "csvToYamlConverter": "CSV to YAML",
   "htmlFormatter": "HTML format",
   "javaScriptFormatter": "JavaScript format",
   "jsonFormatter": "JSON format",
   "jsonToCsvConverter": "JSON to CSV",
   "jsonToJavaScriptConverter": "JSON to JavaScript",
+  "jsonToXmlConverter": "JSON to XML",
   "jsonToYamlConverter": "JSON to YAML",
   "jwtDecoder": "JWT decode",
   "lessFormatter": "LESS format",
@@ -30,6 +32,9 @@
   "urlEncoder": "URL encode",
   "uuidGenerator": "UUID Generator",
   "xmlFormatter": "XML format",
+  "xmlToJsonConverter": "XML to JSON",
+  "xmlToYamlConverter": "XML to YAML",
   "yamlFormatter": "YAML format",
-  "yamlToJsonConverter": "YAML to JSON"
+  "yamlToJsonConverter": "YAML to JSON",
+  "yamlToXmlConverter": "YAML to XML"
 }

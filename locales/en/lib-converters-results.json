@@ -4,12 +4,14 @@
   "cssFormatter": "Formatted CSS",
   "csvFormatter": "Formatted CSV",
   "csvToJsonConverter": "Formatted JSON",
+  "csvToXmlConverter": "Formatted XML",
   "csvToYamlConverter": "Formatted YAML",
   "htmlFormatter": "Formatted HTML",
   "javaScriptFormatter": "Formatted JavaScript",
   "jsonFormatter": "Formatted JSON",
   "jsonToCsvConverter": "Formatted CSV",
   "jsonToJavaScriptConverter": "Formatted JavaScript",
+  "jsonToXmlConverter": "Formatted XML",
   "jsonToYamlConverter": "Formatted YAML",
   "jwtDecoder": "Decoded JWT",
   "lessFormatter": "Formatted LESS",
@@ -30,6 +32,9 @@
   "urlEncoder": "URL encoded",
   "uuidGenerator": "Generated UUID",
   "xmlFormatter": "Formatted XML",
+  "xmlToJsonConverter": "Formatted JSON",
+  "xmlToYamlConverter": "Formatted YAML",
   "yamlFormatter": "Formatted YAML",
-  "yamlToJsonConverter": "Formatted JSON"
+  "yamlToJsonConverter": "Formatted JSON",
+  "yamlToXmlConverter": "Formatted XML"
 }
