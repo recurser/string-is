@@ -2,6 +2,7 @@ import { isEmpty } from 'lodash'
 import { parse } from 'papaparse'
 
 const defaults = {
+  dynamicTyping: true,
   header: true,
 }
 
