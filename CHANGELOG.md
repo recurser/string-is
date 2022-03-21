@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/recurser/string-is/compare/v1.19.2...v1.20.0) (2022-03-21)
+
+
+### Features
+
+* add a CSV to XML converter ([f966639](https://github.com/recurser/string-is/commit/f9666395e43e96bb94438035d533936b755be5c0))
+* add a JSON to XML converter ([fce2ddb](https://github.com/recurser/string-is/commit/fce2ddb7ddaef1d758aab5f96fbb458b5c7ba628))
+* add a YAML to XML converter ([5bce8f0](https://github.com/recurser/string-is/commit/5bce8f0f758386786c9ec1fb20ed7ecbb70df3e0))
+* add an XML to JSON converter ([45fa76d](https://github.com/recurser/string-is/commit/45fa76d05d5f6414dc386ca4840cb9164e68d57d))
+* add an XML to YAML converter ([f588f3b](https://github.com/recurser/string-is/commit/f588f3b55d8a22064da54c784670dbecbe13a5df))
+* use the 'dynamicTyping' option when parsing CSVs ([f82bf54](https://github.com/recurser/string-is/commit/f82bf549d444940d6290432edb0f221b9df2a6dc))
+
 ## [1.19.2](https://github.com/recurser/string-is/compare/v1.19.1...v1.19.2) (2022-03-21)
 
 
