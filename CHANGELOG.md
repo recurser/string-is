@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/recurser/string-is/compare/v1.20.0...v1.21.0) (2022-03-21)
+
+
+### Features
+
+* add a robots.txt file ([d93076c](https://github.com/recurser/string-is/commit/d93076c4069ee1c3be86c61159e9c96a7c7f6ad7))
+
 # [1.20.0](https://github.com/recurser/string-is/compare/v1.19.2...v1.20.0) (2022-03-21)
 
 
