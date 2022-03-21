@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/recurser/string-is/compare/v1.19.1...v1.19.2) (2022-03-21)
+
+
+### Bug Fixes
+
+* revert prettier 2.6.0 upgrade since it breaks the app ([4ede389](https://github.com/recurser/string-is/commit/4ede38989609e731a1def912daeac1adc2d1a1d5))
+
 ## [1.19.1](https://github.com/recurser/string-is/compare/v1.19.0...v1.19.1) (2022-03-21)
 
 
