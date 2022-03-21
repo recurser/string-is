@@ -33,6 +33,7 @@ export * as UrlEncoder from '@lib/converters/UrlEncoder'
 export * as UuidGenerator from '@lib/converters/UuidGenerator'
 export * as XmlFormatter from '@lib/converters/XmlFormatter'
 export * as XmlToJsonConverter from '@lib/converters/XmlToJsonConverter'
+export * as XmlToYamlConverter from '@lib/converters/XmlToYamlConverter'
 export * as YamlFormatter from '@lib/converters/YamlFormatter'
 export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
 

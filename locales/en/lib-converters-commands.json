@@ -31,6 +31,7 @@
   "uuidGenerator": "UUID Generator",
   "xmlFormatter": "XML format",
   "xmlToJsonConverter": "XML to JSON",
+  "xmlToYamlConverter": "XML to YAML",
   "yamlFormatter": "YAML format",
   "yamlToJsonConverter": "YAML to JSON"
 }
