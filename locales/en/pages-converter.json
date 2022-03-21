@@ -106,5 +106,8 @@
   "yamlFormatter-intro": "Clean up and beautify your YAML markup, with customizable indentation, key sorting, and syntax highlighting. Enter some YAML below to format it, or <0>load an example</0>.",
   "yamlToJsonConverter-example": "- Year: '2011'\n  Age: '29'\n  Name: Natalie Portman\n  Movie: Black Swan\n- Year: '2012'\n  Age: '62'\n  Name: Meryl Streep\n  Movie: The Iron Lady\n- Year: '2013'\n  Age: '22'\n  Name: Jennifer Lawrence\n  Movie: Silver Linings Playbook\n- Year: '2014'\n  Age: '44'\n  Name: Cate Blanchett\n  Movie: Blue Jasmine\n- Year: '2015'\n  Age: '54'\n  Name: Julianne Moore\n  Movie: Still Alice\n- Year: '2016'\n  Age: '26'\n  Name: Brie Larson\n  Movie: Room\n",
   "yamlToJsonConverter-heading": "Online YAML to JSON Converter",
-  "yamlToJsonConverter-intro": "Convert your YAML markup to formatted JSON, with customizable indentation, key sorting, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>."
+  "yamlToJsonConverter-intro": "Convert your YAML markup to formatted JSON, with customizable indentation, key sorting, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>.",
+  "yamlToXmlConverter-example": "- Year: '2011'\n  Age: '29'\n  Name: Natalie Portman\n  Movie: Black Swan\n- Year: '2012'\n  Age: '62'\n  Name: Meryl Streep\n  Movie: The Iron Lady\n- Year: '2013'\n  Age: '22'\n  Name: Jennifer Lawrence\n  Movie: Silver Linings Playbook\n- Year: '2014'\n  Age: '44'\n  Name: Cate Blanchett\n  Movie: Blue Jasmine\n- Year: '2015'\n  Age: '54'\n  Name: Julianne Moore\n  Movie: Still Alice\n- Year: '2016'\n  Age: '26'\n  Name: Brie Larson\n  Movie: Room\n",
+  "yamlToXmlConverter-heading": "Online YAML to XML Converter",
+  "yamlToXmlConverter-intro": "Convert your YAML markup to formatted XML, with customizable indentation, line length, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>."
 }

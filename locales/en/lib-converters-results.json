@@ -34,5 +34,6 @@
   "xmlToJsonConverter": "Formatted JSON",
   "xmlToYamlConverter": "Formatted YAML",
   "yamlFormatter": "Formatted YAML",
-  "yamlToJsonConverter": "Formatted JSON"
+  "yamlToJsonConverter": "Formatted JSON",
+  "yamlToXmlConverter": "Formatted XML"
 }
