@@ -5,6 +5,7 @@ import { AnalyticsProvider } from '@services/Analytics'
 import { ConverterContext } from '@contexts/ConverterContext'
 import { ConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { Footer } from '@components/layout/Footer'
+import { GlobalStyle } from '@components/utility/GlobalStyle'
 import { Header } from '@components/layout/Header'
 
 export interface ApplicationProps {
@@ -33,6 +34,7 @@ export const Application = ({
   pageHeading,
 }: PropsWithChildren<ApplicationProps>): ReactElement => (
   <AnalyticsProvider>
+    <GlobalStyle />
     <ConverterContext>
       <ConverterOptionsContext>
         <Pane
