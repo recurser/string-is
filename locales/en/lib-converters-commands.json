@@ -4,6 +4,7 @@
   "cssFormatter": "CSS format",
   "csvFormatter": "CSV format",
   "csvToJsonConverter": "CSV to JSON",
+  "csvToXmlConverter": "CSV to XML",
   "csvToYamlConverter": "CSV to YAML",
   "htmlFormatter": "HTML format",
   "javaScriptFormatter": "JavaScript format",
