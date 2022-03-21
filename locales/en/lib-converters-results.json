@@ -10,6 +10,7 @@
   "jsonFormatter": "Formatted JSON",
   "jsonToCsvConverter": "Formatted CSV",
   "jsonToJavaScriptConverter": "Formatted JavaScript",
+  "jsonToXmlConverter": "Formatted XML",
   "jsonToYamlConverter": "Formatted YAML",
   "jwtDecoder": "Decoded JWT",
   "lessFormatter": "Formatted LESS",

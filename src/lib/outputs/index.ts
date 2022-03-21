@@ -15,6 +15,7 @@ export * as RipemdOutput from '@lib/outputs/RipemdOutput'
 export * as ShaOutput from '@lib/outputs/ShaOutput'
 export * as UpperCaseOutput from '@lib/outputs/UpperCaseOutput'
 export * as UuidOutput from '@lib/outputs/UuidOutput'
+export * as XmlOutput from '@lib/outputs/XmlOutput'
 export * as YamlOutput from '@lib/outputs/YamlOutput'
 
 export interface Output {
