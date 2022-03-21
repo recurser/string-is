@@ -30,6 +30,7 @@
   "urlEncoder": "URL encode",
   "uuidGenerator": "UUID Generator",
   "xmlFormatter": "XML format",
+  "xmlToJsonConverter": "XML to JSON",
   "yamlFormatter": "YAML format",
   "yamlToJsonConverter": "YAML to JSON"
 }

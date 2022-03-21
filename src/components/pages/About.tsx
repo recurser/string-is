@@ -149,6 +149,15 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link
+              href="https://github.com/NaturalIntelligence/fast-xml-parser"
+              target="_blank"
+            >
+              fast-xml-parser
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Link href="https://hjson.github.io/" target="_blank">
               hjson
             </Link>
