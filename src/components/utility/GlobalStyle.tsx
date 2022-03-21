@@ -1,10 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
-import { extractStyles } from 'evergreen-ui'
 
 import { MOBILE } from '@services/Responsive'
 import { theme } from '@services/Theme'
-
-const { css: evergreen } = extractStyles()
 
 /**
  * Returns a global style object, suitable for use in the main
@@ -20,5 +17,4 @@ export const GlobalStyle = createGlobalStyle`
       background-color: transparent;
     }
   }
-  ${evergreen}
 `
