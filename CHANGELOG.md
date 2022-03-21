@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/recurser/string-is/compare/v1.19.0...v1.19.1) (2022-03-21)
+
+
+### Bug Fixes
+
+* fix flash-of-unstyled-content issues that were preventing true SSR ([2d12b14](https://github.com/recurser/string-is/commit/2d12b14086ef6fd11e645ff162e99b068f953c8e))
+
 # [1.19.0](https://github.com/recurser/string-is/compare/v1.18.0...v1.19.0) (2022-03-10)
 
 
