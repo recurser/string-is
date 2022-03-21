@@ -23,9 +23,7 @@ export const MetaTags = ({
 }: Props): ReactElement => {
   const { t } = useTranslation('common')
 
-  const titleTag = optionalTitle
-    ? `${optionalTitle}${t('page_title_suffix')}`
-    : `${t('page_title')}${t('page_title_suffix')}`
+  const titleTag = optionalTitle ? optionalTitle : t('page_title')
   const title = optionalTitle ? optionalTitle : t('page_title')
   const description = optionalDescription
     ? optionalDescription
