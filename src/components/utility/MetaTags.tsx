@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { ReactElement } from 'react'
+import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 
 interface Props {
@@ -22,6 +23,10 @@ export const MetaTags = ({
   title: optionalTitle,
 }: Props): ReactElement => {
   const { t } = useTranslation('common')
+  const router = useRouter()
+  const canonical = (
+    `https://string.is` + (router.asPath === '/' ? '' : router.asPath)
+  ).split('?')[0]
 
   const titleTag = optionalTitle ? optionalTitle : t('page_title')
   const title = optionalTitle ? optionalTitle : t('page_title')
@@ -49,6 +54,7 @@ export const MetaTags = ({
         content="https://string.is/images/twitter-card.png"
         name="twitter:image"
       />
+      <link href={canonical} rel="canonical" />
       <link
         href="/favicons/apple-touch-icon.png"
         rel="apple-touch-icon"
