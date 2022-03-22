@@ -11,10 +11,9 @@ import { act } from 'react-dom/test-utils'
 import * as ConverterService from '@services/Converter'
 import { Converter } from '@pages/Converter'
 import { ConverterContext } from '@contexts/ConverterContext'
-import { Home } from '@pages/Home'
 
 /**
- * Wrapper for running end-to-end converter tests on the <Home /> page,
+ * Wrapper for running end-to-end converter tests on the home '/' page,
  * with converter auto-detection.
  *
  * @param converter   - The converter being tested.
@@ -34,7 +33,7 @@ export const assertHomePageOutput = async (
   await act(async () => {
     render(
       <ConverterContext>
-        <Home />
+        <Converter />
       </ConverterContext>,
     )
   })

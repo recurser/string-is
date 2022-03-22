@@ -21,16 +21,18 @@ const convert = [
   'forms-copyButton',
   'lib-converters-commands',
   'lib-converters-results',
-  'pages-home',
 ]
 
 module.exports = {
   defaultLocale: 'en',
   locales: ['en'],
   pages: {
-    '/': [...convert],
     '/404': [...common, 'pages-errors-notFound'],
-    '/[converter]': [...convert, 'pages-converter', 'pages-errors-notFound'],
+    '/[[...converter]]': [
+      ...convert,
+      'pages-converter',
+      'pages-errors-notFound',
+    ],
     '/about': [...common, 'pages-about'],
     '/privacy': [...common, 'pages-privacy'],
     '/security': [...common, 'pages-security'],

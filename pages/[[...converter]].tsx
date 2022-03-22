@@ -1,10 +1,12 @@
 import { GetServerSideProps } from 'next'
 import Trans from 'next-translate/Trans'
-import { camelCase } from 'lodash'
+import { isEmpty } from 'lodash'
 
 import * as converterModule from '@lib/converters'
 import { Application } from '@components/layout'
+import { NullConverter } from '@lib/converters'
 import { Converter as SubConverter } from '@pages/Converter'
+import { camelCaseConverterSlug } from '@lib/utilities/String'
 
 const converters = Object.values(converterModule)
 
@@ -46,13 +48,14 @@ export default function Converter({ converterId }: Props) {
  * @param context - The request context.
  */
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  // Hyphenated 'JavaScript' is more readable as 'javascript' in URLs, but camelCase()
-  // expected the hyphen.
-  const hyphenated = `${context.params?.converter}`.replace(
-    'javascript',
-    'java-script',
-  )
-  const converterId = camelCase(hyphenated)
+  // If we have no parameters passed, we're on the root page with no converter selected.
+  if (isEmpty(context.params)) {
+    return {
+      props: { converterId: NullConverter.id },
+    }
+  }
+
+  const converterId = camelCaseConverterSlug(`${context.params?.converter}`)
   const converter = converters.find((cnv) => cnv.id === converterId)
 
   if (!converter) {
