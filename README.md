@@ -71,7 +71,9 @@ If the appropriate `inputs`, `outputs`, `converters` and React components are in
 
 If you want to be 100% confident that your privacy is protected, you can easily set up a string.is instance for your own personal or organizational use.
 
-The quickest way to deploy string.is is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js) (it's free for non-commercial use). Check out their [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The quickest way to deploy string.is is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js) (it's free for non-commercial use). Check out their [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. Click the `Deploy` button below to deploy this application with Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frecurser%2Fstring-is&project-name=string-is&repository-name=string-is)
 
 [Netlify](https://www.netlify.com/with/nextjs/) and [Heroku](https://elements.heroku.com/buildpacks/mars/heroku-nextjs) are also good options for free hosting.
 
