@@ -75,7 +75,9 @@ The quickest way to deploy string.is is to use the [Vercel Platform](https://ver
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frecurser%2Fstring-is&project-name=string-is&repository-name=string-is)
 
-[Netlify](https://www.netlify.com/with/nextjs/) and [Heroku](https://elements.heroku.com/buildpacks/mars/heroku-nextjs) are also good options for free hosting.
+[Netlify](https://www.netlify.com/with/nextjs/) and [Heroku](https://elements.heroku.com/buildpacks/mars/heroku-nextjs) are also good options for free hosting. Click the `Deploy` button below to deploy this application with Heroku:
+
+[![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/recurser/string-is)
 
 Unfortunately string.is doesn't currently support static builds via `next export` (which would allow hosting on eg. S3), because the `i18n` feature it uses is not currently supported for static builds.
 

@@ -1,0 +1,6 @@
+{
+  "name":        "string.is",
+  "description": "A privacy-friendly toolkit for developers",
+  "repository":  "https://github.com/recurser/string-is",
+  "logo":        "https://raw.githubusercontent.com/recurser/string-is/develop/src/images/logo.svg"
+}
