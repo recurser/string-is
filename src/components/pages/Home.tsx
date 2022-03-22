@@ -1,7 +1,7 @@
 import { Pane, majorScale } from 'evergreen-ui'
 import { useState } from 'react'
 
-import { MetaTags } from '@components/layout'
+import { MetaTags } from '@components/utility'
 
 interface Props {
   /**

@@ -1,8 +1,9 @@
 import { ListItem, Pane, Strong } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
-import { Card, MetaTags } from '@components/layout'
 import { Heading, Paragraph, UnorderedList } from '@components/typography'
+import { Card } from '@components/layout'
+import { MetaTags } from '@components/utility'
 
 /**
  * Renders the 'terms' page, describing the terms of use of

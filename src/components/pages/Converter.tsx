@@ -4,7 +4,7 @@ import Trans from 'next-translate/Trans'
 
 import type { Converter as ConverterType } from '@lib/converters'
 import { Home } from '@pages/Home'
-import { MetaTags } from '@components/layout'
+import { MetaTags } from '@components/utility'
 import { removeTags } from '@lib/utilities/String'
 import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'

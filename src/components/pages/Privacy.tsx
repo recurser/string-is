@@ -2,9 +2,10 @@ import { ListItem, Pane } from 'evergreen-ui'
 import Trans from 'next-translate/Trans'
 import useTranslation from 'next-translate/useTranslation'
 
-import { Card, MetaTags } from '@components/layout'
 import { Heading, Paragraph, UnorderedList } from '@components/typography'
+import { Card } from '@components/layout'
 import { Link } from '@components/navigation'
+import { MetaTags } from '@components/utility'
 import { ROUTE_SECURITY } from '@services/Routes'
 
 /**
