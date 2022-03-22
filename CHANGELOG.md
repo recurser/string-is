@@ -1,3 +1,15 @@
+# [1.22.0](https://github.com/recurser/string-is/compare/v1.21.0...v1.22.0) (2022-03-22)
+
+
+### Bug Fixes
+
+* avoid layout issues in the header title on mobile ([bd6e869](https://github.com/recurser/string-is/commit/bd6e869a496c0146a93f01725f721e8d33d1510d))
+
+
+### Features
+
+* add canonical meta tags ([6709209](https://github.com/recurser/string-is/commit/67092099c8ddf9ef3b73f35435d8e8ea51dbf2e8))
+
 # [1.21.0](https://github.com/recurser/string-is/compare/v1.20.0...v1.21.0) (2022-03-21)
 
 
