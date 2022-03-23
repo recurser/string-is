@@ -12,7 +12,6 @@ import { isEmpty, minBy } from 'lodash'
 import { useBreakpoints } from '@services/Responsive'
 import useTranslation from 'next-translate/useTranslation'
 
-import * as converterModule from '@lib/converters'
 import {
   recentConverterIds,
   useConverterContext,
@@ -20,6 +19,7 @@ import {
 import type { Converter } from '@lib/converters'
 import { NullConverter } from '@lib/converters'
 import { converterCandidates } from '@services/Converter'
+import { converters } from '@lib/utilities/Converters'
 
 interface Props {
   /**
@@ -27,8 +27,6 @@ interface Props {
    */
   setFocusOutput: Dispatch<SetStateAction<boolean>>
 }
-
-const converters = Object.values(converterModule)
 
 /**
  * Renders a SelectMenu that allows the user to choose which converter

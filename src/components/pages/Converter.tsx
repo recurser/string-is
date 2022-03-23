@@ -3,7 +3,6 @@ import { ReactElement, useEffect, useMemo, useState } from 'react'
 import Trans from 'next-translate/Trans'
 import { isEmpty } from 'lodash'
 
-import * as converterModule from '@lib/converters'
 import {
   ConverterSelector,
   InputForm,
@@ -14,15 +13,11 @@ import {
 import { Converter as ConverterType, NullConverter } from '@lib/converters'
 import { Card } from '@components/layout'
 import { MetaTags } from '@components/utility'
+import { converters } from '@lib/utilities/Converters'
 import { removeTags } from '@lib/utilities/String'
 import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'
 import useTranslation from 'next-translate/useTranslation'
-
-/**
- *
- */
-const converters = Object.values(converterModule)
 
 interface Props {
   /**
