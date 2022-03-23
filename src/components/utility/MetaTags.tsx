@@ -23,9 +23,9 @@ export const MetaTags = ({
   title: optionalTitle,
 }: Props): ReactElement => {
   const { t } = useTranslation('common')
-  const router = useRouter()
+  const { asPath } = useRouter()
   const canonical = (
-    `https://string.is` + (router.asPath === '/' ? '' : router.asPath)
+    `https://string.is` + (asPath === '/' ? '' : asPath)
   ).split('?')[0]
 
   const titleTag = optionalTitle ? optionalTitle : t('page_title')

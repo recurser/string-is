@@ -6,7 +6,7 @@ export const ROUTE_ABOUT = '/about'
 /**
  * The route to main conversion page.
  */
-export const ROUTE_CONVERT = '/'
+export const ROUTE_CONVERT = '/[[...converter]]'
 
 /**
  * The route to the 'privacy' page.
