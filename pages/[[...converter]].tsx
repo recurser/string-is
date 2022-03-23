@@ -2,13 +2,11 @@ import { GetServerSideProps } from 'next'
 import Trans from 'next-translate/Trans'
 import { isEmpty } from 'lodash'
 
-import * as converterModule from '@lib/converters'
 import { Application } from '@components/layout'
 import { NullConverter } from '@lib/converters'
 import { Converter as SubConverter } from '@pages/Converter'
 import { camelCaseConverterSlug } from '@lib/utilities/String'
-
-const converters = Object.values(converterModule)
+import { converters } from '@lib/utilities/Converters'
 
 interface Props {
   /**
