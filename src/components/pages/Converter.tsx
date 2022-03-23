@@ -1,6 +1,7 @@
 import { Link, Pane, Text, majorScale } from 'evergreen-ui'
 import { ReactElement, useEffect, useMemo, useState } from 'react'
 import Trans from 'next-translate/Trans'
+import { isEmpty } from 'lodash'
 
 import * as converterModule from '@lib/converters'
 import {
@@ -41,7 +42,7 @@ export const Converter = ({ converter }: Props): ReactElement => {
   const { t } = useTranslation('pages-converter')
   const { isMobile } = useBreakpoints()
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
-  const { setConverter, setForceInput } = useConverterContext()
+  const { inputString, setConverter, setForceInput } = useConverterContext()
 
   const numConverters = useMemo(() => converters.length, [])
 
@@ -53,6 +54,15 @@ export const Converter = ({ converter }: Props): ReactElement => {
   // Load the specific converter for this page.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => setConverter(converter), [])
+
+  // When we return to the root page (ie maybe the header icon was
+  // clicked), clear the input and load the NullConverter.
+  useEffect(() => {
+    if (isRootPage && !isEmpty(inputString)) {
+      setForceInput(['', NullConverter])
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isRootPage])
 
   // Load the example data as input, with the specified converter.
   const onLoadExample = () => {

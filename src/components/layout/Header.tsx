@@ -61,6 +61,11 @@ export const Header = ({ pageHeading }: Props): ReactElement => {
 
         <Pane>
           <Tablist display="flex" gap={minorScale(1)}>
+            <Link href={ROUTE_CONVERT}>
+              <Tab isSelected={pathname === ROUTE_CONVERT}>
+                {t('menu_home')}
+              </Tab>
+            </Link>
             <Link href={ROUTE_ABOUT}>
               <Tab isSelected={pathname === ROUTE_ABOUT}>{t('menu_about')}</Tab>
             </Link>
