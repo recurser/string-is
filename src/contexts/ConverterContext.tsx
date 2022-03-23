@@ -6,8 +6,10 @@ import {
   useContext,
   useState,
 } from 'react'
+import { useRouter } from 'next/router'
 
 import { Converter, NullConverter } from '@lib/converters'
+import { hyphenateConverterId } from '@lib/utilities/String'
 import { useAnalytics } from '@services/Analytics'
 
 /**
@@ -93,9 +95,16 @@ export const useConverterContext = (): Props => {
     setOutputString,
   } = useContext(Context)
   const analytics = useAnalytics()
+  const { push } = useRouter()
 
   const wrappedSetConverter = (cnvt: Converter) => {
     setConverter(cnvt)
+
+    // Push the newly selected converter to URL history, and trigger a UI change to display it.
+    if (cnvt.id !== NullConverter.id) {
+      const slug = hyphenateConverterId(cnvt.id)
+      push(slug, undefined, { shallow: false })
+    }
 
     if (!cnvt.isHidden) {
       // Track which converter has been selected, to find out which are useful.

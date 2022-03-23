@@ -1,8 +1,8 @@
 import { isEmpty, kebabCase } from 'lodash'
 import { GetServerSideProps } from 'next'
 
-import * as converterModule from '@lib/converters'
 import type { Converter } from '@lib/converters'
+import { converters } from '@lib/utilities/Converters'
 
 /**
  * Placeholder - getServerSideProps() does all of the magic.
@@ -24,7 +24,6 @@ const baseUrl = isEmpty(process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN)
  * know about, with a list of the dynamic converters.
  */
 const staticPaths = ['', 'about', 'privacy', 'security', 'terms']
-const converters = Object.values(converterModule)
 const converterPaths = converters
   .filter((cnv: Converter) => !cnv.isHidden)
   .map((cnv: Converter) => kebabCase(cnv.id))

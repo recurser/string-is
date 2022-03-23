@@ -3,10 +3,10 @@ import I18nProvider from 'next-translate/I18nProvider'
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 
-import { Home } from '@pages/Home'
+import { Converter } from '@pages/Converter'
 import translations from '@locales/en/domain-convert-inputForm'
 
-describe('Home', () => {
+describe('Converter', () => {
   it('renders a heading', async () => {
     await act(async () => {
       render(
@@ -14,7 +14,7 @@ describe('Home', () => {
           lang={'en'}
           namespaces={{ 'domain-convert-inputForm': translations }}
         >
-          <Home />
+          <Converter />
         </I18nProvider>,
       )
     })
