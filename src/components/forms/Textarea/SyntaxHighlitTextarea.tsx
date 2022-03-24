@@ -9,7 +9,7 @@
 
 import { CSSProperties, ReactElement, forwardRef } from 'react'
 import { Pane, Pre, Textarea, minorScale } from 'evergreen-ui'
-import styledComponents from 'styled-components'
+import { styled } from '@compiled/react'
 
 import type { CodeTextareaProps } from '@components/forms/CodeTextarea'
 import { theme } from '@services/Theme'
@@ -18,17 +18,16 @@ import { theme } from '@services/Theme'
  * Over-ride some styles on the wrapper Pane, to
  * make it look like an Evergreen UI Textarea.
  */
-const StyledPane = styledComponents(Pane)`
+const StyledPane = styled(Pane)`
   border-radius: ${theme.radii[1]};
-  border:        1px solid ${theme.colors.gray400};
-  font-family:   ${theme.fontFamilies.mono};
-  font-size:     ${theme.fontSizes[1]};
-
-  width:         100%;
+  border: 1px solid ${theme.colors.gray400};
+  font-family: ${theme.fontFamilies.mono};
+  font-size: ${theme.fontSizes[1]};
+  width: 100%;
 
   &:focus-within {
     border-color: ${theme.colors.blue200};
-    box-shadow:   ${theme.shadows.focusRing};
+    box-shadow: ${theme.shadows.focusRing};
   }
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -49,7 +48,7 @@ const StyledPane = styledComponents(Pane)`
 /**
  * Over-ride some styles on the hidden Textarea.
  */
-const StyledTextarea = styledComponents(Textarea)`
+const StyledTextarea = styled(Textarea)`
   padding: ${minorScale(2)}px ${minorScale(3)}px;
 
   &:focus-visible {

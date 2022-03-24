@@ -1,6 +1,6 @@
 import { Pane, PaneProps, Text, majorScale, minorScale } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
-import styledComponents from 'styled-components'
+import { styled } from '@compiled/react'
 
 import { theme } from '@services/Theme'
 
@@ -33,7 +33,7 @@ interface Props extends PaneProps {
   width?: string | number
 }
 
-const Wrapper = styledComponents(Pane)`
+const Wrapper = styled(Pane)`
   /* labels in forms are checkbox wrappers. */
   label {
     margin: 0;

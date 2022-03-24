@@ -1,6 +1,6 @@
 import { Pane, Textarea, TextareaProps, majorScale } from 'evergreen-ui'
 import { ReactElement, forwardRef } from 'react'
-import styledComponents from 'styled-components'
+import { styled } from '@compiled/react'
 
 import { CopyButton } from '@components/forms/CopyButton'
 import { SyntaxHighlitTextarea } from '@components/forms/Textarea/SyntaxHighlitTextarea'
@@ -20,7 +20,7 @@ export interface CodeTextareaProps extends TextareaProps {
   highlight?: (value: string) => string
 }
 
-const MonoFontTextarea = styledComponents(Textarea)`
+const MonoFontTextarea = styled(Textarea)`
   font-family: ${theme.fontFamilies.mono} !important;
 `
 

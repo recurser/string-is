@@ -8,13 +8,36 @@ import {
   minorScale,
 } from 'evergreen-ui'
 import { ReactElement } from 'react'
+import { styled } from '@compiled/react'
 import { useRouter } from 'next/router'
 import useTranslation from 'next-translate/useTranslation'
 
 import { ROUTE_ABOUT, ROUTE_CONVERT } from '@services/Routes'
 import { Link } from '@components/navigation'
 import Logo from '@images/logo.svg'
-import { useBreakpoints } from '@services/Responsive'
+import { MOBILE } from '@services/Breakpoints'
+
+/**
+ * A <Heading /> that only displays on mobile devices.
+ */
+const MobileHeading = styled(Heading)`
+  display: none;
+
+  @media only screen and (max-width: ${MOBILE}px) {
+    display: block;
+  }
+`
+
+/**
+ * A <Heading /> that only displays on non-mobile devices.
+ */
+const NonMobileHeading = styled(Heading)`
+  display: none;
+
+  @media only screen and (min-width: ${MOBILE + 1}px) {
+    display: block;
+  }
+`
 
 interface Props {
   pageHeading?: string | ReactElement
@@ -25,7 +48,6 @@ interface Props {
  */
 export const Header = ({ pageHeading }: Props): ReactElement => {
   const { t } = useTranslation('layout-header')
-  const { isMobile } = useBreakpoints()
   const { pathname } = useRouter()
 
   return (
@@ -47,15 +69,15 @@ export const Header = ({ pageHeading }: Props): ReactElement => {
               width={majorScale(5)}
             />
           </Link>
-          {pageHeading && !isMobile ? ( // Non-mobile header, next to the logo.
-            <Heading
+          {pageHeading ? ( // Non-mobile header, next to the logo.
+            <NonMobileHeading
               display="inline-flex"
               height="100%"
               is="h1"
               marginLeft={majorScale(2)}
             >
               {pageHeading}
-            </Heading>
+            </NonMobileHeading>
           ) : null}
         </Pane>
 
@@ -76,15 +98,15 @@ export const Header = ({ pageHeading }: Props): ReactElement => {
         </Pane>
       </Pane>
 
-      {pageHeading && isMobile ? ( // Mobile header, below the logo an menu.
-        <Heading
+      {pageHeading ? ( // Mobile header, below the logo an menu.
+        <MobileHeading
           is="h1"
           marginBottom={majorScale(2)}
           marginTop={majorScale(2)}
           textAlign="center"
         >
           {pageHeading}
-        </Heading>
+        </MobileHeading>
       ) : null}
     </Pane>
   )

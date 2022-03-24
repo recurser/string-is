@@ -8,6 +8,26 @@ import Document, {
 } from 'next/document'
 import React from 'react'
 import { extractStyles } from 'evergreen-ui'
+import { styled } from '@compiled/react'
+
+import { MOBILE } from '@services/Breakpoints'
+import { theme } from '@services/Theme'
+
+/**
+ * Add some global styles by styling Head → body (global
+ * styles are not supported by 'compiled' yet).
+ */
+export const StyledHtml = styled(Html)`
+  body {
+    background-color: ${theme.colors.gray50};
+  }
+
+  @media only screen and (max-width: ${MOBILE}px) {
+    body {
+      background-color: transparent;
+    }
+  }
+`
 
 interface Props extends DocumentInitialProps {
   css: string
@@ -31,7 +51,7 @@ export default class StringIsDocument extends Document<Props> {
     const { css, hydrationScript } = this.props
 
     return (
-      <Html>
+      <StyledHtml>
         <Head>
           <style dangerouslySetInnerHTML={{ __html: css }} />
         </Head>
@@ -41,7 +61,7 @@ export default class StringIsDocument extends Document<Props> {
           {hydrationScript}
           <NextScript />
         </body>
-      </Html>
+      </StyledHtml>
     )
   }
 }

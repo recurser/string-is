@@ -97,6 +97,11 @@ module.exports = nextTranslate({
   headers,
   reactStrictMode: true,
   webpack: (config, { isServer, webpack }) => {
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      use: ['@compiled/webpack-loader'],
+    })
+
     return config
   },
 })

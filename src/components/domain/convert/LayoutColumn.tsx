@@ -1,11 +1,35 @@
 import { Label, Pane, majorScale } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
+import { styled } from '@compiled/react'
 
+import { MOBILE } from '@services/Breakpoints'
 import { theme } from '@services/Theme'
-import { useBreakpoints } from '@services/Responsive'
 
 // Used to calculate a height for the textarea to fill the content.
 const TextAreaLineHeight = 17
+
+/**
+ * A <Label /> that only displays on non-mobile devices.
+ */
+const NonMobileLabel = styled(Label)`
+  @media only screen and (max-width: ${MOBILE}px) {
+    display: none;
+  }
+`
+
+/**
+ * A <Pane /> that only has a minimum height on non-mobile devices.
+ */
+const ContentWrapper = styled(Pane)`
+  min-height: unset;
+
+  @media only screen and (max-width: ${MOBILE}px) {
+    min-height: min(
+      80vh,
+      0 ${(props: { minHeight?: number }) => props.minHeight}px
+    );
+  }
+`
 
 interface Props {
   /**
@@ -49,7 +73,6 @@ export const LayoutColumn = ({
   label,
   outputString,
 }: PropsWithChildren<Props>) => {
-  const { isMobile } = useBreakpoints()
   const labelColor = disabled ? theme.colors.gray500 : undefined
   const style = disabled ? { filter: 'grayscale(100%)' } : undefined
   const inputHeight = inputString
@@ -85,17 +108,17 @@ export const LayoutColumn = ({
           {label}
         </Label>
       ) : null}
-      {!label && !isMobile && <Label>&nbsp;</Label>}
-      <Pane
+      {!label && <NonMobileLabel>&nbsp;</NonMobileLabel>}
+      <ContentWrapper
         display="flex"
         flex={1}
         flexDirection="column"
         height="100%"
         justifyContent="center"
-        minHeight={isMobile ? undefined : `min(80vh, ${height}px)`}
+        minHeight={height}
       >
         {children}
-      </Pane>
+      </ContentWrapper>
     </Pane>
   )
 }
