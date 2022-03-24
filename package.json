@@ -17,6 +17,7 @@
     "test": "yarn eslint src pages && yarn jest"
   },
   "dependencies": {
+    "@compiled/react": "^0.10.4",
     "bluebird": "^3.7.2",
     "chrono-node": "^2.3.8",
     "crypto-js": "^4.1.1",
@@ -37,12 +38,12 @@
     "react-dom": "17.0.2",
     "react-responsive": "^9.0.0-beta.6",
     "showdown": "^2.0.3",
-    "styled-components": "^5.3.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@compiled/webpack-loader": "^0.8.6",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
@@ -62,7 +63,6 @@
     "@types/prismjs": "^1.26.0",
     "@types/react": "17.0.42",
     "@types/showdown": "^1.9.4",
-    "@types/styled-components": "^5.1.24",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",

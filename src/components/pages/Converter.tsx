@@ -2,6 +2,7 @@ import { Link, Pane, Text, majorScale } from 'evergreen-ui'
 import { ReactElement, useEffect, useMemo, useState } from 'react'
 import Trans from 'next-translate/Trans'
 import { isEmpty } from 'lodash'
+import { styled } from '@compiled/react'
 
 import {
   ConverterSelector,
@@ -12,12 +13,43 @@ import {
 } from '@components/domain/convert'
 import { Converter as ConverterType, NullConverter } from '@lib/converters'
 import { Card } from '@components/layout'
+import { MOBILE } from '@services/Breakpoints'
 import { MetaTags } from '@components/utility'
 import { converters } from '@lib/utilities/Converters'
 import { removeTags } from '@lib/utilities/String'
-import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'
 import useTranslation from 'next-translate/useTranslation'
+
+/**
+ * An introductory paragraph with responsive margin and padding.
+ */
+const Intro = styled(Pane)`
+  margin-bottom: ${majorScale(3)}px;
+
+  @media only screen and (max-width: ${MOBILE}px) {
+    margin-bottom: 0;
+    padding: 0 ${majorScale(2)}px;
+  }
+`
+
+/**
+ * Holds the
+ */
+const Form = styled(Pane)`
+  flex-direction: row;
+
+  @media only screen and (max-width: ${MOBILE}px) {
+    flex-direction: column;
+  }
+`
+
+const MiddleColumn = styled(Pane)`
+  max-width: ${majorScale(20)}px;
+
+  @media only screen and (max-width: 768px) {
+    max-width: unset;
+  }
+`
 
 interface Props {
   /**
@@ -35,7 +67,6 @@ interface Props {
  */
 export const Converter = ({ converter }: Props): ReactElement => {
   const { t } = useTranslation('pages-converter')
-  const { isMobile } = useBreakpoints()
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
   const { inputString, setConverter, setForceInput } = useConverterContext()
 
@@ -84,13 +115,7 @@ export const Converter = ({ converter }: Props): ReactElement => {
         }
       />
 
-      <Pane
-        alignSelf="center"
-        marginBottom={isMobile ? 0 : majorScale(3)}
-        maxWidth={majorScale(85)}
-        paddingX={isMobile ? majorScale(2) : 0}
-        width="100%"
-      >
+      <Intro alignSelf="center" maxWidth={majorScale(85)} width="100%">
         <Text color="muted">
           <Trans
             components={[
@@ -104,37 +129,35 @@ export const Converter = ({ converter }: Props): ReactElement => {
             values={{ numConverters }}
           />
         </Text>
-      </Pane>
+      </Intro>
 
       <Pane display="flex" gap={majorScale(2)}>
         <Card>
-          <Pane
+          <Form
             display="flex"
-            flexDirection={isMobile ? 'column' : 'row'}
             gap={majorScale(3)}
             justifyContent="space-between"
           >
             <InputForm />
 
-            <Pane
+            <MiddleColumn
               alignItems="center"
               display="flex"
               flexDirection="column"
               flexGrow={1}
-              maxWidth={isMobile ? undefined : majorScale(20)}
               minWidth={0}
             >
               <LayoutColumn>
                 <ConverterSelector setFocusOutput={setFocusOutput} />
                 <UseAsInputButton />
               </LayoutColumn>
-            </Pane>
+            </MiddleColumn>
 
             <OutputForm
               focusOutput={focusOutput}
               setFocusOutput={setFocusOutput}
             />
-          </Pane>
+          </Form>
         </Card>
       </Pane>
     </>

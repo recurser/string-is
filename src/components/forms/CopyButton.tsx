@@ -6,7 +6,7 @@ import {
   Tooltip,
 } from 'evergreen-ui'
 import { isEmpty } from 'lodash'
-import styledComponents from 'styled-components'
+import { styled } from '@compiled/react'
 import { useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
@@ -19,7 +19,7 @@ interface Props extends IconButtonProps {
 }
 
 // Put a slight transparent background for readability when there's text behind the button.
-const StyledButton = styledComponents(IconButton)`
+const StyledButton = styled(IconButton)`
   &:not(:hover) {
     background-color: rgba(255, 255, 255, 0.8) !important;
   }

@@ -1,8 +1,18 @@
 import { Card as BaseCard, CardProps, Pane, majorScale } from 'evergreen-ui'
 import { ReactElement } from 'react'
+import { styled } from '@compiled/react'
 
 import { Heading } from '@components/typography'
-import { useBreakpoints } from '@services/Responsive'
+import { MOBILE } from '@services/Breakpoints'
+
+/**
+ * The top-level <Card /> component.
+ */
+const ResponsiveBaseCard = styled(BaseCard)`
+  @media only screen and (max-width: ${MOBILE}px) {
+    box-shadow: none;
+  }
+`
 
 interface Props extends CardProps {
   /**
@@ -29,10 +39,6 @@ export const Card = ({
   padding,
   ...props
 }: Props): ReactElement => {
-  const { isMobile } = useBreakpoints()
-  const responsiveElevation = isMobile ? undefined : elevation
-  const responsivePadding =
-    padding === 0 ? 0 : isMobile ? majorScale(2) : padding
   const children = Array.isArray(childOrChildren)
     ? childOrChildren
     : [childOrChildren]
@@ -48,7 +54,7 @@ export const Card = ({
     titleComponents?.length > 0 || actionComponents?.length > 0 || title
 
   return (
-    <BaseCard {...props} elevation={responsiveElevation} padding={0}>
+    <ResponsiveBaseCard {...props} elevation={elevation} padding={0}>
       {showHeader ? (
         <Pane
           borderBottom="default"
@@ -72,8 +78,8 @@ export const Card = ({
         </Pane>
       ) : null}
 
-      <Pane padding={responsivePadding}>{childComponents}</Pane>
-    </BaseCard>
+      <Pane padding={padding}>{childComponents}</Pane>
+    </ResponsiveBaseCard>
   )
 }
 
