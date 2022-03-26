@@ -1,3 +1,16 @@
+# [1.23.0](https://github.com/recurser/string-is/compare/v1.22.0...v1.23.0) (2022-03-26)
+
+
+### Bug Fixes
+
+* replace react-responsive and styled-components with [@compiled](https://github.com/compiled) + media queries ([d99aabc](https://github.com/recurser/string-is/commit/d99aabcdff334e61e8dc1ac35e9646e055698e71))
+
+
+### Features
+
+* change the URL when a converter is selected ([ad6d16c](https://github.com/recurser/string-is/commit/ad6d16c58ae74ebf72a1e75c1c8498bef6b0a670))
+* clear the input when navigating back to the home page ([639c94f](https://github.com/recurser/string-is/commit/639c94f3867d0e4810d6f1d91e9b238d2c8be400))
+
 # [1.22.0](https://github.com/recurser/string-is/compare/v1.21.0...v1.22.0) (2022-03-22)
 
 
