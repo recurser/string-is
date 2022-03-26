@@ -29,6 +29,9 @@
       "@contexts/*": [
         "src/contexts/*"
       ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
       "@images/*": [
         "src/images/*"
       ],

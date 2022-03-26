@@ -8,6 +8,7 @@
       "alias": {
         "@components": "./src/components",
         "@contexts": "./src/contexts",
+        "@hooks": "./src/hooks",
         "@images": "./src/images",
         "@lib": "./src/lib",
         "@locales": "./locales",
@@ -17,6 +18,6 @@
         "@test": "./src/test"
       }
     }],
-    ["styled-components", { "ssr": true, "displayName": true }]
+    "@compiled/babel-plugin"
   ]
 }

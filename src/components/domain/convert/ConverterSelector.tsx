@@ -9,7 +9,7 @@ import {
 } from 'evergreen-ui'
 import { Dispatch, SetStateAction, useEffect, useMemo } from 'react'
 import { isEmpty, minBy } from 'lodash'
-import { useBreakpoints } from '@services/Responsive'
+import { useResponsive } from '@hooks/useResponsive'
 import useTranslation from 'next-translate/useTranslation'
 
 import {
@@ -36,7 +36,7 @@ interface Props {
  */
 export const ConverterSelector = ({ setFocusOutput }: Props) => {
   const { t } = useTranslation('domain-convert-converterSelector')
-  const { isMobile } = useBreakpoints()
+  const { isMobile } = useResponsive()
   const { converter, inputString, setConverter } = useConverterContext()
 
   useEffect(() => {

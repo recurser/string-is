@@ -10,8 +10,8 @@ import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
 import { NullConverter } from '@lib/converters'
-import { useBreakpoints } from '@services/Responsive'
 import { useConverterContext } from '@contexts/ConverterContext'
+import { useResponsive } from '@hooks/useResponsive'
 
 /**
  * Renders a button to move the content of the output textarea into
@@ -20,7 +20,7 @@ import { useConverterContext } from '@contexts/ConverterContext'
  */
 export const UseAsInputButton = () => {
   const { t } = useTranslation('domain-convert-useAsInputButton')
-  const { isMobile } = useBreakpoints()
+  const { isMobile } = useResponsive()
   const [disabled, setDisabled] = useState(true)
   const { outputString, setForceInput } = useConverterContext()
 
