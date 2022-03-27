@@ -21,7 +21,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'eslint-plugin-tsdoc', 'import', 'react'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-tsdoc'],
   rules: {
     // Customize defaults.
     '@typescript-eslint/explicit-function-return-type': 'off',
