@@ -5,6 +5,7 @@ import useTranslation from 'next-translate/useTranslation'
 import { CodeTextarea } from '@components/forms'
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useConverterContext } from '@contexts/ConverterContext'
+import { useResponsive } from '@hooks/useResponsive'
 
 // Timeout before deciding that the user has stopped typing.
 const DebounceTimeout = 500
@@ -22,11 +23,13 @@ export const InputForm = () => {
     setForceInput,
     setInputString,
   } = useConverterContext()
+  const { isMobile } = useResponsive()
   const [input, setInput] = useState('')
 
-  // Focus on the textarea on first load.
+  // Focus on the textarea on first load. Don't load on mobile, since it zooms the page.
   // See https://stackoverflow.com/a/67906087
-  const inputRef = useCallback((el) => el?.focus(), [])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const inputRef = useCallback((el) => (isMobile ? el : el?.focus()), [])
 
   const doDebounce = useMemo(
     () => debounce((data: string) => setInputString(data), DebounceTimeout),
