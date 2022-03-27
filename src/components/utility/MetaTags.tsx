@@ -73,13 +73,8 @@ export const MetaTags = ({
         type="image/png"
       />
       <link href="/favicons/site.webmanifest" rel="manifest" />
-      <link
-        color="#45b980"
-        href="/favicons/safari-pinned-tab.svg"
-        rel="mask-icon"
-      />
-      <link href="/favicons/favicon.ico" rel="shortcut icon" />
-      <meta content="#45b980" name="msapplication-TileColor" />
+      <link href="/favicons/favicon-32x32.png" rel="shortcut icon" />
+      <meta content="#3366ff" name="msapplication-TileColor" />
       <meta content="/favicons/browserconfig.xml" name="msapplication-config" />
       <meta content="#ffffff" name="theme-color" />
     </Head>
