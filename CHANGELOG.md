@@ -1,3 +1,11 @@
+## [1.23.2](https://github.com/recurser/string-is/compare/v1.23.1...v1.23.2) (2022-03-27)
+
+
+### Bug Fixes
+
+* add the missing main logo pointer cursor ([d72a105](https://github.com/recurser/string-is/commit/d72a105c76f1159e66e53967e35a7d02908b3f90))
+* remove SVG mask-icon that looks ugly on Safari ([b01852b](https://github.com/recurser/string-is/commit/b01852b17394ed42b48e86c9322a25a9aef5e2c7))
+
 ## [1.23.1](https://github.com/recurser/string-is/compare/v1.23.0...v1.23.1) (2022-03-27)
 
 
