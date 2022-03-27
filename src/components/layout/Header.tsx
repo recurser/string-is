@@ -63,6 +63,7 @@ export const Header = ({ pageHeading }: Props): ReactElement => {
           <Link href={ROUTE_CONVERT} lineHeight={0}>
             <Image
               alt="string-is logo"
+              cursor="pointer"
               display="inline-flex"
               height={majorScale(5)}
               src={`${Logo.src}`}
