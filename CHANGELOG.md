@@ -1,3 +1,11 @@
+## [1.23.1](https://github.com/recurser/string-is/compare/v1.23.0...v1.23.1) (2022-03-27)
+
+
+### Bug Fixes
+
+* don't auto-focus on mobile, since it zooms the page ([5efa5a6](https://github.com/recurser/string-is/commit/5efa5a6b290330d92fadc76d9dcbbe3e5bbdf3b7))
+* fix textarea height on Safari ([375dd30](https://github.com/recurser/string-is/commit/375dd3051c5d08e109b25d75cce40c0dbedfc413))
+
 # [1.23.0](https://github.com/recurser/string-is/compare/v1.22.0...v1.23.0) (2022-03-26)
 
 
