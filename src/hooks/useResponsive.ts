@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 
-import { MOBILE } from '@services/Breakpoints'
+import { MOBILE } from '@lib/utilities/Constants'
 
 interface Breakpoints {
   /**

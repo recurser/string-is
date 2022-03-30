@@ -17,6 +17,7 @@ const convert = [
   'domain-convert-outputs-shaOutput',
   'domain-convert-outputs-uuidOutput',
   'domain-convert-outputs-yamlOutput',
+  'domain-convert-shareButton',
   'domain-convert-useAsInputButton',
   'forms-copyButton',
   'lib-converters-commands',

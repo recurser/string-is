@@ -3,22 +3,24 @@ import { ReactElement, useEffect, useMemo, useState } from 'react'
 import Trans from 'next-translate/Trans'
 import { isEmpty } from 'lodash'
 import { styled } from '@compiled/react'
+import useTranslation from 'next-translate/useTranslation'
 
 import {
   ConverterSelector,
   InputForm,
   LayoutColumn,
   OutputForm,
+  ShareButton,
   UseAsInputButton,
 } from '@components/domain/convert'
 import { Converter as ConverterType, NullConverter } from '@lib/converters'
 import { Card } from '@components/layout'
-import { MOBILE } from '@services/Breakpoints'
+import { MOBILE } from '@lib/utilities/Constants'
 import { MetaTags } from '@components/utility'
 import { converters } from '@lib/utilities/Converters'
 import { removeTags } from '@lib/utilities/String'
 import { useConverterContext } from '@contexts/ConverterContext'
-import useTranslation from 'next-translate/useTranslation'
+import { useShareListener } from '@hooks/useShareListener'
 
 /**
  * An introductory paragraph with responsive margin and padding.
@@ -69,6 +71,9 @@ export const Converter = ({ converter }: Props): ReactElement => {
   const { t } = useTranslation('pages-converter')
   const [focusOutput, setFocusOutput] = useState<boolean>(false)
   const { inputString, setConverter, setForceInput } = useConverterContext()
+
+  // Load the input and options from the URL, if this has been shared-via-URL.
+  useShareListener(converter.id, inputString, setForceInput)
 
   const numConverters = useMemo(() => converters.length, [])
 
@@ -149,7 +154,8 @@ export const Converter = ({ converter }: Props): ReactElement => {
             >
               <LayoutColumn>
                 <ConverterSelector setFocusOutput={setFocusOutput} />
-                <UseAsInputButton />
+                <UseAsInputButton marginTop={majorScale(2)} />
+                <ShareButton />
               </LayoutColumn>
             </MiddleColumn>
 

@@ -3,7 +3,7 @@ import { ReactElement } from 'react'
 import { styled } from '@compiled/react'
 
 import { Heading } from '@components/typography'
-import { MOBILE } from '@services/Breakpoints'
+import { MOBILE } from '@lib/utilities/Constants'
 
 /**
  * The top-level <Card /> component.

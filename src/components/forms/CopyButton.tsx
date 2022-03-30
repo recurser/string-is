@@ -10,6 +10,8 @@ import { styled } from '@compiled/react'
 import { useState } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
+import { copyToClipboard } from '@lib/utilities/Clipboard'
+
 interface Props extends IconButtonProps {
   /**
    * The value of the text string to copy to the
@@ -24,19 +26,6 @@ const StyledButton = styled(IconButton)`
     background-color: rgba(255, 255, 255, 0.8) !important;
   }
 `
-
-/**
- * Copies the given string to the browser's clipboard.
- *
- * @param text - the text to copy.
- */
-const copyToClipboard = async (text: string) => {
-  if (navigator.clipboard) {
-    return await navigator.clipboard.writeText(text)
-  } else {
-    return document.execCommand('copy', true, text)
-  }
-}
 
 /**
  * Renders a button that will copy the given value to the
@@ -62,7 +51,7 @@ export const CopyButton = ({ value, ...props }: Props) => {
   }
 
   return (
-    <Tooltip content={t('copy_tooltip')}>
+    <Tooltip content={copied ? t('copied_tooltip') : t('copy_tooltip')}>
       <StyledButton
         appearance="minimal"
         icon={

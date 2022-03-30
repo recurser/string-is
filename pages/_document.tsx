@@ -10,7 +10,7 @@ import React from 'react'
 import { extractStyles } from 'evergreen-ui'
 import { styled } from '@compiled/react'
 
-import { MOBILE } from '@services/Breakpoints'
+import { MOBILE } from '@lib/utilities/Constants'
 import { theme } from '@services/Theme'
 
 /**
