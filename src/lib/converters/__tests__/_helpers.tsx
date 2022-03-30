@@ -11,6 +11,7 @@ import { act } from 'react-dom/test-utils'
 import * as ConverterService from '@services/Converter'
 import { Converter } from '@pages/Converter'
 import { ConverterContext } from '@contexts/ConverterContext'
+import { ConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 /**
  * Wrapper for running end-to-end converter tests on the home '/' page,
@@ -33,7 +34,9 @@ export const assertHomePageOutput = async (
   await act(async () => {
     render(
       <ConverterContext>
-        <Converter />
+        <ConverterOptionsContext>
+          <Converter />
+        </ConverterOptionsContext>
       </ConverterContext>,
     )
   })
@@ -67,7 +70,9 @@ export const assertLandindPageOutput = async (
   await act(async () => {
     render(
       <ConverterContext>
-        <Converter converter={converter} />
+        <ConverterOptionsContext>
+          <Converter converter={converter} />
+        </ConverterOptionsContext>
       </ConverterContext>,
     )
   })

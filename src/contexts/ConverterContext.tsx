@@ -9,13 +9,17 @@ import {
 import { useRouter } from 'next/router'
 
 import { Converter, NullConverter } from '@lib/converters'
+import type { ConverterOptions } from '@lib/types'
 import { hyphenateConverterId } from '@lib/utilities/String'
 import { useAnalytics } from '@services/Analytics'
 
 /**
  * Allows a specific input string and converter to be set.
  */
-type ForceInput = [string, Converter] | undefined
+export type ForceInput =
+  | [string, Converter]
+  | [string, Converter, ConverterOptions]
+  | undefined
 
 interface Props {
   /**

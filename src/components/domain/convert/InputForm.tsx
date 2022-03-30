@@ -1,10 +1,11 @@
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react'
-import { debounce } from 'lodash'
+import { debounce, isEmpty, isEqual } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
 import { CodeTextarea } from '@components/forms'
 import { LayoutColumn } from '@components/domain/convert/LayoutColumn'
 import { useConverterContext } from '@contexts/ConverterContext'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { useResponsive } from '@hooks/useResponsive'
 
 // Timeout before deciding that the user has stopped typing.
@@ -16,6 +17,7 @@ const DebounceTimeout = 500
 export const InputForm = () => {
   const { t } = useTranslation('domain-convert-inputForm')
   const {
+    converter,
     forceInput,
     inputString,
     outputString,
@@ -23,6 +25,7 @@ export const InputForm = () => {
     setForceInput,
     setInputString,
   } = useConverterContext()
+  const { options, setOptions } = useConverterOptionsContext(converter.outputId)
   const { isMobile } = useResponsive()
   const [input, setInput] = useState('')
 
@@ -40,13 +43,24 @@ export const InputForm = () => {
 
   useEffect(() => {
     if (forceInput) {
-      const [newInputString, newConverter] = forceInput
+      const [newInputString, newConverter, newOptions] = forceInput
       setForceInput(undefined)
       setInputString(newInputString)
       setInput(newInputString)
       setConverter(newConverter)
+      // If new options have been set (usually by loading a 'shared' URL), set them up.
+      if (newOptions && !isEmpty(newOptions) && !isEqual(options, newOptions)) {
+        setOptions(newOptions)
+      }
     }
-  }, [forceInput, setConverter, setForceInput, setInputString])
+  }, [
+    forceInput,
+    options,
+    setConverter,
+    setForceInput,
+    setInputString,
+    setOptions,
+  ])
 
   /**
    * Updates the state with the user input, when the textarea content is changed.

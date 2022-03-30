@@ -2,7 +2,7 @@ import { Label, Pane, majorScale } from 'evergreen-ui'
 import { PropsWithChildren } from 'react'
 import { styled } from '@compiled/react'
 
-import { MOBILE } from '@services/Breakpoints'
+import { MOBILE } from '@lib/utilities/Constants'
 import { theme } from '@services/Theme'
 
 // Used to calculate a height for the textarea to fill the content.

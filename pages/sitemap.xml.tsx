@@ -1,6 +1,7 @@
-import { isEmpty, kebabCase } from 'lodash'
 import { GetServerSideProps } from 'next'
+import { kebabCase } from 'lodash'
 
+import { BaseUrl } from '@lib/utilities/Constants'
 import type { Converter } from '@lib/converters'
 import { converters } from '@lib/utilities/Converters'
 
@@ -11,13 +12,6 @@ import { converters } from '@lib/utilities/Converters'
 export default function Sitemap() {
   return null
 }
-
-/**
- * Decide what domain we want to use for the sitemap.
- */
-const baseUrl = isEmpty(process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN)
-  ? 'https://localhost:3000'
-  : `https://${process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN}`
 
 /**
  * Build a list of page paths, by combining the static ones we
@@ -42,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   ${allPaths
     .map((path) => {
       return `<url>
-    <loc>${baseUrl}/${path}</loc>
+    <loc>${BaseUrl}/${path}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
