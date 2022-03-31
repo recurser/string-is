@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { Obj } from '@lib/types'
+import type { Obj } from '@lib/types'
 
 /**
  * Parses the given query string into an object.

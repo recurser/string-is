@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 
 export * as Base64Decoder from '@lib/converters/Base64Decoder'
 export * as Base64Encoder from '@lib/converters/Base64Encoder'

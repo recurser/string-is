@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash'
 import { parse } from 'hjson'
 
-import { Obj } from '@lib/types'
+import type { Obj } from '@lib/types'
 
 /**
  * Parses the given JSON input string into an object.

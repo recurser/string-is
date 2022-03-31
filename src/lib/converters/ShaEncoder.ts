@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { isEmpty } from 'lodash'
 import { output as shaOutput } from '@lib/outputs/ShaOutput'
 

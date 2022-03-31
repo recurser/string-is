@@ -1,7 +1,7 @@
 import { format } from 'prettier/standalone'
 import parserPostcss from 'prettier/parser-postcss'
 
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 
 /**
  * The default options used to format LESS strings,

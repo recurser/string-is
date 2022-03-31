@@ -1,6 +1,6 @@
 import { isEmpty } from 'lodash'
 
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 
 /**
  * The default options used to format numbers

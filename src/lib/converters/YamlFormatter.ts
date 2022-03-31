@@ -1,4 +1,4 @@
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 import { input as yamlInput } from '@lib/inputs/YamlInput'
 import { output as yamlOutput } from '@lib/outputs/YamlOutput'
 

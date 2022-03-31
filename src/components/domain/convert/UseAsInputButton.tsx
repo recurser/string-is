@@ -1,5 +1,6 @@
 import {
   Button,
+  ButtonProps,
   ChevronLeftIcon,
   ChevronUpIcon,
   Pane,
@@ -18,7 +19,7 @@ import { useResponsive } from '@hooks/useResponsive'
  * the input textarea. This is convenient for chaining operations,
  * and feeding the result of one operation into another.
  */
-export const UseAsInputButton = () => {
+export const UseAsInputButton = (props: ButtonProps) => {
   const { t } = useTranslation('domain-convert-useAsInputButton')
   const { isMobile } = useResponsive()
   const [disabled, setDisabled] = useState(true)
@@ -41,6 +42,7 @@ export const UseAsInputButton = () => {
         iconBefore={isMobile ? ChevronUpIcon : ChevronLeftIcon}
         maxWidth={majorScale(20)}
         onClick={onClick}
+        {...props}
       >
         {t('button_label')}
       </Button>

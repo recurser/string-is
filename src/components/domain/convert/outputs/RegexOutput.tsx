@@ -1,16 +1,10 @@
 import { Alert, TextInput, majorScale } from 'evergreen-ui'
-import {
-  ChangeEvent,
-  Fragment,
-  forwardRef,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { ChangeEvent, Fragment, forwardRef, useEffect, useMemo } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
 import { CodeTextarea, CopyButton, Label } from '@components/forms'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
+import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 /**
  * Forwards the Textarea ref to the output component.
@@ -22,20 +16,26 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
    * @param props - The output props.
    * @param ref   - The forwarded ref, which becomes a reference to the TextArea.
    */
-  ({ disabled, input, ...props }: OutputProps, ref) => {
+  ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-regexOutput')
+    const { options, setOptions } = useConverterOptionsContext(
+      converter.outputId,
+    )
+    const testString = (options.testString || '') as string
 
-    const [testString, setTestString] = useState('')
-
-    // This is a bit of a hack to provide a test string when 'load an example' is
-    // clicked. This regex should match the one in locales/en/pages-converter.json.
+    // This is a bit of a hack to provide a test string when 'load an example' is clicked.
     useEffect(() => {
-      if (input === '/(quick|early) \\w+/g' && testString === '') {
-        setTestString(
-          'The quick brown fox jumps over the lazy dog\nThe early bird gets the worm',
-        )
+      if (
+        input === t('pages-converter:regexDebugger-example') &&
+        testString === ''
+      ) {
+        setOptions({
+          ...options,
+          testString:
+            'The quick brown fox jumps over the lazy dog\nThe early bird gets the worm',
+        })
       }
-    }, [input, testString])
+    }, [input, options, setOptions, t, testString])
 
     /**
      * Updates the output options state when the test-string text input is changed.
@@ -43,7 +43,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
      * @param event - the HTML input change event.
      */
     const onChangeTestString = (event: ChangeEvent<HTMLTextAreaElement>) => {
-      setTestString(event.target.value)
+      setOptions({ ...options, testString: event.target.value })
     }
 
     const matches = useMemo((): Array<Array<string>> | undefined => {

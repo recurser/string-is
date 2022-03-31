@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { output as numberBaseOutput } from '@lib/outputs/NumberBaseOutput'
 import { input as numberInput } from '@lib/inputs/NumberInput'
 

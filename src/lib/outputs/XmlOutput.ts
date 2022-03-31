@@ -1,6 +1,6 @@
 import { XMLBuilder } from 'fast-xml-parser'
 
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
 
 /**

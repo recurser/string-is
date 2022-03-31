@@ -1,7 +1,7 @@
 import { XMLParser } from 'fast-xml-parser'
 import { isEmpty } from 'lodash'
 
-import { Obj } from '@lib/types'
+import type { Obj } from '@lib/types'
 
 /**
  * Parses the given XML input string into an object.

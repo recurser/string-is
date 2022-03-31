@@ -15,7 +15,7 @@ import useTranslation from 'next-translate/useTranslation'
 import { ROUTE_ABOUT, ROUTE_CONVERT } from '@services/Routes'
 import { Link } from '@components/navigation'
 import Logo from '@images/logo.svg'
-import { MOBILE } from '@services/Breakpoints'
+import { MOBILE } from '@lib/utilities/Constants'
 
 /**
  * A <Heading /> that only displays on mobile devices.

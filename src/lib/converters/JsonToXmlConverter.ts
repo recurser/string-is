@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 import { output as xmlOutput } from '@lib/outputs/XmlOutput'
 
