@@ -3,6 +3,8 @@ import Trans from 'next-translate/Trans'
 import { isEmpty } from 'lodash'
 
 import { Application } from '@components/layout'
+import { ConverterContext } from '@contexts/ConverterContext'
+import { ConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 import { NullConverter } from '@lib/converters'
 import { Converter as SubConverter } from '@pages/Converter'
 import { camelCaseConverterSlug } from '@lib/utilities/String'
@@ -35,7 +37,11 @@ export default function Converter({ converterId }: Props) {
       maxWidth={1600}
       pageHeading={<Trans i18nKey={`pages-converter:${converterId}-heading`} />}
     >
-      <SubConverter converter={converter} />
+      <ConverterContext>
+        <ConverterOptionsContext>
+          <SubConverter converter={converter} />
+        </ConverterOptionsContext>
+      </ConverterContext>
     </Application>
   )
 }
