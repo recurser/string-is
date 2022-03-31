@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { isEmpty } from 'lodash'
 import { output as md5Output } from '@lib/outputs/Md5Output'
 

@@ -3,7 +3,7 @@ import { ChangeEvent, Fragment, forwardRef, useEffect, useMemo } from 'react'
 import useTranslation from 'next-translate/useTranslation'
 
 import { CodeTextarea, CopyButton, Label } from '@components/forms'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 /**

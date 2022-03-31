@@ -1,6 +1,6 @@
 import { decode, isValid } from 'js-base64'
 
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 
 /**
  * A string which uniquely identifies this operation.

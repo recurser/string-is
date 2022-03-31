@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 
 import { CodeTextarea } from '@components/forms'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
 
 /**
  * Forwards the Textarea ref to the output component.

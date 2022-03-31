@@ -1,6 +1,6 @@
 import { camelCase, fromPairs, isArray, isObject, kebabCase, map } from 'lodash'
 
-import { Obj } from '@lib/types'
+import type { Obj } from '@lib/types'
 
 /**
  * Converts a hyphenated converter slug to a camel-cased ID identifying

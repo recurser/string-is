@@ -20,7 +20,7 @@ import {
   timestampOutput,
   utcOutput,
 } from '@lib/outputs/DatetimeOutput'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
 import { timezones } from '@lib/utilities/Timezones'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 

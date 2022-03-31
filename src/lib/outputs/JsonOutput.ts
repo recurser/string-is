@@ -1,4 +1,4 @@
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 import { sortByKeys } from '@lib/utilities/String'
 
 /**

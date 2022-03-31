@@ -10,7 +10,7 @@ import {
 } from 'react'
 
 import * as untypedOutputs from '@lib/outputs'
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import type { Output } from '@lib/outputs'
 
 /**

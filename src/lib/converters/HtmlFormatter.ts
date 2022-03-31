@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
 
 /**

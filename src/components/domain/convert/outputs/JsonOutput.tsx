@@ -3,7 +3,7 @@ import { Checkbox, Select, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Form, JsonTextarea, Label } from '@components/forms'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 /**

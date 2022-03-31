@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { input as jwtInput } from '@lib/inputs/JwtInput'
 import { output as jwtOutput } from '@lib/outputs/JwtOutput'
 

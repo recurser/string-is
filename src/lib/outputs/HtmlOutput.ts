@@ -1,7 +1,7 @@
 import { format } from 'prettier/standalone'
 import parserHtml from 'prettier/parser-html'
 
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 
 /**
  * The default options used to format HTML strings,

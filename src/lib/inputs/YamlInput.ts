@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash'
 import { load } from 'js-yaml'
 
-import { Obj } from '@lib/types'
+import type { Obj } from '@lib/types'
 
 /**
  * Parses the given YAML input string into an object.

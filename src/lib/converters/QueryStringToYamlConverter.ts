@@ -1,4 +1,4 @@
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 import { input as queryStringInput } from '@lib/inputs/QueryStringInput'
 import { output as yamlOutput } from '@lib/outputs/YamlOutput'
 

@@ -1,6 +1,6 @@
 import type { Jwt, JwtPayload } from 'jsonwebtoken'
 
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 import { output as jsonOutput } from '@lib/outputs/JsonOutput'
 import { input as jwtInput } from '@lib/inputs/JwtInput'
 
