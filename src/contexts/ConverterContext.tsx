@@ -11,7 +11,6 @@ import { useRouter } from 'next/router'
 import { Converter, NullConverter } from '@lib/converters'
 import type { ConverterOptions } from '@lib/types'
 import { hyphenateConverterId } from '@lib/utilities/String'
-import { useAnalytics } from '@services/Analytics'
 
 /**
  * Allows a specific input string and converter to be set.
@@ -98,7 +97,6 @@ export const useConverterContext = (): Props => {
     setInputString,
     setOutputString,
   } = useContext(Context)
-  const analytics = useAnalytics()
   const { push } = useRouter()
 
   const wrappedSetConverter = (cnvt: Converter) => {
@@ -111,13 +109,6 @@ export const useConverterContext = (): Props => {
     }
 
     if (!cnvt.isHidden) {
-      // Track which converter has been selected, to find out which are useful.
-      analytics('Convert', {
-        props: {
-          converter: cnvt.id,
-        },
-      })
-
       // Remember which converters were used most recently, so we can improve auto-selection.
       let recent = recentConverterIds()
       recent = recent.filter((converterId: string) => converterId != cnvt.id)
