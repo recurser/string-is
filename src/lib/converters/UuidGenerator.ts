@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { output as uuidOutput } from '@lib/outputs/UuidOutput'
 
 /**

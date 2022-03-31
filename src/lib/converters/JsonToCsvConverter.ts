@@ -1,6 +1,6 @@
 import { isObject } from 'lodash'
 
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { output as csvOutput } from '@lib/outputs/CsvOutput'
 import { input as jsonInput } from '@lib/inputs/JsonInput'
 

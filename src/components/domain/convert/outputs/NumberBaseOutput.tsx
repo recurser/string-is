@@ -9,7 +9,7 @@ import {
   minRadix,
   validRadices,
 } from '@lib/outputs/NumberBaseOutput'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
 /**

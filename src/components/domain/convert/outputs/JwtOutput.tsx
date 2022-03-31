@@ -3,7 +3,7 @@ import { majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Form, JsonTextarea, Label } from '@components/forms'
-import { OutputProps } from '@lib/types'
+import type { OutputProps } from '@lib/types'
 import { header } from '@lib/outputs/JwtOutput'
 
 // Used to calculate heights for the textareas to display all of the content.

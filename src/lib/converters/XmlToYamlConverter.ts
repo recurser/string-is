@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { input as xmlInput } from '@lib/inputs/XmlInput'
 import { output as yamlOutput } from '@lib/outputs/YamlOutput'
 

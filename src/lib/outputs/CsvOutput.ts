@@ -1,6 +1,6 @@
 import { unparse } from 'papaparse'
 
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 
 /**
  * The default options used to format CSV strings,

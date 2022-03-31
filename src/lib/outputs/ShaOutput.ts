@@ -1,6 +1,6 @@
 import { SHA1, SHA224, SHA256, SHA384, SHA512 } from 'crypto-js'
 
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 
 /**
  * The default options used to generate SHA hashes,

@@ -1,4 +1,4 @@
-import { ConverterOptions, Obj } from '@lib/types'
+import type { ConverterOptions, Obj } from '@lib/types'
 
 export * as CssOutput from '@lib/outputs/CssOutput'
 export * as CsvOutput from '@lib/outputs/CsvOutput'

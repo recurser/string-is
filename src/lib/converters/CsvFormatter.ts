@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { input as csvInput } from '@lib/inputs/CsvInput'
 import { output as csvOutput } from '@lib/outputs/CsvOutput'
 

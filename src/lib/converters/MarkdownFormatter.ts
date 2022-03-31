@@ -1,4 +1,4 @@
-import { ConverterOptions } from '@lib/types'
+import type { ConverterOptions } from '@lib/types'
 import { output as markdownOutput } from '@lib/outputs/MarkdownOutput'
 
 /**
