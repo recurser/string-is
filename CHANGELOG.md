@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/recurser/string-is/compare/v1.23.2...v1.24.0) (2022-03-31)
+
+
+### Features
+
+* support sharing of converters and their inputs ([47a3525](https://github.com/recurser/string-is/commit/47a35253f0f312d2dc38a00e7881397d2aaddf0d))
+
 ## [1.23.2](https://github.com/recurser/string-is/compare/v1.23.1...v1.23.2) (2022-03-27)
 
 
