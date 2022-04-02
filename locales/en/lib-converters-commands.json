@@ -26,6 +26,7 @@
   "ripemdEncoder": "RIPEMD-160 hash",
   "scssFormatter": "SCSS format",
   "shaEncoder": "SHA hash",
+  "sqlFormatter": "SQL format",
   "timestampConverter": "Timestamp",
   "upperCaseConverter": "Upper case",
   "urlDecoder": "URL decode",
