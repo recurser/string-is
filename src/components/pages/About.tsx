@@ -225,6 +225,15 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link
+              href="https://github.com/zeroturnaround/sql-formatter"
+              target="_blank"
+            >
+              sql-formatter
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Trans
               components={[
                 <Link
