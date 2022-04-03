@@ -12,7 +12,7 @@ export const id = 'regex'
  * Overflow (see https://stackoverflow.com/a/17843773), but
  * this is simpler.
  */
-const regex = /^\s*\/.*\/([gmi]+)?\s*$/gm
+const regex = /^\s*\/.*\/([gmis]+)?\s*$/gm
 
 /**
  * Returns a numeric confidence between 0 and 100 indicating how
