@@ -14,7 +14,7 @@ describe('identities', () => {
       })
 
       it('accepts modifiers', () => {
-        const input = '/test/igm'
+        const input = '/test/igms'
         expect(confidence(input)).toEqual(100)
       })
 
