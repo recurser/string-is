@@ -1,3 +1,16 @@
+# [1.25.0](https://github.com/recurser/string-is/compare/v1.24.0...v1.25.0) (2022-04-03)
+
+
+### Bug Fixes
+
+* accept the 's' modifier for regexes ([4576277](https://github.com/recurser/string-is/commit/45762778fda22012d01eb8cbb2a4e13c9445f97b))
+* export SqlInput.defaultOptions so that the form defaults populate correctly ([8fec68a](https://github.com/recurser/string-is/commit/8fec68ac17bf186582dd465e22fbeccb6274e2e0))
+
+
+### Features
+
+* add an SQL formatter ([44da672](https://github.com/recurser/string-is/commit/44da67229c855e4c5921bfa67510739505339c15))
+
 # [1.24.0](https://github.com/recurser/string-is/compare/v1.23.2...v1.24.0) (2022-03-31)
 
 
