@@ -1,4 +1,4 @@
-import { FormatOptions, format } from 'sql-formatter'
+import { output as sqlOutput } from '@lib/outputs/SqlOutput'
 
 import type { ConverterOptions } from '@lib/types'
 
@@ -6,16 +6,6 @@ import type { ConverterOptions } from '@lib/types'
  * A string which uniquely identifies this operation.
  */
 export const id = 'sqlFormatter'
-
-/**
- * The default options used to format SQL strings,
- * if no user-defined options were provided.
- */
-const defaultOptions = {
-  indent: '  ',
-  language: 'sql',
-  uppercase: true,
-}
 
 /**
  * A string which uniquely identifies the output component used by
@@ -35,8 +25,5 @@ export const operation = (
   input: string,
   options: ConverterOptions = {},
 ): string => {
-  return format(input, {
-    ...defaultOptions,
-    ...options,
-  } as FormatOptions)
+  return sqlOutput(input, options)
 }
