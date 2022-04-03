@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/recurser/string-is/compare/v1.25.0...v1.26.0) (2022-04-03)
+
+
+### Features
+
+* tailor the input label to the converter ([e0a7192](https://github.com/recurser/string-is/commit/e0a7192275b837ceef4c9951bcfea5b6ba32cf91))
+
 # [1.25.0](https://github.com/recurser/string-is/compare/v1.24.0...v1.25.0) (2022-04-03)
 
 
