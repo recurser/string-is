@@ -74,7 +74,11 @@ export const InputForm = () => {
     <LayoutColumn
       htmlFor="user-input"
       inputString={inputString}
-      label={t('label')}
+      label={`1. ${t(
+        `pages-converter:${converter.id}-input-label`,
+        {},
+        { fallback: 'pages-converter:nullConverter-input-label' },
+      )} 👇`}
       outputString={outputString}
     >
       <CodeTextarea

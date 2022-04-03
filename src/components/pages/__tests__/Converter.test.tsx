@@ -4,7 +4,7 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 
 import { Converter } from '@pages/Converter'
-import translations from '@locales/en/domain-convert-inputForm'
+import translations from '@locales/en/pages-converter'
 
 describe('Converter', () => {
   it('renders a heading', async () => {
@@ -12,7 +12,7 @@ describe('Converter', () => {
       render(
         <I18nProvider
           lang={'en'}
-          namespaces={{ 'domain-convert-inputForm': translations }}
+          namespaces={{ 'pages-converter': translations }}
         >
           <Converter />
         </I18nProvider>,
@@ -20,7 +20,7 @@ describe('Converter', () => {
     })
 
     const heading = screen.getByRole('label', {
-      name: translations.label,
+      name: `1. ${translations['nullConverter-input-label']} 👇`,
     })
 
     expect(heading).toBeInTheDocument()
