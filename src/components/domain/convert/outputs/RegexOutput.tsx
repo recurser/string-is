@@ -26,7 +26,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     // This is a bit of a hack to provide a test string when 'load an example' is clicked.
     useEffect(() => {
       if (
-        input === t('pages-converter:regexDebugger-example') &&
+        input === t('pages-converter:regexDebugger-examples.example-1') &&
         testString === ''
       ) {
         setOptions({

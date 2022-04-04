@@ -19,6 +19,7 @@ import { MOBILE } from '@lib/utilities/Constants'
 import { MetaTags } from '@components/utility'
 import { converters } from '@lib/utilities/Converters'
 import { removeTags } from '@lib/utilities/String'
+import translations from '@locales/en/pages-converter.json'
 import { useConverterContext } from '@contexts/ConverterContext'
 import { useShareListener } from '@hooks/useShareListener'
 
@@ -52,6 +53,17 @@ const MiddleColumn = styled(Pane)`
     max-width: unset;
   }
 `
+
+/**
+ * The type of the translation file, which we select random examples from.
+ */
+interface Translations {
+  [key: string]:
+    | string
+    | {
+        [key: string]: string
+      }
+}
 
 interface Props {
   /**
@@ -97,14 +109,29 @@ export const Converter = ({ converter }: Props): ReactElement => {
 
   // Load the example data as input, with the specified converter.
   const onLoadExample = () => {
+    let newConverter = converter
     if (converter.id === NullConverter.id) {
       // On the top page, we load a 'random' converter and example.
-      const randomConverter =
-        converters[Math.floor(Math.random() * converters.length)]
-      setForceInput([t(`${randomConverter.id}-example`), randomConverter])
-    } else {
-      setForceInput([t(`${converter.id}-example`), converter])
+      newConverter = converters[Math.floor(Math.random() * converters.length)]
     }
+
+    // Choose a random example. Try to choose one that isn't currently being displayed.
+    const exampleIds = Object.keys(
+      (translations as Translations)[`${newConverter.id}-examples`],
+    )
+    const numExamples = exampleIds.length
+    let example
+    while (!example || example === inputString) {
+      const exampleId =
+        exampleIds[Math.floor(Math.random() * exampleIds.length)]
+      example = t(`${newConverter.id}-examples.${exampleId}`)
+      // Don't get stuck in a loop if there aren't multiple examples.
+      if (numExamples <= 1) {
+        break
+      }
+    }
+
+    setForceInput([example, newConverter])
   }
 
   return (
