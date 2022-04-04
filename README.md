@@ -3,6 +3,7 @@
 ![eslint](https://github.com/recurser/string-is/actions/workflows/eslint.yml/badge.svg)
 ![jest](https://github.com/recurser/string-is/actions/workflows/jest.yml/badge.svg)
 ![build](https://github.com/recurser/string-is/actions/workflows/build.yml/badge.svg)
+[![codecov](https://codecov.io/gh/recurser/string-is/branch/develop/graph/badge.svg?token=1G0J9SSRDX)](https://codecov.io/gh/recurser/string-is)
 
 [string.is](https://www.string.is/) is an open-source, privacy-friendly toolkit for developers. You can see it in action [here](https://www.string.is/).
 

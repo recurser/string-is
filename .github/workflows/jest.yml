@@ -1,6 +1,8 @@
 name: jest
 
-on: [pull_request]
+on:
+  pull_request:
+  push: { branches: ["develop", "main"] }
 
 jobs:
   jest:
@@ -13,6 +15,8 @@ jobs:
           node-version: "lts/*"
           cache:        "yarn"
       - name: Install packages
-        run: "yarn install"
+        run:  yarn install
       - name: Run jest
-        run: "yarn jest"
+        run:  yarn jest --coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
