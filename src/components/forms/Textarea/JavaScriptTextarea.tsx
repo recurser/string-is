@@ -4,7 +4,6 @@ import { highlight, languages } from 'prismjs'
 import { CodeTextarea, CodeTextareaProps } from '@components/forms/CodeTextarea'
 
 import 'prismjs/components/prism-javascript'
-import 'prismjs/themes/prism.css'
 
 export const JavaScriptTextarea = forwardRef<
   HTMLTextAreaElement,
