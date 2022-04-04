@@ -1,3 +1,15 @@
+# [1.27.0](https://github.com/recurser/string-is/compare/v1.26.0...v1.27.0) (2022-04-04)
+
+
+### Bug Fixes
+
+* only import prism.css once globally ([8d7f634](https://github.com/recurser/string-is/commit/8d7f634f9f906cb89ca1b993430391954f456f3f))
+
+
+### Features
+
+* add support for multiple examples for each converter ([035126a](https://github.com/recurser/string-is/commit/035126a012182dd2a38255bd24ab4308c4be1370))
+
 # [1.26.0](https://github.com/recurser/string-is/compare/v1.25.0...v1.26.0) (2022-04-03)
 
 
