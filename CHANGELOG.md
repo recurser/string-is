@@ -1,3 +1,11 @@
+# [1.28.0](https://github.com/recurser/string-is/compare/v1.27.0...v1.28.0) (2022-04-07)
+
+
+### Features
+
+* add a modifier selector for the regex debugger ([f37809c](https://github.com/recurser/string-is/commit/f37809cd12e859155fbe391abfca6d487c492755))
+* don't require slashes around regexes ([e2170f6](https://github.com/recurser/string-is/commit/e2170f6f5c2a8e41ba7b0dcc60abaeb9339d75a7))
+
 # [1.27.0](https://github.com/recurser/string-is/compare/v1.26.0...v1.27.0) (2022-04-04)
 
 
