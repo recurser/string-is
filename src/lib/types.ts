@@ -25,7 +25,7 @@ export type Obj =
  */
 export type ConverterOptions = Record<
   string,
-  boolean | number | string | undefined
+  boolean | number | string | string[] | undefined
 >
 
 export interface OutputProps extends TextareaProps {
