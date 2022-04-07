@@ -17,6 +17,11 @@
     "one": "Match:",
     "other": "Match {{number}}:"
   },
+  "modifier_global_option": "g (global)",
+  "modifier_insensitive_option": "i (case-insensitive)",
+  "modifier_multiline_option": "m (multi-line)",
+  "modifiers_label": "Modifiers",
+  "modifiers_none_selected": "None",
   "test_string_header": "Enter a test string:",
   "test_string_placeholder": "Enter a string to test your regular expression against..."
 }
