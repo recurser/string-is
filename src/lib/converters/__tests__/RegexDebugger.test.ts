@@ -59,7 +59,7 @@ describe('converters', () => {
     })
 
     it('reports an error if the input in invalid', async () => {
-      await expectError(RegexDebugger, 'invalid!', 'alert_invalid_input')
+      await expectError(RegexDebugger, '(invalid!', 'alert_invalid_input')
     })
   })
 })

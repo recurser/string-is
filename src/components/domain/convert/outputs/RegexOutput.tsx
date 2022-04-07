@@ -1,10 +1,40 @@
-import { Alert, TextInput, majorScale } from 'evergreen-ui'
+import { Alert, Button, SelectMenu, TextInput, majorScale } from 'evergreen-ui'
 import { ChangeEvent, Fragment, forwardRef, useEffect, useMemo } from 'react'
+import { compact, isEqual } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
 import { CodeTextarea, CopyButton, Label } from '@components/forms'
 import type { OutputProps } from '@lib/types'
+import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
+
+/**
+ * Regex modifiers that we support.
+ */
+const regexModifiers = 'igm'
+
+/**
+ * A regex to match modifiers at the end of a regex.
+ */
+const modifierRegex = new RegExp(`/([${regexModifiers}]+)?$`)
+
+/**
+ * A regex to match a regex :)
+ */
+const regexRegex = new RegExp(`^/?(.*?)/?([${regexModifiers}]+)?$`)
+
+/**
+ * Type of a selected modifier in an Evergreen SelectMenu.
+ */
+interface ModifierOption {
+  label: string
+  value: string
+}
+
+/**
+ * Be explicit about the type of the modifiers option.
+ */
+type Modifiers = string[] | undefined
 
 /**
  * Forwards the Textarea ref to the output component.
@@ -18,10 +48,12 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
    */
   ({ converter, disabled, input, ...props }: OutputProps, ref) => {
     const { t } = useTranslation('domain-convert-outputs-regexOutput')
+    const { setForceInput } = useConverterContext()
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
     const testString = (options.testString || '') as string
+    const modifiers = ((options.modifiers as Modifiers) || []).sort()
 
     // This is a bit of a hack to provide a test string when 'load an example' is clicked.
     useEffect(() => {
@@ -37,6 +69,49 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       }
     }, [input, options, setOptions, t, testString])
 
+    // If the modifiers in the input regex change, update the options.
+    useEffect(() => {
+      const [_, modifierStr] = input.match(modifierRegex) || []
+      const newModifiers = compact((modifierStr || '').split('')).sort()
+      if (modifierStr && !isEqual(newModifiers, modifiers)) {
+        setOptions({ ...options, modifiers: newModifiers })
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [input])
+
+    // If the modifier options change, update the input regex.
+    useEffect(() => {
+      if (input.match(modifierRegex)) {
+        const newInput = input.replace(modifierRegex, `/${modifiers.join('')}`)
+        if (newInput !== input) {
+          setForceInput([newInput, converter])
+        }
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [modifiers])
+
+    /**
+     * Updates the output options state when a modifier is removed.
+     *
+     * @param event - the HTML select change event.
+     */
+    const onDeselectModifier = (item: ModifierOption) => {
+      const newModifiers = modifiers.filter((mod) => mod !== item.value)
+      setOptions({ ...options, modifiers: newModifiers })
+    }
+
+    /**
+     * Updates the output options state when a modifier is added.
+     *
+     * @param event - the HTML select change event.
+     */
+    const onSelectModifier = (item: ModifierOption) => {
+      setOptions({
+        ...options,
+        modifiers: [...modifiers, item.value],
+      })
+    }
+
     /**
      * Updates the output options state when the test-string text input is changed.
      *
@@ -48,11 +123,10 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
     const matches = useMemo((): Array<Array<string>> | undefined => {
       try {
-        const [_, regexStr, modifiers] =
-          input.match(/^\/(.*)\/([igm]+)?$/) || []
-        const regex = new RegExp(regexStr.replace(/\n/, ''), modifiers)
+        const [_, regexStr, _modifiers] = input.match(regexRegex) || []
+        const regex = new RegExp(regexStr.replace(/\n/, ''), modifiers.join(''))
         // The matchAll() method throws an error if the 'g' modifier has not been provided.
-        if (modifiers?.includes('g')) {
+        if (modifiers.includes('g')) {
           return [...testString.matchAll(regex)]
         } else {
           const result = testString.match(regex)
@@ -65,12 +139,40 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
       } catch (err) {
         return undefined
       }
-    }, [input, testString])
+    }, [input, modifiers, testString])
 
     const hasTestString = testString.trim().length > 0
 
     return (
       <>
+        <Label
+          disabled={disabled}
+          htmlFor="modifiersInput"
+          label={t('modifiers_label')}
+        >
+          <SelectMenu
+            isMultiSelect={true}
+            onDeselect={onDeselectModifier}
+            onSelect={onSelectModifier}
+            options={[
+              { label: t('modifier_global_option'), value: 'g' },
+              { label: t('modifier_insensitive_option'), value: 'i' },
+              { label: t('modifier_multiline_option'), value: 'm' },
+            ]}
+            selected={modifiers}
+          >
+            <Button
+              disabled={disabled}
+              id="modifiersInput"
+              minWidth={majorScale(10)}
+            >
+              {modifiers.length === 0
+                ? t('modifiers_none_selected')
+                : modifiers.join(', ')}
+            </Button>
+          </SelectMenu>
+        </Label>
+
         <CodeTextarea
           {...props}
           copy={false}
@@ -98,11 +200,11 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         ) : null}
 
-        {hasTestString && matches?.length === 0 ? (
+        {!disabled && hasTestString && matches?.length === 0 ? (
           <Alert intent="warning" title={t('alert_no_matches')} />
         ) : null}
 
-        {matches && matches.length > 0 ? (
+        {!disabled && matches && matches.length > 0 ? (
           <>
             {matches.map((match, matchIndex) => {
               const [whole, ...groups] = match
