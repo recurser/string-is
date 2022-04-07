@@ -49,7 +49,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const matches = useMemo((): Array<Array<string>> | undefined => {
       try {
         const [_, regexStr, modifiers] =
-          input.match(/^\/(.*)\/([igm]+)?$/) || []
+          input.match(/^\/?(.*?)\/?([igm]+)?$/) || []
         const regex = new RegExp(regexStr.replace(/\n/, ''), modifiers)
         // The matchAll() method throws an error if the 'g' modifier has not been provided.
         if (modifiers?.includes('g')) {
@@ -98,11 +98,11 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
           />
         ) : null}
 
-        {hasTestString && matches?.length === 0 ? (
+        {!disabled && hasTestString && matches?.length === 0 ? (
           <Alert intent="warning" title={t('alert_no_matches')} />
         ) : null}
 
-        {matches && matches.length > 0 ? (
+        {!disabled && matches && matches.length > 0 ? (
           <>
             {matches.map((match, matchIndex) => {
               const [whole, ...groups] = match
