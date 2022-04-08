@@ -38,8 +38,6 @@ export const About = () => {
         <OrderedList>
           <ListItem>{t('li_goal_open_source')}</ListItem>
 
-          <ListItem>{t('li_goal_client_side')}</ListItem>
-
           <ListItem>{t('li_goal_no_cookies')}</ListItem>
 
           <ListItem>
