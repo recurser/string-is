@@ -144,7 +144,7 @@
   },
   "nullConverter-heading": "Online Developer Toolkit",
   "nullConverter-input-label": "Paste or type text here to convert it",
-  "nullConverter-intro": "An open-source, privacy-friendly toolkit for developers, providing a collection of {{numConverters}} converters and formatters. Enter a string below to convert it, or <0>load an example</0>.",
+  "nullConverter-intro": "An open-source, privacy-friendly online string toolkit for developers, providing a collection of {{numConverters}} converters and formatters. Enter a string below to convert it, or <0>load an example</0>.",
   "numberBaseConverter-examples": {
     "example-1": "2002020010210",
     "example-2": "12,00a"
