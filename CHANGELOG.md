@@ -1,3 +1,10 @@
+## [1.28.1](https://github.com/recurser/string-is/compare/v1.28.0...v1.28.1) (2022-04-08)
+
+
+### Bug Fixes
+
+* don't allow multiline regexes during regex identification to avoid false positives ([8df899d](https://github.com/recurser/string-is/commit/8df899ddf649b1ea05daea8a77767dc396aa3600))
+
 # [1.28.0](https://github.com/recurser/string-is/compare/v1.27.0...v1.28.0) (2022-04-07)
 
 
