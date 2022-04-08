@@ -6,7 +6,7 @@ about: Something not working as expected
 
 ## Current behavior
 
-<!-- Describe how the issue manifests. -->
+<!-- Describe how the issue manifests itself. -->
 
 ## Expected behavior
 
@@ -14,5 +14,5 @@ about: Something not working as expected
 
 ## Environment
 
-- **string-is** version: <!-- Version set in package.json -->
-- CI environment: <!-- CI service name, if relevant -->
+- **string-is** version: <!-- Version from package.json, or commit SHA -->
+- Share link: <!-- If possible, a string-is 'share' link demonstrating the issue -->
