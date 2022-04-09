@@ -1,0 +1,9 @@
+---
+version: '3.3'
+
+services:
+  string-is:
+    build: .
+    ports:
+      - '3000:3000'
+    image: string-is
