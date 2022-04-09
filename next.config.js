@@ -94,6 +94,11 @@ module.exports = nextTranslate({
   env: {
     CONTACT_EMAIL: 'hello@daveperrett.com',
   },
+  // 'outputStandalone' is needed for docker support.
+  // See https://github.com/vercel/next.js/tree/canary/examples/with-docker
+  experimental: {
+    outputStandalone: true,
+  },
   headers,
   reactStrictMode: true,
   webpack: (config, { isServer, webpack }) => {
