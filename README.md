@@ -44,6 +44,26 @@ yarn all
 ```
 
 
+## Running with Docker
+
+Build the docker image (shortcut for `docker build -t string-is .`):
+
+```bash
+yarn docker-build
+```
+
+... and then run it (shortcut for `docker run -p 3000:3000 string-is`):
+
+```bash
+yarn docker-run
+```
+
+Alternatively you can build and run it with `docker-compose`:
+
+```bash
+docker-compose up
+```
+
 ## Adding a new converter
 
 The `src/lib` folder contains most of the conversion logic, and is pure TypeScript, with no React knowledge required.
