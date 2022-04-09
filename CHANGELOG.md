@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/recurser/string-is/compare/v1.28.1...v1.29.0) (2022-04-09)
+
+
+### Features
+
+* add Docker support ([cedc917](https://github.com/recurser/string-is/commit/cedc917063928a561dc7018a5dfcf4c92534414b))
+
 ## [1.28.1](https://github.com/recurser/string-is/compare/v1.28.0...v1.28.1) (2022-04-08)
 
 
