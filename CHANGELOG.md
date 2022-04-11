@@ -1,3 +1,10 @@
+## [1.31.3](https://github.com/recurser/string-is/compare/v1.31.2...v1.31.3) (2022-04-11)
+
+
+### Bug Fixes
+
+* use custom Github token for the release action, so that Docker Hub can be triggered ([54c62f8](https://github.com/recurser/string-is/commit/54c62f8ffb9c518c0873acdfcfe7d681e4584f37))
+
 ## [1.31.2](https://github.com/recurser/string-is/compare/v1.31.1...v1.31.2) (2022-04-11)
 
 
