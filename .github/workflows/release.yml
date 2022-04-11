@@ -23,3 +23,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: yarn semantic-release
+
+
+# Try https://github.com/felixfbecker/semantic-release-docker
