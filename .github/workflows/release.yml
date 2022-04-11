@@ -21,5 +21,7 @@ jobs:
         run: yarn install
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          # Use this so that we can trigger the Docker Hub action on tag after release.
+          # The regular GITHUB_TOKEN doesn't trigger it.
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn semantic-release
