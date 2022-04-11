@@ -6,7 +6,7 @@
     "all": "yarn eslint pages src --fix && yarn prettier && yarn jest && yarn build",
     "build": "next build",
     "dev": "next dev",
-    "docker-build": "docker build -t string-is .",
+    "docker-build": "docker build --platform linux/arm64 -t string-is .",
     "docker-run": "docker run -p 3000:3000 string-is",
     "eslint": "eslint --ext=js,ts,tsx",
     "format": "yarn eslint src pages --fix && yarn prettier",
