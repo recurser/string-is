@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/recurser/string-is/compare/v1.29.0...v1.30.0) (2022-04-11)
+
+
+### Features
+
+* publish releases to DockerHub ([53c2092](https://github.com/recurser/string-is/commit/53c20929d19f521c7b63802d722b7eb8d64c4478))
+
 # [1.29.0](https://github.com/recurser/string-is/compare/v1.28.1...v1.29.0) (2022-04-09)
 
 
