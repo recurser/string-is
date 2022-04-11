@@ -1,3 +1,10 @@
+## [1.31.2](https://github.com/recurser/string-is/compare/v1.31.1...v1.31.2) (2022-04-11)
+
+
+### Bug Fixes
+
+* revert Docker Hub github action trigger changes ([7d7fbae](https://github.com/recurser/string-is/commit/7d7fbaedd8c2d07d90247e64dd28b49f547080a4))
+
 ## [1.31.1](https://github.com/recurser/string-is/compare/v1.31.0...v1.31.1) (2022-04-11)
 
 
