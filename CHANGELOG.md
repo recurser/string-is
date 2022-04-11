@@ -1,3 +1,10 @@
+## [1.31.1](https://github.com/recurser/string-is/compare/v1.31.0...v1.31.1) (2022-04-11)
+
+
+### Bug Fixes
+
+* trigger Docker build from semantic-release ([92d7216](https://github.com/recurser/string-is/commit/92d7216a15753d6e7388d161beb7c3990a5cb07d))
+
 # [1.31.0](https://github.com/recurser/string-is/compare/v1.30.0...v1.31.0) (2022-04-11)
 
 
