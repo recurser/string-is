@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/recurser/string-is/compare/v1.30.0...v1.31.0) (2022-04-11)
+
+
+### Features
+
+* test release to trigger a Docker Hub build ([c2f6ed6](https://github.com/recurser/string-is/commit/c2f6ed63d2c8e522114f568c9696b448bfceda6f))
+
 # [1.30.0](https://github.com/recurser/string-is/compare/v1.29.0...v1.30.0) (2022-04-11)
 
 
