@@ -1,13 +1,14 @@
 name: Publish to Docker Hub
 
 on:
-  create:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   publish_to_dockerhub:
     # Previously tried to use on-push-tag to trigger this, but semantic-release
     # doesn't trigger it. See https://github.com/actions/runner/issues/1007
-    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
