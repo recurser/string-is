@@ -1,3 +1,10 @@
+## [1.31.4](https://github.com/recurser/string-is/compare/v1.31.3...v1.31.4) (2022-04-11)
+
+
+### Bug Fixes
+
+* use custom Github token for the release action, take 2 ([da0c2ed](https://github.com/recurser/string-is/commit/da0c2ed11604145b3617576a124b3dd64511d35a))
+
 ## [1.31.3](https://github.com/recurser/string-is/compare/v1.31.2...v1.31.3) (2022-04-11)
 
 
