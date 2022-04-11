@@ -46,16 +46,28 @@ yarn all
 
 ## Running with Docker
 
-Build the docker image (shortcut for `docker build -t string-is .`):
+Build the docker image:
 
 ```bash
 yarn docker-build
 ```
 
-... and then run it (shortcut for `docker run -p 3000:3000 string-is`):
+or
+
+```bash
+docker build -t string-is .
+```
+
+... and then run it:
 
 ```bash
 yarn docker-run
+```
+
+or
+
+```bash
+docker run -p 3000:3000 string-is
 ```
 
 Alternatively you can build and run it with `docker-compose`:
@@ -63,6 +75,15 @@ Alternatively you can build and run it with `docker-compose`:
 ```bash
 docker-compose up
 ```
+
+... or even run it directly from [Docker Hub](https://hub.docker.com/repository/docker/daveperrett/string-is/tags?page=1&ordering=last_updated):
+
+```bash
+docker run -p 4000:3000 daveperrett/string-is:latest
+````
+
+Currently `linux/arm64` and `linux/amd64` platforms are supported.
+
 
 ## Adding a new converter
 
