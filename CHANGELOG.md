@@ -1,3 +1,10 @@
+## [1.31.5](https://github.com/recurser/string-is/compare/v1.31.4...v1.31.5) (2022-04-11)
+
+
+### Bug Fixes
+
+* push to Docker Hub as part of the semantic-release action ([f847bbb](https://github.com/recurser/string-is/commit/f847bbbc318b84c479512f9bf8e3fa2f362c726f))
+
 ## [1.31.4](https://github.com/recurser/string-is/compare/v1.31.3...v1.31.4) (2022-04-11)
 
 
