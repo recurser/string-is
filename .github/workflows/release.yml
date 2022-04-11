@@ -35,7 +35,6 @@ jobs:
       - name: Get the version
         run: echo "RELEASE_VERSION=v$(perl -ne 'print "$1\n" if /"version":\s*"(.*?)"/' package.json)" >> $GITHUB_ENV
       - name: Build and push
-        if: steps.semantic.outputs.new_release_published == 'true'
         uses: docker/build-push-action@v2
         with:
           builder:    ${{ steps.buildx.outputs.name }}
