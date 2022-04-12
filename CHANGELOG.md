@@ -1,3 +1,15 @@
+# [1.32.0](https://github.com/recurser/string-is/compare/v1.31.6...v1.32.0) (2022-04-12)
+
+
+### Bug Fixes
+
+* casing issues with SqlTextArea naming ([88849cf](https://github.com/recurser/string-is/commit/88849cf5122033e62e556f849eebedf02603f04f))
+
+
+### Features
+
+* add a TOML formatter ([4e4ebb9](https://github.com/recurser/string-is/commit/4e4ebb9ea3cb0e20d243f657a4db86dd7e288132))
+
 ## [1.31.6](https://github.com/recurser/string-is/compare/v1.31.5...v1.31.6) (2022-04-12)
 
 
