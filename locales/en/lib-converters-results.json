@@ -28,6 +28,7 @@
   "shaEncoder": "SHA hash",
   "sqlFormatter": "Formatted SQL",
   "timestampConverter": "Formatted time",
+  "tomlFormatter": "Formatted TOML",
   "upperCaseConverter": "To upper case",
   "urlDecoder": "URL decoded",
   "urlEncoder": "URL encoded",

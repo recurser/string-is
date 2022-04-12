@@ -94,11 +94,12 @@ module.exports = nextTranslate({
   env: {
     CONTACT_EMAIL: 'hello@daveperrett.com',
   },
-  // 'outputStandalone' is needed for docker support.
+  // 'outputStandalone' is needed for docker support. The 'OUTPUT_STANDALONE'
+  // env-var is set in the Dockerfile.
   // See https://github.com/vercel/next.js/tree/canary/examples/with-docker
-  experimental: {
-    outputStandalone: true,
-  },
+  experimental: process.env.OUTPUT_STANDALONE
+    ? { outputStandalone: true }
+    : undefined,
   headers,
   reactStrictMode: true,
   webpack: (config, { isServer, webpack }) => {

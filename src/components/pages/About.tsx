@@ -163,6 +163,12 @@ export const About = () => {
           </ListItem>
 
           <ListItem>
+            <Link href="https://github.com/iarna/iarna-toml" target="_blank">
+              iarna-toml
+            </Link>
+          </ListItem>
+
+          <ListItem>
             <Link href="https://github.com/dankogai/js-base64" target="_blank">
               js-base64
             </Link>

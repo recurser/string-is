@@ -14,6 +14,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV OUTPUT_STANDALONE 1
 RUN yarn build
 
 # Production image, copy all the files and run next
