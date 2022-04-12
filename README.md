@@ -76,7 +76,7 @@ Alternatively you can build and run it with `docker-compose`:
 docker-compose up
 ```
 
-... or even run it directly from [Docker Hub](https://hub.docker.com/repository/docker/daveperrett/string-is/tags?page=1&ordering=last_updated):
+... or even run it directly from [Docker Hub](https://hub.docker.com/r/daveperrett/string-is/tags):
 
 ```bash
 docker run -p 4000:3000 daveperrett/string-is:latest
