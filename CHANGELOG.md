@@ -1,3 +1,10 @@
+## [1.31.6](https://github.com/recurser/string-is/compare/v1.31.5...v1.31.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* remove unwanted condition from Docker Hub Github action ([4226482](https://github.com/recurser/string-is/commit/4226482fd829404220bbf5c85a668748c517331a))
+
 ## [1.31.5](https://github.com/recurser/string-is/compare/v1.31.4...v1.31.5) (2022-04-11)
 
 
