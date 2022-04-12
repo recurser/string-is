@@ -29,6 +29,7 @@
   "sqlFormatter": "SQL format",
   "timestampConverter": "Timestamp",
   "tomlFormatter": "TOML format",
+  "tomlToJsonConverter": "TOML to JSON",
   "upperCaseConverter": "Upper case",
   "urlDecoder": "URL decode",
   "urlEncoder": "URL encode",
