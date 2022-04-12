@@ -635,6 +635,11 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iarna/toml@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
+  integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
+
 "@isaacs/string-locale-compare@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@isaacs/string-locale-compare/-/string-locale-compare-1.1.0.tgz#291c227e93fd407a96ecd59879a35809120e432b"
@@ -1475,6 +1480,13 @@
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.3.tgz#bbb825f7937e946476610b3a7266a94f27878716"
   integrity sha512-EDixutNn3FQwa5HdET+Tx0h7TirP2knJa9TB21ySqr8XVqT/VsvvOwnanTLHUOOpNofcUhkRKhOk0Wh4YD9RSA==
+
+"@types/iarna__toml@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/iarna__toml/-/iarna__toml-2.0.2.tgz#2e61b079e50760b477bc70e4df1fe5b633ef6c63"
+  integrity sha512-Q3obxKhBLVVbEQ8zsAmsQVobAAZhi8dFFFjF0q5xKXiaHvH8IkSxcbM27e46M9feUMieR03SPpmp5CtaNzpdBg==
+  dependencies:
+    "@types/node" "*"
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.4"
