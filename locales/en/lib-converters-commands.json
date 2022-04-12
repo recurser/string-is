@@ -30,6 +30,7 @@
   "timestampConverter": "Timestamp",
   "tomlFormatter": "TOML format",
   "tomlToJsonConverter": "TOML to JSON",
+  "tomlToXmlConverter": "TOML to XML",
   "tomlToYamlConverter": "TOML to YAML",
   "upperCaseConverter": "Upper case",
   "urlDecoder": "URL decode",
