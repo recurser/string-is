@@ -11,6 +11,7 @@
   "jsonFormatter": "JSON format",
   "jsonToCsvConverter": "JSON to CSV",
   "jsonToJavaScriptConverter": "JSON to JavaScript",
+  "jsonToTomlConverter": "JSON to TOML",
   "jsonToXmlConverter": "JSON to XML",
   "jsonToYamlConverter": "JSON to YAML",
   "jwtDecoder": "JWT decode",
