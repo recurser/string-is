@@ -6,8 +6,8 @@ import {
   Tooltip,
   majorScale,
 } from 'evergreen-ui'
+import { encode, encodeURI } from 'js-base64'
 import { useMemo, useState } from 'react'
-import { encode } from 'js-base64'
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
@@ -32,7 +32,7 @@ export const ShareButton = () => {
   const onClick = async () => {
     if (!isEmpty(inputString) && !copied) {
       const converterSlug = hyphenateConverterId(converter.id)
-      const encodedInput = encode(inputString)
+      const encodedInput = encodeURI(inputString)
       const encodedOptions = encode(JSON.stringify(options))
       const url = `${BaseUrl}/${converterSlug}?i=${encodedInput}&o=${encodedOptions}`
       await copyToClipboard(url)
