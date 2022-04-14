@@ -22,6 +22,7 @@
   "md5Encoder": "MD5 hash",
   "numberBaseConverter": "Number base",
   "queryStringToJsonConverter": "Query string to JSON",
+  "queryStringToTomlConverter": "Query string to TOML",
   "queryStringToYamlConverter": "Query string to YAML",
   "regexDebugger": "Regular Expression",
   "ripemdEncoder": "RIPEMD-160 hash",
