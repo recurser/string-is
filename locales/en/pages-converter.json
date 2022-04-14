@@ -166,6 +166,13 @@
   "queryStringToJsonConverter-heading": "Online Query String to JSON Converter",
   "queryStringToJsonConverter-input-label": "Paste or type a URL here to convert it",
   "queryStringToJsonConverter-intro": "A query string is the portion of a URL where key/value data is passed to the destination page. Enter a URL below below to convert its query parameters to JSON format, or <0>load an example</0>.",
+  "queryStringToTomlConverter-examples": {
+    "example-1": "https://string.is/?page=1&sortOrder=newest&sortDirection=desc&perPage=20",
+    "example-2": "https://duckduckgo.com/?q=css+formatter&t=h_&ia=web"
+  },
+  "queryStringToTomlConverter-heading": "Online Query String to TOML Converter",
+  "queryStringToTomlConverter-input-label": "Paste or type a URL here to convert it",
+  "queryStringToTomlConverter-intro": "A query string is the portion of a URL where key/value data is passed to the destination page. Enter a URL below below to convert its query parameters to TOML format, or <0>load an example</0>.",
   "queryStringToYamlConverter-examples": {
     "example-1": "https://string.is/?page=1&sortOrder=newest&sortDirection=desc&perPage=20",
     "example-2": "https://duckduckgo.com/?q=css+formatter&t=h_&ia=web"
