@@ -1,3 +1,16 @@
+# [1.33.0](https://github.com/recurser/string-is/compare/v1.32.0...v1.33.0) (2022-04-14)
+
+
+### Features
+
+* add a JSON to TOML converter ([5dbe0b9](https://github.com/recurser/string-is/commit/5dbe0b9364f96091ade98a814db750d11e2d87d6))
+* add a query string to TOML converter ([9c15a3e](https://github.com/recurser/string-is/commit/9c15a3e5c8a3f7ce9903b28f1f1d7d7e86350e38))
+* add a TOML to JSON converter ([f9efa58](https://github.com/recurser/string-is/commit/f9efa58bce3fb45fa4dfd6e38df27bef60fe43db))
+* add a TOML to XML converter ([a1b93d1](https://github.com/recurser/string-is/commit/a1b93d1568465333e7c60836ffa57b1e099e5009))
+* add a TOML to YAML converter ([82290c6](https://github.com/recurser/string-is/commit/82290c69b637de7756678818680f511263a06188))
+* add a YAML to TOML converter ([c67ba30](https://github.com/recurser/string-is/commit/c67ba30db5f2c86ea26ad9c6ca799d8e3ff77ed9))
+* add an XML to TOML converter ([9967d44](https://github.com/recurser/string-is/commit/9967d44bad43aaecc5fd83276f139c756c5ffcb6))
+
 # [1.32.0](https://github.com/recurser/string-is/compare/v1.31.6...v1.32.0) (2022-04-12)
 
 
