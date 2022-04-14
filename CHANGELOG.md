@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/recurser/string-is/compare/v1.33.0...v1.33.1) (2022-04-14)
+
+
+### Bug Fixes
+
+* encode share links with encodeURI() to avoid decoding issues with XML strings ([4c9e8a9](https://github.com/recurser/string-is/commit/4c9e8a9e142874545df5ec24d7b01c0b56ec9429))
+
 # [1.33.0](https://github.com/recurser/string-is/compare/v1.32.0...v1.33.0) (2022-04-14)
 
 
