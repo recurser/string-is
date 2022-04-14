@@ -29,7 +29,6 @@ describe('identities', () => {
           'delete from users where id = 1',
           '\n DELETE   FROM users \n where id = 1 \n',
         ].forEach((input) => {
-          console.log(input)
           expect(confidence(input)).toEqual(100)
         })
       })

@@ -1,23 +1,22 @@
 import { expectError, expectOutput } from './_helpers'
-import { QueryStringToYamlConverter } from '@lib/converters'
+import { QueryStringToTomlConverter } from '@lib/converters'
 
 describe('converters', () => {
-  describe('QueryStringToYamlConverter', () => {
-    it('converts the query string input to YAML', async () => {
+  describe('QueryStringToTomlConverter', () => {
+    it('converts the query string input to TOML', async () => {
       await expectOutput(
-        QueryStringToYamlConverter,
+        QueryStringToTomlConverter,
         'https://string.is/?foo=bar&today=2022-02-13',
-        'yaml-output',
-        `---
-foo: 'bar'
-today: '2022-02-13'
+        'toml-output',
+        `foo = "bar"
+today = "2022-02-13"
 `,
       )
     })
 
     it('reports an error if the input in invalid', async () => {
       await expectError(
-        QueryStringToYamlConverter,
+        QueryStringToTomlConverter,
         'invalid!',
         'Invalid URL: invalid!',
       )

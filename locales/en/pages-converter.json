@@ -83,6 +83,13 @@
   "jsonToJavaScriptConverter-heading": "Online JSON to JavaScript Converter",
   "jsonToJavaScriptConverter-input-label": "Paste or type JSON here to convert it",
   "jsonToJavaScriptConverter-intro": "Convert your messy, minified, or obfuscated JSON data to valid JavaScript code, with customizable indentation, line length, and syntax highlighting. Enter some JSON data below to convert it, or <0>load an example</0>.",
+  "jsonToTomlConverter-examples": {
+    "example-1": "{\n  \"2011\":{\"Age\":\"29\",\"Name\":\"Natalie Portman\",\"Movie\":\"Black Swan\"},\n  \"2012\":{\"Age\":\"62\",\"Name\":\"Meryl Streep\",\"Movie\":\"The Iron Lady\"},\n  \"2013\":{\"Age\":\"22\",\"Name\":\"Jennifer Lawrence\",\"Movie\":\"Silver Linings Playbook\"},\n  \"2014\":{\"Age\":\"44\",\"Name\":\"Cate Blanchett\",\"Movie\":\"Blue Jasmine\"},\n  \"2015\":{\"Age\":\"54\",\"Name\":\"Julianne Moore\",\"Movie\":\"Still Alice\"},\n  \"2016\":{\"Age\":\"26\",\"Name\":\"Brie Larson\",\"Movie\":\"Room\"}\n}",
+    "example-2": "{\n  \"Australia\":{\"Region\":\"Oceania\",\"SurfaceArea\":7692060,\"Population\":24451000,\"PopulationDensity\":3.2,\"GdpPerCapita\":51352.2,\"Unemployment\":5.5},\n  \"Japan\":{\"Region\":\"Eastern Asia\",\"SurfaceArea\":377930,\"Population\":127484000,\"PopulationDensity\":349.7,\"GdpPerCapita\":34628.7,\"Unemployment\":3},\n  \"New Zealand\":{\"Region\":\"Oceania\",\"SurfaceArea\":268107,\"Population\":4706000,\"PopulationDensity\":17.9,\"GdpPerCapita\":38294.3,\"Unemployment\":5.5},\n  \"United Kingdom\":{\"Region\":\"Northern Europe\",\"SurfaceArea\":242495,\"Population\":66182000,\"PopulationDensity\":273.6,\"GdpPerCapita\":44162.4,\"Unemployment\":5}\n}"
+  },
+  "jsonToTomlConverter-heading": "Online JSON to TOML Converter",
+  "jsonToTomlConverter-input-label": "Paste or type JSON here to convert it",
+  "jsonToTomlConverter-intro": "Convert your messy, minified, or obfuscated JSON data to TOML markup, with customizable key sorting and syntax highlighting. Enter some JSON data below to convert it, or <0>load an example</0>.",
   "jsonToXmlConverter-examples": {
     "example-1": "[\n  {\"Year\":\"2011\",\"Age\":\"29\",\"Name\":\"Natalie Portman\",\"Movie\":\"Black Swan\"},\n  {\"Year\":\"2012\",\"Age\":\"62\",\"Name\":\"Meryl Streep\",\"Movie\":\"The Iron Lady\"},\n  {\"Year\":\"2013\",\"Age\":\"22\",\"Name\":\"Jennifer Lawrence\",\"Movie\":\"Silver Linings Playbook\"},\n  {\"Year\":\"2014\",\"Age\":\"44\",\"Name\":\"Cate Blanchett\",\"Movie\":\"Blue Jasmine\"},\n  {\"Year\":\"2015\",\"Age\":\"54\",\"Name\":\"Julianne Moore\",\"Movie\":\"Still Alice\"},\n  {\"Year\":\"2016\",\"Age\":\"26\",\"Name\":\"Brie Larson\",\"Movie\":\"Room\"}\n]",
     "example-2": "[\n  {\"Country\": \"Australia\",\"Region\": \"Oceania\",\"SurfaceArea\": 7692060,\"Population\": 24451000,\"PopulationDensity\": 3.2,\n\"GdpPerCapita\": 51352.2,\n\"Unemployment\": 5.5\n},\n  {\"Country\": \"Japan\",\"Region\": \"Eastern Asia\",\"SurfaceArea\": 377930,\"Population\": 127484000,\"PopulationDensity\": 349.7,\n\"GdpPerCapita\": 34628.7,\n\"Unemployment\": 3\n},\n  {\"Country\": \"New Zealand\",\"Region\": \"Oceania\",\"SurfaceArea\": 268107,\"Population\": 4706000,\"PopulationDensity\": 17.9,\n\"GdpPerCapita\": 38294.3,\n\"Unemployment\": 5.5\n},\n  {\"Country\": \"United Kingdom\",\"Region\": \"Northern Europe\",\"SurfaceArea\": 242495,\"Population\": 66182000,\"PopulationDensity\": 273.6,\n\"GdpPerCapita\": 44162.4,\n\"Unemployment\": 5\n}\n]"
@@ -159,6 +166,13 @@
   "queryStringToJsonConverter-heading": "Online Query String to JSON Converter",
   "queryStringToJsonConverter-input-label": "Paste or type a URL here to convert it",
   "queryStringToJsonConverter-intro": "A query string is the portion of a URL where key/value data is passed to the destination page. Enter a URL below below to convert its query parameters to JSON format, or <0>load an example</0>.",
+  "queryStringToTomlConverter-examples": {
+    "example-1": "https://string.is/?page=1&sortOrder=newest&sortDirection=desc&perPage=20",
+    "example-2": "https://duckduckgo.com/?q=css+formatter&t=h_&ia=web"
+  },
+  "queryStringToTomlConverter-heading": "Online Query String to TOML Converter",
+  "queryStringToTomlConverter-input-label": "Paste or type a URL here to convert it",
+  "queryStringToTomlConverter-intro": "A query string is the portion of a URL where key/value data is passed to the destination page. Enter a URL below below to convert its query parameters to TOML format, or <0>load an example</0>.",
   "queryStringToYamlConverter-examples": {
     "example-1": "https://string.is/?page=1&sortOrder=newest&sortDirection=desc&perPage=20",
     "example-2": "https://duckduckgo.com/?q=css+formatter&t=h_&ia=web"
@@ -208,12 +222,33 @@
   "timestampConverter-input-label": "Paste a timestamp here to convert it",
   "timestampConverter-intro": "Convert dates and times into different formats, and between timezones. Enter a human-readable date, time, or Unix timestamp below to convert it, or <0>load an example</0>.",
   "tomlFormatter-examples": {
-    "example-1": "[2011]\nAge = 29\nName = \"Natalie Portman\"\nMovie = \"Black Swan\"\n[2012]\nAge = 62\nName = \"Meryl Streep\"\nMovie = \"The Iron Lady\"\n[2013]\nAge = 22\nName = \"Jennifer Lawrence\"\nMovie = \"Silver Linings Playbook\"\n[2014]\nAge = 44\nName = \"Cate Blanchett\"\nMovie = \"Blue Jasmine\"\n[2015]\nAge = 54\nName = \"Julianne Moore\"\nMovie = \"Still Alice\"\n[2016]\nAge = 26\nName = \"Brie Larson\"\nMovie = \"Room\"",
+    "example-1": "[Year2011]\nAge = 29\nName = \"Natalie Portman\"\nMovie = \"Black Swan\"\n[Year2012]\nAge = 62\nName = \"Meryl Streep\"\nMovie = \"The Iron Lady\"\n[Year2013]\nAge = 22\nName = \"Jennifer Lawrence\"\nMovie = \"Silver Linings Playbook\"\n[Year2014]\nAge = 44\nName = \"Cate Blanchett\"\nMovie = \"Blue Jasmine\"\n[Year2015]\nAge = 54\nName = \"Julianne Moore\"\nMovie = \"Still Alice\"\n[Year2016]\nAge = 26\nName = \"Brie Larson\"\nMovie = \"Room\"",
     "example-2": "[Australia]\nRegion = 'Oceania'\nPopulation = 24451000\nPopulationDensity = 3.2\nGdpPerCapita = 51352.2\nSurfaceArea = 7692060\nUnemployment = 5.5\n[Japan]\nRegion = 'Eastern Asia'\nPopulation = 127484000\nPopulationDensity = 349.7\nGdpPerCapita = 34628.7\nSurfaceArea = 377930\nUnemployment = 3\n[NewZealand]\nRegion = 'Oceania'\nPopulation = 4706000\nPopulationDensity = 17.9\nGdpPerCapita = 38294.3\nSurfaceArea = 268107\nUnemployment = 5.5\n[UnitedKingdom]\nRegion = 'Northern Europe'\nPopulation = 66182000\nPopulationDensity = 273.6\nGdpPerCapita = 44162.4\nSurfaceArea = 242495\nUnemployment = 5"
   },
   "tomlFormatter-heading": "Online TOML Formatter",
   "tomlFormatter-input-label": "Paste or type TOML here to format it",
   "tomlFormatter-intro": "Clean up and beautify your TOML markup, with customizable key sorting and syntax highlighting. Enter some TOML below to format it, or <0>load an example</0>.",
+  "tomlToJsonConverter-examples": {
+    "example-1": "[Year2011]\nAge = 29\nName = \"Natalie Portman\"\nMovie = \"Black Swan\"\n[Year2012]\nAge = 62\nName = \"Meryl Streep\"\nMovie = \"The Iron Lady\"\n[Year2013]\nAge = 22\nName = \"Jennifer Lawrence\"\nMovie = \"Silver Linings Playbook\"\n[Year2014]\nAge = 44\nName = \"Cate Blanchett\"\nMovie = \"Blue Jasmine\"\n[Year2015]\nAge = 54\nName = \"Julianne Moore\"\nMovie = \"Still Alice\"\n[Year2016]\nAge = 26\nName = \"Brie Larson\"\nMovie = \"Room\"",
+    "example-2": "[Australia]\nRegion = 'Oceania'\nPopulation = 24451000\nPopulationDensity = 3.2\nGdpPerCapita = 51352.2\nSurfaceArea = 7692060\nUnemployment = 5.5\n[Japan]\nRegion = 'Eastern Asia'\nPopulation = 127484000\nPopulationDensity = 349.7\nGdpPerCapita = 34628.7\nSurfaceArea = 377930\nUnemployment = 3\n[NewZealand]\nRegion = 'Oceania'\nPopulation = 4706000\nPopulationDensity = 17.9\nGdpPerCapita = 38294.3\nSurfaceArea = 268107\nUnemployment = 5.5\n[UnitedKingdom]\nRegion = 'Northern Europe'\nPopulation = 66182000\nPopulationDensity = 273.6\nGdpPerCapita = 44162.4\nSurfaceArea = 242495\nUnemployment = 5"
+  },
+  "tomlToJsonConverter-heading": "Online TOML to JSON Converter",
+  "tomlToJsonConverter-input-label": "Paste or type TOML here to convert it",
+  "tomlToJsonConverter-intro": "Convert your TOML markup to formatted JSON, with customizable indentation, key sorting, and syntax highlighting. Enter some TOML below to convert it, or <0>load an example</0>.",
+  "tomlToXmlConverter-examples": {
+    "example-1": "[Year2011]\nAge = 29\nName = \"Natalie Portman\"\nMovie = \"Black Swan\"\n[Year2012]\nAge = 62\nName = \"Meryl Streep\"\nMovie = \"The Iron Lady\"\n[Year2013]\nAge = 22\nName = \"Jennifer Lawrence\"\nMovie = \"Silver Linings Playbook\"\n[Year2014]\nAge = 44\nName = \"Cate Blanchett\"\nMovie = \"Blue Jasmine\"\n[Year2015]\nAge = 54\nName = \"Julianne Moore\"\nMovie = \"Still Alice\"\n[Year2016]\nAge = 26\nName = \"Brie Larson\"\nMovie = \"Room\"",
+    "example-2": "[Australia]\nRegion = 'Oceania'\nPopulation = 24451000\nPopulationDensity = 3.2\nGdpPerCapita = 51352.2\nSurfaceArea = 7692060\nUnemployment = 5.5\n[Japan]\nRegion = 'Eastern Asia'\nPopulation = 127484000\nPopulationDensity = 349.7\nGdpPerCapita = 34628.7\nSurfaceArea = 377930\nUnemployment = 3\n[NewZealand]\nRegion = 'Oceania'\nPopulation = 4706000\nPopulationDensity = 17.9\nGdpPerCapita = 38294.3\nSurfaceArea = 268107\nUnemployment = 5.5\n[UnitedKingdom]\nRegion = 'Northern Europe'\nPopulation = 66182000\nPopulationDensity = 273.6\nGdpPerCapita = 44162.4\nSurfaceArea = 242495\nUnemployment = 5"
+  },
+  "tomlToXmlConverter-heading": "Online TOML to XML Converter",
+  "tomlToXmlConverter-input-label": "Paste or type XML here to convert it",
+  "tomlToXmlConverter-intro": "Convert your TOML markup to formatted XML, with customizable indentation, key sorting, and syntax highlighting. Enter some TOML below to convert it, or <0>load an example</0>.",
+  "tomlToYamlConverter-examples": {
+    "example-1": "[Year2011]\nAge = 29\nName = \"Natalie Portman\"\nMovie = \"Black Swan\"\n[Year2012]\nAge = 62\nName = \"Meryl Streep\"\nMovie = \"The Iron Lady\"\n[Year2013]\nAge = 22\nName = \"Jennifer Lawrence\"\nMovie = \"Silver Linings Playbook\"\n[Year2014]\nAge = 44\nName = \"Cate Blanchett\"\nMovie = \"Blue Jasmine\"\n[Year2015]\nAge = 54\nName = \"Julianne Moore\"\nMovie = \"Still Alice\"\n[Year2016]\nAge = 26\nName = \"Brie Larson\"\nMovie = \"Room\"",
+    "example-2": "[Australia]\nRegion = 'Oceania'\nPopulation = 24451000\nPopulationDensity = 3.2\nGdpPerCapita = 51352.2\nSurfaceArea = 7692060\nUnemployment = 5.5\n[Japan]\nRegion = 'Eastern Asia'\nPopulation = 127484000\nPopulationDensity = 349.7\nGdpPerCapita = 34628.7\nSurfaceArea = 377930\nUnemployment = 3\n[NewZealand]\nRegion = 'Oceania'\nPopulation = 4706000\nPopulationDensity = 17.9\nGdpPerCapita = 38294.3\nSurfaceArea = 268107\nUnemployment = 5.5\n[UnitedKingdom]\nRegion = 'Northern Europe'\nPopulation = 66182000\nPopulationDensity = 273.6\nGdpPerCapita = 44162.4\nSurfaceArea = 242495\nUnemployment = 5"
+  },
+  "tomlToYamlConverter-heading": "Online TOML to YAML Converter",
+  "tomlToYamlConverter-input-label": "Paste or type TOML here to convert it",
+  "tomlToYamlConverter-intro": "Convert your TOML markup to formatted YAML, with customizable indentation, key sorting, and syntax highlighting. Enter some TOML below to convert it, or <0>load an example</0>.",
   "upperCaseConverter-examples": {
     "example-1": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
     "example-2": "\"From now on I'm thinking only of me.\"\n\nMajor Danby replied indulgently with a superior smile: \"But, Yossarian, suppose everyone felt that way.\"\n\n\"Then,\" said Yossarian, \"I'd certainly be a damned fool to feel any other way, wouldn't I?\""
@@ -255,9 +290,16 @@
   "xmlToJsonConverter-heading": "Online XML to JSON Converter",
   "xmlToJsonConverter-input-label": "Paste or type XML here to convert it",
   "xmlToJsonConverter-intro": "XML (eXtensible Markup Language) is a markup language and file format for storing and transmitting data. Enter some XML data below to convert it to JSON format, or <0>load an example</0>.",
-  "xmlToYamlConverter-examples": {
+  "xmlToTomlConverter-examples": {
     "example-1": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root>\n<element>\n<Age>29</Age>\n<Movie>Black Swan</Movie>\n<Name>Natalie Portman</Name>\n<Year>2011</Year>\n</element>\n<element>\n<Age>62</Age>\n<Movie>The Iron Lady</Movie>\n<Name>Meryl Streep</Name>\n<Year>2012</Year>\n</element>\n<element>\n<Age>22</Age>\n<Movie>Silver Linings Playbook</Movie>\n<Name>Jennifer Lawrence</Name>\n<Year>2013</Year>\n</element>\n<element>\n<Age>44</Age>\n<Movie>Blue Jasmine</Movie>\n<Name>Cate Blanchett</Name>\n<Year>2014</Year>\n</element>\n<element>\n<Age>54</Age>\n<Movie>Still Alice</Movie>\n<Name>Julianne Moore</Name>\n<Year>2015</Year>\n</element>\n<element>\n<Age>26</Age>\n<Movie>Room</Movie>\n<Name>Brie Larson</Name>\n<Year>2016</Year>\n</element>\n</root>",
     "example-2": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<item>\n<Country>Australia</Country>\n<Region>Oceania</Region>\n<SurfaceArea>7692060</SurfaceArea>\n<Population>24451000</Population>\n<PopulationDensity>3.2</PopulationDensity>\n<GdpPerCapita>51352.2</GdpPerCapita>\n<Unemployment>5.5</Unemployment>\n</item>\n<item>\n<Country>Japan</Country>\n<Region>Eastern Asia</Region>\n<SurfaceArea>377930</SurfaceArea>\n<Population>127484000</Population>\n<PopulationDensity>349.7</PopulationDensity>\n<GdpPerCapita>34628.7</GdpPerCapita>\n<Unemployment>3</Unemployment>\n</item>\n<item>\n<Country>New Zealand</Country>\n<Region>Oceania</Region>\n<SurfaceArea>268107</SurfaceArea>\n<Population>4706000</Population>\n<PopulationDensity>17.9</PopulationDensity>\n<GdpPerCapita>38294.3</GdpPerCapita>\n<Unemployment>5.5</Unemployment>\n</item>\n<item>\n<Country>United Kingdom</Country>\n<Region>Northern Europe</Region>\n<SurfaceArea>242495</SurfaceArea>\n<Population>66182000</Population>\n<PopulationDensity>273.6</PopulationDensity>\n<GdpPerCapita>44162.4</GdpPerCapita>\n<Unemployment>5</Unemployment>\n</item>"
+  },
+  "xmlToTomlConverter-heading": "Online XML to TOML Converter",
+  "xmlToTomlConverter-input-label": "Paste or type XML here to convert it",
+  "xmlToTomlConverter-intro": "XML (eXtensible Markup Language) is a markup language and file format for storing and transmitting data. Enter some XML data below to convert it to TOML format, or <0>load an example</0>.",
+  "xmlToTomlConverter-examples": {
+    "example-1": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Year2011>\n<Age>29</Age>\n<Name>Natalie Portman</Name>\n<Movie>Black Swan</Movie>\n</Year2011>\n<Year2012>\n<Age>62</Age>\n<Name>Meryl Streep</Name>\n<Movie>The Iron Lady</Movie>\n</Year2012>\n<Year2013>\n<Age>22</Age>\n<Name>Jennifer Lawrence</Name>\n<Movie>Silver Linings Playbook</Movie>\n</Year2013>\n<Year2014>\n<Age>44</Age>\n<Name>Cate Blanchett</Name>\n<Movie>Blue Jasmine</Movie>\n</Year2014>\n<Year2015>\n<Age>54</Age>\n<Name>Julianne Moore</Name>\n<Movie>Still Alice</Movie>\n</Year2015>\n<Year2016>\n<Age>26</Age>\n<Name>Brie Larson</Name>\n<Movie>Room</Movie>\n</Year2016>",
+    "example-2": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Australia>\n<Region>Oceania</Region>\n<SurfaceArea>7692060</SurfaceArea>\n<Population>24451000</Population>\n<PopulationDensity>3.2</PopulationDensity>\n<GdpPerCapita>51352.2</GdpPerCapita>\n<Unemployment>5.5</Unemployment>\n</Australia>\n<Japan>\n<Region>Eastern Asia</Region>\n<SurfaceArea>377930</SurfaceArea>\n<Population>127484000</Population>\n<PopulationDensity>349.7</PopulationDensity>\n<GdpPerCapita>34628.7</GdpPerCapita>\n<Unemployment>3</Unemployment>\n</Japan>\n<NewZealand>\n<Region>Oceania</Region>\n<SurfaceArea>268107</SurfaceArea>\n<Population>4706000</Population>\n<PopulationDensity>17.9</PopulationDensity>\n<GdpPerCapita>38294.3</GdpPerCapita>\n<Unemployment>5.5</Unemployment>\n</NewZealand>\n<UnitedKingdom>\n<Region>Northern Europe</Region>\n<SurfaceArea>242495</SurfaceArea>\n<Population>66182000</Population>\n<PopulationDensity>273.6</PopulationDensity>\n<GdpPerCapita>44162.4</GdpPerCapita>\n<Unemployment>5</Unemployment>\n</UnitedKingdom>"
   },
   "xmlToYamlConverter-heading": "Online XML to YAML Converter",
   "xmlToYamlConverter-input-label": "Paste or type XML here to convert it",
@@ -276,11 +318,18 @@
   "yamlToJsonConverter-heading": "Online YAML to JSON Converter",
   "yamlToJsonConverter-input-label": "Paste or type YAML here to convert it",
   "yamlToJsonConverter-intro": "Convert your YAML markup to formatted JSON, with customizable indentation, key sorting, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>.",
+  "yamlToTomlConverter-examples": {
+    "example-1": "Year2011:\n  Age: 29\n  Name: 'Natalie Portman'\n  Movie: 'Black Swan'\nYear2012:\n  Age: 62\n  Name: 'Meryl Streep'\n  Movie: 'The Iron Lady'\nYear2013:\n  Age: 22\n  Name: 'Jennifer Lawrence'\n  Movie: 'Silver Linings Playbook'\nYear2014:\n  Age: 44\n  Name: 'Cate Blanchett'\n  Movie: 'Blue Jasmine'\nYear2015:\n  Age: 54\n  Name: 'Julianne Moore'\n  Movie: 'Still Alice'\nYear2016:\n  Age: 26\n  Name: 'Brie Larson'\n  Movie: 'Room'",
+    "example-2": "Australia:\n  Region: 'Oceania'\n  Population: 24451000\n  PopulationDensity: 3.2\n  GdpPerCapita: 51352.2\n  SurfaceArea: 7692060\n  Unemployment: 5.5\nJapan:\n  Region: 'Eastern Asia'\n  Population: 127484000\n  PopulationDensity: 349.7\n  GdpPerCapita: 34628.7\n  SurfaceArea: 377930\n  Unemployment: 3\nNewZealand:\n  Region: 'Oceania'\n  Population: 4706000\n  PopulationDensity: 17.9\n  GdpPerCapita: 38294.3\n  SurfaceArea: 268107\n  Unemployment: 5.5\nUnitedKingdom:\n  Region: 'Northern Europe'\n  Population: 66182000\n  PopulationDensity: 273.6\n  GdpPerCapita: 44162.4\n  SurfaceArea: 242495\n  Unemployment: 5"
+  },
+  "yamlToTomlConverter-heading": "Online YAML to TOML Converter",
+  "yamlToTomlConverter-input-label": "Paste or type YAML here to convert it",
+  "yamlToTomlConverter-intro": "Convert your YAML markup to formatted TOML, with customizable key sorting and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>.",
   "yamlToXmlConverter-examples": {
     "example-1": "- Year: '2011'\n  Age: '29'\n  Name: Natalie Portman\n  Movie: Black Swan\n- Year: '2012'\n  Age: '62'\n  Name: Meryl Streep\n  Movie: The Iron Lady\n- Year: '2013'\n  Age: '22'\n  Name: Jennifer Lawrence\n  Movie: Silver Linings Playbook\n- Year: '2014'\n  Age: '44'\n  Name: Cate Blanchett\n  Movie: Blue Jasmine\n- Year: '2015'\n  Age: '54'\n  Name: Julianne Moore\n  Movie: Still Alice\n- Year: '2016'\n  Age: '26'\n  Name: Brie Larson\n  Movie: Room",
     "example-2": "-\n  Country: Australia\n  GdpPerCapita: 51352.2\n  Population: 24451000\n  PopulationDensity: 3.2\n  Region: Oceania\n  SurfaceArea: 7692060\n  Unemployment: 5.5\n-\n  Country: Japan\n  GdpPerCapita: 34628.7\n  Population: 127484000\n  PopulationDensity: 349.7\n  Region: Eastern Asia\n  SurfaceArea: 377930\n  Unemployment: 3\n-\n  Country: New Zealand\n  GdpPerCapita: 38294.3\n  Population: 4706000\n  PopulationDensity: 17.9\n  Region: Oceania\n  SurfaceArea: 268107\n  Unemployment: 5.5\n-\n  Country: United Kingdom\n  GdpPerCapita: 44162.4\n  Population: 66182000\n  PopulationDensity: 273.6\n  Region: Northern Europe\n  SurfaceArea: 242495\n  Unemployment: 5"
   },
   "yamlToXmlConverter-heading": "Online YAML to XML Converter",
-  "yamlToXmlConverter-input-label": "encode",
+  "yamlToTomlConverter-input-label": "Paste or type YAML here to convert it",
   "yamlToXmlConverter-intro": "Convert your YAML markup to formatted XML, with customizable indentation, line length, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>."
 }
