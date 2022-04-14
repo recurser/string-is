@@ -43,5 +43,6 @@
   "xmlToYamlConverter": "XML to YAML",
   "yamlFormatter": "YAML format",
   "yamlToJsonConverter": "YAML to JSON",
+  "yamlToTomlConverter": "YAML to TOML",
   "yamlToXmlConverter": "YAML to XML"
 }

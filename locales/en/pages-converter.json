@@ -311,11 +311,18 @@
   "yamlToJsonConverter-heading": "Online YAML to JSON Converter",
   "yamlToJsonConverter-input-label": "Paste or type YAML here to convert it",
   "yamlToJsonConverter-intro": "Convert your YAML markup to formatted JSON, with customizable indentation, key sorting, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>.",
+  "yamlToTomlConverter-examples": {
+    "example-1": "Year2011:\n  Age: 29\n  Name: 'Natalie Portman'\n  Movie: 'Black Swan'\nYear2012:\n  Age: 62\n  Name: 'Meryl Streep'\n  Movie: 'The Iron Lady'\nYear2013:\n  Age: 22\n  Name: 'Jennifer Lawrence'\n  Movie: 'Silver Linings Playbook'\nYear2014:\n  Age: 44\n  Name: 'Cate Blanchett'\n  Movie: 'Blue Jasmine'\nYear2015:\n  Age: 54\n  Name: 'Julianne Moore'\n  Movie: 'Still Alice'\nYear2016:\n  Age: 26\n  Name: 'Brie Larson'\n  Movie: 'Room'",
+    "example-2": "Australia:\n  Region: 'Oceania'\n  Population: 24451000\n  PopulationDensity: 3.2\n  GdpPerCapita: 51352.2\n  SurfaceArea: 7692060\n  Unemployment: 5.5\nJapan:\n  Region: 'Eastern Asia'\n  Population: 127484000\n  PopulationDensity: 349.7\n  GdpPerCapita: 34628.7\n  SurfaceArea: 377930\n  Unemployment: 3\nNewZealand:\n  Region: 'Oceania'\n  Population: 4706000\n  PopulationDensity: 17.9\n  GdpPerCapita: 38294.3\n  SurfaceArea: 268107\n  Unemployment: 5.5\nUnitedKingdom:\n  Region: 'Northern Europe'\n  Population: 66182000\n  PopulationDensity: 273.6\n  GdpPerCapita: 44162.4\n  SurfaceArea: 242495\n  Unemployment: 5"
+  },
+  "yamlToTomlConverter-heading": "Online YAML to TOML Converter",
+  "yamlToTomlConverter-input-label": "Paste or type YAML here to convert it",
+  "yamlToTomlConverter-intro": "Convert your YAML markup to formatted TOML, with customizable key sorting and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>.",
   "yamlToXmlConverter-examples": {
     "example-1": "- Year: '2011'\n  Age: '29'\n  Name: Natalie Portman\n  Movie: Black Swan\n- Year: '2012'\n  Age: '62'\n  Name: Meryl Streep\n  Movie: The Iron Lady\n- Year: '2013'\n  Age: '22'\n  Name: Jennifer Lawrence\n  Movie: Silver Linings Playbook\n- Year: '2014'\n  Age: '44'\n  Name: Cate Blanchett\n  Movie: Blue Jasmine\n- Year: '2015'\n  Age: '54'\n  Name: Julianne Moore\n  Movie: Still Alice\n- Year: '2016'\n  Age: '26'\n  Name: Brie Larson\n  Movie: Room",
     "example-2": "-\n  Country: Australia\n  GdpPerCapita: 51352.2\n  Population: 24451000\n  PopulationDensity: 3.2\n  Region: Oceania\n  SurfaceArea: 7692060\n  Unemployment: 5.5\n-\n  Country: Japan\n  GdpPerCapita: 34628.7\n  Population: 127484000\n  PopulationDensity: 349.7\n  Region: Eastern Asia\n  SurfaceArea: 377930\n  Unemployment: 3\n-\n  Country: New Zealand\n  GdpPerCapita: 38294.3\n  Population: 4706000\n  PopulationDensity: 17.9\n  Region: Oceania\n  SurfaceArea: 268107\n  Unemployment: 5.5\n-\n  Country: United Kingdom\n  GdpPerCapita: 44162.4\n  Population: 66182000\n  PopulationDensity: 273.6\n  Region: Northern Europe\n  SurfaceArea: 242495\n  Unemployment: 5"
   },
   "yamlToXmlConverter-heading": "Online YAML to XML Converter",
-  "yamlToXmlConverter-input-label": "encode",
+  "yamlToTomlConverter-input-label": "Paste or type YAML here to convert it",
   "yamlToXmlConverter-intro": "Convert your YAML markup to formatted XML, with customizable indentation, line length, and syntax highlighting. Enter some YAML below to convert it, or <0>load an example</0>."
 }
