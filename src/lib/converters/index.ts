@@ -45,6 +45,7 @@ export * as XmlToTomlConverter from '@lib/converters/XmlToTomlConverter'
 export * as XmlToYamlConverter from '@lib/converters/XmlToYamlConverter'
 export * as YamlFormatter from '@lib/converters/YamlFormatter'
 export * as YamlToJsonConverter from '@lib/converters/YamlToJsonConverter'
+export * as YamlToTomlConverter from '@lib/converters/YamlToTomlConverter'
 export * as YamlToXmlConverter from '@lib/converters/YamlToXmlConverter'
 
 export interface Converter {
