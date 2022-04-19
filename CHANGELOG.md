@@ -1,3 +1,16 @@
+# [1.34.0](https://github.com/recurser/string-is/compare/v1.33.1...v1.34.0) (2022-04-19)
+
+
+### Bug Fixes
+
+* make TypeScript happy ([26e8982](https://github.com/recurser/string-is/commit/26e898237d4ddd3cf15eb054c6623ce42dcce02e))
+* resolve potential race conditions in the regex debugger tests ([a662287](https://github.com/recurser/string-is/commit/a662287ffa2cc770f501ee1a8079933b0681fe84))
+
+
+### Features
+
+* add a diff compare feature ([612b2dd](https://github.com/recurser/string-is/commit/612b2dd671f21ed82cff86923c06bbd3ab0eb56e))
+
 ## [1.33.1](https://github.com/recurser/string-is/compare/v1.33.0...v1.33.1) (2022-04-14)
 
 
