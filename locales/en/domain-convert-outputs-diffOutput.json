@@ -1,0 +1,7 @@
+{
+  "alert_no_compare_string": "Please enter a string to compare the input to 👆",
+  "compare_string_label": "Compare to:",
+  "compare_string_placeholder": "Enter the second string to compare here...",
+  "diff_output_label": "The diff:",
+  "suppress_input_label": "Suppress index"
+}
