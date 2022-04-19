@@ -2,6 +2,7 @@ import { isEmpty } from 'lodash'
 
 import {
   Converter,
+  DiffCompare,
   Md5Encoder,
   RipemdEncoder,
   ShaEncoder,
@@ -33,4 +34,9 @@ export const confidence = (input: string) => {
 /**
  * Returns an array of converters supported by this identity.
  */
-export const converters = [Md5Encoder, RipemdEncoder, ShaEncoder] as Converter[]
+export const converters = [
+  DiffCompare,
+  Md5Encoder,
+  RipemdEncoder,
+  ShaEncoder,
+] as Converter[]

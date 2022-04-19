@@ -6,6 +6,7 @@
   "csvToJsonConverter": "CSV to JSON",
   "csvToXmlConverter": "CSV to XML",
   "csvToYamlConverter": "CSV to YAML",
+  "diffCompare": "Diff Compare",
   "htmlFormatter": "HTML format",
   "javaScriptFormatter": "JavaScript format",
   "jsonFormatter": "JSON format",

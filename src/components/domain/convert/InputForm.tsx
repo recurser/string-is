@@ -31,8 +31,11 @@ export const InputForm = () => {
 
   // Focus on the textarea on first load. Don't load on mobile, since it zooms the page.
   // See https://stackoverflow.com/a/67906087
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const inputRef = useCallback((el) => (isMobile ? el : el?.focus()), [])
+  const inputRef = useCallback(
+    (el: HTMLTextAreaElement) => (isMobile ? el : el?.focus()),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
 
   const doDebounce = useMemo(
     () => debounce((data: string) => setInputString(data), DebounceTimeout),

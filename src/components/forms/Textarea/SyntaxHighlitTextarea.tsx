@@ -62,7 +62,6 @@ const StyledTextarea = styled(Textarea)`
  * hidden raw text in the textarea.
  */
 const editorStyles = {
-  background: 'none',
   border: 'none',
   boxSizing: 'inherit',
   display: 'inherit',
@@ -116,6 +115,8 @@ export const SyntaxHighlitTextarea = forwardRef<
             MozOsxFontSmoothing: 'grayscale',
             WebkitFontSmoothing: 'antialiased',
             WebkitTextFillColor: 'transparent',
+            // We don't want to over-ride the Evergreen UI background style for disabled textareas.
+            background: props.disabled ? undefined : 'none',
           }}
           top={0}
           value={value}

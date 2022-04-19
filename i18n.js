@@ -7,6 +7,7 @@ const convert = [
   'domain-convert-outputs-cssOutput',
   'domain-convert-outputs-csvOutput',
   'domain-convert-outputs-datetimeOutput',
+  'domain-convert-outputs-diffOutput',
   'domain-convert-outputs-htmlOutput',
   'domain-convert-outputs-javaScriptOutput',
   'domain-convert-outputs-jsonOutput',

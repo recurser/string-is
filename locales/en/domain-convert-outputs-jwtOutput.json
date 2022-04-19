@@ -1,5 +1,4 @@
 {
-  "label_algorithm": "Algorithm",
-  "label_header": "Header",
-  "label_payload": "Payload"
+  "label_header": "Header:",
+  "label_payload": "Payload:"
 }

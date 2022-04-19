@@ -1,5 +1,6 @@
 import {
   Base64Encoder,
+  DiffCompare,
   HtmlFormatter,
   Md5Encoder,
   RipemdEncoder,
@@ -17,6 +18,7 @@ describe('services', () => {
         const input = 'plain text!'
         const expected = [
           Base64Encoder,
+          DiffCompare,
           Md5Encoder,
           RipemdEncoder,
           ShaEncoder,

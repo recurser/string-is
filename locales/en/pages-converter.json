@@ -48,6 +48,12 @@
   "csvToYamlConverter-heading": "Online CSV to YAML Converter",
   "csvToYamlConverter-input-label": "Paste or type CSV data here to convert it",
   "csvToYamlConverter-intro": "CSV (comma-separated values) is a common flat-file format that uses commas as a separator between values. Enter some CSV data below to convert it to YAML format, or <0>load an example</0>.",
+  "diffCompare-examples": {
+    "example-1": "http.createServer(function (req, res) {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Hello World!');\n}).listen(8080);\n"
+  },
+  "diffCompare-heading": "Online Diff Compare",
+  "diffCompare-input-label": "Enter the first string to compare here",
+  "diffCompare-intro": "Compare text to find the difference between two strings. Enter some text data below to compare it, or <0>load an example</0>.",
   "htmlFormatter-examples": {
     "example-1": "<!DOCTYPE html>\n<html>\n<body>\n\n<h1>This is a heading</h1>\n\n<p>This text is normal.</p>\n\n<p><b>This text is bold.</b></p>\n\n</body>\n</html>",
     "example-2": "<!DOCTYPE html>\n<html>\n\n<head>\n  <title>Name of the website</title>\n</head>\n\n<body>\n  <h1>Heading for the content below</h1>\n  <p>Text text text</p>\n</body>\n\n</html>"
