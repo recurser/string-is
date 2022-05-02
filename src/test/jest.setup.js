@@ -8,3 +8,9 @@ global.console = {
   log: console.log,
   warn: jest.fn(), // console.warn is ignored in tests.
 }
+
+// See https://stackoverflow.com/a/69199963
+const { randomFillSync } = require('crypto')
+Object.defineProperty(globalThis, 'crypto', {
+  value: { getRandomValues: randomFillSync },
+})
