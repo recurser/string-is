@@ -1,3 +1,11 @@
+## [1.34.1](https://github.com/recurser/string-is/compare/v1.34.0...v1.34.1) (2022-05-03)
+
+
+### Bug Fixes
+
+* add jest-environment-jsdom to make upgraded jest run ([81a341e](https://github.com/recurser/string-is/commit/81a341ef39f681a72553b446ea0aad7886f5d7d6))
+* get jest tests passing after major-version upgrade ([83bb999](https://github.com/recurser/string-is/commit/83bb9995ac594fc3369cb59cc37d71e4946bff57))
+
 # [1.34.0](https://github.com/recurser/string-is/compare/v1.33.1...v1.34.0) (2022-04-19)
 
 
