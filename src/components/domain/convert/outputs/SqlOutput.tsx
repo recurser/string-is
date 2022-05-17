@@ -1,5 +1,5 @@
-import { ChangeEvent, forwardRef } from 'react'
-import { Checkbox, Select, majorScale } from 'evergreen-ui'
+import { ChangeEvent, forwardRef, useState } from 'react'
+import { Select, majorScale } from 'evergreen-ui'
 import useTranslation from 'next-translate/useTranslation'
 
 import { Form, Label, SqlTextarea } from '@components/forms'
@@ -19,6 +19,7 @@ const dialects = [
   'redshift',
   'spark',
   'sql',
+  'sqlite',
   'tsql',
 ]
 
@@ -37,14 +38,21 @@ export const SqlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     const { options, setOptions } = useConverterOptionsContext(
       converter.outputId,
     )
+    const [space, setSpace] = useState(
+      (options.useTabs ? '\t' : ' ').repeat(options.tabWidth as number),
+    )
 
     /**
-     * Updates the output options state when the indent dropdown is changed.
+     * Updates the output options state when the tabWidth dropdown is changed.
      *
      * @param event - the HTML select change event.
      */
-    const onChangeIndent = (event: ChangeEvent<HTMLSelectElement>) => {
-      setOptions({ ...options, indent: event.target.value })
+    const onChangeTabWidth = (event: ChangeEvent<HTMLSelectElement>) => {
+      const spc = event.target.value
+      const useTabs = spc[0] === '\t'
+      const tabWidth = spc.split('').length
+      setOptions({ ...options, tabWidth, useTabs })
+      setSpace(event.target.value)
     }
 
     /**
@@ -57,19 +65,19 @@ export const SqlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
     }
 
     /**
-     * Updates the output options state when the upper-case checkbox is changed.
+     * Updates the output options state when the keyword-case dropdown is changed.
      *
-     * @param event - the HTML checkbox change event.
+     * @param event - the  HTML select change event.
      */
-    const onChangeUpperCase = (event: ChangeEvent<HTMLInputElement>) => {
-      setOptions({ ...options, uppercase: event.target.checked })
+    const onChangeKeywordCase = (event: ChangeEvent<HTMLSelectElement>) => {
+      setOptions({ ...options, keywordCase: event.target.value })
     }
 
     return (
       <Form>
         <Label
           disabled={disabled}
-          htmlFor="indentInput"
+          htmlFor="languageInput"
           label={t('language_label')}
         >
           <Select
@@ -89,15 +97,15 @@ export const SqlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          htmlFor="indentInput"
-          label={t('indent_label')}
+          htmlFor="tabWidthInput"
+          label={t('tab_width_label')}
         >
           <Select
             disabled={disabled}
-            id="indentInput"
+            id="tabWidthInput"
             maxWidth={majorScale(15)}
-            onChange={onChangeIndent}
-            value={options.indent as string}
+            onChange={onChangeTabWidth}
+            value={space}
           >
             <option value={'  '}>{t('2_spaces_option')}</option>
             <option value={'    '}>{t('4_spaces_option')}</option>
@@ -107,15 +115,19 @@ export const SqlOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
         <Label
           disabled={disabled}
-          htmlFor="upperCaseInput"
-          label={t('upper_case_label')}
+          htmlFor="keywordCaseInput"
+          label={t('keyword_case_label')}
         >
-          <Checkbox
-            checked={options.uppercase as boolean}
+          <Select
             disabled={disabled}
-            id="upperCaseInput"
-            onChange={onChangeUpperCase}
-          />
+            id="keywordCaseInput"
+            maxWidth={majorScale(15)}
+            onChange={onChangeKeywordCase}
+            value={options.keywordCase as string}
+          >
+            <option value={'upper'}>{t('keyword_upper_case_option')}</option>
+            <option value={'lower'}>{t('keyword_lower_case_option')}</option>
+          </Select>
         </Label>
 
         <SqlTextarea

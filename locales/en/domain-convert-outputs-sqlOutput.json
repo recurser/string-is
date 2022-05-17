@@ -11,8 +11,11 @@
   "dialect_redshift": "Redshift",
   "dialect_spark": "Spark",
   "dialect_sql": "SQL",
+  "dialect_sqlite": "SQLite",
   "dialect_tsql": "T-SQL",
-  "indent_label": "Indentation",
+  "keyword_case_label": "Keyword Case",
+  "keyword_lower_case_option": "Lower",
+  "keyword_upper_case_option": "Upper",
   "language_label": "SQL Dialect",
-  "upper_case_label": "Upper Case"
+  "tab_width_label": "Indentation"
 }
