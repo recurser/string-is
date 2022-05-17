@@ -1,3 +1,10 @@
+## [1.34.2](https://github.com/recurser/string-is/compare/v1.34.1...v1.34.2) (2022-05-17)
+
+
+### Bug Fixes
+
+* issues after sql-formatter major-version bump ([08ff4b3](https://github.com/recurser/string-is/commit/08ff4b3773d4d3ff359487170c8e8d8fe2d86438))
+
 ## [1.34.1](https://github.com/recurser/string-is/compare/v1.34.0...v1.34.1) (2022-05-03)
 
 
