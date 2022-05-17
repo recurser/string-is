@@ -7,9 +7,10 @@ import type { ConverterOptions } from '@lib/types'
  * if no user-defined options were provided.
  */
 export const defaultOptions = {
-  indent: '  ',
+  keywordCase: 'upper',
   language: 'sql',
-  uppercase: true,
+  tabWidth: 2,
+  useTabs: false,
 }
 
 /**
@@ -32,5 +33,5 @@ export const output = (
   return format(input, {
     ...defaultOptions,
     ...options,
-  } as FormatOptions)
+  } as unknown as FormatOptions)
 }
