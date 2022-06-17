@@ -2602,7 +2602,7 @@ cjs-module-lexer@^1.0.0:
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
 
-classnames@^2.2.6:
+classnames@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
@@ -3676,17 +3676,17 @@ esutils@^2.0.2:
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-evergreen-ui@^6.9.11:
-  version "6.9.11"
-  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-6.9.11.tgz#47f8923521742daf736e23530c166b2b1af8ef9a"
-  integrity sha512-uRbi8FDAGTt2tHaL7t3jmwFu3FnN6bAF+/59ppPLiwV2uAN7i5WVlCv/qW9c+UXyJfEYRmweRcfVwo3kpG0e7Q==
+evergreen-ui@^6.9.12:
+  version "6.9.12"
+  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-6.9.12.tgz#205452be3e634fb0eb6c805fe7879f388c4dc0fd"
+  integrity sha512-sJGoWN4qezk6Bcc2kcU6goHAiPiFtuNtp9I4YPdQnP6K0vwS/Hj4nXKeNFMWvAzn87TKGY6RW7Bd9SoSaXiJ/A==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@segment/react-tiny-virtual-list" "^2.2.1"
     "@types/react" "^16.9.5"
     "@types/react-transition-group" "^4.4.0"
     arrify "^1.0.1"
-    classnames "^2.2.6"
+    classnames "^2.3.0"
     downshift "^5.2.0"
     fuzzaldrin-plus "^0.6.0"
     glamor "^2.20.40"
@@ -3695,6 +3695,7 @@ evergreen-ui@^6.9.11:
     lodash.differencewith "^4.5.0"
     lodash.isempty "^4.4.0"
     lodash.merge "^4.6.2"
+    lodash.omit "^4.5.0"
     lodash.uniqby "^4.7.0"
     prop-types "^15.6.2"
     react-fast-compare "^3.2.0"
@@ -5547,6 +5548,11 @@ lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
+
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+  integrity sha512-XeqSp49hNGmlkj2EJlfrQFIzQ6lXdNro9sddtQzcJY8QaoC2GO0DT7xaIokHeyM+mIT0mPMlPvkYzg2xCuHdZg==
 
 lodash.once@^4.0.0:
   version "4.1.1"
