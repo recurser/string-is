@@ -9,6 +9,14 @@
 
 ![Screenshot](src/images/screenshot.png)
 
+string.is is an opinionated conversion tool, with the following goals:
+
+- It should be open-source.
+- It should not set any cookies.
+- It should have a strict Content Security Policy.
+- It should be extremely opinionated about dependancies, and only use well-known, well-supported libraries.
+- It should try to detect the format of the input, and intelligently choose output options.
+
 
 ## Browser Support
 
