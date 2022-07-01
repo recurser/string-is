@@ -80,7 +80,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.1.2",
+    "eslint-import-resolver-typescript": "^3.1.4",
     "eslint-plugin-jsx-a11y": "^6.6.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tsdoc": "^0.2.16",
