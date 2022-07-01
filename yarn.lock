@@ -3586,10 +3586,10 @@ eslint-import-resolver-typescript@^2.7.1:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
-eslint-import-resolver-typescript@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.1.2.tgz#988460fb709205d8f4e8ad58a0cafb3b401e86d5"
-  integrity sha512-M/qdvFCkdYcl2Wy4zHr4iPVbq1vSoKDwzyxg2bO9v7eZ49/fIB+ZWUet7/+UHeqDdFgiTtkr9AJ/vWJwNTbkCQ==
+eslint-import-resolver-typescript@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.1.4.tgz#a1b1425143b28594e9a483b025ab3600aea391cd"
+  integrity sha512-cDOnlg4ZRVMC5ZQ8WNpd5UsOg1YFskGBw15KXSC+sogExW8zjSycc55iBSNKdKuveCMof2VtLz0Dw4WkXAHkag==
   dependencies:
     debug "^4.3.4"
     enhanced-resolve "^5.10.0"
