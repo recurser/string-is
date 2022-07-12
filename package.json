@@ -71,7 +71,7 @@
     "@types/react": "18.0.9",
     "@types/showdown": "^2.0.0",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "babel-jest": "^28.1.2",
     "babel-plugin-import": "^1.13.5",
