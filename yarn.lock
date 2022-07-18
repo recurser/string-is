@@ -638,10 +638,10 @@
     convert-source-map "^1.8.0"
     source-map "^0.7.3"
 
-"@compiled/webpack-loader@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.0.tgz#9a849cdc2bf23c0a788e19083e8267437e5ea50b"
-  integrity sha512-SIMAfk4m9XGiuXf/gNEimO/q6BxnDoQe0bZJIA4Kp9kua5vbexZEcPuntgD5+UOn/OXi1AYVuFBDnoalDM9TTQ==
+"@compiled/webpack-loader@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.1.tgz#0d884e25b731755b1298f92bf2f96a34da3f5253"
+  integrity sha512-NneEZQ5vI9yOFarOjDgGtTDsaYlja655C9/2oaXnGv8JhsCd2+fHxfPvLiZwMGBD6zg2TVh/Cy4rpVFTdMjXJg==
   dependencies:
     "@babel/core" "^7.17.10"
     "@compiled/babel-plugin" "^0.16.0"
@@ -649,7 +649,7 @@
     "@compiled/css" "^0.8.3"
     "@compiled/react" "0.11.0"
     "@compiled/utils" "^0.6.16"
-    enhanced-resolve "^5.9.3"
+    enhanced-resolve "^5.10.0"
     loader-utils "^2.0.2"
     webpack-sources "^3.2.3"
 
@@ -3359,7 +3359,7 @@ encoding@^0.1.11, encoding@^0.1.12, encoding@^0.1.13:
   dependencies:
     iconv-lite "^0.6.2"
 
-enhanced-resolve@^5.10.0, enhanced-resolve@^5.9.3:
+enhanced-resolve@^5.10.0:
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-5.10.0.tgz#0dc579c3bb2a1032e357ac45b8f3a6f3ad4fb1e6"
   integrity sha512-T0yTFjdpldGY8PmuXXR0PyQ1ufZpEGiHVrp7zHKB7jdR4qlmZHhONVM5AQOAWXuF/w3dnHbEQVrNptJgt7F+cQ==
