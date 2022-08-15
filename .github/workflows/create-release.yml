@@ -1,0 +1,40 @@
+name: create release
+
+on:
+  workflow_dispatch:
+    inputs:
+      personal_token:
+        description: 'A repo-scoped personal access token to create the pull request with'
+        required:    true
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Generate the release name
+        run: echo "RELEASE_NAME=$(date +'Release Candidate %Y-%m-%d-%H-%M')" >> $GITHUB_ENV
+
+      - name: Generate the branch name
+        run: echo "BRANCH_NAME=$(date +'release-candidate-%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
+
+      - name: Reset the branch
+        run: |
+          git fetch origin develop:develop
+          git reset --hard develop
+
+      - name: Create the Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          assignees:      ${{ github.actor }}
+          branch:         ${{ env.BRANCH_NAME }}
+          commit-message: 'build: create release pull request #${{ env.NEXT_PR_NUM }} [skip ci]'
+          committer:      GitHub <noreply@github.com>
+          delete-branch:  false
+          draft:          false
+          title:          '${{ env.RELEASE_NAME }}'
+          token:          ${{ github.event.inputs.personal_token }}
+          body:           '${{ env.RELEASE_NAME }}'
