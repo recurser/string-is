@@ -10,8 +10,7 @@
         "releaseRules": [
           {
             "release": "patch",
-            "scope": "deps",
-            "type": "build"
+            "type": "deps"
           }
         ]
       }
