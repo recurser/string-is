@@ -2,7 +2,7 @@ module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     // Dependabot lines can get quite long unfortunately:
-    'body-max-line-length': () => [2, 'always', 200],
+    'body-max-line-length': () => [2, 'always', 250],
     'type-enum': [
       2,
       'always',
