@@ -65,7 +65,7 @@
     "@types/json2csv": "^5.0.3",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/lodash": "^4.14.182",
-    "@types/node": "^18.7.2",
+    "@types/node": "^18.7.6",
     "@types/papaparse": "^5.3.3",
     "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.9",
