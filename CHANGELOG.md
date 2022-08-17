@@ -1,3 +1,10 @@
+## [1.34.4](https://github.com/recurser/string-is/compare/v1.34.3...v1.34.4) (2022-08-17)
+
+
+### Dependencies
+
+* bump sql-formatter from 9.1.0 to 9.2.0 ([9ff32ae](https://github.com/recurser/string-is/commit/9ff32aec0970f4a2385b32f16c56b058ba6f68d6))
+
 ## [1.34.3](https://github.com/recurser/string-is/compare/v1.34.2...v1.34.3) (2022-08-15)
 
 
