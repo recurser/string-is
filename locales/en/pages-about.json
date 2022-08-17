@@ -16,7 +16,7 @@
   "para_acknowledgements": "string.is wouldn\u2019t exist without the following open-source libraries:",
   "para_built": "string.is was built to meet those goals, and provide a secure, trustworthy string conversion tool.",
   "para_contact_twitter": "Twitter: <0>@string__is</0> or <1>@davemetrics</1>",
-  "para_goals": "I started to wonder what the ideal conversion tool might look like, and came up with some simple goals:",
+  "para_goals": "The ideal conversion tool should have the following features in order to protect the privacy of its users:",
   "para_intro": "string.is is an <0>open-source, privacy-friendly</0> online string toolkit for developers.",
-  "para_paranoid": "Like most developers, I need to perform the same string operations regularly, but I\u2019m paranoid about pasting sensitive data into third-party online tools."
+  "para_paranoid": "It is intended to be a safe alternative to pasting sensitive data into third-party online tools."
 }
