@@ -43,7 +43,7 @@
     "react-responsive": "^9.0.0-beta.10",
     "showdown": "^2.1.0",
     "sql-formatter": "^10.2.0",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
