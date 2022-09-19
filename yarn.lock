@@ -997,18 +997,6 @@
     "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
-"@jest/types@^29.0.1", "@jest/types@^29.0.3":
-  version "29.0.3"
-  resolved "https://registry.yarnpkg.com/@jest/types/-/types-29.0.3.tgz#0be78fdddb1a35aeb2041074e55b860561c8ef63"
-  integrity sha512-coBJmOQvurXjN1Hh5PzF7cmsod0zLIOXpP8KD161mqNlroMhLcwpODiEzi7ZsRl5Z/AIuxpeNm8DCl43F4kz8A==
-  dependencies:
-    "@jest/schemas" "^29.0.0"
-    "@types/istanbul-lib-coverage" "^2.0.0"
-    "@types/istanbul-reports" "^3.0.0"
-    "@types/node" "*"
-    "@types/yargs" "^17.0.8"
-    chalk "^4.0.0"
-
 "@jest/types@^29.0.3":
   version "29.0.3"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-29.0.3.tgz#0be78fdddb1a35aeb2041074e55b860561c8ef63"
@@ -5411,18 +5399,6 @@ jest-util@^28.1.3:
     graceful-fs "^4.2.9"
     picomatch "^2.2.3"
 
-jest-util@^29.0.1, jest-util@^29.0.3:
-  version "29.0.3"
-  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-29.0.3.tgz#06d1d77f9a1bea380f121897d78695902959fbc0"
-  integrity sha512-Q0xaG3YRG8QiTC4R6fHjHQPaPpz9pJBEi0AeOE4mQh/FuWOijFjGXMMOfQEaU9i3z76cNR7FobZZUQnL6IyfdQ==
-  dependencies:
-    "@jest/types" "^29.0.3"
-    "@types/node" "*"
-    chalk "^4.0.0"
-    ci-info "^3.2.0"
-    graceful-fs "^4.2.9"
-    picomatch "^2.2.3"
-
 jest-util@^29.0.3:
   version "29.0.3"
   resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-29.0.3.tgz#06d1d77f9a1bea380f121897d78695902959fbc0"
@@ -8069,10 +8045,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sql-formatter@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-10.2.0.tgz#4d07052387d843b2379fe9ba9450edf99dd475f3"
-  integrity sha512-Xt++cp0h+2zXLmNGwUo8gi6Tmgw3zZOmV5AzciYCjzDHtJpF1VDYgM6dNK3PTn1DCXnnQdJWhFayzV5TFm4emQ==
+sql-formatter@^10.6.0:
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-10.6.0.tgz#78e7342faec7df181f86f76f506fbdfd7c6afcaa"
+  integrity sha512-JJ8Hzz0DvucqOq+OGjJIUm8wqkh5BDBOfqG5hMiTUtoA9dlAHaG+E1nG1zNPPXkdltN3UnwXkWvQ3mTpWVISUg==
   dependencies:
     argparse "^2.0.1"
     nearley "^2.20.1"
