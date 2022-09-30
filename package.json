@@ -73,7 +73,7 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.38.0",
-    "babel-jest": "^29.0.3",
+    "babel-jest": "^29.1.2",
     "babel-plugin-import": "^1.13.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.23.1",
