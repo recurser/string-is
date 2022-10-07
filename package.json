@@ -26,7 +26,7 @@
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.5",
     "diff": "^5.1.0",
-    "evergreen-ui": "^6.10.3",
+    "evergreen-ui": "^6.10.4",
     "fast-xml-parser": "^4.0.11",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.2",
