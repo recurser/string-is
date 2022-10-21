@@ -24,7 +24,7 @@
     "bluebird": "^3.7.2",
     "chrono-node": "^2.4.1",
     "crypto-js": "^4.1.1",
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.6",
     "diff": "^5.1.0",
     "evergreen-ui": "^6.11.0",
     "fast-xml-parser": "^4.0.11",
