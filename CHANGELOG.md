@@ -1,3 +1,10 @@
+## [1.34.6](https://github.com/recurser/string-is/compare/v1.34.5...v1.34.6) (2022-11-01)
+
+
+### Bug Fixes
+
+* user node:16 rather than 17 in the Dockerfile, since 17 breaks builds ([a14b2dd](https://github.com/recurser/string-is/commit/a14b2dd42ce617354b6779d06623ec11f61b6842))
+
 ## [1.34.5](https://github.com/recurser/string-is/compare/v1.34.4...v1.34.5) (2022-11-01)
 
 
