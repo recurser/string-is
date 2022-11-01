@@ -1,3 +1,26 @@
+## [1.34.5](https://github.com/recurser/string-is/compare/v1.34.4...v1.34.5) (2022-11-01)
+
+
+### Dependencies
+
+* bump chrono-node from 2.3.9 to 2.4.1 ([c77912e](https://github.com/recurser/string-is/commit/c77912ea32a707a1ec2474d7e65e71f1555a75a8))
+* bump dayjs from 1.11.5 to 1.11.6 ([2528598](https://github.com/recurser/string-is/commit/2528598c1f436cdbeca0ee952b6049001041539c))
+* bump evergreen-ui from 6.10.3 to 6.11.0 ([2cd8d65](https://github.com/recurser/string-is/commit/2cd8d65e3ee38e46daded27e02ed0d4c1c2b2808))
+* bump evergreen-ui from 6.11.0 to 6.12.0 ([051eecd](https://github.com/recurser/string-is/commit/051eecd1c6aa1e161ed2509bd20f95341e270784))
+* bump fast-xml-parser from 4.0.10 to 4.0.11 ([123f06e](https://github.com/recurser/string-is/commit/123f06e7b7e85bf6cabbbc4d84651698af57a1ed))
+* bump fast-xml-parser from 4.0.9 to 4.0.10 ([6d530d5](https://github.com/recurser/string-is/commit/6d530d55b05d0b8bd175177be00a8922679cd15c))
+* bump next from 12.2.5 to 12.3.0 ([8f0f278](https://github.com/recurser/string-is/commit/8f0f278409146095f8d7122567c5bd5b14a1baa5))
+* bump next from 12.3.0 to 12.3.1 ([ac50d1f](https://github.com/recurser/string-is/commit/ac50d1ffb1f3c823a0214efd33449d74e3357722))
+* bump next-translate from 1.5.0 to 1.6.0 ([c76fc55](https://github.com/recurser/string-is/commit/c76fc55f094304f0af6bc57022b071cca79e3fc2))
+* bump prismjs from 1.28.0 to 1.29.0 ([bc99ccf](https://github.com/recurser/string-is/commit/bc99ccfe14459d31621429b0d2abd267902d0e77))
+* bump react-responsive from 9.0.0-beta.10 to 9.0.0 ([3860ccf](https://github.com/recurser/string-is/commit/3860ccf5c0cecde2aada9b7b570a0f20bf9adc3e))
+* bump sql-formatter from 10.0.0 to 10.2.0 ([c6d8e77](https://github.com/recurser/string-is/commit/c6d8e7771163cbdcd552ad7fb37268d9237b34e7))
+* bump sql-formatter from 10.2.0 to 10.6.0 ([ee045f6](https://github.com/recurser/string-is/commit/ee045f6ff919456b55d2a9a384a53639a708e04a))
+* bump sql-formatter from 10.6.0 to 10.7.1 ([0883fd2](https://github.com/recurser/string-is/commit/0883fd2a5c9d9ab51d0ca5c58c135cc0930aa28b))
+* bump sql-formatter from 10.7.1 to 11.0.2 ([e96dd4e](https://github.com/recurser/string-is/commit/e96dd4e10faa77f900cb85007c69787fde7c49bd))
+* bump sql-formatter from 9.2.0 to 10.0.0 ([481cdbf](https://github.com/recurser/string-is/commit/481cdbfafcbab27f3f106b1a81e36985345c8b4d))
+* bump uuid from 8.3.2 to 9.0.0 ([ed3523b](https://github.com/recurser/string-is/commit/ed3523b5f5b0a970f389448bd430121dd2517284))
+
 ## [1.34.4](https://github.com/recurser/string-is/compare/v1.34.3...v1.34.4) (2022-08-17)
 
 
