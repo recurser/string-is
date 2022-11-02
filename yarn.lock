@@ -584,10 +584,10 @@
   dependencies:
     chalk "^4.1.0"
 
-"@compiled/babel-plugin-strip-runtime@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.16.0.tgz#9e4381bad1e21feb7344e00b788b9f1965c13286"
-  integrity sha512-gWBbNQARgoo+1jZuWYXZYPnbp9ejGKFFW/nRC0Ye7q2I/ZmuIiI635P5uhITn7UaAmK4j9PnssRZeNE+58pYLQ==
+"@compiled/babel-plugin-strip-runtime@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.17.0.tgz#e6dfe6516efab6436d6a7fab3311eebc4b585813"
+  integrity sha512-RH4DLbugJfsMGUMjd43xXSKgCf3CbxF4sMp3HLfBcxZPe5uxCB2RGJ9ggJnuBGt5mNkaVJ2nU/+EHUwxInk8zw==
   dependencies:
     "@babel/core" "^7.17.10"
     "@babel/helper-plugin-utils" "^7.16.7"
@@ -645,14 +645,14 @@
     convert-source-map "^1.8.0"
     source-map "^0.7.3"
 
-"@compiled/webpack-loader@^0.9.3":
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.3.tgz#f8c4f65f12dbebd68a3950f9a47987cc736c8010"
-  integrity sha512-wsc9ZE5VqWHFGE9EOaQmLDrFaXbH9ZHFF88P5OGDKxhDL6XmejOJr3HkgF56lpRs1LTuyom07f3p/E45uIj7UQ==
+"@compiled/webpack-loader@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.4.tgz#f2b67c89e0f02ef7af524290e658f291ab356cd0"
+  integrity sha512-TKPOBXtzDdtv52LHDhvso/oX1vc9fP++pzW3JhPi8VKIdoQ8MJrlLEkwKJ2L49cConcTzL/0i53NO4GgoQ9h+A==
   dependencies:
     "@babel/core" "^7.17.10"
     "@compiled/babel-plugin" "^0.16.5"
-    "@compiled/babel-plugin-strip-runtime" "^0.16.0"
+    "@compiled/babel-plugin-strip-runtime" "^0.17.0"
     "@compiled/css" "^0.8.4"
     "@compiled/react" "0.11.1"
     "@compiled/utils" "^0.6.16"
