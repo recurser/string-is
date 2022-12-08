@@ -602,10 +602,10 @@
     "@babel/types" "^7.17.10"
     "@compiled/utils" "^0.6.16"
 
-"@compiled/babel-plugin@^0.16.5":
-  version "0.16.5"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.16.5.tgz#fd326806a42d64fdf7fbfe26fff122ad66f1d36e"
-  integrity sha512-mDYK66AKakn0ezd8mJr6Ep0W0Mor1jPBjOeq3jpb8+t+dM5R6alPiPuleMgev3C1k/KmpXHUZVpGYH91h81dWg==
+"@compiled/babel-plugin@^0.17.1":
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.17.1.tgz#5ae0865297fd9d3dc070bbaf32cdf2670d2e78f3"
+  integrity sha512-Qn5UNgIMhRWhKUfgslVFd/KkFMSB31LcsWX09FNqBfmqnabjthZB6CmUom5UZYNUVCj5KR3Qpo2W2GiILgfF6g==
   dependencies:
     "@babel/core" "^7.17.10"
     "@babel/generator" "^7.17.10"
@@ -616,15 +616,15 @@
     "@babel/template" "^7.16.7"
     "@babel/traverse" "^7.17.10"
     "@babel/types" "^7.17.10"
-    "@compiled/css" "^0.8.5"
+    "@compiled/css" "^0.8.6"
     "@compiled/utils" "^0.6.16"
     "@emotion/is-prop-valid" "^1.2.0"
     resolve "^1.22.0"
 
-"@compiled/css@^0.8.4", "@compiled/css@^0.8.5":
-  version "0.8.5"
-  resolved "https://registry.yarnpkg.com/@compiled/css/-/css-0.8.5.tgz#b0a3174299740c62bb733a4ec480dd47d488caee"
-  integrity sha512-/oNAFulv+l9MuL2ca22YXuJ6DiTiwNIG9scOCByb2bbypPQE0SPq0EoLORZ2ZvuCd6F27ztrLlwtRS6kqzG1lA==
+"@compiled/css@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@compiled/css/-/css-0.8.6.tgz#a31884feecfc2dd4ee44420c7d91097c295bc610"
+  integrity sha512-VSul59DioMzmiZ3GG4NsJ0xa1duNTqfTtyxpV3pCxwWXCoUCMVy2Twl3/VbX/yZ4dpGxIUmZgz/datP7KV07IA==
   dependencies:
     "@compiled/utils" "^0.6.16"
     autoprefixer "^10.4.7"
@@ -651,15 +651,15 @@
     convert-source-map "^1.8.0"
     source-map "^0.7.3"
 
-"@compiled/webpack-loader@^0.9.5":
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.5.tgz#1a0a7052d96ad21a372d5c48d2ebb9a713fce5de"
-  integrity sha512-mbTC/2JOnxqODxUOig1a11lNNVkvolhVk+2jHps37QePAOSNI6GrfO4TcC3EZDyX9QxyM+p5Cv1VwPS5hJ3cvg==
+"@compiled/webpack-loader@^0.9.6":
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.6.tgz#2ffe90568c79bed5e9c730d9e57dd6374ef6ec50"
+  integrity sha512-edKsI1K+CJd1+WcPPelMzUug2w07yYC4g51QECqJ4BbmfnZNBCdJbWihvpIFUYjFbriXr+eCdoZ6MG8Q8SP8aw==
   dependencies:
     "@babel/core" "^7.17.10"
-    "@compiled/babel-plugin" "^0.16.5"
+    "@compiled/babel-plugin" "^0.17.1"
     "@compiled/babel-plugin-strip-runtime" "^0.17.0"
-    "@compiled/css" "^0.8.4"
+    "@compiled/css" "^0.8.6"
     "@compiled/react" "0.11.1"
     "@compiled/utils" "^0.6.16"
     enhanced-resolve "^5.10.0"
