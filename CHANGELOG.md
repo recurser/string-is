@@ -1,3 +1,22 @@
+## [1.34.7](https://github.com/recurser/string-is/compare/v1.34.6...v1.34.7) (2022-12-08)
+
+
+### Bug Fixes
+
+* don't try to transform node_modules during testing ([7ae0aa2](https://github.com/recurser/string-is/commit/7ae0aa22814ed0ca4c918f50d60aee537f3a6391))
+
+
+### Dependencies
+
+* bump chrono-node from 2.4.1 to 2.4.2 ([067c9d9](https://github.com/recurser/string-is/commit/067c9d9aa58c4bae01610968519b839bb60b1e1b))
+* bump evergreen-ui from 6.12.0 to 6.13.2 ([bbefa28](https://github.com/recurser/string-is/commit/bbefa28c592bf699555d0541da28f59804503e57))
+* bump fast-xml-parser from 4.0.11 to 4.0.12 ([65a35fd](https://github.com/recurser/string-is/commit/65a35fdd776a1e09ee9a39ca0d295da86aa30d68))
+* bump js-base64 from 3.7.2 to 3.7.3 ([6b7b009](https://github.com/recurser/string-is/commit/6b7b009e4a4b71937da3fce814fe1323452412cf))
+* bump prettier from 2.7.1 to 2.8.1 ([cd146a7](https://github.com/recurser/string-is/commit/cd146a70cd83d4c3c4e699b194559b4bed0d7f4f))
+* bump react-responsive from 9.0.0 to 9.0.2 ([c5dca12](https://github.com/recurser/string-is/commit/c5dca1243c88528170aef1c2c1087f45ff8c92c9))
+* bump sql-formatter from 11.0.2 to 12.0.1 ([25fb99e](https://github.com/recurser/string-is/commit/25fb99edb8b28115e3749e754b618ec5e15ee85c))
+* bump sql-formatter from 12.0.1 to 12.0.3 ([89c70b3](https://github.com/recurser/string-is/commit/89c70b3450dfaeb088237111286273ec485d7f7b))
+
 ## [1.34.6](https://github.com/recurser/string-is/compare/v1.34.5...v1.34.6) (2022-11-01)
 
 
