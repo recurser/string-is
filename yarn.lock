@@ -648,10 +648,17 @@
     postcss-selector-parser "^6.0.10"
     postcss-values-parser "^6.0.2"
 
-"@compiled/react@0.11.1", "@compiled/react@^0.11.0":
+"@compiled/react@0.11.1":
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.11.1.tgz#f640ed74ccc480b81c0f0c6753c6a8e45b3e72a4"
   integrity sha512-R719Jtaze+j8oQsMm+xEBT533DOIAPeEIdZvea/WZFnkbuXzggOrS2Gmch/K6Uc7Bjs4pOB96+QZttRJKcZiwg==
+  dependencies:
+    csstype "^3.1.0"
+
+"@compiled/react@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.11.2.tgz#4f2b31150203ecae1dc86be46808ddc0dac96b4f"
+  integrity sha512-TfDzC2bbpMyYK9m/6lPbmKzNptkulOL8rvcNeNwn5Wi1008fw3Obz/RKaExHJ+y/9u35wVNk1DmeHjZeovq79A==
   dependencies:
     csstype "^3.1.0"
 
