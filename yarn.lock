@@ -602,10 +602,10 @@
   dependencies:
     chalk "^4.1.0"
 
-"@compiled/babel-plugin-strip-runtime@^0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.17.0.tgz#e6dfe6516efab6436d6a7fab3311eebc4b585813"
-  integrity sha512-RH4DLbugJfsMGUMjd43xXSKgCf3CbxF4sMp3HLfBcxZPe5uxCB2RGJ9ggJnuBGt5mNkaVJ2nU/+EHUwxInk8zw==
+"@compiled/babel-plugin-strip-runtime@^0.17.2":
+  version "0.17.2"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.17.2.tgz#0f27d1f2a1f594f70d1c76d0f41a243cee365824"
+  integrity sha512-/GcIsS4+N/Cb38/OoPKxHE6ygl+NtjmBPgjo3Qq1K78g36g0b4NGtHC5siEEnIpSMwnHCFKlw7b+XIzTkYYh4A==
   dependencies:
     "@babel/core" "^7.17.10"
     "@babel/helper-plugin-utils" "^7.16.7"
@@ -614,10 +614,10 @@
     "@babel/types" "^7.17.10"
     "@compiled/utils" "^0.6.16"
 
-"@compiled/babel-plugin@^0.17.1":
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.17.1.tgz#5ae0865297fd9d3dc070bbaf32cdf2670d2e78f3"
-  integrity sha512-Qn5UNgIMhRWhKUfgslVFd/KkFMSB31LcsWX09FNqBfmqnabjthZB6CmUom5UZYNUVCj5KR3Qpo2W2GiILgfF6g==
+"@compiled/babel-plugin@^0.17.2":
+  version "0.17.2"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.17.2.tgz#3cefbada107fa945fc974bef8e8f9889612f6e95"
+  integrity sha512-fReeJcEGrGT7PbRUbynTmH9V93wPEoS1d8xjuIQUH4hA81hHhzPPvk4xpkt94NSWmzN8d5bcIWM/Hd5WQWx9UQ==
   dependencies:
     "@babel/core" "^7.17.10"
     "@babel/generator" "^7.17.10"
@@ -648,14 +648,7 @@
     postcss-selector-parser "^6.0.10"
     postcss-values-parser "^6.0.2"
 
-"@compiled/react@0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.11.1.tgz#f640ed74ccc480b81c0f0c6753c6a8e45b3e72a4"
-  integrity sha512-R719Jtaze+j8oQsMm+xEBT533DOIAPeEIdZvea/WZFnkbuXzggOrS2Gmch/K6Uc7Bjs4pOB96+QZttRJKcZiwg==
-  dependencies:
-    csstype "^3.1.0"
-
-"@compiled/react@^0.11.2":
+"@compiled/react@0.11.2", "@compiled/react@^0.11.2":
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.11.2.tgz#4f2b31150203ecae1dc86be46808ddc0dac96b4f"
   integrity sha512-TfDzC2bbpMyYK9m/6lPbmKzNptkulOL8rvcNeNwn5Wi1008fw3Obz/RKaExHJ+y/9u35wVNk1DmeHjZeovq79A==
@@ -670,16 +663,16 @@
     convert-source-map "^1.8.0"
     source-map "^0.7.3"
 
-"@compiled/webpack-loader@^0.9.6":
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.6.tgz#2ffe90568c79bed5e9c730d9e57dd6374ef6ec50"
-  integrity sha512-edKsI1K+CJd1+WcPPelMzUug2w07yYC4g51QECqJ4BbmfnZNBCdJbWihvpIFUYjFbriXr+eCdoZ6MG8Q8SP8aw==
+"@compiled/webpack-loader@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.9.7.tgz#b0a09fb02035893c3e5f04f3b70ee24915a649b1"
+  integrity sha512-JV1FV1529/pB8fTuKb02dIWmOk3lwahvtc/kGK8s2ErGZyRl7vPlSqFWKaSn2CY8dmdJKgjzRIvhh2hii9iuuQ==
   dependencies:
     "@babel/core" "^7.17.10"
-    "@compiled/babel-plugin" "^0.17.1"
-    "@compiled/babel-plugin-strip-runtime" "^0.17.0"
+    "@compiled/babel-plugin" "^0.17.2"
+    "@compiled/babel-plugin-strip-runtime" "^0.17.2"
     "@compiled/css" "^0.8.6"
-    "@compiled/react" "0.11.1"
+    "@compiled/react" "0.11.2"
     "@compiled/utils" "^0.6.16"
     enhanced-resolve "^5.10.0"
     loader-utils "^2.0.3"
