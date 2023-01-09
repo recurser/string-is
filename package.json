@@ -29,7 +29,7 @@
     "evergreen-ui": "^6.13.3",
     "fast-xml-parser": "^4.0.13",
     "hjson": "^3.2.2",
-    "js-base64": "^3.7.3",
+    "js-base64": "^3.7.4",
     "js-yaml": "^4.1.0",
     "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
