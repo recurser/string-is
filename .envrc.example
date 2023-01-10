@@ -1,6 +1,6 @@
-DOCKER_HUB_ACCESS_TOKEN="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-DOCKER_HUB_USERNAME=daveperrett
-GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-NEXT_PUBLIC_ANALYTICS_DOMAIN=string.test
-NEXT_PUBLIC_ANALYTICS_ENABLED=false
-NODENV_VERSION=14.18.2
+export DOCKER_HUB_ACCESS_TOKEN="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+export DOCKER_HUB_USERNAME=daveperrett
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+export NEXT_PUBLIC_ANALYTICS_DOMAIN=string.test
+export NEXT_PUBLIC_ANALYTICS_ENABLED=false
+export NODENV_VERSION=16.16.0
