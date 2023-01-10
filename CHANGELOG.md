@@ -1,3 +1,24 @@
+## [1.34.8](https://github.com/recurser/string-is/compare/v1.34.7...v1.34.8) (2023-01-10)
+
+
+### Bug Fixes
+
+* upgrade Docker to node v18 to avoid errors after package upgrades ([4f6e788](https://github.com/recurser/string-is/commit/4f6e788414b8cd4ea597570c78081e43bf3bc4c3))
+* upgrade Github actions to node v18 to avoid errors after package upgrades ([173ac56](https://github.com/recurser/string-is/commit/173ac5664ec879f1d5ee53facdd4e8951df5bb65))
+
+
+### Dependencies
+
+* bump @compiled/react from 0.11.1 to 0.11.2 ([604cd07](https://github.com/recurser/string-is/commit/604cd0760e897aa0b3501c1538ccfd9fb25d343e))
+* bump chrono-node from 2.4.2 to 2.5.0 ([7bfa342](https://github.com/recurser/string-is/commit/7bfa342aa73b35413f85aad2d3a053f2d212cf47))
+* bump dayjs from 1.11.6 to 1.11.7 ([b44a2a5](https://github.com/recurser/string-is/commit/b44a2a52f062ee9b82a8748115fd8a0b62263028))
+* bump evergreen-ui from 6.13.2 to 6.13.3 ([41e858b](https://github.com/recurser/string-is/commit/41e858b2d934c3e99123fb19dcc760c2d028427b))
+* bump fast-xml-parser from 4.0.12 to 4.0.13 ([c48d09b](https://github.com/recurser/string-is/commit/c48d09b44a59fe13f9a8073b60005c2b1c3576d7))
+* bump js-base64 from 3.7.3 to 3.7.4 ([c71552c](https://github.com/recurser/string-is/commit/c71552c070e0af3ed4dfe552c1b959bd2dc94f59))
+* bump jsonwebtoken from 8.5.1 to 9.0.0 ([f8514c7](https://github.com/recurser/string-is/commit/f8514c729c30c680bcda8907ae1afb13a13ad2ec))
+* bump prettier from 2.8.1 to 2.8.2 ([796e0dc](https://github.com/recurser/string-is/commit/796e0dc62884fa0841bbc39c8a53ab102cc553dd))
+* bump sql-formatter from 12.0.3 to 12.0.4 ([75385de](https://github.com/recurser/string-is/commit/75385de09863db2b674eb8e073a5367ad9ac2b3b))
+
 ## [1.34.7](https://github.com/recurser/string-is/compare/v1.34.6...v1.34.7) (2022-12-08)
 
 
