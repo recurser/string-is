@@ -1,3 +1,17 @@
+## [1.34.9](https://github.com/recurser/string-is/compare/v1.34.8...v1.34.9) (2023-01-18)
+
+
+### Bug Fixes
+
+* make the TimestampInput more robust against false positives ([d7d6305](https://github.com/recurser/string-is/commit/d7d6305dcecff9dfadfb2522750ae497b3c8329c))
+
+
+### Dependencies
+
+* bump evergreen-ui from 6.13.3 to 7.0.0 ([32fd708](https://github.com/recurser/string-is/commit/32fd708a3a8888c84c33af3949f75cd9843d9357))
+* bump prettier from 2.8.2 to 2.8.3 ([d7a891c](https://github.com/recurser/string-is/commit/d7a891cb7842ea4d0a9517e3ec07a0c1b130e05b))
+* bump sql-formatter from 12.0.4 to 12.0.5 ([edb7172](https://github.com/recurser/string-is/commit/edb7172641b3c45f659f10e6f7925a294a99c1c4))
+
 ## [1.34.8](https://github.com/recurser/string-is/compare/v1.34.7...v1.34.8) (2023-01-10)
 
 
