@@ -87,7 +87,7 @@ docker-compose up
 ... or even run it directly from [Docker Hub](https://hub.docker.com/r/daveperrett/string-is/tags):
 
 ```bash
-docker run -p 4000:3000 daveperrett/string-is:latest
+docker run -p 3000:3000 daveperrett/string-is:latest
 ````
 
 Currently `linux/arm64` and `linux/amd64` platforms are supported.
