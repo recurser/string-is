@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash'
-import { parseDate } from 'chrono-node'
+import { parse } from 'chrono-node'
 
 import { timezones } from '@lib/utilities/Timezones'
 
@@ -50,15 +50,24 @@ export const input = (data: string): string | undefined => {
     const offset =
       timezone &&
       timezones.find((tz) => tz.shortcode === timezone?.toUpperCase())?.offset
-    let parsed
+
+    let result
     if (offset) {
-      parsed = parseDate(final, { timezone: offset * 60 })
+      result = parse(final, { timezone: offset * 60 })
     } else {
-      parsed = parseDate(final)
+      result = parse(final)
     }
 
-    if (parsed) {
-      return `${parsed.getTime()}`
+    if (result && result.length > 0) {
+      const { start, text } = result[0]
+
+      if (!start) {
+        return undefined
+      } else if (final.length / text.length <= 1.5) {
+        // This is arbitrary, but if the extracted timestamp text doesn't make up
+        // most of the string, it's probably not a timestamp.
+        return `${start.date().getTime()}`
+      }
     }
   }
 
