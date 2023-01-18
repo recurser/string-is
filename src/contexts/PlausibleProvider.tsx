@@ -19,7 +19,7 @@ const allModifiers = [
   'manual',
   'outbound-links',
 ] as const
-type ScriptModifier = typeof allModifiers[number]
+type ScriptModifier = (typeof allModifiers)[number]
 
 const getScriptPath = (...modifiers: (ScriptModifier | null)[]) => {
   return `${plausibleDomain}/js/${[
