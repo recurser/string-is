@@ -647,12 +647,12 @@
     postcss-selector-parser "^6.0.11"
     postcss-values-parser "^6.0.2"
 
-"@compiled/react@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.11.2.tgz#4f2b31150203ecae1dc86be46808ddc0dac96b4f"
-  integrity sha512-TfDzC2bbpMyYK9m/6lPbmKzNptkulOL8rvcNeNwn5Wi1008fw3Obz/RKaExHJ+y/9u35wVNk1DmeHjZeovq79A==
+"@compiled/react@^0.11.4":
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.11.4.tgz#1cfb8011aa970d44dcace7d6c44c39109d8a6a8f"
+  integrity sha512-mtnEUFM7w/5xABWWWj3wW0vjS/cHSg0PAttJC+hOpQ5z5qGZCwk43Gy8Hfjruxvll73igJ5DSMzcAyek6DMKjw==
   dependencies:
-    csstype "^3.1.0"
+    csstype "^3.1.1"
 
 "@compiled/utils@^0.6.17":
   version "0.6.17"
@@ -3111,10 +3111,10 @@ cssstyle@^2.3.0:
   dependencies:
     cssom "~0.3.6"
 
-csstype@^3.0.2, csstype@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.0.tgz#4ddcac3718d787cf9df0d1b7d15033925c8f29f2"
-  integrity sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==
+csstype@^3.0.2, csstype@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
+  integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
 damerau-levenshtein@^1.0.8:
   version "1.0.8"

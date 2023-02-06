@@ -19,7 +19,7 @@
     "test": "yarn eslint src pages && yarn jest"
   },
   "dependencies": {
-    "@compiled/react": "^0.11.2",
+    "@compiled/react": "^0.11.4",
     "@iarna/toml": "^2.2.5",
     "bluebird": "^3.7.2",
     "chrono-node": "^2.5.0",
