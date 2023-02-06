@@ -5,11 +5,6 @@ import { PlausibleProvider, usePlausible } from '@contexts/PlausibleProvider'
 
 export const useAnalytics = usePlausible
 
-// Add 'ANALYTICS_ENABLED=true' to .env.local to enable analytics during development.
-const enabled =
-  process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true' ||
-  process.env.NODE_ENV === 'production'
-
 /**
  * A provider which wraps the PlausibleProvider and sets standard
  * options and domains.
@@ -19,6 +14,11 @@ const enabled =
 export const AnalyticsProvider = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>): ReactElement => {
+  // Add 'ANALYTICS_ENABLED=true' to .env.local to enable analytics during development.
+  const enabled =
+    process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true' ||
+    process.env.NODE_ENV === 'production'
+
   if (!enabled || isEmpty(process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN)) {
     return <>{children}</>
   } else if (isEmpty(process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN)) {
@@ -35,7 +35,7 @@ export const AnalyticsProvider = ({
       trackLocalhost={true}
       trackOutboundLinks={true}
     >
-      {children}
+      <div data-testid="plausible-provider">{children}</div>
     </PlausibleProvider>
   )
 }
