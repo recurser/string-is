@@ -1914,15 +1914,6 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
-"@types/react@^16.9.5":
-  version "16.14.23"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.23.tgz#37201b9f2324c5ff8fa4600dbf19079dfdffc880"
-  integrity sha512-WngBZLuSkP4IAgPi0HOsGCHo6dn3CcuLQnCfC17VbA7YBgipZiZoTOhObwl/93DsFW0Y2a/ZXeonpW4DxirEJg==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
 "@types/react@^17":
   version "17.0.44"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.44.tgz#c3714bd34dd551ab20b8015d9d0dbec812a51ec7"
@@ -3960,14 +3951,13 @@ events@^3.3.0:
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
-evergreen-ui@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-7.0.0.tgz#3d06997e7541f3501ebfd1d874619188eb479a5c"
-  integrity sha512-yOOuOdkZj60Ky8Sc7dqPoYnNRH3/Yt8jJz0KZBpdD83wa+apUOlGmJM++giZWgCmvhU7EKObOznW8QXpoAWb7w==
+evergreen-ui@^7.1.1:
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/evergreen-ui/-/evergreen-ui-7.1.5.tgz#c94f1c15048d092edd1a9c57dbdfc2bf10940eaa"
+  integrity sha512-o+jNju1fEn3b8UmhC7gr1EL6hiV722+XGeMdnhxC8lOGWc402UXmWtBEubXJrvFabErOuwE4w6iO06giHNMRUA==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@segment/react-tiny-virtual-list" "^2.2.1"
-    "@types/react" "^16.9.5"
     "@types/react-transition-group" "^4.4.0"
     arrify "^1.0.1"
     downshift "^5.2.0"
