@@ -8271,10 +8271,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sql-formatter@^12.1.0:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-12.1.0.tgz#465df48a38cbd44291e40befe3963553e1a9eb0c"
-  integrity sha512-XwbFwdes2SuETEj/a0WY2MjweFFzgn5phDum4WOdWjk+aay84xXPUl9BzevB89PLykx+4d9GRdXRaiY1VHzytg==
+sql-formatter@^12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-12.1.2.tgz#6dfd042caaa468316123832751a05c77d2d1ef87"
+  integrity sha512-SoFn+9ZflUt8+HYZ/PaifXt1RptcDUn8HXqsWmfXdPV3WeHPgT0qOSJXxHU24d7NOVt9X40MLqf263fNk79XqA==
   dependencies:
     argparse "^2.0.1"
     nearley "^2.20.1"
