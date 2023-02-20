@@ -6414,10 +6414,10 @@ nerf-dart@^1.0.0:
   resolved "https://registry.yarnpkg.com/nerf-dart/-/nerf-dart-1.0.0.tgz#e6dab7febf5ad816ea81cf5c629c5a0ebde72c1a"
   integrity sha1-5tq3/r9a2Bbqgc9cYpxaDr3nLBo=
 
-next-translate@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.6.0.tgz#28329d9970030c573c529a1a6d5c6b4e75146164"
-  integrity sha512-rmRBYOwPHvokN+5uH3O/SZqfRUVORLkgt/097mSaq3+CWcEtXEjkVrfBZpYwZ8W3og4QVd+uphYX//qegnIbRg==
+next-translate@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-2.0.2.tgz#5f0f8a7ede342b3d85ce6fd0f17eb758f2d64ddd"
+  integrity sha512-ur1HNbfCyXord34NIXW4Lv+mCJlv3U2b23VFnbXl3dDR4nUWSq0KLi5IIOKWUpx/lIxBp9Iz3TtW/iWoUeva5w==
 
 next@12.3.1:
   version "12.3.1"
