@@ -8310,10 +8310,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sql-formatter@^12.1.2:
-  version "12.1.2"
-  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-12.1.2.tgz#6dfd042caaa468316123832751a05c77d2d1ef87"
-  integrity sha512-SoFn+9ZflUt8+HYZ/PaifXt1RptcDUn8HXqsWmfXdPV3WeHPgT0qOSJXxHU24d7NOVt9X40MLqf263fNk79XqA==
+sql-formatter@^12.1.3:
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-12.1.3.tgz#762bfdc81c1be36bc3cf843a19c431a1fb1c6ef5"
+  integrity sha512-9UnqbunqDVrgyB9A1DLTBH+nzk6GpxTUw7pk9ys07PEF1vADwQN7GmzIWTABcKPOhUmKC6u2lgCI92F2RhdO4g==
   dependencies:
     argparse "^2.0.1"
     nearley "^2.20.1"
