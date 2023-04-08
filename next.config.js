@@ -28,7 +28,6 @@ const cspHeaders = [
       `frame-ancestors 'none'; ` +
       `img-src 'self'; ` +
       `manifest-src 'self'; ` +
-      `prefetch-src 'self'; ` +
       `script-src ${scriptSrc}; ` +
       `script-src-elem ${scriptSrc} ${plausible}; ` +
       `style-src 'self' 'unsafe-inline';`,
