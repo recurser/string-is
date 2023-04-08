@@ -1,3 +1,30 @@
+## [1.34.10](https://github.com/recurser/string-is/compare/v1.34.9...v1.34.10) (2023-04-08)
+
+
+### Bug Fixes
+
+* migrate to next-translate-plugin ([f4530ec](https://github.com/recurser/string-is/commit/f4530ec8dc28dd22b515501d5983988611e42778))
+
+
+### Dependencies
+
+* bump @compiled/react from 0.11.2 to 0.11.4 ([f04ed3a](https://github.com/recurser/string-is/commit/f04ed3abd4844cf14362c669fd4eed01ba7b5c15))
+* bump @compiled/react from 0.11.4 to 0.12.0 ([61c4d2b](https://github.com/recurser/string-is/commit/61c4d2bc963889a118facbc9fabead9ebc5f4193))
+* bump chrono-node from 2.5.0 to 2.6.2 ([f3333f2](https://github.com/recurser/string-is/commit/f3333f25ea243cbdb77fa39ce52a37e79263994f))
+* bump evergreen-ui from 7.0.0 to 7.1.1 ([33cb8a3](https://github.com/recurser/string-is/commit/33cb8a3b765ae6801f581ab98875cc4e1dc6e15e))
+* bump fast-xml-parser from 4.0.13 to 4.1.1 ([8677db1](https://github.com/recurser/string-is/commit/8677db1821d06ee4cc531bff69f573b22d478b92))
+* bump fast-xml-parser from 4.1.1 to 4.1.2 ([cb914f1](https://github.com/recurser/string-is/commit/cb914f18dc33774bb6eebf63e3f7cc8a8faab56b))
+* bump fast-xml-parser from 4.1.2 to 4.1.3 ([87bc6f3](https://github.com/recurser/string-is/commit/87bc6f351d7e22159dbdcb13933feca13b8525c6))
+* bump js-base64 from 3.7.4 to 3.7.5 ([319fdb1](https://github.com/recurser/string-is/commit/319fdb1a2bd1bd13ad07b3b42df6039b3dd0221d))
+* bump next-translate from 1.6.0 to 2.0.2 ([8096acf](https://github.com/recurser/string-is/commit/8096acf3dba6446f531fee90e3bb7c2a899e54fa))
+* bump next-translate from 2.0.2 to 2.0.4 ([ec15d3a](https://github.com/recurser/string-is/commit/ec15d3a2df3c4f2dee4a0d904dea55d6206e9f01))
+* bump papaparse from 5.3.2 to 5.4.0 ([8b1ea7d](https://github.com/recurser/string-is/commit/8b1ea7dbbd72a081aef786a8750055ebbd812302))
+* bump prettier from 2.8.3 to 2.8.4 ([c527358](https://github.com/recurser/string-is/commit/c527358512b7f9efad9238c346517fe3c270555c))
+* bump prettier from 2.8.4 to 2.8.7 ([019f573](https://github.com/recurser/string-is/commit/019f5737077c12360f1da82f11ef0d5a65f9b0d6))
+* bump sql-formatter from 12.0.5 to 12.1.0 ([cd875a3](https://github.com/recurser/string-is/commit/cd875a3cb6434d6ed14ad936fbffaec6f11200a0))
+* bump sql-formatter from 12.1.0 to 12.1.2 ([bfa4592](https://github.com/recurser/string-is/commit/bfa459266fbaf7774c222a54bde9c128f0139a8d))
+* bump sql-formatter from 12.1.2 to 12.2.0 ([c92475c](https://github.com/recurser/string-is/commit/c92475c00caf0caf618bfff0b186e752bf39ea0d))
+
 ## [1.34.9](https://github.com/recurser/string-is/compare/v1.34.8...v1.34.9) (2023-01-18)
 
 
