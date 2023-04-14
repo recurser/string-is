@@ -65,7 +65,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/json2csv": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.1",
-    "@types/lodash": "^4.14.192",
+    "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
     "@types/papaparse": "^5.3.7",
     "@types/prismjs": "^1.26.0",
