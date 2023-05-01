@@ -53,6 +53,14 @@
           "package.json"
         ]
       }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [],
+        "releasedLabels": false,
+        "successComment": false
+      }
     ]
   ]
 }
