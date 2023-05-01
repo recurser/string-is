@@ -1,3 +1,19 @@
+## [1.34.11](https://github.com/recurser/string-is/compare/v1.34.10...v1.34.11) (2023-05-01)
+
+
+### Dependencies
+
+* bump @compiled/react from 0.12.0 to 0.13.1 ([cfe2936](https://github.com/recurser/string-is/commit/cfe2936a4214c569961b2871b2a2d2bb3ff587a8))
+* bump chrono-node from 2.6.2 to 2.6.3 ([61667ac](https://github.com/recurser/string-is/commit/61667ac9edd1d4221a3e529d7d65f9e1f1ebca80))
+* bump evergreen-ui from 7.1.5 to 7.1.6 ([5100a22](https://github.com/recurser/string-is/commit/5100a22ef2853a4c366f1eb1b95eac7a1e87617e))
+* bump evergreen-ui from 7.1.6 to 7.1.7 ([a5c25ef](https://github.com/recurser/string-is/commit/a5c25efb9c6f25391168f9f9531ec8b258f42dd3))
+* bump fast-xml-parser from 4.1.3 to 4.2.0 ([b5812b8](https://github.com/recurser/string-is/commit/b5812b81734c2bb00e13e9a80162febfdcebd2d5))
+* bump fast-xml-parser from 4.2.0 to 4.2.2 ([85637d9](https://github.com/recurser/string-is/commit/85637d99e7c40abe3346621dcfc014ea12d5f508))
+* bump next-translate from 2.0.4 to 2.0.5 ([624b3ba](https://github.com/recurser/string-is/commit/624b3ba2ba97b498a4d062f2f61cf79f18cb317c))
+* bump next-translate-plugin from 2.0.4 to 2.0.5 ([ef60d8c](https://github.com/recurser/string-is/commit/ef60d8cf01951cab50e99069142e1159feedc1d7))
+* bump papaparse from 5.4.0 to 5.4.1 ([e5fe0a0](https://github.com/recurser/string-is/commit/e5fe0a040f35242fd3a7b78a4edb21a66f6e66ae))
+* bump prettier from 2.8.7 to 2.8.8 ([16bfc60](https://github.com/recurser/string-is/commit/16bfc60b3ef84c30fc8d5ba90b784f0f2f39cc85))
+
 ## [1.34.10](https://github.com/recurser/string-is/compare/v1.34.9...v1.34.10) (2023-04-08)
 
 
