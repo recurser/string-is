@@ -1599,10 +1599,10 @@
     semver "^7.1.2"
     tempy "^3.0.0"
 
-"@semantic-release/release-notes-generator@^11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-11.0.0.tgz#cf58f038ea7f1b9c6ee1997f17548176e63b27af"
-  integrity sha512-va/taCWCHK11QbVoALKPI8B+lVF3UNZ2xOQOHEeHRd8YPpsY/9lymlWEuUQaTWKQpkgYbGpZD/Sap/SRlqob5g==
+"@semantic-release/release-notes-generator@^11.0.0", "@semantic-release/release-notes-generator@^11.0.1":
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-11.0.1.tgz#38a7d66e9a762915bea36a006dbb2d41fbcb4a66"
+  integrity sha512-4deWsiY4Rg80oc9Ms11N20BIDgYkPMys4scNYQpi2Njdrtw5Z55nXKNsUN3kn6Sy/nI9dqqbp5L63TL4luI5Bw==
   dependencies:
     conventional-changelog-angular "^5.0.0"
     conventional-changelog-writer "^5.0.0"
