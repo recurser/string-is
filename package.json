@@ -79,7 +79,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "^13.4.1",
+    "eslint-config-next": "^13.4.2",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
