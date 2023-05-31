@@ -10,6 +10,7 @@ export * as CsvToYamlConverter from '@lib/converters/CsvToYamlConverter'
 export * as DiffCompare from '@lib/converters/DiffCompare'
 export * as HtmlFormatter from '@lib/converters/HtmlFormatter'
 export * as JavaScriptFormatter from '@lib/converters/JavaScriptFormatter'
+export * as JavaScriptMinifier from '@lib/converters/JavaScriptMinifier'
 export * as JsonFormatter from '@lib/converters/JsonFormatter'
 export * as JsonToCsvConverter from '@lib/converters/JsonToCsvConverter'
 export * as JsonToJavaScriptConverter from '@lib/converters/JsonToJavaScriptConverter'
@@ -65,7 +66,7 @@ export interface Converter {
    * An operation on the input string, with the given
    * options, that returns a converted output.
    */
-  operation: (input: string, options?: ConverterOptions) => string
+  operation: (input: string, options?: ConverterOptions) => string | Promise<string>
 
   /**
    * A string which uniquely identifies the output component used by

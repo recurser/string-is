@@ -8,6 +8,7 @@
   "csvToYamlConverter": "Formatted YAML",
   "diffCompare": "Generate a diff",
   "htmlFormatter": "Formatted HTML",
+  "javaScriptMinifier": "Minified JavaScript",
   "javaScriptFormatter": "Formatted JavaScript",
   "jsonFormatter": "Formatted JSON",
   "jsonToCsvConverter": "Formatted CSV",

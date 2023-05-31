@@ -9,6 +9,7 @@
   "diffCompare": "Diff Compare",
   "htmlFormatter": "HTML format",
   "javaScriptFormatter": "JavaScript format",
+  "javaScriptMinifier": "JavaScript minify",
   "jsonFormatter": "JSON format",
   "jsonToCsvConverter": "JSON to CSV",
   "jsonToJavaScriptConverter": "JSON to JavaScript",
