@@ -34,7 +34,7 @@
     "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "next": "12.3.1",
-    "next-translate": "^2.0.5",
+    "next-translate": "^2.0.6",
     "next-translate-plugin": "^2.0.5",
     "papaparse": "^5.4.1",
     "prettier": "^2.8.8",
