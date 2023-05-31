@@ -56,21 +56,32 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
   }, [converter])
 
   const [errorMessage, setErrorMessage] = useState<string | undefined>()
+  const [output, setOutput] = useState('')
   const { options } = useConverterOptionsContext(converter.outputId)
-  const output = useMemo(() => {
-    try {
-      const result = converter.operation(inputString, options)
-      if (errorMessage !== undefined) {
-        setErrorMessage(undefined)
+
+  useEffect(() => {
+    async function operate() {
+      try {
+        const res = converter.operation(inputString, options)
+
+        if (typeof res === 'object' && typeof (res as Promise<string>).then === 'function') {
+          setOutput(await res)
+        } else {
+          setOutput(res as string)
+        }
+
+        if (errorMessage !== undefined) {
+          setErrorMessage(undefined)
+        }
+      } catch (err) {
+        const msg = typeof err === 'string' ? err : (err as Error).message
+        if (errorMessage !== msg) {
+          setErrorMessage(msg)
+        }
+        setOutput('')
       }
-      return result
-    } catch (err) {
-      const msg = typeof err === 'string' ? err : (err as Error).message
-      if (errorMessage !== msg) {
-        setErrorMessage(msg)
-      }
-      return ''
     }
+    operate()
   }, [converter, errorMessage, inputString, options])
 
   // Other components such as the use-as-input button use this output.
