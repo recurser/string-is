@@ -1,3 +1,16 @@
+## [1.35.0](https://github.com/recurser/string-is/compare/v1.34.11...v1.35.0) (2023-05-31)
+
+
+### Features
+
+* add a JavaScript minifier ([ecfd383](https://github.com/recurser/string-is/commit/ecfd383543718d68cbb9e23c2baae7e2e4e321d0))
+
+
+### Dependencies
+
+* bump evergreen-ui from 7.1.7 to 7.1.8 ([a8686b8](https://github.com/recurser/string-is/commit/a8686b8265fce469d62eb3d9353be575a13086b9))
+* bump sql-formatter from 12.2.0 to 12.2.1 ([9b183c1](https://github.com/recurser/string-is/commit/9b183c1f1b18e2e9a012801d9b9370353d16819e))
+
 ## [1.34.11](https://github.com/recurser/string-is/compare/v1.34.10...v1.34.11) (2023-05-01)
 
 
