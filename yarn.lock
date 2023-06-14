@@ -1587,12 +1587,12 @@
     p-filter "^3.0.0"
     url-join "^5.0.0"
 
-"@semantic-release/npm@^10.0.2", "@semantic-release/npm@^10.0.3":
-  version "10.0.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-10.0.3.tgz#11c5a1927f2e942d4067732d930cb44718b9b7ac"
-  integrity sha512-Chbv3kX4o+y+r1X6hsqBVB8NFbSVfiNlYOqMG6o9Wc8r5Y4cjxfbaMCuJ++XAtw3YXYX/NVD05cPzBi4Orjusg==
+"@semantic-release/npm@^10.0.2", "@semantic-release/npm@^10.0.4":
+  version "10.0.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-10.0.4.tgz#b55df5cb86d4b10b4e8eb56d5ce0bd3537c641e1"
+  integrity sha512-6R3timIQ7VoL2QWRkc9DG8v74RQtRp7UOe/2KbNaqwJ815qOibAv65bH3RtTEhs4axEaHoZf7HDgFs5opaZ9Jw==
   dependencies:
-    "@semantic-release/error" "^3.0.0"
+    "@semantic-release/error" "^4.0.0"
     aggregate-error "^4.0.1"
     execa "^7.0.0"
     fs-extra "^11.0.0"
