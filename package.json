@@ -37,7 +37,7 @@
     "next-translate": "^2.0.6",
     "next-translate-plugin": "^2.0.5",
     "papaparse": "^5.4.1",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "prismjs": "^1.29.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
