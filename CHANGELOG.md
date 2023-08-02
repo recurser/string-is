@@ -1,3 +1,33 @@
+## [1.35.1](https://github.com/recurser/string-is/compare/v1.35.0...v1.35.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* [[#1076](https://github.com/recurser/string-is/issues/1076)] handle parsing of times when UTC is explicitly specified ([66ad51e](https://github.com/recurser/string-is/commit/66ad51eeccfd2123390f51e287d1882af224c3ed))
+
+
+### Dependencies
+
+* bump chrono-node from 2.6.3 to 2.6.4 ([8bcf4c3](https://github.com/recurser/string-is/commit/8bcf4c3249c75fe3732d950492fed142002a083a))
+* bump dayjs from 1.11.7 to 1.11.8 ([eaaa65c](https://github.com/recurser/string-is/commit/eaaa65c52ab678852d2a8a48a36b38537cea175c))
+* bump dayjs from 1.11.8 to 1.11.9 ([27c640e](https://github.com/recurser/string-is/commit/27c640e086825605ef3e6d88130e6657581926fb))
+* bump evergreen-ui from 7.1.8 to 7.1.9 ([4bae2e9](https://github.com/recurser/string-is/commit/4bae2e995e6637723051d1cce6dece4945483bf1))
+* bump fast-xml-parser from 4.2.2 to 4.2.3 ([26a2587](https://github.com/recurser/string-is/commit/26a2587b05bd2c61e995f0d7d04069416fb75351))
+* bump fast-xml-parser from 4.2.3 to 4.2.4 ([a66911c](https://github.com/recurser/string-is/commit/a66911c771e3e09721016041c2cc383d85643668))
+* bump fast-xml-parser from 4.2.4 to 4.2.5 ([f167441](https://github.com/recurser/string-is/commit/f167441839870894cb36b9557df510ad17590e61))
+* bump fast-xml-parser from 4.2.5 to 4.2.6 ([f067fe3](https://github.com/recurser/string-is/commit/f067fe3382b00abdca9fe99c4ce336d81a902b5c))
+* bump fast-xml-parser from 4.2.6 to 4.2.7 ([247d517](https://github.com/recurser/string-is/commit/247d517e714515fcb599a58b563c43f7974b8dda))
+* bump jsonwebtoken from 9.0.0 to 9.0.1 ([28b989b](https://github.com/recurser/string-is/commit/28b989b88bf381a7f2d3b8b47f55d6db83d108cc))
+* bump next-translate from 2.0.5 to 2.0.6 ([2e93f7c](https://github.com/recurser/string-is/commit/2e93f7c36228daa711467f66a12141339380dc78))
+* bump sql-formatter from 12.2.1 to 12.2.2 ([7058c9c](https://github.com/recurser/string-is/commit/7058c9cb32815c3d09b830572aca62090ab5224a))
+* bump sql-formatter from 12.2.2 to 12.2.3 ([6ce6cfc](https://github.com/recurser/string-is/commit/6ce6cfc29918ce0ab6de00d2aa8a27a2282acb9d))
+* bump sql-formatter from 12.2.3 to 12.2.4 ([2b406d5](https://github.com/recurser/string-is/commit/2b406d50b7c1af38eaecbdd48a865610b8d6b4ed))
+* bump terser from 5.17.6 to 5.17.7 ([b995072](https://github.com/recurser/string-is/commit/b9950724f45f4b9977097b7e3118af7ae0dfcab8))
+* bump terser from 5.17.7 to 5.18.0 ([94a23a9](https://github.com/recurser/string-is/commit/94a23a9786c9cc9e317296c02d441d8bf448a40e))
+* bump terser from 5.18.0 to 5.18.1 ([a25e210](https://github.com/recurser/string-is/commit/a25e2103fbe291afad9bad076e43d397a3f14a25))
+* bump terser from 5.18.1 to 5.18.2 ([e119029](https://github.com/recurser/string-is/commit/e1190292e961a43163d9ee56c0f54d1a24b00322))
+* bump terser from 5.18.2 to 5.19.2 ([6f93c15](https://github.com/recurser/string-is/commit/6f93c151246d50c9d236227754b090ca4a104940))
+
 ## [1.35.0](https://github.com/recurser/string-is/compare/v1.34.11...v1.35.0) (2023-05-31)
 
 
