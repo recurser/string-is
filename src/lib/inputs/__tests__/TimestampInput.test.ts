@@ -14,6 +14,12 @@ describe('inputs', () => {
         expect(input(data)).toEqual(expected)
       })
 
+      it('parses explicitly UTC time strings', () => {
+        const data = '2020-01-01 12:13 UTC'
+        const expected = '1577880780000'
+        expect(input(data)).toEqual(expected)
+      })
+
       it('parses keywords that trigger the current time', () => {
         const spy = jest
           .spyOn(global.Date, 'now')
