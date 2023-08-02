@@ -47,13 +47,17 @@ export const input = (data: string): string | undefined => {
   } else {
     // If the user has provided a timezone (eg. 3pm PST), interpret the
     // parsed date in terms of that timezone.
-    const offset =
+    let offset =
       timezone &&
       timezones.find((tz) => tz.shortcode === timezone?.toUpperCase())?.offset
 
+    if (typeof offset === 'string') {
+      offset = parseInt(offset, 10)
+    }
+
     let result
-    if (offset) {
-      result = parse(final, { timezone: offset * 60 })
+    if (offset !== undefined) {
+      result = parse(final, { timezone: (offset as number) * 60 })
     } else {
       result = parse(final)
     }

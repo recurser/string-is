@@ -64,7 +64,10 @@ export const OutputForm = ({ focusOutput, setFocusOutput }: Props) => {
       try {
         const res = converter.operation(inputString, options)
 
-        if (typeof res === 'object' && typeof (res as Promise<string>).then === 'function') {
+        if (
+          typeof res === 'object' &&
+          typeof (res as Promise<string>).then === 'function'
+        ) {
           setOutput(await res)
         } else {
           setOutput(res as string)
