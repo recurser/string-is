@@ -1627,14 +1627,14 @@
     p-filter "^3.0.0"
     url-join "^5.0.0"
 
-"@semantic-release/npm@^10.0.2", "@semantic-release/npm@^10.0.4":
-  version "10.0.4"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-10.0.4.tgz#b55df5cb86d4b10b4e8eb56d5ce0bd3537c641e1"
-  integrity sha512-6R3timIQ7VoL2QWRkc9DG8v74RQtRp7UOe/2KbNaqwJ815qOibAv65bH3RtTEhs4axEaHoZf7HDgFs5opaZ9Jw==
+"@semantic-release/npm@^10.0.2", "@semantic-release/npm@^10.0.5":
+  version "10.0.5"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-10.0.5.tgz#d8c20fbab03ce9eff4dca233253cf880f919d3ae"
+  integrity sha512-cJnQ2M5pxJRwZEkb0A/+U3TG4UNmjrrLwV2PxJKljn5OPT0yJB8GzGgWbbKACayvxrT06YdTa4Amtq/piJcOIA==
   dependencies:
     "@semantic-release/error" "^4.0.0"
     aggregate-error "^4.0.1"
-    execa "^7.0.0"
+    execa "^8.0.0"
     fs-extra "^11.0.0"
     lodash-es "^4.17.21"
     nerf-dart "^1.0.0"
@@ -4121,6 +4121,21 @@ execa@^7.0.0:
     signal-exit "^3.0.7"
     strip-final-newline "^3.0.0"
 
+execa@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-8.0.1.tgz#51f6a5943b580f963c3ca9c6321796db8cc39b8c"
+  integrity sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==
+  dependencies:
+    cross-spawn "^7.0.3"
+    get-stream "^8.0.1"
+    human-signals "^5.0.0"
+    is-stream "^3.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^5.1.0"
+    onetime "^6.0.0"
+    signal-exit "^4.1.0"
+    strip-final-newline "^3.0.0"
+
 exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
@@ -4447,6 +4462,11 @@ get-stream@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-7.0.0.tgz#f5695721f481f5581beb9d11cb90c41ddfceea18"
   integrity sha512-ql6FW5b8tgMYvI4UaoxG3EQN3VyZ6VeQpxNBGg5BZ4xD4u+HJeprzhMMA4OCBEGQgSR+m87pstWMpiVW64W8Fw==
+
+get-stream@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-8.0.1.tgz#def9dfd71742cd7754a7761ed43749a27d02eca2"
+  integrity sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==
 
 get-symbol-description@^1.0.0:
   version "1.0.0"
@@ -4790,6 +4810,11 @@ human-signals@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-4.3.0.tgz#2095c3cd5afae40049403d4b811235b03879db50"
   integrity sha512-zyzVyMjpGBX2+6cDVZeFPCdtOtdsxOeseRhB9tkQ6xXmGUNrcnBzdEKPy3VPNYz+4gy1oukVOXcrJCunSyc6QQ==
+
+human-signals@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-5.0.0.tgz#42665a284f9ae0dade3ba41ebc37eb4b852f3a28"
+  integrity sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==
 
 humanize-ms@^1.2.1:
   version "1.2.1"
@@ -8314,6 +8339,11 @@ signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
+
+signal-exit@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
+  integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
 
 signale@^1.2.1:
   version "1.4.0"
