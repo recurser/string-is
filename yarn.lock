@@ -695,10 +695,10 @@
     "@babel/types" "^7.21.4"
     "@compiled/utils" "^0.8.0"
 
-"@compiled/babel-plugin@^0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.20.0.tgz#c80dd06510c1a7fcca248aab509997e54d000792"
-  integrity sha512-U2tCTwLNXEGt0Of3VTGpT8eLzDXMp16sLyoxUAkKLylmAZlxFVbW3hbE+NYxqFRO+vzi/DtBTH+sz1hjtIq+YQ==
+"@compiled/babel-plugin@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.21.0.tgz#c7ad57a0d0388737e80af3f5ff58591f82168916"
+  integrity sha512-fgrFm7wD6OqPC4RlzLOyzEy7jpgb0q8YKX/iwd0bNktOXFBMeWc6I7D7DnkHwavaCsODksJLbPfi/fIfwFkfbQ==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/generator" "^7.21.5"
@@ -712,7 +712,7 @@
     "@compiled/css" "^0.12.0"
     "@compiled/utils" "^0.8.0"
     "@emotion/is-prop-valid" "^1.2.1"
-    resolve "^1.22.0"
+    resolve "^1.22.4"
 
 "@compiled/css@^0.12.0":
   version "0.12.0"
@@ -743,14 +743,14 @@
     convert-source-map "^2.0.0"
     source-map "^0.7.4"
 
-"@compiled/webpack-loader@^0.11.1":
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.11.1.tgz#4dce6b736736dff381ac51c76886173a7b34fc04"
-  integrity sha512-cGixKXLBp9ZjOAYsryzzhWNs6W7zGsGUy8VQpdvPeA/CdlA0XyMmxTlQ3PkI/lZT0XtuJU0n5J4aNI852Pwcpw==
+"@compiled/webpack-loader@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.11.2.tgz#0a07b65f08897e4fe7ccd3d80d0564bf9f7f1904"
+  integrity sha512-D9qnunb4MCs81YFZqy+iGtareYY16kw0LN4zZK6hRo3ewgBm0o1sXK9k4Cce6DpsKT9cabkG7y80A9h6RRzLKQ==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/parser" "^7.21.8"
-    "@compiled/babel-plugin" "^0.20.0"
+    "@compiled/babel-plugin" "^0.21.0"
     "@compiled/babel-plugin-strip-runtime" "^0.19.0"
     "@compiled/css" "^0.12.0"
     "@compiled/utils" "^0.8.0"
@@ -5030,6 +5030,13 @@ is-core-module@^2.1.0, is-core-module@^2.11.0, is-core-module@^2.2.0, is-core-mo
   dependencies:
     has "^1.0.3"
 
+is-core-module@^2.13.0:
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.13.0.tgz#bb52aa6e2cbd49a30c2ba68c42bf3435ba6072db"
+  integrity sha512-Z7dk6Qo8pOCp3l4tsX2C5ZVas4V+UxwQodwZhLopL91TX8UyyHEXafPcyoeeWuLrwzHcr3igO78wNLwHJHsMCQ==
+  dependencies:
+    has "^1.0.3"
+
 is-date-object@^1.0.1, is-date-object@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/is-date-object/-/is-date-object-1.0.5.tgz#0841d5536e724c25597bf6ea62e1bd38298df31f"
@@ -8106,6 +8113,15 @@ resolve@^1.10.0, resolve@^1.20.0, resolve@^1.22.0, resolve@^1.22.1:
   integrity sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==
   dependencies:
     is-core-module "^2.9.0"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
+
+resolve@^1.22.4:
+  version "1.22.4"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.4.tgz#1dc40df46554cdaf8948a486a10f6ba1e2026c34"
+  integrity sha512-PXNdCiPqDqeUou+w1C2eTQbNfxKSuMxqTCuvlmmMsk1NWHL5fRrhY6Pl0qEYYc6+QqGClco1Qj8XnjPego4wfg==
+  dependencies:
+    is-core-module "^2.13.0"
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
