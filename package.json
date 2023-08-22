@@ -68,7 +68,7 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/lodash": "^4.14.197",
     "@types/node": "^20.5.0",
-    "@types/papaparse": "^5.3.7",
+    "@types/papaparse": "^5.3.8",
     "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.9",
     "@types/showdown": "^2.0.1",
