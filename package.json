@@ -31,7 +31,7 @@
     "hjson": "^3.2.2",
     "js-base64": "^3.7.5",
     "js-yaml": "^4.1.0",
-    "jsonwebtoken": "^9.0.1",
+    "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "next": "12.3.1",
     "next-translate": "^2.0.6",
