@@ -43,7 +43,7 @@
     "react-dom": "17.0.2",
     "react-responsive": "^9.0.2",
     "showdown": "^2.1.0",
-    "sql-formatter": "^12.2.4",
+    "sql-formatter": "^13.0.0",
     "terser": "^5.19.4",
     "uuid": "^9.0.0"
   },
