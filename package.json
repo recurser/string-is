@@ -58,7 +58,7 @@
     "@semantic-release/release-notes-generator": "^11.0.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^12.1.5",
-    "@types/bluebird": "^3.5.38",
+    "@types/bluebird": "^3.5.39",
     "@types/crypto-js": "^4.1.2",
     "@types/diff": "^5.0.3",
     "@types/hjson": "^2.4.3",
