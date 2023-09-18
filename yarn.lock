@@ -1835,10 +1835,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hjson@^2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.3.tgz#bbb825f7937e946476610b3a7266a94f27878716"
-  integrity sha512-EDixutNn3FQwa5HdET+Tx0h7TirP2knJa9TB21ySqr8XVqT/VsvvOwnanTLHUOOpNofcUhkRKhOk0Wh4YD9RSA==
+"@types/hjson@^2.4.4":
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.4.tgz#0b6b519a0e94cce90006a30039e32418b70264d0"
+  integrity sha512-DXOAsyiOqut5ZnPLqT/P9oxD6SBZPzjU2xAGiVg6b49MMi3MJNj8igY5SwG0z/EP4Y5hVzqL+Y7H1VJBIq5G1g==
 
 "@types/iarna__toml@^2.0.2":
   version "2.0.2"
