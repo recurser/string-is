@@ -1823,10 +1823,10 @@
   resolved "https://registry.yarnpkg.com/@types/crypto-js/-/crypto-js-4.1.2.tgz#fb56b34f397d9ae2335611e416f15e7d65e276e6"
   integrity sha512-t33RNmTu5ufG/sorROIafiCVJMx3jz95bXUMoPAZcUD14fxMXnuTzqzXZoxpR0tNx2xpw11Dlmem9vGCsrSOfA==
 
-"@types/diff@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@types/diff/-/diff-5.0.3.tgz#1f89e49ff83b5d200d78964fb896c68498ce1828"
-  integrity sha512-amrLbRqTU9bXMCc6uX0sWpxsQzRIo9z6MJPkH1pkez/qOxuqSZVuryJAWoBRq94CeG8JxY+VK4Le9HtjQR5T9A==
+"@types/diff@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@types/diff/-/diff-5.0.4.tgz#ba774c225ee68ce13a090fec16cf34b97a78537b"
+  integrity sha512-d7489/WO4B65k0SIqxXtviR9+MrPDipWQF6w+5D7YPrqgu6Qb87JsTdWQaNZo7itcdbViQSev3Jaz7dtKO0+Dg==
 
 "@types/graceful-fs@^4.1.3":
   version "4.1.5"
