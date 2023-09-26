@@ -71,7 +71,7 @@
     "@types/papaparse": "^5.3.8",
     "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.9",
-    "@types/showdown": "^2.0.1",
+    "@types/showdown": "^2.0.2",
     "@types/uuid": "^9.0.3",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
