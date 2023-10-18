@@ -1919,10 +1919,10 @@
   resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.4.tgz#0b6b519a0e94cce90006a30039e32418b70264d0"
   integrity sha512-DXOAsyiOqut5ZnPLqT/P9oxD6SBZPzjU2xAGiVg6b49MMi3MJNj8igY5SwG0z/EP4Y5hVzqL+Y7H1VJBIq5G1g==
 
-"@types/iarna__toml@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@types/iarna__toml/-/iarna__toml-2.0.3.tgz#8eb6c1fea9c76bb2ddb0b00631aa72f424983243"
-  integrity sha512-Q/DCymrx9+1cHPgZ2jFUMMFJ7s14S2gbNwCCvKRlrPU7snmJ7DLRqkPS1NWoYaWVeJDu18WRVHGY4bXi/yzI6w==
+"@types/iarna__toml@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/iarna__toml/-/iarna__toml-2.0.4.tgz#837437dd5bccd4c581700bb2984cb02702918fd5"
+  integrity sha512-ajqbebRITI3ZY+DibMwlMLPJActNHrjx2WZnmweb2laLbo1aD1T0EgkoyPCLLbjjhhpx1zC91ORj1f605lR57g==
   dependencies:
     "@types/node" "*"
 
