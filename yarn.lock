@@ -1844,10 +1844,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hjson@^2.4.4":
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.4.tgz#0b6b519a0e94cce90006a30039e32418b70264d0"
-  integrity sha512-DXOAsyiOqut5ZnPLqT/P9oxD6SBZPzjU2xAGiVg6b49MMi3MJNj8igY5SwG0z/EP4Y5hVzqL+Y7H1VJBIq5G1g==
+"@types/hjson@^2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.5.tgz#70aca1a31651eb262bc0f78da2e53c07570d9040"
+  integrity sha512-jtVvRQV7/wAzWZbNjWEqyOrSb5icFYsGou/cNeajiIAHeNpo7KPNdLfFzhLs+c4AmKKp5ohKpiyXRxTZ5j0HQA==
 
 "@types/iarna__toml@^2.0.4":
   version "2.0.4"
