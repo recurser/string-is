@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: string-is
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: string-is-host
+    http:
+      paths:
+      - backend:
+          service:
+            name: string-is
+            port:
+              number: 3000
+        path: /
+        pathType: Prefix
+...

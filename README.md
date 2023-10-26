@@ -92,6 +92,29 @@ docker run -p 3000:3000 daveperrett/string-is:latest
 
 Currently `linux/arm64` and `linux/amd64` platforms are supported.
 
+## Running on Kubernetes
+
+Prerequisites:
+- a functional kubernetes cluster
+- cluster accessible from your machine using `kubectl` 
+
+Edit the `kustomize/kustomization.yaml` file to fit your deployment.
+
+### Namespace
+
+Change the `namespace: string-is` line to point to the namespace where you want to app to be deployed.
+
+The namespace will be created.
+
+### Image tag
+
+Change the `newTag: "latest"` line to use the tag that you wish to deploy - e.g. `v1.35.1`.
+
+### Ingress configuration.
+
+Change the `value: your-string-is-fqdn` to point to the hostname that you want to use. The hostname shoul already exist, and point to your ingress IP address.
+
+If you prefer not to use ingress, feel free to remove the `patches:` section and `ingress.yaml` file from the `resources:` section.
 
 ## Adding a new converter
 
