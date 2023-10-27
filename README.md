@@ -116,6 +116,12 @@ Change the `value: your-string-is-fqdn` to point to the hostname that you want t
 
 If you prefer not to use ingress, feel free to remove the `patches:` section and `ingress.yaml` file from the `resources:` section.
 
+### Install string-is
+
+Run the following command:
+
+`kubectl apply -k ./kustomize/`
+
 ## Adding a new converter
 
 The `src/lib` folder contains most of the conversion logic, and is pure TypeScript, with no React knowledge required.
