@@ -44,7 +44,7 @@
     "react-responsive": "^9.0.2",
     "showdown": "^2.1.0",
     "sql-formatter": "^13.0.0",
-    "terser": "^5.22.0",
+    "terser": "^5.24.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
