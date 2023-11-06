@@ -1,3 +1,10 @@
+## [1.35.3](https://github.com/recurser/string-is/compare/v1.35.2...v1.35.3) (2023-11-06)
+
+
+### Bug Fixes
+
+* **build:** allow the ANALYTICS_DOMAIN to be customized during the Docker build ([ec798fb](https://github.com/recurser/string-is/commit/ec798fb4fb9168d77362aa1138215ff4ae347ac0))
+
 ## [1.35.2](https://github.com/recurser/string-is/compare/v1.35.1...v1.35.2) (2023-11-06)
 
 
