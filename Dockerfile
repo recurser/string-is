@@ -13,6 +13,8 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+ARG ANALYTICS_DOMAIN=string.is
+ENV NEXT_PUBLIC_ANALYTICS_DOMAIN $ANALYTICS_DOMAIN
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV OUTPUT_STANDALONE 1
 RUN yarn build
@@ -22,7 +24,7 @@ FROM --platform=$BUILDPLATFORM node:18-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 0
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
