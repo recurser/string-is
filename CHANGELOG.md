@@ -1,3 +1,32 @@
+## [1.35.2](https://github.com/recurser/string-is/compare/v1.35.1...v1.35.2) (2023-11-06)
+
+
+### Bug Fixes
+
+* **build:** allow longer commit footers ([a1f8b4a](https://github.com/recurser/string-is/commit/a1f8b4a6aece6e3fd3d8115a8a201bb026323d1a))
+* **build:** allow the ANALYTICS_DOMAIN to be customized during the Docker build ([f52b0f6](https://github.com/recurser/string-is/commit/f52b0f663f45cf2371d14ddc1b191fbb5409daa2))
+
+
+### Dependencies
+
+* bump @compiled/react from 0.13.1 to 0.14.0 ([523ba18](https://github.com/recurser/string-is/commit/523ba18ef0d7ee5882701f8a9c1db5acd4133f20))
+* bump @compiled/react from 0.14.0 to 0.15.0 ([066453e](https://github.com/recurser/string-is/commit/066453e9348e028572c067e5776a7782d4539e80))
+* bump @compiled/react from 0.15.0 to 0.16.1 ([1de9fd1](https://github.com/recurser/string-is/commit/1de9fd119913c08af97f2885498edc3898bb3642))
+* bump chrono-node from 2.6.4 to 2.6.5 ([73ce4de](https://github.com/recurser/string-is/commit/73ce4de29e731e7fb7a2c8846f1596f8a5096bf5))
+* bump chrono-node from 2.6.5 to 2.6.6 ([732bdcd](https://github.com/recurser/string-is/commit/732bdcd25ef466447305d5b47caa4b561e7fcbd0))
+* bump chrono-node from 2.6.6 to 2.7.0 ([07ac423](https://github.com/recurser/string-is/commit/07ac423c7c09cf67f4fd954c56a400362f06f28b))
+* bump dayjs from 1.11.9 to 1.11.10 ([b28478d](https://github.com/recurser/string-is/commit/b28478d40a6cbf0e9d16cf2ee9a71daae7be0797))
+* bump fast-xml-parser from 4.2.7 to 4.3.2 ([14bf0db](https://github.com/recurser/string-is/commit/14bf0db55a67c1aca44f93bcababe0a546e5c71c))
+* bump jsonwebtoken from 9.0.1 to 9.0.2 ([df51d18](https://github.com/recurser/string-is/commit/df51d189117cdf58647cf5a51edccf0d215fd993))
+* bump sql-formatter from 12.2.4 to 13.0.0 ([0a31e61](https://github.com/recurser/string-is/commit/0a31e6127199c79816453fafc3f377fe76577b10))
+* bump sql-formatter from 13.0.0 to 13.0.4 ([eb47cd0](https://github.com/recurser/string-is/commit/eb47cd03e74aa11edae96ec344260deba62e10ef))
+* bump terser from 5.19.2 to 5.19.3 ([d2ef22f](https://github.com/recurser/string-is/commit/d2ef22fdafda160409b6d6cce15594e803869ec9))
+* bump terser from 5.19.3 to 5.19.4 ([e2c39c2](https://github.com/recurser/string-is/commit/e2c39c2576708a705a48b4f9e8874d0bda2ecb9d))
+* bump terser from 5.19.4 to 5.21.0 ([1731766](https://github.com/recurser/string-is/commit/173176633b59c7f201bd1660e76838e2ee715b98))
+* bump terser from 5.21.0 to 5.22.0 ([9c885b7](https://github.com/recurser/string-is/commit/9c885b7cc5f7bdb614c38f1ca4c9d4ccfebea23f))
+* bump terser from 5.22.0 to 5.24.0 ([f240c50](https://github.com/recurser/string-is/commit/f240c50cfaaf7adc108d3481db2c12ab96e61403))
+* bump uuid from 9.0.0 to 9.0.1 ([e796b37](https://github.com/recurser/string-is/commit/e796b3716f93b0bc429a39fa369a830562576e84))
+
 ## [1.35.1](https://github.com/recurser/string-is/compare/v1.35.0...v1.35.1) (2023-08-02)
 
 
