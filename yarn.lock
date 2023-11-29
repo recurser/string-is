@@ -1901,10 +1901,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/bluebird@^3.5.41":
-  version "3.5.41"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.41.tgz#0ef9959efaf1de8ddd7bcef9664fc7bada60ee35"
-  integrity sha512-/OT2UoYPu2fqGNS85UYUx0Ke8Zd/vM0/Au0JqLInTprkRO0NexYe7qAUkDsjhsO3BKHI14wX/UhN5SUaoFVDUQ==
+"@types/bluebird@^3.5.42":
+  version "3.5.42"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.42.tgz#7ec05f1ce9986d920313c1377a5662b1b563d366"
+  integrity sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==
 
 "@types/crypto-js@^4.2.0":
   version "4.2.0"
@@ -5199,11 +5199,6 @@ import-from-esm@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/import-from-esm/-/import-from-esm-1.0.3.tgz#d8158336e8a695292561f6b03c4abdfc17330054"
   integrity sha512-bncoEU7L4Vi5OoeygZuBUP9IC1AxavLR4UMCwZ9FtujOhDG1PDEo7IpCdfeOxKfrMCGwoK6UXpF9q/cXTA/ejg==
-
-import-from@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/import-from/-/import-from-4.0.0.tgz#2710b8d66817d232e16f4166e319248d3d5492e2"
-  integrity sha512-P9J71vT5nLlDeV8FHs5nNxaLbrpfAV5cF5srvbZfpwpcJoM/xZR3hiv+q+SAnuSmuGbXMWud063iIMx/V/EWZQ==
 
 import-local@^3.0.2:
   version "3.1.0"
