@@ -1982,10 +1982,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
 
-"@types/json2csv@^5.0.5":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@types/json2csv/-/json2csv-5.0.5.tgz#3a42a1f6c825dc222d7d28849e0f98fc78b4ab31"
-  integrity sha512-59UMwrXM22I5uYGp4izB1Jw9AFlWAMCz2/d1A5Y6hm5ZTQFiowZwwsnPjlu9LJ1/Y20zLP746LdMbaZoFVVjPQ==
+"@types/json2csv@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@types/json2csv/-/json2csv-5.0.7.tgz#c80ff09b669f8e3ee60be19d91326275a6a2346b"
+  integrity sha512-Ma25zw9G9GEBnX8b12R4EYvnFT6dBh8L3jwsN5EUFXa+fl2dqmbLDbNWN0XuQU3rSXdsbBeCYjI9uHU2PUBxhA==
   dependencies:
     "@types/node" "*"
 
