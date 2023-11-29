@@ -1928,10 +1928,10 @@
   resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.5.tgz#70aca1a31651eb262bc0f78da2e53c07570d9040"
   integrity sha512-jtVvRQV7/wAzWZbNjWEqyOrSb5icFYsGou/cNeajiIAHeNpo7KPNdLfFzhLs+c4AmKKp5ohKpiyXRxTZ5j0HQA==
 
-"@types/iarna__toml@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@types/iarna__toml/-/iarna__toml-2.0.4.tgz#837437dd5bccd4c581700bb2984cb02702918fd5"
-  integrity sha512-ajqbebRITI3ZY+DibMwlMLPJActNHrjx2WZnmweb2laLbo1aD1T0EgkoyPCLLbjjhhpx1zC91ORj1f605lR57g==
+"@types/iarna__toml@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@types/iarna__toml/-/iarna__toml-2.0.5.tgz#95f134b33c17abc15981e4b81b036c7e4238aa81"
+  integrity sha512-I55y+SxI0ayM4MBU6yfGJGmi4wRll6wtSeKiFYAZj+Z5Q1DVbMgBSVDYY+xQZbjIlLs/pN4fidnvR8faDrmxPg==
   dependencies:
     "@types/node" "*"
 
@@ -5199,11 +5199,6 @@ import-from-esm@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/import-from-esm/-/import-from-esm-1.0.3.tgz#d8158336e8a695292561f6b03c4abdfc17330054"
   integrity sha512-bncoEU7L4Vi5OoeygZuBUP9IC1AxavLR4UMCwZ9FtujOhDG1PDEo7IpCdfeOxKfrMCGwoK6UXpF9q/cXTA/ejg==
-
-import-from@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/import-from/-/import-from-4.0.0.tgz#2710b8d66817d232e16f4166e319248d3d5492e2"
-  integrity sha512-P9J71vT5nLlDeV8FHs5nNxaLbrpfAV5cF5srvbZfpwpcJoM/xZR3hiv+q+SAnuSmuGbXMWud063iIMx/V/EWZQ==
 
 import-local@^3.0.2:
   version "3.1.0"

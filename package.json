@@ -62,7 +62,7 @@
     "@types/crypto-js": "^4.2.0",
     "@types/diff": "^5.0.7",
     "@types/hjson": "^2.4.5",
-    "@types/iarna__toml": "^2.0.4",
+    "@types/iarna__toml": "^2.0.5",
     "@types/js-yaml": "^4.0.8",
     "@types/json2csv": "^5.0.5",
     "@types/jsonwebtoken": "^9.0.5",
