@@ -131,7 +131,25 @@ The quickest way to deploy string.is is to use the [Vercel Platform](https://ver
 
 Unfortunately string.is doesn't currently support static builds via `next export` (which would allow hosting on eg. S3), because the `i18n` feature it uses is not currently supported for static builds.
 
-If you're deploying string.is under a sub-path of a domain, you'll need to set the `NEXT_PUBLIC_BASE_PATH` environment variable to the sub-path. For example, if you're deploying to `https://tools.example.com/string-is`, you'll need to set `NEXT_PUBLIC_BASE_PATH` to `/string-is`.
+### Deploy string.is under a sub-path of a domain
+
+Set the `NEXT_PUBLIC_BASE_PATH` environment variable to the sub-path, then build the project before deploying. This value must be set at build time and cannot be changed without re-building as the value is inlined in the client-side bundles.
+
+For example, if you're deploying to `https://tools.example.com/string-is`, you'll need to set `NEXT_PUBLIC_BASE_PATH` to `/string-is`. You don't need to set this variable if you're deploying to the root of a domain.
+
+Build and run with Docker:
+
+```bash
+docker build -t string-is --build-arg NEXT_PUBLIC_BASE_PATH="/string-is" .
+docker run -p 3000:3000 string-is
+```
+
+Or build and run with `docker-compose`:
+
+```bash
+export NEXT_PUBLIC_BASE_PATH="/string-is"
+docker-compose up --build
+```
 
 ## Localization
 
