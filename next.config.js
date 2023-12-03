@@ -109,4 +109,8 @@ module.exports = nextTranslate({
 
     return config
   },
+  // To deploy a Next.js application under a sub-path of a domain you can use the basePath config option.
+  // See https://nextjs.org/docs/app/api-reference/next-config-js/basePath
+  // Note: basePath must be set at build time and cannot be changed without re-building as the value is inlined in the client-side bundles.
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
 })
