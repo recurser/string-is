@@ -1911,10 +1911,10 @@
   resolved "https://registry.yarnpkg.com/@types/crypto-js/-/crypto-js-4.2.0.tgz#01918d35ec66aa806887435c44a67d7a749cf545"
   integrity sha512-LW9TlhpMeoQKOu6I6HvOp7eInNNnvd7B+ndAfZb826HUl7eHJJApofbHnlAxrIVS/uiCjkkHGNEaKHoGxB5IHw==
 
-"@types/diff@^5.0.7":
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/@types/diff/-/diff-5.0.7.tgz#471bad8be0d911ed04d115863402920f3a84079c"
-  integrity sha512-adBosR2GntaQQiuHnfRN9HtxYpoHHJBcdyz7VSXhjpSAmtvIfu/S1fjTqwuIx/Ypba6LCZdfWIqPYx2BR5TneQ==
+"@types/diff@^5.0.9":
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/@types/diff/-/diff-5.0.9.tgz#31977962175079c2048315febeb8fd5f520192c6"
+  integrity sha512-RWVEhh/zGXpAVF/ZChwNnv7r4rvqzJ7lYNSmZSVTxjV0PBLf6Qu7RNg+SUtkpzxmiNkjCx0Xn2tPp7FIkshJwQ==
 
 "@types/graceful-fs@^4.1.3":
   version "4.1.5"
@@ -5199,11 +5199,6 @@ import-from-esm@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/import-from-esm/-/import-from-esm-1.0.3.tgz#d8158336e8a695292561f6b03c4abdfc17330054"
   integrity sha512-bncoEU7L4Vi5OoeygZuBUP9IC1AxavLR4UMCwZ9FtujOhDG1PDEo7IpCdfeOxKfrMCGwoK6UXpF9q/cXTA/ejg==
-
-import-from@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/import-from/-/import-from-4.0.0.tgz#2710b8d66817d232e16f4166e319248d3d5492e2"
-  integrity sha512-P9J71vT5nLlDeV8FHs5nNxaLbrpfAV5cF5srvbZfpwpcJoM/xZR3hiv+q+SAnuSmuGbXMWud063iIMx/V/EWZQ==
 
 import-local@^3.0.2:
   version "3.1.0"
