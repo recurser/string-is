@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        - NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH}
+        NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH:-}
     ports:
       - '3000:3000'
     image: string-is
