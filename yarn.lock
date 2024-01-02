@@ -1917,10 +1917,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hjson@^2.4.5":
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.5.tgz#70aca1a31651eb262bc0f78da2e53c07570d9040"
-  integrity sha512-jtVvRQV7/wAzWZbNjWEqyOrSb5icFYsGou/cNeajiIAHeNpo7KPNdLfFzhLs+c4AmKKp5ohKpiyXRxTZ5j0HQA==
+"@types/hjson@^2.4.6":
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/@types/hjson/-/hjson-2.4.6.tgz#1e1d730c1b92676e7d78087e25f24960ee38062b"
+  integrity sha512-tEQ4hlyKfsb9WWeueUY5eRnU2eK+KdE0eofSpQ05v9Aah4VvWwIRIid/ZN1zZZ0TfeVTRDgabKKqKZXEkfD3Sw==
 
 "@types/iarna__toml@^2.0.5":
   version "2.0.5"
