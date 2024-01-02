@@ -1900,10 +1900,10 @@
   resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.42.tgz#7ec05f1ce9986d920313c1377a5662b1b563d366"
   integrity sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==
 
-"@types/crypto-js@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@types/crypto-js/-/crypto-js-4.2.0.tgz#01918d35ec66aa806887435c44a67d7a749cf545"
-  integrity sha512-LW9TlhpMeoQKOu6I6HvOp7eInNNnvd7B+ndAfZb826HUl7eHJJApofbHnlAxrIVS/uiCjkkHGNEaKHoGxB5IHw==
+"@types/crypto-js@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@types/crypto-js/-/crypto-js-4.2.1.tgz#480edd76991a63050cb88db1a8840758c55a7135"
+  integrity sha512-FSPGd9+OcSok3RsM0UZ/9fcvMOXJ1ENE/ZbLfOPlBWj7BgXtEAM8VYfTtT760GiLbQIMoVozwVuisjvsVwqYWw==
 
 "@types/diff@^5.0.9":
   version "5.0.9"
