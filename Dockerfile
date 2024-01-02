@@ -18,7 +18,7 @@ ENV OUTPUT_STANDALONE 1
 RUN yarn build
 
 # Production image, copy all the files and run next
-FROM --platform=$BUILDPLATFORM node:20-alpine AS runner
+FROM --platform=$TARGETPLATFORM node:20-alpine AS runner
 WORKDIR /app
 
 ARG ANALYTICS_DOMAIN=string.is
