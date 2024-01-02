@@ -1,3 +1,17 @@
+## [1.35.4](https://github.com/recurser/string-is/compare/v1.35.3...v1.35.4) (2024-01-02)
+
+
+### Bug Fixes
+
+* build from TARGETPLATFORM rather than BUILDPLATFORM ([2430a9b](https://github.com/recurser/string-is/commit/2430a9b241eae8d7052f3274691db21d0a713710))
+
+
+### Dependencies
+
+* bump @compiled/react from 0.16.1 to 0.16.2 ([d9e0e5a](https://github.com/recurser/string-is/commit/d9e0e5a93ab882f68afb202ae003d5627a7282e3))
+* bump crypto-js and @types/crypto-js ([e4eb77c](https://github.com/recurser/string-is/commit/e4eb77c6e3d9287908fe9f37127486547f749384))
+* bump sql-formatter from 13.0.4 to 15.0.2 ([dce124c](https://github.com/recurser/string-is/commit/dce124cefa501590b548d8b1ebee2581d686b1be))
+
 ## [1.35.3](https://github.com/recurser/string-is/compare/v1.35.2...v1.35.3) (2023-11-06)
 
 
