@@ -6,9 +6,9 @@ describe('converters', () => {
     it('converts the input to local time', async () => {
       await expectOutput(
         TimestampConverter,
-        '1234567890',
+        '1234524690',
         'datetime-local-output',
-        '2009-02-13 23:31',
+        '2009-02-13 11:31',
       )
     })
 
@@ -24,7 +24,7 @@ describe('converters', () => {
     it('handles human-readable times', async () => {
       await expectOutput(
         TimestampConverter,
-        'January 2020',
+        'January 1st 2020',
         'datetime-local-output',
         '2020-01-01 12:00',
       )

@@ -9,7 +9,7 @@ describe('inputs', () => {
       })
 
       it('parses human-readable time strings', () => {
-        const data = 'January 2020'
+        const data = 'January 1st 2020'
         const expected = '1577880000000'
         expect(input(data)).toEqual(expected)
       })
