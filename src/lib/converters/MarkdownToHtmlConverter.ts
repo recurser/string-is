@@ -22,10 +22,10 @@ export const outputId = 'html'
  *
  * @returns the converted string.
  */
-export const operation = (
+export const operation = async (
   input: string,
   options: ConverterOptions = {},
-): string => {
+): Promise<string> => {
   const converter = new Converter({ noHeaderId: true, strikethrough: true })
   const html = converter.makeHtml(input)
 

@@ -1,6 +1,8 @@
+import * as babel from 'prettier/plugins/babel'
+// eslint-disable-next-line import/namespace
+import * as estree from 'prettier/plugins/estree'
 import { format } from 'prettier/standalone'
 import { isEmpty } from 'lodash'
-import parserBabel from 'prettier/parser-babel'
 
 import { Converter, JavaScriptFormatter } from '@lib/converters'
 
@@ -17,12 +19,17 @@ export const id = 'javaScript'
  *
  * @returns a numeric confidence between 0 and 100.
  */
-export const confidence = (input: string) => {
+export const confidence = async (input: string) => {
   if (isEmpty(input)) {
     return 0
   }
 
-  format(input, { parser: 'babel', plugins: [parserBabel] })
+  try {
+    // Prettier will throw an exception if this fails.
+    await format(input, { parser: 'babel', plugins: [babel, estree] })
+  } catch (_err) {
+    return 0
+  }
 
   // Lots of other types (eg. number base conversion, timestamps) can be parsed as Javascript.
   // We dial down the confidence here to give the other types priority.

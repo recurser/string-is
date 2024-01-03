@@ -19,7 +19,7 @@ describe('converters', () => {
       await expectError(
         XmlFormatter,
         '<note',
-        'Unexpected character "EOF" (1:6)> 1 |',
+        'Opening tag "note" not terminated. (1:1)> 1 |',
       )
     })
   })

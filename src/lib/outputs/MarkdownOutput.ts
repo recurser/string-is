@@ -1,5 +1,5 @@
+import * as markdown from 'prettier/plugins/markdown'
 import { format } from 'prettier/standalone'
-import parserMarkdown from 'prettier/parser-markdown'
 
 import type { ConverterOptions } from '@lib/types'
 
@@ -24,14 +24,14 @@ export const id = 'markdown'
  *
  * @returns the formatted Markdown string.
  */
-export const output = (
+export const output = async (
   input: string,
   options: ConverterOptions = {},
-): string => {
+): Promise<string> => {
   return format(input, {
     ...defaultOptions,
     ...options,
     parser: 'markdown',
-    plugins: [parserMarkdown],
+    plugins: [markdown],
   })
 }

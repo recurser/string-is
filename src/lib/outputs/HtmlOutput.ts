@@ -1,5 +1,5 @@
+import * as html from 'prettier/plugins/html'
 import { format } from 'prettier/standalone'
-import parserHtml from 'prettier/parser-html'
 
 import type { ConverterOptions } from '@lib/types'
 
@@ -26,14 +26,14 @@ export const id = 'html'
  *
  * @returns the formatted HTML string.
  */
-export const output = (
+export const output = async (
   input: string,
   options: ConverterOptions = {},
-): string => {
+): Promise<string> => {
   return format(input, {
     ...defaultOptions,
     ...options,
     parser: 'html',
-    plugins: [parserHtml],
+    plugins: [html],
   })
 }

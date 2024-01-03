@@ -16,9 +16,12 @@ export const id = 'xml'
  *
  * @returns the formatted XML string.
  */
-export const output = (input: Obj, options: ConverterOptions = {}): string => {
+export const output = async (
+  input: Obj,
+  options: ConverterOptions = {},
+): Promise<string> => {
   const builder = new XMLBuilder({ arrayNodeName: 'item', format: true })
   const xml = builder.build(input)
-  const formatted = htmlOutput(xml, options)
+  const formatted = await htmlOutput(xml, options)
   return `<?xml version="1.0" encoding="UTF-8"?>\n${formatted}`
 }
