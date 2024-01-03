@@ -1,3 +1,10 @@
+## [1.36.0](https://github.com/recurser/string-is/compare/v1.35.4...v1.36.0) (2024-01-03)
+
+
+### Features
+
+* support for deployment under a sub-path ([2335f2d](https://github.com/recurser/string-is/commit/2335f2d87f912666d22ad9e33d6d7e08968292ff))
+
 ## [1.35.4](https://github.com/recurser/string-is/compare/v1.35.3...v1.35.4) (2024-01-02)
 
 
