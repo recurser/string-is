@@ -18,7 +18,7 @@ describe('converters', () => {
       await expectError(
         HtmlFormatter,
         '<paragraph',
-        'Unexpected character "EOF" (1:11)> 1 |',
+        'Opening tag "paragraph" not terminated. (1:1)> 1 |',
       )
     })
   })

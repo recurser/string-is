@@ -1,5 +1,7 @@
+import * as babel from 'prettier/plugins/babel'
+// eslint-disable-next-line import/namespace
+import * as estree from 'prettier/plugins/estree'
 import { format } from 'prettier/standalone'
-import parserBabel from 'prettier/parser-babel'
 
 import type { ConverterOptions } from '@lib/types'
 
@@ -28,14 +30,14 @@ export const id = 'javaScript'
  *
  * @returns the formatted JavaScript string.
  */
-export const output = (
+export const output = async (
   input: string,
   options: ConverterOptions = {},
-): string => {
+): Promise<string> => {
   return format(input, {
     ...defaultOptions,
     ...options,
     parser: 'babel',
-    plugins: [parserBabel],
+    plugins: [babel, estree],
   })
 }

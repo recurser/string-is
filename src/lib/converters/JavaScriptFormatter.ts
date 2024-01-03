@@ -20,9 +20,9 @@ export const outputId = 'javaScript'
  *
  * @returns the converted string.
  */
-export const operation = (
+export const operation = async (
   input: string,
   options: ConverterOptions = {},
-): string => {
+): Promise<string> => {
   return javaScriptOutput(input, options)
 }

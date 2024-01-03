@@ -1,6 +1,6 @@
+import * as postcss from 'prettier/plugins/postcss'
 import { format } from 'prettier/standalone'
 import { isEmpty } from 'lodash'
-import parserPostcss from 'prettier/parser-postcss'
 
 import { Converter, LessFormatter } from '@lib/converters'
 
@@ -17,14 +17,14 @@ export const id = 'less'
  *
  * @returns a numeric confidence between 0 and 100.
  */
-export const confidence = (input: string) => {
+export const confidence = async (input: string) => {
   if (isEmpty(input)) {
     return 0
   }
 
   try {
     // Prettier will throw an exception if this fails.
-    format(input, { parser: 'less', plugins: [parserPostcss] })
+    await format(input, { parser: 'less', plugins: [postcss] })
   } catch (_err) {
     return 0
   }

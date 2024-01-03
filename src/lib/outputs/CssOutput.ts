@@ -1,5 +1,5 @@
+import * as postcss from 'prettier/plugins/postcss'
 import { format } from 'prettier/standalone'
-import parserPostcss from 'prettier/parser-postcss'
 
 import type { ConverterOptions } from '@lib/types'
 
@@ -26,14 +26,14 @@ export const id = 'css'
  *
  * @returns the formatted CSS string.
  */
-export const output = (
+export const output = async (
   input: string,
   options: ConverterOptions = {},
-): string => {
+): Promise<string> => {
   return format(input, {
     ...defaultOptions,
     ...options,
     parser: 'scss',
-    plugins: [parserPostcss],
+    plugins: [postcss],
   })
 }

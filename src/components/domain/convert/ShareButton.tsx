@@ -11,9 +11,7 @@ import { useMemo, useState } from 'react'
 import { isEmpty } from 'lodash'
 import useTranslation from 'next-translate/useTranslation'
 
-import { BaseUrl } from '@lib/utilities/Constants'
 import { copyToClipboard } from '@lib/utilities/Clipboard'
-import { hyphenateConverterId } from '@lib/utilities/String'
 import { useConverterContext } from '@contexts/ConverterContext'
 import { useConverterOptionsContext } from '@contexts/ConverterOptionsContext'
 
@@ -31,10 +29,12 @@ export const ShareButton = () => {
 
   const onClick = async () => {
     if (!isEmpty(inputString) && !copied) {
-      const converterSlug = hyphenateConverterId(converter.id)
       const encodedInput = encodeURI(inputString)
       const encodedOptions = encode(JSON.stringify(options))
-      const url = `${BaseUrl}/${converterSlug}?i=${encodedInput}&o=${encodedOptions}`
+      const url = `${window.location.href.replace(
+        /[#\?].*$/,
+        '',
+      )}?i=${encodedInput}&o=${encodedOptions}`
       await copyToClipboard(url)
       setCopied(true)
       setTimeout(() => setCopied(false), 1000)

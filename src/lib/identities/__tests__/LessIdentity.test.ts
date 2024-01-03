@@ -3,18 +3,18 @@ import { confidence } from '@lib/identities/LessIdentity'
 describe('identities', () => {
   describe('LessIdentity', () => {
     describe('confidence', () => {
-      it('accepts valid LESS', () => {
+      it('accepts valid LESS', async () => {
         const input = 'h2 { color: @primaryColor }'
-        expect(confidence(input)).toEqual(90)
+        expect(await confidence(input)).toEqual(90)
       })
 
-      it('rejects invalid LESS', () => {
+      it('rejects invalid LESS', async () => {
         const input = 'a { color: @primaryColor'
-        expect(confidence(input)).toEqual(0)
+        expect(await confidence(input)).toEqual(0)
       })
 
-      it('rejects empty input', () => {
-        expect(confidence('')).toEqual(0)
+      it('rejects empty input', async () => {
+        expect(await confidence('')).toEqual(0)
       })
     })
   })
