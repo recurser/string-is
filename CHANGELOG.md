@@ -1,3 +1,27 @@
+## [1.37.0](https://github.com/recurser/string-is/compare/v1.36.0...v1.37.0) (2024-01-03)
+
+
+### Features
+
+* [[#1289](https://github.com/recurser/string-is/issues/1289)] support for deployment under a sub-path ([51d61e7](https://github.com/recurser/string-is/commit/51d61e7219e249fad77eaa639a4b837193cfc5b0))
+
+
+### Bug Fixes
+
+* [[#1142](https://github.com/recurser/string-is/issues/1142)] resolve prettier type versions ([af7176a](https://github.com/recurser/string-is/commit/af7176ae326eb7397eb5d9aec7167523b65ed133))
+* [[#1308](https://github.com/recurser/string-is/issues/1308)] fix jest setup after upgrade ([05ece6c](https://github.com/recurser/string-is/commit/05ece6c37d17a2413b38bb59e4a43d80b88ee29e))
+* [[#1313](https://github.com/recurser/string-is/issues/1313)] fix flakey time tests ([804bb42](https://github.com/recurser/string-is/commit/804bb425d3cdb95bb7eb8aac23d6e239f49c9d36))
+* add missing packages ([d36a6e9](https://github.com/recurser/string-is/commit/d36a6e9cdf5441cabc44aa434324d934788c6b0e))
+* use the browser location when constructing the share URL ([59f93d3](https://github.com/recurser/string-is/commit/59f93d36560d70cbfe7123c0088568c097a119f2))
+
+
+### Dependencies
+
+* bump @compiled/react from 0.16.2 to 0.16.8 ([50d0dc4](https://github.com/recurser/string-is/commit/50d0dc4a81fffd3ff3ff162de2f56fffc9880c93))
+* bump chrono-node from 2.7.0 to 2.7.4 ([14cd632](https://github.com/recurser/string-is/commit/14cd632e4b815b46496d8e07a6d47b0372ab21b9))
+* bump prettier and @types/prettier ([15feef5](https://github.com/recurser/string-is/commit/15feef5ff30655d0e45bb87cf14fef941226b284))
+* bump terser from 5.24.0 to 5.26.0 ([48da8fc](https://github.com/recurser/string-is/commit/48da8fc57335f5650c85ea5b9bd4d466a0356dfa))
+
 ## [1.36.0](https://github.com/recurser/string-is/compare/v1.35.4...v1.36.0) (2024-01-03)
 
 
