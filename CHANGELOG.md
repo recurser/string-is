@@ -1,3 +1,10 @@
+## [1.37.2](https://github.com/recurser/string-is/compare/v1.37.1...v1.37.2) (2024-01-08)
+
+
+### Bug Fixes
+
+* fix the link to Plausible Analytics on the security page ([4d1b843](https://github.com/recurser/string-is/commit/4d1b843dd771154d90d6a3cb11e40b3d2b65ec6b))
+
 ## [1.37.1](https://github.com/recurser/string-is/compare/v1.37.0...v1.37.1) (2024-01-08)
 
 
