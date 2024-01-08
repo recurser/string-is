@@ -79,7 +79,7 @@ export const Security = () => {
           <Trans
             components={[
               <Link
-                href="https://letsencrypt.org/"
+                href="https://plausible.io/"
                 key="link_plausible_home"
                 target="_blank"
               />,
