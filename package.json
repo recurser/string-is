@@ -25,7 +25,7 @@
     "chrono-node": "^2.7.5",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",
-    "diff": "^5.1.0",
+    "diff": "^5.2.0",
     "evergreen-ui": "^7.1.9",
     "fast-xml-parser": "^4.3.4",
     "hjson": "^3.2.2",
