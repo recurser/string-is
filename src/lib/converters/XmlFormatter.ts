@@ -1,5 +1,6 @@
 import type { ConverterOptions } from '@lib/types'
 import { output as htmlOutput } from '@lib/outputs/HtmlOutput'
+import xmlFormatter from 'xml-formatter'
 
 /**
  * A string which uniquely identifies this operation.
@@ -24,5 +25,6 @@ export const operation = async (
   input: string,
   options: ConverterOptions = {},
 ): Promise<string> => {
-  return htmlOutput(input, options)
+  const formatted = xmlFormatter(input, { collapseContent: true, indentation: '    ', lineSeparator: '\n'})
+  return htmlOutput(formatted, options)
 }
