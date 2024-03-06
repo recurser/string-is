@@ -1,3 +1,10 @@
+## [1.37.3](https://github.com/recurser/string-is/compare/v1.37.2...v1.37.3) (2024-03-06)
+
+
+### Bug Fixes
+
+* upgrade @commitlint/cli to fix commitlint import error ([fe57bdd](https://github.com/recurser/string-is/commit/fe57bdd321de4528d0203d8deca62cb15398f2e2))
+
 ## [1.37.2](https://github.com/recurser/string-is/compare/v1.37.1...v1.37.2) (2024-01-08)
 
 
