@@ -21,10 +21,10 @@ export const outputId = 'html'
  *
  * @returns the converted string.
  */
-export const operation = async (
-  input: string,
-  options: ConverterOptions = {},
-): Promise<string> => {
-  const formatted = xmlFormatter(input, { collapseContent: true, indentation: '    ', lineSeparator: '\n'})
-  return htmlOutput(formatted, options)
+export const operation = (input: string): string => {
+  return xmlFormatter(input, {
+    collapseContent: true,
+    indentation: '    ',
+    lineSeparator: '\n',
+  })
 }
