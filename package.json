@@ -22,7 +22,7 @@
     "@compiled/react": "^0.17.1",
     "@iarna/toml": "^2.2.5",
     "bluebird": "^3.7.2",
-    "chrono-node": "^2.7.5",
+    "chrono-node": "^2.7.6",
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.11",
     "diff": "^5.2.0",
