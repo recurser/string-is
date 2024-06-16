@@ -1,3 +1,49 @@
+## [1.37.4](https://github.com/recurser/string-is/compare/v1.37.3...v1.37.4) (2024-06-16)
+
+
+### Bug Fixes
+
+* revert "bump semantic-release from 23.1.1 to 24.0.0" ([a3538b0](https://github.com/recurser/string-is/commit/a3538b042f59bb6e353fb7f9eb1c17e00546082f))
+* upgrade @commitlint/cli to fix commitlint import error ([3a5a336](https://github.com/recurser/string-is/commit/3a5a33694e16840e9772193df03c83eef46e558d))
+
+
+### Dependencies
+
+* bump @compiled/react from 0.16.10 to 0.17.0 ([6336bc5](https://github.com/recurser/string-is/commit/6336bc5cda38f158ecf3567ec89ce97c58aab949))
+* bump @compiled/react from 0.16.8 to 0.16.9 ([d45047a](https://github.com/recurser/string-is/commit/d45047a7e8986d00684365c69461aee721b91660))
+* bump @compiled/react from 0.16.9 to 0.16.10 ([aa72609](https://github.com/recurser/string-is/commit/aa726097ff24727f217c7b0314c1c8e9fdc4efd6))
+* bump @compiled/react from 0.17.0 to 0.17.1 ([5be6f1f](https://github.com/recurser/string-is/commit/5be6f1f083f2739c7d9f1fc682162c15e143a491))
+* bump @compiled/react from 0.17.1 to 0.17.2 ([14feacf](https://github.com/recurser/string-is/commit/14feacf0cc733a098f43525ff8b80bddca167560))
+* bump chrono-node from 2.7.4 to 2.7.5 ([5fea258](https://github.com/recurser/string-is/commit/5fea2583c48ef79afbbe699637bb420df3549c39))
+* bump chrono-node from 2.7.5 to 2.7.6 ([4fbcfda](https://github.com/recurser/string-is/commit/4fbcfdad7cf6d9c98113318f9c8ee4fc7a36d65d))
+* bump dayjs from 1.11.10 to 1.11.11 ([6edeef0](https://github.com/recurser/string-is/commit/6edeef0458f5aaaec7c114e2491e2a4f937fac55))
+* bump diff from 5.1.0 to 5.2.0 ([12b6885](https://github.com/recurser/string-is/commit/12b6885ef42b73dc05ba972ced51a03e2bf198c1))
+* bump fast-xml-parser from 4.3.2 to 4.3.3 ([4d996a9](https://github.com/recurser/string-is/commit/4d996a947082c79ee39b05a772f4a729d90560d6))
+* bump fast-xml-parser from 4.3.3 to 4.3.4 ([5fa1baa](https://github.com/recurser/string-is/commit/5fa1baaa996a8d2086725ec8af74704346f797a8))
+* bump fast-xml-parser from 4.3.4 to 4.3.5 ([333bf75](https://github.com/recurser/string-is/commit/333bf75d1036f833bedb75e65233d85794eb866c))
+* bump fast-xml-parser from 4.3.5 to 4.3.6 ([9965f22](https://github.com/recurser/string-is/commit/9965f220b11805f4a7ccee999ec82bf58ae1c522))
+* bump fast-xml-parser from 4.3.6 to 4.4.0 ([bccfd7b](https://github.com/recurser/string-is/commit/bccfd7be5855e8fc84d2d370f92632f374fec4db))
+* bump js-base64 from 3.7.5 to 3.7.6 ([8c52387](https://github.com/recurser/string-is/commit/8c5238756b86ffd1ef358e6a260b56c4a4ecb25c))
+* bump js-base64 from 3.7.6 to 3.7.7 ([f441bd5](https://github.com/recurser/string-is/commit/f441bd5730cb22704693f63ae415122e722f4b58))
+* bump prettier from 3.1.1 to 3.2.1 ([aefe766](https://github.com/recurser/string-is/commit/aefe766686242b1994180604ad7d18156fbdf991))
+* bump prettier from 3.2.1 to 3.2.4 ([05b50f6](https://github.com/recurser/string-is/commit/05b50f66258ef0d093b336383e15a19139282b36))
+* bump prettier from 3.2.4 to 3.2.5 ([3ede111](https://github.com/recurser/string-is/commit/3ede1112430d219d62d3ca03bb3bc17b5696c31c))
+* bump prettier from 3.2.5 to 3.3.0 ([7e3654d](https://github.com/recurser/string-is/commit/7e3654dee907b5ff3c3fa2553cae6d7c747345e2))
+* bump prettier from 3.3.0 to 3.3.2 ([4be18a0](https://github.com/recurser/string-is/commit/4be18a0330e8f797e464d1264e9688e8888ed621))
+* bump react-responsive from 9.0.2 to 10.0.0 ([d50c970](https://github.com/recurser/string-is/commit/d50c9708e28ba6c86ff8b788244207cbe23c6375))
+* bump sql-formatter from 15.0.2 to 15.1.3 ([069c150](https://github.com/recurser/string-is/commit/069c1503bc49c0474a7149d7ace9f39c8f1a9541))
+* bump sql-formatter from 15.1.3 to 15.2.0 ([767d01c](https://github.com/recurser/string-is/commit/767d01ccf03165e356fb2158619ad06db17acdc1))
+* bump sql-formatter from 15.2.0 to 15.3.0 ([08addb6](https://github.com/recurser/string-is/commit/08addb6a1d025861ff4c9baf41b7d982a05de0a2))
+* bump sql-formatter from 15.3.0 to 15.3.1 ([6c03b7f](https://github.com/recurser/string-is/commit/6c03b7f2afad552c00a853c11a0049712cecbe0e))
+* bump terser from 5.26.0 to 5.27.0 ([5391fe0](https://github.com/recurser/string-is/commit/5391fe0a13ee3479a06a1e64cf4fff175d556ffb))
+* bump terser from 5.27.0 to 5.27.1 ([7d0ce47](https://github.com/recurser/string-is/commit/7d0ce473cae5957bca836391f11951df2946fffe))
+* bump terser from 5.27.1 to 5.28.1 ([1d95a5c](https://github.com/recurser/string-is/commit/1d95a5ccdf73ab73a26db419d519c97762117fa6))
+* bump terser from 5.28.1 to 5.29.1 ([3c6ca03](https://github.com/recurser/string-is/commit/3c6ca03525aabdbfe063d852f9b627c157db6ed6))
+* bump terser from 5.29.1 to 5.30.3 ([0f0b0de](https://github.com/recurser/string-is/commit/0f0b0deb1d4f74111f5543d5a0b9c72d8d78859e))
+* bump terser from 5.30.3 to 5.31.0 ([e23ffb1](https://github.com/recurser/string-is/commit/e23ffb19c80e07e5e7fbee6b922a85124017b538))
+* bump terser from 5.31.0 to 5.31.1 ([edace53](https://github.com/recurser/string-is/commit/edace5363f461b353c1a73137da1ca49c73da9e7))
+* bump uuid from 9.0.1 to 10.0.0 ([25a95b7](https://github.com/recurser/string-is/commit/25a95b72a550e8e625573f248a7ce45955f955cf))
+
 ## [1.37.3](https://github.com/recurser/string-is/compare/v1.37.2...v1.37.3) (2024-03-06)
 
 
