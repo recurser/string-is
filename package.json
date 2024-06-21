@@ -72,7 +72,7 @@
     "@types/prismjs": "^1.26.4",
     "@types/react": "18.0.9",
     "@types/showdown": "^2.0.6",
-    "@types/uuid": "^9.0.8",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "babel-jest": "^29.7.0",
