@@ -21,7 +21,7 @@
     "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "es5",
+    "target": "esnext",
     "paths": {
       "@components/*": [
         "src/components/*"
