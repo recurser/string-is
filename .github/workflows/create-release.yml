@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: production
 
       - name: Generate the release name
         run: echo "RELEASE_NAME=$(date +'Release Candidate %Y-%m-%d-%H-%M')" >> $GITHUB_ENV
@@ -23,8 +23,8 @@ jobs:
 
       - name: Reset the branch
         run: |
-          git fetch origin develop:develop
-          git reset --hard develop
+          git fetch origin main:main
+          git reset --hard main
 
       - name: Create the Pull Request
         uses: peter-evans/create-pull-request@v3
