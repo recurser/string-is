@@ -2,7 +2,7 @@ name: jest
 
 on:
   pull_request:
-  push: { branches: ["develop", "main"] }
+  push: { branches: ["main", "production"] }
 
 jobs:
   jest:
