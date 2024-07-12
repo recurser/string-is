@@ -1,3 +1,16 @@
+## [1.37.5](https://github.com/recurser/string-is/compare/v1.37.4...v1.37.5) (2024-07-12)
+
+
+### Bug Fixes
+
+* [[#1523](https://github.com/recurser/string-is/issues/1523)] fix type-related issues after Typescript upgrade ([32928db](https://github.com/recurser/string-is/commit/32928db552a5a845fc144cf8d678e27bd7577f5c))
+
+
+### Dependencies
+
+* bump sql-formatter from 15.3.1 to 15.3.2 ([4c21dbc](https://github.com/recurser/string-is/commit/4c21dbcab80e7b3216e37888b4904b5e509f7b67))
+* bump terser from 5.31.1 to 5.31.2 ([86d2fbb](https://github.com/recurser/string-is/commit/86d2fbb6b5568527d755f62f7febbd8e9b3cd477))
+
 ## [1.37.4](https://github.com/recurser/string-is/compare/v1.37.3...v1.37.4) (2024-06-16)
 
 
