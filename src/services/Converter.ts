@@ -1,5 +1,5 @@
 import { maxBy, uniqBy } from 'lodash'
-import Promise from 'bluebird'
+import Bluebird from 'bluebird'
 
 import * as untypedIdentities from '@lib/identities'
 import { Converter } from '@lib/converters'
@@ -38,7 +38,7 @@ export const converterCandidates = async (
   inputString: string,
 ): Promise<Converter[]> => {
   const candidates = (
-    await Promise.all(
+    await Bluebird.all(
       identities.map((identity): Promise<Candidate[]> => {
         return new Promise((resolve, _reject) => {
           let confidence: number
