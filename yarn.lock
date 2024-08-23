@@ -406,7 +406,7 @@
     "@babel/helper-plugin-utils" "^7.20.2"
     "@babel/plugin-syntax-flow" "^7.18.6"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.23.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.23.7.tgz#dd7c88deeb218a0f8bd34d5db1aa242e0f203193"
   integrity sha512-w06OXVOFso7LcbzMiDGt+3X7Rh7Ho8MmgPoWU3rarH+8upf+wSU/grlGbWzQyr3DkdN6ZeuMFjpdwW0Q+HxobA==
@@ -1861,13 +1861,12 @@
     lz-string "^1.4.4"
     pretty-format "^27.0.2"
 
-"@testing-library/jest-dom@^6.4.7":
-  version "6.4.7"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-6.4.7.tgz#0f882b745f17a6a094d1d64d835a9440429f90f4"
-  integrity sha512-GaKJ0nijoNf30dWSOOzQEBkWBRk4rG3C/efw8zKrimNuZpnS/6/AEwo0WvZHgJxG84cNCgxt+mtbe1fsvfLp2A==
+"@testing-library/jest-dom@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-6.5.0.tgz#50484da3f80fb222a853479f618a9ce5c47bfe54"
+  integrity sha512-xGGHpBXYSHUUr6XsKBfs85TWlYKpTc37cSBBVrXcib2MkHLboWlkClhWF37JKlDb9KEq3dHs+f2xR7XJEWGBxA==
   dependencies:
     "@adobe/css-tools" "^4.4.0"
-    "@babel/runtime" "^7.9.2"
     aria-query "^5.0.0"
     chalk "^3.0.0"
     css.escape "^1.5.1"
