@@ -695,10 +695,10 @@
     "@compiled/css" "^0.14.0"
     "@compiled/utils" "^0.11.1"
 
-"@compiled/babel-plugin@^0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.29.0.tgz#e6af4efd7962b4b854bf89e107f795c3dfcd0c1b"
-  integrity sha512-1hMTrifSDysudJde2N0hcj8rqMSRDxfotMvjI3F0ON8jDF3X1xs4gVDv+L7zQ/eWi8yt9I2JfH9JFaEmQm88Yw==
+"@compiled/babel-plugin@^0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.30.0.tgz#47e6a327919ef6dd4e572417ed9840583e7cce4d"
+  integrity sha512-SM5a8Y4+a1G+T/omqEJTfPdizMiAVlqG9Bmiw7kCMh9YEKzIQ7fPwmApoBqh5uyXtrb427dYVY33q3cxz6TY8w==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/generator" "^7.21.5"
@@ -744,14 +744,14 @@
     convert-source-map "^2.0.0"
     source-map "^0.7.4"
 
-"@compiled/webpack-loader@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.14.0.tgz#4e1a50fae290057c4d05294e49597ecc5ff2f981"
-  integrity sha512-yMn944w2zxJIsj5ZTw3dYP/UdzmrUvQ4nr95P/aZEtI5Takwu63FmaHweLMMhCL3W29rpCLX8IYIABlVGVYVvQ==
+"@compiled/webpack-loader@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.15.0.tgz#debeb0c94e160dde16fb2170eeefb0822e929d82"
+  integrity sha512-3CrNoZk7e8RIY1EiJyitS+5xr/scqhOSX7NWLarHRqFYdsfHpbjlzQJb87oDrimv0hZWU5DKcImSoaf1MX55QA==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/parser" "^7.21.8"
-    "@compiled/babel-plugin" "^0.29.0"
+    "@compiled/babel-plugin" "^0.30.0"
     "@compiled/babel-plugin-strip-runtime" "^0.29.0"
     "@compiled/css" "^0.14.0"
     "@compiled/utils" "^0.11.2"
