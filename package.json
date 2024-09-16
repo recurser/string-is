@@ -65,7 +65,7 @@
     "@types/iarna__toml": "^2.0.5",
     "@types/js-yaml": "^4.0.9",
     "@types/json2csv": "^5.0.7",
-    "@types/jsonwebtoken": "^9.0.6",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/lodash": "^4.17.7",
     "@types/node": "^22.5.4",
     "@types/papaparse": "^5.3.14",
