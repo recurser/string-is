@@ -681,23 +681,23 @@
     "@types/conventional-commits-parser" "^5.0.0"
     chalk "^5.3.0"
 
-"@compiled/babel-plugin-strip-runtime@^0.32.0":
-  version "0.32.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.32.0.tgz#03553814b54e6f43a5a4b3daf38b9645c44e2eef"
-  integrity sha512-3exndCXE5KRWhVEr9evTCsZg5FyLq9qwwVtJ3f2C1UF/m3L/MZZiLNSakwhPJP633zb1YwMGwG+4Qq4kzsdEEA==
+"@compiled/babel-plugin-strip-runtime@^0.32.2":
+  version "0.32.2"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.32.2.tgz#46aa86b88afde6f86a0ab6c7243f071f1281f0b5"
+  integrity sha512-UtnZPYkS2+KCt+jKMqe6MG4uymwdKAAgiZm328Dj3P/OqCjUwk8kYw7Y8AvH3Tovlx5HksEuHsd01A19sWb25Q==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/helper-plugin-utils" "^7.21.5"
     "@babel/template" "^7.20.7"
     "@babel/traverse" "^7.23.2"
     "@babel/types" "^7.21.5"
-    "@compiled/css" "^0.16.0"
+    "@compiled/css" "^0.17.0"
     "@compiled/utils" "^0.13.0"
 
-"@compiled/babel-plugin@^0.32.1":
-  version "0.32.1"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.32.1.tgz#9345d87a3afcd510ff056552de6338ec8bc5f023"
-  integrity sha512-wanDlois3luP2Z3VIMhQfa7bmZ0v+ydHT+Q3kGF4Ca78hL5rsdb6pAksUnMnQY7GDQ2NNWop0WEKXs4varXvSA==
+"@compiled/babel-plugin@^0.32.2":
+  version "0.32.2"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.32.2.tgz#849fda50405f4f22cd77ad6f22922d0d831a8322"
+  integrity sha512-HW3F5W8vvW3mDzSbKvTdLJTGurtyXNrK1gdBqBwLwodpOOZwh+Catlym/0XFEo9u/PusfO+ifMZpyP1qtpABLw==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/generator" "^7.21.5"
@@ -708,15 +708,15 @@
     "@babel/template" "^7.20.7"
     "@babel/traverse" "^7.23.2"
     "@babel/types" "^7.21.5"
-    "@compiled/css" "^0.16.0"
+    "@compiled/css" "^0.17.0"
     "@compiled/utils" "^0.13.0"
     "@emotion/is-prop-valid" "^1.2.1"
     resolve "^1.22.8"
 
-"@compiled/css@^0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@compiled/css/-/css-0.16.0.tgz#61a201965e518f0b63da12c0035d4b5b0d5bc009"
-  integrity sha512-4AF8GmUDObApdMaPz9776UkwPTWTsQGWx+agaRQWyDZUCqO0LyLVQ9FPPStt4i7Bx6mOb1whAOT5ZC8Hzoh+Qg==
+"@compiled/css@^0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@compiled/css/-/css-0.17.0.tgz#7ac3db4e0a90b3d85cdddd620f560712d671861b"
+  integrity sha512-7nU9kSCRuLthVnQR0DQmTnCAJl91rDE2Zd725IErqV9NrWfLgQ0nLLheQl0YSzbBKrAXfz8839zhPsdpqobUmQ==
   dependencies:
     "@compiled/utils" "^0.13.0"
     autoprefixer "^10.4.14"
@@ -743,16 +743,16 @@
     convert-source-map "^2.0.0"
     source-map "^0.7.4"
 
-"@compiled/webpack-loader@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.18.0.tgz#4ee343c0f8ea1280a3142784edb7efb42dac0fd7"
-  integrity sha512-JvsBgeLGnSPr4fSnjZt7mr0oTYEAP5H3MJQ8cRZFDSHkSF3r4qODpHMjxCtSwK3hAew8cFcy8MQXlHnyyl5YvQ==
+"@compiled/webpack-loader@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.18.1.tgz#2071c94011d1f0a543775eb5f0a624c7f37a762b"
+  integrity sha512-jRF0Xm+7JWo6IbR28QjQZzGsawviq2Q16vD2sIY5TDqI42RR6kF0dBJRKC2coe01TvSeVGDGH4FGY4jKM38W8Q==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/parser" "^7.21.8"
-    "@compiled/babel-plugin" "^0.32.1"
-    "@compiled/babel-plugin-strip-runtime" "^0.32.0"
-    "@compiled/css" "^0.16.0"
+    "@compiled/babel-plugin" "^0.32.2"
+    "@compiled/babel-plugin-strip-runtime" "^0.32.2"
+    "@compiled/css" "^0.17.0"
     "@compiled/utils" "^0.13.0"
     enhanced-resolve "^5.15.0"
     loader-utils "^2.0.4"
