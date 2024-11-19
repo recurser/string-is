@@ -48,7 +48,7 @@
     "uuid": "^11.0.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@compiled/webpack-loader": "^0.18.1",
     "@semantic-release/changelog": "^6.0.3",
