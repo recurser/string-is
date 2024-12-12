@@ -1,6 +1,7 @@
 import * as babel from 'prettier/plugins/babel'
 // eslint-disable-next-line import/namespace
 import * as estree from 'prettier/plugins/estree'
+import { type Plugin } from 'prettier'
 import { format } from 'prettier/standalone'
 
 import type { ConverterOptions } from '@lib/types'
@@ -38,6 +39,6 @@ export const output = async (
     ...defaultOptions,
     ...options,
     parser: 'babel',
-    plugins: [babel, estree],
+    plugins: [babel, estree as Plugin],
   })
 }
