@@ -9279,10 +9279,10 @@ sprintf-js@~1.0.2:
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
-sql-formatter@^15.4.6:
-  version "15.4.6"
-  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-15.4.6.tgz#6e00e967ce86aa70daa0249097b2d3941e4e66f4"
-  integrity sha512-aH6kwvJpylljHqXe+zpie0Q5snL3uerDLLhjPEBjDCVK1NMRFq4nMJbuPJWYp08LaaaJJgBhShAdAfspcBYY0Q==
+sql-formatter@^15.4.7:
+  version "15.4.7"
+  resolved "https://registry.yarnpkg.com/sql-formatter/-/sql-formatter-15.4.7.tgz#1c758a837ea964509459c5bcaf4eb962c42d96c6"
+  integrity sha512-gEXbtqN/fXmqlfjKbTO5d5kFj1X7fXyJzU/MD6wfFTCF2IXuIQXO21l2gnryZhtnYBhvQixBIMnFGYn4PZ8a9w==
   dependencies:
     argparse "^2.0.1"
     get-stdin "=8.0.0"
