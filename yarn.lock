@@ -694,10 +694,10 @@
     "@compiled/css" "^0.18.0"
     "@compiled/utils" "^0.13.1"
 
-"@compiled/babel-plugin@^0.33.0":
-  version "0.33.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.33.0.tgz#78395b317468dfe2601dff922644f9556f5e8dae"
-  integrity sha512-gdZqcLu6xy9edMyLVczPaFt/Pi3atbJEbG3hOafGor6r2fa/nA2sI5wfoANu50zge4XO3MMrxnXU1sP7AGqqpw==
+"@compiled/babel-plugin@^0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.34.0.tgz#5bbb09da65dea4d8c69700a8ab4e8aa597b0bc12"
+  integrity sha512-5MdkptmBKgJxRHdlQYVDPDSDABxc/99+vKcL1VdFNoV/4QFIdsccezYQroMV7J4BZqqv0UiaftD5c/KTOJyupw==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/generator" "^7.21.5"
@@ -711,7 +711,7 @@
     "@compiled/css" "^0.18.0"
     "@compiled/utils" "^0.13.1"
     "@emotion/is-prop-valid" "^1.2.1"
-    resolve "^1.22.8"
+    resolve "^1.22.9"
 
 "@compiled/css@^0.18.0":
   version "0.18.0"
@@ -743,14 +743,14 @@
     convert-source-map "^2.0.0"
     source-map "^0.7.4"
 
-"@compiled/webpack-loader@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.19.0.tgz#f910f64485d84b1fd9a5b7f0c98cf9c8d5440464"
-  integrity sha512-MVCN/WuBQMB/mq813nMKFGJ88D8/xZXwQEZnBBFneoVK3ph85kQ5SIfD0rnHSGd2InmqDjC/1HGbKVrStrRTTA==
+"@compiled/webpack-loader@^0.19.1":
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.19.1.tgz#a8f83fb969e8873ec86a2a077bc4517b4a0ff98e"
+  integrity sha512-tqlsb/6nGynmqRX/ESZ2EEDi4zBkK4na5YTgdRZ+9JcSgC+womcpgcLrmro9p+yajfWjq0p+MZplKLNyTvpwyA==
   dependencies:
     "@babel/core" "^7.21.8"
     "@babel/parser" "^7.21.8"
-    "@compiled/babel-plugin" "^0.33.0"
+    "@compiled/babel-plugin" "^0.34.0"
     "@compiled/babel-plugin-strip-runtime" "^0.33.0"
     "@compiled/css" "^0.18.0"
     "@compiled/utils" "^0.13.1"
@@ -5641,6 +5641,13 @@ is-core-module@^2.13.0, is-core-module@^2.15.1, is-core-module@^2.8.1:
   dependencies:
     hasown "^2.0.2"
 
+is-core-module@^2.16.0:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.16.0.tgz#6c01ffdd5e33c49c1d2abfa93334a85cb56bd81c"
+  integrity sha512-urTSINYfAYgcbLb0yDQ6egFm6h3Mo1DcF9EkyXSRjjzdHbsulg01qhwWuXdOoUBuTkbQ80KDboXa0vFJ+BDH+g==
+  dependencies:
+    hasown "^2.0.2"
+
 is-data-view@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-data-view/-/is-data-view-1.0.1.tgz#4b4d3a511b70f3dc26d42c03ca9ca515d847759f"
@@ -8847,6 +8854,15 @@ resolve@^1.20.0, resolve@^1.22.4, resolve@^1.22.8, resolve@~1.22.2:
   integrity sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==
   dependencies:
     is-core-module "^2.13.0"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
+
+resolve@^1.22.9:
+  version "1.22.10"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.22.10.tgz#b663e83ffb09bbf2386944736baae803029b8b39"
+  integrity sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==
+  dependencies:
+    is-core-module "^2.16.0"
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
