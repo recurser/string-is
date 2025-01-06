@@ -45,7 +45,7 @@
     "showdown": "^2.1.0",
     "sql-formatter": "^15.4.8",
     "terser": "^5.37.0",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
