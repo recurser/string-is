@@ -57,7 +57,7 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.26.8.tgz#821c1d35641c355284d4a870b8a4a7b0c141e367"
   integrity sha512-oH5UPLMWR3L2wEFLnFJ1TZXqHufiTKAiLfqw5zkhS4dKXLJ10yVztfil/twG8EDTA4F/tvVNw9nOl4ZMslB8rQ==
 
-"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.26.0", "@babel/core@^7.26.9":
+"@babel/core@^7.11.6", "@babel/core@^7.12.3", "@babel/core@^7.26.9":
   version "7.26.9"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.26.9.tgz#71838542a4b1e49dfed353d7acbc6eb89f4a76f2"
   integrity sha512-lWBYIrF7qK5+GjY5Uy+/hEgp8OJWOD/rpy74GplYRhEauvbHDeFB8t5hPOZxCZ0Oxf4Cc36tK51/l3ymJysrKw==
@@ -381,7 +381,7 @@
     "@babel/parser" "^7.16.7"
     "@babel/types" "^7.16.7"
 
-"@babel/traverse@^7.25.9", "@babel/traverse@^7.26.4":
+"@babel/traverse@^7.25.9":
   version "7.26.4"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.26.4.tgz#ac3a2a84b908dde6d463c3bfa2c5fdc1653574bd"
   integrity sha512-fH+b7Y4p3yqvApJALCPJcwb0/XaOSgtK4pzV6WVjPR5GLFQBRI7pfoX2V2iM48NXvX07NUxxm1Vw98YjqTcU5w==
@@ -605,23 +605,23 @@
     "@types/conventional-commits-parser" "^5.0.0"
     chalk "^5.3.0"
 
-"@compiled/babel-plugin-strip-runtime@^0.36.0":
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.36.0.tgz#e4c87df99da081d718a73fbb97dc33c2f8fa93aa"
-  integrity sha512-VsA/IRrToiFK1S6cwOb3MUQBv11/FVW72GAvbqwKmWA6mIDUaPcKooiuH9cZypyi/e+TfMHVq9Ny1D741jNxbQ==
+"@compiled/babel-plugin-strip-runtime@^0.37.1":
+  version "0.37.1"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin-strip-runtime/-/babel-plugin-strip-runtime-0.37.1.tgz#9d0841395442287d30e44517643b0e29906a9b62"
+  integrity sha512-GESC3QXGhLd5ULzAre8NvbFmrICqD/lUX4VBse00VZmSeMDgbMMetPwFn9mfPdwiUj9tLXNTVswJzyT3OWYwtA==
   dependencies:
-    "@babel/core" "^7.26.0"
-    "@babel/helper-plugin-utils" "^7.25.9"
-    "@babel/template" "^7.25.9"
-    "@babel/traverse" "^7.26.4"
-    "@babel/types" "^7.26.3"
-    "@compiled/css" "^0.19.0"
+    "@babel/core" "^7.26.9"
+    "@babel/helper-plugin-utils" "^7.26.5"
+    "@babel/template" "^7.26.9"
+    "@babel/traverse" "^7.26.9"
+    "@babel/types" "^7.26.9"
+    "@compiled/css" "^0.20.0"
     "@compiled/utils" "^0.13.1"
 
-"@compiled/babel-plugin@^0.37.0":
-  version "0.37.0"
-  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.37.0.tgz#a9192dcb75f0d240e05f008caed1d376ed0b940c"
-  integrity sha512-y6NrwzIcsBTKNUXkItwGu/QvdV7PI2siZKa688pBAjqJNFIZh2U4pyjHDparUK//S0Wb7AiGi5VGthGtWdNzbQ==
+"@compiled/babel-plugin@^0.37.1":
+  version "0.37.1"
+  resolved "https://registry.yarnpkg.com/@compiled/babel-plugin/-/babel-plugin-0.37.1.tgz#7195c495cbb9da56caeafab15eea5d2d1f3d2675"
+  integrity sha512-lZUBJnySZlOHq16EnAUqnmz0EfOkoeclpH1nXZzs4aCJN7NOosnr2UPLbJtAsPuNJ1P2zstMSDGntMKhKOcA8w==
   dependencies:
     "@babel/core" "^7.26.9"
     "@babel/generator" "^7.26.9"
@@ -632,15 +632,15 @@
     "@babel/template" "^7.26.9"
     "@babel/traverse" "^7.26.9"
     "@babel/types" "^7.26.9"
-    "@compiled/css" "^0.19.0"
+    "@compiled/css" "^0.20.0"
     "@compiled/utils" "^0.13.1"
     "@emotion/is-prop-valid" "^1.2.1"
     resolve "^1.22.10"
 
-"@compiled/css@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@compiled/css/-/css-0.19.0.tgz#b617f1f4907ae32c39ef2e3ab48e393f2fe2d18a"
-  integrity sha512-y4fFoO5imAQV0zQ6sDHGgcozoETZlZVxn718QZx7sfO3jQjAxJB8ypL8yDSUDmzLLymvuFha0E/ImI1xzMOMzg==
+"@compiled/css@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@compiled/css/-/css-0.20.0.tgz#8cfe45d1f4b0c31b132e3b35359a709e5704bd3b"
+  integrity sha512-cgRIqM+VWrwiG2S6b9DMkKm9bO5zG8ZMWvU6MNoKzQtkOPFFQ/jU4McN+4ilahHoJxUlHhLE8NoF0qL2UwzH4w==
   dependencies:
     "@compiled/utils" "^0.13.1"
     autoprefixer "^10.4.14"
@@ -667,16 +667,16 @@
     convert-source-map "^2.0.0"
     source-map "^0.7.4"
 
-"@compiled/webpack-loader@^0.19.4":
-  version "0.19.4"
-  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.19.4.tgz#49731be93cac6dc67d328db12853d7a866613027"
-  integrity sha512-iwYhU0KDCqpuQo+DP3gbREbq7kZ4KCE6/f+5uVKmO7sY2NTU9I1H7ALieEzIfz859G7KCsAc/5Xp4+5WJKsm9g==
+"@compiled/webpack-loader@^0.19.5":
+  version "0.19.5"
+  resolved "https://registry.yarnpkg.com/@compiled/webpack-loader/-/webpack-loader-0.19.5.tgz#f4b790c2e7550d67635c896fed7fbe4272fa6ff9"
+  integrity sha512-+rS3VpLW7951J0A2Lt4TRMpi+6Tn0BXYh7RGvmIaKZ5oFijNpdHXKhSPuqe+zEP7i4soIUgtz4vmnrP32uFvbg==
   dependencies:
     "@babel/core" "^7.26.9"
     "@babel/parser" "^7.26.9"
-    "@compiled/babel-plugin" "^0.37.0"
-    "@compiled/babel-plugin-strip-runtime" "^0.36.0"
-    "@compiled/css" "^0.19.0"
+    "@compiled/babel-plugin" "^0.37.1"
+    "@compiled/babel-plugin-strip-runtime" "^0.37.1"
+    "@compiled/css" "^0.20.0"
     "@compiled/utils" "^0.13.1"
     enhanced-resolve "^5.17.1"
     loader-utils "^2.0.4"
