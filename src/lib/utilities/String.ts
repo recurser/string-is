@@ -1,8 +1,6 @@
 import { camelCase, fromPairs, isArray, isObject, kebabCase, map } from 'lodash'
 
 import type { Obj } from '@lib/types'
-import { isArray as isArrayUtil, isObject as isObjectUtil } from '@lib/utilities/Type'
-
 /**
  * Converts a hyphenated converter slug to a camel-cased ID identifying
  * the converter module.
@@ -45,7 +43,7 @@ const sortObjectKeys = (obj: Record<string, unknown>): Record<string, unknown> =
   return fromPairs(
     map(sortedKeys, (key: string) => {
       const value = obj[key]
-      if (isObjectUtil(value) && !isArrayUtil(value)) {
+      if (isObject(value) && !isArray(value)) {
         return [key, sortObjectKeys(value as Record<string, unknown>)]
       }
       return [key, value]
@@ -66,9 +64,9 @@ export const sortByKeys = (object: Obj): Obj => {
     return object
   }
 
-  if (isArrayUtil(object)) {
+  if (isArray(object)) {
     return (object as unknown[]).map((entry: unknown) => {
-      if (isObjectUtil(entry) && !isArrayUtil(entry)) {
+      if (isObject(entry) && !isArray(entry)) {
         return sortObjectKeys(entry as Record<string, unknown>)
       }
       return entry
