@@ -1,6 +1,7 @@
 import { camelCase, fromPairs, isArray, isObject, kebabCase, map } from 'lodash'
 
 import type { Obj } from '@lib/types'
+import { isArray as isArrayUtil, isObject as isObjectUtil } from '@lib/utilities/Type'
 
 /**
  * Converts a hyphenated converter slug to a camel-cased ID identifying
@@ -34,39 +35,47 @@ export const hyphenateConverterId = (converterId: string): string => {
 }
 
 /**
- * Sorts the given object by it's keys, recursively.
- *
- * @param object - The object whose keys we will sort.
- *
- * @returns the object with sorted keys.
+ * Sorts the keys of an object recursively, preserving array order.
+ * 
+ * @param obj - The object to sort
+ * @returns A new object with sorted keys
  */
-export const sortByKeys = (object: Obj): Obj => {
-  if (isArray(object)) {
-    return object
-      .map((entry) => {
-        if (isObject(entry)) {
-          return sortByKeys(entry as Obj)
-        }
-
-        return entry
-      })
-      .sort((a: unknown, b: unknown) =>
-        JSON.stringify(a).localeCompare(JSON.stringify(b)),
-      )
-  }
-
-  const sortedKeys = Object.keys(object).sort() as string[]
-
+const sortObjectKeys = (obj: Record<string, unknown>): Record<string, unknown> => {
+  const sortedKeys = Object.keys(obj).sort()
   return fromPairs(
-    map(sortedKeys, (key) => {
-      let value = object[key]
-      if (isObject(object[key])) {
-        value = sortByKeys(value as Obj)
+    map(sortedKeys, (key: string) => {
+      const value = obj[key]
+      if (isObjectUtil(value) && !isArrayUtil(value)) {
+        return [key, sortObjectKeys(value as Record<string, unknown>)]
       }
-
       return [key, value]
     }),
   )
+}
+
+/**
+ * Sorts the keys of an object or array recursively.
+ * For arrays, only sorts keys within array elements, preserving array order.
+ * For objects, sorts all keys recursively.
+ *
+ * @param object - The object whose keys we will sort.
+ * @returns the object with sorted keys.
+ */
+export const sortByKeys = (object: Obj): Obj => {
+  if (object === null || typeof object !== 'object') {
+    return object
+  }
+
+  if (isArrayUtil(object)) {
+    return (object as unknown[]).map((entry: unknown) => {
+      if (isObjectUtil(entry) && !isArrayUtil(entry)) {
+        return sortObjectKeys(entry as Record<string, unknown>)
+      }
+      return entry
+    })
+  }
+
+  return sortObjectKeys(object as Record<string, unknown>)
 }
 
 /**
