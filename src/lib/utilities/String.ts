@@ -1,6 +1,7 @@
 import { camelCase, fromPairs, isArray, isObject, kebabCase, map } from 'lodash'
 
 import type { Obj } from '@lib/types'
+
 /**
  * Converts a hyphenated converter slug to a camel-cased ID identifying
  * the converter module.
@@ -33,18 +34,19 @@ export const hyphenateConverterId = (converterId: string): string => {
 }
 
 /**
- * Sorts the keys of an object recursively, preserving array order.
+ * Sorts the keys of a JSON object recursively, preserving array order.
+ * This function specifically handles JSON objects (not arrays or primitives).
  * 
- * @param obj - The object to sort
- * @returns A new object with sorted keys
+ * @param jsonObj - The JSON object to sort
+ * @returns A new JSON object with sorted keys
  */
-const sortObjectKeys = (obj: Record<string, unknown>): Record<string, unknown> => {
-  const sortedKeys = Object.keys(obj).sort()
+const sortJsonObjectKeys = (jsonObj: Record<string, unknown>): Record<string, unknown> => {
+  const sortedKeys = Object.keys(jsonObj).sort()
   return fromPairs(
     map(sortedKeys, (key: string) => {
-      const value = obj[key]
+      const value = jsonObj[key]
       if (isObject(value) && !isArray(value)) {
-        return [key, sortObjectKeys(value as Record<string, unknown>)]
+        return [key, sortJsonObjectKeys(value as Record<string, unknown>)]
       }
       return [key, value]
     }),
@@ -52,28 +54,28 @@ const sortObjectKeys = (obj: Record<string, unknown>): Record<string, unknown> =
 }
 
 /**
- * Sorts the keys of an object or array recursively.
+ * Sorts the keys of a JSON object or array recursively.
  * For arrays, only sorts keys within array elements, preserving array order.
  * For objects, sorts all keys recursively.
  *
- * @param object - The object whose keys we will sort.
- * @returns the object with sorted keys.
+ * @param jsonData - The JSON data whose keys we will sort.
+ * @returns the JSON data with sorted keys.
  */
-export const sortByKeys = (object: Obj): Obj => {
-  if (object === null || typeof object !== 'object') {
-    return object
+export const sortByKeys = (jsonData: Obj): Obj => {
+  if (jsonData === null || typeof jsonData !== 'object') {
+    return jsonData
   }
 
-  if (isArray(object)) {
-    return (object as unknown[]).map((entry: unknown) => {
+  if (isArray(jsonData)) {
+    return (jsonData as unknown[]).map((entry: unknown) => {
       if (isObject(entry) && !isArray(entry)) {
-        return sortObjectKeys(entry as Record<string, unknown>)
+        return sortJsonObjectKeys(entry as Record<string, unknown>)
       }
       return entry
     })
   }
 
-  return sortObjectKeys(object as Record<string, unknown>)
+  return sortJsonObjectKeys(jsonData as Record<string, unknown>)
 }
 
 /**

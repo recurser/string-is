@@ -50,9 +50,74 @@ describe('utilities', () => {
           { name: 'Bob', age: 28 } // eslint-disable-line sort-keys
         ]
         const expected = [
-          { age: 30, name: 'Charlie' }, // eslint-disable-line sort-keys
-          { age: 25, name: 'Alice' }, // eslint-disable-line sort-keys
-          { age: 28, name: 'Bob' }, // eslint-disable-line sort-keys
+          { age: 30, name: 'Charlie' },
+          { age: 25, name: 'Alice' },
+          { age: 28, name: 'Bob' }
+        ]
+        expect(sortByKeys(input)).toEqual(expected)
+      })
+
+      it('handles nested objects within arrays', () => {
+        const input = [
+          { 
+            name: 'Charlie',
+            details: { // eslint-disable-line sort-keys
+              role: 'Developer',
+              team: 'Frontend'
+            }
+          }
+        ]
+        const expected = [
+          { 
+            details: { 
+              role: 'Developer',
+              team: 'Frontend'
+            },
+            name: 'Charlie'
+          }
+        ]
+        expect(sortByKeys(input)).toEqual(expected)
+      })
+
+      it('preserves primitive values in arrays', () => {
+        const input = [1, 'two', true, null]
+        expect(sortByKeys(input)).toEqual(input)
+      })
+
+      it('handles empty objects and arrays', () => {
+        const input = { emptyArray: [], emptyObject: {} }
+        const expected = { emptyArray: [], emptyObject: {} }
+        expect(sortByKeys(input)).toEqual(expected)
+      })
+
+      it('preserves null and undefined values', () => {
+        const input = { 
+          a: null,
+          b: undefined,
+          c: { d: null }
+        }
+        const expected = { 
+          a: null,
+          b: undefined,
+          c: { d: null }
+        }
+        expect(sortByKeys(input)).toEqual(expected)
+      })
+
+      it('handles mixed arrays of objects and primitives', () => {
+        const input = [
+          { name: 'Charlie' },
+          42,
+          { age: 30 },
+          'string',
+          null
+        ]
+        const expected = [
+          { name: 'Charlie' },
+          42,
+          { age: 30 },
+          'string',
+          null
         ]
         expect(sortByKeys(input)).toEqual(expected)
       })
