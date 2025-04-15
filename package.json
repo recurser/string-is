@@ -55,7 +55,9 @@
     "@compiled/webpack-loader": "^0.19.5",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
     "@semantic-release/npm": "^12.0.1",
     "@semantic-release/release-notes-generator": "^14.0.3",
     "@testing-library/jest-dom": "^6.6.3",
@@ -95,7 +97,7 @@
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "react-test-renderer": "^17.0.2",
-    "semantic-release": "^24.2.3",
+    "semantic-release": "^23.1.1",
     "typescript": "5.8.3"
   }
 }
