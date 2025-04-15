@@ -1,6 +1,7 @@
 import * as babel from 'prettier/plugins/babel'
 // eslint-disable-next-line import/namespace
 import * as estree from 'prettier/plugins/estree'
+import { type Plugin } from 'prettier'
 import { format } from 'prettier/standalone'
 import { isEmpty } from 'lodash'
 
@@ -26,7 +27,7 @@ export const confidence = async (input: string) => {
 
   try {
     // Prettier will throw an exception if this fails.
-    await format(input, { parser: 'babel', plugins: [babel, estree] })
+    await format(input, { parser: 'babel', plugins: [babel, estree as Plugin] })
   } catch (_err) {
     return 0
   }

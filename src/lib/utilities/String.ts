@@ -34,39 +34,48 @@ export const hyphenateConverterId = (converterId: string): string => {
 }
 
 /**
- * Sorts the given object by it's keys, recursively.
- *
- * @param object - The object whose keys we will sort.
- *
- * @returns the object with sorted keys.
+ * Sorts the keys of a JSON object recursively, preserving array order.
+ * This function specifically handles JSON objects (not arrays or primitives).
+ * 
+ * @param jsonObj - The JSON object to sort
+ * @returns A new JSON object with sorted keys
  */
-export const sortByKeys = (object: Obj): Obj => {
-  if (isArray(object)) {
-    return object
-      .map((entry) => {
-        if (isObject(entry)) {
-          return sortByKeys(entry as Obj)
-        }
-
-        return entry
-      })
-      .sort((a: unknown, b: unknown) =>
-        JSON.stringify(a).localeCompare(JSON.stringify(b)),
-      )
-  }
-
-  const sortedKeys = Object.keys(object).sort() as string[]
-
+const sortJsonObjectKeys = (jsonObj: Record<string, unknown>): Record<string, unknown> => {
+  const sortedKeys = Object.keys(jsonObj).sort()
   return fromPairs(
-    map(sortedKeys, (key) => {
-      let value = object[key]
-      if (isObject(object[key])) {
-        value = sortByKeys(value as Obj)
+    map(sortedKeys, (key: string) => {
+      const value = jsonObj[key]
+      if (isObject(value) && !isArray(value)) {
+        return [key, sortJsonObjectKeys(value as Record<string, unknown>)]
       }
-
       return [key, value]
     }),
   )
+}
+
+/**
+ * Sorts the keys of a JSON object or array recursively.
+ * For arrays, only sorts keys within array elements, preserving array order.
+ * For objects, sorts all keys recursively.
+ *
+ * @param jsonData - The JSON data whose keys we will sort.
+ * @returns the JSON data with sorted keys.
+ */
+export const sortByKeys = (jsonData: Obj): Obj => {
+  if (jsonData === null || typeof jsonData !== 'object') {
+    return jsonData
+  }
+
+  if (isArray(jsonData)) {
+    return (jsonData as unknown[]).map((entry: unknown) => {
+      if (isObject(entry) && !isArray(entry)) {
+        return sortJsonObjectKeys(entry as Record<string, unknown>)
+      }
+      return entry
+    })
+  }
+
+  return sortJsonObjectKeys(jsonData as Record<string, unknown>)
 }
 
 /**
