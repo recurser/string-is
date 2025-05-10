@@ -52,7 +52,7 @@
     "@babel/helper-function-name": "^7.24.7",
     "@babel/helper-hoist-variables": "^7.24.7",
     "@babel/helper-split-export-declaration": "^7.24.7",
-    "@commitlint/cli": "^19.8.0",
+    "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@compiled/webpack-loader": "^0.19.5",
     "@semantic-release/changelog": "^6.0.3",
