@@ -693,10 +693,10 @@
     postcss-selector-parser "^6.0.13"
     postcss-values-parser "^6.0.2"
 
-"@compiled/react@^0.18.4":
-  version "0.18.4"
-  resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.18.4.tgz#5e40dfa0181cd5c32ab7e44cc19f60adf2180e52"
-  integrity sha512-tO0cAZTOMky8IcBscs6VQsMRUos8nXixIsQWPY8XWbF5JYYkIxuJ0ojpkjdUBkXBdgdjBjp6kczoub8BLPjHZg==
+"@compiled/react@^0.18.5":
+  version "0.18.5"
+  resolved "https://registry.yarnpkg.com/@compiled/react/-/react-0.18.5.tgz#13e454ac55bd34cd6efafaefa433b0daa870a82e"
+  integrity sha512-JeM/tOX6tl78MeEv8+wRIZhcRfkItp2tTMmHRfn5zgr2pr3SEpsUwBs1iwiFKFS3pSzz4o3SOZi3l5tJqe9Blw==
   dependencies:
     csstype "^3.1.3"
 
