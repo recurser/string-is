@@ -4945,10 +4945,10 @@ fast-levenshtein@^2.0.6, fast-levenshtein@~2.0.6:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
-fast-xml-parser@^5.2.3:
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.2.3.tgz#cd6d353998857313b92c7fba5e5d8a66802b0111"
-  integrity sha512-OdCYfRqfpuLUFonTNjvd30rCBZUneHpSQkCqfaeWQ9qrKcl6XlWeDBNVwGb+INAIxRshuN2jF+BE0L6gbBO2mw==
+fast-xml-parser@^5.2.4:
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-5.2.4.tgz#2ed7dfaa938e479e35c348bafc4e376fead3ebd2"
+  integrity sha512-6mNrAVwHip2nGyPYn6xQJK/znBbIoz6to5VMNysrka1/aoSylbB8vjYgkpaFp05EFojiflVV+3QzXe9Ap3Esng==
   dependencies:
     strnum "^2.1.0"
 
