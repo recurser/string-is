@@ -1,4 +1,4 @@
-name: Auto Assign Reviewer
+name: assign-reviewer
 
 on:
   pull_request:
@@ -13,9 +13,29 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.pulls.requestReviewers({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number,
-              reviewers: ['recurser']
-            }) 
+            const reviewers = ['recurser'];
+            const prAuthor = context.payload.pull_request.user.login;
+            
+            // Filter out the PR author from reviewers (only relevant for human authors)
+            const filteredReviewers = reviewers.filter(reviewer => reviewer !== prAuthor);
+            
+            if (filteredReviewers.length > 0) {
+              try {
+                await github.rest.pulls.requestReviewers({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: context.issue.number,
+                  reviewers: filteredReviewers
+                });
+                console.log(`Successfully assigned reviewers: ${filteredReviewers.join(', ')}`);
+              } catch (error) {
+                if (error.status === 403) {
+                  console.log(`Permission denied for assigning reviewers. This may be due to repository settings or bot permissions. Error: ${error.message}`);
+                } else {
+                  console.log(`Failed to assign reviewers: ${error.message}`);
+                }
+                // Don't fail the workflow, just log the error
+              }
+            } else {
+              console.log('No reviewers to assign (author is in reviewer list)');
+            } 
