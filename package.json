@@ -73,7 +73,7 @@
     "@types/json2csv": "^5.0.7",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/lodash": "^4.17.18",
-    "@types/node": "^24.0.3",
+    "@types/node": "^24.0.6",
     "@types/papaparse": "^5.3.16",
     "@types/prismjs": "^1.26.5",
     "@types/react": "18.0.9",
