@@ -100,6 +100,6 @@
     "jest-environment-jsdom": "^30.0.5",
     "react-test-renderer": "^17.0.2",
     "semantic-release": "^24.2.7",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   }
 }
