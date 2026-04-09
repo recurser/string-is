@@ -47,34 +47,35 @@ describe('utilities', () => {
         const input = [
           { name: 'Charlie', age: 30 }, // eslint-disable-line sort-keys
           { name: 'Alice', age: 25 }, // eslint-disable-line sort-keys
-          { name: 'Bob', age: 28 } // eslint-disable-line sort-keys
+          { name: 'Bob', age: 28 }, // eslint-disable-line sort-keys
         ]
         const expected = [
           { age: 30, name: 'Charlie' },
           { age: 25, name: 'Alice' },
-          { age: 28, name: 'Bob' }
+          { age: 28, name: 'Bob' },
         ]
         expect(sortByKeys(input)).toEqual(expected)
       })
 
       it('handles nested objects within arrays', () => {
         const input = [
-          { 
+          {
             name: 'Charlie',
-            details: { // eslint-disable-line sort-keys
+            // eslint-disable-next-line sort-keys
+            details: {
               role: 'Developer',
-              team: 'Frontend'
-            }
-          }
+              team: 'Frontend',
+            },
+          },
         ]
         const expected = [
-          { 
-            details: { 
+          {
+            details: {
               role: 'Developer',
-              team: 'Frontend'
+              team: 'Frontend',
             },
-            name: 'Charlie'
-          }
+            name: 'Charlie',
+          },
         ]
         expect(sortByKeys(input)).toEqual(expected)
       })
@@ -91,34 +92,22 @@ describe('utilities', () => {
       })
 
       it('preserves null and undefined values', () => {
-        const input = { 
+        const input = {
           a: null,
           b: undefined,
-          c: { d: null }
+          c: { d: null },
         }
-        const expected = { 
+        const expected = {
           a: null,
           b: undefined,
-          c: { d: null }
+          c: { d: null },
         }
         expect(sortByKeys(input)).toEqual(expected)
       })
 
       it('handles mixed arrays of objects and primitives', () => {
-        const input = [
-          { name: 'Charlie' },
-          42,
-          { age: 30 },
-          'string',
-          null
-        ]
-        const expected = [
-          { name: 'Charlie' },
-          42,
-          { age: 30 },
-          'string',
-          null
-        ]
+        const input = [{ name: 'Charlie' }, 42, { age: 30 }, 'string', null]
+        const expected = [{ name: 'Charlie' }, 42, { age: 30 }, 'string', null]
         expect(sortByKeys(input)).toEqual(expected)
       })
 
@@ -128,52 +117,55 @@ describe('utilities', () => {
             {
               name: 'Charlie',
               roles: ['admin', 'user'],
-              permissions: { // eslint-disable-line sort-keys
+              // eslint-disable-next-line sort-keys
+              permissions: {
                 read: true,
-                write: false
-              }
+                write: false,
+              },
             },
             {
               name: 'Alice',
               roles: ['user'],
-              permissions: { // eslint-disable-line sort-keys
+              // eslint-disable-next-line sort-keys
+              permissions: {
                 read: true,
-                write: true
-              }
-            }
+                write: true,
+              },
+            },
           ],
-          settings: { // eslint-disable-line sort-keys
+          // eslint-disable-next-line sort-keys
+          settings: {
             features: {
               enabled: ['auth', 'logging'],
-              disabled: ['analytics'] // eslint-disable-line sort-keys
-            }
-          }
+              disabled: ['analytics'], // eslint-disable-line sort-keys
+            },
+          },
         }
         const expected = {
           settings: {
             features: {
               disabled: ['analytics'],
-              enabled: ['auth', 'logging']
-            }
+              enabled: ['auth', 'logging'],
+            },
           },
           users: [
             {
               name: 'Charlie',
               permissions: {
                 read: true,
-                write: false
+                write: false,
               },
-              roles: ['admin', 'user']
+              roles: ['admin', 'user'],
             },
             {
               name: 'Alice',
               permissions: {
                 read: true,
-                write: true
+                write: true,
               },
-              roles: ['user']
-            }
-          ]
+              roles: ['user'],
+            },
+          ],
         }
         expect(sortByKeys(input)).toEqual(expected)
       })
@@ -182,20 +174,18 @@ describe('utilities', () => {
         const input = [
           [
             { name: 'Charlie', age: 30 }, // eslint-disable-line sort-keys
-            { name: 'Alice', age: 25 } // eslint-disable-line sort-keys
+            { name: 'Alice', age: 25 }, // eslint-disable-line sort-keys
           ],
           [
-            { name: 'Bob', age: 28 } // eslint-disable-line sort-keys
-          ]
+            { name: 'Bob', age: 28 }, // eslint-disable-line sort-keys
+          ],
         ]
         const expected = [
           [
             { age: 30, name: 'Charlie' },
-            { age: 25, name: 'Alice' }
+            { age: 25, name: 'Alice' },
           ],
-          [
-            { age: 28, name: 'Bob' }
-          ]
+          [{ age: 28, name: 'Bob' }],
         ]
         expect(sortByKeys(input)).toEqual(expected)
       })
@@ -207,61 +197,58 @@ describe('utilities', () => {
               id: 1,
               items: [
                 { name: 'Item A', value: 100 },
-                { name: 'Item B', value: 200 }
+                { name: 'Item B', value: 200 },
               ],
               metadata: {
                 created: '2024-01-01',
-                tags: ['important', 'urgent']
-              }
+                tags: ['important', 'urgent'],
+              },
             },
             {
               id: 2,
-              items: [
-                { name: 'Item C', value: 300 }
-              ],
+              items: [{ name: 'Item C', value: 300 }],
               metadata: {
                 created: '2024-01-02',
-                tags: ['normal']
-              }
-            }
+                tags: ['normal'],
+              },
+            },
           ],
-          config: { // eslint-disable-line sort-keys
+          // eslint-disable-next-line sort-keys
+          config: {
             options: {
               enabled: true,
-              features: ['feature1', 'feature2']
-            }
-          }
+              features: ['feature1', 'feature2'],
+            },
+          },
         }
         const expected = {
           config: {
             options: {
               enabled: true,
-              features: ['feature1', 'feature2']
-            }
+              features: ['feature1', 'feature2'],
+            },
           },
           data: [
             {
               id: 1,
               items: [
                 { name: 'Item A', value: 100 },
-                { name: 'Item B', value: 200 }
+                { name: 'Item B', value: 200 },
               ],
               metadata: {
                 created: '2024-01-01',
-                tags: ['important', 'urgent']
-              }
+                tags: ['important', 'urgent'],
+              },
             },
             {
               id: 2,
-              items: [
-                { name: 'Item C', value: 300 }
-              ],
+              items: [{ name: 'Item C', value: 300 }],
               metadata: {
                 created: '2024-01-02',
-                tags: ['normal']
-              }
-            }
-          ]
+                tags: ['normal'],
+              },
+            },
+          ],
         }
         expect(sortByKeys(input)).toEqual(expected)
       })

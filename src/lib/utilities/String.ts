@@ -36,11 +36,13 @@ export const hyphenateConverterId = (converterId: string): string => {
 /**
  * Sorts the keys of a JSON object recursively, preserving array order.
  * This function specifically handles JSON objects (not arrays or primitives).
- * 
+ *
  * @param jsonObj - The JSON object to sort
  * @returns A new JSON object with sorted keys
  */
-const sortJsonObjectKeys = (jsonObj: Record<string, unknown>): Record<string, unknown> => {
+const sortJsonObjectKeys = (
+  jsonObj: Record<string, unknown>,
+): Record<string, unknown> => {
   const sortedKeys = Object.keys(jsonObj).sort()
   return fromPairs(
     map(sortedKeys, (key: string) => {
