@@ -35,7 +35,7 @@
     "lodash": "^4.18.1",
     "next": "12.3.1",
     "next-translate": "^3.1.2",
-    "next-translate-plugin": "^2.0.5",
+    "next-translate-plugin": "^3.1.2",
     "papaparse": "^5.5.3",
     "prettier": "^3.8.2",
     "prismjs": "^1.30.0",
