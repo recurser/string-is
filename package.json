@@ -27,7 +27,7 @@
     "dayjs": "^1.11.20",
     "diff": "^8.0.4",
     "evergreen-ui": "^7.1.9",
-    "fast-xml-parser": "^5.5.11",
+    "fast-xml-parser": "^5.5.12",
     "hjson": "^3.2.2",
     "js-base64": "^3.7.8",
     "js-yaml": "^4.1.1",
