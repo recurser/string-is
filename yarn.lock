@@ -8417,12 +8417,12 @@ nerf-dart@^1.0.0:
   resolved "https://registry.yarnpkg.com/nerf-dart/-/nerf-dart-1.0.0.tgz#e6dab7febf5ad816ea81cf5c629c5a0ebde72c1a"
   integrity sha1-5tq3/r9a2Bbqgc9cYpxaDr3nLBo=
 
-next-translate-plugin@^2.0.5:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/next-translate-plugin/-/next-translate-plugin-2.6.2.tgz#b08044699ff1a66fc028b818ba300b6308d2d057"
-  integrity sha512-qfvYG//QfP7b+A/xXGP9K+bdswkAFCabguemuEqjxu+j8pRNoF+jWKmepRXRaAcn1PqFLBj6PBvYkqD1r5k5Zw==
+next-translate-plugin@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/next-translate-plugin/-/next-translate-plugin-3.1.2.tgz#69fca58a7ccda18673733755daf9fe783b73a2cd"
+  integrity sha512-w1Kj4t5wnxo2FGsXlP+r/Mszb8vhk3DyY8osAgtUVE/YrU/dEBVQA3sFm0MAYLusmpfz+sM68LYpXlD32wj+Ag==
   dependencies:
-    typescript "4.5.2"
+    typescript "5.9.3"
 
 next-translate@^2.0.6:
   version "2.6.2"
@@ -11528,11 +11528,6 @@ typed-array-length@^1.0.7:
     is-typed-array "^1.1.13"
     possible-typed-array-names "^1.0.0"
     reflect.getprototypeof "^1.0.6"
-
-typescript@4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
-  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 typescript@5.9.3:
   version "5.9.3"
