@@ -6,7 +6,7 @@ on:
 
 jobs:
   auto-assign:
-    runs-on: ubuntu-latest
+    runs-on: ubicloud
     steps:
       - name: Assign Reviewer
         uses: actions/github-script@v7

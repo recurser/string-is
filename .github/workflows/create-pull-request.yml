@@ -12,7 +12,7 @@ on:
 
 jobs:
   create_pull_request:
-    runs-on: ubuntu-latest
+    runs-on: ubicloud
     steps:
       - uses: actions/checkout@v4
 
