@@ -60,12 +60,11 @@ describe('utilities', () => {
       it('handles nested objects within arrays', () => {
         const input = [
           {
-            name: 'Charlie',
             details: {
-              // eslint-disable-line sort-keys
               role: 'Developer',
               team: 'Frontend',
             },
+            name: 'Charlie',
           },
         ]
         const expected = [
@@ -113,33 +112,30 @@ describe('utilities', () => {
 
       it('handles deeply nested objects with arrays', () => {
         const input = {
+          settings: {
+            features: {
+              disabled: ['analytics'],
+              enabled: ['auth', 'logging'],
+            },
+          },
           users: [
             {
               name: 'Charlie',
-              roles: ['admin', 'user'],
               permissions: {
-                // eslint-disable-line sort-keys
                 read: true,
                 write: false,
               },
+              roles: ['admin', 'user'],
             },
             {
               name: 'Alice',
-              roles: ['user'],
               permissions: {
-                // eslint-disable-line sort-keys
                 read: true,
                 write: true,
               },
+              roles: ['user'],
             },
           ],
-          settings: {
-            // eslint-disable-line sort-keys
-            features: {
-              enabled: ['auth', 'logging'],
-              disabled: ['analytics'], // eslint-disable-line sort-keys
-            },
-          },
         }
         const expected = {
           settings: {
@@ -192,6 +188,12 @@ describe('utilities', () => {
 
       it('handles complex mixed structures', () => {
         const input = {
+          config: {
+            options: {
+              enabled: true,
+              features: ['feature1', 'feature2'],
+            },
+          },
           data: [
             {
               id: 1,
@@ -213,13 +215,6 @@ describe('utilities', () => {
               },
             },
           ],
-          config: {
-            // eslint-disable-line sort-keys
-            options: {
-              enabled: true,
-              features: ['feature1', 'feature2'],
-            },
-          },
         }
         const expected = {
           config: {
