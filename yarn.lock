@@ -8275,10 +8275,10 @@ nerf-dart@^1.0.0:
   resolved "https://registry.yarnpkg.com/nerf-dart/-/nerf-dart-1.0.0.tgz#e6dab7febf5ad816ea81cf5c629c5a0ebde72c1a"
   integrity sha1-5tq3/r9a2Bbqgc9cYpxaDr3nLBo=
 
-next-translate-plugin@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/next-translate-plugin/-/next-translate-plugin-3.1.2.tgz#69fca58a7ccda18673733755daf9fe783b73a2cd"
-  integrity sha512-w1Kj4t5wnxo2FGsXlP+r/Mszb8vhk3DyY8osAgtUVE/YrU/dEBVQA3sFm0MAYLusmpfz+sM68LYpXlD32wj+Ag==
+next-translate-plugin@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/next-translate-plugin/-/next-translate-plugin-3.1.3.tgz#1ce96f5b438a4914b7e03cb2d01e1957d71ee8ae"
+  integrity sha512-HE3n6D+T2rBMB8YguxJEPz/PoY+Lfq6do48MpRMhEfqf3d8ZXUQhe6wcymNO15tSm6jnxGc2yv8EQ4A3zZQImw==
   dependencies:
     typescript "5.9.3"
 
