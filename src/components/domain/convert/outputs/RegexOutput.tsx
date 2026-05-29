@@ -248,6 +248,8 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
 
                   {groups.map((group, groupIndex) => {
                     const groupKey = `regexMatch-${matchIndex}-${groupIndex}`
+                    const safeGroup = group ?? ''
+                  
                     return (
                       <Label
                         htmlFor={groupKey}
@@ -261,7 +263,7 @@ export const RegexOutput = forwardRef<HTMLTextAreaElement, OutputProps>(
                           value={group}
                           width="100%"
                         />
-                        <CopyButton marginLeft={majorScale(1)} value={group} />
+                        <CopyButton marginLeft={majorScale(1)} value={safeGroup} />
                       </Label>
                     )
                   })}

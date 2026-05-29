@@ -59,6 +59,24 @@ describe('converters', () => {
       })
     })
 
+    it('handles optional captured groups when not present', async () => {
+      await assertOutput(RegexDebugger, '/find (this)?/', async () => {
+        const inputElement = await screen.getByTestId('regex-input')
+        fireEvent.change(inputElement, {
+          target: { value: 'can you find ?' },
+        })
+
+        const matchOutput = await screen.getByTestId('regex-match-output')
+        expect(matchOutput.value).toEqual('find ')
+
+        const groupOutput = await screen.getByTestId('regex-group-output')
+        expect(groupOutput.value).toEqual('')
+
+        const alert = await screen.getByTestId('output-success')
+        expect(alert).toHaveTextContent('alert_single_match')
+      })
+    })
+
     it('reports an error if the input in invalid', async () => {
       await expectError(RegexDebugger, '(invalid!', 'alert_invalid_input')
     })
